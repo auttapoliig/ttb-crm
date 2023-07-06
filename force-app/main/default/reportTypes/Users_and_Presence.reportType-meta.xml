@@ -597,6 +597,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>User</field>
+            <table>User.UserServicePresence$UserId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>User Presence Service Status</displayNameOverride>
             <field>ServicePresenceStatus.MasterLabel</field>
             <table>User.UserServicePresence$UserId</table>

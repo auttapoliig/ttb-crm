@@ -277,6 +277,46 @@
             <field>Owner.Name</field>
             <table>iigproduct_2__ChatSession__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>First_Responded_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>First_Responded_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>End_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>End_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLA_No_Value__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_Case_UnAnswered__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
         <masterLabel>ChatSession</masterLabel>
     </sections>
     <sections>

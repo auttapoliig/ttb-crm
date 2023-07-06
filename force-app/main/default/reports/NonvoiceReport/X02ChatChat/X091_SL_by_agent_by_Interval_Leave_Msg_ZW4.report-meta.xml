@@ -37,13 +37,13 @@
         </values>
     </buckets>
     <columns>
+        <field>BucketField_80273869</field>
+    </columns>
+    <columns>
         <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.CaseNumber</field>
     </columns>
     <columns>
         <field>iigproduct_2__ChatSession__c$Name</field>
-    </columns>
-    <columns>
-        <field>iigproduct_2__ChatSession__c$Owner</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -54,10 +54,8 @@
         <field>iigproduct_2__ChatSession__c$Number_case_answered__c</field>
     </columns>
     <columns>
-        <field>iigproduct_2__ChatSession__c$Accept_Datetime__c</field>
-    </columns>
-    <columns>
-        <field>iigproduct_2__ChatSession__c$Assign_Datetime__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$Number_Case_UnAnswered__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -71,14 +69,18 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Over_60_Min__c</field>
     </columns>
-    <description>SL by agent by Interval for Leave Chat (Facebook, Line, OneApp)</description>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$SLA_No_Value__c</field>
+    </columns>
+    <description>SL by agent by Interval for Leave Chat (Facebook, Line, TOUCH)</description>
     <filter>
         <criteriaItems>
             <column>BucketField_80273869</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,OneApp</value>
+            <value>Facebook,Line,OneApp,TOUCH</value>
         </criteriaItems>
         <criteriaItems>
             <column>iigproduct_2__ChatSession__c$Owner</column>
@@ -86,6 +88,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>iigproduct_2__ChatSession__c$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Bot Call Centre Chat Queue</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -101,19 +110,19 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>BucketField_80273869</field>
+        <field>iigproduct_2__ChatSession__c$Owner</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>09-1 SL by agent by Interval: Leave Chat</name>
+    <name>SL by agent by Interval: Leave Chat</name>
     <params>
         <name>co</name>
-        <value>0</value>
+        <value>1</value>
     </params>
     <reportType>ChatSession_with_Case__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
-    <showGrandTotal>false</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
     <sortColumn>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.CaseNumber</sortColumn>
     <sortOrder>Desc</sortOrder>
     <timeFrameFilter>

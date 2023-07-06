@@ -79,7 +79,7 @@ CASE(iigproduct_2__ChatSession__c.iigproduct_2__Status__c,
         <field>CUST_CREATED_DATE</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>05-SLA - Chat - On time</name>
+    <name>09-SLA - Live Chat - On time</name>
     <params>
         <name>co</name>
         <value>1</value>

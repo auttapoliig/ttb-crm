@@ -33,7 +33,7 @@
         </values>
     </buckets>
     <columns>
-        <field>iigproduct_2__ChatSession__c$iigproduct_2__TMB_Customer_ID__c</field>
+        <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.Customer_ID__c</field>
     </columns>
     <columns>
         <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.Contact_Person_Name__c</field>
@@ -92,14 +92,14 @@
         <field>iigproduct_2__ChatSession__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>16 - Survey detail</name>
+    <name>Survey detail</name>
     <params>
         <name>co</name>
         <value>0</value>
     </params>
     <reportType>Chat_session_with_post_survey__c</reportType>
     <scope>organization</scope>
-    <showDetails>false</showDetails>
+    <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
