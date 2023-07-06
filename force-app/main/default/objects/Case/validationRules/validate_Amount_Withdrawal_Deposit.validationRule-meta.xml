@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validate_Amount_Withdrawal_Deposit</fullName>
+    <active>true</active>
+    <description>Validate field จำนวนเงิน (ถอน/ฝาก)</description>
+    <errorConditionFormula>If( AND(OR(
+Service_Type_Matrix_Code__c = &apos;V0012&apos;,
+Service_Type_Matrix_Code__c = &apos;V0013&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0014&apos;,
+Service_Type_Matrix_Code__c = &apos;V0015&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0016&apos;,
+Service_Type_Matrix_Code__c = &apos;V0017&apos;,
+Service_Type_Matrix_Code__c = &apos;V0018&apos;,
+Service_Type_Matrix_Code__c = &apos;V0019&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0020&apos;
+), 
+ISBLANK(Amount_Withdrawal_Deposit__c),NOT( Is_Migrated__c )), true,false)</errorConditionFormula>
+    <errorDisplayField>Amount_Withdrawal_Deposit__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

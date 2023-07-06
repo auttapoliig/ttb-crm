@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_to_not_edit_Closed_Case</fullName>
+    <active>true</active>
+    <description>Validation to protect user to edit closed case</description>
+    <errorConditionFormula>if( AND( $User.UserProfileName__c != &apos;TMB System Administrator&apos;, $User.UserProfileName__c != &apos;System Administrator&apos; ,$User.UserProfileName__c != &apos;TMB CRM Admin Profile&apos; ), if(OR(ISCLONE(),CXM_write_log_flag__c = true), false,  IsClosed = True), false    )</errorConditionFormula>
+    <errorDisplayField>Error__c</errorDisplayField>
+    <errorMessage>Cannot edit Closed Case. (ไม่สามารถแก้ไขเคสที่ปิดแล้ว)</errorMessage>
+</ValidationRule>

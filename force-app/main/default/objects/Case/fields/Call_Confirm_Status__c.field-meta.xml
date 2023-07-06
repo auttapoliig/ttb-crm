@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Confirm_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Call Confirm Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acknowledge #1</fullName>
+                <default>false</default>
+                <label>Acknowledge #1</label>
+            </value>
+            <value>
+                <fullName>Acknowledge #1 Completed</fullName>
+                <default>false</default>
+                <label>Acknowledge #1 Completed</label>
+            </value>
+            <value>
+                <fullName>Acknowledge #2</fullName>
+                <default>false</default>
+                <label>Acknowledge #2</label>
+            </value>
+            <value>
+                <fullName>Acknowledge #2 Completed</fullName>
+                <default>false</default>
+                <label>Acknowledge #2 Completed</label>
+            </value>
+            <value>
+                <fullName>Acknowledge #3</fullName>
+                <default>false</default>
+                <label>Acknowledge #3</label>
+            </value>
+            <value>
+                <fullName>Acknowledge #3 Completed</fullName>
+                <default>false</default>
+                <label>Acknowledge #3 Completed</label>
+            </value>
+            <value>
+                <fullName>Acknowledge by SMS</fullName>
+                <default>false</default>
+                <label>Acknowledge by SMS</label>
+            </value>
+            <value>
+                <fullName>Confirm Pending</fullName>
+                <default>false</default>
+                <label>Confirm Pending</label>
+            </value>
+            <value>
+                <fullName>Confirm #1</fullName>
+                <default>false</default>
+                <label>Confirm #1</label>
+            </value>
+            <value>
+                <fullName>Confirm #2</fullName>
+                <default>false</default>
+                <label>Confirm #2</label>
+            </value>
+            <value>
+                <fullName>Confirm #3</fullName>
+                <default>false</default>
+                <label>Confirm #3</label>
+            </value>
+            <value>
+                <fullName>Confirm Completed</fullName>
+                <default>false</default>
+                <label>Confirm Completed</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

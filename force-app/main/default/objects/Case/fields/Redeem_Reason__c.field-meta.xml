@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Redeem_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Redeem Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>01. Re_finance ได้รับวงเงินสินเชื่อสูงกว่า</fullName>
+                <default>false</default>
+                <label>01. Re_finance ได้รับวงเงินสินเชื่อสูงกว่า</label>
+            </value>
+            <value>
+                <fullName>02. Re_finance ได้รับอัตราดอกเบี้ยต่ำกว่า</fullName>
+                <default>false</default>
+                <label>02. Re_finance ได้รับอัตราดอกเบี้ยต่ำกว่า</label>
+            </value>
+            <value>
+                <fullName>03.A Re_finance ได้รับวงเงินและอัตราดอกเบี้ย</fullName>
+                <default>false</default>
+                <label>03.A Re_finance ได้รับวงเงินและอัตราดอกเบี้ย</label>
+            </value>
+            <value>
+                <fullName>03.B Re_finance ได้รับวงเงินสูงกว่า เนื่องจากราคาประเมินฯTMBต่ำกว่า</fullName>
+                <default>false</default>
+                <label>03.B Re_finance ได้รับวงเงินสูงกว่า เนื่องจากราคาประเมินฯTMBต่ำกว่า</label>
+            </value>
+            <value>
+                <fullName>04. Re_finance เปลี่ยนแปลงเงื่อนไข แต่ไม่ได้รับอนุมัติ/อนุมัติต่างขอ</fullName>
+                <default>false</default>
+                <label>04. Re_finance เปลี่ยนแปลงเงื่อนไข แต่ไม่ได้รับอนุมัติ/อนุมัติต่างขอ</label>
+            </value>
+            <value>
+                <fullName>05. Re_finance ไม่พอใจบริการธนาคาร</fullName>
+                <default>false</default>
+                <label>05. Re_finance ไม่พอใจบริการธนาคาร</label>
+            </value>
+            <value>
+                <fullName>06. Re_finance ไม่สะดวกใช้บริการสาขา</fullName>
+                <default>false</default>
+                <label>06. Re_finance ไม่สะดวกใช้บริการสาขา</label>
+            </value>
+            <value>
+                <fullName>07. ชำระหนี้เสร็จสิ้น</fullName>
+                <default>false</default>
+                <label>07. ชำระหนี้เสร็จสิ้น</label>
+            </value>
+            <value>
+                <fullName>08. ผู้กู้/ผู้กู้ร่วมเสียชีวิต / ขัดแย้ง / หย่าร้าง</fullName>
+                <default>false</default>
+                <label>08. ผู้กู้/ผู้กู้ร่วมเสียชีวิต / ขัดแย้ง / หย่าร้าง</label>
+            </value>
+            <value>
+                <fullName>09. ขายหลักประกัน</fullName>
+                <default>false</default>
+                <label>09. ขายหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>10. เลิกกิจการ</fullName>
+                <default>false</default>
+                <label>10. เลิกกิจการ</label>
+            </value>
+            <value>
+                <fullName>11. สภาพคล่องเพียงพอ มี Bank อื่นเป็น Main Bank</fullName>
+                <default>false</default>
+                <label>11. สภาพคล่องเพียงพอ มี Bank อื่นเป็น Main Bank</label>
+            </value>
+            <value>
+                <fullName>12. สภาพคล่องเพียงพอ หมุนเวียนด้วยเงินสด/อายุมากแล้ว</fullName>
+                <default>false</default>
+                <label>12. สภาพคล่องเพียงพอ หมุนเวียนด้วยเงินสด/อายุมากแล้ว</label>
+            </value>
+            <value>
+                <fullName>13. สภาพคล่องเพียงพอ และไม่ต้องการเสีย Fee บสย.</fullName>
+                <default>false</default>
+                <label>13. สภาพคล่องเพียงพอ และไม่ต้องการเสีย Fee บสย.</label>
+            </value>
+            <value>
+                <fullName>14. สภาพคล่องเพียงพอ ไม่ต้องการเสียดอกเบี้ย</fullName>
+                <default>false</default>
+                <label>14. สภาพคล่องเพียงพอ ไม่ต้องการเสียดอกเบี้ย</label>
+            </value>
+            <value>
+                <fullName>15. นำหลักประกันไปใช้ประโยชน์อื่น/ไม่มีหลักประกันทดแทน</fullName>
+                <default>false</default>
+                <label>15. นำหลักประกันไปใช้ประโยชน์อื่น/ไม่มีหลักประกันทดแทน</label>
+            </value>
+            <value>
+                <fullName>16. เปลี่ยนแปลงเงื่อนไข แต่ไม่ได้รับอนุมัติ/อนุมัติต่างขอ</fullName>
+                <default>false</default>
+                <label>16. เปลี่ยนแปลงเงื่อนไข แต่ไม่ได้รับอนุมัติ/อนุมัติต่างขอ</label>
+            </value>
+            <value>
+                <fullName>17. ไม่พอใจบริการธนาคาร</fullName>
+                <default>false</default>
+                <label>17. ไม่พอใจบริการธนาคาร</label>
+            </value>
+            <value>
+                <fullName>18. ไม่สะดวกใช้บริการสาขา</fullName>
+                <default>false</default>
+                <label>18. ไม่สะดวกใช้บริการสาขา</label>
+            </value>
+            <value>
+                <fullName>19. ขาดสภาพคล่อง หักหลักประกันชำระหนี้</fullName>
+                <default>false</default>
+                <label>19. ขาดสภาพคล่อง หักหลักประกันชำระหนี้</label>
+            </value>
+            <value>
+                <fullName>20. Brake ไถ่ถอนโดย CS เจรจา</fullName>
+                <default>false</default>
+                <label>20. Brake ไถ่ถอนโดย CS เจรจา</label>
+            </value>
+            <value>
+                <fullName>21. Brake ไถ่ถอนโดย Zone เจรจา</fullName>
+                <default>false</default>
+                <label>21. Brake ไถ่ถอนโดย Zone เจรจา</label>
+            </value>
+            <value>
+                <fullName>22. Brake ไถ่ถอนโดย ลูกค้า</fullName>
+                <default>false</default>
+                <label>22. Brake ไถ่ถอนโดย ลูกค้า</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

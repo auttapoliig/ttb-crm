@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Region_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Category__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>SLA_Day__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Commit_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Is_My_Region__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Region Case</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Auto_and_Retail_Lending_Marketing_TL</role>
+        <role>DTB_Payment</role>
+        <role>Region_2_6900</role>
+        <role>Region_3_9200</role>
+        <role>Region_4_7100</role>
+        <role>Region_5_7400</role>
+        <role>Region_6_7800</role>
+    </sharedTo>
+</ListView>

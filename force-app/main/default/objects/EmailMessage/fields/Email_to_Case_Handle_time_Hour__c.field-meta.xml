@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_to_Case_Handle_time_Hour__c</fullName>
+    <description>Email Handling time Start from Agent accept email(case) from Omni Until Agent reply email</description>
+    <externalId>false</externalId>
+    <formula>IF( OR(Text(Status) =   &quot;Sent&quot;,Text(Status) =   &quot;ส่งแล้ว&quot; ), (MessageDate -  Parent.Accept_Datetime__c ) * 24,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Email to Case Handle time (Hour)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

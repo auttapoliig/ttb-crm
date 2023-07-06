@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Case_Answered__c</fullName>
+    <description>for report : Daily Performance [email]</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT (ISPICKVAL( Status , &quot;New&quot;)), true, false)</formula>
+    <label>Number Case Answered</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

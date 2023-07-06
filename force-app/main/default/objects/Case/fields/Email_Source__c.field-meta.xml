@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Email Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email - TMBWeb</fullName>
+                <default>false</default>
+                <label>Email - TMBWeb</label>
+            </value>
+            <value>
+                <fullName>Email - Touch</fullName>
+                <default>false</default>
+                <label>Email - Touch</label>
+            </value>
+            <value>
+                <fullName>Email - ME</fullName>
+                <default>false</default>
+                <label>Email - ME</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Email - ttbweb</fullName>
+                <default>false</default>
+                <label>Email - ttbweb</label>
+            </value>
+            <value>
+                <fullName>Email - ttb Advisory</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email - ttb Advisory</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

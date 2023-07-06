@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RGM_Approve__c</fullName>
+    <externalId>false</externalId>
+    <label>RGM Approve</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>อนุมัติไถ่ถอนทันที</fullName>
+                <default>false</default>
+                <label>อนุมัติไถ่ถอนทันที</label>
+            </value>
+            <value>
+                <fullName>อนุมัติไถ่ถอน 45 วัน</fullName>
+                <default>false</default>
+                <label>อนุมัติไถ่ถอน 45 วัน</label>
+            </value>
+            <value>
+                <fullName>ไม่อนุมัติไถ่ถอน</fullName>
+                <default>false</default>
+                <label>ไม่อนุมัติไถ่ถอน</label>
+            </value>
+            <value>
+                <fullName>ชะลอไถ่ถอน</fullName>
+                <default>false</default>
+                <label>ชะลอไถ่ถอน</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

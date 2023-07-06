@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Redeem_Not_Pass_Criteria__c</fullName>
+    <externalId>false</externalId>
+    <label>Redeem Not Pass Criteria Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>หลักประกัน ไม่ผ่านเกณฑ์/ไม่เพียงพอ</fullName>
+                <default>false</default>
+                <label>หลักประกัน ไม่ผ่านเกณฑ์/ไม่เพียงพอ</label>
+            </value>
+            <value>
+                <fullName>ราคาประเมิน สู้ธ.คู่แข่งไม่ได้</fullName>
+                <default>false</default>
+                <label>ราคาประเมิน สู้ธ.คู่แข่งไม่ได้</label>
+            </value>
+            <value>
+                <fullName>DBR ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>DBR ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>SLL ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>SLL ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>BRL ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>BRL ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>NCB ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>NCB ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>WC ไม่ผ่านเกณฑ์ / OVER WC NEED</fullName>
+                <default>false</default>
+                <label>WC ไม่ผ่านเกณฑ์ / OVER WC NEED</label>
+            </value>
+            <value>
+                <fullName>MS Score ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>MS Score ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>High Risk</fullName>
+                <default>false</default>
+                <label>High Risk</label>
+            </value>
+            <value>
+                <fullName>CSI ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>CSI ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>Pricing Rate สู้อัตราดอกเบี้ยไม่ได้</fullName>
+                <default>false</default>
+                <label>Pricing Rate สู้อัตราดอกเบี้ยไม่ได้</label>
+            </value>
+            <value>
+                <fullName>TMB ไม่ใช่ MAIN BANK</fullName>
+                <default>false</default>
+                <label>TMB ไม่ใช่ MAIN BANK</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

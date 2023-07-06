@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ATM_Action__c</fullName>
+    <externalId>false</externalId>
+    <label>ATM Action</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 ปรับปรุงคืนเงินให้กับลูกค้า</fullName>
+                <default>false</default>
+                <label>1 ปรับปรุงคืนเงินให้กับลูกค้า</label>
+            </value>
+            <value>
+                <fullName>2 ปรับปรุงคืนเงินให้กับลูกค้า (ด่วน)</fullName>
+                <default>false</default>
+                <label>2 ปรับปรุงคืนเงินให้กับลูกค้า (ด่วน)</label>
+            </value>
+            <value>
+                <fullName>3 ยืนยันรายการปกติ</fullName>
+                <default>false</default>
+                <label>3 ยืนยันรายการปกติ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
