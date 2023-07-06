@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CaseAutoCreateTrigger</members>
+        <members>PendingServiceRoutingTrigger</members>
+        <members>CaseChatSessionTrigger</members>
+        <members>chatSessionTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>CaseAutoCreateTriggerHandler</members>
+        <members>ChatSessionTriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Case.Day1__c</members>
+        <members>Case.Day10__c</members>
+        <members>Case.Day11__c</members>
+        <members>Case.Day12__c</members>
+        <members>Case.Day13__c</members>
+        <members>Case.Day14__c</members>
+        <members>Case.Day15__c</members>
+        <members>Case.Day16__c</members>
+        <members>Case.Day17__c</members>
+        <members>Case.Day18__c</members>
+        <members>Case.Day19__c</members>
+        <members>Case.Day2__c</members>
+        <members>Case.Day20__c</members>
+        <members>Case.Day21__c</members>
+        <members>Case.Day22__c</members>
+        <members>Case.Day23__c</members>
+        <members>Case.Day24__c</members>
+        <members>Case.Day25__c</members>
+        <members>Case.Day26__c</members>
+        <members>Case.Day27__c</members>
+        <members>Case.Day28__c</members>
+        <members>Case.Day29__c</members>
+        <members>Case.Day3__c</members>
+        <members>Case.Day30__c</members>
+        <members>Case.Day31__c</members>
+        <members>Case.Day4__c</members>
+        <members>Case.Day5__c</members>
+        <members>Case.Day6__c</members>
+        <members>Case.Day7__c</members>
+        <members>Case.Day8__c</members>
+        <members>Case.Day9__c</members>
+        <members>Case.Number_Case_Answered__c</members>
+        <members>Case.Number_Case_Offered__c</members>
+        <members>Case.Origin</members>
+        <members>ChatSession.SLA_No_Value__c</members>
+        <members>ChatSession.Interval__c</members>
+        <members>ChatSession.Number_case_answered__c</members>
+        <members>ChatSession.Number_case_offered__c</members>
+        <members>ChatSession.Number_Case_UnAnswered__c</members>
+        <members>ChatSession.Number_Case_UnAnswered__c</members>
+        <members>ChatSession.Over_SLA__c</members>
+        <members>ChatSession.OwnerId</members>
+        <members>ChatSession.SLA_No_Value__c</members>
+        <members>ChatSession.WaitingTime_Sec__c</members>
+        <members>ChatSession.Within_SLA__c</members>
+        <members>ChatSession__c.Authentication__c</members>
+        <members>ChatSession__c.First_Message_DateTime__c</members>
+        <members>ChatSession__c.isTracking__c</members>
+        <members>Email Message.Over_24_hrs__c</members>
+        <members>Email Message.within_24_hrs__c</members>
+        <members>Survey.IsDetractors__c</members>
+        <members>Survey.IsPromotors__c</members>
+        <members>Survey.NPS_Group__c</members>
+        <members>Survey.Survey_Submitted__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>SLA_Config__mdt</members>
+        <members>Chat_Message_Template_mdt</members>
+        <members>Chat_Topic_mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Email_Message_with_Email_Case</members>
+        <members>Chat_session_with_transfer_log</members>
+        <members>Users_and_Presence</members>
+        <members>Chat_session_with_post_survey</members>
+        <members>ChatSession_with_Case</members>
+        <members>Post_survey_with_Chat_session</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>nonVoiceDashboards</members>
+        <members>nonVoiceDashboards/RAxAWjCbFbqjzzzBMdEfxwoXvoPhAC</members>
+        <members>nonVoiceDashboards/zHDpOfYdSOvhceAHOUAVwEzdsdNRAU</members>
+        <members>nonVoiceDashboards/zvwenCECVXorSTBswHyTbhVUypnXkL</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
+        <members>Case-Service Layout</members>
+        <members>Case-Closed Service Layout</members>
+        <members>Case-Closed SE Service</members>
+        <members>Case-Closed CC Service Lightning</members>
+        <members>Case-SE Service</members>
+        <members>Case-CC Service Lightning</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>01-Email</members>
+        <members>01-Email/nonVoice_Email_Daily_Performance</members>
+        <members>01-Email/X04_Email_Productivity_by_interval_pcP</members>
+        <members>01-Email/X07_Email_SL_by_agent_by_interval_7Jn</members>
+        <members>02-Chat/back_up_10_Agent_work_time_6CZ</members>
+        <members>01-Email/X11_Email_Summary_staff_performance_OQA</members>
+        <members>02-Chat/Test_Close_Reason_Report_Vnq</members>
+        <members>02-Chat/X15_Chats_post_survey_funnel_JAR</members>
+        <members>Overall Nonvoice Channel/X01Today_OSAT_Score_gkF</members>
+        <members>Overall Nonvoice Channel/X02Today_NPS_Score_Kz4</members>
+        <members>Overall Nonvoice Channel/X02Today_NPS_Category_41M</members>
+        <members>Overall Nonvoice Channel/X04Today_Total_Request_XCH</members>
+        <members>Overall Nonvoice Channel/X05Today_Total_Response_SQA</members>
+        <members>Overall Nonvoice Channel/X06Daily_NPS_Score_by_Category_Bqi</members>
+        <members>Overall Nonvoice Channel/X07Monthly_OSAT_Score_gI7</members>
+        <members>Overall Nonvoice Channel/X08Monthly_NPS_Score_LQZ</members>
+        <members>Overall Nonvoice Channel/X09Monthly_NPS_Category_8tX</members>
+        <members>Overall Nonvoice Channel/X09Monthly_Total_Request_jd8</members>
+        <members>Overall Nonvoice Channel/X11Monthly_Total_Response_GvH</members>
+        <members>Overall Nonvoice Channel/X12Monthly_NPS_Score_Category_IMV</members>
+        <members>Overall Nonvoice Channel/X13Today_Top_3_Case_Category_kr8</members>
+        <members>Overall Nonvoice Channel by touchpoint/X01Today_NPS_Score_by_Channel_Y2u</members>
+        <members>Overall Nonvoice Channel by touchpoint/X02MTD_Productivity_uBE</members>
+        <members>Overall Nonvoice Channel by touchpoint/X04Monthly_NPS_Score_by_Channel_e9a</members>
+        <members>Overall Nonvoice Channel by touchpoint/X05YTD_Productivity_ct5</members>
+        <members>Service level by Channel/X04Service_level_OneApp</members>
+        <members>Service level by Channel/X01Service_level_Website_IUf</members>
+        <members>Service level by Channel/X02Service_level_Facebook_qaW</members>
+        <members>Service level by Channel/X03Service_level_Line_NKK</members>
+        <members>Service level by Channel/X04Live_Chat_Transaction_SkM</members>
+        <members>Service level by Channel/X06Email_Transaction_PHv</members>
+        <members>02-Chat/X031_Daily_performance_Leave_Msg_Cgh</members>
+        <members>02-Chat/X032_Daily_performance_Live_chat_IwY</members>
+        <members>02-Chat/X061_Productivity_by_Interval_Leave_Msg_Bqx</members>
+        <members>02-Chat/X062_Productivity_by_Interval_Live_Chat_tcA</members>
+        <members>02-Chat/X091_SL_by_agent_by_Interval_Leave_Msg_ZW4</members>
+        <members>02-Chat/X092_SL_by_agent_by_Interval_Live_Chat_XH8</members>
+        <members>02-Chat/X131_Summary_Staff_PerformanceLeave_Msg_HqT</members>
+        <members>02-Chat/X13_Chat_Summary_staff_performance_1gI</members>
+        <members>02-Chat/X15_Chats_post_survey_funnel_JAR</members>
+        <members>02-Chat/X16_Chats_post_survey_funnel_CIE</members>
+        <members>Overall Nonvoice Channel by touchpoint/X01Today_NPS_Score_by_Channel_Y2u</members>
+        <members>Overall Nonvoice Channel by touchpoint/X02MTD_Productivity_uBE</members>
+        <members>Overall Nonvoice Channel by touchpoint/X03Daily_NPS_Score_Category_sfn</members>
+        <members>Overall Nonvoice Channel by touchpoint/X04Monthly_NPS_Score_by_Channel_e9a</members>
+        <members>Overall Nonvoice Channel by touchpoint/X05YTD_Productivity_ct5</members>
+        <members>Overall Nonvoice Channel by touchpoint/X06Monthly_NPS_Score_Category_eZY</members>
+        <members>Service level by Channel/X01Service_level_Website_IUf</members>
+        <members>Service level by Channel/X02Service_level_Facebook_qaW</members>
+        <members>Service level by Channel/X03Service_level_Line_NKK</members>
+        <members>Service level by Channel/X04Service_level_OneApp</members>
+        <members>Service level by Channel/X04Live_Chat_Transaction_SkM</members>
+        <members>Service level by Channel/X06Email_Transaction_PHv</members>
+        <members>Service level by Channel/X04Leave_message_Transaction_Z7P</members>
+        <members>Service level by Channel/Social_Post_Transaction_x6z</members>
+        <members>Service level by Channel/X06SLA_Chat_On_time_QVq</members>
+        <members>Service level by Channel/X05SLA_Leave_Message_On_time</members>
+        <members>Service level by Channel/SLAPostonTime_sp5</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>Check_validate_service_template</members>
+        <members>Check_validate_service_type_matrix_code</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>58.0</version>
+</Package>
