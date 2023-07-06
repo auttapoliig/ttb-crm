@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Turn_around_time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(DATEVALUE(RTL_End_Date__c)),
+      TODAY()-DATEVALUE(RTL_Start_Date__c),
+      DATEVALUE(RTL_End_Date__c)-DATEVALUE(RTL_Start_Date__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Turn around time</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

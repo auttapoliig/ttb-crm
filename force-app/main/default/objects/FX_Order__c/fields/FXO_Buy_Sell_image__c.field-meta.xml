@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FXO_Buy_Sell_image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(FXO_BuySell__c,&quot;Sell&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=0159000000FdBtU&quot; , &quot;Sell&quot; ,20, 40)
+,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0159000000FdBtT&quot; , &quot;Buy&quot; , 20, 40) )</formula>
+    <label>Buy = Green ; Sell = Red</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

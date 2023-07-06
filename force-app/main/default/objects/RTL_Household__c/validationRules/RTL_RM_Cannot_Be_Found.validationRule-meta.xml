@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_RM_Cannot_Be_Found</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  AND(NOT(CONTAINS($Profile.Name,&quot;Integration&quot;)),($Profile.Name != &quot;System Administrator&quot;),($Profile.Name != &quot;TMB System Administrator&quot;)),
+OR(RTL_RM__c = &apos;&apos;, ISNULL( RTL_RM__c  )))</errorConditionFormula>
+    <errorMessage>No RM/BM or Approver found.</errorMessage>
+</ValidationRule>

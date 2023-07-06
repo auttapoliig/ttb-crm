@@ -1,0 +1,36 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="acceptPostButtonController">
+    <aura:attribute name="userId" type="Id" default="{! $SObjectType.CurrentUser.Id }" />
+    <aura:attribute name="showspinner" type="Boolean" default="false" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:html tag="style">
+        .slds-button.slds-modal__close{
+        display:none;
+        }
+    </aura:html>
+
+
+
+    <lightning:card class="slds-is-relative">
+        <aura:if isTrue="{!v.showspinner}">
+            <div class="backgroundInverse">
+                <lightning:spinner alternativeText="Loading" variant="brand" />
+            </div>
+        </aura:if> 
+        <aura:set attribute="title">
+            <div class="header">
+                Accept Post
+            </div>
+        </aura:set>
+        <div class="slds-box slds-text-align_center">
+            <p class="center">Confirm to accept this post?</p>
+        </div>
+        
+        <aura:set attribute="footer">
+            <div class="slds-modal__footer slds-modal__footer_directional">
+                <lightning:button label="Close" onclick="{!c.handleCancel}" />
+                <lightning:button variant="brand" label="Confirm" onclick="{!c.handleConfirm}" />
+            </div>
+        </aura:set>
+    </lightning:card>
+
+</aura:component>

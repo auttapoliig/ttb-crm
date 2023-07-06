@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ending_loan_outstanding__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>2) Ending loan outstanding</description>
+    <externalId>false</externalId>
+    <label>Ending loan outstanding</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

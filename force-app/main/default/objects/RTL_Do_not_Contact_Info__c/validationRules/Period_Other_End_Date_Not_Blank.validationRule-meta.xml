@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_Other_End_Date_Not_Blank</fullName>
+    <active>true</active>
+    <description>check if period = other, end date can not be blank</description>
+    <errorConditionFormula>IF( ISPICKVAL(Period__c, &apos;Other&apos;) &amp;&amp; ISBLANK(End_Date__c)
+, TRUE
+, FALSE  )</errorConditionFormula>
+    <errorDisplayField>End_Date__c</errorDisplayField>
+    <errorMessage>Period is Other, please input the End Date.</errorMessage>
+</ValidationRule>

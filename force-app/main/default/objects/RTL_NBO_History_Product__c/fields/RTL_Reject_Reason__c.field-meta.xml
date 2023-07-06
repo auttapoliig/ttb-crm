@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reject_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reject Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Already used with other bank</fullName>
+                <default>false</default>
+                <label>Already used with other bank</label>
+            </value>
+            <value>
+                <fullName>Business partner - reputation / bad experience</fullName>
+                <default>false</default>
+                <label>Business partner - reputation / bad experience</label>
+            </value>
+            <value>
+                <fullName>Channel - inconvenient</fullName>
+                <default>false</default>
+                <label>Channel - inconvenient</label>
+            </value>
+            <value>
+                <fullName>CM - Just Open/Fully reduce TAX</fullName>
+                <default>false</default>
+                <label>CM - Just Open/Fully reduce TAX</label>
+            </value>
+            <value>
+                <fullName>CM - Bad experience with Product</fullName>
+                <default>false</default>
+                <label>CM - Bad experience with Product</label>
+            </value>
+            <value>
+                <fullName>CM - No purchasing power</fullName>
+                <default>false</default>
+                <label>CM - No purchasing power</label>
+            </value>
+            <value>
+                <fullName>CM - Online security concerns</fullName>
+                <default>false</default>
+                <label>CM - Online security concerns</label>
+            </value>
+            <value>
+                <fullName>CM - Refuse since beginning</fullName>
+                <default>false</default>
+                <label>CM - Refuse since beginning</label>
+            </value>
+            <value>
+                <fullName>CM - Risk concern</fullName>
+                <default>false</default>
+                <label>CM - Risk concern</label>
+            </value>
+            <value>
+                <fullName>Marketing - NOT attractive promotion</fullName>
+                <default>false</default>
+                <label>Marketing - NOT attractive promotion</label>
+            </value>
+            <value>
+                <fullName>Marketing - Competitor offer better promotion.</fullName>
+                <default>false</default>
+                <label>Marketing - Competitor offer better promotion.</label>
+            </value>
+            <value>
+                <fullName>Process - Complicated application &amp; approval</fullName>
+                <default>false</default>
+                <label>Process - Complicated application &amp; approval</label>
+            </value>
+            <value>
+                <fullName>Product - Feature</fullName>
+                <default>false</default>
+                <label>Product - Feature</label>
+            </value>
+            <value>
+                <fullName>Product - Credit Limit</fullName>
+                <default>false</default>
+                <label>Product - Credit Limit</label>
+            </value>
+            <value>
+                <fullName>Product - Protection</fullName>
+                <default>false</default>
+                <label>Product - Protection</label>
+            </value>
+            <value>
+                <fullName>Product - Not attractive Return, NAV, Dividend</fullName>
+                <default>false</default>
+                <label>Product - Not attractive Return, NAV, Dividend</label>
+            </value>
+            <value>
+                <fullName>Product - Interest</fullName>
+                <default>false</default>
+                <label>Product - Interest</label>
+            </value>
+            <value>
+                <fullName>Product - Policy</fullName>
+                <default>false</default>
+                <label>Product - Policy</label>
+            </value>
+            <value>
+                <fullName>Product - Too high Fee</fullName>
+                <default>false</default>
+                <label>Product - Too high Fee</label>
+            </value>
+            <value>
+                <fullName>ttb - reputation concern</fullName>
+                <default>false</default>
+                <label>ttb - reputation concern</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - Business experience</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - Business experience</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - Quarantee</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - Quarantee</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - Income</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - Income</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - Financial statement(NCB)</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - Financial statement(NCB)</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - Occupation/Business Type</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - Occupation/Business Type</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy - location</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy - location</label>
+            </value>
+            <value>
+                <fullName>CM - No need</fullName>
+                <default>false</default>
+                <label>CM - No need</label>
+            </value>
+            <value>
+                <fullName>CM - Adequate product holding</fullName>
+                <default>false</default>
+                <label>CM - Adequate product holding</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

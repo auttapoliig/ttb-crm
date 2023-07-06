@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Day_of_Generate_date_Validation_Date</fullName>
+    <active>true</active>
+    <description>Day of generate date Must be 1 to 31 if Unit of Duration is &apos;Month&apos;
+if &apos;Days&apos; must be blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Days_Month__c, &quot;Days&quot;), IF(ISBLANK(Day_of_the_month__c), false, true), false)</errorConditionFormula>
+    <errorDisplayField>Day_of_the_month__c</errorDisplayField>
+    <errorMessage>Day of generate date Must be Blank if Unit of Duration is &apos;Days&apos;</errorMessage>
+</ValidationRule>

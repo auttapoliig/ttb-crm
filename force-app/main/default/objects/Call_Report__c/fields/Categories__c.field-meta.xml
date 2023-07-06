@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Categories__c</fullName>
+    <externalId>false</externalId>
+    <label>Categories</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre boarding</fullName>
+                <default>false</default>
+                <label>Pre boarding</label>
+            </value>
+            <value>
+                <fullName>On-boarding</fullName>
+                <default>false</default>
+                <label>On-boarding</label>
+            </value>
+            <value>
+                <fullName>Post-boarding</fullName>
+                <default>false</default>
+                <label>Post-boarding</label>
+            </value>
+            <value>
+                <fullName>SE Default</fullName>
+                <default>false</default>
+                <label>SE Default</label>
+            </value>
+            <value>
+                <fullName>Initiatives</fullName>
+                <default>false</default>
+                <label>Initiatives</label>
+            </value>
+            <value>
+                <fullName>Float Charge</fullName>
+                <default>false</default>
+                <label>Float Charge</label>
+            </value>
+            <value>
+                <fullName>RPD Team Face To Face Visit</fullName>
+                <default>false</default>
+                <label>RPD Team Face To Face Visit</label>
+            </value>
+            <value>
+                <fullName>RPD Team Telephone Call</fullName>
+                <default>false</default>
+                <label>RPD Team Telephone Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

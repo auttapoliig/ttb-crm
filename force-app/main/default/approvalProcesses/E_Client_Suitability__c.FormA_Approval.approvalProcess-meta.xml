@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <submitter>AL_WS_Loan_Disbursement_SettlementTL</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CCBO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>CS_RM__c</field>
+        <field>CS_Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Select_RM_TH_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>RM TH Approval</label>
+        <name>RM_TH_Approval</name>
+    </approvalStep>
+    <description>Send to RM TH</description>
+    <emailTemplate>unfiled$public/CS_Alert_to_RM_TH_Approval_v2</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( CS_RM__r.Id = $User.Id,
+OR ((  CS_Stamped_Customer_Segment__c  = &quot;CB&quot;),
+ (CS_Stamped_Customer_Segment__c = &quot;MB&quot;),
+(CS_Stamped_Customer_Segment__c = &quot;FI&quot;)),
+ ISPICKVAL( CS_Customer_Survey_A__r.Status__c , &quot;Ready for Review&quot;),
+ OR (ISPICKVAL( CS_Status__c , &quot;Reviewing&quot;),  ISPICKVAL( CS_Status__c , &quot;RM TH Rejected&quot;) )  
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Alert_email_approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Change_CS_status_to_Pending_Sales</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>CS_Stamp_RM_TH</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_RM_TH_Approved_Date_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_RM_TH_name_to_field</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Sales_TH_Name</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Record_Type_to_Pending_Sale</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Alert_email_to_submitter</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Change_CS_Status_to_RM_TH_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Change_Record_Type_to_Reviewing</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>CS_status_auto_to_Pending_RM_TH</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>RM_Stamp_Submit_By</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>RM_Stamp_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>FormA Approval</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Change_Record_Type_to_Reviewing</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Recall_Status_to_Reviewing</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_when_edit_master_Start_date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  Contains(RecordType.Name, &apos;Master Campaign&apos;) , 
+      StartDate &gt;  Stamp_Child_Start_Date__c )</errorConditionFormula>
+    <errorDisplayField>StartDate</errorDisplayField>
+    <errorMessage>The start date of master campaign should be less than the child campaign start date.</errorMessage>
+</ValidationRule>

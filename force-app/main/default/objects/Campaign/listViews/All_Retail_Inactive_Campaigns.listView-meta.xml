@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Retail_Inactive_Campaigns</fullName>
+    <columns>RTL_Campaign_Code_10_digits__c</columns>
+    <columns>RTL_Campaign_Type_child__c</columns>
+    <columns>CAMPAIGN.RECORDTYPE</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>RTL_Campaign_Channel__c</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>RTL_Total_Members__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.ACTIVE</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Campaign.Dummy_Campaign,Campaign.Commercial</value>
+    </filters>
+    <label>All Retail Inactive Campaigns</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>CEO</role>
+        <role>CRBO</role>
+    </sharedTo>
+</ListView>

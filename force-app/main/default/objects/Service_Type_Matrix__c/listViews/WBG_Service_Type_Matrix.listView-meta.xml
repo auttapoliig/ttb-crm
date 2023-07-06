@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WBG_Service_Type_Matrix</fullName>
+    <columns>Validate_Code__c</columns>
+    <columns>Segment__c</columns>
+    <columns>Service_Level1__c</columns>
+    <columns>Service_Level2__c</columns>
+    <columns>Service_Level3__c</columns>
+    <columns>Service_Level4__c</columns>
+    <columns>Responsible_BU__c</columns>
+    <columns>Closed_By_BU__c</columns>
+    <columns>NAME</columns>
+    <columns>Service_Template__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Segment__c</field>
+        <operation>equals</operation>
+        <value>WBG</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Service_Level1__c</field>
+        <operation>equals</operation>
+        <value>Request</value>
+    </filters>
+    <filters>
+        <field>Service_Level2__c</field>
+        <operation>equals</operation>
+        <value>Credit</value>
+    </filters>
+    <label>WBG Service Type Matrix</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Preferred_Branch__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>สาขาที่ไม่รับบริการคือ สาขา Flagship ได้แก่ ไอคอน สยาม (283) และ อาคารยูไนเต็ด เซ็นเตอร์ สีลม (252), ระบุ WAT เพื่อส่งให้ Investment Line, ระบุ DSA เพื่อส่งให้ Mortgage Sales</inlineHelpText>
+    <label>Preferred Branch</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Branch_and_Zone__c.IsActive__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Branch_and_Zone__c</referenceTo>
+    <relationshipLabel>Referral Layout</relationshipLabel>
+    <relationshipName>Referrals</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

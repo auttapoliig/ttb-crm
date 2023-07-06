@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Not_Allow_Edit_Accepted_Product</fullName>
+    <active>true</active>
+    <description>Accepted NBO Product cannot be edit</description>
+    <errorConditionFormula>AND(ISPICKVAL(PRIORVALUE(RTL_Status__c),&apos;Accepted&apos;),  
+   ISCHANGED(RTL_Status__c) 
+   )</errorConditionFormula>
+    <errorMessage>Accepted NBO Product cannot be edit</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HedgingPolicy__c</fullName>
+    <description>Hedging policy</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Hedging policy</inlineHelpText>
+    <label>HedgingPolicy</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No hedge</fullName>
+                <default>false</default>
+                <label>No hedge</label>
+            </value>
+            <value>
+                <fullName>Natural hedge</fullName>
+                <default>false</default>
+                <label>Natural hedge</label>
+            </value>
+            <value>
+                <fullName>Spot</fullName>
+                <default>false</default>
+                <label>Spot</label>
+            </value>
+            <value>
+                <fullName>Forward</fullName>
+                <default>false</default>
+                <label>Forward</label>
+            </value>
+            <value>
+                <fullName>Option</fullName>
+                <default>false</default>
+                <label>Option</label>
+            </value>
+            <value>
+                <fullName>matching</fullName>
+                <default>false</default>
+                <label>matching</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,2606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retail_Campaign_Member</fullName>
+    <active>true</active>
+    <description>Campaign Member Record Type for Retail</description>
+    <label>Retail Campaign Member</label>
+    <picklistValues>
+        <picklist>CampaignStage__c</picklist>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncontact</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fulfillment_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not eligible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_IsCarBooked__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_available_time__c</picklist>
+        <values>
+            <fullName>12%3A01-13%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A01-17%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A01-19%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A00 - 12%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ตลอดเวลาทำการ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_car_bought_from__c</picklist>
+        <values>
+            <fullName>H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_contact_channel__c</picklist>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_installment_periods__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>72</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>84</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Attendant_Status__c</picklist>
+        <values>
+            <fullName>1%2E ล%E0%B8%B9กค%E0%B9%89าให%E0%B9%89ความย%E0%B8%B4นยอม ท%E0%B8%B5%E0%B9%88สาขา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E ล%E0%B8%B9กค%E0%B9%89าให%E0%B9%89ความย%E0%B8%B4นยอม โดยให%E0%B9%89เข%E0%B9%89าพบ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E ล%E0%B8%B9กค%E0%B9%89าให%E0%B9%89ความย%E0%B8%B4นยอม ผ%E0%B9%88าน TMB Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ให%E0%B9%89ความย%E0%B8%B4นยอม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E อ%E0%B8%B7%E0%B9%88นๆ %28อธ%E0%B8%B4บายเพ%E0%B8%B4%E0%B9%88มเต%E0%B8%B4มในช%E0%B9%88อง ข%E0%B9%89อค%E0%B8%B4ดเห%E0%B9%87น%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_CampaignCategory__c</picklist>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Method__c</picklist>
+        <values>
+            <fullName>AL Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Me Later</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Me Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Status_CC__c</picklist>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact %28Walk-in%2FCall-in%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Re-attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unused</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Status__c</picklist>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-attempt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Invitation_Status__c</picklist>
+        <values>
+            <fullName>1%2E ล%E0%B8%B9กค%E0%B9%89าร%E0%B8%B1บฟ%E0%B8%B1งเก%E0%B9%87บไปพ%E0%B8%B4จารณา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ร%E0%B8%B1บฟ%E0%B8%B1ง เพราะไม%E0%B9%88พอใจ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E ล%E0%B8%B9กค%E0%B9%89าต%E0%B9%89องการส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเพ%E0%B8%B4%E0%B9%88ม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E อ%E0%B8%B7%E0%B9%88นๆ %28อธ%E0%B8%B4บายเพ%E0%B8%B4%E0%B9%88มเต%E0%B8%B4มท%E0%B8%B5%E0%B9%88ช%E0%B9%88อง %E2%80%9Cข%E0%B9%89อค%E0%B8%B4ดเห%E0%B9%87น%E2%80%9D%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดต%E0%B9%88อไม%E0%B9%88ได%E0%B9%89-ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ร%E0%B8%B1บสาย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดต%E0%B9%88อไม%E0%B9%88ได%E0%B9%89-สายไม%E0%B9%88ว%E0%B9%88าง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดต%E0%B9%88อไม%E0%B9%88ได%E0%B9%89-หมายเลขไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง%2Fหมายเลขย%E0%B8%B1งไม%E0%B9%88เป%E0%B8%B4ดให%E0%B9%89บร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ย%E0%B8%B7นย%E0%B8%B1นต%E0%B8%B1วตนไม%E0%B9%88ผ%E0%B9%88าน - ให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89าต%E0%B8%B4ดต%E0%B9%88อมาใหม%E0%B9%88</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-ขอปลดล%E0%B9%87อคการใช%E0%B9%89งาน ttb touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-ต%E0%B8%B4ดตามสถานะเข%E0%B9%89าร%E0%B9%88วมโครงการพ%E0%B8%B1กชำระหน%E0%B8%B5%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลการเปล%E0%B8%B5%E0%B9%88ยนแปลงบ%E0%B8%B1ญช%E0%B8%B5และผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8Cจากธนชาตเป%E0%B9%87น ttb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลเก%E0%B8%B5%E0%B9%88ยวก%E0%B8%B1บส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อบ%E0%B9%89าน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลเก%E0%B8%B5%E0%B9%88ยวก%E0%B8%B1บส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อรถยนต%E0%B9%8C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลเก%E0%B8%B5%E0%B9%88ยวก%E0%B8%B1บส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อส%E0%B9%88วนบ%E0%B8%B8คคล</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลในบ%E0%B8%B1ญช%E0%B8%B5บ%E0%B8%B1ตรเครด%E0%B8%B4ต</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามข%E0%B9%89อม%E0%B8%B9ลในบ%E0%B8%B1ญช%E0%B8%B5เง%E0%B8%B4นฝาก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามมาตรการและขอเข%E0%B9%89าร%E0%B9%88วมโครงการพ%E0%B8%B1กชำระหน%E0%B8%B5%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-สอบถามเร%E0%B8%B7%E0%B9%88องอ%E0%B8%B7%E0%B9%88นๆ %28โปรดระบ%E0%B8%B8รายละเอ%E0%B8%B5ยดในช%E0%B9%88อง ข%E0%B9%89อค%E0%B8%B4ดเห%E0%B9%87น%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งประสานงาน CRM-แจ%E0%B9%89งป%E0%B8%B1ญหาการใช%E0%B9%89งาน Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามข%E0%B9%89อม%E0%B8%B9ลการเปล%E0%B8%B5%E0%B9%88ยนแปลงบ%E0%B8%B1ญช%E0%B8%B5และผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8Cจากธนชาตเป%E0%B9%87น ttb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามข%E0%B9%89อม%E0%B8%B9ลในบ%E0%B8%B1ญช%E0%B8%B5เง%E0%B8%B4นฝาก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามมาตรการและขอเข%E0%B9%89าร%E0%B9%88วมโครงการพ%E0%B8%B1กชำระหน%E0%B8%B5%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามว%E0%B8%B4ธ%E0%B8%B5การสม%E0%B8%B1ครและการใช%E0%B9%89งาน ttb touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามเร%E0%B8%B7%E0%B9%88องส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อรถยนต%E0%B9%8C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-สอบถามเร%E0%B8%B7%E0%B9%88องอ%E0%B8%B7%E0%B9%88นๆ %28โปรดระบ%E0%B8%B8รายละเอ%E0%B8%B5ยดในช%E0%B9%88อง ข%E0%B9%89อค%E0%B8%B4ดเห%E0%B9%87น%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ-ได%E0%B9%89ร%E0%B8%B1บการต%E0%B8%B4ดต%E0%B9%88อกล%E0%B8%B1บและได%E0%B9%89ร%E0%B8%B1บบร%E0%B8%B4การแล%E0%B9%89ว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ไม%E0%B9%88สะดวกร%E0%B8%B1บฟ%E0%B8%B1งการช%E0%B8%B5%E0%B9%89แจง - จะต%E0%B8%B4ดต%E0%B9%88อมาใหม%E0%B9%88อ%E0%B8%B5กคร%E0%B8%B1%E0%B9%89ง</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_1__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_2__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_3__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_4__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_5__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_1__c</picklist>
+        <values>
+            <fullName>AUTO LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_2__c</picklist>
+        <values>
+            <fullName>AUTO LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_3__c</picklist>
+        <values>
+            <fullName>AUTO LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_4__c</picklist>
+        <values>
+            <fullName>AUTO LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_5__c</picklist>
+        <values>
+            <fullName>AUTO LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_1__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_2__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_3__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_4__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_5__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_CC__c</picklist>
+        <values>
+            <fullName>Busy line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer is not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reach Maximum Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receiver is not prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason__c</picklist>
+        <values>
+            <fullName>Busy line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact number not found</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer is not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Prescreening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reach Maximum Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receiver is not prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_1__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_2__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_3__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_4__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_5__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_1__c</picklist>
+        <values>
+            <fullName>AL PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIRE PURCHASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIXED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>READY CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ROYAL TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA INFINITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ABSOLUTE CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB GLOBAL HOUSE CREDIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ROYAL TOP BRASS %28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO CHILL CREDIT CARD%28MASTER CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO FAST CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO SMART CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNSECURED REVOLVING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEALTH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_2__c</picklist>
+        <values>
+            <fullName>AL PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIRE PURCHASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIXED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>READY CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ROYAL TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA INFINITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ABSOLUTE CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ROYAL TOP BRASS %28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO CHILL CREDIT CARD%28MASTER CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO FAST CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO SMART CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNSECURED REVOLVING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEALTH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_3__c</picklist>
+        <values>
+            <fullName>AL PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIRE PURCHASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIXED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>READY CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ROYAL TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA INFINITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ABSOLUTE CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ROYAL TOP BRASS %28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO CHILL CREDIT CARD%28MASTER CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO FAST CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO SMART CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEALTH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_4__c</picklist>
+        <values>
+            <fullName>AL PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIRE PURCHASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIXED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>READY CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ROYAL TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA INFINITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ABSOLUTE CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ROYAL TOP BRASS %28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO CHILL CREDIT CARD%28MASTER CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO FAST CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO SMART CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEALTH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_5__c</picklist>
+        <values>
+            <fullName>AL PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIRE PURCHASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIXED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE INSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>READY CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB ROYAL TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO CHILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO FAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SO SMART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA INFINITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB VISA SIGNATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP BRASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ABSOLUTE CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB ROYAL TOP BRASS %28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO CHILL CREDIT CARD%28MASTER CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO FAST CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTB SO SMART CREDIT CARD%28VISA CARD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEALTH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

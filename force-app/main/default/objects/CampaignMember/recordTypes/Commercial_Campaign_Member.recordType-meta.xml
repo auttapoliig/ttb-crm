@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Campaign_Member</fullName>
+    <active>true</active>
+    <description>Record type Campaign Member for Commercial user</description>
+    <label>Commercial Campaign Member</label>
+    <picklistValues>
+        <picklist>CampaignStage__c</picklist>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncontact</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fulfillment_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not eligible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_IsCarBooked__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_available_time__c</picklist>
+        <values>
+            <fullName>12%3A01-13%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A01-17%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A01-19%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A00 - 12%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ตลอดเวลาทำการ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_car_bought_from__c</picklist>
+        <values>
+            <fullName>H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_contact_channel__c</picklist>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_installment_periods__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>72</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>84</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Attendant_Status__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_CampaignCategory__c</picklist>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Method__c</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Me Later</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Me Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Status_CC__c</picklist>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact %28Walk-in%2FCall-in%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Re-attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unused</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Contact_Status__c</picklist>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-attempt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Invitation_Status__c</picklist>
+        <values>
+            <fullName>Not Accept</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_1__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_2__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_3__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_4__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_OfferResult_Product_5__c</picklist>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_1__c</picklist>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_2__c</picklist>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_3__c</picklist>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_4__c</picklist>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_5__c</picklist>
+        <values>
+            <fullName>BANCASSURANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEPOSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INVESTMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_1__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Online security concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Risk concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Business experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Financial statement%28NCB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Occupation%2FBusiness Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - Quarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy - location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Not attractive Return%2C NAV%2C Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Too high Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_2__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_3__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_4__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_5__c</picklist>
+        <values>
+            <fullName>Already used with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business partner - reputation %2F bad experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Bad experience with Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Just Open%2FFully reduce TAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - No purchasing power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM - Refuse since beginning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - Bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - Competitor offer better promotion%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing - NOT attractive promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process - Complicated application %26 approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Policy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason_CC__c</picklist>
+        <values>
+            <fullName>Busy line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer is not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receiver is not prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason__c</picklist>
+        <values>
+            <fullName>Busy line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact number not found</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer is not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Prescreening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reach Maximum Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receiver is not prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_1__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_2__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_3__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_4__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage_5__c</picklist>
+        <values>
+            <fullName>App In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approval Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed By AL System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %28Auto Loan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit App</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_1__c</picklist>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_2__c</picklist>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_3__c</picklist>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_4__c</picklist>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Group_5__c</picklist>
+        <values>
+            <fullName>COMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMERCIAL TERM LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMESTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME EQUITY FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOME LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON LIFE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NON TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER SECURED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL LOAN FOR STAFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SECURED LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF LOAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSACTIONAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UP-SELLING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

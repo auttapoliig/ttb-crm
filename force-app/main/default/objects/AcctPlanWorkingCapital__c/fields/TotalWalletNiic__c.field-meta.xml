@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalWalletNiic__c</fullName>
+    <description>Total Wallet NIIc (Yearly) คือการหา wallet ในช่วง seasonal +  Normal Period</description>
+    <externalId>false</externalId>
+    <formula>0</formula>
+    <inlineHelpText>Total Wallet NIIc (Yearly) คือการหา wallet ในช่วง seasonal +  Normal Period</inlineHelpText>
+    <label>TotalWalletNiic</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

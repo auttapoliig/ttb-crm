@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Referral_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Referral Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Refer_to_Retail</fullName>
+                <default>false</default>
+                <label>Refer_to_Retail</label>
+            </value>
+            <value>
+                <fullName>Retail_Cross_Channel_Referral</fullName>
+                <default>false</default>
+                <label>Retail_Cross_Channel_Referral</label>
+            </value>
+            <value>
+                <fullName>Refer_to_Commercial</fullName>
+                <default>false</default>
+                <label>Refer_to_Commercial</label>
+            </value>
+            <value>
+                <fullName>Refer_within_Commercial</fullName>
+                <default>false</default>
+                <label>Refer_within_Commercial</label>
+            </value>
+            <value>
+                <fullName>Retail_Order_Transaction</fullName>
+                <default>false</default>
+                <label>Retail_Order_Transaction</label>
+            </value>
+            <value>
+                <fullName>Refer_from_Digital_Channel</fullName>
+                <default>false</default>
+                <label>Refer_from_Digital_Channel</label>
+            </value>
+            <value>
+                <fullName>Refer to Commercial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Refer to Commercial</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

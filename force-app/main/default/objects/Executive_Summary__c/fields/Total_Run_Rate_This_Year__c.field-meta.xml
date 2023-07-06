@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Run_Rate_This_Year__c</fullName>
+    <description>CSV’s Actual– Total</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Acctual NI (Run Rate) แสดงค่าเดียวกันกับหน้า Customer Single View</inlineHelpText>
+    <label>Total Run Rate (This Year)</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

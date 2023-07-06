@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_MIB_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>MIB/Prompt Pay Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applied</fullName>
+                <default>false</default>
+                <label>Applied</label>
+            </value>
+            <value>
+                <fullName>Not Applied</fullName>
+                <default>false</default>
+                <label>Not Applied</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

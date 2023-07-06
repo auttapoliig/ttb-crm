@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Invalid</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( Start_Date__c &gt; (TODAY() +(365.2425*100)) , 
+Start_Date__c &lt; (TODAY() - (365.2425*50)))</errorConditionFormula>
+    <errorDisplayField>Start_Date__c</errorDisplayField>
+    <errorMessage>Start Date Invalid</errorMessage>
+</ValidationRule>

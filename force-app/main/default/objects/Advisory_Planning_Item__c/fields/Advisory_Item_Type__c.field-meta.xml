@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisory_Item_Type__c</fullName>
+    <description>The advisory planning item type, using to identify which tab that the item is belonged to.</description>
+    <externalId>false</externalId>
+    <label>Advisory Item Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Return</fullName>
+                <default>false</default>
+                <label>Return</label>
+            </value>
+            <value>
+                <fullName>Risk</fullName>
+                <default>false</default>
+                <label>Risk</label>
+            </value>
+            <value>
+                <fullName>Expense &amp; Liquidity</fullName>
+                <default>false</default>
+                <label>Expense &amp; Liquidity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

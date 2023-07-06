@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Actual_Visit_Date_3_days</fullName>
+    <active>true</active>
+    <description>Actual Visit Date ต้องไม่เกิน Visit Plan Date 3 วัน</description>
+    <errorConditionFormula>if( OR( ISNEW() ,ISCHANGED(Actual_Visit_Date__c)) ,Actual_Visit_Date__c &gt; Date_of_Visit__c + 3,false)</errorConditionFormula>
+    <errorDisplayField>Actual_Visit_Date__c</errorDisplayField>
+    <errorMessage>Visit Report must be completed within 3 days after Visit Plan Date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_purpose__c</fullName>
+    <externalId>false</externalId>
+    <label>Main purpose</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Categories__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First visit</fullName>
+                <default>false</default>
+                <label>First visit</label>
+            </value>
+            <value>
+                <fullName>Find Oppty</fullName>
+                <default>false</default>
+                <label>Find Oppty</label>
+            </value>
+            <value>
+                <fullName>Product pitching / Present Product</fullName>
+                <default>false</default>
+                <label>Product pitching / Present Product</label>
+            </value>
+            <value>
+                <fullName>Follow up sales</fullName>
+                <default>false</default>
+                <label>Follow up sales</label>
+            </value>
+            <value>
+                <fullName>Submit proposal</fullName>
+                <default>false</default>
+                <label>Submit proposal</label>
+            </value>
+            <value>
+                <fullName>Sign Agreement</fullName>
+                <default>false</default>
+                <label>Sign Agreement</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>On-boarding new product</fullName>
+                <default>false</default>
+                <label>On-boarding new product</label>
+            </value>
+            <value>
+                <fullName>Credit review</fullName>
+                <default>false</default>
+                <label>Credit review</label>
+            </value>
+            <value>
+                <fullName>Service review for credit product (Interview cust need)</fullName>
+                <default>false</default>
+                <label>Service review for credit product (Interview cust need)</label>
+            </value>
+            <value>
+                <fullName>Service review for non-credit product (Interview cust need)</fullName>
+                <default>false</default>
+                <label>Service review for non-credit product (Interview cust need)</label>
+            </value>
+            <value>
+                <fullName>Boost u% (Business Volume)</fullName>
+                <default>false</default>
+                <label>Boost u% (Business Volume)</label>
+            </value>
+            <value>
+                <fullName>Hand over (New RM)</fullName>
+                <default>false</default>
+                <label>Hand over (New RM)</label>
+            </value>
+            <value>
+                <fullName>Debt collection</fullName>
+                <default>false</default>
+                <label>Debt collection</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Sell product</fullName>
+                <default>false</default>
+                <label>Sell product</label>
+            </value>
+            <value>
+                <fullName>Doc. Collection</fullName>
+                <default>false</default>
+                <label>Doc. Collection</label>
+            </value>
+            <value>
+                <fullName>Control quality &amp; Follow up debt</fullName>
+                <default>false</default>
+                <label>Control quality &amp; Follow up debt</label>
+            </value>
+            <value>
+                <fullName>Make relationship</fullName>
+                <default>false</default>
+                <label>Make relationship</label>
+            </value>
+            <value>
+                <fullName>Solve problem</fullName>
+                <default>false</default>
+                <label>Solve problem</label>
+            </value>
+            <value>
+                <fullName>CB</fullName>
+                <default>false</default>
+                <label>CB</label>
+            </value>
+            <value>
+                <fullName>MB</fullName>
+                <default>false</default>
+                <label>MB</label>
+            </value>
+            <value>
+                <fullName>BB</fullName>
+                <default>false</default>
+                <label>BB</label>
+            </value>
+            <value>
+                <fullName>SE</fullName>
+                <default>false</default>
+                <label>SE</label>
+            </value>
+            <value>
+                <fullName>BB.</fullName>
+                <default>false</default>
+                <label>BB.</label>
+            </value>
+            <value>
+                <fullName>SE.</fullName>
+                <default>false</default>
+                <label>SE.</label>
+            </value>
+            <value>
+                <fullName>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</fullName>
+                <default>false</default>
+                <label>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</label>
+            </value>
+            <value>
+                <fullName>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</fullName>
+                <default>false</default>
+                <label>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</label>
+            </value>
+            <value>
+                <fullName>นำเสนอขายผลิตภัณฑ์และบริการ</fullName>
+                <default>false</default>
+                <label>นำเสนอขายผลิตภัณฑ์และบริการ</label>
+            </value>
+            <value>
+                <fullName>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</fullName>
+                <default>false</default>
+                <label>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</label>
+            </value>
+            <value>
+                <fullName>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</fullName>
+                <default>false</default>
+                <label>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</label>
+            </value>
+            <value>
+                <fullName>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</fullName>
+                <default>false</default>
+                <label>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</label>
+            </value>
+            <value>
+                <fullName>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</fullName>
+                <default>false</default>
+                <label>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</label>
+            </value>
+            <value>
+                <fullName>สำรวจสถานที่ในการจัดกิจกรรม</fullName>
+                <default>false</default>
+                <label>สำรวจสถานที่ในการจัดกิจกรรม</label>
+            </value>
+            <value>
+                <fullName>ระบุช่องรายละเอียดอื่นเพิ่มเติม</fullName>
+                <default>false</default>
+                <label>ระบุช่องรายละเอียดอื่นเพิ่มเติม</label>
+            </value>
+            <value>
+                <fullName>แนะนำตัว</fullName>
+                <default>false</default>
+                <label>แนะนำตัว</label>
+            </value>
+            <value>
+                <fullName>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</fullName>
+                <default>false</default>
+                <label>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</label>
+            </value>
+            <value>
+                <fullName>สอบถาม / ขอข้อมูลลูกค้า</fullName>
+                <default>false</default>
+                <label>สอบถาม / ขอข้อมูลลูกค้า</label>
+            </value>
+            <value>
+                <fullName>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</fullName>
+                <default>false</default>
+                <label>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</label>
+            </value>
+            <value>
+                <fullName>ประชาสัมพันธ์ผ่านทาง Email / Group Line</fullName>
+                <default>false</default>
+                <label>ประชาสัมพันธ์ผ่านทาง Email / Group Line</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>First visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>Find Oppty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>Product pitching / Present Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>Follow up sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>Submit proposal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre boarding</controllingFieldValue>
+            <valueName>Sign Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On-boarding</controllingFieldValue>
+            <valueName>Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On-boarding</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On-boarding</controllingFieldValue>
+            <valueName>On-boarding new product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Credit review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Service review for credit product (Interview cust need)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Service review for non-credit product (Interview cust need)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Boost u% (Business Volume)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Hand over (New RM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Debt collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-boarding</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SE Default</controllingFieldValue>
+            <valueName>Sell product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SE Default</controllingFieldValue>
+            <valueName>Doc. Collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SE Default</controllingFieldValue>
+            <valueName>Control quality &amp; Follow up debt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SE Default</controllingFieldValue>
+            <valueName>Make relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SE Default</controllingFieldValue>
+            <valueName>Solve problem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Initiatives</controllingFieldValue>
+            <controllingFieldValue>Float Charge</controllingFieldValue>
+            <valueName>CB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Initiatives</controllingFieldValue>
+            <valueName>MB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Initiatives</controllingFieldValue>
+            <valueName>BB.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Initiatives</controllingFieldValue>
+            <valueName>SE.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge</controllingFieldValue>
+            <valueName>BB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge</controllingFieldValue>
+            <valueName>SE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>นำเสนอขายผลิตภัณฑ์และบริการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>สำรวจสถานที่ในการจัดกิจกรรม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Face To Face Visit</controllingFieldValue>
+            <valueName>ระบุช่องรายละเอียดอื่นเพิ่มเติม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>แนะนำตัว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>สอบถาม / ขอข้อมูลลูกค้า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RPD Team Telephone Call</controllingFieldValue>
+            <valueName>ประชาสัมพันธ์ผ่านทาง Email / Group Line</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

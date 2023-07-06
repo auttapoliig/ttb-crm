@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Strategy__c</fullName>
+    <description>Customer Strategy</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ข้อมูลกลยุทธ์ของลูกค้า ในปีที่ผ่านมาหรือแผนในอนาคตที่กำลังจะเกิดขึ้น โดยข้อมูลมาจาก Account Plan Customer Profile (Step 2)</inlineHelpText>
+    <label>Strategy</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

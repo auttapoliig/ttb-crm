@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Favorite_Music__c</fullName>
+    <externalId>false</externalId>
+    <label>Favorite Music</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pop</fullName>
+                <default>false</default>
+                <label>Pop</label>
+            </value>
+            <value>
+                <fullName>Western song</fullName>
+                <default>false</default>
+                <label>Western song</label>
+            </value>
+            <value>
+                <fullName>Rock</fullName>
+                <default>false</default>
+                <label>Rock</label>
+            </value>
+            <value>
+                <fullName>Luk Krung Song</fullName>
+                <default>false</default>
+                <label>Luk Krung Song</label>
+            </value>
+            <value>
+                <fullName>Classic</fullName>
+                <default>false</default>
+                <label>Classic</label>
+            </value>
+            <value>
+                <fullName>Jazz</fullName>
+                <default>false</default>
+                <label>Jazz</label>
+            </value>
+            <value>
+                <fullName>Thai Folk song</fullName>
+                <default>false</default>
+                <label>Thai Folk song</label>
+            </value>
+            <value>
+                <fullName>Reggae</fullName>
+                <default>false</default>
+                <label>Reggae</label>
+            </value>
+            <value>
+                <fullName>Latin</fullName>
+                <default>false</default>
+                <label>Latin</label>
+            </value>
+            <value>
+                <fullName>Ska</fullName>
+                <default>false</default>
+                <label>Ska</label>
+            </value>
+            <value>
+                <fullName>Dance</fullName>
+                <default>false</default>
+                <label>Dance</label>
+            </value>
+            <value>
+                <fullName>Disco</fullName>
+                <default>false</default>
+                <label>Disco</label>
+            </value>
+            <value>
+                <fullName>Seoul</fullName>
+                <default>false</default>
+                <label>Seoul</label>
+            </value>
+            <value>
+                <fullName>Country</fullName>
+                <default>false</default>
+                <label>Country</label>
+            </value>
+            <value>
+                <fullName>Metal</fullName>
+                <default>false</default>
+                <label>Metal</label>
+            </value>
+            <value>
+                <fullName>Korean song</fullName>
+                <default>false</default>
+                <label>Korean song</label>
+            </value>
+            <value>
+                <fullName>Blues</fullName>
+                <default>false</default>
+                <label>Blues</label>
+            </value>
+            <value>
+                <fullName>Chinese song</fullName>
+                <default>false</default>
+                <label>Chinese song</label>
+            </value>
+            <value>
+                <fullName>Hip Hop</fullName>
+                <default>false</default>
+                <label>Hip Hop</label>
+            </value>
+            <value>
+                <fullName>Japanese song</fullName>
+                <default>false</default>
+                <label>Japanese song</label>
+            </value>
+            <value>
+                <fullName>Mor Lam Song</fullName>
+                <default>false</default>
+                <label>Mor Lam Song</label>
+            </value>
+            <value>
+                <fullName>Folk</fullName>
+                <default>false</default>
+                <label>Folk</label>
+            </value>
+            <value>
+                <fullName>Rhythm &amp; Blues (R&amp;B)</fullName>
+                <default>false</default>
+                <label>Rhythm &amp; Blues (R&amp;B)</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

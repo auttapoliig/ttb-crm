@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Knowledge_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Knowledge__kav</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page_Retail</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Service_Type_Matrix_Commercial_Convert_Lightning</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Service_Type_Matrix__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Work_Order_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Work_Order__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Telephony Service Console</label>
+    <navType>Console</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Disqualified_prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Disqualified_prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Existing_Customer</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Existing_Customer</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Retail_Customer</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Retail_Customer</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Retail_Prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Customer_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Retail_Prospect</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_SE_Call_Center</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_SE_Call_Center</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_WBG_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_WBG_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Operation</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Operation</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Retail_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Retail_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SE_Call_Center</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SE_Call_Center</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.WBG_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.WBG_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_Retail_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_Operation</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_Retail_Service</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.Closed_Operation</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Lead_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Retail_Closed_Lost</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Lead_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Retail_Banking</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Lead_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Retail_Banking</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Lead_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Retail_Closed_Lost</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Auto_Loan</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Auto_Loan</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Auto_Loan_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Auto_Loan_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Bancassurance</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Bancassurance</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Bancassurance_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Bancassurance_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Card_and_RDC</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Card_and_RDC</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Card_and_RDC_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Card_and_RDC_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Deposit</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Deposit</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Deposit_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Deposit_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Investment</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Investment</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Investment_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Investment_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Loans</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Loans</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Loans_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Loans_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Others</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Others</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Others_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Others_Closed</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Retail_Cross_Channel_Referral</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Retail_Cross_Channel_Referral</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Retail_Order_Transaction</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Retail_Order_Transaction</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Refer_to_Retail</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Refer_to_Retail</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Refer_to_Retail</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Refer_to_Retail</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Retail_Cross_Channel_Referral</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Retail_Cross_Channel_Referral</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Retail_Order_Transaction</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Referral_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTL_Referral__c</pageOrSobjectType>
+        <recordType>RTL_Referral__c.Closed_Retail_Order_Transaction</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Retentions</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page_Contact_Center</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Retail_Retentions</recordType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>Search_Customer_Desktop</tabs>
+    <tabs>Inquiry</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>RTL_Referral__c</tabs>
+    <tabs>Call_List</tabs>
+    <tabs>Service_Type_Matrix__c</tabs>
+    <tabs>standard-OmniSupervisorLightning</tabs>
+    <tabs>Skill_Master__c</tabs>
+    <tabs>standard-LiveAgentSession</tabs>
+    <tabs>standard-LiveChatTranscript</tabs>
+    <tabs>Sales_Code__c</tabs>
+    <tabs>Knowledge__kav</tabs>
+    <tabs>Business_Outcome_Mapping__c</tabs>
+    <tabs>Work_Order__c</tabs>
+    <tabs>Main_Bank_List_View__c</tabs>
+    <tabs>Tax_Certificate</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Telephony_Service_Console_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>Business_Outcome_Mapping__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Call_List</tab>
+        </mappings>
+        <mappings>
+            <tab>Inquiry</tab>
+        </mappings>
+        <mappings>
+            <tab>Knowledge__kav</tab>
+        </mappings>
+        <mappings>
+            <tab>Main_Bank_List_View__c</tab>
+        </mappings>
+        <mappings>
+            <tab>RTL_Referral__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Sales_Code__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Search_Customer_Desktop</tab>
+        </mappings>
+        <mappings>
+            <tab>Service_Type_Matrix__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Skill_Master__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Tax_Certificate</tab>
+        </mappings>
+        <mappings>
+            <tab>Work_Order__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Account</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Case</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Contact</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Dashboard</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Lead</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-LiveAgentSession</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-LiveChatTranscript</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-OmniSupervisorLightning</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Opportunity</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-home</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-report</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

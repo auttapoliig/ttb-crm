@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RevenueContributionPercent__c</fullName>
+    <description>Revenue Contribution Percent</description>
+    <externalId>false</externalId>
+    <inlineHelpText>สัดส่วนของรายรับแยกเป็นประเภทตามหัวข้อ contribution ซึ่งเป็นเปอร์เซ็นต์ และมีการ force ให้ครบ 100% เสมอ</inlineHelpText>
+    <label>Revenue Contribution Percent</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_BOT_Social_Post</fullName>
+    <columns>NAME</columns>
+    <columns>Social_Post_Author__c</columns>
+    <columns>Social_Name__c</columns>
+    <columns>Case__c</columns>
+    <columns>Post_Body__c</columns>
+    <columns>Sentiment__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Post_Date__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Message_Type__c</field>
+        <operation>equals</operation>
+        <value>Inbound</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>Post - BOT</value>
+    </filters>
+    <label>Post - BOT</label>
+    <queue>Post_BOT</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_RM_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RTL_Account__c &lt;&gt; null , RTL_Account__r.RTL_RM_Name__c, &apos;&apos;)</formula>
+    <label>EMP/BR Code</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

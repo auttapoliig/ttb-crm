@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Debt_PWA</fullName>
+    <columns>RTL_Customer_Title__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>RTL_CASA_AMT__c</columns>
+    <columns>RTL_Total_SD_AMT__c</columns>
+    <columns>RTL_New_SD_AMT__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_RM_Name__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RTL_RM_Name__c</field>
+        <operation>notEqual</operation>
+        <value>00000</value>
+    </filters>
+    <filters>
+        <field>RTL_Check_WM_RM_as_PWA__c</field>
+        <operation>equals</operation>
+        <value>PWA</value>
+    </filters>
+    <filters>
+        <field>RTL_Is_PWA_Owner__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>ลูกค้า Sub Debt สำหรับ PWA</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>WM_TH</roleAndSubordinates>
+    </sharedTo>
+</ListView>

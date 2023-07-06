@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pending_retail_listview</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Product_Name__c</columns>
+    <columns>RTL_Preferred_Branch__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Branch__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>RTL_ReferralOwner__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>RTL_Referral__c.Refer_to_Retail,RTL_Referral__c.Retail_Cross_Channel_Referral</value>
+    </filters>
+    <label>My Pending Referral</label>
+    <sharedTo>
+        <group>Automotive_Lending_Solution_Advisory</group>
+        <role>Automotive_Lending_Solution_Advisory_Line_SupportTL</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_MGR</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_USER</role>
+        <roleAndSubordinates>CRBO</roleAndSubordinates>
+    </sharedTo>
+</ListView>

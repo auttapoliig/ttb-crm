@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Length_of_Fax_no_Cont</fullName>
+    <active>true</active>
+    <description>Replace temp field</description>
+    <errorConditionFormula>AND ( 
+AND( RecordType.Name &lt;&gt; &quot;Core bank&quot;,
+NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)
+)
+)
+, NOT( ISBLANK( Fax ) ) ,NOT(REGEX( Fax , &quot;[\\d\\-\\s]*&quot;)))</errorConditionFormula>
+    <errorDisplayField>Fax</errorDisplayField>
+    <errorMessage>Invalid phone number. 
+
+Only : Number (0-9), The hyphen (‐), Space ( ) are allowed.</errorMessage>
+</ValidationRule>

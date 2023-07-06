@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reject_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reject Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ไม่เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>ไม่เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>โฆษณาแฝง</fullName>
+                <default>false</default>
+                <label>โฆษณาแฝง</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>Sticker</fullName>
+                <default>false</default>
+                <label>Sticker</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าถามซ้ำ</fullName>
+                <default>false</default>
+                <label>ลูกค้าถามซ้ำ</label>
+            </value>
+            <value>
+                <fullName>Facebook ดึงเคสย้อนหลัง</fullName>
+                <default>false</default>
+                <label>Facebook ดึงเคสย้อนหลัง</label>
+            </value>
+            <value>
+                <fullName>Crisis touch และมีการโพสต์อัพเดทสถานะว่ากลับมาใช้งานได้แล้ว</fullName>
+                <default>false</default>
+                <label>Crisis touch และมีการโพสต์อัพเดทสถานะว่ากลับมาใช้งานได้แล้ว</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าบ่นทั่วไป(ไม่พอใจนโยบายสมัครทัช) ทั้งนี้เคลียร์ทาง inbox แล้ว</fullName>
+                <default>false</default>
+                <label>ลูกค้าบ่นทั่วไป(ไม่พอใจนโยบายสมัครทัช) ทั้งนี้เคลียร์ทาง inbox แล้ว</label>
+            </value>
+            <value>
+                <fullName>ttb touch ขัดข้อง</fullName>
+                <default>false</default>
+                <label>ttb touch ขัดข้อง</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KYC_Customer_status__c</fullName>
+    <externalId>false</externalId>
+    <label>KYC Customer status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AC</fullName>
+                <default>false</default>
+                <label>AC - ลูกค้าปกติ  - ACTIVE</label>
+            </value>
+            <value>
+                <fullName>A2</fullName>
+                <default>false</default>
+                <label>A2 - ลูกค้าเสี่ยงระดับ 2</label>
+            </value>
+            <value>
+                <fullName>A3</fullName>
+                <default>false</default>
+                <label>A3 - ลูกค้าเสี่ยงระดับ 3</label>
+            </value>
+            <value>
+                <fullName>A4</fullName>
+                <default>false</default>
+                <label>A4 - ลูกค้าเสี่ยงระดับ 4 (ชื่อ)</label>
+            </value>
+            <value>
+                <fullName>S4</fullName>
+                <default>false</default>
+                <label>S4 - ลูกค้าเสี่ยงระดับ 4 (ประเทศ)</label>
+            </value>
+            <value>
+                <fullName>DC</fullName>
+                <default>false</default>
+                <label>DC - เสียชีวิต - DECEASED</label>
+            </value>
+            <value>
+                <fullName>FD</fullName>
+                <default>false</default>
+                <label>FD - รอลบรหัสลูกค้า - FLAGGED FOR DELETE</label>
+            </value>
+            <value>
+                <fullName>IN</fullName>
+                <default>false</default>
+                <label>IN - NACTIVE</label>
+            </value>
+            <value>
+                <fullName>PC</fullName>
+                <default>false</default>
+                <label>PC - PREVIOUS CUSTOMER</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PR - PROSPECT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

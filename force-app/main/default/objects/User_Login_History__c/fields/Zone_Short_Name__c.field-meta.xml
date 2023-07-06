@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zone_Short_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Zone_Code_Team_Code__c , 
+&apos;6930&apos;,&apos;6930(หัวหมาก)&apos;,
+&apos;6950&apos;,&apos;6950(พระรามเก้า)&apos;,
+&apos;6990&apos;,&apos;6990(เสนานิคม)&apos;,
+&apos;6940&apos;,&apos;6940(ทองหล่อ)&apos;,
+&apos;6980&apos;,&apos;6980(พหลโยธิน)&apos;,
+&apos;6810&apos;,&apos;6810(งามวงศ์วาน)&apos;,
+&apos;6830&apos;,&apos;6830(ราชดำเนิน)&apos;,
+&apos;6860&apos;,&apos;6860(แจ้งวัฒนะ)&apos;,
+&apos;6870&apos;,&apos;6870(พญาไท)&apos;,
+&apos;6820&apos;,&apos;6820(ป้อมปราบศัตรูพ่าย)&apos;,
+&apos;6880&apos;,&apos;6880(สุรวงศ์)&apos;,
+&apos;6450&apos;,&apos;6450(จอมทอง)&apos;,
+&apos;6490&apos;,&apos;6490(บรมราชชนนี)&apos;,
+&apos;6410&apos;,&apos;6410(สมุทรสาคร)&apos;,
+&apos;6430&apos;,&apos;6430(ศรีนครินทร์)&apos;,
+&apos;6470&apos;,&apos;6470(รามอินทรา)&apos;,
+&apos;9260&apos;,&apos;9260(สมุทรปราการ)&apos;,
+&apos;9210&apos;,&apos;9210(ชลบุรี)&apos;,
+&apos;9250&apos;,&apos;9250(พัทยา)&apos;,
+&apos;9280&apos;,&apos;9280(ระยอง)&apos;,
+&apos;9290&apos;,&apos;9290(สระบุรี)&apos;,
+&apos;7170&apos;,&apos;7170(ปทุมธานี)&apos;,
+&apos;7120&apos;,&apos;7120(เชียงใหม่)&apos;,
+&apos;7140&apos;,&apos;7140(เชียงราย)&apos;,
+&apos;7160&apos;,&apos;7160(พิษณุโลก)&apos;,
+&apos;7130&apos;,&apos;7130(นครสวรรค์)&apos;,
+&apos;7110&apos;,&apos;7110(ลพบุรี)&apos;,
+&apos;7440&apos;,&apos;7440(ขอนแก่น)&apos;,
+&apos;7420&apos;,&apos;7420(นครราชสีมา)&apos;,
+&apos;7430&apos;,&apos;7430(อุบลราชธานี)&apos;,
+&apos;7450&apos;,&apos;7450(อุดรธานี)&apos;,
+&apos;7870&apos;,&apos;7870(นครปฐม)&apos;,
+&apos;7860&apos;,&apos;7860(สุราษฎร์ธานี)&apos;,
+&apos;7850&apos;,&apos;7850(ภูเก็ต)&apos;,
+&apos;7840&apos;,&apos;7840(นครศรีธรรมราช)&apos;,
+&apos;7820&apos;,&apos;7820(หาดใหญ่)&apos;,
+&apos;7810&apos;,&apos;7810(ราชบุรี)&apos;,
+&apos;6903&apos;,&apos;6903(Wealth Team 1-1)&apos;,
+&apos;6904&apos;,&apos;6904(Wealth Team 1-2)&apos;,
+&apos;6905&apos;,&apos;6905(Wealth Team 1-3)&apos;,
+&apos;6906&apos;,&apos;6906(Wealth Team 1-4)&apos;,
+&apos;6803&apos;,&apos;6803(Wealth Team 2-1)&apos;,
+&apos;6804&apos;,&apos;6804(Wealth Team 2-2)&apos;,
+&apos;6805&apos;,&apos;6805(Wealth Team 2-3)&apos;,
+&apos;6806&apos;,&apos;6806(Wealth Team 2-4)&apos;,
+&apos;6403&apos;,&apos;6403(Wealth Team 3-1)&apos;,
+&apos;6404&apos;,&apos;6404(Wealth Team 3-2)&apos;,
+&apos;6405&apos;,&apos;6405(Wealth Team 3-3)&apos;,
+&apos;6406&apos;,&apos;6406(Wealth Team 3-4)&apos;,
+&apos;Others&apos;)</formula>
+    <label>Zone Short Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment_to_DWH__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( OR(Segment_crm__c = &apos;1&apos;,Segment_crm__c = &apos;2&apos;,Segment_crm__c = &apos;3&apos;,Segment_crm__c = &apos;4&apos;) ,if(Change_to_be_segment__c &lt;&gt; &apos;&apos;, CASE(Change_to_be_segment__c, &apos;MB&apos;, &apos;1&apos;, &apos;CB&apos;, &apos;2&apos;,&apos;BB&apos;,&apos;3&apos;,&apos;SE&apos;,&apos;4&apos;,Change_to_be_segment__c) ,Segment_crm__c), &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Segment to DWH</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

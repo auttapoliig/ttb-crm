@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Work Order Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+                <label>In-Progress</label>
+            </value>
+            <value>
+                <fullName>Send app to customer</fullName>
+                <default>false</default>
+                <label>Send app to customer</label>
+            </value>
+            <value>
+                <fullName>Send back to Messenger</fullName>
+                <default>false</default>
+                <label>Send back to Messenger</label>
+            </value>
+            <value>
+                <fullName>Receive Doc from Customer</fullName>
+                <default>false</default>
+                <label>Receive Doc from Customer</label>
+            </value>
+            <value>
+                <fullName>App Received Complete</fullName>
+                <default>false</default>
+                <label>App Received Complete</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>Send App to Operation</fullName>
+                <default>false</default>
+                <label>Send App to Operation</label>
+            </value>
+            <value>
+                <fullName>Received App from Operation</fullName>
+                <default>false</default>
+                <label>Received App from Operation</label>
+            </value>
+            <value>
+                <fullName>Follow up Document</fullName>
+                <default>false</default>
+                <label>Follow up Document</label>
+            </value>
+            <value>
+                <fullName>Incomplete App</fullName>
+                <default>false</default>
+                <label>Incomplete App</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Send App to RSL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Send App to RSL</label>
+            </value>
+            <value>
+                <fullName>Send back to sales</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Send back to sales</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

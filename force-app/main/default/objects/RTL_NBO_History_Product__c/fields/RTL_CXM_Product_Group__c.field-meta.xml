@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_CXM_Product_Group__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RTL_Product_Group__c = &quot;Loan&quot; &amp;&amp; (BEGINS(UPPER(RTL_Product_SubGroup__c), &quot;SECURED&quot;) || BEGINS(UPPER(RTL_Product_SubGroup__c), &quot;HOME&quot;)), &quot;Secured Loan&quot;, IF((RTL_Product_Group__c = &quot;Loan&quot; &amp;&amp; (BEGINS(UPPER(RTL_Product_SubGroup__c), &quot;SECURED&quot;) = FALSE || BEGINS(UPPER(RTL_Product_SubGroup__c), &quot;HOME&quot;) = FALSE)), &quot;Unsecured Loan&quot;, RTL_Product_Group__c))</formula>
+    <label>CXM Product Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

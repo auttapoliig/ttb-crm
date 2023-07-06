@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Approver_Link__c</fullName>
+    <description>For Reports</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;javascript:srcUp(&apos;/&quot;&amp;RTL_RM__r.ManagerId&amp;&quot;&apos;)&quot;, RTL_Approver_UserName__c)</formula>
+    <label>Approver</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

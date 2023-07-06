@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retail_Advisory_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>Retail Advisory</label>
+    <language>en_US</language>
+    <queue>RTL_RAD</queue>
+    <sharedTo>
+        <group>RTL_RAD</group>
+    </sharedTo>
+</ListView>

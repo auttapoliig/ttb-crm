@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Status</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Status</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Objective__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre Board</fullName>
+                <default>false</default>
+                <label>Pre Board</label>
+            </value>
+            <value>
+                <fullName>On Board</fullName>
+                <default>false</default>
+                <label>On Board</label>
+            </value>
+            <value>
+                <fullName>Post Board</fullName>
+                <default>false</default>
+                <label>Post Board</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Maintain</controllingFieldValue>
+            <controllingFieldValue>Increase Utilization</controllingFieldValue>
+            <controllingFieldValue>Cross sell New to products</controllingFieldValue>
+            <controllingFieldValue>Acquire New customers</controllingFieldValue>
+            <valueName>Post Board</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Increase Utilization</controllingFieldValue>
+            <controllingFieldValue>Cross sell New to products</controllingFieldValue>
+            <controllingFieldValue>Acquire New customers</controllingFieldValue>
+            <valueName>On Board</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cross sell New to products</controllingFieldValue>
+            <controllingFieldValue>Acquire New customers</controllingFieldValue>
+            <valueName>Pre Board</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

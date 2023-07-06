@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Field_Label_Display__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( RTL_Field_Label__c,
+&quot;Delete Household&quot;,$Label.RTL_Del_HH,
+&quot;Delete Member&quot;,$Label.RTL_Del_HHM,
+&quot;Edit Household : Benefit&quot;,$Label.RTL_Edit_HH_Benefit,
+&quot;Edit Household : Remarks&quot;,$Label.RTL_Edit_HH_Remarks,
+&quot;Edit Member : Benefit&quot;,$Label.RTL_Edit_HHM_Benefit,
+&quot;Edit Member : Relationship&quot;,$Label.RTL_Edit_HHM_Relationship,
+&quot;New Household&quot;,$Label.RTL_New_HH,
+&quot;New Member&quot;,$Label.RTL_New_HHM,
+&quot;&quot;
+ )</formula>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

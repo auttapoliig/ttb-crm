@@ -1,0 +1,72 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global"
+    controller="transferAgentController">
+    <aura:attribute name="userName" type="User" />
+    <aura:attribute name="buttonIcon" type="String" default="standard:avatar" />
+    <aura:attribute name="APIName" type="String" default="UserServicePresence" />
+    <aura:attribute name="selectRecord" type="String" default="" />
+    <aura:attribute name="condition" type="String" default="AND IsCurrentState = true" />
+    <aura:attribute name="queueCondition" type="String" />
+    <aura:attribute name="extraField" type="String" default="UserId" />
+    <aura:attribute name="nameField" type="String" default="User.Name" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <aura:html tag="style">
+        .slds-p-around--medium{
+        padding: 0px;
+        }
+        .forceChatterBasePublisher :not(.PHONE) .cuf-content{
+        padding:0;
+        }
+        .slds-button.slds-modal__close{
+        display:none;
+        }
+        .slds-col{
+        flex: none;
+        }
+        .slds-button_icon-more, .slds-button--icon-more{
+        width: 100%;
+        min-height: calc(2.125rem + 2px);
+        }
+        .slds-card__header{
+        padding-top: 0px;
+        }
+        .cCustomLookup .pillSize {
+        width: 100%;
+        min-height: 36px;
+        }
+        .forceChatterLightningComponent .bodyWrapper {
+        height: 400px;
+        }
+        .slds-card {
+        height: 100%;
+        }
+        
+    </aura:html>
+    <lightning:card class="slds-is-relative">
+        <div class="modal-header slds-modal__header slds-text-heading_large" title="Transfer Post">Transfer Post</div>
+        <div class="slds-box slds-text-align_center content">
+            <lightning:layout multipleRows="true" verticalAlign="stretch">
+                <lightning:layoutItem size="1">
+                    <lightning:buttonMenu class="slds-size_full" aura:id="menu" iconName="{!v.buttonIcon}"
+                        alternativeText="Show menu" onselect="{! c.handleSelect }">
+                        <lightning:menuItem aura:id="menuItems" label="User" value="UserServicePresence" checked="true" iconName="standard:avatar" />
+                        <lightning:menuItem aura:id="menuItems" label="Queue" value="Group" checked="false" iconName="standard:orders" />
+                    </lightning:buttonMenu>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="11">
+                    <c:CustomLookup aura:id="customLookup" selectedRecord="{!v.selectRecord}" nameField="{!v.nameField}"
+                        objectAPIName="{!v.APIName}" IconName="{!v.buttonIcon}" extraField="{!v.extraField}"
+                        hasLastViewedDate="false" condition="{!v.condition}" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        <footer class="slds-modal__footer slds-align-bottom">
+            <lightning:button label="Close" onclick="{!c.handleCancel}" />
+            <lightning:button variant="brand" label="Submit" onclick="{!c.handleConfirm}"
+                disabled="{!empty(v.selectRecord)}" />
+        </footer>
+    </lightning:card>
+
+</aura:component>

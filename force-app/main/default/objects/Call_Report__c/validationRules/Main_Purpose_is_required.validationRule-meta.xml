@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_Purpose_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(PRIORVALUE( Customer_name__c ) = null, Customer_name__c &lt;&gt; null), FALSE,  
+
+IF(ISBLANK(TEXT(Main_purpose__c)), TRUE, FALSE) )</errorConditionFormula>
+    <errorDisplayField>Main_purpose__c</errorDisplayField>
+    <errorMessage>Main Purpose is required</errorMessage>
+</ValidationRule>

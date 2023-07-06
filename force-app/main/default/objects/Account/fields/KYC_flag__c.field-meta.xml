@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KYC_flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(KYC_flag_limited__c) ,&quot;ข้อมูลลูกค้าสมบูรณ์&quot;,
+
+IF(KYC_flag_limited__c ==&apos;Block U&apos;,&quot;Block U ข้อมูลลูกค้าสมบูรณ์&quot;,
+IF(KYC_flag_limited__c ==&apos;Block B&apos;,&quot;Block B ข้อมูลลูกค้าไม่สมบูรณ์ แต่สามารถทำธุรกรรมได้&quot;,
+IF(KYC_flag_limited__c ==&apos;Block I&apos;,&quot;Block I ข้อมูลลูกค้าไม่สมบูรณ์ และไม่สามารถทำธุรกรรมได้&quot;,
+IF(KYC_flag_limited__c ==&apos;Block S&apos;,&quot;Block S ปลดล็อคชั่วคราว ให้ลูกค้าบุคคลธรรมดา&quot;,
+IF(KYC_flag_limited__c ==&apos;Block T&apos;,&quot;Block T ปลดล็อคชั่วคราว ให้ลูกค้านิติบุคคล&quot;,&quot;&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>KYC flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Enter_Mobile_or_Office</fullName>
+    <active>true</active>
+    <description>Validate user must enter either mobile or office for prospect / qualified prospect</description>
+    <errorConditionFormula>AND(NOT(CONTAINS( RecordType.Name, &apos;Retail&apos;)), 
+ISBLANK(Phone),
+ISBLANK( Mobile_Number_PE__c ), 
+RecordType.Name &lt;&gt; &quot;Existing Customer&quot;,
+RecordType.Name &lt;&gt; &quot;Inactive Customer&quot;)</errorConditionFormula>
+    <errorMessage>Mobile or Office Phone Number must be entered</errorMessage>
+</ValidationRule>

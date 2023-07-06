@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Contact_Channel</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(OR( RTL_Product_Name_Str__c = &apos;CYC&apos;,RTL_Product_Name_Str__c = &apos;CYB&apos;, RTL_Product_Name_Str__c = &apos;NEW&apos;, RTL_Product_Name_Str__c = &apos;USED&apos;),(RTL_Preferred_Branch_Name__c = &apos;AL Marketing&apos;)),ISBLANK(TEXT(RTL_AL_contact_channel__c)),false)</errorConditionFormula>
+    <errorDisplayField>RTL_AL_contact_channel__c</errorDisplayField>
+    <errorMessage>Contact Channel can not be blank.</errorMessage>
+</ValidationRule>

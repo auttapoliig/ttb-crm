@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Transaction_Date__c</columns>
+    <columns>TMB_CUST_ID__c</columns>
+    <columns>Month__c</columns>
+    <columns>MonthYear__c</columns>
+    <columns>NIIc__c</columns>
+    <columns>NIId__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

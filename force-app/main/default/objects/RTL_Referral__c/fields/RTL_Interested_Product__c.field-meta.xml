@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Interested_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Interested Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>RTL_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BA(Credit Life)</fullName>
+                <default>false</default>
+                <label>BA(Credit Life)</label>
+            </value>
+            <value>
+                <fullName>BA (IL)</fullName>
+                <default>false</default>
+                <label>BA (IL)</label>
+            </value>
+            <value>
+                <fullName>BA (Unit Link)</fullName>
+                <default>false</default>
+                <label>BA (Unit Link)</label>
+            </value>
+            <value>
+                <fullName>BA (Others)</fullName>
+                <default>false</default>
+                <label>BA (Others)</label>
+            </value>
+            <value>
+                <fullName>Business Click (Basic Plus)</fullName>
+                <default>false</default>
+                <label>Business Click (Basic Plus)</label>
+            </value>
+            <value>
+                <fullName>Business Click  (Basic Plus)</fullName>
+                <default>false</default>
+                <label>Business Click  (Basic Plus)</label>
+            </value>
+            <value>
+                <fullName>Credit Card &amp; RDC</fullName>
+                <default>false</default>
+                <label>Credit Card &amp; RDC</label>
+            </value>
+            <value>
+                <fullName>EDC</fullName>
+                <default>false</default>
+                <label>EDC</label>
+            </value>
+            <value>
+                <fullName>FX</fullName>
+                <default>false</default>
+                <label>FX</label>
+            </value>
+            <value>
+                <fullName>Investment</fullName>
+                <default>false</default>
+                <label>Investment</label>
+            </value>
+            <value>
+                <fullName>LG</fullName>
+                <default>false</default>
+                <label>LG</label>
+            </value>
+            <value>
+                <fullName>Loan</fullName>
+                <default>false</default>
+                <label>Loan</label>
+            </value>
+            <value>
+                <fullName>OD</fullName>
+                <default>false</default>
+                <label>OD</label>
+            </value>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>Prompt Pay</fullName>
+                <default>false</default>
+                <label>Prompt Pay</label>
+            </value>
+            <value>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+                <label>Supply Chain</label>
+            </value>
+            <value>
+                <fullName>TMB Business Touch</fullName>
+                <default>false</default>
+                <label>TMB Business Touch</label>
+            </value>
+            <value>
+                <fullName>TMB Business  Touch</fullName>
+                <default>false</default>
+                <label>TMB Business  Touch</label>
+            </value>
+            <value>
+                <fullName>TMB QR</fullName>
+                <default>false</default>
+                <label>TMB QR</label>
+            </value>
+            <value>
+                <fullName>TMB Payroll</fullName>
+                <default>false</default>
+                <label>TMB Payroll</label>
+            </value>
+            <value>
+                <fullName>TMB SME One Bank (155)</fullName>
+                <default>false</default>
+                <label>TMB SME One Bank (155)</label>
+            </value>
+            <value>
+                <fullName>TMB SME One Bank  (155)</fullName>
+                <default>false</default>
+                <label>TMB SME One Bank  (155)</label>
+            </value>
+            <value>
+                <fullName>Trade</fullName>
+                <default>false</default>
+                <label>Trade</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - LG</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - LG</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Loan</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Loan</label>
+            </value>
+            <value>
+                <fullName>Refer From TBANK: สินเชื่อเพื่อธุรกิจ - Loan</fullName>
+                <default>false</default>
+                <label>Refer From TBANK: สินเชื่อเพื่อธุรกิจ - Loan</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - OD</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - OD</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain [ODB (Clean)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain [ODB (Clean)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Accepted Invoice)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Accepted Invoice)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Confirmed Payment)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Confirmed Payment)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [ODB (Clean)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain  [ODB (Clean)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Accepted Invoice)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Accepted Invoice)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Confirmed Payment)]</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Confirmed Payment)]</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - อื่นๆ</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - Soft Loan</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - Soft Loan</label>
+            </value>
+            <value>
+                <fullName>Unspecified</fullName>
+                <default>false</default>
+                <label>Unspecified</label>
+            </value>
+            <value>
+                <fullName>Wealth invitation</fullName>
+                <default>false</default>
+                <label>Wealth invitation</label>
+            </value>
+            <value>
+                <fullName>SmartBiz</fullName>
+                <default>false</default>
+                <label>SmartBiz</label>
+            </value>
+            <value>
+                <fullName>เครื่องรับบัตร EDC</fullName>
+                <default>false</default>
+                <label>เครื่องรับบัตร EDC</label>
+            </value>
+            <value>
+                <fullName>Cash Management</fullName>
+                <default>false</default>
+                <label>Cash Management</label>
+            </value>
+            <value>
+                <fullName>HR Pay</fullName>
+                <default>false</default>
+                <label>HR Pay</label>
+            </value>
+            <value>
+                <fullName>HR  Pay</fullName>
+                <default>false</default>
+                <label>HR  Pay</label>
+            </value>
+            <value>
+                <fullName>BA-Credit Life Insurance</fullName>
+                <default>false</default>
+                <label>BA-Credit Life Insurance</label>
+            </value>
+            <value>
+                <fullName>BA-SME Smart Care</fullName>
+                <default>false</default>
+                <label>BA-SME Smart Care</label>
+            </value>
+            <value>
+                <fullName>MCA</fullName>
+                <default>false</default>
+                <label>MCA</label>
+            </value>
+            <value>
+                <fullName>TMB SME INSIGHTs</fullName>
+                <default>false</default>
+                <label>TMB SME INSIGHTs</label>
+            </value>
+            <value>
+                <fullName>TMB SME BIZ Solution</fullName>
+                <default>false</default>
+                <label>TMB SME BIZ Solution</label>
+            </value>
+            <value>
+                <fullName>Smart &amp; Smooth</fullName>
+                <default>false</default>
+                <label>Smart &amp; Smooth</label>
+            </value>
+            <value>
+                <fullName>Payroll Plus</fullName>
+                <default>false</default>
+                <label>Payroll Plus</label>
+            </value>
+            <value>
+                <fullName>Relief Program_COVID19</fullName>
+                <default>false</default>
+                <label>Relief Program_COVID19</label>
+            </value>
+            <value>
+                <fullName>FX and Remittance Products</fullName>
+                <default>false</default>
+                <label>FX and Remittance Products</label>
+            </value>
+            <value>
+                <fullName>TMB SSO e-Payment</fullName>
+                <default>false</default>
+                <label>TMB SSO e-Payment</label>
+            </value>
+            <value>
+                <fullName>TMB NSW e-Payment</fullName>
+                <default>false</default>
+                <label>TMB NSW e-Payment</label>
+            </value>
+            <value>
+                <fullName>LEASING</fullName>
+                <default>false</default>
+                <label>LEASING</label>
+            </value>
+            <value>
+                <fullName>FLOOR PLAN</fullName>
+                <default>false</default>
+                <label>FLOOR PLAN</label>
+            </value>
+            <value>
+                <fullName>HIRE PURCHASE</fullName>
+                <default>false</default>
+                <label>HIRE PURCHASE</label>
+            </value>
+            <value>
+                <fullName>S1B</fullName>
+                <default>false</default>
+                <label>S1B</label>
+            </value>
+            <value>
+                <fullName>Smart Shop</fullName>
+                <default>false</default>
+                <label>Smart Shop</label>
+            </value>
+            <value>
+                <fullName>Quick Pay</fullName>
+                <default>false</default>
+                <label>Quick Pay</label>
+            </value>
+            <value>
+                <fullName>OTT</fullName>
+                <default>false</default>
+                <label>OTT</label>
+            </value>
+            <value>
+                <fullName>Business ONE</fullName>
+                <default>false</default>
+                <label>Business ONE</label>
+            </value>
+            <value>
+                <fullName>New/Used Car &lt; 10</fullName>
+                <default>false</default>
+                <label>New/Used Car &lt; 10</label>
+            </value>
+            <value>
+                <fullName>New/Used Car &gt;= 10</fullName>
+                <default>false</default>
+                <label>New/Used Car &gt;= 10</label>
+            </value>
+            <value>
+                <fullName>Smart &amp; Fast</fullName>
+                <default>false</default>
+                <label>Smart &amp; Fast</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>SBO-So Smooth</fullName>
+                <default>false</default>
+                <label>SBO-So Smooth</label>
+            </value>
+            <value>
+                <fullName>SBO-Step Up</fullName>
+                <default>false</default>
+                <label>SBO-Step Up</label>
+            </value>
+            <value>
+                <fullName>SBO-Fully Cash</fullName>
+                <default>false</default>
+                <label>SBO-Fully Cash</label>
+            </value>
+            <value>
+                <fullName>Host to Host</fullName>
+                <default>false</default>
+                <label>Host to Host</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อเพื่อธุรกิจ - SOLAR</fullName>
+                <default>false</default>
+                <label>สินเชื่อเพื่อธุรกิจ - SOLAR</label>
+            </value>
+            <value>
+                <fullName>BA (Credit Life)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BA (Credit Life)</label>
+            </value>
+            <value>
+                <fullName>Bancassurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bancassurance</label>
+            </value>
+            <value>
+                <fullName>Business Prompt Pay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Prompt Pay</label>
+            </value>
+            <value>
+                <fullName>Domain2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Domain2</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <valueName>FX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <valueName>Cash Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>MCA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>SmartBiz</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <valueName>TMB SME INSIGHTs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>BA (IL)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>BA (Unit Link)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Business Click (Basic Plus)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Credit Card &amp; RDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Investment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Payroll</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>TMB Business  Touch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>TMB QR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>TMB SME One Bank (155)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - LG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - OD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain [ODB (Clean)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Accepted Invoice)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain [Factoring (Confirmed Payment)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - อื่นๆ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Wealth invitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>เครื่องรับบัตร EDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>HR Pay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>BA-Credit Life Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>BA-SME Smart Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>TMB SME BIZ Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Smart &amp; Smooth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <valueName>Relief Program_COVID19</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Refer From TBANK: สินเชื่อเพื่อธุรกิจ - Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Soft Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Payroll Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>FX and Remittance Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>TMB SSO e-Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>TMB NSW e-Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>LEASING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>FLOOR PLAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>HIRE PURCHASE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>S1B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Smart Shop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Quick Pay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>OTT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Business ONE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>New/Used Car &lt; 10</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>New/Used Car &gt;= 10</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Smart &amp; Fast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SBO-So Smooth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SBO-Step Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SBO-Fully Cash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Host to Host</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - SOLAR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <valueName>Business Click  (Basic Plus)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>TMB Business Touch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <valueName>TMB Payroll</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <valueName>TMB SME One Bank  (155)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <valueName>Unspecified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [ODB (Clean)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Accepted Invoice)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>สินเชื่อเพื่อธุรกิจ - Supply Chain  [Factoring (Confirmed Payment)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>HR  Pay</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

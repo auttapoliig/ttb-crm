@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To identify which fee is recurring type and get from which field from Account Annualized Performance</description>
+    <label>Forecast:Existing Fee Mapping</label>
+    <pluralLabel>Existing Fee Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

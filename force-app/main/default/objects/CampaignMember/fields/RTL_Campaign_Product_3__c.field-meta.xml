@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Campaign_Product_3__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Campaign Product-3</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>RTL_product_master__c.RTL_Product_Group_Upper__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.RTL_Product_Group_3__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>RTL_product_master__c.RTL_Product_Sub_Group_Upper__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.RTL_Sub_Group_3__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>RTL_product_master__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>RTL_product_master__c</referenceTo>
+    <relationshipLabel>Campaign Members (Campaign Product-3)</relationshipLabel>
+    <relationshipName>Campaign_Members2</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

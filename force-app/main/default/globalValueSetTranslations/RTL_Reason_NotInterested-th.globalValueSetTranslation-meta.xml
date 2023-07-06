@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Already used with other bank</masterLabel>
+        <translation>ใช้บริการที่อื่นเรียบร้อยแล้ว</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business partner - reputation / bad experience</masterLabel>
+        <translation>คู่ค้า - ไม่น่าเชื่อถือ / ไม่ประทับใจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Adequate product holding</masterLabel>
+        <translation>ลูกค้า - มีผลิตภัณฑ์อยู่แล้ว</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Bad experience with Product</masterLabel>
+        <translation>ลูกค้า - เคยมีประสบการณ์ไม่ดีกับผลิตภัณฑ์</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Just Open/Fully reduce TAX</masterLabel>
+        <translation>ลูกค้า - เพิ่งปิด/มีแล้ว/ลดหย่อนภาษีเต็ม</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - No need</masterLabel>
+        <translation>ลูกค้า - มีเงินทุนหมุนเวียนเพียงพอแล้ว /ไม่ต้องการเป็นหนี้</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - No purchasing power</masterLabel>
+        <translation>ลูกค้า - ไม่มีกำลังซื้อ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Online security concerns</masterLabel>
+        <translation>ลูกค้า - ไม่มีความมั่นใจความปลอดภัยออนไลน์</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Refuse since beginning</masterLabel>
+        <translation>ลูกค้า - ปฏิเสธตั้งแต่เริ่มต้น</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CM - Risk concern</masterLabel>
+        <translation>ลูกค้า - ไม่อยากเสี่ยง</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Channel - inconvenient</masterLabel>
+        <translation>ช่องทาง - ไม่สะดวกในการใช้งาน/รับบริการ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ/เงื่อนไข</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - Business experience</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ประสบการณ์ทางธุรกิจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - Financial statement(NCB)</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เกี่ยวกับประวัติทางการเงิน(NCB)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - Income</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องรายได้ /ไม่ได้ทำธุรกิจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - Occupation/Business Type</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ อายุ/อาชีพ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - Quarantee</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องหลักประกัน</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualif. - Bank condition/policy - location</masterLabel>
+        <translation>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ที่ตั้งธุรกิจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing - Competitor offer better promotion.</masterLabel>
+        <translation>การตลาด - คู่แข่งให้ข้อเสนอที่ดีกว่า</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing - NOT attractive promotion</masterLabel>
+        <translation>การตลาด - โปรโมชั่นไม่น่าสนใจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Others</masterLabel>
+        <translation>อื่นๆ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Process - Complicated application &amp; approval</masterLabel>
+        <translation>กระบวนการ - ขั้นตอนการสมัครและอนุมัติยุ่งยาก</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Credit Limit</masterLabel>
+        <translation>ผลิตภัณฑ์ - วงเงินน้อย/ไม่เพียงพอ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Feature</masterLabel>
+        <translation>ผลิตภัณฑ์ - สิทธิประโยชน์ของผลิตภัณฑ์</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Interest</masterLabel>
+        <translation>ผลิตภัณฑ์ - อัตราดอกเบี้ยแพง</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Not attractive Return, NAV, Dividend</masterLabel>
+        <translation>ผลิตภัณฑ์ - ผลตอบแทน ,NAV,เงินปันผลน้อย</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Policy</masterLabel>
+        <translation>ผลิตภัณฑ์ - นโยบาย</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Protection</masterLabel>
+        <translation>ผลิตภัณฑ์ - ความคุ้มครองไม่น่าสนใจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product - Too high Fee</masterLabel>
+        <translation>ผลิตภัณฑ์ - ค่าธรรมเนียมแพง</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ttb - reputation concern</masterLabel>
+        <translation>ttb - ไม่มั่นใจในองค์กร</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

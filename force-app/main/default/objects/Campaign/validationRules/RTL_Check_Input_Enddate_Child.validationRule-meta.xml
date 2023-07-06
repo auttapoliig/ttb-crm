@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_Input_Enddate_Child</fullName>
+    <active>true</active>
+    <description>Preventing incorrect input enddate on Child campaign</description>
+    <errorConditionFormula>OR( RTL_Campaign_End_Date__c &gt; (TODAY() +(365.2425*50)) , 
+
+ RTL_Campaign_End_Date__c  &lt; (TODAY() - (365.2425*50 )))</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_End_Date__c</errorDisplayField>
+    <errorMessage>Invalid Enddate</errorMessage>
+</ValidationRule>

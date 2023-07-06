@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Channel__c</fullName>
+    <externalId>false</externalId>
+    <label>Group of Channel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BBD</fullName>
+                <default>false</default>
+                <label>BBD</label>
+            </value>
+            <value>
+                <fullName>RASC</fullName>
+                <default>false</default>
+                <label>RASC</label>
+            </value>
+            <value>
+                <fullName>ttb consumer</fullName>
+                <default>false</default>
+                <label>ttb consumer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

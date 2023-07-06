@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Wealth_invitation</fullName>
+    <active>true</active>
+    <description>if select &apos;Wealth invitation&apos;, user can select only one product.</description>
+    <errorConditionFormula>IF(AND(INCLUDES(RTL_Interested_Product__c, &quot;Wealth invitation&quot;), 
+OR(INCLUDES(RTL_Interested_Product__c, &quot;Credit Card &amp; RDC&quot;), 
+INCLUDES(RTL_Interested_Product__c, &quot;Loan&quot;), 
+INCLUDES(RTL_Interested_Product__c, &quot;BA (IL)&quot;), 
+INCLUDES(RTL_Interested_Product__c, &quot;Investment&quot;) 
+)	
+),true,false)</errorConditionFormula>
+    <errorDisplayField>RTL_Interested_Product__c</errorDisplayField>
+    <errorMessage>If select &apos;Wealth invitation&apos; , please select only one product.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objective__c</fullName>
+    <externalId>false</externalId>
+    <label>Objective</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Maintain</fullName>
+                <default>false</default>
+                <label>Maintain</label>
+            </value>
+            <value>
+                <fullName>Increase Utilization</fullName>
+                <default>false</default>
+                <label>Increase Utilization</label>
+            </value>
+            <value>
+                <fullName>Cross sell New to products</fullName>
+                <default>false</default>
+                <label>Cross sell New to products</label>
+            </value>
+            <value>
+                <fullName>Acquire New customers</fullName>
+                <default>false</default>
+                <label>Acquire New customers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

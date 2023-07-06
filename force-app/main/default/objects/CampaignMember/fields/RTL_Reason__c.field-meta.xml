@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Contact_Status__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer is not available</fullName>
+                <default>false</default>
+                <label>Customer is not available</label>
+            </value>
+            <value>
+                <fullName>Busy line</fullName>
+                <default>false</default>
+                <label>Busy line</label>
+            </value>
+            <value>
+                <fullName>No answer</fullName>
+                <default>false</default>
+                <label>No answer</label>
+            </value>
+            <value>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+                <label>Voicemail</label>
+            </value>
+            <value>
+                <fullName>Receiver is not prospect</fullName>
+                <default>false</default>
+                <label>Receiver is not prospect</label>
+            </value>
+            <value>
+                <fullName>Do not Contact</fullName>
+                <default>false</default>
+                <label>Do not Contact</label>
+            </value>
+            <value>
+                <fullName>Failed Prescreening</fullName>
+                <default>false</default>
+                <label>Failed Prescreening</label>
+            </value>
+            <value>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <label>Wrong number</label>
+            </value>
+            <value>
+                <fullName>Wrong customer</fullName>
+                <default>false</default>
+                <label>Wrong customer</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Duplicate Customer</fullName>
+                <default>false</default>
+                <label>Duplicate Customer</label>
+            </value>
+            <value>
+                <fullName>Reach Maximum Call</fullName>
+                <default>false</default>
+                <label>Reach Maximum Call</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Contact number not found</fullName>
+                <default>false</default>
+                <label>Contact number not found</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Not Contact</controllingFieldValue>
+            <valueName>Do not Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Contact</controllingFieldValue>
+            <valueName>Failed Prescreening</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Follow-up</controllingFieldValue>
+            <valueName>Customer is not available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Re-attempt</controllingFieldValue>
+            <valueName>Busy line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Re-attempt</controllingFieldValue>
+            <valueName>No answer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Re-attempt</controllingFieldValue>
+            <valueName>Voicemail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Re-attempt</controllingFieldValue>
+            <valueName>Receiver is not prospect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Wrong number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Wrong customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Fax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Duplicate Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Reach Maximum Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Close</controllingFieldValue>
+            <valueName>Contact number not found</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

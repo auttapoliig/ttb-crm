@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Type_Is_Post</fullName>
+    <active>true</active>
+    <description>If Job Type = Post (all post), “Prefer Address” cannot be blank.</description>
+    <errorConditionFormula>IF(CONTAINS(TEXT(Job_Type__c),&quot;Post&quot;) 
+&amp;&amp; ISBLANK( TEXT(Prefer_Address__c))
+, TRUE
+, FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Prefer_Address__c</errorDisplayField>
+    <errorMessage>Job type is Post (all post), Prefer Address cannot be blank.</errorMessage>
+</ValidationRule>

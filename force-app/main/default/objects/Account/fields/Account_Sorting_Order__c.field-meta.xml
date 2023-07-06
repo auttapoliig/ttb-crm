@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Sorting_Order__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+    ISBLANK(
+								Stamp_Owner_Zone_Team__c
+    ),
+    &apos;zzzzzzzzzz&apos;, 
+    RPAD(
+        Stamp_Owner_Zone_Team__c,
+        20,
+        &apos;*&apos;
+    ) 
+) &amp;
+
+LPAD(
+				TEXT(FLOOR(NI_Actual__c)) &amp; LPAD(text((NI_Actual__c - FLOOR(NI_Actual__c)) * 100), 2, &quot;0&quot;),
+				18,
+				&apos;0&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Sorting Order</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

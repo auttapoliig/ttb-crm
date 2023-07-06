@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmountBank3__c</fullName>
+    <description>Deposit Amount - Other Bank 3</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deposit Amount - Other Bank 3</inlineHelpText>
+    <label>Amount (THB)-[Bank3]</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

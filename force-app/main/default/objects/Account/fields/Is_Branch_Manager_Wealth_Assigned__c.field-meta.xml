@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Branch_Manager_Wealth_Assigned__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+    RTL_RM_Name__c &lt;&gt; NULL
+    ,RTL_Wealth_RM__c &lt;&gt; NULL 
+    ,RTL_Wealth_RM__r.Employee_ID__c &lt;&gt; RTL_RM_Name__c
+    ,NOT(BEGINS( RTL_RM_Name__c, &quot;00&quot;))
+)</formula>
+    <label>Is Branch Manager Wealth Assigned</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

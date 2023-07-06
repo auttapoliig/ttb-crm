@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edit_Condition__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( OR( ISPICKVAL(Status, &apos;Submitted&apos;) , ISPICKVAL(Status, &apos;1-Approved&apos;)) , $Label.RTL_Edit_Condition_01, $Label.RTL_Edit_Condition_02)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Edit Condition</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

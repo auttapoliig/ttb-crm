@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Talkpoint_is_null</fullName>
+    <active>true</active>
+    <errorConditionFormula>Talk_Point__c == null</errorConditionFormula>
+    <errorDisplayField>Talk_Point__c</errorDisplayField>
+    <errorMessage>Talk Point&apos; is mandatory information when creating an Executive Summary. (โปรดระบุข้อมูลในช่อง Talk Point เนื่องจากเป็นข้อมูลสำคัญในการสร้าง Executive Summary)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financial_Highlight__c</fullName>
+    <description>Customer’s Financial highlights (can be text or picture)</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ข้อมูลงบการเงินของลูกค้า โดยข้อมูลมาจาก Account Plan Customer Profile (Step 2)</inlineHelpText>
+    <label>Financial Highlight</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

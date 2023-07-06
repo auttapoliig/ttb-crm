@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WalletFee__c</fullName>
+    <description>Wallet ของ Cash Fee ในส่วนที่เกี่ยวข้องกับธุรกรรมการจ่ายเงินจากในประเทศ</description>
+    <externalId>false</externalId>
+    <formula>Volume__c 
+
+* if(isnull( AvgProvidentFund__c),1,AvgProvidentFund__c)
+*  if(isnull( FeeCharge__c),1,FeeCharge__c/100)
+* 12</formula>
+    <inlineHelpText>Wallet ของ Cash Fee ในส่วนที่เกี่ยวข้องกับธุรกรรมการจ่ายเงินจากในประเทศ</inlineHelpText>
+    <label>Wallet Cash fee (Yearly)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

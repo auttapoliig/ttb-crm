@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EstimatedSalesAmtPerYear__c</fullName>
+    <description>คาดการณ์ยอดขายต่อปี ซึ่งเป็นยอดขายของปีที่ทำ account plan</description>
+    <externalId>false</externalId>
+    <inlineHelpText>คาดการณ์ยอดขายต่อปี ซึ่งเป็นยอดขายของปีที่ทำ account plan</inlineHelpText>
+    <label>Estimated Sales (Year of account plan)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

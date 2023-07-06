@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Length_of_Office_No_Cont</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+AND( RecordType.Name &lt;&gt; &quot;Core bank&quot;,
+NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)
+)
+)
+, NOT( ISBLANK(  Phone  ) ) ,NOT(REGEX(  Phone  , &quot;[\\d\\-\\s]*&quot;)))</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Invalid phone number. 
+
+Only : Number (0-9), The hyphen (‐), Space ( ) are allowed.</errorMessage>
+</ValidationRule>

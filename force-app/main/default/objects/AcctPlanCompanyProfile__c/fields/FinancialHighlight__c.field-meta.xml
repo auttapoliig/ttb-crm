@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinancialHighlight__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ตัวเลขสำคัญทางการเงิน ซึ่งสามารถให้ข้อมูลสรุปภาพรวมของ business performance ของบริษัท
+Note: this field is used in Executive Summary</inlineHelpText>
+    <label>Financial Highlight - Individual</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

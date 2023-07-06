@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Fax_Length</fullName>
+    <active>true</active>
+    <description>Fax number is too large: length 18 digits</description>
+    <errorConditionFormula>AND ( 
+AND( RecordType.Name &lt;&gt; &quot;Core bank&quot;,
+NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)
+)
+),LEN( Fax ) &gt; 18)</errorConditionFormula>
+    <errorDisplayField>Fax</errorDisplayField>
+    <errorMessage>Fax number is too large: length 18 digits</errorMessage>
+</ValidationRule>

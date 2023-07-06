@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Accept</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Accept</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/apex.js&quot;)} 
+
+window.$Label = window.$Label || {}; 
+
+$Label.RTL_Referral_ERR005 = &apos;{!JSENCODE($Label.RTL_Referral_ERR005)}&apos;; // is already owner 
+$Label.RTL_Referral_ERR003 = &apos;{!JSENCODE($Label.RTL_Referral_ERR003)}&apos;; // no authorize to accept referral
+$Label.RTL_Referral_NO_LICENSE = &apos;{!JSENCODE($Label.RTL_Referral_NO_LICENSE)}&apos;; // No License or expired
+// assigning the label to the JS variable. 
+
+function NOW() {
+
+    var date = new Date();
+    var aaaa = date.getFullYear();
+    var gg = date.getDate();
+    var mm = (date.getMonth() + 1);
+
+    var cur_day = aaaa + &quot;-&quot; + mm + &quot;-&quot; + gg;
+				
+    return cur_day;
+
+}
+
+var ERR005 = $Label.RTL_Referral_ERR005;
+var ERR003 = $Label.RTL_Referral_ERR003; 
+var ERR_NO_LICENSE = $Label.RTL_Referral_NO_LICENSE;
+
+var id = &apos;{!RTL_Referral__c.Id}&apos;; 
+var ownerId = &quot;{!RTL_Referral__c.OwnerId}&quot;;
+
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+  };
+}
+if(id!=&apos;&apos;) 
+{ 
+try{ 
+if( ownerId == &quot;{!$User.Id}&quot;){ 
+alert(ERR005); 
+} 
+else if(ownerId.startsWith(&apos;005&apos;)){
+alert(ERR003);
+}
+else{
+//check License 
+
+var license = &quot;{!$User.RTL_License_No_Paper_1__c}&quot;;
+var license_Expiry = &quot;{!$User.RTL_Expiry_Date_Paper_1__c}&quot;;
+var licenseComplexP2 = &quot;{!$User.RTL_License_No_Complex_P2__c}&quot;;
+var licenseComplexP2_Expiry = &quot;{!$User.RTL_Expiry_Date_Complex_P2__c}&quot;;
+
+var RecordType = &quot;{!RTL_Referral__c.RTL_RecordType_Name__c}&quot;;
+
+if(RecordType == &quot;Retail Order Transaction&quot; &amp;&amp; (licenseComplexP2 == null || licenseComplexP2 == &quot;&quot; || licenseComplexP2_Expiry &lt; NOW()) &amp;&amp; (license == null || license == &quot;&quot; || license_Expiry &lt; NOW())){
+   alert(ERR_NO_LICENSE);
+}else{
+
+var result = sforce.apex.execute(&quot;RTL_ReferralChangeOwner&quot;,&quot;acceptReferral&quot;,{referralId:id}); 
+
+if(result == &quot;Success&quot;){ 
+alert(&quot;ระบบได้ทำการเปลี่ยนเจ้าของ {!RTL_Referral__c.Name} มาเป็นของท่านแล้ว ท่านสามารถดำเนินการต่อได้&quot;); 
+location.reload(); 
+} else{ 
+alert(result); 
+} 
+
+}
+} 
+} 
+catch(e){ 
+alert(&apos;catch &apos;+e); 
+} 
+
+}</url>
+</WebLink>

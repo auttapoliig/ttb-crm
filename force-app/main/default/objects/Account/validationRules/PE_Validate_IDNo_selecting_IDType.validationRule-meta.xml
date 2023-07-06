@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_IDNo_selecting_IDType</fullName>
+    <active>true</active>
+    <description>Preventing save the record if ID Type is select without entering ID Number</description>
+    <errorConditionFormula>AND(TEXT( ID_Type_PE__c )!= NULL,ISBLANK( ID_Number_PE__c ))</errorConditionFormula>
+    <errorDisplayField>ID_Number_PE__c</errorDisplayField>
+    <errorMessage>ID Number is required when ID Type is picked</errorMessage>
+</ValidationRule>

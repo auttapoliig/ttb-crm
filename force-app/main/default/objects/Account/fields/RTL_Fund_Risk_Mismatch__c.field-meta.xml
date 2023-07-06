@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Fund_Risk_Mismatch__c</fullName>
+    <description>To store flag of customer having risk mismatch more than 20%</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ลูกค้ามีการลงทุนในกองทุนที่มีความเสี่ยงสูงกว่าระดับที่เหมาะสมตามผลประเมินความเสี่ยงมากกว่า 20% ของเงินลงทุน</inlineHelpText>
+    <label>Risk Mismatch AUM &gt; 20%</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

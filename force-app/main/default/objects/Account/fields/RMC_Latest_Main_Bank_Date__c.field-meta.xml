@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMC_Latest_Main_Bank_Date__c</fullName>
+    <externalId>false</externalId>
+    <label>Latest Main Bank Date</label>
+    <summarizedField>Customer_Main_Bank_Info__c.Calculation_Date__c</summarizedField>
+    <summaryForeignKey>Customer_Main_Bank_Info__c.Customer__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Name__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>ชื่อระบบขออนุมัติสินเชื่อ</inlineHelpText>
+    <label>Host Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SLS</fullName>
+                <default>false</default>
+                <label>SLS</label>
+            </value>
+            <value>
+                <fullName>EXCEL</fullName>
+                <default>false</default>
+                <label>EXCEL</label>
+            </value>
+            <value>
+                <fullName>FSR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FSR</label>
+            </value>
+            <value>
+                <fullName>TPT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TPT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

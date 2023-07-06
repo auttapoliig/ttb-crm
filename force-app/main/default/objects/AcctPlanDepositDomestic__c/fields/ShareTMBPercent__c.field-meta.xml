@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShareTMBPercent__c</fullName>
+    <description>%share-TMB</description>
+    <externalId>false</externalId>
+    <inlineHelpText>%share-TMB</inlineHelpText>
+    <label>%share-TMB</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

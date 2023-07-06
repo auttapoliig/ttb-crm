@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_the_Date_of_Visit</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(OR(ISNEW(),ISCHANGED(Date_of_Visit__c)),Date_of_Visit__c &lt; Today(),FALSE)</errorConditionFormula>
+    <errorDisplayField>Date_of_Visit__c</errorDisplayField>
+    <errorMessage>Visit Plan Date cannot be earlier than today</errorMessage>
+</ValidationRule>

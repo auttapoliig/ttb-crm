@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CashCycle__c</fullName>
+    <description>Cash cycle (calculated by different  between collection and payment period) and RM will consider the cash clycle by themselves. Each company has different cash cycle.
+เป็นการกะประมาณกระแสเงินรับเข้าจากทางด้าน collection ว่ามีการเก็บเงินจากการรับเข้าเมื่อไหร่ และจ่ายออกไปเมื่อไหร่ ซึ่งจะทำให้ทราบว่าโดยเฉลี่ยเก็บไว้กี่วัน</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Cash cycle (calculated by different  between collection and payment period) and RM will consider the cash clycle by themselves. Each company has different cash cycle.</inlineHelpText>
+    <label>Cash Cycle</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

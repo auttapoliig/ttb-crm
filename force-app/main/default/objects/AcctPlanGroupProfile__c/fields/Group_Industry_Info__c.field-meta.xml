@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Industry_Info__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>อุตสาหกรรมหลักของกลุ่ม</description>
+    <externalId>false</externalId>
+    <inlineHelpText>อุตสาหกรรมหลักของกลุ่ม</inlineHelpText>
+    <label>Group Industry</label>
+    <referenceTo>Industry__c</referenceTo>
+    <relationshipLabel>Account Plan Group Profile</relationshipLabel>
+    <relationshipName>Account_Plan_Group_Profile</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

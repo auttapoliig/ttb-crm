@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPaymentDomesticAmtPerYear__c</fullName>
+    <description>Amount per year (THB) - Payment Domestic</description>
+    <externalId>false</externalId>
+    <formula>TotalPaymentDomesticPercent__c  *  TotalPayment__c</formula>
+    <inlineHelpText>Amount per year (THB) - Payment Domestic</inlineHelpText>
+    <label>TotalPaymentDomesticAmtPerYear</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

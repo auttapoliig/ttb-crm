@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Approval Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Approval - Active</fullName>
+                <default>false</default>
+                <label>Pending Approval - Active</label>
+            </value>
+            <value>
+                <fullName>Approved - Active</fullName>
+                <default>false</default>
+                <label>Approved - Active</label>
+            </value>
+            <value>
+                <fullName>Rejected - Active</fullName>
+                <default>false</default>
+                <label>Rejected - Active</label>
+            </value>
+            <value>
+                <fullName>Recalled - Active</fullName>
+                <default>false</default>
+                <label>Recalled - Active</label>
+            </value>
+            <value>
+                <fullName>Pending Approval - Update</fullName>
+                <default>false</default>
+                <label>Pending Approval - Update</label>
+            </value>
+            <value>
+                <fullName>Approved - Update</fullName>
+                <default>false</default>
+                <label>Approved - Update</label>
+            </value>
+            <value>
+                <fullName>Rejected - Update</fullName>
+                <default>false</default>
+                <label>Rejected - Update</label>
+            </value>
+            <value>
+                <fullName>Recalled - Update</fullName>
+                <default>false</default>
+                <label>Recalled - Update</label>
+            </value>
+            <value>
+                <fullName>Pending Approval - Inactive</fullName>
+                <default>false</default>
+                <label>Pending Approval - Inactive</label>
+            </value>
+            <value>
+                <fullName>Approved - Inactive</fullName>
+                <default>false</default>
+                <label>Approved - Inactive</label>
+            </value>
+            <value>
+                <fullName>Rejected - Inactive</fullName>
+                <default>false</default>
+                <label>Rejected - Inactive</label>
+            </value>
+            <value>
+                <fullName>Recalled - Inactive</fullName>
+                <default>false</default>
+                <label>Recalled - Inactive</label>
+            </value>
+            <value>
+                <fullName>PAM Approver1 Approved - Active</fullName>
+                <default>false</default>
+                <label>PAM Approver1 Approved - Active</label>
+            </value>
+            <value>
+                <fullName>PAM Approver1 Approved - Update</fullName>
+                <default>false</default>
+                <label>PAM Approver1 Approved - Update</label>
+            </value>
+            <value>
+                <fullName>PAM Approver1 Approved - Inactive</fullName>
+                <default>false</default>
+                <label>PAM Approver1 Approved - Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreditType__c</fullName>
+    <description>Credit Types</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Credit Types</inlineHelpText>
+    <label>CreditType</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Segment__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OD</fullName>
+                <default>false</default>
+                <label>OD</label>
+            </value>
+            <value>
+                <fullName>PN</fullName>
+                <default>false</default>
+                <label>PN</label>
+            </value>
+            <value>
+                <fullName>Combine line OD/PN/TF</fullName>
+                <default>false</default>
+                <label>Combine line OD/PN/TF</label>
+            </value>
+            <value>
+                <fullName>Combine line PN/TF</fullName>
+                <default>false</default>
+                <label>Combine line PN/TF</label>
+            </value>
+            <value>
+                <fullName>Combine line OD/PN</fullName>
+                <default>false</default>
+                <label>Combine line OD/PN</label>
+            </value>
+            <value>
+                <fullName>Discount Cheque</fullName>
+                <default>false</default>
+                <label>Discount Cheque</label>
+            </value>
+            <value>
+                <fullName>Packing Credit</fullName>
+                <default>false</default>
+                <label>Packing Credit</label>
+            </value>
+            <value>
+                <fullName>Export Bill Purchase</fullName>
+                <default>false</default>
+                <label>Export Bill Purchase</label>
+            </value>
+            <value>
+                <fullName>International Factoring (FCI)</fullName>
+                <default>false</default>
+                <label>International Factoring (FCI)</label>
+            </value>
+            <value>
+                <fullName>LC</fullName>
+                <default>false</default>
+                <label>LC</label>
+            </value>
+            <value>
+                <fullName>T/R</fullName>
+                <default>false</default>
+                <label>T/R</label>
+            </value>
+            <value>
+                <fullName>L/C and T/R</fullName>
+                <default>false</default>
+                <label>L/C and T/R</label>
+            </value>
+            <value>
+                <fullName>Shipping guarantee</fullName>
+                <default>false</default>
+                <label>Shipping guarantee</label>
+            </value>
+            <value>
+                <fullName>L/C,T/R and Shipping Guarantee</fullName>
+                <default>false</default>
+                <label>L/C,T/R and Shipping Guarantee</label>
+            </value>
+            <value>
+                <fullName>Factoring</fullName>
+                <default>false</default>
+                <label>Factoring</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>OD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>PN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>Combine line OD/PN/TF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>Combine line PN/TF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>Combine line OD/PN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <valueName>Discount Cheque</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>Factoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Domestic</controllingFieldValue>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>LC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>T/R</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>L/C and T/R</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>Shipping guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ImportTransaction</controllingFieldValue>
+            <valueName>L/C,T/R and Shipping Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ExportTransaction</controllingFieldValue>
+            <valueName>Packing Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ExportTransaction</controllingFieldValue>
+            <valueName>Export Bill Purchase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ExportTransaction</controllingFieldValue>
+            <valueName>International Factoring (FCI)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

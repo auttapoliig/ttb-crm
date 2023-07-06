@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Fee__c</fullName>
+    <description>Type of Fee</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of Fee</inlineHelpText>
+    <label>Type of Fee</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LC Commission</fullName>
+                <default>false</default>
+                <label>LC Commission</label>
+            </value>
+            <value>
+                <fullName>Engagement Fee</fullName>
+                <default>false</default>
+                <label>Engagement Fee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

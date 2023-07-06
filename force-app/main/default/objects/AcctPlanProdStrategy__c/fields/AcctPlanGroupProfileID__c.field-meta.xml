@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AcctPlanGroupProfileID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>AcctPlanGroupProfileID</label>
+    <referenceTo>AcctPlanGroupProfile__c</referenceTo>
+    <relationshipLabel>Account Plan Product Strategy</relationshipLabel>
+    <relationshipName>Account_Plan_Product_Strategy</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

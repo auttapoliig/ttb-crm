@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prefer_Address_Registered</fullName>
+    <active>true</active>
+    <description>prefer addres = registered address, registered address cannot be blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Prefer_Address__c, &quot;Registered Address&quot;)
+&amp;&amp; ISBLANK(Registered_Address__c)  
+,TRUE
+,FALSE)</errorConditionFormula>
+    <errorDisplayField>Registered_Address__c</errorDisplayField>
+    <errorMessage>Prefer Address is Registered Address but Registered Address is blank. Please change Prefer Address.</errorMessage>
+</ValidationRule>

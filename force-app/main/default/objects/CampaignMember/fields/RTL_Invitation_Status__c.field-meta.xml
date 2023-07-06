@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Invitation_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Invitation Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1. ลูกค้ารับฟังเก็บไปพิจารณา</fullName>
+                <default>false</default>
+                <label>1. ลูกค้ารับฟังเก็บไปพิจารณา</label>
+            </value>
+            <value>
+                <fullName>2. ลูกค้าไม่รับฟัง เพราะไม่พอใจ</fullName>
+                <default>false</default>
+                <label>2. ลูกค้าไม่รับฟัง เพราะไม่พอใจ</label>
+            </value>
+            <value>
+                <fullName>3. ลูกค้าต้องการสินเชื่อเพิ่ม</fullName>
+                <default>false</default>
+                <label>3. ลูกค้าต้องการสินเชื่อเพิ่ม</label>
+            </value>
+            <value>
+                <fullName>4. อื่นๆ (อธิบายเพิ่มเติมที่ช่อง “ข้อคิดเห็น”)</fullName>
+                <default>false</default>
+                <label>4. อื่นๆ (อธิบายเพิ่มเติมที่ช่อง “ข้อคิดเห็น”)</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามวิธีการสมัครและการใช้งาน ttb touch</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามวิธีการสมัครและการใช้งาน ttb touch</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามมาตรการและขอเข้าร่วมโครงการพักชำระหนี้</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามมาตรการและขอเข้าร่วมโครงการพักชำระหนี้</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามเรื่องสินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามเรื่องสินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามข้อมูลการเปลี่ยนแปลงบัญชีและผลิตภัณฑ์จากธนชาตเป็น ttb</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามข้อมูลการเปลี่ยนแปลงบัญชีและผลิตภัณฑ์จากธนชาตเป็น ttb</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามข้อมูลในบัญชีเงินฝาก</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามข้อมูลในบัญชีเงินฝาก</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-สอบถามเรื่องอื่นๆ (โปรดระบุรายละเอียดในช่อง ข้อคิดเห็น)</fullName>
+                <default>false</default>
+                <label>สำเร็จ-สอบถามเรื่องอื่นๆ (โปรดระบุรายละเอียดในช่อง ข้อคิดเห็น)</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ-ได้รับการติดต่อกลับและได้รับบริการแล้ว</fullName>
+                <default>false</default>
+                <label>สำเร็จ-ได้รับการติดต่อกลับและได้รับบริการแล้ว</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-ขอปลดล็อคการใช้งาน ttb touch</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-ขอปลดล็อคการใช้งาน ttb touch</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-แจ้งปัญหาการใช้งาน Touch</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-แจ้งปัญหาการใช้งาน Touch</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามมาตรการและขอเข้าร่วมโครงการพักชำระหนี้</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามมาตรการและขอเข้าร่วมโครงการพักชำระหนี้</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-ติดตามสถานะเข้าร่วมโครงการพักชำระหนี้</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-ติดตามสถานะเข้าร่วมโครงการพักชำระหนี้</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลการเปลี่ยนแปลงบัญชีและผลิตภัณฑ์จากธนชาตเป็น ttb</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลการเปลี่ยนแปลงบัญชีและผลิตภัณฑ์จากธนชาตเป็น ttb</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลในบัญชีบัตรเครดิต</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลในบัญชีบัตรเครดิต</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลในบัญชีเงินฝาก</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลในบัญชีเงินฝาก</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามเรื่องอื่นๆ (โปรดระบุรายละเอียดในช่อง ข้อคิดเห็น)</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามเรื่องอื่นๆ (โปรดระบุรายละเอียดในช่อง ข้อคิดเห็น)</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อบ้าน</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อบ้าน</label>
+            </value>
+            <value>
+                <fullName>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อส่วนบุคคล</fullName>
+                <default>false</default>
+                <label>ส่งประสานงาน CRM-สอบถามข้อมูลเกี่ยวกับสินเชื่อส่วนบุคคล</label>
+            </value>
+            <value>
+                <fullName>ไม่สะดวกรับฟังการชี้แจง - จะติดต่อมาใหม่อีกครั้ง</fullName>
+                <default>false</default>
+                <label>ไม่สะดวกรับฟังการชี้แจง - จะติดต่อมาใหม่อีกครั้ง</label>
+            </value>
+            <value>
+                <fullName>ยืนยันตัวตนไม่ผ่าน - ให้ลูกค้าติดต่อมาใหม่</fullName>
+                <default>false</default>
+                <label>ยืนยันตัวตนไม่ผ่าน - ให้ลูกค้าติดต่อมาใหม่</label>
+            </value>
+            <value>
+                <fullName>ติดต่อไม่ได้-ลูกค้าไม่รับสาย</fullName>
+                <default>false</default>
+                <label>ติดต่อไม่ได้-ลูกค้าไม่รับสาย</label>
+            </value>
+            <value>
+                <fullName>ติดต่อไม่ได้-สายไม่ว่าง</fullName>
+                <default>false</default>
+                <label>ติดต่อไม่ได้-สายไม่ว่าง</label>
+            </value>
+            <value>
+                <fullName>ติดต่อไม่ได้-หมายเลขไม่ถูกต้อง/หมายเลขยังไม่เปิดให้บริการ</fullName>
+                <default>false</default>
+                <label>ติดต่อไม่ได้-หมายเลขไม่ถูกต้อง/หมายเลขยังไม่เปิดให้บริการ</label>
+            </value>
+            <value>
+                <fullName>Accept</fullName>
+                <default>false</default>
+                <label>Accept</label>
+            </value>
+            <value>
+                <fullName>Not Accept</fullName>
+                <default>false</default>
+                <label>Not Accept</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

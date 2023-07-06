@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_RPD_BussinessTalk_LossOther</fullName>
+    <active>true</active>
+    <description>SCR0378480 - validate RPD Require Bussiness Talk While Loss Reason is other</description>
+    <errorConditionFormula>IF(CONTAINS(TEXT(Categories__c), &quot;RPD Team&quot;)
+	,IF( AND( TEXT(Loss_Incomplete_reason__c)=&quot;อื่นๆ โปรดระบุ&quot; ,LEN(TRIM(Business_talk_and_opportunity__c)) = 0 ) , TRUE, FALSE)
+	,FALSE)</errorConditionFormula>
+    <errorDisplayField>Business_talk_and_opportunity__c</errorDisplayField>
+    <errorMessage>Please input Bussinness Talk</errorMessage>
+</ValidationRule>

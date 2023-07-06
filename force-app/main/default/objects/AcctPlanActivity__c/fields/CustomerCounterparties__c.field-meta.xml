@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomerCounterparties__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Customer Counterparties to be selected from Contact List. (Please note that this field will be displayed in Executive Summary)
+ข้อมูล Customer Counterparty  จะถูกนำไปแสดงใน Executive Summary</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Customer Counterparties to be selected from Contact List. (Please note that this field will be displayed in Executive Summary)
+ข้อมูล Customer Counterparty  จะถูกนำไปแสดงใน Executive Summary</inlineHelpText>
+    <label>Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND ((2 AND 3) OR 4)</booleanFilter>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Account__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contact.IsActive__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Core_bank</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.RecordType.DeveloperName</field>
+            <operation>notEqual</operation>
+            <value>Core_bank</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Account Plan Activity</relationshipLabel>
+    <relationshipName>Account_Plan_Activity</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

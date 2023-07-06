@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Id__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>IF TYPE = &apos;DP&apos; -&gt; CUST_ID+TMB_ACCOUNT_ID+TMB_DEPT_NO+MATURITY_DATE
+IF TYPE = &apos;DP-DORMANT&apos; -&gt;  CUST_ID+TMB_ACCOUNT_ID+TMB_DEPT_NO+DORMANT_DATE
+IF TYPE = &apos;MF&apos; -&gt;  CUST_ID+TMB_ACCOUNT_ID+ TMB_DEPT_NO+ TMB_PRODUCT_CODE+MATURITY_DATE
+IF TYPE = &apos;BA&apos; -&gt; CUST_ID+TMB_ACCOUNT_ID+PAID_UP_DATE+EXPIRY_DATE+NEXT_PAYMENT_DATE
+
+Used as External Id for upsert job from data batch job.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>true</externalId>
+    <label>External Id</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

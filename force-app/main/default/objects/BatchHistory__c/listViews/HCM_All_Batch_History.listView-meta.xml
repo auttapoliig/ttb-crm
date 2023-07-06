@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HCM_All_Batch_History</fullName>
+    <columns>NAME</columns>
+    <columns>Batch_Name__c</columns>
+    <columns>Batch_Type__c</columns>
+    <columns>Records_Failed__c</columns>
+    <columns>Records_Processed__c</columns>
+    <columns>Records_Successed__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Batch_Type__c</field>
+        <operation>equals</operation>
+        <value>HCM</value>
+    </filters>
+    <label>HCM All Batch History</label>
+    <language>en_US</language>
+</ListView>

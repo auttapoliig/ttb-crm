@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_field_Number_less_than_0</fullName>
+    <active>true</active>
+    <errorConditionFormula>FXO_RequestAmount__c &lt; 0 || FXO_CustomerRate__c &lt; 0 || FXO_InterbankRate__c &lt; 0</errorConditionFormula>
+    <errorMessage>Request Amount, Customer Rate and Interbank Rate must be greater than 0</errorMessage>
+</ValidationRule>

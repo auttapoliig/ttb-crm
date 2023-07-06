@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mouse_Hover_Survey</fullName>
+    <fields>Name</fields>
+    <fields>Call_Date_Time__c</fields>
+    <fields>SurveyMaster__c</fields>
+    <label>Mouse Hover Survey</label>
+</CompactLayout>

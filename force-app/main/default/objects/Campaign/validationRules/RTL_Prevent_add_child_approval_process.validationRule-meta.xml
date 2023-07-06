@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Prevent_add_child_approval_process</fullName>
+    <active>true</active>
+    <description>Prevent add new child when master&apos;s status = submitted or 1-Approved</description>
+    <errorConditionFormula>AND(OR(TEXT(Parent.Status) = &apos;Submitted&apos;, TEXT(Parent.Status) = &apos;1-Approved&apos;) , Isnew())</errorConditionFormula>
+    <errorMessage>You cannot create campaign when Master campaign is during approval process.</errorMessage>
+</ValidationRule>

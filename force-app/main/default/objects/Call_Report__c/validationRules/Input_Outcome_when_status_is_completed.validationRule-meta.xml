@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Input_Outcome_when_status_is_completed</fullName>
+    <active>true</active>
+    <description>เมื่อทำการเลือก status เป็น Completed แล้ว ต้องใส่ข้อมูล Outcome ทุกครั้ง</description>
+    <errorConditionFormula>AND( TEXT( Status__c )= &quot;Completed&quot; , ISBLANK( TEXT( Outcome__c ) ) )</errorConditionFormula>
+    <errorDisplayField>Outcome__c</errorDisplayField>
+    <errorMessage>Outcome is required</errorMessage>
+</ValidationRule>

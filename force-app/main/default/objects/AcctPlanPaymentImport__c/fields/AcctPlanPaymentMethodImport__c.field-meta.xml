@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AcctPlanPaymentMethodImport__c</fullName>
+    <description>Account Plan Payment Method Import</description>
+    <externalId>false</externalId>
+    <label>Account Plan Payment Method Import</label>
+    <referenceTo>AcctPlanWallet__c</referenceTo>
+    <relationshipLabel>Account Plan Payment Import</relationshipLabel>
+    <relationshipName>Account_Plan_Payment_Import</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

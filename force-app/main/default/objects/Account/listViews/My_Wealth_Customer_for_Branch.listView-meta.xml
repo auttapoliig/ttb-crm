@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Wealth_Customer_for_Branch</fullName>
+    <columns>RTL_Customer_Title__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>RTL_Privilege1__c</columns>
+    <columns>RTL_RM_Name__c</columns>
+    <columns>RTL_AUM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_RM_Name__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RTL_RM_Name__c</field>
+        <operation>notEqual</operation>
+        <value>00000</value>
+    </filters>
+    <filters>
+        <field>RTL_Check_WM_RM_as_PWA__c</field>
+        <operation>notEqual</operation>
+        <value>PWA</value>
+    </filters>
+    <filters>
+        <field>RTL_Is_BM_Owner__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Wealth Customer for Branch</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Auto_and_Retail_Lending_Marketing_TL</roleAndSubordinates>
+        <roleAndSubordinates>DTB_Payment</roleAndSubordinates>
+        <roleAndSubordinates>Deposit_Product_TL</roleAndSubordinates>
+        <roleAndSubordinates>Region_1_1800</roleAndSubordinates>
+        <roleAndSubordinates>Region_2_6900</roleAndSubordinates>
+        <roleAndSubordinates>Region_3_9200</roleAndSubordinates>
+        <roleAndSubordinates>Region_4_7100</roleAndSubordinates>
+        <roleAndSubordinates>Region_5_7400</roleAndSubordinates>
+        <roleAndSubordinates>Region_6_7800</roleAndSubordinates>
+        <roleAndSubordinates>SB1_RG_Phahonyothin</roleAndSubordinates>
+    </sharedTo>
+</ListView>

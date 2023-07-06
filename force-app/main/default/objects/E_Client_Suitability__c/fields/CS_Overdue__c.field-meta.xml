@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Overdue__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISPICKVAL( CS_Status__c ,&quot;Completed&quot;)) &amp;&amp; NOT(ISPICKVAL( CS_Status__c ,&quot;Suspended&quot;))
+&amp;&amp; Today() &gt; CS_Expiry_Date_Next__c &amp;&amp; CS_New_Customer_flag__c = False, IMAGE(&quot;/resource/Overdue?&quot;, &quot;&quot;), NULL )</formula>
+    <label>Overdue</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

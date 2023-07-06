@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_ALA_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <label>Automotive Lending Solution Advisory</label>
+    <language>en_US</language>
+    <queue>RTL_ALA</queue>
+    <sharedTo>
+        <group>Automotive_Lending_Solution_Advisory</group>
+        <role>Automotive_Lending_Solution_Advisory_Line_SupportTL</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_MGR</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_USER</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_WM_RM_as_PWA__c</fullName>
+    <description>To display flag of wealth customer&apos;s owner as PWA, BRC or BM
+Update: RQ041 redesign assign wealth RM to BRC (Remove the value of this field)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND( 
+        RTL_RM_Name__c &lt;&gt; null, 
+        RTL_RM_Name__c &lt;&gt; &quot;&quot;, 
+        RTL_RM_Name__c &lt;&gt; &quot;00000&quot;, 
+        LEFT(RTL_RM_Name__c,2) &lt;&gt; &quot;00&quot;
+    ),
+    &quot;PWA&quot;,
+
+    IF(
+        AND(
+            RTL_RM_Name__c &lt;&gt; &quot;&quot;,
+            RTL_RM_Name__c &lt;&gt; &quot;00000&quot;, 
+            LEFT(RTL_RM_Name__c, 2) = &quot;00&quot;
+        ),
+        IF(Assigned_BRC_User_Name__c &lt;&gt; null,&quot;Undefined&quot;,&quot;Undefined&quot;), 
+        &quot;Undefined&quot;
+    )
+)</formula>
+    <label>Check WM RM as PWA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

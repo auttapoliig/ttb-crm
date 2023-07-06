@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <externalId>false</externalId>
+    <label>Segment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Domestic Collection Method</fullName>
+                <default>false</default>
+                <label>Domestic Collection Method</label>
+            </value>
+            <value>
+                <fullName>Export Collection Method</fullName>
+                <default>false</default>
+                <label>Export Collection Method</label>
+            </value>
+            <value>
+                <fullName>Collection Questionnaire</fullName>
+                <default>false</default>
+                <label>Collection Questionnaire</label>
+            </value>
+            <value>
+                <fullName>Payment Questionnaire</fullName>
+                <default>false</default>
+                <label>Payment Questionnaire</label>
+            </value>
+            <value>
+                <fullName>Domestic Payment Method</fullName>
+                <default>false</default>
+                <label>Domestic Payment Method</label>
+            </value>
+            <value>
+                <fullName>Payment Method Import</fullName>
+                <default>false</default>
+                <label>Payment Method Import</label>
+            </value>
+            <value>
+                <fullName>Liquidity Management</fullName>
+                <default>false</default>
+                <label>Liquidity Management</label>
+            </value>
+            <value>
+                <fullName>L/G issuing</fullName>
+                <default>false</default>
+                <label>L/G issuing</label>
+            </value>
+            <value>
+                <fullName>L/G Project</fullName>
+                <default>false</default>
+                <label>L/G Project</label>
+            </value>
+            <value>
+                <fullName>AVAL &amp; Acceptance</fullName>
+                <default>false</default>
+                <label>AVAL &amp; Acceptance</label>
+            </value>
+            <value>
+                <fullName>International bank section1</fullName>
+                <default>false</default>
+                <label>International bank section1</label>
+            </value>
+            <value>
+                <fullName>International bank section2</fullName>
+                <default>false</default>
+                <label>International bank section2</label>
+            </value>
+            <value>
+                <fullName>Shipping guarantee</fullName>
+                <default>false</default>
+                <label>Shipping guarantee</label>
+            </value>
+            <value>
+                <fullName>Request L/G</fullName>
+                <default>false</default>
+                <label>Request L/G</label>
+            </value>
+            <value>
+                <fullName>FX Hedging Behavior</fullName>
+                <default>false</default>
+                <label>FX Hedging Behavior</label>
+            </value>
+            <value>
+                <fullName>FX Hedging experience</fullName>
+                <default>false</default>
+                <label>FX Hedging experience</label>
+            </value>
+            <value>
+                <fullName>Credit protection risk</fullName>
+                <default>false</default>
+                <label>Credit protection risk</label>
+            </value>
+            <value>
+                <fullName>Non credit life insurance</fullName>
+                <default>false</default>
+                <label>Non credit life insurance</label>
+            </value>
+            <value>
+                <fullName>Non Life insurance</fullName>
+                <default>false</default>
+                <label>Non Life insurance</label>
+            </value>
+            <value>
+                <fullName>Insurance Internet Banking</fullName>
+                <default>false</default>
+                <label>Insurance Internet Banking</label>
+            </value>
+            <value>
+                <fullName>Credit life insurance</fullName>
+                <default>false</default>
+                <label>Credit life insurance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

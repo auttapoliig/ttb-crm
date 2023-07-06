@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Non_Primary_Must_Have_Relationship</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(!RTL_Primary__c,  ISPICKVAL(RTL_Relationship__c ,&quot;&quot;))</errorConditionFormula>
+    <errorMessage>Non Primary Member must have a Relationship to Primary Member defined</errorMessage>
+</ValidationRule>

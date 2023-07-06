@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_outcome_for_new_visit_report</fullName>
+    <active>true</active>
+    <description>Prevent selecting outcome = cancelled for the new visit plan/report (R7)</description>
+    <errorConditionFormula>AND(Isnew(),OR(TEXT(Outcome__c) = &quot;Cancelled&quot;,TEXT(Outcome__c) = &quot;Postponed&quot;))</errorConditionFormula>
+    <errorDisplayField>Outcome__c</errorDisplayField>
+    <errorMessage>You cannot select cancelled/ postpone until you create  the visit report</errorMessage>
+</ValidationRule>

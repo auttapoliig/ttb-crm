@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Store the relationship of Zone/Team and Manager.
+Use for re-assignment.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Prospect Owner Assignment</label>
+    <visibility>Protected</visibility>
+</CustomObject>

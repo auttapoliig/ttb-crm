@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preventing_edit_counterparty_for_Closed</fullName>
+    <active>true</active>
+    <description>Not allow to edit TMB counterparty when visit plan/report is not open</description>
+    <errorConditionFormula>AND(TEXT( Visit_Plan_Report__r.Status__c )&lt;&gt; &quot;1 - Open&quot;,  ISCHANGED( TMB_Person__c ) )</errorConditionFormula>
+    <errorDisplayField>TMB_Person__c</errorDisplayField>
+    <errorMessage>TMB Person cannot be changed for the Cancelled/Completed Visit</errorMessage>
+</ValidationRule>

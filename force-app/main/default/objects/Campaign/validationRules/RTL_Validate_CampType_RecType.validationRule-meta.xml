@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Validate_CampType_RecType</fullName>
+    <active>true</active>
+    <description>Validate Campaign Type and Record Type for Retail Campaign</description>
+    <errorConditionFormula>AND( ISNEW(),IF( CONTAINS(RecordType.Name, &apos;Local Exclusive&apos;),NOT(ISPICKVAL(Parent.RTL_Campaign_Type__c,&apos;Local Exclusive&apos;)), 
+	IF(CONTAINS(RecordType.Name, &apos;Exclusive&apos;),NOT(ISPICKVAL(Parent.RTL_Campaign_Type__c,&apos;Exclusive&apos;)),
+		IF(CONTAINS(RecordType.Name, &apos;Mass&apos;), NOT(ISPICKVAL(Parent.RTL_Campaign_Type__c,&apos;Mass&apos;)),
+			IF(CONTAINS(RecordType.Name,&apos;Research&apos;), NOT(ISPICKVAL(Parent.RTL_Campaign_Type__c,&apos;Research&apos;)),FALSE)
+		)
+	)
+))</errorConditionFormula>
+    <errorMessage>Campaign Record Type mismatch with Campaign Type.</errorMessage>
+</ValidationRule>

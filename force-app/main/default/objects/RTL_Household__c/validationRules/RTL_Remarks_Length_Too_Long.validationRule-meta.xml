@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Remarks_Length_Too_Long</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN( RTL_Remarks__c ) &gt; 255</errorConditionFormula>
+    <errorMessage>Remarks cannot be longer than 255 characters</errorMessage>
+</ValidationRule>

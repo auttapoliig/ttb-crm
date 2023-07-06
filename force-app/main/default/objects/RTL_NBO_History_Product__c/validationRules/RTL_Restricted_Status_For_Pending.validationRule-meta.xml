@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Restricted_Status_For_Pending</fullName>
+    <active>true</active>
+    <description>Pending NBO Product can only set to Accepted or Rejected or Pending or Invalid or Blank (required for Accept some scenario from Outbound Call)</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(PRIORVALUE(RTL_Status__c),&apos;Pending&apos;), 
+NOT(ISPICKVAL(RTL_Status__c,&apos;Accepted&apos;)), 
+NOT(ISPICKVAL(RTL_Status__c,&apos;Rejected&apos;)),
+NOT(ISPICKVAL(RTL_Status__c,&apos;Pending&apos;)),
+NOT(ISPICKVAL(RTL_Status__c,&apos;Invalid&apos;)),
+NOT(ISPICKVAL(RTL_Status__c,&apos;&apos;))
+)</errorConditionFormula>
+    <errorMessage>Pending NBO Product can only set to Accepted or Rejected</errorMessage>
+</ValidationRule>

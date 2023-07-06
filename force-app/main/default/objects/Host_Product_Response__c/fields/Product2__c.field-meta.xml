@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to salesforce Product2  
+การใส่ค่าจะทำที่ trigger</description>
+    <externalId>false</externalId>
+    <label>Product2</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Host Product Response</relationshipLabel>
+    <relationshipName>Host_Product_Response</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

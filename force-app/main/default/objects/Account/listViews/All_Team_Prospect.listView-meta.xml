@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Team_Prospect</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_Type__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>Mobile_Number_PE__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.RATING</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Prospect,Disqualified Prospect,Qualified Prospect</value>
+    </filters>
+    <label>All Team Prospect</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ZM_Above</group>
+    </sharedTo>
+</ListView>

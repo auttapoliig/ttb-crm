@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AS_Product_Service__c</fullName>
+    <description>AS Product/Service</description>
+    <externalId>false</externalId>
+    <inlineHelpText>AS Product/Service</inlineHelpText>
+    <label>AS Product/Service</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1) Custodian</fullName>
+                <default>false</default>
+                <label>1) Custodian</label>
+            </value>
+            <value>
+                <fullName>2) Fund Supervisory</fullName>
+                <default>false</default>
+                <label>2) Fund Supervisory</label>
+            </value>
+            <value>
+                <fullName>3) Middle Office</fullName>
+                <default>false</default>
+                <label>3) Middle Office</label>
+            </value>
+            <value>
+                <fullName>4) Agency Service</fullName>
+                <default>false</default>
+                <label>4) Agency Service</label>
+            </value>
+            <value>
+                <fullName>5) Registrar &amp; Payment Agent</fullName>
+                <default>false</default>
+                <label>5) Registrar &amp; Payment Agent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

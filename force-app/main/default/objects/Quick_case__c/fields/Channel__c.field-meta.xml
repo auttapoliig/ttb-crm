@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel__c</fullName>
+    <externalId>false</externalId>
+    <label>Channel</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client Service - Project and Contract Financing</fullName>
+                <default>false</default>
+                <label>Client Service - Project and Contract Financing</label>
+            </value>
+            <value>
+                <fullName>Collection</fullName>
+                <default>false</default>
+                <label>Collection</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>ME</fullName>
+                <default>false</default>
+                <label>ME</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>QR Branch</fullName>
+                <default>false</default>
+                <label>QR Branch</label>
+            </value>
+            <value>
+                <fullName>RM/ARM/MM</fullName>
+                <default>false</default>
+                <label>RM/ARM/MM</label>
+            </value>
+            <value>
+                <fullName>Social Media - Facebook</fullName>
+                <default>false</default>
+                <label>Social Media - Facebook</label>
+            </value>
+            <value>
+                <fullName>Social Media - Pantip</fullName>
+                <default>false</default>
+                <label>Social Media - Pantip</label>
+            </value>
+            <value>
+                <fullName>Social Media - Twitter</fullName>
+                <default>false</default>
+                <label>Social Media - Twitter</label>
+            </value>
+            <value>
+                <fullName>Survey</fullName>
+                <default>false</default>
+                <label>Survey</label>
+            </value>
+            <value>
+                <fullName>TMU</fullName>
+                <default>false</default>
+                <label>TMU</label>
+            </value>
+            <value>
+                <fullName>TPA</fullName>
+                <default>false</default>
+                <label>TPA</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>ZM/BDM/ABDM</fullName>
+                <default>false</default>
+                <label>ZM/BDM/ABDM</label>
+            </value>
+            <value>
+                <fullName>กระทรวงการคลัง</fullName>
+                <default>false</default>
+                <label>กระทรวงการคลัง</label>
+            </value>
+            <value>
+                <fullName>ขายผลิตภัณฑ์ธุรกรรมทางการเงิน</fullName>
+                <default>false</default>
+                <label>ขายผลิตภัณฑ์ธุรกรรมทางการเงิน</label>
+            </value>
+            <value>
+                <fullName>ธนาคารแห่งประเทศไทย</fullName>
+                <default>false</default>
+                <label>ธนาคารแห่งประเทศไทย</label>
+            </value>
+            <value>
+                <fullName>บริการลูกค้าธุรกิจ (Client Implementation)</fullName>
+                <default>false</default>
+                <label>บริการลูกค้าธุรกิจ (Client Implementation)</label>
+            </value>
+            <value>
+                <fullName>บริการลูกค้าธุรกิจ (Corporate Call Center)</fullName>
+                <default>false</default>
+                <label>บริการลูกค้าธุรกิจ (Corporate Call Center)</label>
+            </value>
+            <value>
+                <fullName>บริการลูกค้าธุรกิจ (Investigation)</fullName>
+                <default>false</default>
+                <label>บริการลูกค้าธุรกิจ (Investigation)</label>
+            </value>
+            <value>
+                <fullName>บริษัท ข้อมูลเครดิตแห่งชาติ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ข้อมูลเครดิตแห่งชาติ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัทหลักทรัพย์จัดการกองทุน ยูโอบี (ประเทศไทย) จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัทหลักทรัพย์จัดการกองทุน ยูโอบี (ประเทศไทย) จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เอฟดับบลิวดี ประกันชีวิต จำกัด (มหาชน) (FWD)</fullName>
+                <default>false</default>
+                <label>บริษัท เอฟดับบลิวดี ประกันชีวิต จำกัด (มหาชน) (FWD)</label>
+            </value>
+            <value>
+                <fullName>บริหารข้อมูลเครดิตกลาง</fullName>
+                <default>false</default>
+                <label>บริหารข้อมูลเครดิตกลาง</label>
+            </value>
+            <value>
+                <fullName>บริหารคุณภาพและติดตามกลุ่มสินเชื่อธุรกิจขนาดเล็ก (SEPM)</fullName>
+                <default>false</default>
+                <label>บริหารคุณภาพและติดตามกลุ่มสินเชื่อธุรกิจขนาดเล็ก (SEPM)</label>
+            </value>
+            <value>
+                <fullName>ประธานเจ้าหน้าที่บริหาร</fullName>
+                <default>false</default>
+                <label>ประธานเจ้าหน้าที่บริหาร</label>
+            </value>
+            <value>
+                <fullName>มาติดต่อด้วยตนเอง</fullName>
+                <default>false</default>
+                <label>มาติดต่อด้วยตนเอง</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าสัมพันธ์</fullName>
+                <default>false</default>
+                <label>ลูกค้าสัมพันธ์</label>
+            </value>
+            <value>
+                <fullName>ศูนย์ดำเนินการข้อร้องเรียนลูกค้า</fullName>
+                <default>false</default>
+                <label>ศูนย์ดำเนินการข้อร้องเรียนลูกค้า</label>
+            </value>
+            <value>
+                <fullName>ศูนย์ธุรกิจสัมพันธ์ RMC</fullName>
+                <default>false</default>
+                <label>ศูนย์ธุรกิจสัมพันธ์ RMC</label>
+            </value>
+            <value>
+                <fullName>สาขา</fullName>
+                <default>false</default>
+                <label>สาขา</label>
+            </value>
+            <value>
+                <fullName>สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</fullName>
+                <default>false</default>
+                <label>สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</label>
+            </value>
+            <value>
+                <fullName>สำนักงานคณะกรรมการกำกับและส่งเสริมธุรกิจประกันภัย</fullName>
+                <default>false</default>
+                <label>สำนักงานคณะกรรมการกำกับและส่งเสริมธุรกิจประกันภัย</label>
+            </value>
+            <value>
+                <fullName>สำนักงานคณะกรรมการคุ้มครองผู้บริโภค</fullName>
+                <default>false</default>
+                <label>สำนักงานคณะกรรมการคุ้มครองผู้บริโภค</label>
+            </value>
+            <value>
+                <fullName>เว็บไซต์ธนาคาร</fullName>
+                <default>false</default>
+                <label>เว็บไซต์ธนาคาร</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

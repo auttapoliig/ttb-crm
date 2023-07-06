@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_WB_Customer__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   ((RTL_WB_Required_BAL__c*12)-(RTL_Average_AUM__c*(MONTH(TODAY())+(12*(YEAR(TODAY())-YEAR(RTL_Privilege1_Start_Date__c)))-MONTH(RTL_Privilege1_Start_Date__c))))/(MONTH(RTL_Privilege1_Expired_Date__c) + (12*(YEAR(RTL_Privilege1_Expired_Date__c)-YEAR(TODAY()))) - MONTH(TODAY())+1) &lt; 0,
+			0,
+	  IF(
+	 		 	(MONTH(RTL_Privilege1_Expired_Date__c) + (12*(YEAR(RTL_Privilege1_Expired_Date__c)-YEAR(TODAY()))) - MONTH(TODAY())+1)=0,
+       0,
+      round(((RTL_WB_Required_BAL__c*12)-(RTL_Average_AUM__c*(MONTH(TODAY())+(12*(YEAR(TODAY())-YEAR(RTL_Privilege1_Start_Date__c)))-MONTH(RTL_Privilege1_Start_Date__c))))/(MONTH(RTL_Privilege1_Expired_Date__c) + (12*(YEAR(RTL_Privilege1_Expired_Date__c)-YEAR(TODAY()))) - MONTH(TODAY())+1),2)
+     )
+		)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WB Customer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

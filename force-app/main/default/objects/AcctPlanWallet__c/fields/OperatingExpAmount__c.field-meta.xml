@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OperatingExpAmount__c</fullName>
+    <description>ค่าใช้จ่ายที่เป็น operating expense อาจจะ check จากงบ หรือใช้วิธีการในการสอบถามลูกค้าก็ได้</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ค่าใช้จ่ายที่เป็น operating expense อาจจะ check จากงบ หรือใช้วิธีการในการสอบถามลูกค้าก็ได้</inlineHelpText>
+    <label>Operating Expense (Amount : THB)</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

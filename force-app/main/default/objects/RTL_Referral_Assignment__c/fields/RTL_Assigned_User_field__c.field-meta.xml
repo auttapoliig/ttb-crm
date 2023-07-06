@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Assigned_User_field__c</fullName>
+    <externalId>false</externalId>
+    <label>1.2 Assigned User field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RTL_RM_Owner_Id__c</fullName>
+                <default>false</default>
+                <label>RTL_RM_Owner_Id__c</label>
+            </value>
+            <value>
+                <fullName>RTL_Wealth_RM_Id__c</fullName>
+                <default>false</default>
+                <label>RTL_Wealth_RM_Id__c</label>
+            </value>
+            <value>
+                <fullName>RTL_Referred_By_ID__c</fullName>
+                <default>false</default>
+                <label>RTL_Referred_By_ID__c</label>
+            </value>
+            <value>
+                <fullName>RTL_Preferred_Staff__c</fullName>
+                <default>false</default>
+                <label>RTL_Preferred_Staff__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

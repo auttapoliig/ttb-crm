@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Team_Portfolio</fullName>
+    <columns>NAME</columns>
+    <columns>TargetNI__c</columns>
+    <columns>SumOfWallet__c</columns>
+    <columns>SumOfPerformance__c</columns>
+    <columns>SumOfTargetNIByRM__c</columns>
+    <columns>SumOfExpectedNIByAcctPlan__c</columns>
+    <columns>Status__c</columns>
+    <columns>Account_Plan_Portfolio_Owner_Team__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2016</value>
+    </filters>
+    <filters>
+        <field>Owner_IsActive__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Team Portfolio-2016</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>AL_WS_Loan_Disbursement_SettlementTL</roleAndSubordinates>
+        <roleAndSubordinates>CCBO</roleAndSubordinates>
+    </sharedTo>
+</ListView>

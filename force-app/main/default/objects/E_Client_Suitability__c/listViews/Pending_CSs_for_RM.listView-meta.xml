@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_CSs_for_RM</fullName>
+    <columns>NAME</columns>
+    <columns>CS_Customer__c</columns>
+    <columns>CS_Status__c</columns>
+    <columns>CS_Level__c</columns>
+    <columns>CS_Expiry_Date_Next__c</columns>
+    <columns>CS_RM__c</columns>
+    <columns>CS_Sales_Owner__c</columns>
+    <columns>CS_Sales_Owner_Segment__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CS_Status__c</field>
+        <operation>equals</operation>
+        <value>Reviewing,Pending RM TH,RM TH Rejected</value>
+    </filters>
+    <label>Pending CSs for RM</label>
+    <sharedTo>
+        <roleAndSubordinates>AL_WS_Loan_Disbursement_SettlementTL</roleAndSubordinates>
+        <roleAndSubordinates>CCBO</roleAndSubordinates>
+    </sharedTo>
+</ListView>

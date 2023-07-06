@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome_Loss_deal</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND(PRIORVALUE( Customer_name__c ) = null, Customer_name__c &lt;&gt; null), FALSE,
+	IF(OR
+		(
+		TEXT(Outcome__c)=&apos;Lost Deal&apos;,
+		TEXT(Outcome__c)=&apos;Lost oppty&apos;,
+		TEXT(Outcome__c)=&apos;Cancelled&apos;,
+		TEXT(Outcome__c)=&quot;ไม่สำเร็จ&quot;
+		),
+		TEXT(Loss_Incomplete_reason__c) = Null,FALSE
+	)
+)</errorConditionFormula>
+    <errorDisplayField>Loss_Incomplete_reason__c</errorDisplayField>
+    <errorMessage>Loss/ Incomplete reason is required when outcome is Lost Oppty or Cancelled</errorMessage>
+</ValidationRule>

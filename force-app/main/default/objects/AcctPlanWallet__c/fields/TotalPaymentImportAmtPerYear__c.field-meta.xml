@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPaymentImportAmtPerYear__c</fullName>
+    <description>Amount per year (THB) - Payment Import</description>
+    <externalId>false</externalId>
+    <formula>TotalPayment__c  *  TotalPaymentImportPercent__c</formula>
+    <inlineHelpText>Amount per year (THB) - Payment Import</inlineHelpText>
+    <label>TotalPaymentImportAmtPerYear</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

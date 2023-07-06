@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Refer_to_Retail</fullName>
+    <active>true</active>
+    <description>Refer ลูกค้าที่สนใจผลิตภัณฑ์บุคคล ระหว่าง Commercial กับ สาขา/Wealth</description>
+    <label>Closed Refer to Retail</label>
+    <picklistValues>
+        <picklist>Assigned_Pool__c</picklist>
+        <values>
+            <fullName>BRANCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OUTBOUND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_available_time__c</picklist>
+        <values>
+            <fullName>12%3A01-13%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A01-17%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A01-19%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A00 - 12%3A00 น%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ตลอดเวลาทำการ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_car_bought_from__c</picklist>
+        <values>
+            <fullName>H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_contact_channel__c</picklist>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_AL_installment_periods__c</picklist>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>72</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>84</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_ID_Type__c</picklist>
+        <values>
+            <fullName>Alien ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Citizen ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passport ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work permit ID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Interested_Product__c</picklist>
+        <values>
+            <fullName>BA %28IL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA %28Unit Link%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA%28Credit Life%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Click  %28Basic Plus%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Click %28Basic Plus%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prompt Pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB Business Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SME One Bank  %28155%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB SME One Bank %28155%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unspecified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth invitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเพ%E0%B8%B7%E0%B9%88อธ%E0%B8%B8รก%E0%B8%B4จ - Soft Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_LeadSource__c</picklist>
+        <values>
+            <fullName>Biztouch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Boost Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Dark post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hiring Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from RM%2FBDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from RMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from TBANK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer within Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBANK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk In %2F Call in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk-in customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>by Sale Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>คนร%E0%B8%B9%E0%B9%89จ%E0%B8%B1ก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89าเด%E0%B8%B4มจากท%E0%B8%B5%E0%B9%88อ%E0%B8%B7%E0%B9%88นๆ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Position__c</picklist>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner%2FDecision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shareholder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Product_Group_PickList__c</picklist>
+        <values>
+            <fullName>Bancassurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card %26 RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Retention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Purpose__c</picklist>
+        <values>
+            <fullName>4 Thana</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Reason__c</picklist>
+        <values>
+            <fullName>Answering machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Busy line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call cutoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - Inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Adequate product holding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Dissatisfaction with bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Relationship with other bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Industry focus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not answer line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Credit Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Product not match</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Timing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receiver is not prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB - Reputation concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sales_Amount_Per_Year__c</picklist>
+        <values>
+            <fullName>BB %3A 100-1%2C000 MB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CB %3A 1%2C001-5%2C000 MB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MB %3A %3E5%2C000 MB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE %3A %3C100 MB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Cancel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed %28Interested%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed %28Not Interested%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed %28Service Completed%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed %28Unable to contact%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed %28Unqualified%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress_Contacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invalid %28Duplicate Opportunity%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Sub_Product__c</picklist>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เบ%E0%B8%B4กเก%E0%B8%B4นบ%E0%B8%B1ญช%E0%B8%B5 พร%E0%B9%89อมเพ%E0%B8%B4%E0%B9%88ม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เบ%E0%B8%B4กเก%E0%B8%B4นบ%E0%B8%B1ญช%E0%B8%B5ท%E0%B8%B1%E0%B9%88วไป</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เพ%E0%B8%B7%E0%B9%88อก%E0%B9%88อสร%E0%B9%89างสถานประกอบการ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เพ%E0%B8%B7%E0%B9%88อซ%E0%B8%B7%E0%B9%89อสถานประกอบการ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เพ%E0%B8%B7%E0%B9%88อซ%E0%B8%B7%E0%B9%89ออาคารพาณ%E0%B8%B4ชย%E0%B9%8C หร%E0%B8%B7อ โฮมออฟฟ%E0%B8%B4ศ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89เพ%E0%B8%B7%E0%B9%88อซ%E0%B8%B7%E0%B9%89อเคร%E0%B8%B7%E0%B9%88องจ%E0%B8%B1กร</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อเง%E0%B8%B4นก%E0%B8%B9%E0%B9%89แบบไม%E0%B9%88ม%E0%B8%B5หล%E0%B8%B1กประก%E0%B8%B1น</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Title__c</picklist>
+        <values>
+            <fullName>Admiral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admiral of the Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Cadet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Chief Marshal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Marshal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Technical Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Vice Marshal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Army Cadet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Army Non-Commissioned Officer Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Captain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Captain %28Army%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief Petty Officer Second Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief Petty Officer Third Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colonel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporal %28Army%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Marshal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Lieutenant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Sergeant First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Sergeant Second Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Sergeant Third Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flying Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Captain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leading Aircraftman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant %28Army%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant Colonel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant Commander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant Junior Grade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M L</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M R</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshal of the Royal Thai Air Force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naval Cadet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petty Officer First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petty Officer Second Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petty Officer Third Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pilot Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rear Admiral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seaman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sergeant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sergeant %28Army%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sergeant Major First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sergeant Major Second Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sergeant Major Third Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Squadron Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sub Lieutenant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sub Lieutenant %28Army%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vice Admiral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wing Commander</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Type__c</picklist>
+        <values>
+            <fullName>Account Opening%2FService %28เพ%E0%B8%B7%E0%B9%88อเป%E0%B8%B4ดบ%E0%B8%B1ญช%E0%B8%B5 %2F สม%E0%B8%B1ครบร%E0%B8%B4การ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collect Document</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Introduction call %28สาขาโทรสร%E0%B9%89างความส%E0%B8%B1มพ%E0%B8%B1นธ%E0%B9%8C%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting at branch %28สาขารอต%E0%B9%89อนร%E0%B8%B1บ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sell %28เพ%E0%B8%B7%E0%B9%88อนำเสนอขาย%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

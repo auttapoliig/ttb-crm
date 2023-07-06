@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>Employee_ID__c</columns>
+    <columns>Name_ENG__c</columns>
+    <columns>Name_THA__c</columns>
+    <columns>Sales_Code__c</columns>
+    <columns>Segment__c</columns>
+    <columns>Team_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Name_THA__c</field>
+        <operation>equals</operation>
+        <value>นิสารัตน์</value>
+    </filters>
+    <label>All</label>
+</ListView>

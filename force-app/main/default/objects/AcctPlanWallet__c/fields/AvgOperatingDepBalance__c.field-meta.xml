@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AvgOperatingDepBalance__c</fullName>
+    <description>Average operating deposit balance (Unit : Baht)</description>
+    <externalId>false</externalId>
+    <formula>(  EstimatedSalesAmtPerYear__c  *  CashCycle__c  )  / 365</formula>
+    <inlineHelpText>Average operating deposit balance (Unit : Baht)</inlineHelpText>
+    <label>AvgOperatingDepBalance</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

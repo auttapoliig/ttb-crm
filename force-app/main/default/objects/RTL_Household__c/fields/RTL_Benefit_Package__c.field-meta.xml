@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Benefit_Package__c</fullName>
+    <description>Benefit Package the Primary Household Member is entitled to</description>
+    <externalId>false</externalId>
+    <label>Benefit Package</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wealth Package 1</fullName>
+                <default>false</default>
+                <label>Wealth Package 1</label>
+            </value>
+            <value>
+                <fullName>Wealth Package 2</fullName>
+                <default>false</default>
+                <label>Wealth Package 2</label>
+            </value>
+            <value>
+                <fullName>Wealth Package 3</fullName>
+                <default>false</default>
+                <label>Wealth Package 3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

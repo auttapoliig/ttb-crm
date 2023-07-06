@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FX_Order_Sum</fullName>
+    <fields>Name</fields>
+    <fields>FXS_CustomerRate__c</fields>
+    <fields>FXS_CurrencyPair__c</fields>
+    <fields>FXS_TotalRequestAmount__c</fields>
+    <fields>FXS_TotalAllocateAmount__c</fields>
+    <fields>FXS_NoOfActiveOrders__c</fields>
+    <label>FX Order Sum</label>
+</CompactLayout>

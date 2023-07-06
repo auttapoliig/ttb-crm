@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_User_Requesting__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>User requesting for the change</description>
+    <externalId>false</externalId>
+    <label>Requestor</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Household_History_and_Approvals</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

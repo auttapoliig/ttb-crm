@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Draft</fullName>
+    <active>true</active>
+    <label>Draft</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved - Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved - Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAM Approver1 Approved - Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAM Approver1 Approved - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAM Approver1 Approved - Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval - Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval - Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled - Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled - Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected - Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected - Update</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

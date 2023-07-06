@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Change_Product_Group</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Product_Group__c)</errorConditionFormula>
+    <errorDisplayField>Product_Group__c</errorDisplayField>
+    <errorMessage>Product Group Name can not be changed, Please inactive the record and create new product group.</errorMessage>
+</ValidationRule>

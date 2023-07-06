@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Deal</fullName>
+    <active>true</active>
+    <label>New Deal</label>
+    <picklistValues>
+        <picklist>Income_Type__c</picklist>
+        <values>
+            <fullName>AL Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derivative Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct CM Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDC Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FX Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front End Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%2FG Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MF Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NIIc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NIId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other CM Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF Fee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

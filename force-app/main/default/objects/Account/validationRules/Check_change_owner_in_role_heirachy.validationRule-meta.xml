@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_change_owner_in_role_heirachy</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( ISPICKVAL( Account_Type__c , &quot;Existing Customer&quot;), 
+ISCHANGED( OwnerId ), 
+OR( AND( CONTAINS( $UserRole.Name , &quot;Segment Strategist&quot;), 
+TEXT($User.Segment__c) &lt;&gt; TEXT(Owner.Segment__c) ) , 
+AND( OR( CONTAINS($UserRole.Name , &quot;BB1 Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;BB2 Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;SE1 Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;SE2 Group Head&quot;) 
+), 
+$User.Reporting_Segment__c &lt;&gt; Owner.Reporting_Segment__c ), 
+AND( OR( CONTAINS($UserRole.Name , &quot;CB Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;MB1 Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;MB Group Head&quot;) , 
+CONTAINS($UserRole.Name , &quot;IBD Group Head&quot;) ,
+CONTAINS($UserRole.Name , &quot;Head of Client Service&quot;) , 
+CONTAINS($UserRole.Name , &quot;MB-Military&amp;PS Group Head&quot;), 
+CONTAINS($UserRole.Name , &quot;RG&quot;) 
+) , 
+$User.Region_Code__c &lt;&gt; Owner.Region_Code__c ) , 
+AND( OR(CONTAINS($UserRole.Name , &quot;ZM&quot;), 
+CONTAINS($UserRole.Name , &quot;Team Head&quot;), 
+CONTAINS($UserRole.Name , &quot;MB Millitary&quot;), 
+CONTAINS($UserRole.Name , &quot;MB Public Sector&quot;) 
+) , 
+$User.Zone_Code__c &lt;&gt; Owner.Zone_Code__c ) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>The new owner must be under your hierarchy 
+(Team/Zone, Group/Region, Segment).</errorMessage>
+</ValidationRule>

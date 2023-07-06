@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Step__c</fullName>
+    <description>SCR0378480 Next Step PD</description>
+    <externalId>false</externalId>
+    <label>Next Step</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Main_purpose__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 รอการยืนยันจาก RM/CPD/Customers</fullName>
+                <default>false</default>
+                <label>1 รอการยืนยันจาก RM/CPD/Customers</label>
+            </value>
+            <value>
+                <fullName>2 รอผู้มีอำนาจอนุมัติพิจารณา</fullName>
+                <default>false</default>
+                <label>2 รอผู้มีอำนาจอนุมัติพิจารณา</label>
+            </value>
+            <value>
+                <fullName>3 รอกำหนดวันนัดหมายครั้งต่อไป</fullName>
+                <default>false</default>
+                <label>3 รอกำหนดวันนัดหมายครั้งต่อไป</label>
+            </value>
+            <value>
+                <fullName>4 รอสำรวจความต้องการของพนักงาน</fullName>
+                <default>false</default>
+                <label>4 รอสำรวจความต้องการของพนักงาน</label>
+            </value>
+            <value>
+                <fullName>5 กำหนดวันทำกิจกรรม/จัดเตรียมกิจกรรม</fullName>
+                <default>false</default>
+                <label>5 กำหนดวันทำกิจกรรม/จัดเตรียมกิจกรรม</label>
+            </value>
+            <value>
+                <fullName>6 ทำแผนสื่อสารรูปแบบ การทำกิจกรรม</fullName>
+                <default>false</default>
+                <label>6 ทำแผนสื่อสารรูปแบบ การทำกิจกรรม</label>
+            </value>
+            <value>
+                <fullName>7 ติดตามงานครั้งก่อนที่ได้ดำเนินการไปแล้ว</fullName>
+                <default>false</default>
+                <label>7 ติดตามงานครั้งก่อนที่ได้ดำเนินการไปแล้ว</label>
+            </value>
+            <value>
+                <fullName>8 ลูกค้ารอให้แก้ไขปัญหา และติดต่อใหม่อีกครั้ง</fullName>
+                <default>false</default>
+                <label>8 ลูกค้ารอให้แก้ไขปัญหา และติดต่อใหม่อีกครั้ง</label>
+            </value>
+            <value>
+                <fullName>9 ลูกค้าสนใจ Referให้หน่วยงานที่เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>9 ลูกค้าสนใจ Referให้หน่วยงานที่เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>10 อื่นๆ ระบุเพิ่มเติม</fullName>
+                <default>false</default>
+                <label>10 อื่นๆ ระบุเพิ่มเติม</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>1 รอการยืนยันจาก RM/CPD/Customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>2 รอผู้มีอำนาจอนุมัติพิจารณา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>3 รอกำหนดวันนัดหมายครั้งต่อไป</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>4 รอสำรวจความต้องการของพนักงาน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>5 กำหนดวันทำกิจกรรม/จัดเตรียมกิจกรรม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>6 ทำแผนสื่อสารรูปแบบ การทำกิจกรรม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>7 ติดตามงานครั้งก่อนที่ได้ดำเนินการไปแล้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>8 ลูกค้ารอให้แก้ไขปัญหา และติดต่อใหม่อีกครั้ง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>9 ลูกค้าสนใจ Referให้หน่วยงานที่เกี่ยวข้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>10 อื่นๆ ระบุเพิ่มเติม</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

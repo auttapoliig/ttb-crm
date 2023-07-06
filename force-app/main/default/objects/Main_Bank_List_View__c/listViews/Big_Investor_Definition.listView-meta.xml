@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Big_Investor_Definition</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+    <columns>Last_Contact_Date__c</columns>
+    <columns>Has_Call_List__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Age__c</columns>
+    <columns>Customer_ID__c</columns>
+    <columns>Current_AUM__c</columns>
+    <columns>Buy_Debenture_Via_Bank__c</columns>
+    <columns>Buy_IPO_Fund_Via_Bank_Experience__c</columns>
+    <columns>Mainbank_Status__c</columns>
+    <columns>Omni_KM_002__c</columns>
+    <columns>Mainbank_Listview002_As_Of_Date__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Listview_Filter002__c</field>
+        <operation>equals</operation>
+        <value>FT002</value>
+    </filters>
+    <filters>
+        <field>Is_Assigned_BRC_user__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Is_Contact_Center_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Is_Customer_Branch_Mannager__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Is_Admin__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>ลูกค้า นิยามผู้ลงทุนรายใหญ่</label>
+    <sharedTo>
+        <group>BBG</group>
+        <group>Contact_Center</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_UnqualifiedReason_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( Unqualified_Reason__c , &quot;&quot;) , Unqualified__c )</errorConditionFormula>
+    <errorDisplayField>Unqualified_Reason__c</errorDisplayField>
+    <errorMessage>Unqualified reason cannot be blank if Unqualified is checked.</errorMessage>
+</ValidationRule>

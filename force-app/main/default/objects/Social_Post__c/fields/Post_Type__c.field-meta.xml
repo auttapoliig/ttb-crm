@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Post Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>post</fullName>
+                <default>false</default>
+                <label>post</label>
+            </value>
+            <value>
+                <fullName>comment</fullName>
+                <default>false</default>
+                <label>comment</label>
+            </value>
+            <value>
+                <fullName>Tweet</fullName>
+                <default>false</default>
+                <label>Tweet</label>
+            </value>
+            <value>
+                <fullName>Inbox</fullName>
+                <default>false</default>
+                <label>Inbox</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

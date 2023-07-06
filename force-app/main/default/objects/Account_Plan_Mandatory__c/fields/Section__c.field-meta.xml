@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section__c</fullName>
+    <externalId>false</externalId>
+    <label>Section</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Domain__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Group of Company Profile</fullName>
+                <default>false</default>
+                <label>Group of Company Profile</label>
+            </value>
+            <value>
+                <fullName>Group Transaction Flow/Inter-company flow/Business flow</fullName>
+                <default>false</default>
+                <label>Group Transaction Flow/Inter-company flow/Business flow</label>
+            </value>
+            <value>
+                <fullName>Group&apos;s Revenue Contribution</fullName>
+                <default>false</default>
+                <label>Group&apos;s Revenue Contribution</label>
+            </value>
+            <value>
+                <fullName>Group&apos;s 5 Forces Module</fullName>
+                <default>false</default>
+                <label>Group&apos;s 5 Forces Module</label>
+            </value>
+            <value>
+                <fullName>Group Key Success Factors</fullName>
+                <default>false</default>
+                <label>Group Key Success Factors</label>
+            </value>
+            <value>
+                <fullName>General Information</fullName>
+                <default>false</default>
+                <label>General Information</label>
+            </value>
+            <value>
+                <fullName>Customer&apos;s Revenue Contribution</fullName>
+                <default>false</default>
+                <label>Customer&apos;s Revenue Contribution</label>
+            </value>
+            <value>
+                <fullName>Initiate Account Plan Wallet</fullName>
+                <default>false</default>
+                <label>Initiate Account Plan Wallet</label>
+            </value>
+            <value>
+                <fullName>Collection Method (Domestic)</fullName>
+                <default>false</default>
+                <label>Collection Method (Domestic)</label>
+            </value>
+            <value>
+                <fullName>Collection Method (Export)</fullName>
+                <default>false</default>
+                <label>Collection Method (Export)</label>
+            </value>
+            <value>
+                <fullName>Collection Currency</fullName>
+                <default>false</default>
+                <label>Collection Currency</label>
+            </value>
+            <value>
+                <fullName>Payment Method (Domestic)</fullName>
+                <default>false</default>
+                <label>Payment Method (Domestic)</label>
+            </value>
+            <value>
+                <fullName>Payment Method (Import)</fullName>
+                <default>false</default>
+                <label>Payment Method (Import)</label>
+            </value>
+            <value>
+                <fullName>Payment Currency</fullName>
+                <default>false</default>
+                <label>Payment Currency</label>
+            </value>
+            <value>
+                <fullName>1) Operating Transaction</fullName>
+                <default>false</default>
+                <label>1) Operating Transaction</label>
+            </value>
+            <value>
+                <fullName>2) Cash on Hand/Cash at Bank or Investment</fullName>
+                <default>false</default>
+                <label>2) Cash on Hand/Cash at Bank or Investment</label>
+            </value>
+            <value>
+                <fullName>Working Capital</fullName>
+                <default>false</default>
+                <label>Working Capital</label>
+            </value>
+            <value>
+                <fullName>Credit Facility</fullName>
+                <default>false</default>
+                <label>Credit Facility</label>
+            </value>
+            <value>
+                <fullName>2.1 Credit Life Insurance</fullName>
+                <default>false</default>
+                <label>2.1 Credit Life Insurance</label>
+            </value>
+            <value>
+                <fullName>Product Strategy</fullName>
+                <default>false</default>
+                <label>Product Strategy</label>
+            </value>
+            <value>
+                <fullName>Action Plan</fullName>
+                <default>false</default>
+                <label>Action Plan</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Step 1 Group Company</controllingFieldValue>
+            <valueName>Group of Company Profile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 1 Group Company</controllingFieldValue>
+            <valueName>Group Transaction Flow/Inter-company flow/Business flow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 1 Group Company</controllingFieldValue>
+            <valueName>Group&apos;s Revenue Contribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 1 Group Company</controllingFieldValue>
+            <valueName>Group&apos;s 5 Forces Module</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 1 Group Company</controllingFieldValue>
+            <valueName>Group Key Success Factors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 2 Customer Profile</controllingFieldValue>
+            <valueName>General Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 2 Customer Profile</controllingFieldValue>
+            <valueName>Customer&apos;s Revenue Contribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Initiate Account Plan Wallet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Collection Method (Domestic)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Collection Method (Export)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Collection Currency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Payment Method (Domestic)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Payment Method (Import)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain I</controllingFieldValue>
+            <valueName>Payment Currency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain II</controllingFieldValue>
+            <valueName>1) Operating Transaction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain II</controllingFieldValue>
+            <valueName>2) Cash on Hand/Cash at Bank or Investment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain III</controllingFieldValue>
+            <valueName>Working Capital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain III</controllingFieldValue>
+            <valueName>Credit Facility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 3 Wallet By Domain - Domain IV</controllingFieldValue>
+            <valueName>2.1 Credit Life Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 4 Product Strategy</controllingFieldValue>
+            <valueName>Product Strategy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Step 5 Decision Map and Action Plan</controllingFieldValue>
+            <valueName>Action Plan</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_up_loan_status_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND( ISPICKVAL( Top_Up_Loan_Status__c  , &quot;Approved&quot;) ,
+ISPICKVAL ( Verify__c , &quot;Yes&quot;), 
+ISPICKVAL ( Principle__c , &quot;Yes&quot;), 
+ISPICKVAL ( Tenure__c , &quot;Yes&quot;), 
+ISPICKVAL ( Loan_Model__c, &quot;Yes&quot;), 
+ISPICKVAL ( Account_Number__c, &quot;Yes&quot;),
+ISBLANK   ( Approved_Amount__c ))
+							,TRUE
+							,FALSE)</errorConditionFormula>
+    <errorDisplayField>Approved_Amount__c</errorDisplayField>
+    <errorMessage>Please Enter Approved Amount</errorMessage>
+</ValidationRule>

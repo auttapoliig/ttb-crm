@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_Style__c</fullName>
+    <externalId>false</externalId>
+    <label>Value Style</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Benefit Awareness</fullName>
+                <default>false</default>
+                <label>Benefit Awareness</label>
+            </value>
+            <value>
+                <fullName>Risk Awareness</fullName>
+                <default>false</default>
+                <label>Risk Awareness</label>
+            </value>
+            <value>
+                <fullName>Relationship Awareness</fullName>
+                <default>false</default>
+                <label>Relationship Awareness</label>
+            </value>
+            <value>
+                <fullName>Principle Awarness</fullName>
+                <default>false</default>
+                <label>Principle Awarness</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

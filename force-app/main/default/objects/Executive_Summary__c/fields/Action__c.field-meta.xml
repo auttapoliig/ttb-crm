@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action__c</fullName>
+    <description>Action for the Executive Summary</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ข้อมูล Action Plan ที่ได้มาจาก Account Plan Decision Map &amp; Action Plan (Step 5) โดยจะนำActivities Plan ที่จะเกิดขึ้นในอนาคตมาแสดงเท่านั้น</inlineHelpText>
+    <label>Action</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

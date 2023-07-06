@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account_Team</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_Type__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>Segment2__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Existing_Customer</value>
+    </filters>
+    <label>My Account Team</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>CCBO</roleAndSubordinates>
+        <roleAndSubordinates>PD_Manager_Activity</roleAndSubordinates>
+        <roleAndSubordinates>PD_Manager_Team_1</roleAndSubordinates>
+        <roleAndSubordinates>PD_Manager_Team_2</roleAndSubordinates>
+        <roleAndSubordinates>PD_Manager_Team_3</roleAndSubordinates>
+        <roleAndSubordinates>PD_Manager_Team_4</roleAndSubordinates>
+        <roleAndSubordinates>PD_RM_Activity</roleAndSubordinates>
+        <roleAndSubordinates>PD_RM_Team_1</roleAndSubordinates>
+        <roleAndSubordinates>PD_RM_Team_2</roleAndSubordinates>
+        <roleAndSubordinates>PD_RM_Team_3</roleAndSubordinates>
+        <roleAndSubordinates>PD_RM_Team_4</roleAndSubordinates>
+        <roleAndSubordinates>PD_TH</roleAndSubordinates>
+        <roleAndSubordinates>PD_TL_Activity</roleAndSubordinates>
+        <roleAndSubordinates>PD_TL_Team_1</roleAndSubordinates>
+        <roleAndSubordinates>PD_TL_Team_2</roleAndSubordinates>
+        <roleAndSubordinates>PD_TL_Team_3</roleAndSubordinates>
+        <roleAndSubordinates>PD_TL_Team_4</roleAndSubordinates>
+        <roleAndSubordinates>Pool_PD_RM</roleAndSubordinates>
+        <roleAndSubordinates>Product_Team</roleAndSubordinates>
+        <roleAndSubordinates>SB_Sales_Management</roleAndSubordinates>
+    </sharedTo>
+</ListView>

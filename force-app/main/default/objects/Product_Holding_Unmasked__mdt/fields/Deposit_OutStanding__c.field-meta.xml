@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deposit_OutStanding__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Deposti OutStanding (Detail)</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Deposit_OutStanding</label>
+    <type>Checkbox</type>
+</CustomField>

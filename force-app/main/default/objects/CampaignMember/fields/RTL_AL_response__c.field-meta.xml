@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_AL_response__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Yes / No</description>
+    <externalId>false</externalId>
+    <label>Hot Lead</label>
+    <type>Checkbox</type>
+</CustomField>

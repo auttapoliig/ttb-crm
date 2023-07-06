@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_Short_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Region_Code_Group_Code__c, 
+&apos;6900&apos;,&apos;R1&apos;, 
+&apos;6800&apos;,&apos;R2&apos;, 
+&apos;9100&apos;,&apos;R2&apos;, 
+&apos;6400&apos;,&apos;R3&apos;, 
+&apos;9200&apos;,&apos;R4&apos;, 
+&apos;7100&apos;,&apos;R5&apos;, 
+&apos;7400&apos;,&apos;R6&apos;, 
+&apos;7800&apos;,&apos;R7&apos;, 
+&apos;6700&apos;,&apos;Wealth&apos;, 
+&apos;WMTH&apos;,&apos;Wealth&apos;, 
+&apos;Others&apos;)</formula>
+    <label>Region Short Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

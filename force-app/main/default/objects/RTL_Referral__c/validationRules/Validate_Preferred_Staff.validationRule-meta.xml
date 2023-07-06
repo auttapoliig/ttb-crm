@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Preferred_Staff</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(RTL_Preferred_Branch__r.Name = &quot;SBO_RM&quot;,
+OR(RTL_Preferred_Staff__r.Profile.Name = &quot;TMB SE Zone Manager Profile&quot;,RTL_Preferred_Staff__r.Profile.Name = &quot;TMB SB Zone Manager Profile&quot;)),false,
+IF(AND (RTL_Preferred_Staff__r.RTL_Branch_Code__c != RTL_Preferred_Branch__r.Branch_Code__c),(RTL_Preferred_Staff__c != null),false))</errorConditionFormula>
+    <errorDisplayField>RTL_Preferred_Staff__c</errorDisplayField>
+    <errorMessage>Preferred staff is not in the preferred branch.</errorMessage>
+</ValidationRule>

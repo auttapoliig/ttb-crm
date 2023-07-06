@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Prevent_edit_submitted</fullName>
+    <active>true</active>
+    <description>Prevent edit record when status = submitted</description>
+    <errorConditionFormula>AND( NOT(OR(Contains(RecordType.Name,&apos;Master Campaign&apos;),(Contains(RecordType.Name,&apos;Commercial&apos;)), 
+
+(Contains(RecordType.Name,&apos;Dummy Campaign&apos;)))) ,
+
+IF( OR(Ischanged(Status), Ischanged(Approvedflag__c)),
+FALSE, OR(TEXT(Parent.Status) = &apos;Submitted&apos;, TEXT(Parent.Status) = &apos;1-Approved&apos;)))</errorConditionFormula>
+    <errorMessage>Campaign cannot be modified during approval process.</errorMessage>
+</ValidationRule>

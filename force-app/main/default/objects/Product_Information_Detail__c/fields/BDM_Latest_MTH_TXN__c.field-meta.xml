@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDM_Latest_MTH_TXN__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LATEST_MTH_TXN__c &gt; 40, &quot;High&quot;, 
+IF(LATEST_MTH_TXN__c &gt;= 10 &amp;&amp; LATEST_MTH_TXN__c &lt;= 40, &quot;Medium&quot;,
+IF(LATEST_MTH_TXN__c &lt; 10 , &quot;Low&quot;, 
+&quot;Low&quot;)
+))</formula>
+    <label>Last month</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

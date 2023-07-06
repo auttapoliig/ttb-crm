@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resolution_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Resolution 1</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IT ดำเนินการแก้ไขระบบ</fullName>
+                <default>false</default>
+                <label>IT ดำเนินการแก้ไขระบบ</label>
+            </value>
+            <value>
+                <fullName>ปรับปรุงการ Set Up ให้ถูกต้อง</fullName>
+                <default>false</default>
+                <label>ปรับปรุงการ Set Up ให้ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ชีแจงข้อมูลที่ถูกต้องให้ลูกค้ารับทราบ</fullName>
+                <default>false</default>
+                <label>ชีแจงข้อมูลที่ถูกต้องให้ลูกค้ารับทราบ</label>
+            </value>
+            <value>
+                <fullName>เจ้าหน้าที่แก้ไขรายการให้ถูกต้อง</fullName>
+                <default>false</default>
+                <label>เจ้าหน้าที่แก้ไขรายการให้ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ปรับปรุง/แก้ไขรายการให้ลูกค้า</fullName>
+                <default>false</default>
+                <label>ปรับปรุง/แก้ไขรายการให้ลูกค้า</label>
+            </value>
+            <value>
+                <fullName>แนะนำให้ลูกค้ารับทราบ</fullName>
+                <default>false</default>
+                <label>แนะนำให้ลูกค้ารับทราบ</label>
+            </value>
+            <value>
+                <fullName>ปรับปรุงเงินคืน</fullName>
+                <default>false</default>
+                <label>ปรับปรุงเงินคืน</label>
+            </value>
+            <value>
+                <fullName>ปรับปรุงคะแนนคืน</fullName>
+                <default>false</default>
+                <label>ปรับปรุงคะแนนคืน</label>
+            </value>
+            <value>
+                <fullName>ยืนยันรายการปกติ</fullName>
+                <default>false</default>
+                <label>ยืนยันรายการปกติ</label>
+            </value>
+            <value>
+                <fullName>ดำเนินการตามที่ลูกค้าร้องขอ</fullName>
+                <default>false</default>
+                <label>ดำเนินการตามที่ลูกค้าร้องขอ</label>
+            </value>
+            <value>
+                <fullName>แก้ไขปัญหาแล้ว ติดต่อลูกค้าไม่ได้ ส่ง SMS</fullName>
+                <default>false</default>
+                <label>แก้ไขปัญหาแล้ว ติดต่อลูกค้าไม่ได้ ส่ง SMS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

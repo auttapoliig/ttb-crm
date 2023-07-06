@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+VALUE( MID( TEXT( LastModifiedDate  ), 12, 2 ) ) = 0,
+VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) = 12
+),
+&quot;12&quot;,
+TEXT( VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) )
+-
+IF(
+VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) &lt; 12,
+0,
+12
+)
+))
+&amp; &quot;_&quot; &amp;
+MID( TEXT( LastModifiedDate ), 15, 2 )
+&amp; &quot;_&quot; &amp;
+MID( TEXT( LastModifiedDate ), 18, 2 )
+&amp; &quot;_&quot; &amp;
+IF(
+VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) &lt; 12,
+&quot;AM&quot;,
+&quot;PM&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>time</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

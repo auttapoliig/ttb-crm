@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CCBO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Product_Team</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Change_to_owner__c</field>
+        <field>Change_Owner_Remark__c</field>
+        <field>RecordType</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Approver1__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Assign the first Approver</description>
+        <label>Approver#1</label>
+        <name>Approver_1</name>
+    </approvalStep>
+    <emailTemplate>Change_Account_Owner_Email_Template/Account_Request_for_approval_for_Existing_Account_English</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+NOT(
+	OR(
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Rejected&quot;) ,
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Recalled&quot;) ,
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Final Approved&quot;) 
+	)
+	),
+	RecordType.Name = &quot;Change Owner Qualified Prospect&quot;,
+	 NOT(
+		ISBLANK( Approver1__c )
+		) ,
+	(ISBLANK( Approver2__c )),
+	(ISBLANK( Approver3__c )) ,
+	(ISBLANK( Approver4__c )) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Request_Change_Owner_Qualified_Prospect_Alert_to_requester_the_request_is_approv</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Final_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Request_Change_Owner_Qualified_Prospect_Alert_the_Requester_request_is_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Stamp_Approval_Process_Start_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Next_Step_Start_Wait_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Appprover_1_Team</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Approver_1_Emp_Id</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Approver_1_Name</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Change OwnerQualified Prospect Customer</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Request_Change_Owner_Qualified_Prospect_Alert_Request_the_request_is_recalled</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

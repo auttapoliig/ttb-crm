@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_User_ID_Matched__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR ( RTL_Assigned_Agent__r.Employee_ID__c = $User.Employee_ID__c, RTL_Contact_Staff_ID__c = $User.Employee_ID__c) , true ,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User ID Matched</label>
+    <type>Checkbox</type>
+</CustomField>

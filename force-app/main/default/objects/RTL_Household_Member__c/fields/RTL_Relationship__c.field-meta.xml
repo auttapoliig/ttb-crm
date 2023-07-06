@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Relationship__c</fullName>
+    <externalId>false</externalId>
+    <label>Relationship</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>คู่สมรส</fullName>
+                <default>false</default>
+                <label>คู่สมรส</label>
+            </value>
+            <value>
+                <fullName>บิดา/มารดา</fullName>
+                <default>false</default>
+                <label>บิดา/มารดา</label>
+            </value>
+            <value>
+                <fullName>บุตร</fullName>
+                <default>false</default>
+                <label>บุตร</label>
+            </value>
+            <value>
+                <fullName>พี่น้อง</fullName>
+                <default>false</default>
+                <label>พี่น้อง</label>
+            </value>
+            <value>
+                <fullName>ปู่/ย่า/ตา/ยาย</fullName>
+                <default>false</default>
+                <label>ปู่/ย่า/ตา/ยาย</label>
+            </value>
+            <value>
+                <fullName>หลาน</fullName>
+                <default>false</default>
+                <label>หลาน</label>
+            </value>
+            <value>
+                <fullName>ญาติ</fullName>
+                <default>false</default>
+                <label>ญาติ</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>Child of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Child of</label>
+            </value>
+            <value>
+                <fullName>Grandchild of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Grandchild of</label>
+            </value>
+            <value>
+                <fullName>Grandparent of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Grandparent of</label>
+            </value>
+            <value>
+                <fullName>Others of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others of</label>
+            </value>
+            <value>
+                <fullName>Parent of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parent of</label>
+            </value>
+            <value>
+                <fullName>Relative of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Relative of</label>
+            </value>
+            <value>
+                <fullName>Sibling of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sibling of</label>
+            </value>
+            <value>
+                <fullName>Spouse of</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spouse of</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

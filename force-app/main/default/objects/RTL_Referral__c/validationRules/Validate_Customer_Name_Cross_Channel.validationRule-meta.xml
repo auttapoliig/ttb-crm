@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Customer_Name_Cross_Channel</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.DeveloperName = &quot;Retail_Cross_Channel_Referral&quot;  
+&amp;&amp;(  RTL_FirstName__c ==&quot;&quot; || RTL_LastName__c==&quot;&quot; )&amp;&amp; RTL_Account_Name__c ==&quot;&quot;</errorConditionFormula>
+    <errorMessage>Please input First Name and Last Name</errorMessage>
+</ValidationRule>

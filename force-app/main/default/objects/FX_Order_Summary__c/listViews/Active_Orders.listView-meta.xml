@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Buy_Sell__c</columns>
+    <columns>FXS_CurrencyPair__c</columns>
+    <columns>FXS_CustomerRate__c</columns>
+    <columns>Total_Request_Amount_Million_Unit__c</columns>
+    <columns>FXS_Total_Allocate_Amount_Million_Unit__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>FXS_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FXS_Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>FXS_NoOfActiveOrders__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Active Order Summaries</label>
+</ListView>

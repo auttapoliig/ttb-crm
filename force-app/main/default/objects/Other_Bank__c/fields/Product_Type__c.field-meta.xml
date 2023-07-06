@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Wallet_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Saving account</fullName>
+                <default>false</default>
+                <label>Saving account</label>
+            </value>
+            <value>
+                <fullName>Term deposit</fullName>
+                <default>false</default>
+                <label>Term deposit</label>
+            </value>
+            <value>
+                <fullName>Corporate account</fullName>
+                <default>false</default>
+                <label>Corporate account</label>
+            </value>
+            <value>
+                <fullName>Current account / Cheque</fullName>
+                <default>false</default>
+                <label>Current account / Cheque</label>
+            </value>
+            <value>
+                <fullName>Debit card</fullName>
+                <default>false</default>
+                <label>Debit card</label>
+            </value>
+            <value>
+                <fullName>Credit card</fullName>
+                <default>false</default>
+                <label>Credit card</label>
+            </value>
+            <value>
+                <fullName>Housing loan</fullName>
+                <default>false</default>
+                <label>Housing loan</label>
+            </value>
+            <value>
+                <fullName>Auto loan</fullName>
+                <default>false</default>
+                <label>Auto loan</label>
+            </value>
+            <value>
+                <fullName>Corporate loan</fullName>
+                <default>false</default>
+                <label>Corporate loan</label>
+            </value>
+            <value>
+                <fullName>Asset back loan / Lombard loan</fullName>
+                <default>false</default>
+                <label>Asset back loan / Lombard loan</label>
+            </value>
+            <value>
+                <fullName>Other loan</fullName>
+                <default>false</default>
+                <label>Other loan</label>
+            </value>
+            <value>
+                <fullName>Mutual fund</fullName>
+                <default>false</default>
+                <label>Mutual fund</label>
+            </value>
+            <value>
+                <fullName>Stock</fullName>
+                <default>false</default>
+                <label>Stock</label>
+            </value>
+            <value>
+                <fullName>Debenture / Fixed income</fullName>
+                <default>false</default>
+                <label>Debenture / Fixed income</label>
+            </value>
+            <value>
+                <fullName>Real estate</fullName>
+                <default>false</default>
+                <label>Real estate</label>
+            </value>
+            <value>
+                <fullName>Cryptocurrency</fullName>
+                <default>false</default>
+                <label>Cryptocurrency</label>
+            </value>
+            <value>
+                <fullName>Other investment</fullName>
+                <default>false</default>
+                <label>Other investment</label>
+            </value>
+            <value>
+                <fullName>Saving Insurance / Annuity Insurance</fullName>
+                <default>false</default>
+                <label>Saving Insurance / Annuity Insurance</label>
+            </value>
+            <value>
+                <fullName>Whole life Insurance</fullName>
+                <default>false</default>
+                <label>Whole life Insurance</label>
+            </value>
+            <value>
+                <fullName>Unit Linked</fullName>
+                <default>false</default>
+                <label>Unit Linked</label>
+            </value>
+            <value>
+                <fullName>Other Life Insurance</fullName>
+                <default>false</default>
+                <label>Other Life Insurance</label>
+            </value>
+            <value>
+                <fullName>Accident Insurance</fullName>
+                <default>false</default>
+                <label>Accident Insurance</label>
+            </value>
+            <value>
+                <fullName>Health Insurance</fullName>
+                <default>false</default>
+                <label>Health Insurance</label>
+            </value>
+            <value>
+                <fullName>Other Non-Life Insurance</fullName>
+                <default>false</default>
+                <label>Other Non-Life Insurance</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Savings</controllingFieldValue>
+            <valueName>Saving account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Savings</controllingFieldValue>
+            <valueName>Term deposit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Savings</controllingFieldValue>
+            <valueName>Corporate account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spending</controllingFieldValue>
+            <valueName>Current account / Cheque</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spending</controllingFieldValue>
+            <valueName>Debit card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spending</controllingFieldValue>
+            <valueName>Credit card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Borrowing</controllingFieldValue>
+            <valueName>Housing loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Borrowing</controllingFieldValue>
+            <valueName>Auto loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Borrowing</controllingFieldValue>
+            <valueName>Corporate loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Borrowing</controllingFieldValue>
+            <valueName>Asset back loan / Lombard loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Borrowing</controllingFieldValue>
+            <valueName>Other loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Mutual fund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Stock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Debenture / Fixed income</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Real estate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Cryptocurrency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>Other investment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Saving Insurance / Annuity Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Whole life Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Unit Linked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Other Life Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Accident Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Health Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Protection</controllingFieldValue>
+            <valueName>Other Non-Life Insurance</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

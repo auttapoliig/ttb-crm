@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Preferred_Branch_Type__c</fullName>
+    <description>To get Preferred Branch Type from Branch and Zone Object.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(RTL_Preferred_Branch__r.Branch_Type__c)</formula>
+    <label>Preferred Branch Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

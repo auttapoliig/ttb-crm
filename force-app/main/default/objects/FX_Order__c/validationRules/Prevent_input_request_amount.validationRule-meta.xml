@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_input_request_amount</fullName>
+    <active>true</active>
+    <description>Request Amount exceeds limit.</description>
+    <errorConditionFormula>FXO_RequestAmount__c &gt; 100000000000</errorConditionFormula>
+    <errorDisplayField>FXO_RequestAmount__c</errorDisplayField>
+    <errorMessage>Request Amount exceeds limit.</errorMessage>
+</ValidationRule>

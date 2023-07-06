@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CCBO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Product_Team</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Change_to_owner__c</field>
+        <field>Change_Owner_Remark__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Approver1__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Approver1#</label>
+        <name>Approver1</name>
+    </approvalStep>
+    <emailTemplate>Request_Add_Account_Team/Request_Add_Account_Team_Notify_Approver</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+NOT(
+	OR(
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Rejected&quot;) ,
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Recalled&quot;) ,
+		ISPICKVAL(Change_Owner_Approval_Status__c , &quot;Final Approved&quot;) 
+	)
+	),
+	RecordType.Name = &quot;Add Account Team&quot;,
+	 NOT(
+		ISBLANK( Approver1__c )
+		) ,
+	(ISBLANK( Approver2__c )),
+	(ISBLANK( Approver3__c )) ,
+	(ISBLANK( Approver4__c )) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Request_Add_Account_Team_alert_to_requester_the_request_is_approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Final_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Request_Add_Account_Team_alert_to_requester_the_request_is_rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Stamp_Approval_Process_Start_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Next_Step_Start_Wait_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Appprover_1_Team</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Approver_1_Emp_Id</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Current_Approver_1_Name</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Request add Account Team Approval flow</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recallActions>
+        <action>
+            <name>Request_Add_Account_Team_alert_to_requester_the_request_is_recalled</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

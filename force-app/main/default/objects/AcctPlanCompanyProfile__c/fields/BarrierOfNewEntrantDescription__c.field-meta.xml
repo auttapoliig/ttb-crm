@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BarrierOfNewEntrantDescription__c</fullName>
+    <description>Barrier of New entrants</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>การใส่คำอธิบายเพื่อขยายความเกี่ยวกับอุปสรรคในการขัดขวางผู้ประกอบธุรกิจในลักษณะเดียวกันเข้ามาในตลาด</inlineHelpText>
+    <label>Barrier Of New Entrant Description</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

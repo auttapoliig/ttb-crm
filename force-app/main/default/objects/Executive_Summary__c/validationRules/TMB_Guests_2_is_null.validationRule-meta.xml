@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMB_Guests_2_is_null</fullName>
+    <active>true</active>
+    <description>TMB Guests 1 is null and others have value</description>
+    <errorConditionFormula>AND( NOT( ISBLANK(TMB_Guests__c) ) , 
+
+OR( NOT(ISBLANK(TMB_Guests_3__c)) ,NOT(ISBLANK(TMB_Guests_4__c))),
+
+ISBLANK(TMB_Guests_2__c) )</errorConditionFormula>
+    <errorDisplayField>TMB_Guests_2__c</errorDisplayField>
+    <errorMessage>TMB Guest 3,4 cannot be entered if TMB Guest 2 is left blank. (โปรดระบุข้อมูลในช่อง TMB Guests 2)</errorMessage>
+</ValidationRule>

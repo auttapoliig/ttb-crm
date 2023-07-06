@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_Zone_Branch_Rpt__c</fullName>
+    <externalId>false</externalId>
+    <formula>Region_Short_Name__c + &quot;-&quot; + Zone_Branch_Rpt__c</formula>
+    <label>Region-Zone-Branch</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

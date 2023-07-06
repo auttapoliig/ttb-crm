@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Juristic_ID</fullName>
+    <active>true</active>
+    <description>Preventing save the record when customer type = juristic and not provide ID type, ID no</description>
+    <errorConditionFormula>if(AND(RecordType.Name != &apos;Existing Customer&apos;,RecordType.Name != &apos;Inactive Customer&apos;) ,AND( TEXT( Customer_Type__c ) = &quot;Juristic&quot; ,  ISBLANK (ID_Number_PE__c) ),false)</errorConditionFormula>
+    <errorDisplayField>ID_Number_PE__c</errorDisplayField>
+    <errorMessage>The ID Number must be entered if customer is Juristic</errorMessage>
+</ValidationRule>

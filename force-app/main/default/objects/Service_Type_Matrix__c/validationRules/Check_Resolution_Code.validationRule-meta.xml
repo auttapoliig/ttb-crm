@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Resolution_Code</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(SMS_Code_Resolved__c &lt;&gt; null,  OR(SMS_Code_Resolution_1__c &lt;&gt; null, SMS_Code_Resolution_2__c &lt;&gt; null))</errorConditionFormula>
+    <errorDisplayField>SMS_Code_Resolved__c</errorDisplayField>
+    <errorMessage>ถ้า &apos;SMS Code (Resolved)&apos; มีค่า &apos;SMS Code Resolution 1&apos; หรือ &apos;SMS Code Resolution 2&apos; ต้องไม่มีค่า</errorMessage>
+</ValidationRule>

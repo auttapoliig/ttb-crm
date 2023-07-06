@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_User_Branch_Matched__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RTL_Branch_Team_Name_Code_Rpt__c= $User.RTL_Branch_Code__c , true ,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User Branch Matched</label>
+    <type>Checkbox</type>
+</CustomField>

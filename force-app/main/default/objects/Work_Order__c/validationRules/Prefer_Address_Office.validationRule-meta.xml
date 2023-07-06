@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prefer_Address_Office</fullName>
+    <active>true</active>
+    <description>prefer address = office address, office address cannot be blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Prefer_Address__c, &quot;Office Address&quot;)
+&amp;&amp; ISBLANK(Office_Address__c)  
+,TRUE
+,FALSE)</errorConditionFormula>
+    <errorDisplayField>Office_Address__c</errorDisplayField>
+    <errorMessage>Prefer Address is Office Address but Office Address is blank. Please change Prefer Address.</errorMessage>
+</ValidationRule>

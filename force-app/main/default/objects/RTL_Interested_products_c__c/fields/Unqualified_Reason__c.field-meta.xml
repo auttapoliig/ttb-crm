@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unqualified_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Unqualified Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TMB - reputation concern</fullName>
+                <default>false</default>
+                <label>TMB - reputation concern</label>
+            </value>
+            <value>
+                <fullName>Channel - inconvenient</fullName>
+                <default>false</default>
+                <label>Channel - inconvenient</label>
+            </value>
+            <value>
+                <fullName>CM - Dissatisfaction with bank</fullName>
+                <default>false</default>
+                <label>CM - Dissatisfaction with bank</label>
+            </value>
+            <value>
+                <fullName>Product - Fee and Interest</fullName>
+                <default>false</default>
+                <label>Product - Fee and Interest</label>
+            </value>
+            <value>
+                <fullName>Product - Conditions</fullName>
+                <default>false</default>
+                <label>Product - Conditions</label>
+            </value>
+            <value>
+                <fullName>Product - Benefits</fullName>
+                <default>false</default>
+                <label>Product - Benefits</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - bank condition/policy</fullName>
+                <default>false</default>
+                <label>Disqualif. - bank condition/policy</label>
+            </value>
+            <value>
+                <fullName>CM - Not interest in product</fullName>
+                <default>false</default>
+                <label>CM - Not interest in product</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

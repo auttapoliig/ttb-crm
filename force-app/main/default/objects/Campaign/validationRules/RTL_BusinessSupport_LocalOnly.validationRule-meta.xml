@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_BusinessSupport_LocalOnly</fullName>
+    <active>true</active>
+    <description>Allow Business support create only Local Campaign</description>
+    <errorConditionFormula>AND(CONTAINS($Profile.Name,&apos;Retail Business Support&apos;), 
+Contains(RecordType.Name, &apos;Master Campaign&apos;), 
+NOT(ISPICKVAL(RTL_Campaign_Type__c, &apos;Local Exclusive&apos;)))</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Type__c</errorDisplayField>
+    <errorMessage>You can select only Local Exclusive campaign type.</errorMessage>
+</ValidationRule>

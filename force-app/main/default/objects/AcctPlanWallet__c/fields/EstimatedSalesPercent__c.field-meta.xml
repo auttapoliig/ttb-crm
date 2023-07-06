@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EstimatedSalesPercent__c</fullName>
+    <description>Estimated Sales Percent - Total % of Sales (always 100%)</description>
+    <externalId>false</externalId>
+    <formula>TotalDomesticPercent__c  +  TotalExportPercent__c</formula>
+    <inlineHelpText>Estimated Sales Percent - Total % of Sales (always 100%)</inlineHelpText>
+    <label>EstimatedSalesPercent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

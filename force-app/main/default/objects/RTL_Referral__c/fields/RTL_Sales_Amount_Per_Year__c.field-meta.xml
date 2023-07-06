@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Sales_Amount_Per_Year__c</fullName>
+    <externalId>false</externalId>
+    <label>Sales Amount Per Year</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SE : &lt;100 MB</fullName>
+                <default>false</default>
+                <label>SE : &lt;100 MB</label>
+            </value>
+            <value>
+                <fullName>BB : 100-1,000 MB</fullName>
+                <default>false</default>
+                <label>BB : 100-1,000 MB</label>
+            </value>
+            <value>
+                <fullName>CB : 1,001-5,000 MB</fullName>
+                <default>false</default>
+                <label>CB : 1,001-5,000 MB</label>
+            </value>
+            <value>
+                <fullName>MB : &gt;5,000 MB</fullName>
+                <default>false</default>
+                <label>MB : &gt;5,000 MB</label>
+            </value>
+            <value>
+                <fullName>SBO</fullName>
+                <default>false</default>
+                <label>SBO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refer_to_Commercial</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>RTL_Referral__c.Closed_Refer_to_Commercial,RTL_Referral__c.Refer_to_Commercial,RTL_Referral__c.Refer_within_Commercial</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Refer to Commercial</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>CCBO_Sales_Management</role>
+    </sharedTo>
+</ListView>

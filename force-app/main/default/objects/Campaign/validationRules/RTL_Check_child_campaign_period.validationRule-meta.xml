@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_child_campaign_period</fullName>
+    <active>true</active>
+    <description>child campaign จะต้องอยู่ในช่วงของ master ด้วย</description>
+    <errorConditionFormula>AND(NOT (OR(Contains(RecordType.Name,&quot;Master Campaign&quot;),RecordType.Name = &quot;Commercial&quot;, RecordType.Name = &quot;Dummy Campaign&quot;)),
+NOT(AND(
+StartDate &gt;= Parent.StartDate,
+StartDate &lt;= Parent.EndDate,
+EndDate &lt;= Parent.EndDate  )))</errorConditionFormula>
+    <errorMessage>Child campaign period must be in the master campaign period.</errorMessage>
+</ValidationRule>

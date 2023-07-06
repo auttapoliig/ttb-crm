@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmtPerMonth__c</fullName>
+    <description>Amount / Month : Amount ตาม THB equivalent</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Amount / Month : Amount ตาม THB equivalent</inlineHelpText>
+    <label>Amount / Month (THB equivalent)</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

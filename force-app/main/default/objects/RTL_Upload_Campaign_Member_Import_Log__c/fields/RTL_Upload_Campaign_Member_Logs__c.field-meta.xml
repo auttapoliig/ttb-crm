@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Upload_Campaign_Member_Logs__c</fullName>
+    <description>Child relation</description>
+    <externalId>false</externalId>
+    <label>RTL Upload Campaign Member Logs</label>
+    <referenceTo>RTL_Upload_Campaign_Member_Logs__c</referenceTo>
+    <relationshipName>Upload_Campaign_Member_After_Import_Logs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

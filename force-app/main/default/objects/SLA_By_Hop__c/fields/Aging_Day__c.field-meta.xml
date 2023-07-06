@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aging_Day__c</fullName>
+    <externalId>false</externalId>
+    <label>Aging (Day)</label>
+    <summarizedField>SLA_Per_Owner__c.Time_Used_Day__c</summarizedField>
+    <summaryForeignKey>SLA_Per_Owner__c.Hop_Team__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

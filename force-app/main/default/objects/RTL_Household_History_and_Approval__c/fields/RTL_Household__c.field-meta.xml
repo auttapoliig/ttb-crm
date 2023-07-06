@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Household__c</fullName>
+    <description>Household which this History record belongs to</description>
+    <externalId>false</externalId>
+    <label>Household</label>
+    <referenceTo>RTL_Household__c</referenceTo>
+    <relationshipLabel>Household History and Approvals</relationshipLabel>
+    <relationshipName>Household_History_and_Approvals</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

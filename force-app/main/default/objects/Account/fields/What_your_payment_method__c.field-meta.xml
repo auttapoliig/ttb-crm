@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_your_payment_method__c</fullName>
+    <externalId>false</externalId>
+    <label>What your payment method?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+                <label>Cheque</label>
+            </value>
+            <value>
+                <fullName>Cash Transfer</fullName>
+                <default>false</default>
+                <label>Cash Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

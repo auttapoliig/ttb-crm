@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Profile Name Setting for Campaign Reassing</description>
+    <label>RTL Campaign Reassign Profile Setting</label>
+    <pluralLabel>RTL Campaign Reassign Profile Setting</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

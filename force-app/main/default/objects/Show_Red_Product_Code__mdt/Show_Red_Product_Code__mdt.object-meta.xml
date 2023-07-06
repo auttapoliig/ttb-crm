@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To identify All Free Product Code which will be show as red information label on Product Holding Summary Page.</description>
+    <label>Show Red Product Code</label>
+    <pluralLabel>Show Red Product Code</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

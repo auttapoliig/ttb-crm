@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Responsible_BU__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>1. If assign to specific user, input user id.
+ex. 34506, 2395
+
+2. If assign dynamic user related to customer in put formula field.
+ex. Customer_Owner_ID__c
+Customer_BRC_User__c
+Customer_Wealth_RM_BM__c
+
+3. If assign to bu name in put BU Name.</inlineHelpText>
+    <label>Responsible BU (Hop 1)</label>
+    <length>40</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Social_Persona_Negative__c</fullName>
+    <externalId>false</externalId>
+    <label>Social Persona Negative</label>
+    <referenceTo>Social_Persona_Negative__c</referenceTo>
+    <relationshipLabel>Social Post Negatives</relationshipLabel>
+    <relationshipName>Social_Post_Negatives</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

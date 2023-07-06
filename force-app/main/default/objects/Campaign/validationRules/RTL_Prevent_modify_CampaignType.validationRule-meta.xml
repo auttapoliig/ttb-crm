@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Prevent_modify_CampaignType</fullName>
+    <active>true</active>
+    <description>Preventing modify campaign type after campaign created</description>
+    <errorConditionFormula>AND(Contains(RecordType.Name, &apos;Master Campaign&apos;), 
+IF(IsNew(),FALSE, ischanged(RTL_Campaign_Type__c)) 
+)</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Type__c</errorDisplayField>
+    <errorMessage>Campaign Type cannot be modified.</errorMessage>
+</ValidationRule>

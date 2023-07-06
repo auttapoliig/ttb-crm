@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Core_bank</fullName>
+    <active>true</active>
+    <label>Core bank</label>
+    <picklistValues>
+        <picklist>Decision_Map2__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gate Keeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User and Decision maker</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Decision_Map3__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gate Keeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User and Decision maker</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Decision_Map__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gate Keeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User and Decision maker</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Difficult_to_deal__c</picklist>
+        <values>
+            <fullName>Difficult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Easy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ID_Type_PE__c</picklist>
+        <values>
+            <fullName>Alien ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BRN ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Citizen ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passport ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Permit ID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Credit System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Boost Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Dark post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer from TBANK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBANK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Decision_2_2__c</picklist>
+        <values>
+            <fullName>All Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit and Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domestic Transactional Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A Derivative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%2FG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limit setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply chain</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Decision_3_2__c</picklist>
+        <values>
+            <fullName>All Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit and Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domestic Transactional Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A Derivative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%2FG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limit setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply chain</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Decision__c</picklist>
+        <values>
+            <fullName>All Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit and Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domestic Transactional Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A Derivative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hedging %3A FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Transactional Banking %3A Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%2FG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limit setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Term Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply chain</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Value_Style__c</picklist>
+        <values>
+            <fullName>Benefit Awareness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principle Awarness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Awareness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Risk Awareness</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

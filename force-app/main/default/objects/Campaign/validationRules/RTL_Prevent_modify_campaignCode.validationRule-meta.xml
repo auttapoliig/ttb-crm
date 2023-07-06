@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Prevent_modify_campaignCode</fullName>
+    <active>true</active>
+    <description>Preventing modify Campaign Code 9 digits after create child campaign</description>
+    <errorConditionFormula>AND(Contains(RecordType.Name, &apos;Master Campaign&apos;),
+  IF(ContainsChild__c,ischanged(RTL_Campaign_Code_9_digits__c),FALSE)
+)</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Code_9_digits__c</errorDisplayField>
+    <errorMessage>Campaign Code 9 digits cannot be modified.</errorMessage>
+</ValidationRule>

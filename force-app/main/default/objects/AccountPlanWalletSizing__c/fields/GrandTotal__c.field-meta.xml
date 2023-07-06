@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GrandTotal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( SummaryType__c , &quot;WalletSizing&quot;) 
+|| ISPICKVAL( SummaryType__c , &quot;None&quot;)
+|| ISPICKVAL( SummaryType__c , &quot;ActualNI&quot;)
+|| ISPICKVAL( SummaryType__c , &quot;AdjustedNI&quot;)
+|| ISPICKVAL( SummaryType__c , &quot;TotalCompanyNI&quot;)
+, NIIc__c +  NIId__c + Fee__c 
+,IF(
+ISPICKVAL( SummaryType__c , &quot;ExpectedIncrementalNI&quot;) 
+|| ISPICKVAL( SummaryType__c , &quot;ExpectedIncrementalNIStep5&quot;) 
+,NIIc__c +  NIId__c + TFFee__c + FXFee__c + LGFee__c + CashFee__c + ASFee__c + CreditFee__c + BAFee__c + DerivativeFee__c + IBFee__c,0  
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GrandTotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

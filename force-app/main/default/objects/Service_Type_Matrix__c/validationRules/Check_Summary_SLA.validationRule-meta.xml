@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Summary_SLA</fullName>
+    <active>true</active>
+    <description>Summary all SLA by Hop should be more than issue SLA</description>
+    <errorConditionFormula>(NULLVALUE(SLA_Hop_1_Day__c  , 0) +  NULLVALUE(SLA_Hop_2_Day__c  , 0) + NULLVALUE(SLA_Hop_3_Day__c , 0) + NULLVALUE(SLA_Hop_4_Day__c , 0) + NULLVALUE(SLA_Hop_5_Day__c , 0) + NULLVALUE(SLA_Closed_By_BU_Day__c, 0)) &gt; NULLVALUE(SLA__c, 0)</errorConditionFormula>
+    <errorMessage>Summary all SLA by Hop cannot more than issue SLA</errorMessage>
+</ValidationRule>

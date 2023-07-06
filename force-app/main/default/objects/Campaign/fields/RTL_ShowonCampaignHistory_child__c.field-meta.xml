@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_ShowonCampaignHistory_child__c</fullName>
+    <externalId>false</externalId>
+    <formula>RTL_ShowonCampaignHistory__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Show on Campaign History</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

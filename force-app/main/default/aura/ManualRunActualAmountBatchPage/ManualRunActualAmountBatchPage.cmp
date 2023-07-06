@@ -1,0 +1,93 @@
+<aura:component controller="ManualRunActualAmountController" implements="lightning:isUrlAddressable,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="option_month" type="List" access="PRIVATE"/>
+    <aura:attribute name="option_year" type="List" access="PRIVATE"/>
+    
+    <aura:attribute name="choosed_year" type="String" access="PRIVATE"/>
+    <aura:attribute name="choosed_month" type="String" access="PRIVATE"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:attribute name="isExecuting" type="Boolean" default="false" access="PRIVATE"/>
+    <aura:attribute name="showConfirmDialogBox" type="boolean" default="false"/>
+
+    <article>
+        <aura:if isTrue="{!v.isExecuting}">
+            <div class="exampleHolder">
+                <lightning:spinner alternativeText="Loading" size="medium" />
+            </div>
+        </aura:if>
+        <div class="slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-operating_hours"
+                        title="Operating Hours">
+                        <lightning:icon slot="media" iconName="standard:operating_hours">
+                        </lightning:icon>
+                        <span class="slds-assistive-text">Operating Hours</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <div style="font-size: 15px;">
+                        <span>Manual Execute Batch</span>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <br/>
+        
+            <p class="slds-col slds-p-horizontal_medium">Execute apex batch to summarize and pre-calculate the T-Performance KPI data for the summary report and one-down report on the selected year and month.</p>
+            <br/>
+
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <lightning:select class="select-auto-width" name="selectYear" label="Select year:" aura:id="selectYear" onchange="{! c.onChangeYear }">
+                        <aura:iteration items="{!v.option_year}" var="option">
+                            <option text="{!option.label}" value="{!option.label}" selected="{!option.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+
+                <br/>
+                <div class="slds-col">
+                    <lightning:select class="select-auto-width" name="selectMonth" label="Select month:" aura:id="selectMonth" onchange="{! c.onChangeMonth }">
+                        <aura:iteration items="{!v.option_month}" var="option">
+                            <option text="{!option.label}" value="{!option.label}" selected="{!option.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+
+            </div>
+
+                <div class="slds-align_absolute-center" style="height:5rem">
+                    <lightning:button label="Execute" variant="brand" onclick="{! c.handleClick }"/>
+                </div>
+
+    <aura:if isTrue="{!v.showConfirmDialogBox}">
+        <!--Modal Box Start-->
+        <div role="dialog" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+                <!--Modal Box Header Start-->
+                <header class="slds-modal__header">
+                    <h1 class="slds-text-heading--medium">Confirmation</h1>
+                </header>
+                <!--Modal Box Header End-->
+
+                <!--Modal Box Content Start-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <center><b>Are you sure you want to execute batch to summarize data on month {!v.choosed_month} year {!v.choosed_year}?.</b></center>
+                </div>
+                <!--Modal Box Content End-->
+
+                <!--Modal Box Button Start-->
+                <footer class="slds-modal__footer">
+                    <lightning:button name='Cancel' label='Cancel' onclick='{!c.handleConfirmDialogCancel}'/>
+                    <lightning:button variant="brand" name='Ok' label='Ok' onclick='{!c.handleConfirmDialogOk}'/>
+                </footer>
+                <!--Modal Box Button End-->
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>            
+    </aura:if>
+
+    </article>
+</aura:component>

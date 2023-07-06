@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Primary_Banking_All_Free_Benefit__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>ฟิลด์รับค่าจาก OSC07 &quot;afPrivilegeFlag&quot;</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ทำธุรกรรม All Free ครบ 5 ครั้ง (เดือนที่แล้ว)</inlineHelpText>
+    <label>Main Bank</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

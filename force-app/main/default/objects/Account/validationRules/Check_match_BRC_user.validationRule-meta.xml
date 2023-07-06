@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_match_BRC_user</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(ISCHANGED( RTL_Assigned_BRC__c ),
+if(OR($User.UserProfileName__c = &apos;System Administrator&apos; , $User.UserProfileName__c = &apos;Retail Integration API Only&apos;), false,
+if(AND(RTL_Assigned_BRC__c &lt;&gt; null, RTL_Most_Operating_Branch__c &lt;&gt; null) ,if(
+RTL_Most_Operating_Branch__r.Branch_Code__c = RTL_Assigned_BRC__r.RTL_Branch_Code__c, false,true),false)
+), false)</errorConditionFormula>
+    <errorDisplayField>RTL_Assigned_BRC__c</errorDisplayField>
+    <errorMessage>Selected user is not match with most operating branch (ผู้ดูแลลูกค้าที่เลือกไม่อยู่ในสาขา BRC นี้)</errorMessage>
+</ValidationRule>

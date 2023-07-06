@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE1_ZM_Central_Chaengwattana_Mail_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Queue</filterScope>
+    <label>_(NotUse)SE ZM SME3 Chaengwattana Team</label>
+    <language>en_US</language>
+    <queue>SE_ZM_SME3_Chaengwattana_Team</queue>
+    <sharedTo>
+        <group>SE_ZM_SME3_Chaengwattana_Team</group>
+        <role>CCBO_Sales_Management</role>
+    </sharedTo>
+</ListView>

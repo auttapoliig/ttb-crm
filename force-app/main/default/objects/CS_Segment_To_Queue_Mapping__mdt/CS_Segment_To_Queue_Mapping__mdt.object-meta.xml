@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata is used by e-Client Suitability process. System will map the customer segment with with the assigned queue in this Metadata.</description>
+    <label>CS Segment To Queue Mapping</label>
+    <pluralLabel>CS Segment To Queue Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

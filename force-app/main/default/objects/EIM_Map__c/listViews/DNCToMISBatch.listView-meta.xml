@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DNCToMISBatch</fullName>
+    <columns>NAME</columns>
+    <columns>Field_Type__c</columns>
+    <columns>External_Field__c</columns>
+    <columns>Attribute__c</columns>
+    <columns>Attribute_value__c</columns>
+    <columns>Default_Value__c</columns>
+    <columns>Field_Order__c</columns>
+    <columns>IsActive__c</columns>
+    <columns>Job_Type__c</columns>
+    <columns>Node__c</columns>
+    <columns>Object__c</columns>
+    <columns>ParentNode__c</columns>
+    <columns>SF_Field__c</columns>
+    <columns>DateFormat__c</columns>
+    <columns>isBooleanTransform__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Job_Type__c</field>
+        <operation>equals</operation>
+        <value>DNCToMISBatch</value>
+    </filters>
+    <label>DNCToMISBatch</label>
+    <language>en_US</language>
+</ListView>

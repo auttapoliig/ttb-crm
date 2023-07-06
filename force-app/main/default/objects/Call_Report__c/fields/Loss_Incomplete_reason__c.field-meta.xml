@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Incomplete_reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Loss / Incomplete reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Outcome__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ลูกค้าไม่ต้องการวงเงินเพิ่ม</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่ต้องการวงเงินเพิ่ม</label>
+            </value>
+            <value>
+                <fullName>ไม่มีหลักประกัน / หลักประกันไม่เพียงพอ</fullName>
+                <default>false</default>
+                <label>ไม่มีหลักประกัน / หลักประกันไม่เพียงพอ</label>
+            </value>
+            <value>
+                <fullName>รายได้รวมกลุ่ม (Group Income) เกินเกณฑ์ โปรดระบุรายละเอียด</fullName>
+                <default>false</default>
+                <label>รายได้รวมกลุ่ม (Group Income) เกินเกณฑ์ โปรดระบุรายละเอียด</label>
+            </value>
+            <value>
+                <fullName>วงเงินรวมกลุ่ม (Group Exposure) เกินเกณฑ์ โปรดระบุรายละเอียด</fullName>
+                <default>false</default>
+                <label>วงเงินรวมกลุ่ม (Group Exposure) เกินเกณฑ์ โปรดระบุรายละเอียด</label>
+            </value>
+            <value>
+                <fullName>ธุรกิจของผู้กู้ไม่อยู่ในกลุ่มที่ธนาคารสนับสนุน</fullName>
+                <default>false</default>
+                <label>ธุรกิจของผู้กู้ไม่อยู่ในกลุ่มที่ธนาคารสนับสนุน</label>
+            </value>
+            <value>
+                <fullName>มีประวัติ NCB ไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>มีประวัติ NCB ไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>คุณสมบัติลูกค้าไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>คุณสมบัติลูกค้าไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>มีเงินทุนหมุนเวียนเพียงพอ</fullName>
+                <default>false</default>
+                <label>มีเงินทุนหมุนเวียนเพียงพอ</label>
+            </value>
+            <value>
+                <fullName>ไม่มีแผนขยายกิจการ/ชลอโครงการ</fullName>
+                <default>false</default>
+                <label>ไม่มีแผนขยายกิจการ/ชลอโครงการ</label>
+            </value>
+            <value>
+                <fullName>วัตถุประสงค์การขอสินเชื่อไม่สอดคล้องกับธุรกิจ</fullName>
+                <default>false</default>
+                <label>วัตถุประสงค์การขอสินเชื่อไม่สอดคล้องกับธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>เสนอวงเงินสินเชื่อให้น้อยไป</fullName>
+                <default>false</default>
+                <label>เสนอวงเงินสินเชื่อให้น้อยไป</label>
+            </value>
+            <value>
+                <fullName>อยู่ระหว่างการปรับโครงสร้างหนี้</fullName>
+                <default>false</default>
+                <label>อยู่ระหว่างการปรับโครงสร้างหนี้</label>
+            </value>
+            <value>
+                <fullName>กำลังจะ Refinance ไปธนาคารอื่น/ได้วงเงินจากที่อื่นแล้ว</fullName>
+                <default>false</default>
+                <label>กำลังจะ Refinance ไปธนาคารอื่น/ได้วงเงินจากที่อื่นแล้ว</label>
+            </value>
+            <value>
+                <fullName>ใช้วงเงินสินเชื่อธนาคารอื่นเป็นหลัก</fullName>
+                <default>false</default>
+                <label>ใช้วงเงินสินเชื่อธนาคารอื่นเป็นหลัก</label>
+            </value>
+            <value>
+                <fullName>ธุรกิจของผู้กู้ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>ธุรกิจของผู้กู้ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ระยะเวลาการดำเนินธุรกิจไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ระยะเวลาการดำเนินธุรกิจไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>อัตราดอกเบี้ยไม่น่าสนใจ</fullName>
+                <default>false</default>
+                <label>อัตราดอกเบี้ยไม่น่าสนใจ</label>
+            </value>
+            <value>
+                <fullName>ไม่ปฎิบัติตามเงื่อนไขที่ธนาคารกำหนด</fullName>
+                <default>false</default>
+                <label>ไม่ปฎิบัติตามเงื่อนไขที่ธนาคารกำหนด</label>
+            </value>
+            <value>
+                <fullName>ใบอนุญาต ไม่ถูกต้อง/ครบถ้วน</fullName>
+                <default>false</default>
+                <label>ใบอนุญาต ไม่ถูกต้อง/ครบถ้วน</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>Credit issue</fullName>
+                <default>false</default>
+                <label>Credit issue</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Product not match</fullName>
+                <default>false</default>
+                <label>Product not match</label>
+            </value>
+            <value>
+                <fullName>Competition</fullName>
+                <default>false</default>
+                <label>Competition</label>
+            </value>
+            <value>
+                <fullName>Visit Cancelled</fullName>
+                <default>false</default>
+                <label>Visit Cancelled</label>
+            </value>
+            <value>
+                <fullName>ไม่มีนโยบายตั้งบูธ/จัดกิจกรรม/สถานที่ไม่อำนวย</fullName>
+                <default>false</default>
+                <label>ไม่มีนโยบายตั้งบูธ/จัดกิจกรรม/สถานที่ไม่อำนวย</label>
+            </value>
+            <value>
+                <fullName>เรื่องสินเชื่อ</fullName>
+                <default>false</default>
+                <label>เรื่องสินเชื่อ</label>
+            </value>
+            <value>
+                <fullName>Packageยังไม่เหมาะกับพนักงาน</fullName>
+                <default>false</default>
+                <label>Packageยังไม่เหมาะกับพนักงาน</label>
+            </value>
+            <value>
+                <fullName>พนักงานไม่เข้าเกณฑ์ ระบุเพิ่ม</fullName>
+                <default>false</default>
+                <label>พนักงานไม่เข้าเกณฑ์ ระบุเพิ่ม</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ โปรดระบุ</fullName>
+                <default>false</default>
+                <label>อื่นๆ โปรดระบุ</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ลูกค้าไม่ต้องการวงเงินเพิ่ม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ไม่มีหลักประกัน / หลักประกันไม่เพียงพอ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>รายได้รวมกลุ่ม (Group Income) เกินเกณฑ์ โปรดระบุรายละเอียด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>วงเงินรวมกลุ่ม (Group Exposure) เกินเกณฑ์ โปรดระบุรายละเอียด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ธุรกิจของผู้กู้ไม่อยู่ในกลุ่มที่ธนาคารสนับสนุน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>มีประวัติ NCB ไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>คุณสมบัติลูกค้าไม่ผ่านเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>มีเงินทุนหมุนเวียนเพียงพอ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ไม่มีแผนขยายกิจการ/ชลอโครงการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>วัตถุประสงค์การขอสินเชื่อไม่สอดคล้องกับธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>เสนอวงเงินสินเชื่อให้น้อยไป</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>อยู่ระหว่างการปรับโครงสร้างหนี้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>กำลังจะ Refinance ไปธนาคารอื่น/ได้วงเงินจากที่อื่นแล้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ใช้วงเงินสินเชื่อธนาคารอื่นเป็นหลัก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ธุรกิจของผู้กู้ไม่ผ่านเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ระยะเวลาการดำเนินธุรกิจไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>อัตราดอกเบี้ยไม่น่าสนใจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ไม่ปฎิบัติตามเงื่อนไขที่ธนาคารกำหนด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>ใบอนุญาต ไม่ถูกต้อง/ครบถ้วน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>อื่นๆ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>Credit issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>Product not match</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>Competition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Charge_Stay with Customer, No Negative Pledge</controllingFieldValue>
+            <controllingFieldValue>Float Chrage_Exit this Customer</controllingFieldValue>
+            <controllingFieldValue>Cancelled this visit</controllingFieldValue>
+            <controllingFieldValue>Not interested</controllingFieldValue>
+            <controllingFieldValue>To follow up</controllingFieldValue>
+            <controllingFieldValue>Very satisfied</controllingFieldValue>
+            <controllingFieldValue>Satisfied</controllingFieldValue>
+            <controllingFieldValue>Moderate</controllingFieldValue>
+            <controllingFieldValue>Dissatisfied</controllingFieldValue>
+            <controllingFieldValue>Incomplete</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <controllingFieldValue>Postponed</controllingFieldValue>
+            <controllingFieldValue>Accept &amp;Sign-off Agreement</controllingFieldValue>
+            <controllingFieldValue>Win Deal</controllingFieldValue>
+            <controllingFieldValue>Lost Deal</controllingFieldValue>
+            <controllingFieldValue>Win oppty</controllingFieldValue>
+            <controllingFieldValue>Lost oppty</controllingFieldValue>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <controllingFieldValue>Need follow up</controllingFieldValue>
+            <controllingFieldValue>Completed</controllingFieldValue>
+            <controllingFieldValue>In-Progress</controllingFieldValue>
+            <controllingFieldValue>Interested</controllingFieldValue>
+            <controllingFieldValue>Customer Reject</controllingFieldValue>
+            <controllingFieldValue>Customer Accept &amp; will Sign-off Agreement</controllingFieldValue>
+            <valueName>Visit Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ไม่สำเร็จ</controllingFieldValue>
+            <valueName>ไม่มีนโยบายตั้งบูธ/จัดกิจกรรม/สถานที่ไม่อำนวย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ไม่สำเร็จ</controllingFieldValue>
+            <valueName>เรื่องสินเชื่อ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ไม่สำเร็จ</controllingFieldValue>
+            <valueName>Packageยังไม่เหมาะกับพนักงาน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ไม่สำเร็จ</controllingFieldValue>
+            <valueName>พนักงานไม่เข้าเกณฑ์ ระบุเพิ่ม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ไม่สำเร็จ</controllingFieldValue>
+            <valueName>อื่นๆ โปรดระบุ</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

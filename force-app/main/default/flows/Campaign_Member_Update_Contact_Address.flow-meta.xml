@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>Campaign Member Update Contact Address</description>
+    <environments>Default</environments>
+    <interviewLabel>Update Contact Address {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Campaign Member Update Contact Address</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Campaign Member Update Contact Address</description>
+        <name>Update_Contact_Address</name>
+        <label>Update Contact Address</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>RTL_AL_ContactDistrict__c</field>
+            <value>
+                <elementReference>$Record.RTL_Contact_Address__r.RTL_District__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_ContactProvince__c</field>
+            <value>
+                <elementReference>$Record.RTL_Contact_Address__r.RTL_Province__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_ContactSubDistrict__c</field>
+            <value>
+                <elementReference>$Record.RTL_Contact_Address__r.RTL_Sub_District__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_ContactZipcode__c</field>
+            <value>
+                <elementReference>$Record.RTL_Contact_Address__r.RTL_Zipcode__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Contact_Address</targetReference>
+        </connector>
+        <filterFormula>AND({!$Record.RTL_Contact_Address__r.IsActive__c}=true,OR( AND( NOT(ISNEW()), ISCHANGED({!$Record.RTL_Contact_Address__c}) ), AND( ISNEW(), NOT(ISBLANK({!$Record.RTL_Contact_Address__c})) ) ))</filterFormula>
+        <object>CampaignMember</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

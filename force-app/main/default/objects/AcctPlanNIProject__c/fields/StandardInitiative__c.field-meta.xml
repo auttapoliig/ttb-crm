@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StandardInitiative__c</fullName>
+    <externalId>false</externalId>
+    <label>StandardInitiative</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Boost utilization</fullName>
+                <default>false</default>
+                <label>Boost utilization</label>
+            </value>
+            <value>
+                <fullName>Increase limit/Realign limit</fullName>
+                <default>false</default>
+                <label>Increase limit/Realign limit</label>
+            </value>
+            <value>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+                <label>Acquisition</label>
+            </value>
+            <value>
+                <fullName>Customizied deal</fullName>
+                <default>false</default>
+                <label>Customizied deal</label>
+            </value>
+            <value>
+                <fullName>Standard Deal</fullName>
+                <default>false</default>
+                <label>Standard Deal</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+            <value>
+                <fullName>Thai Baht Clearing</fullName>
+                <default>false</default>
+                <label>Thai Baht Clearing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_User_ZoneTeam_Matched__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RTL_Assigned_Zone_Rpt__c= $User.Zone_Code__c , true ,false)</formula>
+    <label>User ZoneTeam Matched</label>
+    <type>Checkbox</type>
+</CustomField>

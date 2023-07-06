@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Last_Assigned_Date_time</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(  DATEVALUE(RTL_Last_Assigned_Date_time__c)   &gt;   (TODAY()  +(365.2425*50)) ,
+
+ DATEVALUE(RTL_Last_Assigned_Date_time__c)    &lt; (TODAY() - (365.2425*50 )))</errorConditionFormula>
+    <errorDisplayField>RTL_Last_Assigned_Date_time__c</errorDisplayField>
+    <errorMessage>Last Assigned Date/time</errorMessage>
+</ValidationRule>

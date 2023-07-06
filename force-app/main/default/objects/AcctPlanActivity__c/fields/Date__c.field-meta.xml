@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date__c</fullName>
+    <description>Date to perform an activity.  (Please note that this field will be displayed in Executive Summary)
+ข้อมูล Date  จะถูกนำไปแสดงใน Executive Summary</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Date to perform an activity.  (Please note that this field will be displayed in Executive Summary)
+ข้อมูล Date  จะถูกนำไปแสดงใน Executive Summary</inlineHelpText>
+    <label>Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

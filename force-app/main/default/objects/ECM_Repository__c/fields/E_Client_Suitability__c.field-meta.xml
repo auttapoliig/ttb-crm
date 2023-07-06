@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Client_Suitability__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>lookup which e-client has this ecm record</description>
+    <externalId>false</externalId>
+    <label>E-Client Suitability</label>
+    <referenceTo>E_Client_Suitability__c</referenceTo>
+    <relationshipLabel>ECM Repositories</relationshipLabel>
+    <relationshipName>ECM_Eclient</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

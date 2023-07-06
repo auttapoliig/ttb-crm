@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Channel Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Branch</fullName>
+                <default>false</default>
+                <label>Branch</label>
+            </value>
+            <value>
+                <fullName>Mortgage Loan Sales</fullName>
+                <default>false</default>
+                <label>Mortgage Loan Sales</label>
+            </value>
+            <value>
+                <fullName>Wealth Banking</fullName>
+                <default>false</default>
+                <label>Wealth Banking</label>
+            </value>
+            <value>
+                <fullName>Small Business Sales</fullName>
+                <default>false</default>
+                <label>Small Business Sales</label>
+            </value>
+            <value>
+                <fullName>Retail Advisory Line</fullName>
+                <default>false</default>
+                <label>Retail Advisory Line</label>
+            </value>
+            <value>
+                <fullName>Unsecured Lending Line</fullName>
+                <default>false</default>
+                <label>Unsecured Lending Line</label>
+            </value>
+            <value>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+                <label>Telemarketing</label>
+            </value>
+            <value>
+                <fullName>RPD</fullName>
+                <default>false</default>
+                <label>RPD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

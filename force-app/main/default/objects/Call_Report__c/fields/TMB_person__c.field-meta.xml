@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMB_person__c</fullName>
+    <externalId>false</externalId>
+    <label>TMB person</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trade Specialist</fullName>
+                <default>false</default>
+                <label>Trade Specialist</label>
+            </value>
+            <value>
+                <fullName>Capital Market Specialist</fullName>
+                <default>false</default>
+                <label>Capital Market Specialist</label>
+            </value>
+            <value>
+                <fullName>Cash Specialist</fullName>
+                <default>false</default>
+                <label>Cash Specialist</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Specialist</fullName>
+                <default>false</default>
+                <label>Supply Chain Specialist</label>
+            </value>
+            <value>
+                <fullName>LSP</fullName>
+                <default>false</default>
+                <label>LSP</label>
+            </value>
+            <value>
+                <fullName>MM</fullName>
+                <default>false</default>
+                <label>MM</label>
+            </value>
+            <value>
+                <fullName>Team head</fullName>
+                <default>false</default>
+                <label>Team head</label>
+            </value>
+            <value>
+                <fullName>Group head</fullName>
+                <default>false</default>
+                <label>Group head</label>
+            </value>
+            <value>
+                <fullName>Segment head</fullName>
+                <default>false</default>
+                <label>Segment head</label>
+            </value>
+            <value>
+                <fullName>Chief</fullName>
+                <default>false</default>
+                <label>Chief</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

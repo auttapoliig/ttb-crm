@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For allow user&apos;s profile to edit campaign member in section &quot;More detail&quot;.</description>
+    <label>Campaign Member allow edit Profile</label>
+    <pluralLabel>Campaign Member allow edit Profiles</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

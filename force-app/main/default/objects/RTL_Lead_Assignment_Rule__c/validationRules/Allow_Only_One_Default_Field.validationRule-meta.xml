@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Only_One_Default_Field</fullName>
+    <active>true</active>
+    <description>Allow only 1 field to be populated</description>
+    <errorConditionFormula>AND( NOT(ISBLANK(RTL_Default_Queue_Name__c)) , NOT(ISBLANK(RTL_Default_User__c)))</errorConditionFormula>
+    <errorMessage>Please input only 1 value from 4.1, 4.2</errorMessage>
+</ValidationRule>

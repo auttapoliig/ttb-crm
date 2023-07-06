@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NI_SoW__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(NI_Wallet__c=0,0,(
+(
+( NIIc_Actual__c + NIId_Actual__c +  Fee_Actual__c + Supply_Chain_Actual__c ) / MONTH( Income_as_of_Wallet__c )
+)*12
+)/ NI_Wallet__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NI (SoW) Core Bank</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

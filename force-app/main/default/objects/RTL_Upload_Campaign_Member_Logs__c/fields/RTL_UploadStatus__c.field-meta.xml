@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_UploadStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>RTL UploadStatus</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Starting</fullName>
+                <default>false</default>
+                <label>Starting</label>
+            </value>
+            <value>
+                <fullName>In Progress - Split File</fullName>
+                <default>false</default>
+                <label>In Progress - Split File</label>
+            </value>
+            <value>
+                <fullName>In Progress - Import Batch</fullName>
+                <default>false</default>
+                <label>In Progress - Import Batch</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Failed</fullName>
+                <default>false</default>
+                <label>Failed</label>
+            </value>
+            <value>
+                <fullName>In Progress - Import Member to Batch</fullName>
+                <default>false</default>
+                <label>In Progress - Import Member to Batch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

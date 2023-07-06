@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Primary_Address_Marketing_Combined__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(RTL_Primary_Address_Mkt__c),&quot;-&quot;,RTL_Primary_Address_Mkt__c) 
++ &quot; / &quot; + 
+IF(ISBLANK(RTL_Primary_Address_Zip_Mkt__c),&quot;-&quot;,RTL_Primary_Address_Zip_Mkt__c)</formula>
+    <label>Primary Address Marketing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

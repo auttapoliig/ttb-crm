@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hobbies__c</fullName>
+    <externalId>false</externalId>
+    <label>Hobbies</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Watch movie at the Theatre</fullName>
+                <default>false</default>
+                <label>Watch movie at the Theatre</label>
+            </value>
+            <value>
+                <fullName>Travels</fullName>
+                <default>false</default>
+                <label>Travels</label>
+            </value>
+            <value>
+                <fullName>Family activities</fullName>
+                <default>false</default>
+                <label>Family activities</label>
+            </value>
+            <value>
+                <fullName>Exercise, Wellness/Beauty-related activities</fullName>
+                <default>false</default>
+                <label>Exercise, Wellness/Beauty-related activities</label>
+            </value>
+            <value>
+                <fullName>Stage performance (Play/Concert)</fullName>
+                <default>false</default>
+                <label>Stage performance (Play/Concert)</label>
+            </value>
+            <value>
+                <fullName>DIY / Art / Cooking / Gardening / Photography</fullName>
+                <default>false</default>
+                <label>DIY / Art / Cooking / Gardening / Photography</label>
+            </value>
+            <value>
+                <fullName>Shopping</fullName>
+                <default>false</default>
+                <label>Shopping</label>
+            </value>
+            <value>
+                <fullName>Leisure activities at home (TV shows, sport shows, music shows, reading books, surfing internet)</fullName>
+                <default>false</default>
+                <label>Leisure activities at home (TV shows, sport shows, music shows, reading books, surfing internet)</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

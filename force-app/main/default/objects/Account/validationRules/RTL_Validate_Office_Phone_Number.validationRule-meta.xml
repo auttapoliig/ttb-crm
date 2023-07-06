@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Validate_Office_Phone_Number</fullName>
+    <active>false</active>
+    <description>Office Phone Number must be between 9 and 18 digits</description>
+    <errorConditionFormula>AND(CONTAINS($RecordType.Name,&quot;Retail&quot;),NOT(ISBLANK(RTL_Office_Phone_Number__c)),OR(LEN(RTL_Office_Phone_Number__c) &lt; 9,LEN(RTL_Office_Phone_Number__c) &gt; 18,NOT(REGEX( RTL_Office_Phone_Number__c , &quot;[\\d]*&quot;))))</errorConditionFormula>
+    <errorDisplayField>RTL_Office_Phone_Number__c</errorDisplayField>
+    <errorMessage>Office Phone Number must be between 9 and 18 digits</errorMessage>
+</ValidationRule>

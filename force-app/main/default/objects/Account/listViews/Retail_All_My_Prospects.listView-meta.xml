@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retail_All_My_Prospects</fullName>
+    <columns>RTL_Customer_Title__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Create_Date__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Retail_Prospect</value>
+    </filters>
+    <label>ลูกค้ามุ่งหวังของฉัน (ทั้งหมด)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>CCC_User_01</role>
+        <roleAndSubordinates>BBG</roleAndSubordinates>
+        <roleAndSubordinates>Contact_Center</roleAndSubordinates>
+        <roleAndSubordinates>PD_TH</roleAndSubordinates>
+        <roleAndSubordinates>Retail_Others</roleAndSubordinates>
+    </sharedTo>
+</ListView>

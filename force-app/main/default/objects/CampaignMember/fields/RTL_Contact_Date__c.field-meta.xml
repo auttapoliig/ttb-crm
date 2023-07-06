@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Contact_Date__c</fullName>
+    <description>Contact Date to be used for SLA calculation</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Contact Date (for SLA)</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

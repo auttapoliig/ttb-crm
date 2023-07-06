@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_IDType_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+(ISPICKVAL( RTL_ID_Type__c ,&apos;&apos;)),
+!ISBLANK( RTL_Citizen_Id__c )
+)</errorConditionFormula>
+    <errorDisplayField>RTL_ID_Type__c</errorDisplayField>
+    <errorMessage>ID Type cannot be blank when ID Number is provided.</errorMessage>
+</ValidationRule>

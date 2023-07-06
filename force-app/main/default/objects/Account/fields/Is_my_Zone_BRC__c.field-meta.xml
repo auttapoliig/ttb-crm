@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_my_Zone_BRC__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(RTL_Most_Operating_Branch__c != null, $User.Zone_Code__c != null),
+RTL_Most_Operating_Branch__r.RTL_Zone_Code__c = $User.Zone_Code__c,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is my Zone BRC</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

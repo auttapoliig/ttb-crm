@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Can_Not_Change</fullName>
+    <active>true</active>
+    <description>Work Order with Closed record type cannot be changed
+**Admin is still can edit closed record</description>
+    <errorConditionFormula>IF( CONTAINS(RecordType.Name,&apos;Closed&apos; ) 
+			&amp;&amp; NOT(ISNEW())
+			&amp;&amp; !CONTAINS($Profile.Name, &apos;Admin&apos;)
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorMessage>Record is closed, cannot edit</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_not_Contact__c</fullName>
+    <description>This field for report only</description>
+    <externalId>false</externalId>
+    <formula>if( Customer__r.DNC_Expired_Date__c &gt;= today(), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Do not Contact</label>
+    <type>Checkbox</type>
+</CustomField>

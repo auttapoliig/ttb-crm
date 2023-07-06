@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Main_Value__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>boolean to check if product group should be in bold when render the table on CustomerProductHoldingAndNBO</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Is Main Value</label>
+    <type>Checkbox</type>
+</CustomField>

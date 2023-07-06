@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExistingAmountLGUtilities__c</fullName>
+    <description>Existing Amount or Expected amount  (Unit : Baht) - 1.3 L/G Utilities</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Existing Amount or Expected amount  (Unit : Baht) - 1.3 L/G Utilities</inlineHelpText>
+    <label>ExistingAmountLGUtilities</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

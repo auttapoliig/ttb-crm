@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Image_formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;https://tmbbank--DEV2--c.cs6.content.force.com/servlet/rtaImage?eid=003N000000lzBlc&amp;feoid=00NN0000001toGv&amp;refid=0EMN0000000CzP6&quot;, &quot;test&quot;, 200, 200)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Image formula</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

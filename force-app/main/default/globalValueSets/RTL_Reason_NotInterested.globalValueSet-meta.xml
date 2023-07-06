@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Already used with other bank</fullName>
+        <default>false</default>
+        <label>Already used with other bank</label>
+    </customValue>
+    <customValue>
+        <fullName>Business partner - reputation / bad experience</fullName>
+        <default>false</default>
+        <label>Business partner - reputation / bad experience</label>
+    </customValue>
+    <customValue>
+        <fullName>Channel - inconvenient</fullName>
+        <default>false</default>
+        <label>Channel - inconvenient</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Just Open/Fully reduce TAX</fullName>
+        <default>false</default>
+        <label>CM - Just Open/Fully reduce TAX</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Bad experience with Product</fullName>
+        <default>false</default>
+        <label>CM - Bad experience with Product</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - No purchasing power</fullName>
+        <default>false</default>
+        <label>CM - No purchasing power</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Online security concerns</fullName>
+        <default>false</default>
+        <label>CM - Online security concerns</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Refuse since beginning</fullName>
+        <default>false</default>
+        <label>CM - Refuse since beginning</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Risk concern</fullName>
+        <default>false</default>
+        <label>CM - Risk concern</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing - NOT attractive promotion</fullName>
+        <default>false</default>
+        <label>Marketing - NOT attractive promotion</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing - Competitor offer better promotion.</fullName>
+        <default>false</default>
+        <label>Marketing - Competitor offer better promotion.</label>
+    </customValue>
+    <customValue>
+        <fullName>Process - Complicated application &amp; approval</fullName>
+        <default>false</default>
+        <label>Process - Complicated application &amp; approval</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Feature</fullName>
+        <default>false</default>
+        <label>Product - Feature</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Credit Limit</fullName>
+        <default>false</default>
+        <label>Product - Credit Limit</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Protection</fullName>
+        <default>false</default>
+        <label>Product - Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Not attractive Return, NAV, Dividend</fullName>
+        <default>false</default>
+        <label>Product - Not attractive Return, NAV, Dividend</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Interest</fullName>
+        <default>false</default>
+        <label>Product - Interest</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Policy</fullName>
+        <default>false</default>
+        <label>Product - Policy</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Too high Fee</fullName>
+        <default>false</default>
+        <label>Product - Too high Fee</label>
+    </customValue>
+    <customValue>
+        <fullName>ttb - reputation concern</fullName>
+        <default>false</default>
+        <label>ttb - reputation concern</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - Business experience</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - Business experience</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - Quarantee</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - Quarantee</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - Income</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - Income</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - Financial statement(NCB)</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - Financial statement(NCB)</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - Occupation/Business Type</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - Occupation/Business Type</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Bank condition/policy - location</fullName>
+        <default>false</default>
+        <label>Disqualif. - Bank condition/policy - location</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - No need</fullName>
+        <default>false</default>
+        <label>CM - No need</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Adequate product holding</fullName>
+        <default>false</default>
+        <label>CM - Adequate product holding</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <label>Others</label>
+    </customValue>
+    <customValue>
+        <fullName>Business partner -reputation / bad experience</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business partner -reputation / bad experience</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Benefits</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Benefits</label>
+    </customValue>
+    <customValue>
+        <fullName>ไม่สามารถจัดกลุ่มได้</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ไม่สามารถจัดกลุ่มได้</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Benefits,Credit Limit,Protection</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Benefits,Credit Limit,Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Channel - taken care by branch</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Channel - taken care by branch</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Not attractive Return, Interest, NAV, Dividend</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Not attractive Return, Interest, NAV, Dividend</label>
+    </customValue>
+    <customValue>
+        <fullName>Human Error</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Human Error</label>
+    </customValue>
+    <customValue>
+        <fullName>TMB - reputation concern</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TMB - reputation concern</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Not interest in product</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Not interest in product</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - just close/cancel product</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - just close/cancel product</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Benefit Plus</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Benefit Plus</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Top Up</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Top Up</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Pricing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Already Retention</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Already Retention</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Welfare benefit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Welfare benefit</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Interested in Competitor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Interested in Competitor</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Dissatisfaction with bank</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CM - Dissatisfaction with bank</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Past due payment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Disqualif. - Past due payment</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Remaining balance</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Disqualif. - Remaining balance</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif - Age</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Disqualif - Age</label>
+    </customValue>
+    <customValue>
+        <fullName>Disqualif. - Duration of product holding</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Disqualif. - Duration of product holding</label>
+    </customValue>
+    <customValue>
+        <fullName>Channel - can not access</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Channel - can not access</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Conditions</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Conditions</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - Competitor&apos;s offer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other - Competitor&apos;s offer</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Too high Fee, Interest, or BA premium</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Too high Fee, Interest, or BA premium</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - Already own product</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other - Already own product</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - refuse beginning</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other - refuse beginning</label>
+    </customValue>
+    <customValue>
+        <fullName>Product - Top up loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product - Top up loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - Enough working capital</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other - Enough working capital / don&apos;t want to be in debt</label>
+    </customValue>
+    <description>List of reason for Not Interested on Campaign product response</description>
+    <masterLabel>Campaign Reason of Not Interested</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

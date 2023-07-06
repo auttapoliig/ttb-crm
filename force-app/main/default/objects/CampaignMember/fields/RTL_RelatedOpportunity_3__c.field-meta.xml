@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_RelatedOpportunity_3__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Related to Opportunity-3</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Campaign Members (Related to Opportunity-3)</relationshipLabel>
+    <relationshipName>Campaign_Members2</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

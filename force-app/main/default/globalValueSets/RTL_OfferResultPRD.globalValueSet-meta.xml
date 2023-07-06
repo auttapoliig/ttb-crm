@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>N/A</fullName>
+        <default>false</default>
+        <label>N/A</label>
+    </customValue>
+    <customValue>
+        <fullName>Interested</fullName>
+        <default>false</default>
+        <label>Interested</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Interested</fullName>
+        <default>false</default>
+        <label>Not Interested</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Qualified</fullName>
+        <default>false</default>
+        <label>Not Qualified</label>
+    </customValue>
+    <customValue>
+        <fullName>Referred</fullName>
+        <default>false</default>
+        <label>Referred</label>
+    </customValue>
+    <description>List of Offer result for Campaign Product on Retail Campaign</description>
+    <masterLabel>Campaign Product Offer Result</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

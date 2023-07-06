@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Answering machine</fullName>
+                <default>false</default>
+                <label>Answering machine</label>
+            </value>
+            <value>
+                <fullName>Busy line</fullName>
+                <default>false</default>
+                <label>Busy line</label>
+            </value>
+            <value>
+                <fullName>Call cutoff</fullName>
+                <default>false</default>
+                <label>Call cutoff</label>
+            </value>
+            <value>
+                <fullName>Channel - Inconvenient</fullName>
+                <default>false</default>
+                <label>Channel - Inconvenient</label>
+            </value>
+            <value>
+                <fullName>Credit Issue</fullName>
+                <default>false</default>
+                <label>Credit Issue</label>
+            </value>
+            <value>
+                <fullName>Customer - Adequate product holding</fullName>
+                <default>false</default>
+                <label>Customer - Adequate product holding</label>
+            </value>
+            <value>
+                <fullName>Customer - Dissatisfaction with bank</fullName>
+                <default>false</default>
+                <label>Customer - Dissatisfaction with bank</label>
+            </value>
+            <value>
+                <fullName>Customer Policy</fullName>
+                <default>false</default>
+                <label>Customer - Policy</label>
+            </value>
+            <value>
+                <fullName>Customer - Relationship with other bank</fullName>
+                <default>false</default>
+                <label>Customer - Relationship with other bank</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Not answer line</fullName>
+                <default>false</default>
+                <label>Not answer line</label>
+            </value>
+            <value>
+                <fullName>Not Industry focus</fullName>
+                <default>false</default>
+                <label>Not Industry focus</label>
+            </value>
+            <value>
+                <fullName>Product - Credit Condition</fullName>
+                <default>false</default>
+                <label>Product - Credit Condition</label>
+            </value>
+            <value>
+                <fullName>Product - Pricing</fullName>
+                <default>false</default>
+                <label>Product - Pricing</label>
+            </value>
+            <value>
+                <fullName>Product - Product not match</fullName>
+                <default>false</default>
+                <label>Product - Product not match</label>
+            </value>
+            <value>
+                <fullName>Product - Timing</fullName>
+                <default>false</default>
+                <label>Product - Timing</label>
+            </value>
+            <value>
+                <fullName>Refinance</fullName>
+                <default>false</default>
+                <label>Re-finance</label>
+            </value>
+            <value>
+                <fullName>Receiver is not prospect</fullName>
+                <default>false</default>
+                <label>Receiver is not prospect</label>
+            </value>
+            <value>
+                <fullName>TMB - Reputation concern</fullName>
+                <default>false</default>
+                <label>TMB - Reputation concern</label>
+            </value>
+            <value>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <label>Wrong number</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Change in customer decision</fullName>
+                <default>false</default>
+                <label>Change in customer decision</label>
+            </value>
+            <value>
+                <fullName>Incomplete/Incorrect order information</fullName>
+                <default>false</default>
+                <label>Incomplete/Incorrect order information</label>
+            </value>
+            <value>
+                <fullName>No e-mail address</fullName>
+                <default>false</default>
+                <label>No e-mail address</label>
+            </value>
+            <value>
+                <fullName>Mismatched Mobile number</fullName>
+                <default>false</default>
+                <label>Mismatched Mobile number</label>
+            </value>
+            <value>
+                <fullName>Suitability expired</fullName>
+                <default>false</default>
+                <label>Suitability expired</label>
+            </value>
+            <value>
+                <fullName>Unable to contact customer 3 times</fullName>
+                <default>false</default>
+                <label>Unable to contact customer 3 times</label>
+            </value>
+            <value>
+                <fullName>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ไม่มีหลักทรัพย์ค้ำประกัน</fullName>
+                <default>false</default>
+                <label>ไม่มีหลักทรัพย์ค้ำประกัน</label>
+            </value>
+            <value>
+                <fullName>รายได้ต่อปีไม่ถึงเกณฑ์</fullName>
+                <default>false</default>
+                <label>รายได้ต่อปีไม่ถึงเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ประเภทธุรกิจไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ประเภทธุรกิจไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ไม่ได้ทำธุรกิจ</fullName>
+                <default>false</default>
+                <label>ไม่ได้ทำธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>ธุรกิจอยู่ใน 3 จังหวัดชายแดนใต้</fullName>
+                <default>false</default>
+                <label>ธุรกิจอยู่ใน 3 จังหวัดชายแดนใต้</label>
+            </value>
+            <value>
+                <fullName>ระยะห่างระหว่างการขอสินเชื่อไม่ผ่านเกณฑ์ (Interval Period)</fullName>
+                <default>false</default>
+                <label>ระยะห่างระหว่างการขอสินเชื่อไม่ผ่านเกณฑ์ (Interval Period)</label>
+            </value>
+            <value>
+                <fullName>BRL ไม่อยู่ในกลุ่ม Low</fullName>
+                <default>false</default>
+                <label>BRL ไม่อยู่ในกลุ่ม Low</label>
+            </value>
+            <value>
+                <fullName>NPL (ลูกค้า NPL) / Restructuring (ลูกค้าปรับโครงสร้าง)</fullName>
+                <default>false</default>
+                <label>NPL (ลูกค้า NPL) / Restructuring (ลูกค้าปรับโครงสร้าง)</label>
+            </value>
+            <value>
+                <fullName>อายุของผู้กู้/อายุของผู้บริหารหลักของกิจการไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>อายุของผู้กู้/อายุของผู้บริหารหลักของกิจการไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>Refer ซ้ำรายลูกค้าเดียวกัน</fullName>
+                <default>false</default>
+                <label>Refer ซ้ำรายลูกค้าเดียวกัน</label>
+            </value>
+            <value>
+                <fullName>ทดสอบระบบ</fullName>
+                <default>false</default>
+                <label>ทดสอบระบบ</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Channel - Inconvenient</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Customer - Adequate product holding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Customer - Dissatisfaction with bank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Customer Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Customer - Relationship with other bank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Product - Credit Condition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Product - Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Product - Product not match</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>Product - Timing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Not Interested)</controllingFieldValue>
+            <valueName>TMB - Reputation concern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Answering machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Busy line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Call cutoff</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Fax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Not answer line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Receiver is not prospect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Wrong number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unable to contact)</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>Credit Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>Not Industry focus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>Refinance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ไม่มีหลักทรัพย์ค้ำประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>รายได้ต่อปีไม่ถึงเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ประเภทธุรกิจไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ไม่ได้ทำธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ธุรกิจอยู่ใน 3 จังหวัดชายแดนใต้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>ระยะห่างระหว่างการขอสินเชื่อไม่ผ่านเกณฑ์ (Interval Period)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>BRL ไม่อยู่ในกลุ่ม Low</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>NPL (ลูกค้า NPL) / Restructuring (ลูกค้าปรับโครงสร้าง)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>อายุของผู้กู้/อายุของผู้บริหารหลักของกิจการไม่ผ่านเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed (Unqualified)</controllingFieldValue>
+            <valueName>อื่นๆ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Change in customer decision</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Incomplete/Incorrect order information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>No e-mail address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Mismatched Mobile number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Suitability expired</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Unable to contact customer 3 times</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>Refer ซ้ำรายลูกค้าเดียวกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>ทดสอบระบบ</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

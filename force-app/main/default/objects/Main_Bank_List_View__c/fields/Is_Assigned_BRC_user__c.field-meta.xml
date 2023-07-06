@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Assigned_BRC_user__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND( $User.Id =  Assigned_BRC_User__r.Id,  Assigned_BRC_User__c &lt;&gt; null, Assigned_BRC_User__r.RTL_Branch_Code__c  ==  Most_Operating_Branch__r.Branch_Code__c ),true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Assigned BRC user</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

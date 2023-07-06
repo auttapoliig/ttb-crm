@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SCG Group</fullName>
+                <default>false</default>
+                <label>SCG Group</label>
+            </value>
+            <value>
+                <fullName>CP Group</fullName>
+                <default>false</default>
+                <label>CP Group</label>
+            </value>
+            <value>
+                <fullName>Boonrawd</fullName>
+                <default>false</default>
+                <label>Boonrawd</label>
+            </value>
+            <value>
+                <fullName>AIS</fullName>
+                <default>false</default>
+                <label>AIS</label>
+            </value>
+            <value>
+                <fullName>DTAC</fullName>
+                <default>false</default>
+                <label>DTAC</label>
+            </value>
+            <value>
+                <fullName>PTT</fullName>
+                <default>false</default>
+                <label>PTT</label>
+            </value>
+            <value>
+                <fullName>Central Group</fullName>
+                <default>false</default>
+                <label>Central Group</label>
+            </value>
+            <value>
+                <fullName>BIG C</fullName>
+                <default>false</default>
+                <label>BIG C</label>
+            </value>
+            <value>
+                <fullName>CK</fullName>
+                <default>false</default>
+                <label>CK</label>
+            </value>
+            <value>
+                <fullName>EGAT</fullName>
+                <default>false</default>
+                <label>EGAT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

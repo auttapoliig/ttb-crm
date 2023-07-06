@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Holding_S1</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Product Holding</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!
+     IF($User.UIThemeDisplayed = &apos;Theme4t&apos;, 
+        URLFOR(&apos;/apex/CallCenterCSV_ProductHoldingVF&apos;, null, [id=Account.Id], TRUE), 
+        URLFOR(&apos;/lightning/cmp/c__CallCenterCSV_ProductHolding&apos;, null, [c__recordId=Account.Id, c__theme=$User.UIThemeDisplayed], TRUE)
+        )
+}</url>
+</WebLink>

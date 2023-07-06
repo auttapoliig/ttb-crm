@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ThreatOfSubstituteProduct__c</fullName>
+    <description>Threat of Substitute Product</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select item : คือระดับอุปสรรคในการหาสินค้าทดแทน</inlineHelpText>
+    <label>Substitutes:Threat of substitute product</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High</fullName>
+                <default>false</default>
+                <label>High</label>
+            </value>
+            <value>
+                <fullName>Medium to high</fullName>
+                <default>false</default>
+                <label>Medium to high</label>
+            </value>
+            <value>
+                <fullName>Medium</fullName>
+                <default>false</default>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>Low to medium</fullName>
+                <default>false</default>
+                <label>Low to medium</label>
+            </value>
+            <value>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <label>Low</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

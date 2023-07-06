@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>TMBCode__c</columns>
+    <columns>ISICCode__c</columns>
+    <columns>BusinessType__c</columns>
+    <columns>SubIndustry__c</columns>
+    <columns>Diversification__c</columns>
+    <columns>HighRisk__c</columns>
+    <columns>Negative__c</columns>
+    <columns>Suspend__c</columns>
+    <columns>HighlySelectiveIndustry__c</columns>
+    <columns>APday__c</columns>
+    <columns>ARday__c</columns>
+    <columns>COGday__c</columns>
+    <columns>INVday__c</columns>
+    <columns>ColorCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

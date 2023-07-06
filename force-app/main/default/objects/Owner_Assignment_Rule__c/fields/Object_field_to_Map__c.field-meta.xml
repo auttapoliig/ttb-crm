@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object_field_to_Map__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Field of Assigned Object to be mapped with Mapping Table.</inlineHelpText>
+    <label>Object field to Map</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Assigned_Object__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RTL_Created_Branch__c</fullName>
+                <default>false</default>
+                <label>RTL_Created_Branch__c</label>
+            </value>
+            <value>
+                <fullName>Business_Type_Code__c</fullName>
+                <default>false</default>
+                <label>Business_Type_Code__c</label>
+            </value>
+            <value>
+                <fullName>Province_Primary_PE__c</fullName>
+                <default>false</default>
+                <label>Province_Primary_PE__c</label>
+            </value>
+            <value>
+                <fullName>Cust_Type_Code__c</fullName>
+                <default>false</default>
+                <label>Cust_Type_Code__c</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>RTL_Created_Branch__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Business_Type_Code__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Province_Primary_PE__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Cust_Type_Code__c</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

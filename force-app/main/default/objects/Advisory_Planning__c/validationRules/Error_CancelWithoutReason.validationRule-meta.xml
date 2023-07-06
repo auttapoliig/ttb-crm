@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Error_CancelWithoutReason</fullName>
+    <active>true</active>
+    <description>Validate error message when error without any reason.</description>
+    <errorConditionFormula>ISCHANGED(Status__c) &amp;&amp; 
+TEXT(Status__c) == &apos;Cancelled&apos; &amp;&amp;
+ISBLANK(Cancel_Reason__c)</errorConditionFormula>
+    <errorDisplayField>Cancel_Reason__c</errorDisplayField>
+    <errorMessage>Please specify the cancellation reason.</errorMessage>
+</ValidationRule>

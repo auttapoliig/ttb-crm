@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_check_Channel_Outbound_and_Branch</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(Contains(RecordType.Name, &apos;Master Campaign&apos;)), 
+RecordType.Name != &apos;Commercial&apos;, RecordType.Name != &quot;Dummy Campaign&quot; , 
+OR(
+INCLUDES(RTL_Campaign_Channel__c, &quot;1 Outbound call&quot; ) 
+, INCLUDES(RTL_Campaign_Channel__c, &quot;2 Outbound DealerDistributorNetwork&quot;) 
+)
+,OR( 
+ISBLANK( RTL_Call_End_Date__c ) 
+, ISBLANK( RTL_Call_Start_Date__c ) 
+)
+)</errorConditionFormula>
+    <errorDisplayField>RTL_Call_Start_Date__c</errorDisplayField>
+    <errorMessage>Please enter call start/end date if the channel &quot;Outbound&quot; or &quot;Branch&quot; was chosen.</errorMessage>
+</ValidationRule>

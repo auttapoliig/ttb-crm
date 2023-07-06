@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7_2_All_Active_FX_Orders_Sell</fullName>
+    <columns>FXO_BuySell__c</columns>
+    <columns>FXO_CurrencyPair__c</columns>
+    <columns>FXO_RequestAmount__c</columns>
+    <columns>FXO_CustomerRate__c</columns>
+    <columns>FXO_InterbankRate__c</columns>
+    <columns>FXO_Customer__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>FXO_Expiration_Date__c</columns>
+    <columns>FXO_Remark__c</columns>
+    <columns>NAME</columns>
+    <columns>FXO_OrderStatus__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Owner_s_Segment_stamp__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FXO_OrderStatus__c</field>
+        <operation>equals</operation>
+        <value>New,Submitted</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FX_Order__c.FX_Order</value>
+    </filters>
+    <filters>
+        <field>FXO_BuySell__c</field>
+        <operation>equals</operation>
+        <value>Sell</value>
+    </filters>
+    <label>7.2 All Active FX Orders – Sell</label>
+    <language>en_US</language>
+</ListView>

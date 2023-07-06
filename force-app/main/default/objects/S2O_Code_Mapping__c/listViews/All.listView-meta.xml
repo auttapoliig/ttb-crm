@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CRM_Task_Key__c</columns>
+    <columns>EWM_Service_EN_Type_Desc__c</columns>
+    <columns>EWM_Service_TH_Type_Desc__c</columns>
+    <columns>EWM_Service_Type_Code__c</columns>
+    <columns>isActive__c</columns>
+    <columns>Segment__c</columns>
+    <columns>Service_Level_1__c</columns>
+    <columns>Service_Level_2__c</columns>
+    <columns>Service_Level_3__c</columns>
+    <columns>Service_Level_4__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

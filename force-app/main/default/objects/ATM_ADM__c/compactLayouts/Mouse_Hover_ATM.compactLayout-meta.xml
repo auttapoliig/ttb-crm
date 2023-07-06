@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mouse_Hover_ATM</fullName>
+    <fields>Name</fields>
+    <fields>ATM_Type__c</fields>
+    <fields>Location__c</fields>
+    <fields>Address_TH__c</fields>
+    <fields>Code__c</fields>
+    <fields>Address_ENG__c</fields>
+    <fields>Region__c</fields>
+    <fields>Vendor_Own__c</fields>
+    <fields>Enable_Flag__c</fields>
+    <label>Mouse Hover ATM</label>
+</CompactLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Type_Is_Email</fullName>
+    <active>true</active>
+    <description>Job type = e-mail, field e-mail cannot be blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Job_Type__c , &quot;E-mail&quot;) &amp;&amp; ISBLANK(E_mail__c)
+   , TRUE
+   , FALSE  
+)</errorConditionFormula>
+    <errorDisplayField>E_mail__c</errorDisplayField>
+    <errorMessage>Job Type is E-mail, E-mail can not be blank</errorMessage>
+</ValidationRule>

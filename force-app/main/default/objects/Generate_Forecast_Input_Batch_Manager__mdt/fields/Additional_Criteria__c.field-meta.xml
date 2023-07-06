@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Criteria__c</fullName>
+    <description>Used to define additional WHERE Clause criteria, 
+This criterion will be sent to batch Sync, each field name needed to be the same within 2 objects (Product Volume and Monthly Forecast Input)</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>&quot; AND xxxxx = &apos;value&apos; &quot;</inlineHelpText>
+    <label>Additional Criteria</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_class__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>To identify the target customers</inlineHelpText>
+    <label>Service Class</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Top 20 Group</fullName>
+                <default>false</default>
+                <label>Top 20 Group</label>
+            </value>
+            <value>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+                <label>Tier 1</label>
+            </value>
+            <value>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+                <label>Tier 2</label>
+            </value>
+            <value>
+                <fullName>Maintain</fullName>
+                <default>false</default>
+                <label>Maintain</label>
+            </value>
+            <value>
+                <fullName>Military&amp;PS / FI</fullName>
+                <default>false</default>
+                <label>Military&amp;PS / FI</label>
+            </value>
+            <value>
+                <fullName>MNC &amp; JAP</fullName>
+                <default>false</default>
+                <label>MNC &amp; JAP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_ECM_Upload__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>check if ECM is upload or not</description>
+    <externalId>false</externalId>
+    <label>Is ECM Upload</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

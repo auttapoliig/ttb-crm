@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X6_10_All_MB_CB_FX_Orders_Sell</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>FXO_BuySell__c</columns>
+    <columns>FXO_CurrencyPair__c</columns>
+    <columns>FXO_RequestAmount__c</columns>
+    <columns>FXO_CustomerRate__c</columns>
+    <columns>FXO_InterbankRate__c</columns>
+    <columns>FXO_Customer__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>FXO_Expiration_Date__c</columns>
+    <columns>FXO_Remark__c</columns>
+    <columns>NAME</columns>
+    <columns>FXO_OrderStatus__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Owner_s_Segment_stamp__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FX_Order__c.FX_Order</value>
+    </filters>
+    <filters>
+        <field>FXO_BuySell__c</field>
+        <operation>equals</operation>
+        <value>Sell</value>
+    </filters>
+    <filters>
+        <field>Owner_s_Segment_stamp__c</field>
+        <operation>equals</operation>
+        <value>CM-MB</value>
+    </filters>
+    <filters>
+        <field>Owner_s_Segment_stamp__c</field>
+        <operation>equals</operation>
+        <value>CM-CB</value>
+    </filters>
+    <label>6.10 All MB/CB FX Orders - Sell</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>MB_CB_CM_Sales_TH_TL</roleAndSubordinates>
+    </sharedTo>
+</ListView>

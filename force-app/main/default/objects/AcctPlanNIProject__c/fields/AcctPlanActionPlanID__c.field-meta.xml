@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AcctPlanActionPlanID__c</fullName>
+    <externalId>false</externalId>
+    <label>AcctPlanActionPlan</label>
+    <referenceTo>AcctPlanActionPlan__c</referenceTo>
+    <relationshipLabel>Account Plan NI Project</relationshipLabel>
+    <relationshipName>Account_Plan_NI_Project</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

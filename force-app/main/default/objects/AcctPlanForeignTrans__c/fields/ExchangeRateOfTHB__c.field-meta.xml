@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExchangeRateOfTHB__c</fullName>
+    <description>Exchange rate of THB/ 1 FCY</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Exchange rate of THB/ 1 FCY</inlineHelpText>
+    <label>Exchange rate of THB/ 1 FCY</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

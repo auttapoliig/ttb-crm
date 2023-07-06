@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reassign</fullName>
+    <availability>online</availability>
+    <description>Referal Reassign</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Reassign</masterLabel>
+    <openType>noSidebar</openType>
+    <page>RTL_ReferalReassignment_Page</page>
+    <protected>false</protected>
+</WebLink>

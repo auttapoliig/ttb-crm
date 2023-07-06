@@ -1,0 +1,415 @@
+<aura:component controller="T_Performance_Onedown_Controller"
+    implements="force:hasRecordId,lightning:utilityItem,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable">
+     <!-- controller="T_Performance_OnedownController" -->
+     <!-- Test -->
+     
+     <!-- <aura:attribute name="userId" type="String" /> -->
+
+    <!-- test -->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <!-- <aura:handler event="force:refreshView" action="{!c.onInit}" /> -->
+    <aura:attribute name="uid" type="Id" />
+    <aura:attribute name="selectedYear" type="String" />
+    <aura:attribute name="selectedMonth" type="String" />
+    <aura:attribute name="selectedPeriod" type="String" default="YTD" />
+    <aura:attribute name="selectedMonthInt" type="String" />
+    <aura:attribute name="teamCondition" type="String" />
+    <aura:attribute name="useField" type="String" />
+    <aura:attribute name="actual" type="String" />
+    
+    <aura:attribute name="yearList" type="String[]" />
+    <aura:attribute name="monthList" type="String[]" />
+    <aura:attribute name="allProductList" type="String" />
+    <aura:attribute name="teamList" type="String[]"/>
+    <aura:attribute name="teamLabelList" type="Object[]" />
+    <aura:attribute name="subColumnLabel" type="String[]" />
+    <aura:attribute name="selectedTeam" type="String[]" />
+    <aura:attribute name="hoveringId" type="String" />
+    <!-- <force:recordData aura:id="recordLoader" recordId="{!v.uid ? v.uid : v.pageReference.state.uid}" /> -->
+        <!-- fields="Name, TMB_Customer_ID_PE__c, RTL_Is_Employee__c, RTL_Suitability__c" targetFields="{!v.account}" /> -->
+    
+    <!--
+        Test Retail summaryGroupType = Retail  User =  Songwut Chaowalit	
+        Test Group of channel summaryGroupType = Group of channel  User =  Supawan Photichalee,Jakrpant Jarutirasarn
+        Test Channel summaryGroupType = Channel  summaryGroupValue = Wealth Banking = Walobon Phowong
+        Test Region summaryGroupType = Region  summaryGroupValue = 1800,9530,7700 User =    ,Ramil Kokchan
+        Test Zone summaryGroupType = Zone  summaryGroupValue = 9531 User =  Phollapat Timharn
+     -->
+    <aura:attribute name="summaryGroupType" type="String"  default="Retail"/>     
+    <aura:attribute name="summaryGroupValue" type="String"  />
+    <aura:attribute name="summaryPage" type="String"  />
+    <aura:attribute name="channelName" type="String" />
+    <aura:attribute name="kpiObjList" type="Object[]" />
+    <aura:attribute name="loading" type="Boolean" default="false" />
+    <aura:attribute name="isShowSelectTeam" type="Boolean" default="false"/>
+    <aura:attribute name="waterMarkImage" type="String" />
+    <aura:attribute name="selectedGroupView" type="String" default="Branch"/>
+    <aura:attribute name="hasSelectedTarget" type="Boolean" default="false"/>
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <div>
+        <div class="slds-grid slds-wrap container slds-is-relative">
+            <div class="slds-col slds-size_1-of-1" style="margin-bottom: 10px;">
+                <article class="slds-card" style="{! 'background-image: ' + v.waterMarkImage + ' !important;'}">
+                    <aura:if isTrue="{!v.loading == true}">
+                        <div class="exampleHolder">
+                        <lightning:spinner style="z-index: 1;" alternativeText="Loading" size="medium" />
+                         </div>
+                     </aura:if>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="period-selection-container slds-grid slds-wrap">
+                            
+                            <div class="col-section">
+                                <div class="dropdown-width">
+                                    <lightning:select name="selectYear" label="Select Year" required="true" value="{!v.selectedYear}">
+                                        <aura:iteration items="{!v.yearList}" var="year">
+                                            <option value="{!year}">{!year}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                            <div class="col-section">
+                                <div class="dropdown-width">
+                                    <lightning:select name="selectYear" label="Select Month" required="true" value="{!v.selectedMonth}">
+                                        <aura:iteration items="{!v.monthList}" var="month">
+                                            <option value="{!month}">{!month}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                            <div style="margin-right: 20px;">
+                                <div>
+                                    <div class="dropdown-width">
+                                        <lightning:select name="selectYear" label="Select YTD/MTD" required="true" value="{!v.selectedPeriod}">
+                                            <option value="YTD">YTD</option>
+                                            <option value="MTD">MTD</option>
+                                        </lightning:select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="show-btn">
+                                <lightning:button variant="brand" label="Show" title="Brand action"
+                                    onclick="{! c.handleClickShow }" />
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <article class="slds-card" style="{! 'background-image: ' + v.waterMarkImage + ' !important;'}">
+                <aura:if isTrue="{!v.loading == true}">
+                    <div class="exampleHolder ">
+                        <lightning:spinner style="z-index: 1;" alternativeText="Loading" size="medium" />
+                    </div>
+                </aura:if>
+                <div class="slds-card__body slds-card__body_inner">
+                    <div class="data-container slds-grid slds-wrap">
+                                        
+                        <!-- <div><lightning:icon class="warning-ico-style" iconName="utility:warning" size="xx-small" alternativeText="check" title="check" />ไม่พบข้อมูล</div> -->
+                        <aura:if isTrue="{!not(v.hasSelectedTarget)}">
+                            <div class="slds-col slds-size_1-of-1" >
+                                <!-- <article class="slds-card test" style="background: #ffffd1; width:100%;height:100%;"> -->
+                                    <!-- <div class="slds-card__body slds-card__body_inner"> -->
+                                        <div class="notify-container">
+                                            <div class="warning-icon">
+                                                <lightning:icon iconName="utility:warning" size="x-small" variant="warning" alternativeText="Warning!" title="Warning" />
+                                            </div>
+                                            <div class="notify-txt">
+                                                <span class="error-title">ไม่พบข้อมูล</span>
+                                                <!-- <span class="error-msg">ไม่พบข้อมูล</span> -->
+                                            </div>
+                                        </div>
+                                    
+                                    <!-- </div> -->
+                                <!-- </article> -->
+                                
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.hasSelectedTarget}">
+                        <div class="select-team-row">
+                            <div class="select-team-label">
+                                <span>Select Team</span>
+                            </div>
+                            <div class="select-team">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-combobox_container slds-size_small">
+                                            <div
+                                                class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                                    role="none">
+                                                    <button type="button"
+                                                        class="slds-input_faux slds-combobox__input slds-combobox__input-value"
+                                                        aria-labelledby="combobox-label-id-26 select_team_button_toggle"
+                                                        id="select_team_button_toggle"
+                                                        aria-controls="listbox-id-5" aria-expanded="true"
+                                                        aria-haspopup="listbox" onclick="{!c.toggleSelectTeam}">
+                                                        <span class="slds-truncate" id="select_team_button_label">
+                                                            <aura:if isTrue="{!v.selectedTeam.length == v.teamLabelList.length}">
+                                                                All Options Selected
+                                                                <aura:set attribute="else">
+                                                                    <aura:if isTrue="{!v.selectedTeam.length == 0}">
+                                                                        No Option Selected
+                                                                        <aura:set attribute="else">
+                                                                            {!v.selectedTeam.length}
+                                                                            Option(s) Selected
+                                                                        </aura:set>
+                                                                    </aura:if>
+                                                                    
+                                                                </aura:set>
+                                                            </aura:if>
+                                                        </span>
+                                                    </button>
+                                                    <span
+                                                        class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                                                        <!-- <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
+                                                            aria-hidden="true">
+                                                            <use
+                                                                xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down">
+                                                            </use>
+                                                        </svg> -->
+                                                        <lightning:icon iconName="utility:down" size="x-small" alternativeText="Indicates approval"/>
+                                                    </span>
+                                                    
+                                                </div>
+                                                <!-- isTrue="{!v.isShowSelectTeam}" -->
+                                                <aura:if isTrue="{!v.isShowSelectTeam}"> 
+                                                    <div id="listbox-id-5"
+                                                        class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+                                                        role="listbox">
+                                                        <ul class="slds-listbox slds-listbox_vertical"
+                                                            role="presentation">
+                                                                <li role="presentation" class="slds-listbox__item" >
+                                                                    <div aria-checked="true" id="select_team_all"
+                                                                        class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-is-selected"
+                                                                        role="option" onclick="{!c.selectAllHandle}">
+                                                                        <span  id="select_team1_all"
+                                                                            class="slds-media__figure slds-listbox__option-icon">
+                                                                            <!-- <aura:iteration items="{!v.selectedTeam}" var="selectTeam"> -->
+                                                                                <!-- <aura:if isTrue="{!team == selectTeam}"> -->
+                                                                                    <span  id="select_team2_all"
+                                                                                    class="slds-icon_container slds-icon-utility-check slds-current-color">
+                                                                                        <aura:if isTrue="{!v.selectedTeam.length == v.teamLabelList.length}">
+                                                                                            <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Indicates approval"/>
+                                                                                        </aura:if>
+                                                                                    </span>
+                                                                        </span>
+                                                                        <span  id="select_team3_all" class="slds-media__body">
+                                                                            <span  id="select_team4_all" class="slds-truncate"
+                                                                                title="Option A">(Select All)</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                                <aura:iteration items="{!v.teamLabelList}" var="team" indexVar="idx">
+                                                                    <!-- <aura:iteration items="{!v.selectedTeam}" var="team" indexVar="idx">
+                                                                        
+                                                                    </aura:iteration> -->
+                                                                    <li role="presentation" class="slds-listbox__item" >
+                                                                        <div aria-checked="true" id="{!'select_team_'+team.label}"
+                                                                            class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-is-selected"
+                                                                            role="option" onclick="{!c.filterTeamHandle}">
+                                                                            <span  id="{!'select_team1_'+team.label}"
+                                                                                class="slds-media__figure slds-listbox__option-icon">
+                                                                                <aura:iteration items="{!v.selectedTeam}" var="selectTeam">
+                                                                                    <aura:if isTrue="{!team.label == selectTeam}">
+                                                                                        <span  id="{!'select_team2_'+team.label}"
+                                                                                        class="slds-icon_container slds-icon-utility-check slds-current-color">
+                                                                                            <!-- <svg class="slds-icon slds-icon_x-small"
+                                                                                                aria-hidden="true">
+                                                                                                <use
+                                                                                                    xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check">
+                                                                                                </use>
+                                                                                            </svg> -->
+                                                                                            <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Indicates approval"/>
+                                                                                        </span>
+                                                                                    </aura:if>
+                                                                                </aura:iteration>
+                                                                                
+                                                                            </span>
+                                                                            <span  id="{!'select_team3_'+team.label}" class="slds-media__body">
+                                                                                <span  id="{!'select_team4_'+team.label}" class="slds-truncate"
+                                                                                    title="Option A">{!team.label}</span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </li>
+                                                                </aura:iteration>
+                                                        </ul>
+                                                    </div>
+                                                </aura:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-data">
+                            <!-- <div class="slds-table–header-fixed_container" st>
+                                </div> -->
+                            <div class="fixed-left-menu">
+                                <table
+                                    class="slds-table slds-no-row-hover slds-table_bordered slds-table_col-bordered border-left-tb"
+                                    aria-label="Example default base table of Opportunities">
+                                    <thead>
+                                        <tr class="Test" >
+                                            <th class="top"  colspan="4" >
+                                                <div class="slds-truncate" > </div>
+                                            </th>
+                                        </tr>
+                                        <tr class="custom-rowspan border-right-product" >
+                                            <th class ="primary" scope="col" >
+                                                <div class="slds-truncate">Quadrant</div>
+                                            </th>
+                                            <th class="primary border-right-product" scope="col" >
+                                                <div class="slds-truncate">Product</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="border-right-product">
+                                        <aura:iteration items="{!v.kpiObjList}" var="kpiObj" indexVar="idx1">
+                                            <tr class="slds-line-height_reset" style="background-color:#CAC8C8 !important;">
+                                                <td class="" scope="col" rowspan="{!kpiObj.productList.length+1}">
+                                                    <div class="slds-truncate">{!kpiObj.quadrant}</div>
+                                                </td>
+                                            </tr>
+                                            <aura:iteration items="{!kpiObj.productList}" var="product" indexVar="idx2">
+                                                <tr class="slds-line-height_reset" id="{!idx1+'-'+idx2+'_tb1'}" onmouseenter="{!c.handleMouseOver}">
+                                                    <td class="{!(((idx1+'-'+idx2) == v.hoveringId) ? 'hoverBGStyle' : '')+' overwrite-firstchild'+' border-right-product'}"  scope="col">
+                                                        <div class="slds-truncate">{!product.label}</div>
+                                                    </td>
+                                                </tr>
+                                            </aura:iteration>
+                                        </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="scrollable-tb">
+                                <table
+                                    class="slds-table slds-no-row-hover slds-table_bordered slds-table_col-bordered border-right-tb"
+                                    aria-label="Example default base table of Opportunities">
+                                    <thead class="custom-rowspan">
+                                        <tr class="Test"  >
+                                            <th class="top"  colspan="4"  >
+                                                <div class="slds-truncate" > </div>
+                                            </th>
+                                            <aura:iteration items="{!v.teamLabelList}" var="team">
+                                                <!-- check if team selected -->
+                                                <aura:iteration items="{!v.selectedTeam}" var="selectTeam">
+                                                    <aura:if isTrue="{!team.label == selectTeam}">
+                                                        <th class="top" scope="col" colspan="4" style="padding-right: 0px;text-align: right;">
+                                                            <!-- <button id="{!'summary_btn_'+team.label}" variant="brand" label="Summary" title="Brand action" onclick="{!c.navigateToSummary}" /> -->
+                                                            <button class="slds-button slds-button_brand"  id="{!team.label+'_summary_btn'}" onclick="{!c.navigateToSummary}">More Detail</button>
+                                                            <!-- <button class="slds-button slds-button_brand" style="background-color: #0176d3;" id="{!team.label+'_summary_btn'}" onclick="{!c.navigateToSummary}">Summary</button> -->
+                                                        </th>
+                                                    </aura:if>
+                                                </aura:iteration>
+                                            </aura:iteration>
+                                        </tr>
+                                        
+                                        <tr class="top border-right" style="height:28px">
+                                            <!-- <th scope="col" rowspan="2">
+                                              <div class="slds-truncate">Quadrant</div>
+                                            </th>
+                                            <th class="" scope="col" rowspan="2">
+                                              <div class="slds-truncate">Product</div>
+                                            </th> -->
+                                            <th class="primary" scope="col" colspan="4"  >
+                                                <div class="slds-truncate" style="text-align: center;">Total</div>
+                                            </th>
+                                            <aura:iteration items="{!v.teamLabelList}" var="team">
+                                                <!-- check if team selected -->
+                                                <aura:iteration items="{!v.selectedTeam}" var="selectTeam">
+                                                    <aura:if isTrue="{!team.label == selectTeam}">
+                                                        <th class="primary" scope="col" colspan="4" >
+                                                            <div class="slds-truncate" style="text-align: center;">
+                                                                {!team.teamName}
+                                                            </div>
+                                                        </th>
+                                                    </aura:if>
+                                                </aura:iteration>
+                                            </aura:iteration>
+                                        </tr>
+                                        <tr class="border-right" style="height:28px">
+                                            <aura:iteration items="{!v.subColumnLabel}" var="colLabel">
+                                                <th class="secondary" scope="col" style="background-color: #CAC8C8 !important;">
+                                                    <div class="slds-truncate">{!colLabel}</div>
+                                                </th>
+                                            </aura:iteration>
+                                            <aura:iteration items="{!v.teamLabelList}" var="team">
+                                                <!-- check if team selected -->
+                                                <aura:iteration items="{!v.selectedTeam}" var="selectTeam">
+                                                    <aura:if isTrue="{!team.label == selectTeam}">
+                                                        <aura:iteration items="{!v.subColumnLabel}" var="colLabel">
+                                                            <th class="overwrite-firstchild" scope="col" style="background-color: #CAC8C8 !important;">
+                                                                <div class="slds-truncate">{!colLabel}</div>
+                                                            </th>
+                                                        </aura:iteration>
+                                                    </aura:if>
+                                                </aura:iteration>
+                                                
+                                            </aura:iteration>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="border-right">
+                                        <aura:iteration items="{!v.kpiObjList}" var="kpiObj" indexVar="idx1">
+                                            <aura:iteration items="{!kpiObj.productList}" var="product" indexVar="idx2">
+                                                <tr class="{! (((idx1+'-'+idx2) == v.hoveringId) ? 'hoverBGStyle' : '') + ' slds-line-height_reset'}" id="{!idx1+'-'+idx2+'_tb2'}" onmouseenter="{!c.handleMouseOver}" onmouseleave="{!c.handleMouseOut}">
+                                                    <!-- <td class="overwrite-firstchild" scope="col">
+                                                            <div class="slds-truncate">{!product.label}</div>
+                                                          </td> -->
+                                                    <!-- total col -->
+                                                    <td class="slds-text-align_right" scope="col">
+                                                        <div class="slds-truncate"><lightning:formattedNumber value="{!product.total.tgCurrYearValue}" minimumFractionDigits="2" maximumFractionDigits="2"/>
+                                                        </div>
+                                                    </td>
+                                                    <td class="slds-text-align_right" scope="col">
+                                                        <div class="slds-truncate"><lightning:formattedNumber value="{!product.total.tgYTDValue}" minimumFractionDigits="2" maximumFractionDigits="2"/></div>
+                                                    </td>
+                                                    <td class="slds-text-align_right" scope="col">
+                                                        <div class="slds-truncate"><lightning:formattedNumber value="{!product.total.actualYTD}" minimumFractionDigits="2" maximumFractionDigits="2"/></div>
+                                                    </td>
+                                                    <td class="{!product.total.percentCssColor +' slds-text-align_right'}" scope="col" style="padding-right:8px; min-width: 62.516px;">
+                                                        <!-- <div>{!product.total.percent}% </div> -->
+                                                        <aura:if isTrue="{!product.total.percent != null}">
+                                                            <lightning:formattedNumber value="{!product.total.percent}" minimumFractionDigits="2" maximumFractionDigits="2"/>%
+                                                        </aura:if>
+                                                    </td>
+                                                    <aura:iteration items="{!product.kpiTeamList}" var="kpiTeam">
+                                                        <aura:iteration items="{!v.selectedTeam}" var="selectTeam">
+                                                            <aura:if isTrue="{!kpiTeam.label == selectTeam}">
+                                                                <td class="slds-text-align_right" scope="col">
+                                                                    <div class="slds-truncate"><lightning:formattedNumber value="{!kpiTeam.tgCurrYearValue}" minimumFractionDigits="2" maximumFractionDigits="2"/>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="slds-text-align_right" scope="col">
+                                                                    <div class="slds-truncate"><lightning:formattedNumber value="{!kpiTeam.tgYTDValue}" minimumFractionDigits="2" maximumFractionDigits="2"/></div>
+                                                                </td>
+                                                                <td class="slds-text-align_right" scope="col">
+                                                                    <div class="slds-truncate"><lightning:formattedNumber value="{!kpiTeam.actualYTD}" minimumFractionDigits="2" maximumFractionDigits="2"/></div>
+                                                                </td>
+                                                                <td class="{!kpiTeam.percentCssColor +' slds-text-align_right'}" scope="col" style="padding-right:8px; min-width: 62.516px;">
+                                                                    <!-- <div>{!kpiTeam.percent}% </div> -->
+                                                                    <aura:if isTrue="{!kpiTeam.percent != null}">
+                                                                        <lightning:formattedNumber value="{!kpiTeam.percent}" minimumFractionDigits="2" maximumFractionDigits="2"/>%
+                                                                    </aura:if>
+                                                                </td>
+                                                            </aura:if>
+                                                        </aura:iteration>
+                                                        
+                                                    </aura:iteration>
+                                                </tr>
+                                            </aura:iteration>
+                                        </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        </aura:if>
+                    </div>
+                    <!-- <c:T_Performance_P1_SectionA saleInfo="{!v.saleInfo}" appIncentive="{!v.appIncentive}" licenseObj="{!v.licenseObj}" helpLink="{!v.helpLink}" summaryLink="{!v.summaryLink}" notifyError="{!v.notifyError}"/> -->
+                </div>
+                </article>
+            </div>
+            <!-- <aura:if isTrue="{!v.saleInfo.Channel__c == 'Branch'}"> -->
+        </div>
+    </div>
+</aura:component>

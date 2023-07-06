@@ -1,0 +1,12 @@
+.THIS .picklistbox {
+    margin-top: -22px;
+    min-height: calc(2.125rem + 2px);
+}
+
+.THIS .slds-card__footer {
+    border-top: 0;
+}
+
+.THIS .content{
+    min-height: 265px;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Offer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>this value is set to true to tell that system will get the current offer data from backend , if false don&apos;t render the current offer</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Current Offer</label>
+    <type>Checkbox</type>
+</CustomField>

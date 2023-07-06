@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Fee__c</fullName>
+    <description>Fee</description>
+    <externalId>false</externalId>
+    <formula>if( AcctPlanCompanyProfile__r.isMiniMode__c , Total_Fee_Mini__c  ,
+SumOfWalletTFFee__c +
+ SumOfAcctPlanForeignWalletFXFeePerYear__c+
+ SumOfWalletLGFeeYearly__c+
+ SumOfWalletCashFee__c+
+ SumOfWalletCreditFeeYearly__c+
+ TotalWalletBAFee__c + 
+SumOfWalletASFee__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

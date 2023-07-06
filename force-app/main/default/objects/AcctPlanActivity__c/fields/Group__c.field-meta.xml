@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group__c</fullName>
+    <description>Group</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Group</inlineHelpText>
+    <label>Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Group 1 Relationship</fullName>
+                <default>false</default>
+                <label>Group 1 Relationship</label>
+            </value>
+            <value>
+                <fullName>Group 2 Information update to customer</fullName>
+                <default>false</default>
+                <label>Group 2 Information update to customer</label>
+            </value>
+            <value>
+                <fullName>Group 3 Collect information</fullName>
+                <default>false</default>
+                <label>Group 3 Collect information</label>
+            </value>
+            <value>
+                <fullName>Group 4 Credit Preparation</fullName>
+                <default>false</default>
+                <label>Group 4 Credit Preparation</label>
+            </value>
+            <value>
+                <fullName>Group 5 Pitching Doc preparation and presentation</fullName>
+                <default>false</default>
+                <label>Group 5 Pitching Doc preparation and presentation</label>
+            </value>
+            <value>
+                <fullName>Group 6 System design</fullName>
+                <default>false</default>
+                <label>Group 6 System design</label>
+            </value>
+            <value>
+                <fullName>Group 7 Others</fullName>
+                <default>false</default>
+                <label>Group 7 Others</label>
+            </value>
+            <value>
+                <fullName>Group 3 First transaction handholding</fullName>
+                <default>false</default>
+                <label>Group 3 First transaction handholding</label>
+            </value>
+            <value>
+                <fullName>Group 3 Solve customers problem</fullName>
+                <default>false</default>
+                <label>Group 3 Solve customers problem</label>
+            </value>
+            <value>
+                <fullName>Group 4 Others</fullName>
+                <default>false</default>
+                <label>Group 4 Others</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <controllingFieldValue>On Board</controllingFieldValue>
+            <controllingFieldValue>Post Board</controllingFieldValue>
+            <valueName>Group 1 Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <controllingFieldValue>On Board</controllingFieldValue>
+            <controllingFieldValue>Post Board</controllingFieldValue>
+            <valueName>Group 2 Information update to customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <valueName>Group 3 Collect information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <valueName>Group 4 Credit Preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <valueName>Group 5 Pitching Doc preparation and presentation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <valueName>Group 6 System design</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre Board</controllingFieldValue>
+            <valueName>Group 7 Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Board</controllingFieldValue>
+            <valueName>Group 3 First transaction handholding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Board</controllingFieldValue>
+            <controllingFieldValue>Post Board</controllingFieldValue>
+            <valueName>Group 4 Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post Board</controllingFieldValue>
+            <valueName>Group 3 Solve customers problem</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

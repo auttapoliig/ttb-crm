@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FactorType5__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Success factor ที่ทำให้ธุรกิจประสบความสำเร็จ ซึ่งขึ้นอยู่กับการที่ RM วิเคราะห์และเลือกว่า กลุ่มบริษัทนั้นๆ มี key success factor อะไรบ้าง โดยสามารถเลือกจาก list of value และทำการขยายความให้ชัดเจนขึ้น</inlineHelpText>
+    <label>Factor Type 5</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Economy of scale</fullName>
+                <default>false</default>
+                <label>Economy of scale</label>
+            </value>
+            <value>
+                <fullName>Long existance in business</fullName>
+                <default>false</default>
+                <label>Long existance in business</label>
+            </value>
+            <value>
+                <fullName>Cost effectiveness</fullName>
+                <default>false</default>
+                <label>Cost effectiveness</label>
+            </value>
+            <value>
+                <fullName>Business Integration</fullName>
+                <default>false</default>
+                <label>Business Integration</label>
+            </value>
+            <value>
+                <fullName>Strong/Secured buyers</fullName>
+                <default>false</default>
+                <label>Strong/Secured buyers</label>
+            </value>
+            <value>
+                <fullName>Strong/Secured suppliers</fullName>
+                <default>false</default>
+                <label>Strong/Secured suppliers</label>
+            </value>
+            <value>
+                <fullName>Oligopoly/Monopoly</fullName>
+                <default>false</default>
+                <label>Oligopoly/Monopoly</label>
+            </value>
+            <value>
+                <fullName>Strong professional management team</fullName>
+                <default>false</default>
+                <label>Strong professional management team</label>
+            </value>
+            <value>
+                <fullName>High Technology</fullName>
+                <default>false</default>
+                <label>High Technology</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

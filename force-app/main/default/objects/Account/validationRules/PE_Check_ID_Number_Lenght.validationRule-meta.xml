@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Check_ID_Number_Lenght</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(AND(RecordType.Name != &apos;Existing Customer&apos;, RecordType.Name != &apos;Inactive Customer&apos;),IF(ISBLANK(ID_Number_PE__c ),FALSE, AND( OR(ISNEW(),ISCHANGED( ID_Number_PE__c )), LEN(ID_Number_PE__c) &lt; 4)),false)</errorConditionFormula>
+    <errorDisplayField>ID_Number_PE__c</errorDisplayField>
+    <errorMessage>ID Number must be longer than 4 digits</errorMessage>
+</ValidationRule>

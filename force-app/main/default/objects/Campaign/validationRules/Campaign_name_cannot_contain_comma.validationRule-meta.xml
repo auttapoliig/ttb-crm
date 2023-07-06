@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_name_cannot_contain_comma</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(RecordType.Name = &quot;Commercial&quot;,CONTAINS( Name , &quot;,&quot;))</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>Campaign Name cannot contain Comma (,).</errorMessage>
+</ValidationRule>

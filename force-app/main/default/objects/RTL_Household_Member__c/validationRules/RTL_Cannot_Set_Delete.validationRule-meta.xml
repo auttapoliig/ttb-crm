@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Cannot_Set_Delete</fullName>
+    <active>true</active>
+    <description>User cannot set Delete. Must set To Delete to remove a record for maker checker purposes.</description>
+    <errorConditionFormula>ISPICKVAL( RTL_Status__c , &quot;Deleted&quot;)</errorConditionFormula>
+    <errorMessage>Please use To Delete status to delete this member.</errorMessage>
+</ValidationRule>

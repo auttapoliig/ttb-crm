@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CS_TMB_Cust_ID__c</columns>
+    <columns>CS_Customer_Segment__c</columns>
+    <columns>CS_Suspend_flag__c</columns>
+    <columns>CS_Customer__c</columns>
+    <columns>CS_As_Of_Date_Murex__c</columns>
+    <columns>CS_RM__c</columns>
+    <columns>CS_Sales_Owner__c</columns>
+    <columns>CS_Sales_Owner_Segment__c</columns>
+    <columns>CS_Status__c</columns>
+    <columns>CS_Level__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CS_Suspend_flag__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All</label>
+</ListView>

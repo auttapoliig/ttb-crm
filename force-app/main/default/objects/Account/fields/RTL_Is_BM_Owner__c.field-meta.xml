@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Is_BM_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(RTL_RM_Name__c &lt;&gt; NULL, RTL_RM_Name__c &lt;&gt; &quot;00000&quot;, RIGHT(RTL_RM_Name__c, 3)=$User.RTL_Branch_Code__c),True,False)</formula>
+    <label>Is BM Owner</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

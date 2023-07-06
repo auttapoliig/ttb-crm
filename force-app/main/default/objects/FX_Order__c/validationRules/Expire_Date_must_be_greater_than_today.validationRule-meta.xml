@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expire_Date_must_be_greater_than_today</fullName>
+    <active>true</active>
+    <description>Expiration Date/Time must not be earlier than System Date/Time</description>
+    <errorConditionFormula>OR (AND( 
+OR(Isnew(), ISCHANGED(FXO_Expiration_Date__c)) , 
+FXO_Expiration_Date__c &lt; NOW() ),
+
+
+MINUTE(TIMEVALUE(FXO_Expiration_Date__c )) &lt;&gt; 00
+
+)</errorConditionFormula>
+    <errorDisplayField>FXO_Expiration_Date__c</errorDisplayField>
+    <errorMessage>Expiration Date/Time must be in hourly unit (:00) and cannot be earlier than System Date/Time.</errorMessage>
+</ValidationRule>

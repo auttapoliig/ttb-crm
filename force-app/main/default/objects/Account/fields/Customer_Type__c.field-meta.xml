@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Type__c</fullName>
+    <description>ประเภทลูกค้าว่าเป็น  บุคคล หรือ บริษัท</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ประเภทลูกค้าว่าเป็น  บุคคล หรือ บริษัท</inlineHelpText>
+    <label>Customer Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Individual</fullName>
+                <default>true</default>
+                <label>Individual</label>
+            </value>
+            <value>
+                <fullName>Juristic</fullName>
+                <default>false</default>
+                <label>Juristic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

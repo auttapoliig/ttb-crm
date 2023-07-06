@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Segment__c</fullName>
+    <description>Owner&apos;s Segment which is used for reports</description>
+    <externalId>false</externalId>
+    <formula>If( ISBLANK( Closed_Reporting_Segment__c  ) ,Owner:User.Reporting_Segment__c,Closed_Reporting_Segment__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Reporting Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

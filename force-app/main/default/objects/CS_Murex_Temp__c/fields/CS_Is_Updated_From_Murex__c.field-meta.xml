@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Is_Updated_From_Murex__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( ISBLANK(CS_Create_E_Client_Time_Stamp__c) || ISBLANK(Murex_Last_Modified_Date__c) , true  ,
+ IF(  Murex_Last_Modified_Date__c &gt;  CS_Create_E_Client_Time_Stamp__c , true, false) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CS Is Updated From Murex</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

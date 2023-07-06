@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_same_TMB_Guests</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND( OR( NOT( ISBLANK( TMB_Guests__c ) ) ,NOT( ISBLANK( TMB_Guests_2__c ) )) ,TMB_Guests__r.Id =TMB_Guests_2__r.Id) , true,
+
+IF( AND( OR( NOT( ISBLANK( TMB_Guests__c ) ) ,NOT( ISBLANK( TMB_Guests_3__c ) )) ,TMB_Guests__r.Id =TMB_Guests_3__r.Id) , true, 
+
+IF( AND( OR( NOT( ISBLANK( TMB_Guests__c ) ) ,NOT( ISBLANK( TMB_Guests_4__c ) )) ,TMB_Guests__r.Id =TMB_Guests_4__r.Id) , true,
+
+ IF( AND( OR( NOT( ISBLANK( TMB_Guests_2__c ) ) ,NOT( ISBLANK( TMB_Guests_3__c ) )) ,TMB_Guests_2__r.Id =TMB_Guests_3__r.Id) , true, 
+
+ IF(AND( OR( NOT( ISBLANK( TMB_Guests_2__c ) ) ,NOT( ISBLANK( TMB_Guests_4__c ) )) ,TMB_Guests_2__r.Id =TMB_Guests_4__r.Id), true, 
+
+ IF(AND( OR( NOT( ISBLANK( TMB_Guests_3__c ) ) ,NOT( ISBLANK( TMB_Guests_4__c ) )) ,TMB_Guests_3__r.Id =TMB_Guests_4__r.Id), true, 
+
+ false) 
+
+ ) ) )))</errorConditionFormula>
+    <errorDisplayField>TMB_Guests__c</errorDisplayField>
+    <errorMessage>TMB Guests cannot be the same person. (TMB Guest ไม่สามารถเป็นบุคคลเดียวกันได้)</errorMessage>
+</ValidationRule>

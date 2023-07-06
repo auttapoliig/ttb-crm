@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_field_blank</fullName>
+    <active>true</active>
+    <description>Sign Date  &amp;&amp; Expiry Date &lt;&gt; null if Level &lt;&gt; Basic</description>
+    <errorConditionFormula>IF(CS_Level__c &lt;&gt; &quot;Basic&quot; &amp;&amp;  NOT(ISBLANK(CS_Level__c )), 
+ISBLANK(CS_Sign_Date__c) &amp;&amp; ISBLANK(CS_Expiry_Date__c), 
+FALSE)</errorConditionFormula>
+    <errorMessage>Sign Date and Expiry Date must not be null if Level not equal to Basic</errorMessage>
+</ValidationRule>

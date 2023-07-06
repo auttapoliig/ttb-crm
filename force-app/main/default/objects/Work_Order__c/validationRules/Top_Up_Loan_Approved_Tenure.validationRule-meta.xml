@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Up_Loan_Approved_Tenure</fullName>
+    <active>true</active>
+    <description>if top up loan status = approved all field must = yes</description>
+    <errorConditionFormula>IF(ISPICKVAL(Top_Up_Loan_Status__c, &quot;Approved&quot;)
+		&amp;&amp; !ISPICKVAL( Tenure__c ,&quot;Yes&quot;)
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorDisplayField>Tenure__c</errorDisplayField>
+    <errorMessage>ในกรณีที่กด Approve ทุกช่องต้องเป็น Yes ทั้งหมด</errorMessage>
+</ValidationRule>

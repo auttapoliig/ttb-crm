@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FNA_Product_Group__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>FNA Product Group</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>For Use</fullName>
+                <default>true</default>
+                <label>For Use</label>
+            </value>
+            <value>
+                <fullName>For Save</fullName>
+                <default>false</default>
+                <label>For Save</label>
+            </value>
+            <value>
+                <fullName>For Invest</fullName>
+                <default>false</default>
+                <label>For Invest</label>
+            </value>
+            <value>
+                <fullName>For Borrow</fullName>
+                <default>false</default>
+                <label>For Borrow</label>
+            </value>
+            <value>
+                <fullName>For Protect</fullName>
+                <default>false</default>
+                <label>For Protect</label>
+            </value>
+            <value>
+                <fullName>SME Product</fullName>
+                <default>false</default>
+                <label>SME Product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

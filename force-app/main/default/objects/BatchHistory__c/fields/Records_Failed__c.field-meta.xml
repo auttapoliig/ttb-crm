@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Records_Failed__c</fullName>
+    <externalId>false</externalId>
+    <label>Records Failed</label>
+    <summaryFilterItems>
+        <field>BatchHistoryDetail__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Fail</value>
+    </summaryFilterItems>
+    <summaryForeignKey>BatchHistoryDetail__c.Batch_History__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

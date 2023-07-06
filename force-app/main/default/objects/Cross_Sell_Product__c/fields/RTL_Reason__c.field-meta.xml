@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason of Not Interested</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Group__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business partner -reputation / bad experience</fullName>
+                <default>false</default>
+                <label>Business partner -reputation / bad experience</label>
+            </value>
+            <value>
+                <fullName>Product - Benefits,Credit Limit,Protection</fullName>
+                <default>false</default>
+                <label>Product - Benefits,Credit Limit,Protection</label>
+            </value>
+            <value>
+                <fullName>Product - Policy</fullName>
+                <default>false</default>
+                <label>Product - Policy</label>
+            </value>
+            <value>
+                <fullName>Product - Not attractive Return, Interest, NAV, Dividend</fullName>
+                <default>false</default>
+                <label>Product - Not attractive Return, Interest, NAV, Dividend</label>
+            </value>
+            <value>
+                <fullName>Product - Too high Fee, Interest, or BA premium</fullName>
+                <default>false</default>
+                <label>Product - Too high Fee, Interest, or BA premium</label>
+            </value>
+            <value>
+                <fullName>Process - Complicated application &amp; approval</fullName>
+                <default>false</default>
+                <label>Process - Complicated application &amp; approval</label>
+            </value>
+            <value>
+                <fullName>Channel - inconvenient</fullName>
+                <default>false</default>
+                <label>Channel - inconvenient</label>
+            </value>
+            <value>
+                <fullName>Marketing - NOT attractive promotion</fullName>
+                <default>false</default>
+                <label>Marketing - NOT attractive promotion</label>
+            </value>
+            <value>
+                <fullName>Disqualif. - Bank condition/policy</fullName>
+                <default>false</default>
+                <label>Disqualif. - Bank condition/policy</label>
+            </value>
+            <value>
+                <fullName>CM - Refuse since beginning</fullName>
+                <default>false</default>
+                <label>CM - Refuse since beginning</label>
+            </value>
+            <value>
+                <fullName>CM - Adequate product holding</fullName>
+                <default>false</default>
+                <label>CM - Adequate product holding</label>
+            </value>
+            <value>
+                <fullName>CM - No purchasing power</fullName>
+                <default>false</default>
+                <label>CM - No purchasing power</label>
+            </value>
+            <value>
+                <fullName>CM - risk concern</fullName>
+                <default>false</default>
+                <label>CM - risk concern</label>
+            </value>
+            <value>
+                <fullName>CM - Bad experience with Product</fullName>
+                <default>false</default>
+                <label>CM - Bad experience with Product</label>
+            </value>
+            <value>
+                <fullName>CM - online security concerns</fullName>
+                <default>false</default>
+                <label>CM - online security concerns</label>
+            </value>
+            <value>
+                <fullName>TMB - reputation concern</fullName>
+                <default>false</default>
+                <label>TMB - reputation concern</label>
+            </value>
+            <value>
+                <fullName>Human Error</fullName>
+                <default>false</default>
+                <label>Human Error</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>Business partner -reputation / bad experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Product - Too high Fee, Interest, or BA premium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>Channel - inconvenient</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>CM - Adequate product holding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>CM - No purchasing power</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>TMB - reputation concern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>Human Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Process - Complicated application &amp; approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>Marketing - NOT attractive promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>CM - risk concern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>CM - Bad experience with Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>CM - Refuse since beginning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>CM - online security concerns</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

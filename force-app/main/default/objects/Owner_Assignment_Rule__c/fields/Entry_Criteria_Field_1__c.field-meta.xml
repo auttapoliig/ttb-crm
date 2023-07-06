@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Field_1__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to be use as rule entry criteria such as Core_Banking_Suggested_Segment__c or Province_Primary_PE__c.</inlineHelpText>
+    <label>Entry Criteria Field 1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core_Banking_Suggested_Segment__c</fullName>
+                <default>false</default>
+                <label>Core_Banking_Suggested_Segment__c</label>
+            </value>
+            <value>
+                <fullName>Province_Primary_PE__c</fullName>
+                <default>false</default>
+                <label>Province_Primary_PE__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

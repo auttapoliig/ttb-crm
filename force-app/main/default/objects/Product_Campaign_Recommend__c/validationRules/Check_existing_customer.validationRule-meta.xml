@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_existing_customer</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(AccountAccount__r.Account_Type__c)  &lt;&gt; &apos;Existing Customer&apos;</errorConditionFormula>
+    <errorMessage>Product recommend can be add to existing customer only</errorMessage>
+</ValidationRule>

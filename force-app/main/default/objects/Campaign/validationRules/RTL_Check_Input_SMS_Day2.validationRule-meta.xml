@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_Input_SMS_Day2</fullName>
+    <active>true</active>
+    <description>Preventing incorrect input SMS Day-2</description>
+    <errorConditionFormula>OR( RTL_SMS_Day_2__c &gt; (TODAY() +(365.2425*50)) , 
+
+RTL_SMS_Day_2__c  &lt; (TODAY() - (365.2425*50 )))</errorConditionFormula>
+    <errorDisplayField>RTL_SMS_Day_2__c</errorDisplayField>
+    <errorMessage>Invalid SMS Day-2</errorMessage>
+</ValidationRule>

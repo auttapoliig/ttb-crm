@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HostProductUniqueKey__c</fullName>
+    <description>เอาไว้ช่วย query =&gt; Host Product Mapping by field Unique key</description>
+    <externalId>false</externalId>
+    <formula>Host_Name__c  + &apos;|&apos; + Host_Product_Group__c + &apos;|&apos; + Host_Product_Program__c + &apos;|&apos; +  Host_Product_Name__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HostProductUniqueKey</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Categories_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(PRIORVALUE( Customer_name__c ) = null, Customer_name__c &lt;&gt; null), FALSE,  
+
+IF(ISBLANK(TEXT(Categories__c)), TRUE, FALSE) )</errorConditionFormula>
+    <errorDisplayField>Categories__c</errorDisplayField>
+    <errorMessage>Category is required</errorMessage>
+</ValidationRule>

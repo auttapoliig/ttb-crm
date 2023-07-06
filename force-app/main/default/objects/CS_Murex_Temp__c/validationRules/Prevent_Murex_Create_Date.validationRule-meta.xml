@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Murex_Create_Date</fullName>
+    <active>true</active>
+    <description>If Level = Null, Murex Create Date is not null</description>
+    <errorConditionFormula>IF(ISBLANK(CS_Level__c), ISBLANK(Murex_Create_Date__c), FALSE)</errorConditionFormula>
+    <errorDisplayField>Murex_Create_Date__c</errorDisplayField>
+    <errorMessage>Murex Create Date must not be null if Level is blank</errorMessage>
+</ValidationRule>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Plan_Completion_Percentage_SE__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(isblank( Account_Plan_Group_Profile__c ), 
+(Step_2_Percentage__c +  
+Step_4_Percentage__c + 
+Step_5_Percentage__c )/3 
+, 
+(Step_1_Percentage__c + 
+Step_2_Percentage__c + 
+Step_4_Percentage__c + 
+Step_5_Percentage__c )/4 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Plan Completion Percentage SE</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

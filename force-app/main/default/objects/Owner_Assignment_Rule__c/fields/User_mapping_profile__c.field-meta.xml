@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_mapping_profile__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Profile of user which will be assign to be owner.</inlineHelpText>
+    <label>User Mapping Profile</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TMB SE Zone Manager Profile</fullName>
+                <default>false</default>
+                <label>TMB SE Zone Manager Profile</label>
+            </value>
+            <value>
+                <fullName>TMB Team Head Profile</fullName>
+                <default>false</default>
+                <label>TMB Team Head Profile</label>
+            </value>
+            <value>
+                <fullName>TMB BB Regional Manager Profile</fullName>
+                <default>false</default>
+                <label>TMB BB Regional Manager Profile</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

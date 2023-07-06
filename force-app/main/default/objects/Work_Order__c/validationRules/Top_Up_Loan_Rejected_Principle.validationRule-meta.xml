@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Up_Loan_Rejected_Principle</fullName>
+    <active>true</active>
+    <description>if top up loan status = Rejected, Verify /Principle /Tenure/ Loan Model/ Account Number are not blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Top_Up_Loan_Status__c, &quot;Rejected&quot;)
+		&amp;&amp; ISBLANK(TEXT(Principle__c))
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorDisplayField>Principle__c</errorDisplayField>
+    <errorMessage>กรณี Rejected ต้องใส่ข้อมูลให้ครบถ้วน</errorMessage>
+</ValidationRule>

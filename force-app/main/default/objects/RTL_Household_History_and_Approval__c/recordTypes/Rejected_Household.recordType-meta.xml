@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejected_Household</fullName>
+    <active>true</active>
+    <description>Rejected Household</description>
+    <label>Rejected Household</label>
+    <picklistValues>
+        <picklist>RTL_HHM_Relationship__c</picklist>
+        <values>
+            <fullName>ค%E0%B8%B9%E0%B9%88สมรส</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ญาต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>บ%E0%B8%B4ดา%2Fมารดา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>บ%E0%B8%B8ตร</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ป%E0%B8%B9%E0%B9%88%2Fย%E0%B9%88า%2Fตา%2Fยาย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>พ%E0%B8%B5%E0%B9%88น%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>หลาน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>อ%E0%B8%B7%E0%B9%88นๆ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTL_Outcome__c</picklist>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

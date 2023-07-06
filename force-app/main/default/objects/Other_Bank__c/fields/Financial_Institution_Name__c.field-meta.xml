@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financial_Institution_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Financial Institution Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Financial_Institute_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>abrdn</fullName>
+                <default>false</default>
+                <label>abrdn</label>
+            </value>
+            <value>
+                <fullName>AIAIM</fullName>
+                <default>false</default>
+                <label>AIAIM</label>
+            </value>
+            <value>
+                <fullName>AIRA</fullName>
+                <default>false</default>
+                <label>AIRA</label>
+            </value>
+            <value>
+                <fullName>ASL</fullName>
+                <default>false</default>
+                <label>ASL</label>
+            </value>
+            <value>
+                <fullName>ASPS</fullName>
+                <default>false</default>
+                <label>ASPS</label>
+            </value>
+            <value>
+                <fullName>ASSETPLUS</fullName>
+                <default>false</default>
+                <label>ASSETPLUS</label>
+            </value>
+            <value>
+                <fullName>AWS</fullName>
+                <default>false</default>
+                <label>AWS</label>
+            </value>
+            <value>
+                <fullName>BBL</fullName>
+                <default>false</default>
+                <label>BBL</label>
+            </value>
+            <value>
+                <fullName>BBLAM</fullName>
+                <default>false</default>
+                <label>BBLAM</label>
+            </value>
+            <value>
+                <fullName>BCAP</fullName>
+                <default>false</default>
+                <label>BCAP</label>
+            </value>
+            <value>
+                <fullName>BLS</fullName>
+                <default>false</default>
+                <label>BLS</label>
+            </value>
+            <value>
+                <fullName>BYD</fullName>
+                <default>false</default>
+                <label>BYD</label>
+            </value>
+            <value>
+                <fullName>CGS-CIMB</fullName>
+                <default>false</default>
+                <label>CGS-CIMB</label>
+            </value>
+            <value>
+                <fullName>CIMBT</fullName>
+                <default>false</default>
+                <label>CIMBT</label>
+            </value>
+            <value>
+                <fullName>CLSA</fullName>
+                <default>false</default>
+                <label>CLSA</label>
+            </value>
+            <value>
+                <fullName>CNS</fullName>
+                <default>false</default>
+                <label>CNS</label>
+            </value>
+            <value>
+                <fullName>CS</fullName>
+                <default>false</default>
+                <label>CS</label>
+            </value>
+            <value>
+                <fullName>CST</fullName>
+                <default>false</default>
+                <label>CST</label>
+            </value>
+            <value>
+                <fullName>DBSV</fullName>
+                <default>false</default>
+                <label>DBSV</label>
+            </value>
+            <value>
+                <fullName>FINANSA</fullName>
+                <default>false</default>
+                <label>FINANSA</label>
+            </value>
+            <value>
+                <fullName>FSS</fullName>
+                <default>false</default>
+                <label>FSS</label>
+            </value>
+            <value>
+                <fullName>GLOBLEX</fullName>
+                <default>false</default>
+                <label>GLOBLEX</label>
+            </value>
+            <value>
+                <fullName>ICBC</fullName>
+                <default>false</default>
+                <label>ICBC</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>JPM</fullName>
+                <default>false</default>
+                <label>JPM</label>
+            </value>
+            <value>
+                <fullName>Kbank</fullName>
+                <color>#006600</color>
+                <default>false</default>
+                <label>Kbank</label>
+            </value>
+            <value>
+                <fullName>KGI</fullName>
+                <default>false</default>
+                <label>KGI</label>
+            </value>
+            <value>
+                <fullName>KINGSFORD</fullName>
+                <default>false</default>
+                <label>KINGSFORD</label>
+            </value>
+            <value>
+                <fullName>KKP</fullName>
+                <default>false</default>
+                <label>KKP</label>
+            </value>
+            <value>
+                <fullName>KKPAM</fullName>
+                <default>false</default>
+                <label>KKPAM</label>
+            </value>
+            <value>
+                <fullName>KKPS</fullName>
+                <default>false</default>
+                <label>KKPS</label>
+            </value>
+            <value>
+                <fullName>Krungsri</fullName>
+                <default>false</default>
+                <label>Krungsri</label>
+            </value>
+            <value>
+                <fullName>KrungsriAsset</fullName>
+                <default>false</default>
+                <label>KrungsriAsset</label>
+            </value>
+            <value>
+                <fullName>KS</fullName>
+                <default>false</default>
+                <label>KS</label>
+            </value>
+            <value>
+                <fullName>KSS</fullName>
+                <default>false</default>
+                <label>KSS</label>
+            </value>
+            <value>
+                <fullName>KTAM</fullName>
+                <default>false</default>
+                <label>KTAM</label>
+            </value>
+            <value>
+                <fullName>KTB</fullName>
+                <color>#33CCFF</color>
+                <default>false</default>
+                <label>KTB</label>
+            </value>
+            <value>
+                <fullName>KTBST</fullName>
+                <default>false</default>
+                <label>KTBST</label>
+            </value>
+            <value>
+                <fullName>KTZ</fullName>
+                <default>false</default>
+                <label>KTZ</label>
+            </value>
+            <value>
+                <fullName>KWIAM</fullName>
+                <default>false</default>
+                <label>KWIAM</label>
+            </value>
+            <value>
+                <fullName>LH Bank</fullName>
+                <default>false</default>
+                <label>LH Bank</label>
+            </value>
+            <value>
+                <fullName>LHFUND</fullName>
+                <default>false</default>
+                <label>LHFUND</label>
+            </value>
+            <value>
+                <fullName>LHS</fullName>
+                <default>false</default>
+                <label>LHS</label>
+            </value>
+            <value>
+                <fullName>MACQ</fullName>
+                <default>false</default>
+                <label>MACQ</label>
+            </value>
+            <value>
+                <fullName>MERCHANT</fullName>
+                <default>false</default>
+                <label>MERCHANT</label>
+            </value>
+            <value>
+                <fullName>Merchant Partners</fullName>
+                <default>false</default>
+                <label>Merchant Partners</label>
+            </value>
+            <value>
+                <fullName>MFC</fullName>
+                <default>false</default>
+                <label>MFC</label>
+            </value>
+            <value>
+                <fullName>MST</fullName>
+                <default>false</default>
+                <label>MST</label>
+            </value>
+            <value>
+                <fullName>ONEAM</fullName>
+                <default>false</default>
+                <label>ONEAM</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>PAMC</fullName>
+                <default>false</default>
+                <label>PAMC</label>
+            </value>
+            <value>
+                <fullName>PI</fullName>
+                <default>false</default>
+                <label>PI</label>
+            </value>
+            <value>
+                <fullName>PRINCIPLE</fullName>
+                <default>false</default>
+                <label>PRINCIPLE</label>
+            </value>
+            <value>
+                <fullName>PST</fullName>
+                <default>false</default>
+                <label>PST</label>
+            </value>
+            <value>
+                <fullName>Renaissance</fullName>
+                <default>false</default>
+                <label>Renaissance</label>
+            </value>
+            <value>
+                <fullName>RHBS</fullName>
+                <default>false</default>
+                <label>RHBS</label>
+            </value>
+            <value>
+                <fullName>SBITO</fullName>
+                <default>false</default>
+                <label>SBITO</label>
+            </value>
+            <value>
+                <fullName>SC</fullName>
+                <default>false</default>
+                <label>SC</label>
+            </value>
+            <value>
+                <fullName>SCB</fullName>
+                <color>#6600CC</color>
+                <default>false</default>
+                <label>SCB</label>
+            </value>
+            <value>
+                <fullName>SCBAM</fullName>
+                <default>false</default>
+                <label>SCBAM</label>
+            </value>
+            <value>
+                <fullName>SCBS</fullName>
+                <default>false</default>
+                <label>SCBS</label>
+            </value>
+            <value>
+                <fullName>SKFM</fullName>
+                <default>false</default>
+                <label>SKFM</label>
+            </value>
+            <value>
+                <fullName>TALISAM</fullName>
+                <default>false</default>
+                <label>TALISAM</label>
+            </value>
+            <value>
+                <fullName>Thanachart Fund eastspring</fullName>
+                <default>false</default>
+                <label>Thanachart Fund eastspring</label>
+            </value>
+            <value>
+                <fullName>TISCO</fullName>
+                <default>false</default>
+                <label>TISCO</label>
+            </value>
+            <value>
+                <fullName>TISCOAM</fullName>
+                <default>false</default>
+                <label>TISCOAM</label>
+            </value>
+            <value>
+                <fullName>TMBAM eastspring</fullName>
+                <default>false</default>
+                <label>TMBAM eastspring</label>
+            </value>
+            <value>
+                <fullName>TNS</fullName>
+                <default>false</default>
+                <label>TNS</label>
+            </value>
+            <value>
+                <fullName>TRINITY</fullName>
+                <default>false</default>
+                <label>TRINITY</label>
+            </value>
+            <value>
+                <fullName>ttb</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ttb</label>
+            </value>
+            <value>
+                <fullName>UBS</fullName>
+                <default>false</default>
+                <label>UBS</label>
+            </value>
+            <value>
+                <fullName>UOB</fullName>
+                <default>false</default>
+                <label>UOB</label>
+            </value>
+            <value>
+                <fullName>UOBAM</fullName>
+                <default>false</default>
+                <label>UOBAM</label>
+            </value>
+            <value>
+                <fullName>UOBKHST</fullName>
+                <default>false</default>
+                <label>UOBKHST</label>
+            </value>
+            <value>
+                <fullName>WEASSET</fullName>
+                <default>false</default>
+                <label>WEASSET</label>
+            </value>
+            <value>
+                <fullName>XspringAM</fullName>
+                <default>false</default>
+                <label>XspringAM</label>
+            </value>
+            <value>
+                <fullName>YUANTA</fullName>
+                <default>false</default>
+                <label>YUANTA</label>
+            </value>
+            <value>
+                <fullName>Z</fullName>
+                <default>false</default>
+                <label>Z</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>BBL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>CIMBT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>ICBC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>Kbank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>KKP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>Krungsri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>KTB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>LH Bank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>SC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>SCB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>TISCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bank</controllingFieldValue>
+            <valueName>UOB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>abrdn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>AIAIM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>ASSETPLUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>BBLAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>BCAP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>FINANSA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>KKPAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>KrungsriAsset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>KTAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>KWIAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>LHFUND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>Merchant Partners</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>MFC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>ONEAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>PAMC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>PRINCIPLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>Renaissance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>SCBAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>SKFM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>TALISAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>Thanachart Fund eastspring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>TISCOAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>TMBAM eastspring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>UOBAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>WEASSET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asset Management</controllingFieldValue>
+            <valueName>XspringAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>AIRA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>ASL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>ASPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>AWS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>BLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>BYD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>CGS-CIMB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>CLSA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>CNS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>CS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>CST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>DBSV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>FSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>GLOBLEX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>IVG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>JPM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KGI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KINGSFORD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KKPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KTBST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>KTZ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>LHS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>MACQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>MERCHANT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>MST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>PI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>PST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>RHBS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>SBITO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>SCBS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>TNS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>TRINITY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>UBS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>UOBKHST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>YUANTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security Company</controllingFieldValue>
+            <valueName>Z</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

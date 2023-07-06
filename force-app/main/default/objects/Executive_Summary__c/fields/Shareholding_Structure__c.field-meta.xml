@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shareholding_Structure__c</fullName>
+    <description>Custmer&apos;s Shareholding strucutre</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>โครงสร้างผู้ถือหุ้นของลูกค้า โดยข้อมูลมาจาก Account Plan Customer Profile (Step 2)</inlineHelpText>
+    <label>Shareholding Structure</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

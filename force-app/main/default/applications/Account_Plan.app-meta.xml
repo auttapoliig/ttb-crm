@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <description>Account Plan</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Account Plan</label>
+    <tabs>AcctPlanPortfolio__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>Group__c</tabs>
+    <tabs>Currency__c</tabs>
+    <tabs>AcctAnnualPerformance__c</tabs>
+    <tabs>AcctPlanCompanyProfile__c</tabs>
+    <tabs>Account_Plan_Completion__c</tabs>
+    <tabs>Account_Plan_Deposit_Section__c</tabs>
+    <tabs>Account_Plan_Mandatory__c</tabs>
+    <tabs>AcctPlan_Questionnaire_Template__c</tabs>
+    <tabs>Account_Plan_Flow_Header__c</tabs>
+    <tabs>Country__c</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Invesment_Model__c</tabs>
+</CustomApplication>

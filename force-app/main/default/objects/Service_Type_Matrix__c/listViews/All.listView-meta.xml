@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Validate_Code__c</columns>
+    <columns>Segment__c</columns>
+    <columns>Service_Level1__c</columns>
+    <columns>Service_Level2__c</columns>
+    <columns>Service_Level3__c</columns>
+    <columns>Service_Level4__c</columns>
+    <columns>Responsible_BU__c</columns>
+    <columns>SLA__c</columns>
+    <columns>Active__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_Type_5__c</fullName>
+    <externalId>false</externalId>
+    <label>Question Type #5</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Free Text</fullName>
+                <default>false</default>
+                <label>Free Text</label>
+            </value>
+            <value>
+                <fullName>Check box</fullName>
+                <default>false</default>
+                <label>Check box</label>
+            </value>
+            <value>
+                <fullName>Picklist</fullName>
+                <default>false</default>
+                <label>Picklist</label>
+            </value>
+            <value>
+                <fullName>Multi picklist</fullName>
+                <default>false</default>
+                <label>Multi picklist</label>
+            </value>
+            <value>
+                <fullName>Rating (0-10)</fullName>
+                <default>false</default>
+                <label>Rating (0-10)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

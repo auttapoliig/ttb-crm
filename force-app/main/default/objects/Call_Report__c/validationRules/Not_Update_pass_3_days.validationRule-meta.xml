@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Update_pass_3_days</fullName>
+    <active>true</active>
+    <description>ห้ามทำการแก้ไขใดๆ หลังจาก Visit Plan Date 3 วัน ยกเว้นใส่ Outcome เป็น Cancelled</description>
+    <errorConditionFormula>if(Isnew(),false,
+
+ IF( ISCHANGED( Customer_name__c ) , false, 
+
+   if( and(Today() &gt; Date_of_Visit__c +3,if(text(Actual_Visit_Date__c) &lt;&gt; &apos;&apos;,Actual_Visit_Date__c  &gt; Date_of_Visit__c,true) ), 
+      if( AND(ISCHANGED( Outcome__c ), ISPICKVAL(Outcome__c , &apos;Cancelled&apos;)),false,true), False)))</errorConditionFormula>
+    <errorDisplayField>Outcome__c</errorDisplayField>
+    <errorMessage>Visit Report must be completed within 3 days after Visit Plan Date</errorMessage>
+</ValidationRule>

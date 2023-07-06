@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Method__c</fullName>
+    <externalId>false</externalId>
+    <label>Method</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Collection Domestic</fullName>
+                <default>false</default>
+                <label>Collection Domestic</label>
+            </value>
+            <value>
+                <fullName>Collection Export</fullName>
+                <default>false</default>
+                <label>Collection Export</label>
+            </value>
+            <value>
+                <fullName>Payment Domestic</fullName>
+                <default>false</default>
+                <label>Payment Domestic</label>
+            </value>
+            <value>
+                <fullName>Payment Import</fullName>
+                <default>false</default>
+                <label>Payment Import</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

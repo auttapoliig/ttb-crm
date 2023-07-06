@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisory_Planning_Item_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Advisory_Item_Type__c</fields>
+    <fields>Product_Group__c</fields>
+    <fields>Baseline_Amount__c</fields>
+    <fields>Target_Amount__c</fields>
+    <label>Advisory Planning Item Compact</label>
+</CompactLayout>

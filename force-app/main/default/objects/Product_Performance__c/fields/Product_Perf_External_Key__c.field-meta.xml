@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Perf_External_Key__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>External Key for Product Performance 
+(Customer SFID + ProdKey + TMB Account ID + TMB Suffix + TMB Ref )</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>true</externalId>
+    <label>Product Perf. External Key</label>
+    <length>154</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

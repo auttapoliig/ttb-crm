@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Domain__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Domain</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Domestic</fullName>
+                <default>false</default>
+                <label>Domestic</label>
+            </value>
+            <value>
+                <fullName>Contingent Liability</fullName>
+                <default>false</default>
+                <label>Contingent Liability</label>
+            </value>
+            <value>
+                <fullName>Hedging</fullName>
+                <default>false</default>
+                <label>Hedging</label>
+            </value>
+            <value>
+                <fullName>Internet Banking</fullName>
+                <default>false</default>
+                <label>Internet Banking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

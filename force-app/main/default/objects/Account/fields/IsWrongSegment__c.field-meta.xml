@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsWrongSegment__c</fullName>
+    <externalId>false</externalId>
+    <formula>Core_Banking_Suggested_Segment__c  &lt;&gt;  CASE( Owner.Segment__c , &quot;SE&quot;, &quot;SE&quot;, &quot;BB&quot;, &quot;BB&quot;,&quot;CB&quot;,&quot;CB&quot;,&quot;MB&quot;,&quot;MB&quot;,&quot;CWBO&quot;,&quot;CWBO&quot;,&quot;CSBO&quot;,&quot;CSBO&quot;,&quot;RMC&quot;,&quot;RMC&quot;,&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsWrongSegment</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

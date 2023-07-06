@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCY__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Currency</description>
+    <externalId>false</externalId>
+    <inlineHelpText>CCY</inlineHelpText>
+    <label>CCY</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Currency__c.FlagForAcctPlan__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Currency__c</referenceTo>
+    <relationshipLabel>Account Plan Supplier Or Buyer</relationshipLabel>
+    <relationshipName>Account_Plan_Supplier_Or_Buyer</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

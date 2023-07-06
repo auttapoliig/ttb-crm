@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WBG_Visit_Plan_Report</fullName>
+    <active>true</active>
+    <label>Visit Plan / Report</label>
+    <picklistValues>
+        <picklist>Bucket__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Categories__c</picklist>
+        <values>
+            <fullName>Float Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initiatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPD Team Face To Face Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPD Team Telephone Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Complain__c</picklist>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_needs__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>End_Visit_Time__c</picklist>
+        <values>
+            <fullName>10%3A00</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>10%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A30</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Incomplete_reason__c</picklist>
+        <values>
+            <fullName>Competition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packageย%E0%B8%B1งไม%E0%B9%88เหมาะก%E0%B8%B1บพน%E0%B8%B1กงาน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product not match</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>พน%E0%B8%B1กงานไม%E0%B9%88เข%E0%B9%89าเกณฑ%E0%B9%8C ระบ%E0%B8%B8เพ%E0%B8%B4%E0%B9%88ม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>อ%E0%B8%B7%E0%B9%88นๆ โปรดระบ%E0%B8%B8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เร%E0%B8%B7%E0%B9%88องส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ไม%E0%B9%88ม%E0%B8%B5นโยบายต%E0%B8%B1%E0%B9%89งบ%E0%B8%B9ธ%2Fจ%E0%B8%B1ดก%E0%B8%B4จกรรม%2Fสถานท%E0%B8%B5%E0%B9%88ไม%E0%B9%88อำนวย</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Main_purpose__c</picklist>
+        <values>
+            <fullName>BB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BB%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boost u%25 %28Business Volume%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Control quality %26 Follow up debt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debt collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doc%2E Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Find Oppty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hand over %28New RM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-boarding new product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product pitching %2F Present Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sell product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service review for credit product %28Interview cust need%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service review for non-credit product %28Interview cust need%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sign Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solve problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submit proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ขอน%E0%B8%B1ดหมายในการเข%E0%B9%89าพบล%E0%B8%B9กค%E0%B9%89า%2Fจ%E0%B8%B1ดก%E0%B8%B4จกรรม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดตาม %2F สอบถามป%E0%B8%B1ญหา %2F การใช%E0%B9%89บร%E0%B8%B4การ %28สอนใช%E0%B9%89บร%E0%B8%B4การ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดตามผลการเสนอขายผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8Cและบร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ต%E0%B8%B4ดตามผลเพ%E0%B8%B7%E0%B9%88อดำเน%E0%B8%B4นการในข%E0%B8%B1%E0%B9%89นต%E0%B9%88อไป</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นำเสนอขายผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8Cและบร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ประชาส%E0%B8%B1มพ%E0%B8%B1นธ%E0%B9%8Cผ%E0%B9%88านทาง Email %2F Group Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ระบ%E0%B8%B8ช%E0%B9%88องรายละเอ%E0%B8%B5ยดอ%E0%B8%B7%E0%B9%88นเพ%E0%B8%B4%E0%B9%88มเต%E0%B8%B4ม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สอบถาม %2F ขอข%E0%B9%89อม%E0%B8%B9ลล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำรวจสถานท%E0%B8%B5%E0%B9%88ในการจ%E0%B8%B1ดก%E0%B8%B4จกรรม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เก%E0%B9%87บข%E0%B9%89อม%E0%B8%B9ลเพ%E0%B8%B7%E0%B9%88อพ%E0%B8%B1ฒนาส%E0%B8%B4นค%E0%B9%89าและบร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เข%E0%B9%89าพบเพ%E0%B8%B7%E0%B9%88อสร%E0%B9%89างความส%E0%B8%B1มพ%E0%B8%B1นธ%E0%B9%8Cก%E0%B8%B1บล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เช%E0%B8%B4ญเข%E0%B9%89าร%E0%B9%88วมก%E0%B8%B4จกรรมต%E0%B9%88างๆ %2F ส%E0%B9%88งเสร%E0%B8%B4มการขาย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำต%E0%B8%B1ว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำต%E0%B8%B1ว %2F น%E0%B8%B1ดหมายขอเข%E0%B9%89าพบล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Next_Step__c</picklist>
+        <values>
+            <fullName>1 รอการย%E0%B8%B7นย%E0%B8%B1นจาก RM%2FCPD%2FCustomers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 อ%E0%B8%B7%E0%B9%88นๆ ระบ%E0%B8%B8เพ%E0%B8%B4%E0%B9%88มเต%E0%B8%B4ม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 รอผ%E0%B8%B9%E0%B9%89ม%E0%B8%B5อำนาจอน%E0%B8%B8ม%E0%B8%B1ต%E0%B8%B4พ%E0%B8%B4จารณา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 รอกำหนดว%E0%B8%B1นน%E0%B8%B1ดหมายคร%E0%B8%B1%E0%B9%89งต%E0%B9%88อไป</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 รอสำรวจความต%E0%B9%89องการของพน%E0%B8%B1กงาน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 กำหนดว%E0%B8%B1นทำก%E0%B8%B4จกรรม%2Fจ%E0%B8%B1ดเตร%E0%B8%B5ยมก%E0%B8%B4จกรรม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 ทำแผนส%E0%B8%B7%E0%B9%88อสารร%E0%B8%B9ปแบบ การทำก%E0%B8%B4จกรรม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 ต%E0%B8%B4ดตามงานคร%E0%B8%B1%E0%B9%89งก%E0%B9%88อนท%E0%B8%B5%E0%B9%88ได%E0%B9%89ดำเน%E0%B8%B4นการไปแล%E0%B9%89ว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 ล%E0%B8%B9กค%E0%B9%89ารอให%E0%B9%89แก%E0%B9%89ไขป%E0%B8%B1ญหา และต%E0%B8%B4ดต%E0%B9%88อใหม%E0%B9%88อ%E0%B8%B5กคร%E0%B8%B1%E0%B9%89ง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 ล%E0%B8%B9กค%E0%B9%89าสนใจ Referให%E0%B9%89หน%E0%B9%88วยงานท%E0%B8%B5%E0%B9%88เก%E0%B8%B5%E0%B9%88ยวข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Outcome__c</picklist>
+        <values>
+            <fullName>Accept %26Sign-off Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled this visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Accept %26 will Sign-off Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Reject</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Not Receive Registration%2C Already had%2FWill sign-off Negative Pledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Stay with Customer%2C No Negative Pledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Chrage_Exit this Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost oppty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need follow up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Postponed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To follow up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Win Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Win oppty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>สำเร%E0%B9%87จ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>อย%E0%B8%B9%E0%B9%88ระหว%E0%B9%88างดำเน%E0%B8%B4นการ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ไม%E0%B9%88สำเร%E0%B9%87จ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Start_Visit_Time__c</picklist>
+        <values>
+            <fullName>10%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%3A30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%3A00</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>9%3A30</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>1 - Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2 - Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Cancel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Purpose__c</picklist>
+        <values>
+            <fullName>0 RM%26CMS Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 Presented Pack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Staff Commu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Fin lit%2FInvestment Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 Activation Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 Loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS_Agency business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS_Custodian business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS_Fund superisory business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Click</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BusinessClick_CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BusinessClick_CREDIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BusinessClick_FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BusinessClick_TRADE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Acquire New for Domestic txn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_BAU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Card Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Cross-selling%2FUp-selling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Deepen SOW %28Existing low %25SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Fleet Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Foreign bank outsourcing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Foreign collection Bank service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Liquidity Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Maintain %28Existing high %25SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_One Bank %26 Chq%2E Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Payroll Cash Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Reactivate Inactive and Acquire New Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_StandardPayment%26Collection%26Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Stop Negative Income %2F Increase Fee Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Supply Chain %26 Cash Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_Thai Baht Clearing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_TotalCustomizedCashSol%3A SizeableTxn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_University solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash_X-Sell Payment %26 CollectionTxn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit%26Non-Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditFee_LG Campaign %2C Valued Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditFee_LG Campaign %2C Welcome Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditFee_SetupNewLTLoan%2C ProjectFinance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditFee_SetupNewLimit%2C 3FocusIndustry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit_Replace existing loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit_Sell down existing loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPD Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derivative_FundRaisingTxn%26HedgingAdvise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derivative_Risk Management Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWS Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event by Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event by TMB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive lunch %2F dinner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge %28Phase1 %3A to perfect Cash%2FMachine Collateral%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge - Cash Collateral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge - Machine Collateral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Offer Top up W%2FC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Propose Refinance package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Register Full Amount%2C No additional limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Register Proportionate Amount%2C No additional limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Floating Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB %26 Derivative_Capturing the Merger and Acquisition Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB %26 Derivative_Embedded Derivatives solution into Fundraising transaction and part of hedging advisory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB %26 Derivative_Multi-Market Fund Raising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB %26 Derivative_Risk Management Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB_Build up SolidPipeline of FundRaising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB_CatureMerger%26Acquisition Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB_IntroduceNewProdIncludeREIT%26InfraFund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG_Acquire New Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG_Boost Utilization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG_Boost Utilization and Deepen SOW %28existing low %25SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG_Increase%2FNew limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan_AddCreditExposure LG Txn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan_RebalanceLoanPort %26 AddFeeExposure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan_Setup New Limit %2C 8 Key Industries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan_Working Capital Boost Utz%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NPL Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others %28ให%E0%B9%89ระบ%E0%B8%B8%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QRS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Acquire New Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Acquire New for P%2FC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Acquire New for TF%26FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Acquisition new clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Boost Utilization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Boost Utilization and Problem Solving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Boost Utilization and deepen SOW %28existing low %25SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_FX Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_ImproveEfficiency%26RiskMitigrate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Increase P%2FC Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Increase TF Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Increase%2Frealign credit limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_L%2FC campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_LC Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Maintain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Maintain %28Existing high %25SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_OTT Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_P%2FC Boost Utz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_P%2FC Limit convert from Loan Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_P%2FC Limit covert from TF Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Reactivate existing TF %26FX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_ReactivateExisting%26AcquireNewCust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_Realign TOD to TF Limits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF%26FX_SetupNewP%2FC Limit on Existing Cust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit for wealth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TMB_person__c</picklist>
+        <values>
+            <fullName>Capital Market Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Segment head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Specialist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>With_Whom__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gate Keeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

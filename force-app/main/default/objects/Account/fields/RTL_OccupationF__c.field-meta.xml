@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_OccupationF__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(RTL_Occupation_Details__c) , 
+CASE(RTL_Occupation__c, 
+&quot;Government / State Enterprise Officer&quot;, &quot;ข้าราชการและรัฐวิสาหกิจ&quot;, 
+&quot;Business owner&quot;, &quot;เจ้าของกิจการ&quot;, 
+&quot;Police&quot;, &quot;ตำรวจ&quot;, 
+&quot;Military&quot;, &quot;ทหาร&quot;, 
+&quot;Students&quot;, &quot;นักเรียน/นักศึกษา&quot;, 
+&quot;Employee&quot;, &quot;พนักงานเอกชน&quot;, 
+&quot;Housewives&quot;, &quot;พ่อบ้าน/แม่บ้าน&quot;, 
+&quot;Professionals&quot;, &quot;วิชาชีพเฉพาะ&quot;, 
+&quot;Others / Un-employed&quot;, &quot;อื่นๆ / ไม่มีอาชีพ&quot;, 
+&apos;&apos; 
+) 
+, &apos;&apos;)</formula>
+    <label>Occupation (from Lead)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

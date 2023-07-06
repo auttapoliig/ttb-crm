@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/console?tsid=02u90000000usxa#%2F&apos;+ Lead.Id , Lead.FirstName +&quot; &quot;+ Lead.LastName )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Name (Formula)</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

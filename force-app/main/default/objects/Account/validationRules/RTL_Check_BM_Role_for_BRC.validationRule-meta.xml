@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_BM_Role_for_BRC</fullName>
+    <active>true</active>
+    <description>To check only user having title = Branch Manager, Assistant Branch Manager, Personal Financial Consultant can assign BRC</description>
+    <errorConditionFormula>If(ISCHANGED(RTL_Assigned_BRC__c), If(OR(  CONTAINS($User.Title, &apos;Branch Manager&apos;),  $User.UserProfileName__c = &apos;Retail Integration API Only&apos;,$User.UserProfileName__c = &apos;System Administrator&apos;),false, true ), false )</errorConditionFormula>
+    <errorMessage>Only Branch manager or assistant branch manager can update this field (ไม่อนุญาตให้แก้ไขข้อมูลหากไม่ใช่ผู้จัดการสาขา หรือผู้ช่วยผู้จัดการสาขา)</errorMessage>
+</ValidationRule>

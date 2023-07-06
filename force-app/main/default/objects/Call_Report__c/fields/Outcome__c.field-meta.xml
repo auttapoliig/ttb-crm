@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome__c</fullName>
+    <externalId>false</externalId>
+    <label>Outcome</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Main_purpose__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Win Deal</fullName>
+                <default>false</default>
+                <label>Win Deal</label>
+            </value>
+            <value>
+                <fullName>Lost Deal</fullName>
+                <default>false</default>
+                <label>Lost Deal</label>
+            </value>
+            <value>
+                <fullName>Win oppty</fullName>
+                <default>false</default>
+                <label>Win oppty</label>
+            </value>
+            <value>
+                <fullName>Lost oppty</fullName>
+                <default>false</default>
+                <label>Lost oppty</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Need follow up</fullName>
+                <default>false</default>
+                <label>Need follow up</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+                <label>In-Progress</label>
+            </value>
+            <value>
+                <fullName>Interested</fullName>
+                <default>false</default>
+                <label>Interested</label>
+            </value>
+            <value>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <label>Not interested</label>
+            </value>
+            <value>
+                <fullName>To follow up</fullName>
+                <default>false</default>
+                <label>To follow up</label>
+            </value>
+            <value>
+                <fullName>Very satisfied</fullName>
+                <default>false</default>
+                <label>Very satisfied</label>
+            </value>
+            <value>
+                <fullName>Satisfied</fullName>
+                <default>false</default>
+                <label>Satisfied</label>
+            </value>
+            <value>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+                <label>Moderate</label>
+            </value>
+            <value>
+                <fullName>Dissatisfied</fullName>
+                <default>false</default>
+                <label>Dissatisfied</label>
+            </value>
+            <value>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+                <label>Incomplete</label>
+            </value>
+            <value>
+                <fullName>Postponed</fullName>
+                <default>false</default>
+                <label>Postponed</label>
+            </value>
+            <value>
+                <fullName>Accept &amp;Sign-off Agreement</fullName>
+                <default>false</default>
+                <label>Accept &amp;Sign-off Agreement</label>
+            </value>
+            <value>
+                <fullName>Customer Reject</fullName>
+                <default>false</default>
+                <label>Customer Reject</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Customer Accept &amp; will Sign-off Agreement</fullName>
+                <default>false</default>
+                <label>Customer Accept &amp; will Sign-off Agreement</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</fullName>
+                <default>false</default>
+                <label>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Stay with Customer, No Negative Pledge</fullName>
+                <default>false</default>
+                <label>Float Charge_Stay with Customer, No Negative Pledge</label>
+            </value>
+            <value>
+                <fullName>Float Chrage_Exit this Customer</fullName>
+                <default>false</default>
+                <label>Float Chrage_Exit this Customer</label>
+            </value>
+            <value>
+                <fullName>Cancelled this visit</fullName>
+                <default>false</default>
+                <label>Cancelled this visit</label>
+            </value>
+            <value>
+                <fullName>อยู่ระหว่างดำเนินการ</fullName>
+                <default>false</default>
+                <label>อยู่ระหว่างดำเนินการ</label>
+            </value>
+            <value>
+                <fullName>สำเร็จ</fullName>
+                <default>false</default>
+                <label>สำเร็จ</label>
+            </value>
+            <value>
+                <fullName>ไม่สำเร็จ</fullName>
+                <default>false</default>
+                <label>ไม่สำเร็จ</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <valueName>Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <valueName>Not interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>To follow up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Accept &amp;Sign-off Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Customer Reject</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <controllingFieldValue>Hand over (New RM)</controllingFieldValue>
+            <controllingFieldValue>Debt collection</controllingFieldValue>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Sell product</controllingFieldValue>
+            <controllingFieldValue>Doc. Collection</controllingFieldValue>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <controllingFieldValue>Make relationship</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>อยู่ระหว่างดำเนินการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>สำเร็จ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>ไม่สำเร็จ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Customer Accept &amp; will Sign-off Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Stay with Customer, No Negative Pledge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Chrage_Exit this Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Cancelled this visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <valueName>Win oppty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <valueName>Lost oppty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <valueName>Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <valueName>Need follow up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Hand over (New RM)</controllingFieldValue>
+            <controllingFieldValue>Debt collection</controllingFieldValue>
+            <controllingFieldValue>Doc. Collection</controllingFieldValue>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Hand over (New RM)</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>In-Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Debt collection</controllingFieldValue>
+            <controllingFieldValue>Doc. Collection</controllingFieldValue>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Make relationship</controllingFieldValue>
+            <valueName>Very satisfied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Make relationship</controllingFieldValue>
+            <valueName>Satisfied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Make relationship</controllingFieldValue>
+            <valueName>Moderate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Make relationship</controllingFieldValue>
+            <valueName>Dissatisfied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Postponed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell product</controllingFieldValue>
+            <valueName>Win Deal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell product</controllingFieldValue>
+            <valueName>Lost Deal</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

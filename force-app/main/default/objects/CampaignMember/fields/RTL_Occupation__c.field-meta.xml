@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Occupation__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LeadId==null, IF(ISBLANK(Contact.Account.RTL_OccupationF__c),Contact.Account.RTL_Occupation_Details__r.RTL_Occupation_Desc__c,CASE(Contact.Account.RTL_Occupation__c, 
+&quot;Government / State Enterprise Officer&quot;,$Label.RTL_Occupation1_Government , 
+&quot;Business owner&quot;, $Label.RTL_Occupation2_Business_Owner, 
+&quot;Police&quot;, $Label.RTL_Occupation3_Police, 
+&quot;Military&quot;, $Label.RTL_Occupation4_Military, 
+&quot;Students&quot;, $Label.RTL_Occupation5_Students, 
+&quot;Employee&quot;, $Label.RTL_Occupation6_Employee, 
+&quot;Housewives&quot;, $Label.RTL_Occupation7_Housewives, 
+&quot;Professionals&quot;, $Label.RTL_Occupation8_Professionals, 
+&quot;Others / Un-employed&quot;, $Label.RTL_Occupation9_Others, 
+Contact.Account.RTL_Occupation__c
+)),
+IF( Not(ISBLANK(Text(Lead.RTL_Occupation__c))) , 
+CASE(TEXT(Lead.RTL_Occupation__c), 
+&quot;Government / State Enterprise Officer&quot;,$Label.RTL_Occupation1_Government , 
+&quot;Business owner&quot;, $Label.RTL_Occupation2_Business_Owner, 
+&quot;Police&quot;, $Label.RTL_Occupation3_Police, 
+&quot;Military&quot;, $Label.RTL_Occupation4_Military, 
+&quot;Students&quot;, $Label.RTL_Occupation5_Students, 
+&quot;Employee&quot;, $Label.RTL_Occupation6_Employee, 
+&quot;Housewives&quot;, $Label.RTL_Occupation7_Housewives, 
+&quot;Professionals&quot;, $Label.RTL_Occupation8_Professionals, 
+&quot;Others / Un-employed&quot;, $Label.RTL_Occupation9_Others, 
+TEXT(Lead.RTL_Occupation__c)
+),TEXT(Lead.RTL_Occupation__c)))</formula>
+    <label>Occupation</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

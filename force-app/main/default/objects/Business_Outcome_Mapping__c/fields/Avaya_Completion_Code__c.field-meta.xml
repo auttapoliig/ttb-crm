@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Avaya_Completion_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Avaya Completion Code</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>YES Complete Sale</fullName>
+                <default>false</default>
+                <label>YES Complete Sale</label>
+            </value>
+            <value>
+                <fullName>NIN Not Interest</fullName>
+                <default>false</default>
+                <label>NIN Not Interest</label>
+            </value>
+            <value>
+                <fullName>NIN Not Interest - Recall</fullName>
+                <default>false</default>
+                <label>NIN Not Interest - Recall</label>
+            </value>
+            <value>
+                <fullName>NQF Not Qualify</fullName>
+                <default>false</default>
+                <label>NQF Not Qualify</label>
+            </value>
+            <value>
+                <fullName>WPC Wrong Party Contact</fullName>
+                <default>false</default>
+                <label>WPC Wrong Party Contact</label>
+            </value>
+            <value>
+                <fullName>ANSM Answering Machine</fullName>
+                <default>false</default>
+                <label>ANSM Answering Machine</label>
+            </value>
+            <value>
+                <fullName>NANS No Answer</fullName>
+                <default>false</default>
+                <label>NANS No Answer</label>
+            </value>
+            <value>
+                <fullName>L_BUSY Line Busy</fullName>
+                <default>false</default>
+                <label>L_BUSY Line Busy</label>
+            </value>
+            <value>
+                <fullName>Recall release</fullName>
+                <default>false</default>
+                <label>Recall release</label>
+            </value>
+            <value>
+                <fullName>HU Customer hang up call</fullName>
+                <default>false</default>
+                <label>HU Customer hang up call</label>
+            </value>
+            <value>
+                <fullName>FAX FAX</fullName>
+                <default>false</default>
+                <label>FAX FAX</label>
+            </value>
+            <value>
+                <fullName>DNC Do Not Call - 1 Year</fullName>
+                <default>false</default>
+                <label>DNC Do Not Call - 1 Year</label>
+            </value>
+            <value>
+                <fullName>DNC Do Not Call - Life Time</fullName>
+                <default>false</default>
+                <label>DNC Do Not Call - Life Time</label>
+            </value>
+            <value>
+                <fullName>Silent Call</fullName>
+                <default>false</default>
+                <label>Silent Call</label>
+            </value>
+            <value>
+                <fullName>WRPN Wrong Phone Number</fullName>
+                <default>false</default>
+                <label>WRPN Wrong Phone Number</label>
+            </value>
+            <value>
+                <fullName>DNC Do Not Call</fullName>
+                <default>false</default>
+                <label>DNC Do Not Call</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

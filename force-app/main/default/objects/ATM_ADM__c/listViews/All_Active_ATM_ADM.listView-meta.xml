@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_ATM_ADM</fullName>
+    <columns>NAME</columns>
+    <columns>ATM_Type__c</columns>
+    <columns>Location__c</columns>
+    <columns>Address_TH__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Enable_Flag__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Active ATM/ADM</label>
+    <language>en_US</language>
+</ListView>

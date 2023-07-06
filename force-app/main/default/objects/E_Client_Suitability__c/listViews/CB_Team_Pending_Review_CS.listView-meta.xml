@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_Team_Pending_Review_CS</fullName>
+    <columns>NAME</columns>
+    <columns>CS_Customer__c</columns>
+    <columns>CS_Status__c</columns>
+    <columns>CS_Level__c</columns>
+    <columns>CS_Expiry_Date_Next__c</columns>
+    <columns>CS_RM__c</columns>
+    <columns>CS_Sales_Owner__c</columns>
+    <columns>CS_Sales_Owner_Segment__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CS_Status__c</field>
+        <operation>equals</operation>
+        <value>Pending Review</value>
+    </filters>
+    <filters>
+        <field>CS_Stamped_Customer_Segment__c</field>
+        <operation>equals</operation>
+        <value>CB</value>
+    </filters>
+    <label>CB Team Pending Review CS</label>
+    <sharedTo>
+        <role>Compliance_TH</role>
+        <role>Compliance_User</role>
+        <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+    </sharedTo>
+</ListView>

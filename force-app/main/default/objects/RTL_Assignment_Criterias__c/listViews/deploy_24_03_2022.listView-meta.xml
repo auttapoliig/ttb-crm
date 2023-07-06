@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>deploy_24_03_2022</fullName>
+    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Destination_BKK__c</columns>
+    <columns>Destination_UPC__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Name__c</field>
+        <operation>equals</operation>
+        <value>BenefitPlus (Unsecured Loan)</value>
+    </filters>
+    <filters>
+        <field>Product_Name__c</field>
+        <operation>equals</operation>
+        <value>สินเชื่อสวัสดิการบำเหน็จตกทอด</value>
+    </filters>
+    <filters>
+        <field>Product_Name__c</field>
+        <operation>equals</operation>
+        <value>BenefitPlus (HL)</value>
+    </filters>
+    <filters>
+        <field>Product_Name__c</field>
+        <operation>equals</operation>
+        <value>BenefitPlus (HE)</value>
+    </filters>
+    <filters>
+        <field>Product_Name__c</field>
+        <operation>equals</operation>
+        <value>CYC,CYB,NEW,USED</value>
+    </filters>
+    <label>deploy 24/03/2022</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>CEO</role>
+    </sharedTo>
+</ListView>

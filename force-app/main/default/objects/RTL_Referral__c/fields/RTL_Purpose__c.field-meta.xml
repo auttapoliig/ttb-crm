@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Purpose__c</fullName>
+    <description>To identify lead/customer from 4 Thana Campaign</description>
+    <externalId>false</externalId>
+    <label>Purpose</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>4 Thana</fullName>
+                <default>false</default>
+                <label>4 Thana</label>
+            </value>
+            <value>
+                <fullName>Doctor Program</fullName>
+                <default>false</default>
+                <label>Doctor Program</label>
+            </value>
+            <value>
+                <fullName>Nurse Program</fullName>
+                <default>false</default>
+                <label>Nurse Program</label>
+            </value>
+            <value>
+                <fullName>Wealth Privilege</fullName>
+                <default>false</default>
+                <label>Wealth Privilege</label>
+            </value>
+            <value>
+                <fullName>ttb reserve</fullName>
+                <default>false</default>
+                <label>ttb reserve</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Mobile_Length</fullName>
+    <active>true</active>
+    <description>Check Mobile number not greater than 18</description>
+    <errorConditionFormula>if(AND(CONTAINS(RecordType.Name, &apos;Prospect&apos;),RecordType.Name &lt;&gt; &quot;Inactive Customer&quot;),AND(NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)),
+LEN( Mobile_Number_PE__c ) &gt; 18 ),false)</errorConditionFormula>
+    <errorDisplayField>Mobile_Number_PE__c</errorDisplayField>
+    <errorMessage>Mobile number is too large: length 18 digits</errorMessage>
+</ValidationRule>

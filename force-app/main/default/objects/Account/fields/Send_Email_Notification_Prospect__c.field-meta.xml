@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Email_Notification_Prospect__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check box display on prospect change owner screen supported mobileS1.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>System will send notification email when prospect owner change.</inlineHelpText>
+    <label>Send Email Notification</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

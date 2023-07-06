@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Income Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NIIc</fullName>
+                <default>false</default>
+                <label>NIIc</label>
+            </value>
+            <value>
+                <fullName>NIId</fullName>
+                <default>false</default>
+                <label>NIId</label>
+            </value>
+            <value>
+                <fullName>AS Fee</fullName>
+                <default>false</default>
+                <label>AS Fee</label>
+            </value>
+            <value>
+                <fullName>BA Fee</fullName>
+                <default>false</default>
+                <label>BA Fee</label>
+            </value>
+            <value>
+                <fullName>Credit Fee</fullName>
+                <default>false</default>
+                <label>Credit Fee</label>
+            </value>
+            <value>
+                <fullName>Derivative Fee</fullName>
+                <default>false</default>
+                <label>Derivative Fee</label>
+            </value>
+            <value>
+                <fullName>FX Fee</fullName>
+                <default>false</default>
+                <label>FX Fee</label>
+            </value>
+            <value>
+                <fullName>IB Fee</fullName>
+                <default>false</default>
+                <label>IB Fee</label>
+            </value>
+            <value>
+                <fullName>L/G Fee</fullName>
+                <default>false</default>
+                <label>L/G Fee</label>
+            </value>
+            <value>
+                <fullName>TF Fee</fullName>
+                <default>false</default>
+                <label>TF Fee</label>
+            </value>
+            <value>
+                <fullName>MF Fee</fullName>
+                <default>false</default>
+                <label>MF Fee</label>
+            </value>
+            <value>
+                <fullName>AL Fee</fullName>
+                <default>false</default>
+                <label>AL Fee</label>
+            </value>
+            <value>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+                <label>Supply Chain</label>
+            </value>
+            <value>
+                <fullName>EDC Fee</fullName>
+                <default>false</default>
+                <label>EDC Fee</label>
+            </value>
+            <value>
+                <fullName>Fleet Fee</fullName>
+                <default>false</default>
+                <label>Fleet Fee</label>
+            </value>
+            <value>
+                <fullName>Direct CM Fee</fullName>
+                <default>false</default>
+                <label>Direct CM Fee</label>
+            </value>
+            <value>
+                <fullName>Front End Fee</fullName>
+                <default>false</default>
+                <label>Front End Fee</label>
+            </value>
+            <value>
+                <fullName>Other CM Fee</fullName>
+                <default>false</default>
+                <label>Other CM Fee</label>
+            </value>
+            <value>
+                <fullName>Cash Fee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cash Fee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

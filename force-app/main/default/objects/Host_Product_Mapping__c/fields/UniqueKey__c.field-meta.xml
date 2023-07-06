@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UniqueKey__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Host_Name__c) + &apos;|&apos; +  TEXT(Host_Product_Group__c) + &apos;|&apos; +  TEXT(Product_Program__c)  + &apos;|&apos; +  TEXT(Host_Prod_Name_Credit_Facility__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unique Key</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

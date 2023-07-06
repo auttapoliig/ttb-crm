@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Step_3_Percentage__c</fullName>
+    <externalId>false</externalId>
+    <formula>( Step_3_1_Percentage__c  + Step_3_2_Percentage__c + Step_3_3_Percentage__c + Step_3_4_Percentage__c )/4</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Step 3 Percentage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

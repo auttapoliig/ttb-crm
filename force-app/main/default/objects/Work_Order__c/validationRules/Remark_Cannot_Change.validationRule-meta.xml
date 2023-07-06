@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remark_Cannot_Change</fullName>
+    <active>true</active>
+    <description>remark field cannot change if the user is not the creator</description>
+    <errorConditionFormula>IF( ($User.Id != CreatedById) &amp;&amp; ISCHANGED( Remark__c )
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorDisplayField>Remark__c</errorDisplayField>
+    <errorMessage>Sorry, you do not have permission to edit this field</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_Survey</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Complete Survey</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(IF( Survey__c.Lead__c !=null
+,&apos;/apex/NPS_Survey_Convert?id=&apos;+Survey__c.LeadId__c+&apos;&amp;surveyID=&apos;+Survey__c.Id  ,&apos;/apex/NPS_Survey?id=&apos;+Survey__c.Id+&apos;&amp;IsComplete=true&apos;
+))}</url>
+</WebLink>

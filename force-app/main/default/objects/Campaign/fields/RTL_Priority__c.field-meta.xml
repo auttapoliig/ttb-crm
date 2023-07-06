@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Priority__c</fullName>
+    <externalId>false</externalId>
+    <label>Priority</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Campaign_Objective__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 Highest</fullName>
+                <default>false</default>
+                <label>1 Highest</label>
+            </value>
+            <value>
+                <fullName>2 High</fullName>
+                <default>false</default>
+                <label>2 High</label>
+            </value>
+            <value>
+                <fullName>3 Medium</fullName>
+                <default>false</default>
+                <label>3 Medium</label>
+            </value>
+            <value>
+                <fullName>4 Low</fullName>
+                <default>false</default>
+                <label>4 Low</label>
+            </value>
+            <value>
+                <fullName>5 Lowest</fullName>
+                <default>false</default>
+                <label>5 Lowest</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <controllingFieldValue>Service</controllingFieldValue>
+            <controllingFieldValue>Usage</controllingFieldValue>
+            <controllingFieldValue>Activation</controllingFieldValue>
+            <controllingFieldValue>Digital Migration</controllingFieldValue>
+            <controllingFieldValue>Experience</controllingFieldValue>
+            <controllingFieldValue>Information Update</controllingFieldValue>
+            <controllingFieldValue>Loyalty</controllingFieldValue>
+            <controllingFieldValue>Reactive from Inactive</controllingFieldValue>
+            <valueName>3 Medium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Up-Selling</controllingFieldValue>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>X-Selling</controllingFieldValue>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Event Invitation</controllingFieldValue>
+            <controllingFieldValue>MGM</controllingFieldValue>
+            <valueName>2 High</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drop-Lead</controllingFieldValue>
+            <valueName>1 Highest</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

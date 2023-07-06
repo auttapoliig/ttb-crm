@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In progress_Contacted</fullName>
+                <default>false</default>
+                <label>Contacted &amp; In progress</label>
+            </value>
+            <value>
+                <fullName>Closed (Interested)</fullName>
+                <default>false</default>
+                <label>Closed (Interested)</label>
+            </value>
+            <value>
+                <fullName>Closed (Not Interested)</fullName>
+                <default>false</default>
+                <label>Closed (Not Interested)</label>
+            </value>
+            <value>
+                <fullName>Closed (Unable to contact)</fullName>
+                <default>false</default>
+                <label>Closed (Unable to contact)</label>
+            </value>
+            <value>
+                <fullName>Closed (Unqualified)</fullName>
+                <default>false</default>
+                <label>Closed (Unqualified)</label>
+            </value>
+            <value>
+                <fullName>Closed (Service Completed)</fullName>
+                <default>false</default>
+                <label>Closed (Service Completed)</label>
+            </value>
+            <value>
+                <fullName>Closed By AL System</fullName>
+                <default>false</default>
+                <label>Closed By AL System</label>
+            </value>
+            <value>
+                <fullName>Invalid (Duplicate Opportunity)</fullName>
+                <default>false</default>
+                <label>Invalid (Duplicate Opportunity)</label>
+            </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>Closed (Transferred)</fullName>
+                <default>false</default>
+                <label>Closed (Transferred)</label>
+            </value>
+            <value>
+                <fullName>Closed (Referral Ticket)</fullName>
+                <default>false</default>
+                <label>Closed (Referral Ticket)</label>
+            </value>
+            <value>
+                <fullName>Closed (Unqualified  Customer)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Closed (Unqualified  Customer)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>In progress_Contacted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <valueName>Closed (Service Completed)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Cancel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Closed (Not Interested)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Closed (Unable to contact)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Closed (Unqualified)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Closed (Interested)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Invalid (Duplicate Opportunity)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Closed (Transferred)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Closed By AL System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>Closed (Referral Ticket)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

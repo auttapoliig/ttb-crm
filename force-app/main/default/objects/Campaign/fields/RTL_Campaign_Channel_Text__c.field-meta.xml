@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Campaign_Channel_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(  RTL_Campaign_Channel__c  , &quot;1 Outbound call&quot;) , &quot;[x] Outbound  &quot; , null)  +
+IF( INCLUDES( RTL_Campaign_Channel__c, &quot;2 Outbound DealerDistributorNetwork&quot;) , &quot;[x] Branch  &quot;, null)+
+IF(INCLUDES( RTL_Campaign_Channel__c, &quot;3 E-mail&quot;) , &quot;[x] E-mail  &quot;, null)+
+IF( INCLUDES(  RTL_Campaign_Channel__c  , &quot;4 Facebook&quot;) , &quot;[x] Facebook  &quot; , null)  +
+IF( INCLUDES( RTL_Campaign_Channel__c, &quot;5 Mail&quot;) , &quot;[x] Direct Mail  &quot;, null)+
+IF(INCLUDES( RTL_Campaign_Channel__c, &quot;6 PrintMedia&quot;) , &quot;[x] Print Media  &quot;, null)+
+IF( INCLUDES(  RTL_Campaign_Channel__c  , &quot;7 SMS&quot;) , &quot;[x] SMS  &quot; , null)  +
+IF( INCLUDES( RTL_Campaign_Channel__c, &quot;8 Outbound web&quot;) , &quot;[x] MIB  &quot;, null) +
+IF( INCLUDES( RTL_Campaign_Channel__c, &quot;9 Subsidiary&quot;) , &quot;[x] Subsidiary  &quot;, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Campaign Channel Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

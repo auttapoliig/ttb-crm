@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Type__c</fullName>
+    <description>Job Types of Work Order, each job type dynamically validate data.</description>
+    <externalId>false</externalId>
+    <label>Job Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Messenger</fullName>
+                <default>false</default>
+                <label>Messenger</label>
+            </value>
+            <value>
+                <fullName>Loan Registered</fullName>
+                <default>false</default>
+                <label>Loan Registered</label>
+            </value>
+            <value>
+                <fullName>Loan Paper</fullName>
+                <default>false</default>
+                <label>Loan Paper</label>
+            </value>
+            <value>
+                <fullName>E-mail</fullName>
+                <default>false</default>
+                <label>E-mail</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Kerry</fullName>
+                <default>false</default>
+                <label>Kerry</label>
+            </value>
+            <value>
+                <fullName>Post – EMS</fullName>
+                <default>false</default>
+                <label>Post – EMS</label>
+            </value>
+            <value>
+                <fullName>Post – Register</fullName>
+                <default>false</default>
+                <label>Post – Register</label>
+            </value>
+            <value>
+                <fullName>Post – Normal</fullName>
+                <default>false</default>
+                <label>Post – Normal</label>
+            </value>
+            <value>
+                <fullName>Order Transfer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

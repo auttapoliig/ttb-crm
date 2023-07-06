@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Preferred_Activity__c</fullName>
+    <externalId>false</externalId>
+    <label>Online Activity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Check e-mail</fullName>
+                <default>false</default>
+                <label>Check e-mail</label>
+            </value>
+            <value>
+                <fullName>Chat (Line, WhatsApp, etc.)</fullName>
+                <default>false</default>
+                <label>Chat (Line, WhatsApp, etc.)</label>
+            </value>
+            <value>
+                <fullName>Facebook, Twitter</fullName>
+                <default>false</default>
+                <label>Facebook, Twitter</label>
+            </value>
+            <value>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+                <label>Instagram</label>
+            </value>
+            <value>
+                <fullName>Online movie/music (Youtube, Line, TV, etc.)</fullName>
+                <default>false</default>
+                <label>Online movie/music (Youtube, Line, TV, etc.)</label>
+            </value>
+            <value>
+                <fullName>Read/Post webboard</fullName>
+                <default>false</default>
+                <label>Read/Post webboard</label>
+            </value>
+            <value>
+                <fullName>Online shopping / banking</fullName>
+                <default>false</default>
+                <label>Online shopping / banking</label>
+            </value>
+            <value>
+                <fullName>Play online games</fullName>
+                <default>false</default>
+                <label>Play online games</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

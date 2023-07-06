@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ttb Advisory</fullName>
+                <default>false</default>
+                <label>ttb Advisory</label>
+            </value>
+            <value>
+                <fullName>Product Knowledge</fullName>
+                <default>false</default>
+                <label>Product Knowledge</label>
+            </value>
+            <value>
+                <fullName>Work Instruction</fullName>
+                <default>false</default>
+                <label>Work Instruction</label>
+            </value>
+            <value>
+                <fullName>Campaign Center</fullName>
+                <default>false</default>
+                <label>Campaign Center</label>
+            </value>
+            <value>
+                <fullName>Branch Communication</fullName>
+                <default>false</default>
+                <label>Branch Communication</label>
+            </value>
+            <value>
+                <fullName>Sales Commu</fullName>
+                <default>false</default>
+                <label>Sales Commu</label>
+            </value>
+            <value>
+                <fullName>Tips</fullName>
+                <default>false</default>
+                <label>Tips</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

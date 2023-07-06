@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Mapping Zone/Team in user detail to Queue name or BU name in service type matrix. The objective for summary SLA by Hop in case</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Mapping Service BU Name</label>
+    <visibility>Public</visibility>
+</CustomObject>

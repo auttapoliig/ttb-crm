@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Warroom_Social_Post__c</fullName>
+    <description>for link with Warroom Social Post</description>
+    <externalId>false</externalId>
+    <label>Warroom Social Post</label>
+    <referenceTo>Social_Post__c</referenceTo>
+    <relationshipLabel>Social Post Transfer logs</relationshipLabel>
+    <relationshipName>Social_Post_Transfer_logs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

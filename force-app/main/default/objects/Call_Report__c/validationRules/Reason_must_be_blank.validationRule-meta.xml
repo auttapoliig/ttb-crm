@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_must_be_blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( TEXT(Loss_Incomplete_reason__c) &lt;&gt; &quot;&quot; 
+,NOT(
+		OR(
+			TEXT(Outcome__c) = &quot;Lost oppty&quot; ,
+			TEXT(Outcome__c) = &quot;Incomplete&quot;,
+			TEXT(Outcome__c) = &quot;Lost Deal&quot;, 
+			TEXT(Outcome__c) = &quot;Cancelled&quot;,
+			TEXT(Outcome__c) = &quot;ไม่สำเร็จ&quot;
+		) 
+	)
+)</errorConditionFormula>
+    <errorDisplayField>Loss_Incomplete_reason__c</errorDisplayField>
+    <errorMessage>Loss/ Incomplete reason should be blank when outcome is not Lost Oppty or Cancelled</errorMessage>
+</ValidationRule>

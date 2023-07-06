@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Contact_Center_User__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND (OR($User.UserProfileName__c = &apos;TMB Retail Contact Center&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Business Support&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Customer Care&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Fulfillment Outbound&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound Multi&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound Multi Supervisor&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound NonVoice&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound NonVoice Supervisor&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound Voice&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Inbound Voice Supervisor&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Report Specialist&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Training&apos;,
+$User.UserProfileName__c = &apos;TMB Retail Contact Center Outbound&apos;
+), Most_Operating_Branch__c = null)
+,true
+,false
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Contact Center User</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

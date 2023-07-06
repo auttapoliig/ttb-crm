@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Suffix_Ref__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>เลขที่บัญชี+Suffix+ACCOUNT REF</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>true</externalId>
+    <label>Account/Suffix/Ref</label>
+    <length>33</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

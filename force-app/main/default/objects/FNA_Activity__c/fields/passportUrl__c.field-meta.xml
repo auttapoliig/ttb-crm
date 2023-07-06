@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>passportUrl__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Created_Branch_Code__c == $CustomMetadata.Flagship_Station_Mapping__mdt.X252_01.Branch_Code__c 
+|| Created_Branch_Code__c == $CustomMetadata.Flagship_Station_Mapping__mdt.X283_01.Branch_Code__c  , $CustomMetadata.App_Config__mdt.FNA_Community_Url.Value__c  + &apos;/fnaavatarpassportflagship?Id=&apos; + Id, 
+$CustomMetadata.App_Config__mdt.FNA_Community_Url.Value__c  + &apos;/fnaavatarpassport?Id=&apos; + Id)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>passportUrl</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

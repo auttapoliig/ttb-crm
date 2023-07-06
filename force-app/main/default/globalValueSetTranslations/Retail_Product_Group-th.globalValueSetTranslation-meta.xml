@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Auto Loan</masterLabel>
+        <translation>ผลิตภัณฑ์เช่าซื้อ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bancassurance</masterLabel>
+        <translation>ผลิตภัณฑ์ประกัน</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Credit Card &amp; RDC</masterLabel>
+        <translation>ผลิตภัณฑ์บัตรเครดิต และ บัตรกดเงินสด</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Deposit</masterLabel>
+        <translation>ผลิตภัณฑ์เงินฝาก</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Investment</masterLabel>
+        <translation>ผลิตภัณฑ์ลงทุน</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loan</masterLabel>
+        <translation>ผลิตภัณฑ์สินเชื่อ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loan Retention</masterLabel>
+        <translation>ผลิตภัณฑ์สินเชื่อ (Retention)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Others</masterLabel>
+        <translation>ผลิตภัณฑ์อื่นๆ</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Industry_Info__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Group Industry</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Group Industry</inlineHelpText>
+    <label>Group Industry</label>
+    <referenceTo>Industry__c</referenceTo>
+    <relationshipLabel>Group Master</relationshipLabel>
+    <relationshipName>Group_Master</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

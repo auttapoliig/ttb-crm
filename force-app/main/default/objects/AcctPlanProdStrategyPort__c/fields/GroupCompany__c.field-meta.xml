@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GroupCompany__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Group Company</description>
+    <externalId>false</externalId>
+    <label>GroupCompany</label>
+    <referenceTo>Group__c</referenceTo>
+    <relationshipLabel>Account Plan Product Strategy Ports</relationshipLabel>
+    <relationshipName>Account_Plan_Product_Strategy_Ports</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

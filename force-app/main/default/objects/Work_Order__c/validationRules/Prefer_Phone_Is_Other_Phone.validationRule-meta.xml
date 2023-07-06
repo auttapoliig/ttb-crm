@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prefer_Phone_Is_Other_Phone</fullName>
+    <active>true</active>
+    <description>“Prefer Phone” = “Other Phone”, Field “Other/Fax Phone” cannot be blank.</description>
+    <errorConditionFormula>IF( ISPICKVAL(Prefer_Phone__c, &quot;Other Phone&quot;)
+&amp;&amp; ISBLANK(Other_Fax_Phone__c)
+, TRUE
+, FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Other_Fax_Phone__c</errorDisplayField>
+    <errorMessage>Prefer Phone is Other Phone, Other/Fax Phone cannot be blank.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_cannot_change_startdate_if_executed</fullName>
+    <active>true</active>
+    <description>Preventing change the start date when stage = Executed</description>
+    <errorConditionFormula>AND(RecordType.Name != &apos;Commercial&apos; , RecordType.Name != &quot;Dummy Campaign&quot;, 
+     TEXT(RTL_Campaign_Stage__c)  = &apos;executed&apos; ,  
+    ISCHANGED( StartDate ) )</errorConditionFormula>
+    <errorDisplayField>StartDate</errorDisplayField>
+    <errorMessage>Campaign start date cannot be changed after executed.</errorMessage>
+</ValidationRule>

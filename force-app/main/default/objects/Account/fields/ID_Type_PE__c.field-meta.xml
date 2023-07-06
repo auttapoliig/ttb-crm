@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID_Type_PE__c</fullName>
+    <description>Identification Type Ex. Citizen ID, BRN ID, Passport ID, Alien ID, Work permit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ประเภทเอกสารสำคัญของลูกค้า</inlineHelpText>
+    <label>ID Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Customer_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BRN ID</fullName>
+                <default>false</default>
+                <label>BRN ID</label>
+            </value>
+            <value>
+                <fullName>Citizen ID</fullName>
+                <default>false</default>
+                <label>Citizen ID</label>
+            </value>
+            <value>
+                <fullName>Passport ID</fullName>
+                <default>false</default>
+                <label>Passport ID</label>
+            </value>
+            <value>
+                <fullName>Work permit ID</fullName>
+                <default>false</default>
+                <label>Work permit ID</label>
+            </value>
+            <value>
+                <fullName>Alien ID</fullName>
+                <default>false</default>
+                <label>Alien ID</label>
+            </value>
+            <value>
+                <fullName>Tax ID</fullName>
+                <default>false</default>
+                <label>Tax ID</label>
+            </value>
+            <value>
+                <fullName>Other ID</fullName>
+                <default>false</default>
+                <label>Other ID</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <valueName>Citizen ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <valueName>Passport ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <valueName>Work permit ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <valueName>Alien ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Juristic</controllingFieldValue>
+            <valueName>BRN ID</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

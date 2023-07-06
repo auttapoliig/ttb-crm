@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE2_BKK3_Bangna_Mail_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Queue</filterScope>
+    <label>SE ZM BKK2 Bangna Mail</label>
+    <language>en_US</language>
+    <queue>SE_ZM_BKK2_Bangna_Mail</queue>
+    <sharedTo>
+        <group>SE_ZM_BKK2_Bangna_Mail</group>
+        <role>CCBO_Sales_Management</role>
+    </sharedTo>
+</ListView>

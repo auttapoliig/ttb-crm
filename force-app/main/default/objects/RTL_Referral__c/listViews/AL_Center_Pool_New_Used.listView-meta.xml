@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AL_Center_Pool_New_Used</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Interested_Product__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <filters>
+        <field>RTL_Interested_Product__c</field>
+        <operation>equals</operation>
+        <value>New/Used Car &lt; 10</value>
+    </filters>
+    <label>AL Center Pool - New/Used</label>
+    <language>en_US</language>
+    <queue>RTL_H21</queue>
+    <sharedTo>
+        <role>Automotive_Lending_Solution_Advisory_Line_SupportTL</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_MGR</role>
+        <role>Automotive_Lending_Solution_Advisory_Line_Support_USER</role>
+        <roleAndSubordinates>AL_Center_TL</roleAndSubordinates>
+    </sharedTo>
+</ListView>

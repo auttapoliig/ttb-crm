@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Actual_Visit_not_more_than_today</fullName>
+    <active>true</active>
+    <description>ไม่สามารถ key Actual Visit Date ล่วงหน้าได้ทุกกรณี</description>
+    <errorConditionFormula>Actual_Visit_Date__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Actual_Visit_Date__c</errorDisplayField>
+    <errorMessage>Actual Visit Date cannot be future date</errorMessage>
+</ValidationRule>

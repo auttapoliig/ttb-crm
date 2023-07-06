@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TableName__c</fullName>
+    <description>CollectionDomestic,
+CollectionExport,
+PaymentDomestic,
+PaymentImport,
+DepositDomestic,
+DepositInternational</description>
+    <externalId>false</externalId>
+    <label>TableName</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Collection Method Domestic</fullName>
+                <default>false</default>
+                <label>Collection Method Domestic</label>
+            </value>
+            <value>
+                <fullName>Collection Method Export</fullName>
+                <default>false</default>
+                <label>Collection Method Export</label>
+            </value>
+            <value>
+                <fullName>Payment Method Domestic</fullName>
+                <default>false</default>
+                <label>Payment Method Domestic</label>
+            </value>
+            <value>
+                <fullName>Payment Method Import</fullName>
+                <default>false</default>
+                <label>Payment Method Import</label>
+            </value>
+            <value>
+                <fullName>Deposit Domestic</fullName>
+                <default>false</default>
+                <label>Deposit Domestic</label>
+            </value>
+            <value>
+                <fullName>Deposit International</fullName>
+                <default>false</default>
+                <label>Deposit International</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

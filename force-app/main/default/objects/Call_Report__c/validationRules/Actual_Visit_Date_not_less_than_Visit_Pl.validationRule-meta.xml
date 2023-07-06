@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Visit_Date_not_less_than_Visit_Pl</fullName>
+    <active>true</active>
+    <description>Actual Visit Date ต้องไม่น้อยกว่า Visit Plan</description>
+    <errorConditionFormula>if(or( ISNEW() , ISCHANGED(Actual_Visit_Date__c ) ),Actual_Visit_Date__c &lt; Date_of_Visit__c,false)</errorConditionFormula>
+    <errorDisplayField>Actual_Visit_Date__c</errorDisplayField>
+    <errorMessage>Actual Visit Date must not be less than Visit Plan Date</errorMessage>
+</ValidationRule>

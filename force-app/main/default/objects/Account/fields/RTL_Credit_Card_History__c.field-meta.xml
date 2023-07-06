@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Credit_Card_History__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(
+TEXT(Account_Type__c)=&apos;Retail Customer&apos;,
+TEXT(Account_Type__c)=&apos;Retail Prospect&apos;), IF(RTL_Credit_Card_Flag__c=&apos;Y&apos;,&apos;ลูกค้าที่เคยมีบัตรเครดิต TMB ก่อน 1 กันยายน 2560&apos; &amp; BR() &amp;
+&apos;1. กรณีสมัครบัตรเครดิต TMB So Fast/ So Chill/ So Smart/ Royal Top Brass จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ 15,000 ขึ้นไป : วงเงินสูงสุด 3 เท่า&apos; &amp; BR() &amp;
+&apos;2. กรณีสมัครบัตรเครดิต TMB ABSOLUTE Visa Signature จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ 100,000 ขึ้นไป : วงเงินสูงสุด 5 เท่า&apos;,
+&apos;ลูกค้าที่ไม่เคยมีบัตรเครดิต TMB ก่อน 1 กันยายน 2560&apos; &amp; BR() &amp;
+&apos;1. กรณีสมัครบัตรเครดิต TMB So Fast/ So Chill/ So Smart/ Royal Top Brass จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ &lt; 30,000 : วงเงินสูงสุด 1.5 เท่า&apos; &amp; BR() &amp;
+&apos; - รายได้ 30,000 ขึ้นไป : วงเงินสูงสุด 3 เท่า&apos; &amp; BR() &amp;
+&apos;2. กรณีสมัครบัตรเครดิต TMB ABSOLUTE Visa Signature จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ 100,000 ขึ้นไป : วงเงินสูงสุด 5 เท่า&apos;),
+IF(TEXT(Customer_Type__c)=&apos;Individual&apos;,IF(RTL_Credit_Card_Flag__c=&apos;Y&apos;,&apos;ลูกค้าเคยมีบัตรเครดิต TMB ก่อน 1 กันยายน 60&apos;&amp;BR() &amp;
+&apos;กรณีลูกค้าสมัครบัตรเครดิต TMB โดยยื่นเอกสารรายได้ใหม่ จะได้รับวงเงินดังนี้&apos;&amp;BR() &amp;
+&apos;- วงเงินสูงสุด 5 เท่าของรายได้ สำหรับบัตร So Chill&apos; &amp; BR() &amp;
+&apos;- วงเงินสูงสุด 3 เท่าของรายได้ สำหรับบัตรประเภทอื่น&apos;,
+&apos;ลูกค้าที่ไม่เคยมีบัตรเครดิต TMB ก่อน 1 กันยายน 2560&apos; &amp; BR() &amp;
+&apos;1. กรณีสมัครบัตรเครดิต TMB So Fast/ So Chill/ So Smart/ Royal Top Brass จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ &lt; 30,000 : วงเงินสูงสุด 1.5 เท่า&apos; &amp; BR() &amp;
+&apos; - รายได้ 30,000 ขึ้นไป : วงเงินสูงสุด 3 เท่า&apos; &amp; BR() &amp;
+&apos;2. กรณีสมัครบัตรเครดิต TMB ABSOLUTE Visa Signature จะได้รับวงเงินดังนี้&apos; &amp; BR() &amp;
+&apos; - รายได้ 100,000 ขึ้นไป : วงเงินสูงสุด 5 เท่า&apos;),&apos;N/A&apos;))</formula>
+    <label>Credit Card History</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

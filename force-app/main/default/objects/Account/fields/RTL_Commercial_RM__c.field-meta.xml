@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Commercial_RM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CR Wealth RM Info , stamp value if Account owner is commercial user</description>
+    <externalId>false</externalId>
+    <label>RM/BDM</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

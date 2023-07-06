@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Today_s_Trading_Summary_2</fullName>
+    <columns>NAME</columns>
+    <columns>Buy_Sell__c</columns>
+    <columns>FXS_CurrencyPair__c</columns>
+    <columns>FXS_CustomerRate__c</columns>
+    <columns>Total_Request_Amount_Million_Unit__c</columns>
+    <columns>FXS_Total_Allocate_Amount_Million_Unit__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>FXS_Status__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Buy_Sell__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Today&apos;s Trading Summary</label>
+</ListView>

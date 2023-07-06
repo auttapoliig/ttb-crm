@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Email_Length</fullName>
+    <active>true</active>
+    <description>Check Email length not greater than 70</description>
+    <errorConditionFormula>AND ( 
+AND( RecordType.Name &lt;&gt; &quot;Core bank&quot;,
+NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)
+)
+), Len(Email) &gt; 70)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>Email is too large: length 70 digits</errorMessage>
+</ValidationRule>

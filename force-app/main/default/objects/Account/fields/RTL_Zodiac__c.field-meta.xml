@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Zodiac__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(TEXT(RTL_Date_Of_Birth__c) &lt;&gt; &quot;&quot;,
+
+CASE( MOD((1901 - YEAR(RTL_Date_Of_Birth__c)),12) ,
+
+1 , &quot;ชวด&quot;,
+
+-11,&quot;ชวด&quot;,
+
+0, &quot;ฉลู&quot;,
+
+11,&quot;ขาล&quot;,
+
+-1, &quot;ขาล&quot;,
+
+10,&quot;เถาะ&quot;,
+
+-2,&quot;เถาะ&quot;,
+
+9,&quot;มะโรง&quot;,
+
+-3,&quot;มะโรง&quot;,
+
+8,&quot;มะเส็ง&quot;,
+
+-4,&quot;มะเส็ง&quot;,
+
+7,&quot;มะเมีย&quot;,
+
+-5,&quot;มะเมีย&quot;,
+
+6,&quot;มะแม&quot;,
+
+-6,&quot;มะแม&quot;,
+
+5,&quot;วอก&quot;,
+
+-7,&quot;วอก&quot;,
+
+4,&quot;ระกา&quot;,
+
+-8,&quot;ระกา&quot;,
+
+3,&quot;จอ&quot;,
+
+-9,&quot;จอ&quot;,
+
+2,&quot;กุล&quot;,
+
+-10,&quot;กุล&quot;,
+
+&quot;&quot;)
+
+, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Zodiac</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

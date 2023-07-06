@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_IDType_enter_IDNo</fullName>
+    <active>true</active>
+    <description>Preventing save the record if ID Number is entered without selecting ID Type</description>
+    <errorConditionFormula>AND(ISBLANK( TEXT(ID_Type_PE__c)),ID_Number_PE__c != NULL)</errorConditionFormula>
+    <errorDisplayField>ID_Type_PE__c</errorDisplayField>
+    <errorMessage>ID Type cannot be None when updating with ID Number</errorMessage>
+</ValidationRule>

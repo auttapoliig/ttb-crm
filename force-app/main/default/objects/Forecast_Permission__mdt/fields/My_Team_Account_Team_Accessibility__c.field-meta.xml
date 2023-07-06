@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Team_Account_Team_Accessibility__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>My Team by Role</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>My Team-Account Team Accessibility</label>
+    <type>Checkbox</type>
+</CustomField>

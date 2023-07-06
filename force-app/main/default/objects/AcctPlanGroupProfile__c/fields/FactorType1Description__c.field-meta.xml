@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FactorType1Description__c</fullName>
+    <description>Factor Type 1 Description</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>การขยายความ key Success factor ที่ทำให้ธุรกิจประสบความสำเร็จ ซึ่งขึ้นอยู่กับการที่ RM วิเคราะห์และเลือกว่า กลุ่มบริษัทนั้นๆ มี key success factor อะไรบ้าง และเมื่อเลือกจาก drop down list แล้ว RM สามารถเขียนขยายความให้ชัดเจนยิ่งขึ้น</inlineHelpText>
+    <label>Factor Type 1 Description</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

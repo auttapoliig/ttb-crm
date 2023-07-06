@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mouse_Hover_Customer</fullName>
+    <fields>Name</fields>
+    <fields>Customer_Owner__c</fields>
+    <fields>Sub_Segment2__c</fields>
+    <fields>Core_Banking_Suggested_Segment__c</fields>
+    <fields>X4G_Current_month__c</fields>
+    <fields>Sub_4G__c</fields>
+    <fields>Industry</fields>
+    <label>Mouse Hover Customer</label>
+</CompactLayout>

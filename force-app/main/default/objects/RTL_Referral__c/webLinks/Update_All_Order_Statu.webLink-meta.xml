@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_All_Order_Statu</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Update All Order Status</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/flow/Update_All_Order?ReferralID={!RTL_Referral__c.Id}&amp;ReferralOwner={!RTL_Referral__c.OwnerId}&amp;retURL=%2F{!RTL_Referral__c.Id}</url>
+</WebLink>

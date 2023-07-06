@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_Limit_and_AVG_and_Ending_Balnce__c</fullName>
+    <externalId>false</externalId>
+    <formula>Average_Balance_BE__c + Average_Balance_Deposit__c + Average_Balance_Loan__c +  Ending_Balance_BE__c + Ending_Balance_Deposit__c + Ending_Balance_Loan__c + Limit_Loan__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sum Limit and AVG and Ending Balnce</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

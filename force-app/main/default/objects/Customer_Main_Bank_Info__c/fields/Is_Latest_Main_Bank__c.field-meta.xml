@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Latest_Main_Bank__c</fullName>
+    <externalId>false</externalId>
+    <formula>Calculation_Date__c =  Customer__r.RMC_Latest_Main_Bank_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Latest Main Bank</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_created_refer_Commercial</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_ReferralOwner__c</columns>
+    <columns>RTL_Owner_Branch__c</columns>
+    <columns>RTL_Owner_Zone__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_IsCreator__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Created Referral</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>CCBO</roleAndSubordinates>
+        <roleAndSubordinates>Product_Team</roleAndSubordinates>
+    </sharedTo>
+</ListView>

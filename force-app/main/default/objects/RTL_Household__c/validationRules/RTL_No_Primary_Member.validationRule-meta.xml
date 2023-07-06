@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_No_Primary_Member</fullName>
+    <active>true</active>
+    <description>Member is Approved without Household/Primary Member Approval</description>
+    <errorConditionFormula>AND((RTL_Number_of_Approved_Primary_Members__c = 0), 
+(RTL_Number_of_Approved_Members__c &gt; 0) 
+)</errorConditionFormula>
+    <errorMessage>Member is Approved without Household/Primary Member Approval</errorMessage>
+</ValidationRule>

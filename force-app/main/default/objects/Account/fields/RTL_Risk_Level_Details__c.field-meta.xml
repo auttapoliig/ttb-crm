@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Risk_Level_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(RTL_Risk_Level__c ,&quot;AC&quot; , &quot;AC – ลูกค้าปกติ&quot;, &quot;A2&quot;, &quot;A2 – ลูกค้าเสี่ยงระดับ 2&quot;,&quot;A3&quot;,&quot;A3 – ลูกค้าเสี่ยงระดับ 3&quot;,&quot;A4&quot;,&quot;A4 – ลูกค้าเสี่ยงระดับ 4 (ชื่อ)&quot;,&quot;S4&quot;,&quot;S4 – ลูกค้าเสี่ยงระดับ 4 (ประเทศ)&quot;,&quot;DC&quot;,&quot;DC – เสียชีวิต&quot;,&quot;FD&quot;,&quot;FD – รอลบรหัสลูกค้า&quot;,&quot;&quot;)</formula>
+    <label>Risk Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

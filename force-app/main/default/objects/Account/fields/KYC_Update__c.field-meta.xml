@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KYC_Update__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(KYC_flag_dwh__c,&quot;Y&quot;),IF( KYC_next_review_date__c-Today() &gt; 30,&quot;อัพเดทล่าสุด &quot; &amp; 
+TEXT(DAY( KYC_last_review_date__c ))&amp; &quot; &quot; &amp; CASE( TEXT(MONTH( KYC_last_review_date__c )) , 
+&apos;1&apos;, &apos;ม.ค.&apos;, 
+&apos;2&apos;, &apos;ก.พ.&apos;, 
+&apos;3&apos;, &apos;มี.ค.&apos;, 
+&apos;4&apos;, &apos;เม.ย.&apos;, 
+&apos;5&apos;, &apos;พ.ค.&apos;, 
+&apos;6&apos;, &apos;มิ.ย.&apos;,
+&apos;7&apos;, &apos;ก.ค&apos;,
+&apos;8&apos;, &apos;ส.ค.&apos;,
+&apos;9&apos;, &apos;ก.ย.&apos;,
+&apos;10&apos;, &apos;ต.ค.&apos;,
+&apos;11&apos;, &apos;พ.ย.&apos;,
+&apos;12&apos;, &apos;ธ.ค.&apos;,&apos;&apos;)
+ &amp; &quot; &quot; &amp;  RIGHT(TEXT(YEAR( KYC_last_review_date__c )+543),2)
+, &quot;ใกล้หมดอายุ &quot; &amp;
+TEXT(DAY( KYC_next_review_date__c ))&amp; &quot; &quot; &amp; CASE( TEXT(MONTH( KYC_next_review_date__c )) , 
+&apos;1&apos;, &apos;ม.ค.&apos;, 
+&apos;2&apos;, &apos;ก.พ.&apos;, 
+&apos;3&apos;, &apos;มี.ค.&apos;, 
+&apos;4&apos;, &apos;เม.ย.&apos;, 
+&apos;5&apos;, &apos;พ.ค.&apos;, 
+&apos;6&apos;, &apos;มิ.ย.&apos;,
+&apos;7&apos;, &apos;ก.ค&apos;,
+&apos;8&apos;, &apos;ส.ค.&apos;,
+&apos;9&apos;, &apos;ก.ย.&apos;,
+&apos;10&apos;, &apos;ต.ค.&apos;,
+&apos;11&apos;, &apos;พ.ย.&apos;,
+&apos;12&apos;, &apos;ธ.ค.&apos;,&apos;&apos;)
+ &amp; &quot; &quot; &amp;  RIGHT(TEXT(YEAR( KYC_next_review_date__c )+543),2)
+),&quot;กรุณาปรับปรุงข้อมูล&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>KYC</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

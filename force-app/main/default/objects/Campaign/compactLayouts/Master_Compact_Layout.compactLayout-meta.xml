@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>RTL_Campaign_Type__c</fields>
+    <fields>RTL_Campaign_Category_child__c</fields>
+    <fields>RTL_Campaign_Objective__c</fields>
+    <fields>RTL_Priority__c</fields>
+    <fields>StartDate</fields>
+    <fields>EndDate</fields>
+    <label>Master Compact Layout</label>
+</CompactLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mouse_Hover_Visit_Report</fullName>
+    <fields>Name</fields>
+    <fields>Visit_Plan_Report__c</fields>
+    <fields>OwnerId</fields>
+    <label>Mouse Hover Visit Report</label>
+</CompactLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all</fullName>
+    <columns>NAME</columns>
+    <columns>BB_StandardFee__c</columns>
+    <columns>CB_StandardFee__c</columns>
+    <columns>ColumnName__c</columns>
+    <columns>Default_StandardFee__c</columns>
+    <columns>DomainName__c</columns>
+    <columns>MB_StandardFee__c</columns>
+    <columns>PercentOfStandardFee__c</columns>
+    <columns>SE_StandardFee__c</columns>
+    <columns>StandardFee__c</columns>
+    <columns>TableName__c</columns>
+    <columns>TypeOfFee__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

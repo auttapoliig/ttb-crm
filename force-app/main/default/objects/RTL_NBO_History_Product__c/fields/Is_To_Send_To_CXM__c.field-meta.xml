@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_To_Send_To_CXM__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND( BEGINS(RTL_Related_NBO__r.RTL_Campaign_Code__c, &apos;R&apos;)
+   ,OR( TEXT(RTL_Status__c) = &apos;Rejected&apos;
+        ,TEXT(RTL_Status__c) = &apos;Accepted&apos;)
+   ,TEXT(LastModifiedBy.RTL_Channel__c) &lt;&gt; &apos;Contact Center&apos;
+),True,False)</formula>
+    <label>Is To Send To CXM</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

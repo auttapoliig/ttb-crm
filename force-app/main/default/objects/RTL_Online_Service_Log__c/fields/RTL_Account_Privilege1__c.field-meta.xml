@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Account_Privilege1__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RTL_Account__c &lt;&gt; null , RTL_Account__r.RTL_Privilege1__c, &apos;&apos;)</formula>
+    <label>Privilege1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

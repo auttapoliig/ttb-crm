@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSS_TOTAL_SHAREHOLDER_EQUITY__c</fullName>
+    <description>TOTAL_SHAREHOLDER_EQUITY</description>
+    <externalId>false</externalId>
+    <inlineHelpText>รวมส่วนของผู้ถือหุ้น</inlineHelpText>
+    <label>Total shareholder equity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

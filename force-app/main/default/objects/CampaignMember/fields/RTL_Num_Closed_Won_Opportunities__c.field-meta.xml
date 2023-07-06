@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Num_Closed_Won_Opportunities__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(RTL_RelatedOpportunity_1__c != null, RTL_RelatedOpportunity_1__r.IsClosed, RTL_RelatedOpportunity_1__r.IsWon), 1,0) + 
+IF( AND(RTL_RelatedOpportunity_2__c != null, RTL_RelatedOpportunity_2__r.IsClosed, RTL_RelatedOpportunity_2__r.IsWon), 1,0) + 
+IF( AND(RTL_RelatedOpportunity_3__c != null, RTL_RelatedOpportunity_3__r.IsClosed, RTL_RelatedOpportunity_3__r.IsWon), 1,0) + 
+IF( AND(RTL_RelatedOpportunity_4__c != null, RTL_RelatedOpportunity_4__r.IsClosed, RTL_RelatedOpportunity_4__r.IsWon), 1,0) + 
+IF( AND(RTL_RelatedOpportunity_5__c != null, RTL_RelatedOpportunity_5__r.IsClosed, RTL_RelatedOpportunity_5__r.IsWon), 1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Num Closed Won Opportunities</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

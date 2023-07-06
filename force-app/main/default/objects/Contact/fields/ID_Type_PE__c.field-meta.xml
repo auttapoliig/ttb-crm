@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID_Type_PE__c</fullName>
+    <externalId>false</externalId>
+    <label>ID Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alien ID</fullName>
+                <default>false</default>
+                <label>Alien ID</label>
+            </value>
+            <value>
+                <fullName>BRN ID</fullName>
+                <default>false</default>
+                <label>BRN ID</label>
+            </value>
+            <value>
+                <fullName>Citizen ID</fullName>
+                <default>false</default>
+                <label>Citizen ID</label>
+            </value>
+            <value>
+                <fullName>Passport ID</fullName>
+                <default>false</default>
+                <label>Passport ID</label>
+            </value>
+            <value>
+                <fullName>Work Permit ID</fullName>
+                <default>false</default>
+                <label>Work Permit ID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

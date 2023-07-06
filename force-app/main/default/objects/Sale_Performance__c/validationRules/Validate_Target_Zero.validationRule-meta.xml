@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Target_Zero</fullName>
+    <active>true</active>
+    <errorConditionFormula>Target_Point__c = 0</errorConditionFormula>
+    <errorMessage>Error: Target point cannot be zero</errorMessage>
+</ValidationRule>

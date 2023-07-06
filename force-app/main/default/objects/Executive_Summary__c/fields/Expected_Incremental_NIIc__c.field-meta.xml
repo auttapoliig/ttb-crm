@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Incremental_NIIc__c</fullName>
+    <description>This Year’s Expected Incremental NIIc</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Expected Incremental NIIc ได้จากการทำ Decision Map and Action Plan ใน Account Plan Step 5</inlineHelpText>
+    <label>Expected Incremental  - NIIc</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Program__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>ชื่อ Product Program (SLS)</inlineHelpText>
+    <label>Host Product Program</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Host_Product_Group__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SmartBiz for Construction</fullName>
+                <default>false</default>
+                <label>SmartBiz for Construction</label>
+            </value>
+            <value>
+                <fullName>OD No Asset</fullName>
+                <default>false</default>
+                <label>OD No Asset</label>
+            </value>
+            <value>
+                <fullName>Retention Pre Approve</fullName>
+                <default>false</default>
+                <label>Retention Pre Approve</label>
+            </value>
+            <value>
+                <fullName>Retention Non Pre Approve</fullName>
+                <default>false</default>
+                <label>Retention Non Pre Approve</label>
+            </value>
+            <value>
+                <fullName>Quick Loan</fullName>
+                <default>false</default>
+                <label>Quick Loan</label>
+            </value>
+            <value>
+                <fullName>NEW IFC</fullName>
+                <default>false</default>
+                <label>NEW IFC</label>
+            </value>
+            <value>
+                <fullName>Excel Test</fullName>
+                <default>false</default>
+                <label>Excel Test</label>
+            </value>
+            <value>
+                <fullName>TMB SME SmartBiz</fullName>
+                <default>false</default>
+                <label>TMB SME SmartBiz</label>
+            </value>
+            <value>
+                <fullName>Top Up Bancassurance</fullName>
+                <default>false</default>
+                <label>Top Up Bancassurance</label>
+            </value>
+            <value>
+                <fullName>F-Cash</fullName>
+                <default>false</default>
+                <label>F-Cash</label>
+            </value>
+            <value>
+                <fullName>ODB</fullName>
+                <default>false</default>
+                <label>ODB</label>
+            </value>
+            <value>
+                <fullName>Factoring</fullName>
+                <default>false</default>
+                <label>Factoring</label>
+            </value>
+            <value>
+                <fullName>SmartBiz E-Commerce</fullName>
+                <default>false</default>
+                <label>SmartBiz E-Commerce</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>SmartBiz for Construction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>TMB SME SmartBiz</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>Top Up Bancassurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>SmartBiz E-Commerce</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>F-Cash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Supply Chain</controllingFieldValue>
+            <valueName>ODB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Supply Chain</controllingFieldValue>
+            <valueName>Factoring</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

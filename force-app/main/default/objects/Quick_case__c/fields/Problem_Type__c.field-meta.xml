@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Problem_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Problem Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Failure - ไม่ได้รับบริการในสิ่งที่ลูกค้าต้องการ</fullName>
+                <default>false</default>
+                <label>Failure - ไม่ได้รับบริการในสิ่งที่ลูกค้าต้องการ</label>
+            </value>
+            <value>
+                <fullName>Delay - ได้รับบริการ แต่ช้า</fullName>
+                <default>false</default>
+                <label>Delay - ได้รับบริการ แต่ช้า</label>
+            </value>
+            <value>
+                <fullName>Quality/Suitability - ได้รับบริการ แต่ลูกค้าขอให้ตรวจสอบ</fullName>
+                <default>false</default>
+                <label>Quality/Suitability - ได้รับบริการ แต่ลูกค้าขอให้ตรวจสอบ</label>
+            </value>
+            <value>
+                <fullName>Quality/Suitability - ได้รับบริการ แต่ลูกค้าไม่พอใจ</fullName>
+                <default>false</default>
+                <label>Quality/Suitability - ได้รับบริการ แต่ลูกค้าไม่พอใจ</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

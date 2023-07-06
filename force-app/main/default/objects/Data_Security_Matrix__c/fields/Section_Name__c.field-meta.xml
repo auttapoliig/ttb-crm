@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Section Name</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ComCust:Account Information</fullName>
+                <default>false</default>
+                <label>ComCust:Account Information</label>
+            </value>
+            <value>
+                <fullName>ComCust:Address Information</fullName>
+                <default>false</default>
+                <label>ComCust:Address Information</label>
+            </value>
+            <value>
+                <fullName>ComCust:Campaign Lead History</fullName>
+                <default>false</default>
+                <label>ComCust:Campaign Lead History</label>
+            </value>
+            <value>
+                <fullName>ComCust:Collateral</fullName>
+                <default>false</default>
+                <label>ComCust:Collateral</label>
+            </value>
+            <value>
+                <fullName>ComCust:Contact Information</fullName>
+                <default>false</default>
+                <label>ComCust:Contact Information</label>
+            </value>
+            <value>
+                <fullName>ComCust:Contacts</fullName>
+                <default>false</default>
+                <label>ComCust:Contacts</label>
+            </value>
+            <value>
+                <fullName>ComCust:Executive Summary/Account Plan</fullName>
+                <default>false</default>
+                <label>ComCust:Executive Summary/Account Plan</label>
+            </value>
+            <value>
+                <fullName>ComCust:Other Information</fullName>
+                <default>false</default>
+                <label>ComCust:Other Information</label>
+            </value>
+            <value>
+                <fullName>ComCust:Performance</fullName>
+                <default>false</default>
+                <label>ComCust:Performance</label>
+            </value>
+            <value>
+                <fullName>ComCust:Pipeline</fullName>
+                <default>false</default>
+                <label>ComCust:Pipeline</label>
+            </value>
+            <value>
+                <fullName>ComCust:Product On Hand</fullName>
+                <default>false</default>
+                <label>ComCust:Product On Hand</label>
+            </value>
+            <value>
+                <fullName>ComCust:Product On Hand (Partition)</fullName>
+                <default>false</default>
+                <label>ComCust:Product On Hand (Partition)</label>
+            </value>
+            <value>
+                <fullName>ComCust:Risk Information</fullName>
+                <default>false</default>
+                <label>ComCust:Risk Information</label>
+            </value>
+            <value>
+                <fullName>ComCust:Wallet</fullName>
+                <default>false</default>
+                <label>ComCust:Wallet</label>
+            </value>
+            <value>
+                <fullName>ComPros:Customer Information</fullName>
+                <default>false</default>
+                <label>ComPros:Customer Information</label>
+            </value>
+            <value>
+                <fullName>ComPros:Customer Source</fullName>
+                <default>false</default>
+                <label>ComPros:Customer Source</label>
+            </value>
+            <value>
+                <fullName>ComPros:Detail Information</fullName>
+                <default>false</default>
+                <label>ComPros:Detail Information</label>
+            </value>
+            <value>
+                <fullName>ComPros:General Information</fullName>
+                <default>false</default>
+                <label>ComPros:General Information</label>
+            </value>
+            <value>
+                <fullName>ComPros:Product Interest</fullName>
+                <default>false</default>
+                <label>ComPros:Product Interest</label>
+            </value>
+            <value>
+                <fullName>ComPros:Re-assignment Customer</fullName>
+                <default>false</default>
+                <label>ComPros:Re-assignment Customer</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Address Information</fullName>
+                <default>false</default>
+                <label>RtlCust:Address Information</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Alternative Contact Information</fullName>
+                <default>false</default>
+                <label>RtlCust:Alternative Contact Information</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Campaign History</fullName>
+                <default>false</default>
+                <label>RtlCust:Campaign History</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Contact Number and Email Address</fullName>
+                <default>false</default>
+                <label>RtlCust:Contact Number and Email Address</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Demographic (High)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Demographic (High)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Demographic (Low)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Demographic (Low)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Demographic (Medium)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Demographic (Medium)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Insight - Personalized Information</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Insight - Personalized Information</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Product Holding (High)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Product Holding (High)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Product Holding (Low)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Product Holding (Low)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Product Holding (Medium)</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Product Holding (Medium)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Relationship</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Relationship</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Customer Relationship Duration</fullName>
+                <default>false</default>
+                <label>RtlCust:Customer Relationship Duration</label>
+            </value>
+            <value>
+                <fullName>RtlCust:MI Benefits</fullName>
+                <default>false</default>
+                <label>RtlCust:MI Benefits</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Sales Support Information</fullName>
+                <default>false</default>
+                <label>RtlCust:Sales Support Information</label>
+            </value>
+            <value>
+                <fullName>RtlCust:WOW Reference ID</fullName>
+                <default>false</default>
+                <label>RtlCust:WOW Reference ID</label>
+            </value>
+            <value>
+                <fullName>ComCust:Income Estimation</fullName>
+                <default>false</default>
+                <label>ComCust:Income Estimation</label>
+            </value>
+            <value>
+                <fullName>ComCust:Payroll Information</fullName>
+                <default>false</default>
+                <label>ComCust:Payroll Information</label>
+            </value>
+            <value>
+                <fullName>CommCust:Customer Product Holding (Low)</fullName>
+                <default>false</default>
+                <label>CommCust:Customer Product Holding (Low)</label>
+            </value>
+            <value>
+                <fullName>CommCust:Customer Product Holding (High)</fullName>
+                <default>false</default>
+                <label>CommCust:Customer Product Holding (High)</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Wealth Customer Relationship</fullName>
+                <default>false</default>
+                <label>RtlCust:Wealth Customer Relationship</label>
+            </value>
+            <value>
+                <fullName>RtlCust:Sales Support Information (Medium)</fullName>
+                <default>false</default>
+                <label>RtlCust:Sales Support Information (Medium)</label>
+            </value>
+            <value>
+                <fullName>ComCust:Product On Hand SBO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ComCust:Product On Hand SBO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

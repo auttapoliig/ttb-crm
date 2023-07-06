@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_dup_opp2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(RTL_Stage__c) = &apos;Invalid (Duplicate Opportunity)&apos;, 
+ISBLANK(RTL_Duplicate_Opportunity__c))</errorConditionFormula>
+    <errorDisplayField>RTL_Duplicate_Opportunity__c</errorDisplayField>
+    <errorMessage>Please select &quot;Duplicate Opportunity&quot;</errorMessage>
+</ValidationRule>

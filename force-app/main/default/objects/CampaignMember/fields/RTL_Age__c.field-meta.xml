@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Age__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LeadId==null,Text(Contact.Account.RTL_Age__c),
+CASE(TEXT ( Lead.RTL_Age__c ),
+&quot;&lt;= 21 years&quot;, $Label.RTL_Age_Low_21,
+&quot;22 – 26 years&quot;, $Label.RTL_Age_22_To_26,
+&quot;27 – 40 years&quot;, $Label.RTL_Age_27_To_40,
+&quot;41 – 60 years&quot;, $Label.RTL_Age_41_To_60,
+&quot;&gt; 60 years&quot;, $Label.RTL_Age_Up_60,TEXT ( Lead.RTL_Age__c )))</formula>
+    <label>Age</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

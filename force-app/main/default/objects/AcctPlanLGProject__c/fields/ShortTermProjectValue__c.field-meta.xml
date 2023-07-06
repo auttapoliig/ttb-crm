@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShortTermProjectValue__c</fullName>
+    <description>Project value - Short Term Project ซึ่งหมายถึง project ที่มีอายุสั้นกว่า 1 ปี</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Project value - Short Term Project ซึ่งหมายถึง project ที่มีอายุสั้นกว่า 1 ปี</inlineHelpText>
+    <label>ShortTermProjectValue</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

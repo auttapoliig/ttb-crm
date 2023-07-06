@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoOfTransaction__c</fullName>
+    <description>จำนวนธุรกรรมต่อ 1 เดือน สำหรับวิธีการรับเงินแต่ละประเภท</description>
+    <externalId>false</externalId>
+    <inlineHelpText>จำนวนธุรกรรมต่อ 1 เดือน สำหรับวิธีการรับเงินแต่ละประเภท</inlineHelpText>
+    <label>No. of transactions (Average per Month)</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

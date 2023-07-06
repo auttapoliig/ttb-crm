@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Birthday__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(TEXT(RTL_Date_Of_Birth__c) &lt;&gt; &quot;&quot;,
+
+CASE(
+
+MOD( RTL_Date_Of_Birth__c - DATE( 1900, 1, 7 ), 7 ),
+
+0, &quot;วันอาทิตย์&quot;,
+
+1, &quot;วันจันทร์&quot;,
+
+2, &quot;วันอังคาร&quot;,
+
+3, &quot;วันพุธ&quot;,
+
+4, &quot;วันพฤหัสบดี&quot;,
+
+5, &quot;วันศุกร์&quot;,
+
+&quot;วันเสาร์&quot;
+
+),&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Birthday</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

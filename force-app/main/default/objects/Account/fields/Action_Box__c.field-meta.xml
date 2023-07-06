@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Box__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(KYC_flag_dwh__c,&quot;N&quot;) &amp;&amp; (IAL_level__c = &quot;No&quot; ||IAL_level__c = &quot;2.1&quot;||IAL_level__c = &quot;2.2&quot;),&quot;ดำเนินการปรับปรุงข้อมูลลูกค้าบน touch หรือ web3270 + ควรขอ Dip Chip + ถ่ายรูปลูกค้ายืนยันตัวตนใหม่&quot;,
+IF(ISPICKVAL(KYC_flag_dwh__c,&quot;Y&quot;) &amp;&amp; (IAL_level__c = &quot;No&quot; ||IAL_level__c = &quot;2.1&quot;||IAL_level__c = &quot;2.2&quot;),&quot;ดำเนินการขอ Dip Chip + ถ่ายรูปลูกค้ายืนยันตัวตนใหม่&quot;,
+IF(ISPICKVAL(KYC_flag_dwh__c,&quot;N&quot;) || (ISPICKVAL(KYC_flag_dwh__c,&quot;Y&quot;)&amp;&amp; KYC_next_review_date__c-Today() &lt;= 30) , &quot;ดำเนินการปรับปรุงข้อมูลลูกค้าบน touch หรือ web3270&quot;,&quot;&quot; )))</formula>
+    <label>Action Box</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

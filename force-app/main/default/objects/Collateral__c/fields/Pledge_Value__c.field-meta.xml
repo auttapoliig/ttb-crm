@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pledge_Value__c</fullName>
+    <externalId>false</externalId>
+    <label>Pledge Value</label>
+    <summarizedField>Collateral_Detail__c.Pledge_Value__c</summarizedField>
+    <summaryForeignKey>Collateral_Detail__c.Collateral__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

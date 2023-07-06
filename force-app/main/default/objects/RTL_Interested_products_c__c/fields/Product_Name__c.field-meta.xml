@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Product Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>RTL_product_master__c.Product_Group__c</field>
+            <operation>notEqual</operation>
+            <value>Loan Retention</value>
+        </filterItems>
+        <filterItems>
+            <field>RTL_product_master__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>RTL_product_master__c</referenceTo>
+    <relationshipLabel>Interested Products</relationshipLabel>
+    <relationshipName>Interested_Products</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

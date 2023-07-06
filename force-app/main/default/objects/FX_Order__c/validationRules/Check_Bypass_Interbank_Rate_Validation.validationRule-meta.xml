@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Bypass_Interbank_Rate_Validation</fullName>
+    <active>true</active>
+    <description>To check Bypass Interbank Rate Validation 
+
+If bank buy show warning if customer rate is more than interbank rate.
+If bank sale show warning if customer rate is less than interbank rate.</description>
+    <errorConditionFormula>IF(FXO_Bypass_InterbankRate__c = false, 
+    OR (AND(ISPICKVAL(FXO_BuySell__c, &quot;Buy&quot;) , FXO_CustomerRate__c &gt; FXO_InterbankRate__c ) , 
+          AND(ISPICKVAL(FXO_BuySell__c, &quot;Sell&quot;) , FXO_CustomerRate__c &lt; FXO_InterbankRate__c )
+          ), 
+    FALSE
+   )</errorConditionFormula>
+    <errorMessage>Interbank rate against Customer Rate is unusual. Please correct the Interbank Rate or select Bypass Interbank Rate Validation if Interbank Rate is already correct.</errorMessage>
+</ValidationRule>

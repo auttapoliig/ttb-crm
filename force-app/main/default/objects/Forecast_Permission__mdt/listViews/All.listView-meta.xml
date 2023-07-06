@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>My_Account_Team_Accessibility__c</columns>
+    <columns>My_Customer_Accessibility__c</columns>
+    <columns>My_Team_Accessibility__c</columns>
+    <columns>My_Team_Account_Team_Accessibility__c</columns>
+    <columns>Profile_Name__c</columns>
+    <columns>Role__c</columns>
+    <columns>Select_Team_Accessibility__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

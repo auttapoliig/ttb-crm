@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Refer Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sell (เพื่อนำเสนอขาย)</fullName>
+                <default>false</default>
+                <label>Sell (เพื่อนำเสนอขาย)</label>
+            </value>
+            <value>
+                <fullName>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</fullName>
+                <default>false</default>
+                <label>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</label>
+            </value>
+            <value>
+                <fullName>Collect Document</fullName>
+                <default>false</default>
+                <label>Collect Document</label>
+            </value>
+            <value>
+                <fullName>Meeting at branch (สาขารอต้อนรับ)</fullName>
+                <default>false</default>
+                <label>Meeting at branch (สาขารอต้อนรับ)</label>
+            </value>
+            <value>
+                <fullName>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</fullName>
+                <default>false</default>
+                <label>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</label>
+            </value>
+            <value>
+                <fullName>Introduction call (สาขาโทรสร้างความสัมพันธ์)</fullName>
+                <default>false</default>
+                <label>Introduction call (สาขาโทรสร้างความสัมพันธ์)</label>
+            </value>
+            <value>
+                <fullName>เพื่อติดต่อกลับ</fullName>
+                <default>false</default>
+                <label>เพื่อติดต่อกลับ</label>
+            </value>
+            <value>
+                <fullName>To Product Team (เพื่อส่งให้ทีม Product)</fullName>
+                <default>false</default>
+                <label>To Product Team (เพื่อส่งให้ทีม Product)</label>
+            </value>
+            <value>
+                <fullName>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</fullName>
+                <default>false</default>
+                <label>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</label>
+            </value>
+            <value>
+                <fullName>Service (เพื่อทำรายการ)</fullName>
+                <default>false</default>
+                <label>Service (เพื่อทำรายการ)</label>
+            </value>
+            <value>
+                <fullName>For System Only</fullName>
+                <default>false</default>
+                <label>For System Only</label>
+            </value>
+            <value>
+                <fullName>DM Lead (โทรนัดหมายเพื่อการขาย)</fullName>
+                <default>false</default>
+                <label>DM Lead (โทรนัดหมายเพื่อการขาย)</label>
+            </value>
+            <value>
+                <fullName>Drop Lead (โทรนัดหมายเพื่อการขาย)</fullName>
+                <default>false</default>
+                <label>Drop Lead (โทรนัดหมายเพื่อการขาย)</label>
+            </value>
+            <value>
+                <fullName>Service (เพื่อให้บริการ)</fullName>
+                <default>false</default>
+                <label>Service (เพื่อให้บริการ)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

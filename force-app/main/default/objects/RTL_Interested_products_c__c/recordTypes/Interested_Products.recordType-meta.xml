@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interested_Products</fullName>
+    <active>true</active>
+    <label>Interested Products</label>
+    <picklistValues>
+        <picklist>Unqualified_Reason__c</picklist>
+        <values>
+            <fullName>CM - Dissatisfaction with bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel - inconvenient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualif%2E - bank condition%2Fpolicy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Fee and Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMB - reputation concern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

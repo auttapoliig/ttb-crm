@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Prod_Name_Credit_Facility__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>ชื่อ Credit Facility (SLS)</inlineHelpText>
+    <label>Host Prod Name/Credit Facility</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Program__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan - Core WC</fullName>
+                <default>false</default>
+                <label>Loan - Core WC</label>
+            </value>
+            <value>
+                <fullName>Loan - Quick Loan 10%</fullName>
+                <default>false</default>
+                <label>Loan - Quick Loan 10%</label>
+            </value>
+            <value>
+                <fullName>Loan - Quick Loan 15%</fullName>
+                <default>false</default>
+                <label>Loan - Quick Loan 15%</label>
+            </value>
+            <value>
+                <fullName>Loan - Land</fullName>
+                <default>false</default>
+                <label>Loan - Land</label>
+            </value>
+            <value>
+                <fullName>Loan - Construction</fullName>
+                <default>false</default>
+                <label>Loan - Construction</label>
+            </value>
+            <value>
+                <fullName>Loan - Machine</fullName>
+                <default>false</default>
+                <label>Loan - Machine</label>
+            </value>
+            <value>
+                <fullName>OD</fullName>
+                <default>false</default>
+                <label>OD</label>
+            </value>
+            <value>
+                <fullName>L/G Utility</fullName>
+                <default>false</default>
+                <label>L/G Utility</label>
+            </value>
+            <value>
+                <fullName>L/G Lending Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Lending Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Credit Purchasing Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Credit Purchasing Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Performance Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Performance Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Advance Payment Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Advance Payment Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Retention Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Retention Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Tax/Duty Guarantee</fullName>
+                <default>false</default>
+                <label>L/G Tax/Duty Guarantee</label>
+            </value>
+            <value>
+                <fullName>L/G Tender Guarantee/Bid Bond</fullName>
+                <default>false</default>
+                <label>L/G Tender Guarantee/Bid Bond</label>
+            </value>
+            <value>
+                <fullName>L/G Other</fullName>
+                <default>false</default>
+                <label>L/G Other</label>
+            </value>
+            <value>
+                <fullName>AVAL</fullName>
+                <default>false</default>
+                <label>AVAL</label>
+            </value>
+            <value>
+                <fullName>ACCEPTANCE</fullName>
+                <default>false</default>
+                <label>ACCEPTANCE</label>
+            </value>
+            <value>
+                <fullName>F/X - FORWARD</fullName>
+                <default>false</default>
+                <label>F/X - FORWARD</label>
+            </value>
+            <value>
+                <fullName>L/C Loan one time</fullName>
+                <default>false</default>
+                <label>L/C Loan one time</label>
+            </value>
+            <value>
+                <fullName>Fleet Card</fullName>
+                <default>false</default>
+                <label>Fleet Card</label>
+            </value>
+            <value>
+                <fullName>OBOD</fullName>
+                <default>false</default>
+                <label>OBOD</label>
+            </value>
+            <value>
+                <fullName>Excel Test</fullName>
+                <default>false</default>
+                <label>Excel Test</label>
+            </value>
+            <value>
+                <fullName>COMMERCIAL LOANS</fullName>
+                <default>false</default>
+                <label>COMMERCIAL LOANS</label>
+            </value>
+            <value>
+                <fullName>OD for Floating Charge</fullName>
+                <default>false</default>
+                <label>OD for Floating Charge</label>
+            </value>
+            <value>
+                <fullName>Loan - General</fullName>
+                <default>false</default>
+                <label>Loan - General</label>
+            </value>
+            <value>
+                <fullName>Loan - Special (GSB)</fullName>
+                <default>false</default>
+                <label>Loan - Special (GSB)</label>
+            </value>
+            <value>
+                <fullName>Top-up for Refinance cost</fullName>
+                <default>false</default>
+                <label>Top-up for Refinance cost</label>
+            </value>
+            <value>
+                <fullName>OD for Growth</fullName>
+                <default>false</default>
+                <label>OD for Growth</label>
+            </value>
+            <value>
+                <fullName>UNSECURED LOAN</fullName>
+                <default>false</default>
+                <label>UNSECURED LOAN</label>
+            </value>
+            <value>
+                <fullName>MACHINERY LOAN</fullName>
+                <default>false</default>
+                <label>MACHINERY LOAN</label>
+            </value>
+            <value>
+                <fullName>ODB - Clean</fullName>
+                <default>false</default>
+                <label>ODB - Clean</label>
+            </value>
+            <value>
+                <fullName>Factoring - Accepted invoice</fullName>
+                <default>false</default>
+                <label>Factoring - Accepted invoice</label>
+            </value>
+            <value>
+                <fullName>Factoring - Confirm Payment</fullName>
+                <default>false</default>
+                <label>Factoring - Confirm Payment</label>
+            </value>
+            <value>
+                <fullName>Lazada - Loan WC</fullName>
+                <default>false</default>
+                <label>Lazada - Loan WC</label>
+            </value>
+            <value>
+                <fullName>Lazada - Loan Event</fullName>
+                <default>false</default>
+                <label>Lazada - Loan Event</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>ODB</controllingFieldValue>
+            <valueName>ODB - Clean</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring</controllingFieldValue>
+            <valueName>Factoring - Accepted invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring</controllingFieldValue>
+            <valueName>Factoring - Confirm Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz E-Commerce</controllingFieldValue>
+            <valueName>Lazada - Loan WC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz E-Commerce</controllingFieldValue>
+            <valueName>Lazada - Loan Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <valueName>Loan - Land</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <valueName>Loan - Construction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <valueName>Loan - Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>F/X - FORWARD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <valueName>L/C Loan one time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>OD No Asset</controllingFieldValue>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Quick Loan</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>Fleet Card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>OD No Asset</controllingFieldValue>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Quick Loan</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>OBOD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>NEW IFC</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <valueName>OD for Floating Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <valueName>Loan - Special (GSB)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <valueName>OD for Growth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <valueName>UNSECURED LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SmartBiz for Construction</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <valueName>MACHINERY LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OD No Asset</controllingFieldValue>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>NEW IFC</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>OD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>Loan - Core WC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention Pre Approve</controllingFieldValue>
+            <controllingFieldValue>Retention Non Pre Approve</controllingFieldValue>
+            <controllingFieldValue>NEW IFC</controllingFieldValue>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>Top Up Bancassurance</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>Loan - General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quick Loan</controllingFieldValue>
+            <valueName>Loan - Quick Loan 10%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quick Loan</controllingFieldValue>
+            <valueName>Loan - Quick Loan 15%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Excel Test</controllingFieldValue>
+            <valueName>Excel Test</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Utility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Lending Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Credit Purchasing Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Performance Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Advance Payment Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Retention Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Tax/Duty Guarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Tender Guarantee/Bid Bond</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>L/G Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>AVAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>ACCEPTANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMB SME SmartBiz</controllingFieldValue>
+            <valueName>Top-up for Refinance cost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>F-Cash</controllingFieldValue>
+            <valueName>COMMERCIAL LOANS</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

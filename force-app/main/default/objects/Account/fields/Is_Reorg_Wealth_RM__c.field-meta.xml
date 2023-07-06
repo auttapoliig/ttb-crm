@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Reorg_Wealth_RM__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+RTL_RM_Name__c &lt;&gt; NULL
+,RTL_RM_Name__c &lt;&gt; &apos;00000&apos;
+,BEGINS( RTL_RM_Name__c, &quot;00&quot;)
+,RTL_Wealth_RM__r.RTL_Branch_Code__c &lt;&gt; NULL
+, OR(RTL_Wealth_RM__r.RTL_Branch_Code__c &lt;&gt; RIGHT(RTL_RM_Name__c, 3),
+NOT(BEGINS( RTL_Wealth_RM__r.Title, &quot;Branch Manager&quot;)) )
+)</formula>
+    <label>Is Reorg Wealth RM</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

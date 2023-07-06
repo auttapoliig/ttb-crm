@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_My_BRC_Cust__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(RTL_Assigned_BRC__c &lt;&gt; NULL, $User.Employee_ID__c &lt;&gt; NULL), RTL_Assigned_BRC__r.Employee_ID__c = $User.Employee_ID__c, false)</formula>
+    <label>Check My BRC Cust</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

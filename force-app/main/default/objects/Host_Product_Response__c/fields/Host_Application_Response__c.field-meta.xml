@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Application_Response__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>หมายเลข Application Response</inlineHelpText>
+    <label>Host Application Response</label>
+    <referenceTo>Host_Application_Response__c</referenceTo>
+    <relationshipLabel>Host Product Response</relationshipLabel>
+    <relationshipName>Host_Product_Response</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Activity_Target</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordType.DeveloperName  = &apos;Activities_Target&apos;,OR(ISBLANK( Monthly_Target_Date__c ),ISBLANK( Owner:User.Employee_ID__c ),ISBLANK( Owner:User.Zone_Code__c )))</errorConditionFormula>
+    <errorMessage>Please input all of mandatory fields: Monthly Target Date,Owner Employee ID,Owner Zone Code</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Is_PWA_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(RTL_RM_Name__c &lt;&gt; NULL, $User.Employee_ID__c &lt;&gt; NULL, RTL_RM_Name__c &lt;&gt; &quot;00000&quot;), RTL_RM_Name__c = $User.Employee_ID__c, False)</formula>
+    <label>Is PWA Owner</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

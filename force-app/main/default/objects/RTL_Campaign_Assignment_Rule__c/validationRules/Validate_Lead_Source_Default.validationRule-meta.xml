@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Lead_Source_Default</fullName>
+    <active>true</active>
+    <description>For Validate Lead Source is default and others fields is not null.</description>
+    <errorConditionFormula>AND(ISPICKVAL(LeadSource__c, &apos;Default&apos;), OR(NOT(ISBLANK(RTL_Customer_Segment__c)), NOT(ISBLANK(RTL_TMB_Campaign_Reference__c)), NOT(ISBLANK(RTL_Campaign_Lead_Source__c))))</errorConditionFormula>
+    <errorMessage>การ Set Default Campaign Rule ค่า Lead Source จะเท่ากับ Default และค่าของฟิลด์ Campaign Lead Source, Campaign Lead Reference และ Lead Group จะต้องเป็นค่าว่างเท่านั้น!</errorMessage>
+</ValidationRule>

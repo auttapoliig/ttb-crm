@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SB1_ZM_Pratumwan_Mail</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_MONTHS:6</value>
+    </filters>
+    <label>SB1 ZM Pratumwan Mail</label>
+    <language>en_US</language>
+    <queue>SB1_ZM_Pratumwan_Mail</queue>
+    <sharedTo>
+        <group>SB1_ZM_Pratumwan_Mail</group>
+    </sharedTo>
+</ListView>

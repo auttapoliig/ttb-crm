@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Work_Order</fullName>
+    <active>true</active>
+    <label>Closed Work Order</label>
+    <picklistValues>
+        <picklist>Account_Number__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Type__c</picklist>
+        <values>
+            <fullName>E-mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kerry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Paper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Registered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Messenger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post %E2%80%93 EMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post %E2%80%93 Normal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post %E2%80%93 Register</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loan_Model__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Messenger_Name__c</picklist>
+        <values>
+            <fullName>Pivot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UINFO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type__c</picklist>
+        <values>
+            <fullName>ร%E0%B8%B1บอย%E0%B9%88างเด%E0%B8%B5ยว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88ง-ร%E0%B8%B1บ</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งอย%E0%B9%88างเด%E0%B8%B5ยว</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prefer_Address__c</picklist>
+        <values>
+            <fullName>Office Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Address</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prefer_Phone__c</picklist>
+        <values>
+            <fullName>Alternative Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Principle__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tenure__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Top_Up_Loan_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Verify__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Order_Status__c</picklist>
+        <values>
+            <fullName>App Received Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up Document</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receive Doc from Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received App from Operation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send App to Operation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send app to customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send back to Messenger</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

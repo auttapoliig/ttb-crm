@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Status__c</fullName>
+    <description>0. all product has no status --&gt; Contact Center
+1. No product --&gt; Invalid
+2. All Accepted --&gt; Accepted All
+3. All Rejected --&gt; Rejected All
+4. All New --&gt; New
+5. All Pending --&gt; Pending
+6. All Invalid --&gt; Invalid
+7. Some Accepted --&gt; Accepted Some
+8. Some Rejected, no Accepted --&gt; Rejected Some
+9. Some Pending, no Accepted/Rejected --&gt; Pending
+10. Some New, no Accepted/Rejected/Pending --&gt; New
+11. Other scenarios --&gt; New</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(NOT(ISBLANK(RTL_Result_Business__c)), RTL_Number_of_No_Status_NBO__c =  RTL_Number_of_Products__c ),
+$Label.RTL_NBO_Status_ContactCenter
+,
+IF(RTL_Number_of_Products__c == 0,  $Label.RTL_NBO_Status_Invalid , 
+IF(RTL_Number_of_Products__c ==  RTL_Number_of_Accepted_NBO__c,  $Label.RTL_NBO_Status_Accepted_All , 
+IF(RTL_Number_of_Products__c ==  RTL_Number_of_Rejected_NBO__c, $Label.RTL_NBO_Status_Rejected_All, 
+IF(RTL_Number_of_Products__c ==  RTL_Number_of_New_NBO__c, $Label.RTL_NBO_Status_New, 
+IF(RTL_Number_of_Products__c ==  RTL_Number_of_Pending_NBO__c, $Label.RTL_NBO_Status_Pending, 
+IF(RTL_Number_of_Products__c ==  RTL_Number_of_Invalid_NBO__c , $Label.RTL_NBO_Status_Invalid, 
+IF(and(RTL_Number_of_Accepted_NBO__c &gt; 0, RTL_Number_of_Invalid_NBO__c == 0), $Label.RTL_NBO_Status_Accepted_Some,
+IF(RTL_Number_of_Accepted_NBO__c &gt; 0, $Label.RTL_NBO_Status_Accepted_All,
+IF(and(RTL_Number_of_Rejected_NBO__c &gt; 0, RTL_Number_of_Invalid_NBO__c == 0), $Label.RTL_NBO_Status_Rejected_Some,
+IF(RTL_Number_of_Rejected_NBO__c &gt; 0, $Label.RTL_NBO_Status_Rejected_All,  
+IF(RTL_Number_of_Pending_NBO__c &gt; 0, $Label.RTL_NBO_Status_Pending,
+IF(RTL_Number_of_New_NBO__c &gt; 0 , $Label.RTL_NBO_Status_New, $Label.RTL_NBO_Status_New) ) ) ) ) ) ) ) ) ) ) ) )</formula>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

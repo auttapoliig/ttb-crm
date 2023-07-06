@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SharePercentBank3__c</fullName>
+    <description>%share-Bank3</description>
+    <externalId>false</externalId>
+    <inlineHelpText>%share-Bank3</inlineHelpText>
+    <label>%share-[Bank3]</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

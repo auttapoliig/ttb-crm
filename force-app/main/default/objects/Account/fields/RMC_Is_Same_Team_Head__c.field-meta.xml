@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMC_Is_Same_Team_Head__c</fullName>
+    <externalId>false</externalId>
+    <formula>$User.RMC_PWA_Team_Head__c =  RTL_Wealth_RM__r.RMC_PWA_Team_Head__c</formula>
+    <label>Is Same Team Head</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

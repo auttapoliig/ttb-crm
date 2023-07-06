@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <submitter>Head_of_Capital_Market_Products</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>auto approved if segment is SE or BB</description>
+        <entryCriteria>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteriaItems>
+                <field>E_Client_Suitability__c.CS_Stamped_Customer_Segment__c</field>
+                <operation>equals</operation>
+                <value>CB</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>E_Client_Suitability__c.CS_Stamped_Customer_Segment__c</field>
+                <operation>equals</operation>
+                <value>MB</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>E_Client_Suitability__c.CS_Stamped_Customer_Segment__c</field>
+                <operation>equals</operation>
+                <value>FI</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>FormB auto approved</label>
+        <name>FormB_auto_approved</name>
+    </approvalStep>
+    <description>auto update if segment is SE or BB</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( CS_Sales_Owner__r.Reporting_Segment__c   =  $User.Reporting_Segment__c , 
+OR( (CS_Stamped_Customer_Segment__c = &quot;SE&quot;),( CS_Stamped_Customer_Segment__c = &quot;BB&quot;) ), 
+OR( ISPICKVAL( CS_Status__c , &quot;Pending Sales&quot;), 
+ISPICKVAL( CS_Status__c , &quot;Sales TH Rejected&quot;) ), 
+ISPICKVAL( CS_Customer_Survey_B__r.Status__c , &quot;Ready for Review&quot;) 
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Auto_stamp_approver_formB</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Auto_update_record_type_to_completed</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Auto_update_status_to_Completed</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Sale_TH_Approve_Date_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Initial_auto_Completed</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Sale_Submit_Date_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Summitter_Name</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>FormB segment SE and BB approval</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>4</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

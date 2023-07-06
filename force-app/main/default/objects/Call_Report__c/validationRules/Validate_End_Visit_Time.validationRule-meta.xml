@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_End_Visit_Time</fullName>
+    <active>true</active>
+    <description>New implemented as of R7</description>
+    <errorConditionFormula>IF(VALUE(LEFT( TEXT(End_Visit_Time__c) ,  LEN( TEXT(End_Visit_Time__c) )-3 )) &lt; VALUE(LEFT(TEXT(Start_Visit_Time__c),  LEN( TEXT(Start_Visit_Time__c) )-3 )), true, 
+
+
+ IF(  AND(LEFT(TEXT(Start_Visit_Time__c),  LEN( TEXT(Start_Visit_Time__c) )-3 )= LEFT( TEXT(End_Visit_Time__c) ,  LEN( TEXT(End_Visit_Time__c) )-3 ), 
+
+AND( RIGHT( TEXT(End_Visit_Time__c) , 2)=&quot;00&quot; ,RIGHT( TEXT(Start_Visit_Time__c) , 2)=&quot;30&quot;) )  , true, 
+
+
+false)  )</errorConditionFormula>
+    <errorDisplayField>End_Visit_Time__c</errorDisplayField>
+    <errorMessage>End Visit Time must not be earlier than Start Visit Time</errorMessage>
+</ValidationRule>

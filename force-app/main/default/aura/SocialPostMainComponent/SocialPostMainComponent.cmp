@@ -1,0 +1,124 @@
+<aura:component controller="SocialPostMainComponentController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable,force:lightningQuickAction,flexipage:availableForRecordHome" access="global">
+  <aura:attribute name="message" type="String" />
+  <aura:attribute name="originalMessage" type="String" />
+  <aura:attribute name="selectedOption" type="String" />
+  <aura:attribute name="selectedOptionName" type="String" />
+  <aura:attribute name="replyName" type="String" />
+  <aura:attribute name="options" type="List" />
+  <aura:attribute name="isModalOpen" type="boolean" default="false" />
+  <aura:attribute name="isRejectModalOpen" type="boolean" default="false" />
+  <aura:attribute name="isDisableInput" type="boolean" default="true" />
+  <aura:attribute name="isClosed" type="boolean" default="true" />
+  <!-- STREAMING API FOR TRASNSFER -->
+  <lightning:empApi aura:id="empApi"/>
+  <aura:attribute name="postSubscription" type="Map" />
+  <!-- STREAMING API FOR TRASNSFER -->
+  <lightning:workspaceAPI aura:id="workspace" />
+  <aura:handler event="lightning:tabRefreshed" action="{!c.doInit}"/>
+  <aura:handler event="lightning:tabFocused" action="{!c.doInit}"/>
+  <!-- FOR REJECT -->
+  <aura:attribute name="picklistValues" type="List" default="[]" />
+  <aura:attribute name="selectedRejectOption" type="String" default="" />
+  <aura:attribute name="otherOption" type="Boolean" default="false" />
+  <aura:attribute name="rejectComment" type="String" default="" />
+  
+  <aura:attribute name="isLoading" type="boolean" default="false" />
+
+  <lightning:spinner variant="brand" alternativeText="Loading..." class="{!(v.isLoading ? 'slds-show': 'slds-hide')}" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:handler event="force:refreshView" action="{!c.doInit}" />
+  <ltng:require styles="{!$Resource.iigproduct_2__toastMultipleLine}" />
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <div class="slds-form-element">
+            <label class="slds-form-element__label">Original Message</label>
+            <div class="slds-input" style="background-color: #f3f3f3">
+              <lightning:formattedRichText value="{!v.originalMessage}"/>
+            </div>
+          </div>
+
+          <aura:if isTrue="{!v.isClosed}">
+            <!-- TRUE -->
+            <lightning:select aura:id="field" value="{!v.selectedOption}" name="selectAccount" label="Account" required="true" onchange="{!c.handleChange}" disabled="{!v.isDisableInput}">
+              <option label="Select account for reply" value=""></option>
+              <aura:iteration items="{!v.options}" var="o" indexVar="index">
+                <option text="{!o.name}" selected="{!o.id == v.selectedOption}" value="{!o.id}" />
+              </aura:iteration>
+            </lightning:select>
+            <lightning:textarea aura:id="field" name="Message" value="{!v.message}" label="Message" placeholder="พิมพ์ข้อความตอบกลับ" required="true" disabled="{!v.isDisableInput}" />
+            <!-- END OF TRUE -->
+            <aura:set attribute="else">
+            <!-- FALSE -->
+            <lightning:select aura:id="reply" name="displayAccount" label="Account" disabled="{!v.isDisableInput}">
+              <option label="{!v.replyName}" value="{!v.replyName}"></option>
+            </lightning:select>
+            <lightning:textarea name="Message" value="{!v.message}" label="Message" placeholder="พิมพ์ข้อความตอบกลับ" disabled="{!v.isDisableInput}" />
+            <!-- END OF FALSE -->
+            </aura:set>
+          </aura:if> 
+
+          <button class="slds-button slds-button_brand slds-float_right slds-m-left_x-small" padding="horizontal-large" alignment-bump="right" onclick="{!c.handleClick}" disabled="{!v.isDisableInput}">Reply</button>
+          <button class="slds-button slds-button_destructive slds-float_right slds-m-left_x-small" padding="horizontal-large" alignment-bump="right" onclick="{!c.handleReject}" disabled="{!v.isDisableInput}">Reject</button>
+        </div>
+      </header>
+    </div>
+  </article>
+
+  <aura:if isTrue="{!v.isModalOpen}">
+    <!-- Modal/Popup Box starts here-->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <!-- Modal/Popup Box Header Starts here-->
+        <header class="slds-modal__header">
+          <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeModel}" alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+          <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Confirmation</h2>
+        </header>
+        <!--Modal/Popup Box Body Starts here-->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+          <p>ยืนยันตอบกลับข้อความ</p>
+          <p><b style="white-space: break-spaces;">{!v.message}</b></p>
+          <p>ด้วยบัญชี <b>{!v.selectedOptionName}</b></p>
+        </div>
+        <!--Modal/Popup Box Footer Starts here-->
+        <footer class="slds-modal__footer">
+          <lightning:button variant="neutral" label="ยกเลิก" title="ยกเลิก" onclick="{!c.closeModel}" />
+          <lightning:button variant="brand" label="ตกลง" title="ตกลง" onclick="{!c.replyMessageToWarroom}" />
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+
+  <aura:if isTrue="{!v.isRejectModalOpen}">
+    <!-- Modal/Popup Box starts here-->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+
+        <header class="slds-modal__header">
+          <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeRejectModel}" alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+          <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Reject Post</h2>
+        </header>
+        <!--Modal/Popup Box Body Starts here-->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+            <lightning:select aura:id="reason" label="Reject Reason" value="{!v.selectedRejectOption}" onchange="{!c.handleSelectChange}" required="true">
+                <option value="">--- Select Reject Reason ---</option>
+                <aura:iteration items="{!v.picklistValues}" var="option">
+                    <option value="{!option}">{!option}</option>
+                </aura:iteration>
+            </lightning:select>
+            <lightning:textarea aura:id="comment" value="{!v.rejectComment}" label="Reject Comment" placeholder="Enter Comment..." required="{!v.otherOption}" />
+        </div>
+        <!--Modal/Popup Box Footer Starts here-->
+        <footer class="slds-modal__footer">
+          <lightning:button variant="neutral" label="ยกเลิก" title="ยกเลิก" onclick="{!c.closeRejectModel}" />
+          <lightning:button variant="brand" label="ตกลง" title="ตกลง" onclick="{!c.handleRejectPost}" />
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+
+</aura:component>

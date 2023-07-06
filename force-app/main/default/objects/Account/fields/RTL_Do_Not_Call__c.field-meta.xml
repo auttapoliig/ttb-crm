@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Do_Not_Call__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RTL_Do_not_Contact_Count__c &gt; 0,IMAGE(&quot;/resource/1603853835000/Red_Block&quot;, &quot;Red&quot;, 30,100),IMAGE(&quot;/resource/1603853791000/Green_Block&quot;, &quot;Green&quot;, 30,100))</formula>
+    <label>Do Not Call</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reason_2__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason of Not Interested-2</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Product_Group_2__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>RTL_Reason_NotInterested</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Already used with other bank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>Business partner - reputation / bad experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Channel - inconvenient</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>CM - Just Open/Fully reduce TAX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>CM - Bad experience with Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>CM - No purchasing power</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>CM - Online security concerns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>CM - Refuse since beginning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>CM - Risk concern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Marketing - NOT attractive promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Process - Complicated application &amp; approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <valueName>Product - Feature</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>Product - Protection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>Product - Not attractive Return, NAV, Dividend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>ttb - reputation concern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Product - Credit Limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Product - Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - Income</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <valueName>Product - Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Marketing - Competitor offer better promotion.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>Product - Too high Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - Business experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - Quarantee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - Financial statement(NCB)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - Occupation/Business Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>Disqualif. - Bank condition/policy - location</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>CM - No need</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>CM - Adequate product holding</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

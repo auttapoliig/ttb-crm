@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Order__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Product_Group__c,&quot;Import Fee&quot;,1,&quot;Import Volume&quot;,1,&quot;Export Fee&quot;,2,&quot;Export Volume&quot;,2,&quot;Other&quot;,3,9)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Order</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

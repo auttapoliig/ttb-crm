@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_cannot_change_category_when_approved</fullName>
+    <active>true</active>
+    <description>Preventing change category if the campaign has approved</description>
+    <errorConditionFormula>AND(Contains(RecordType.Name, &apos;Master Campaign&apos;), 
+     Approvedflag__c = true,  
+     ISCHANGED( RTL_Category__c ) )</errorConditionFormula>
+    <errorDisplayField>RTL_Category__c</errorDisplayField>
+    <errorMessage>Campaign category can not be changed after approved.</errorMessage>
+</ValidationRule>

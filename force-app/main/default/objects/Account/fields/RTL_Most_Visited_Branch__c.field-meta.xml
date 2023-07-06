@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Most_Visited_Branch__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CR wealth RM Info , stamp most visited branch from OSC07</description>
+    <externalId>false</externalId>
+    <label>Most Visited Branch</label>
+    <referenceTo>Branch_and_Zone__c</referenceTo>
+    <relationshipLabel>Accounts (Most Visited Branch)</relationshipLabel>
+    <relationshipName>Accounts3</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExpectedIncrementalFeePerYear1Year__c</fullName>
+    <description>ข้อมูล Expected Fee Income per Year (first year) จะถูกนำไปแสดงใน Executive Summary</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ข้อมูล Expected Fee Income per Year (first year) จะถูกนำไปแสดงใน Executive Summary</inlineHelpText>
+    <label>ExpectedIncrementalFeePerYear1Year</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

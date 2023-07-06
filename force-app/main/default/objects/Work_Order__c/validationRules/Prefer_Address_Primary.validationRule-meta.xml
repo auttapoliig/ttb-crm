@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prefer_Address_Primary</fullName>
+    <active>true</active>
+    <description>prefer address = primary address, primary address cannot be blank</description>
+    <errorConditionFormula>IF(ISPICKVAL(Prefer_Address__c, &quot;Primary Address&quot;)
+&amp;&amp; ISBLANK(Primary_Address__c)  
+,TRUE
+,FALSE)</errorConditionFormula>
+    <errorDisplayField>Primary_Address__c</errorDisplayField>
+    <errorMessage>Prefer Address is Primary Address but Primary Address is blank. Please change Prefer Address.</errorMessage>
+</ValidationRule>

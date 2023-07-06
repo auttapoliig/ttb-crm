@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_cannot_be_null</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(OR
+(TEXT(RTL_Stage__c) = &apos;Closed (Not Interested)&apos;,
+TEXT(RTL_Stage__c) = &apos;Closed (Unqualified)&apos;,
+TEXT(RTL_Stage__c) = &apos;Closed (Unable to contact)&apos;
+,AND(TEXT(RTL_Stage__c)==&apos;Cancel&apos;,RecordType.Name==&apos;Retail Order Transaction&apos;)), 
+TEXT(RTL_Reason__c) ==&quot;&quot;),true,false)</errorConditionFormula>
+    <errorDisplayField>RTL_Reason__c</errorDisplayField>
+    <errorMessage>Please select reason to closed referral</errorMessage>
+</ValidationRule>

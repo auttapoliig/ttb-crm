@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>&lt;Change Account Owner&gt; Permission of each profile ability to reassign account Owner within segment , Region or Zone.</description>
+    <label>Account Owner Reassign Profile Setting</label>
+    <pluralLabel>Account Owner Reassign Profile Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

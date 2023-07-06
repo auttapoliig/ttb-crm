@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Is_Customer_Segment_Change__c</fullName>
+    <description>Check if Customer segment in Account still same</description>
+    <externalId>false</externalId>
+    <formula>IF(  CS_Customer_Segment__c !=  CS_Stamped_Customer_Segment__c  , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Check if Customer segment in Account still same</inlineHelpText>
+    <label>CS Is Customer Segment Change</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

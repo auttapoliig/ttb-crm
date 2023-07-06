@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Number_of_Rows__c</fullName>
+    <externalId>false</externalId>
+    <label>RTL No. of Imported Rows</label>
+    <summaryForeignKey>RTL_Upload_Campaign_Members__c.RTL_Upload_Campaign_Member_Logs__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

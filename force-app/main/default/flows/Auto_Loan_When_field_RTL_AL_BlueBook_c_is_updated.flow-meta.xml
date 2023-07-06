@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>When field RTL_AL_BlueBook__c is change then workflow get blue book data from AL Blue Book Object.</description>
+    <environments>Default</environments>
+    <interviewLabel>Auto Loan: When field RTL_AL_BlueBook__c is updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Loan: When field RTL_AL_BlueBook__c is updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>When field RTL_AL_BlueBook__c is change then workflow get blue book data from AL Blue Book Object.</description>
+        <name>Auto_Loan_Update_RTL_AL_BlueBook_c</name>
+        <label>Auto Loan: Update RTL_AL_BlueBook__c</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>RTL_AL_car_brand__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_car_gear__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_gear__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_car_group__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_group__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_car_subtype__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_subtype__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_car_type__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RTL_AL_car_year__c</field>
+            <value>
+                <elementReference>$Record.RTL_AL_BlueBook__r.RTL_AL_car_year__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Auto_Loan_Update_RTL_AL_BlueBook_c</targetReference>
+        </connector>
+        <filterFormula>OR(AND(NOT(ISNEW()),ISCHANGED({!$Record.RTL_AL_BlueBook__c})), AND(ISNEW(), NOT(ISBLANK({!$Record.RTL_AL_BlueBook__c}))))</filterFormula>
+        <object>CampaignMember</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VolumePercent__c</fullName>
+    <description>สัดส่วนของการรับเงินแต่ละวิธีว่ามีสัดส่วนเท่าใด</description>
+    <externalId>false</externalId>
+    <inlineHelpText>สัดส่วนของการรับเงินแต่ละวิธีว่ามีสัดส่วนเท่าใด</inlineHelpText>
+    <label>% Vol.</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

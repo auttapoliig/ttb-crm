@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Aging__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(DATEVALUE(RTL_Contact_Date_Time__c)), RTL_No_Contact_Aging__c, RTL_Contact_Aging__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Aging</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

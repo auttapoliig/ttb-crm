@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_record_type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Referral record type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Refer_to_Retail</fullName>
+                <default>false</default>
+                <label>Refer_to_Retail</label>
+            </value>
+            <value>
+                <fullName>Retail_Cross_Channel_Referral</fullName>
+                <default>false</default>
+                <label>Retail_Cross_Channel_Referral</label>
+            </value>
+            <value>
+                <fullName>Refer_to_Commercial</fullName>
+                <default>false</default>
+                <label>Refer_to_Commercial</label>
+            </value>
+            <value>
+                <fullName>Refer_Within_Commercial</fullName>
+                <default>false</default>
+                <label>Refer_Within_Commercial</label>
+            </value>
+            <value>
+                <fullName>Retail_Order_Transaction</fullName>
+                <default>false</default>
+                <label>Retail_Order_Transaction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

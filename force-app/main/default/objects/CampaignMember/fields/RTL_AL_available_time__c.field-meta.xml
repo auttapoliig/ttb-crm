@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_AL_available_time__c</fullName>
+    <externalId>false</externalId>
+    <label>Available time</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ตลอดเวลาทำการ</fullName>
+                <default>false</default>
+                <label>ตลอดเวลาทำการ</label>
+            </value>
+            <value>
+                <fullName>9:00 - 12:00 น.</fullName>
+                <default>false</default>
+                <label>9:00 - 12:00 น.</label>
+            </value>
+            <value>
+                <fullName>12:01-13:00 น.</fullName>
+                <default>false</default>
+                <label>12:01-13:00 น.</label>
+            </value>
+            <value>
+                <fullName>13:01-17:00 น.</fullName>
+                <default>false</default>
+                <label>13:01-17:00 น.</label>
+            </value>
+            <value>
+                <fullName>17:01-19:00 น.</fullName>
+                <default>false</default>
+                <label>17:01-19:00 น.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

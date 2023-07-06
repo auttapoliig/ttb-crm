@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Sub_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Product_Group__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Life</fullName>
+                <default>false</default>
+                <label>Life</label>
+            </value>
+            <value>
+                <fullName>Non Life</fullName>
+                <default>false</default>
+                <label>Non Life</label>
+            </value>
+            <value>
+                <fullName>Credit Cards</fullName>
+                <default>false</default>
+                <label>Credit Cards</label>
+            </value>
+            <value>
+                <fullName>RDC</fullName>
+                <default>false</default>
+                <label>RDC</label>
+            </value>
+            <value>
+                <fullName>NON TRANSACTIONAL</fullName>
+                <default>false</default>
+                <label>NON TRANSACTIONAL</label>
+            </value>
+            <value>
+                <fullName>TRANSACTIONAL</fullName>
+                <default>false</default>
+                <label>TRANSACTIONAL</label>
+            </value>
+            <value>
+                <fullName>MM</fullName>
+                <default>false</default>
+                <label>MM</label>
+            </value>
+            <value>
+                <fullName>NON MM</fullName>
+                <default>false</default>
+                <label>NON MM</label>
+            </value>
+            <value>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+                <label>Personal Loan</label>
+            </value>
+            <value>
+                <fullName>Secured Loan</fullName>
+                <default>false</default>
+                <label>Secured Loan</label>
+            </value>
+            <value>
+                <fullName>Home Loan</fullName>
+                <default>false</default>
+                <label>Home Loan</label>
+            </value>
+            <value>
+                <fullName>Combo</fullName>
+                <default>false</default>
+                <label>Combo</label>
+            </value>
+            <value>
+                <fullName>Commercial products</fullName>
+                <default>false</default>
+                <label>Commercial products</label>
+            </value>
+            <value>
+                <fullName>Up-selling</fullName>
+                <default>false</default>
+                <label>Up-selling</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Loan</fullName>
+                <default>false</default>
+                <label>Loan</label>
+            </value>
+            <value>
+                <fullName>MIXED</fullName>
+                <default>false</default>
+                <label>MIXED</label>
+            </value>
+            <value>
+                <fullName>BOND</fullName>
+                <default>false</default>
+                <label>BOND</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bancassurance</controllingFieldValue>
+            <valueName>Life</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bancassurance</controllingFieldValue>
+            <valueName>Non Life</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit Card &amp; RDC</controllingFieldValue>
+            <valueName>Credit Cards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit Card &amp; RDC</controllingFieldValue>
+            <valueName>RDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deposit</controllingFieldValue>
+            <valueName>NON TRANSACTIONAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deposit</controllingFieldValue>
+            <valueName>TRANSACTIONAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>NON MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>MIXED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investment</controllingFieldValue>
+            <valueName>BOND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan</controllingFieldValue>
+            <valueName>Personal Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan</controllingFieldValue>
+            <valueName>Secured Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan</controllingFieldValue>
+            <valueName>Home Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan</controllingFieldValue>
+            <valueName>Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Combo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Commercial products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Up-selling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ProfileName__c</columns>
+    <columns>IsActive__c</columns>
+    <columns>AnnualReportName__c</columns>
+    <columns>ComplaintReportName__c</columns>
+    <columns>DPDReportName__c</columns>
+    <columns>LeadReportName__c</columns>
+    <columns>ProductDueReportName__c</columns>
+    <columns>ReferralReportName__c</columns>
+    <columns>OverdueReportName__c</columns>
+    <columns>MyActivitiesReportName__c</columns>
+    <columns>PortfolioReviewReportName__c</columns>
+    <columns>CaseReportName__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

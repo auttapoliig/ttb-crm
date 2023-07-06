@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FX_Order_Clone_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reference to Order that clone from this order</description>
+    <externalId>false</externalId>
+    <label>FX Order Clone Item</label>
+    <referenceTo>FX_Order__c</referenceTo>
+    <relationshipLabel>FX Orders (FX Order Clone Item)</relationshipLabel>
+    <relationshipName>FX_Orders1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

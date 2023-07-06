@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Only_One_Value_Field</fullName>
+    <active>true</active>
+    <description>Allow only 1 field to be populated</description>
+    <errorConditionFormula>(IF(ISPICKVAL(RTL_Assigned_Apex__c, &apos;&apos;),0,1) + 
+IF(ISBLANK( RTL_Assigned_User__c ),0,1) +
+IF(ISBLANK(TEXT( RTL_Assigned_User_field__c )),0,1) +
+IF(ISBLANK( RTL_Assigned_Queue_Name__c ),0,1) +
+IF(ISBLANK(TEXT( RTL_Branch_and_Zone_Queue_User_field__c )),0,1)) &gt; 1</errorConditionFormula>
+    <errorMessage>Please input only 1 value from 1.1, 2.1, 2.2, 3.1 and 3.2</errorMessage>
+</ValidationRule>

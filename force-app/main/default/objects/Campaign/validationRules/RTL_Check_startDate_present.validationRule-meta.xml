@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_startDate_present</fullName>
+    <active>true</active>
+    <description>Start date ต้องเป็นวันปัจจุบัน</description>
+    <errorConditionFormula>AND (RecordType.Name != &apos;Commercial&apos;, RecordType.Name != &quot;Dummy Campaign&quot; , 
+       OR(Isnew(),ISCHANGED(StartDate)),
+       StartDate &lt; today())</errorConditionFormula>
+    <errorDisplayField>StartDate</errorDisplayField>
+    <errorMessage>Start Date must not be earlier than today.</errorMessage>
+</ValidationRule>

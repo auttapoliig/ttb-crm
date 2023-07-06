@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hop_Team__c</fullName>
+    <externalId>false</externalId>
+    <label>Hop Team</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>SLA_By_Hop__c.Case__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Case__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>SLA_By_Hop__c</referenceTo>
+    <relationshipLabel>Work Duration Per Owner</relationshipLabel>
+    <relationshipName>Work_Duration_Per_Owner</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

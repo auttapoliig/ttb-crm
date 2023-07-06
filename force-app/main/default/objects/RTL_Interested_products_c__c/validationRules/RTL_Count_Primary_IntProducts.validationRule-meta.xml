@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Count_Primary_IntProducts</fullName>
+    <active>true</active>
+    <description>At any stage a lead cannot have more than 1 primary interested product.</description>
+    <errorConditionFormula>OR(AND( Lead__r.RTL_Count_InterestedProducts_Primary__c == 1,   ISCHANGED( Is_Primary__c ),  Is_Primary__c == true), AND( Lead__r.RTL_Count_InterestedProducts_Primary__c == 1,   ISNEW() , Is_Primary__c == true))</errorConditionFormula>
+    <errorMessage>There cannot be more than one primary product of interest. Uncheck the other record before updating this product as primary.</errorMessage>
+</ValidationRule>

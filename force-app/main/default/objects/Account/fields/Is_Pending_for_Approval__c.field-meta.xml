@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Pending_for_Approval__c</fullName>
+    <description>Check the record is pending for approval</description>
+    <externalId>false</externalId>
+    <formula>if(AND(OR(ISPICKVAL(Account_Approval_Status__c, &quot;Pending for Approval&quot;), 
+										ISPICKVAL(Account_Approval_Status__c, &quot;1st Approver Approved&quot;),
+										ISPICKVAL(Account_Approval_Status__c, &quot;2nd Approver Approved&quot;),
+										ISPICKVAL(Account_Approval_Status__c, &quot;3rd Approver Approved&quot; ),
+										NOT(ISBLANK(Change_to_be_owner_ID__c) )
+									)
+							,
+							NOT(
+											OR(ISPICKVAL(Account_Approval_Status__c, &quot;Final Approved&quot;) ,
+														ISPICKVAL(Account_Approval_Status__c, &quot;Recalled&quot; ),
+														ISPICKVAL(Account_Approval_Status__c, &quot;Rejected&quot; )
+													) 
+							)
+						)
+			,TRUE,FALSE )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>ลูกค้าที่อยู่ระหว่างการขอเปลี่ยนผู้ดูแล</inlineHelpText>
+    <label>Is Pending for Approval</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

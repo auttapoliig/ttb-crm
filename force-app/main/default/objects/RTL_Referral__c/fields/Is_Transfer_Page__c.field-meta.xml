@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Transfer_Page__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>set this flag to true to tell system that transaction is made from Transfer to Branch Page</description>
+    <externalId>false</externalId>
+    <label>Is Transfer Page</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

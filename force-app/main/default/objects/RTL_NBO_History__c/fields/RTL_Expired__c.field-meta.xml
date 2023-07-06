@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Expired__c</fullName>
+    <description>Expiry is TRUE if NBO is not &quot;Accepted All&quot; and Past Valid To Date.</description>
+    <externalId>false</externalId>
+    <formula>AND(NOT(ISBLANK(RTL_Valid_To__c)), 
+AND(RTL_Status__c != $Label.RTL_NBO_Status_Accepted_All, RTL_Valid_To__c &lt; TODAY() ))</formula>
+    <label>Expired</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operating_Model_For_Wealth</fullName>
+    <columns>NAME</columns>
+    <columns>Operating_Model_Name__c</columns>
+    <columns>Days_Month__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Day_of_the_month__c</columns>
+    <columns>Day_of_due_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Operating_Model_Name__c</field>
+        <operation>equals</operation>
+        <value>1.Monthly,2.Bi_Monthly,3.Quarterly,4.Semi_Annually,5.Annually,6.Weekly</value>
+    </filters>
+    <label>Operating_Model_For_Wealth</label>
+    <language>en_US</language>
+</ListView>

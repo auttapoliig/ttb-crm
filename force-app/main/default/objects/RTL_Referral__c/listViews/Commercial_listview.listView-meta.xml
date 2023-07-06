@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_listview</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_ReferralOwner__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Referral</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>CCBO</roleAndSubordinates>
+        <roleAndSubordinates>Product_Team</roleAndSubordinates>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_SMS_Day_2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(Contains(RecordType.Name, &apos;Master Campaign&apos;)), 
+RecordType.Name != &apos;Commercial&apos; , RecordType.Name != &quot;Dummy Campaign&quot;, 
+OR( 
+
+RTL_SMS_Day_2__c &lt; StartDate , 
+RTL_SMS_Day_2__c &gt; EndDate 
+
+)
+)</errorConditionFormula>
+    <errorDisplayField>RTL_SMS_Day_2__c</errorDisplayField>
+    <errorMessage>SMS Day-2 must be in the child campaign period.</errorMessage>
+</ValidationRule>

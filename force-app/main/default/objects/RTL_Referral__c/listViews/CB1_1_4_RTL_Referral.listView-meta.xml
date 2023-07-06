@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB1_1_4_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>COM 1-9</label>
+    <queue>COM_1_9</queue>
+    <sharedTo>
+        <group>COM_1_9</group>
+    </sharedTo>
+</ListView>

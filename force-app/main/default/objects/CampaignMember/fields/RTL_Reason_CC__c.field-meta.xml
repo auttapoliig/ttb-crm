@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Reason_CC__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason CC</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer is not available</fullName>
+                <default>false</default>
+                <label>Customer is not available</label>
+            </value>
+            <value>
+                <fullName>Busy line</fullName>
+                <default>false</default>
+                <label>Busy line</label>
+            </value>
+            <value>
+                <fullName>No answer</fullName>
+                <default>false</default>
+                <label>No answer</label>
+            </value>
+            <value>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+                <label>Voicemail</label>
+            </value>
+            <value>
+                <fullName>Receiver is not prospect</fullName>
+                <default>false</default>
+                <label>Receiver is not prospect</label>
+            </value>
+            <value>
+                <fullName>Wrong number</fullName>
+                <default>false</default>
+                <label>Wrong number</label>
+            </value>
+            <value>
+                <fullName>Wrong customer</fullName>
+                <default>false</default>
+                <label>Wrong customer</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Duplicate Customer</fullName>
+                <default>false</default>
+                <label>Duplicate Customer</label>
+            </value>
+            <value>
+                <fullName>Reach Maximum Call</fullName>
+                <default>false</default>
+                <label>Reach Maximum Call</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

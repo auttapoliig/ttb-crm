@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Purpose__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Purpose</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Main_purpose__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Review</fullName>
+                <default>false</default>
+                <label>Annual Review</label>
+            </value>
+            <value>
+                <fullName>QRS</fullName>
+                <default>false</default>
+                <label>QRS</label>
+            </value>
+            <value>
+                <fullName>EWS</fullName>
+                <default>false</default>
+                <label>EWS</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Executive lunch / dinner</fullName>
+                <default>false</default>
+                <label>Executive lunch / dinner</label>
+            </value>
+            <value>
+                <fullName>Senior visit</fullName>
+                <default>false</default>
+                <label>Senior visit</label>
+            </value>
+            <value>
+                <fullName>Event by TMB</fullName>
+                <default>false</default>
+                <label>Event by TMB</label>
+            </value>
+            <value>
+                <fullName>Event by Customer</fullName>
+                <default>false</default>
+                <label>Event by Customer</label>
+            </value>
+            <value>
+                <fullName>EWS Customer</fullName>
+                <default>false</default>
+                <label>EWS Customer</label>
+            </value>
+            <value>
+                <fullName>DPD Customer</fullName>
+                <default>false</default>
+                <label>DPD Customer</label>
+            </value>
+            <value>
+                <fullName>NPL Customer</fullName>
+                <default>false</default>
+                <label>NPL Customer</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Process</fullName>
+                <default>false</default>
+                <label>Process</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Others (ให้ระบุ)</fullName>
+                <default>false</default>
+                <label>Others (ให้ระบุ)</label>
+            </value>
+            <value>
+                <fullName>Cash_X-Sell Payment &amp; CollectionTxn</fullName>
+                <default>false</default>
+                <label>Cash_X-Sell Payment &amp; CollectionTxn</label>
+            </value>
+            <value>
+                <fullName>Cash_One Bank &amp; Chq. Solution</fullName>
+                <default>false</default>
+                <label>Cash_One Bank &amp; Chq. Solution</label>
+            </value>
+            <value>
+                <fullName>Cash_Acquire New for Domestic txn</fullName>
+                <default>false</default>
+                <label>Cash_Acquire New for Domestic txn</label>
+            </value>
+            <value>
+                <fullName>Cash_Fleet Card</fullName>
+                <default>false</default>
+                <label>Cash_Fleet Card</label>
+            </value>
+            <value>
+                <fullName>Cash_Payroll Cash Card</fullName>
+                <default>false</default>
+                <label>Cash_Payroll Cash Card</label>
+            </value>
+            <value>
+                <fullName>Loan_Working Capital Boost Utz.</fullName>
+                <default>false</default>
+                <label>Loan_Working Capital Boost Utz.</label>
+            </value>
+            <value>
+                <fullName>Loan_Setup New Limit , 8 Key Industries</fullName>
+                <default>false</default>
+                <label>Loan_Setup New Limit , 8 Key Industries</label>
+            </value>
+            <value>
+                <fullName>CreditFee_LG Campaign , Valued Group</fullName>
+                <default>false</default>
+                <label>CreditFee_LG Campaign , Valued Group</label>
+            </value>
+            <value>
+                <fullName>CreditFee_LG Campaign , Welcome Group</fullName>
+                <default>false</default>
+                <label>CreditFee_LG Campaign , Welcome Group</label>
+            </value>
+            <value>
+                <fullName>CreditFee_SetupNewLTLoan, ProjectFinance</fullName>
+                <default>false</default>
+                <label>CreditFee_SetupNewLTLoan, ProjectFinance</label>
+            </value>
+            <value>
+                <fullName>CreditFee_SetupNewLimit, 3FocusIndustry</fullName>
+                <default>false</default>
+                <label>CreditFee_SetupNewLimit, 3FocusIndustry</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Increase TF Limit</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Increase TF Limit</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Realign TOD to TF Limits</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Realign TOD to TF Limits</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_OTT Campaign</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_OTT Campaign</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_FX Campaign</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_FX Campaign</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_LC Campaign</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_LC Campaign</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Reactivate existing TF &amp;FX</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Reactivate existing TF &amp;FX</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Acquire New for TF&amp;FX</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Acquire New for TF&amp;FX</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_P/C Boost Utz</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_P/C Boost Utz</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_P/C Limit convert from Loan Limit</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_P/C Limit convert from Loan Limit</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_P/C Limit covert from TF Limit</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_P/C Limit covert from TF Limit</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Increase P/C Limit</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Increase P/C Limit</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_SetupNewP/C Limit on Existing Cust</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_SetupNewP/C Limit on Existing Cust</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Acquire New for P/C</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Acquire New for P/C</label>
+            </value>
+            <value>
+                <fullName>Cash_TotalCustomizedCashSol: SizeableTxn</fullName>
+                <default>false</default>
+                <label>Cash_TotalCustomizedCashSol: SizeableTxn</label>
+            </value>
+            <value>
+                <fullName>Cash_StandardPayment&amp;Collection&amp;Payroll</fullName>
+                <default>false</default>
+                <label>Cash_StandardPayment&amp;Collection&amp;Payroll</label>
+            </value>
+            <value>
+                <fullName>Cash_University solution</fullName>
+                <default>false</default>
+                <label>Cash_University solution</label>
+            </value>
+            <value>
+                <fullName>Cash_Foreign collection Bank service</fullName>
+                <default>false</default>
+                <label>Cash_Foreign collection Bank service</label>
+            </value>
+            <value>
+                <fullName>Loan_RebalanceLoanPort &amp; AddFeeExposure</fullName>
+                <default>false</default>
+                <label>Loan_RebalanceLoanPort &amp; AddFeeExposure</label>
+            </value>
+            <value>
+                <fullName>Loan_AddCreditExposure LG Txn</fullName>
+                <default>false</default>
+                <label>Loan_AddCreditExposure LG Txn</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Increase/realign credit limit</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Increase/realign credit limit</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_L/C campaign</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_L/C campaign</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Acquisition new clients</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Acquisition new clients</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_ReactivateExisting&amp;AcquireNewCust</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_ReactivateExisting&amp;AcquireNewCust</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_ImproveEfficiency&amp;RiskMitigrate</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_ImproveEfficiency&amp;RiskMitigrate</label>
+            </value>
+            <value>
+                <fullName>Derivative_Risk Management Solution</fullName>
+                <default>false</default>
+                <label>Derivative_Risk Management Solution</label>
+            </value>
+            <value>
+                <fullName>Derivative_FundRaisingTxn&amp;HedgingAdvise</fullName>
+                <default>false</default>
+                <label>Derivative_FundRaisingTxn&amp;HedgingAdvise</label>
+            </value>
+            <value>
+                <fullName>IB_Build up SolidPipeline of FundRaising</fullName>
+                <default>false</default>
+                <label>IB_Build up SolidPipeline of FundRaising</label>
+            </value>
+            <value>
+                <fullName>IB_CatureMerger&amp;Acquisition Opportunity</fullName>
+                <default>false</default>
+                <label>IB_CatureMerger&amp;Acquisition Opportunity</label>
+            </value>
+            <value>
+                <fullName>IB_IntroduceNewProdIncludeREIT&amp;InfraFund</fullName>
+                <default>false</default>
+                <label>IB_IntroduceNewProdIncludeREIT&amp;InfraFund</label>
+            </value>
+            <value>
+                <fullName>AS_Fund superisory business</fullName>
+                <default>false</default>
+                <label>AS_Fund superisory business</label>
+            </value>
+            <value>
+                <fullName>AS_Custodian business</fullName>
+                <default>false</default>
+                <label>AS_Custodian business</label>
+            </value>
+            <value>
+                <fullName>AS_Agency business</fullName>
+                <default>false</default>
+                <label>AS_Agency business</label>
+            </value>
+            <value>
+                <fullName>Non Standard</fullName>
+                <default>false</default>
+                <label>Non Standard</label>
+            </value>
+            <value>
+                <fullName>Cash_Maintain (Existing high %SOW)</fullName>
+                <default>false</default>
+                <label>Cash_Maintain (Existing high %SOW)</label>
+            </value>
+            <value>
+                <fullName>Cash_Deepen SOW (Existing low %SOW)</fullName>
+                <default>false</default>
+                <label>Cash_Deepen SOW (Existing low %SOW)</label>
+            </value>
+            <value>
+                <fullName>Cash_Reactivate Inactive and Acquire New Customers</fullName>
+                <default>false</default>
+                <label>Cash_Reactivate Inactive and Acquire New Customers</label>
+            </value>
+            <value>
+                <fullName>LG_Boost Utilization and Deepen SOW (existing low %SOW)</fullName>
+                <default>false</default>
+                <label>LG_Boost Utilization and Deepen SOW (existing low %SOW)</label>
+            </value>
+            <value>
+                <fullName>LG_Acquire New Customers</fullName>
+                <default>false</default>
+                <label>LG_Acquire New Customers</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Maintain (Existing high %SOW)</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Maintain (Existing high %SOW)</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Boost Utilization and deepen SOW (existing low %SOW)</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Boost Utilization and deepen SOW (existing low %SOW)</label>
+            </value>
+            <value>
+                <fullName>Cash_Foreign bank outsourcing</fullName>
+                <default>false</default>
+                <label>Cash_Foreign bank outsourcing</label>
+            </value>
+            <value>
+                <fullName>Cash_Thai Baht Clearing</fullName>
+                <default>false</default>
+                <label>Cash_Thai Baht Clearing</label>
+            </value>
+            <value>
+                <fullName>Cash_Card Solutions</fullName>
+                <default>false</default>
+                <label>Cash_Card Solutions</label>
+            </value>
+            <value>
+                <fullName>Cash_Liquidity Management</fullName>
+                <default>false</default>
+                <label>Cash_Liquidity Management</label>
+            </value>
+            <value>
+                <fullName>Cash_Supply Chain &amp; Cash Solutions</fullName>
+                <default>false</default>
+                <label>Cash_Supply Chain &amp; Cash Solutions</label>
+            </value>
+            <value>
+                <fullName>Cash_Cross-selling/Up-selling</fullName>
+                <default>false</default>
+                <label>Cash_Cross-selling/Up-selling</label>
+            </value>
+            <value>
+                <fullName>Cash_BAU</fullName>
+                <default>false</default>
+                <label>Cash_BAU</label>
+            </value>
+            <value>
+                <fullName>Cash_Stop Negative Income / Increase Fee Income</fullName>
+                <default>false</default>
+                <label>Cash_Stop Negative Income / Increase Fee Income</label>
+            </value>
+            <value>
+                <fullName>LG_Boost Utilization</fullName>
+                <default>false</default>
+                <label>LG_Boost Utilization</label>
+            </value>
+            <value>
+                <fullName>LG_Increase/New limit</fullName>
+                <default>false</default>
+                <label>LG_Increase/New limit</label>
+            </value>
+            <value>
+                <fullName>Credit_Replace existing loan</fullName>
+                <default>false</default>
+                <label>Credit_Replace existing loan</label>
+            </value>
+            <value>
+                <fullName>Credit_Sell down existing loan</fullName>
+                <default>false</default>
+                <label>Credit_Sell down existing loan</label>
+            </value>
+            <value>
+                <fullName>IB &amp; Derivative_Multi-Market Fund Raising</fullName>
+                <default>false</default>
+                <label>IB &amp; Derivative_Multi-Market Fund Raising</label>
+            </value>
+            <value>
+                <fullName>IB &amp; Derivative_Capturing the Merger and Acquisition Opportunity</fullName>
+                <default>false</default>
+                <label>IB &amp; Derivative_Capturing the Merger and Acquisition Opportunity</label>
+            </value>
+            <value>
+                <fullName>IB &amp; Derivative_Embedded Derivatives solution into Fundraising transaction and part of hedging advisory</fullName>
+                <default>false</default>
+                <label>IB &amp; Derivative_Embedded Derivatives solution into Fundraising transaction and part of hedging advisory</label>
+            </value>
+            <value>
+                <fullName>IB &amp; Derivative_Risk Management Solution</fullName>
+                <default>false</default>
+                <label>IB &amp; Derivative_Risk Management Solution</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Acquire New Customers</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Acquire New Customers</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Boost Utilization and Problem Solving</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Boost Utilization and Problem Solving</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Boost Utilization</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Boost Utilization</label>
+            </value>
+            <value>
+                <fullName>TF&amp;FX_Maintain</fullName>
+                <default>false</default>
+                <label>TF&amp;FX_Maintain</label>
+            </value>
+            <value>
+                <fullName>Float Charge (Phase1 : to perfect Cash/Machine Collateral)</fullName>
+                <default>false</default>
+                <label>Float Charge (Phase1 : to perfect Cash/Machine Collateral)</label>
+            </value>
+            <value>
+                <fullName>Float Charge - Cash Collateral</fullName>
+                <default>false</default>
+                <label>Float Charge - Cash Collateral</label>
+            </value>
+            <value>
+                <fullName>Float Charge - Machine Collateral</fullName>
+                <default>false</default>
+                <label>Float Charge - Machine Collateral</label>
+            </value>
+            <value>
+                <fullName>Floating Charge</fullName>
+                <default>false</default>
+                <label>Floating Charge</label>
+            </value>
+            <value>
+                <fullName>BusinessClick_CASH</fullName>
+                <default>false</default>
+                <label>BusinessClick_CASH</label>
+            </value>
+            <value>
+                <fullName>BusinessClick_TRADE</fullName>
+                <default>false</default>
+                <label>BusinessClick_TRADE</label>
+            </value>
+            <value>
+                <fullName>BusinessClick_FX</fullName>
+                <default>false</default>
+                <label>BusinessClick_FX</label>
+            </value>
+            <value>
+                <fullName>BusinessClick_CREDIT</fullName>
+                <default>false</default>
+                <label>BusinessClick_CREDIT</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Propose Refinance package</fullName>
+                <default>false</default>
+                <label>Float Charge_Propose Refinance package</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Offer Top up W/C</fullName>
+                <default>false</default>
+                <label>Float Charge_Offer Top up W/C</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Register Full Amount, No additional limit</fullName>
+                <default>false</default>
+                <label>Float Charge_Register Full Amount, No additional limit</label>
+            </value>
+            <value>
+                <fullName>Float Charge_Register Proportionate Amount, No additional limit</fullName>
+                <default>false</default>
+                <label>Float Charge_Register Proportionate Amount, No additional limit</label>
+            </value>
+            <value>
+                <fullName>Business Click</fullName>
+                <default>false</default>
+                <label>Business Click</label>
+            </value>
+            <value>
+                <fullName>Selling</fullName>
+                <default>false</default>
+                <label>Selling</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Non-Credit</fullName>
+                <default>false</default>
+                <label>Non-Credit</label>
+            </value>
+            <value>
+                <fullName>Credit&amp;Non-Credit</fullName>
+                <default>false</default>
+                <label>Credit&amp;Non-Credit</label>
+            </value>
+            <value>
+                <fullName>Visit for wealth</fullName>
+                <default>false</default>
+                <label>Visit for wealth</label>
+            </value>
+            <value>
+                <fullName>0 RM&amp;CMS Contact</fullName>
+                <default>false</default>
+                <label>0 RM&amp;CMS Contact</label>
+            </value>
+            <value>
+                <fullName>1 HR</fullName>
+                <default>false</default>
+                <label>1 HR</label>
+            </value>
+            <value>
+                <fullName>2 Presented Pack</fullName>
+                <default>false</default>
+                <label>2 Presented Pack</label>
+            </value>
+            <value>
+                <fullName>3 Staff Commu</fullName>
+                <default>false</default>
+                <label>3 Staff Commu</label>
+            </value>
+            <value>
+                <fullName>4 Fin lit/Investment Day</fullName>
+                <default>false</default>
+                <label>4 Fin lit/Investment Day</label>
+            </value>
+            <value>
+                <fullName>5 Activation Event</fullName>
+                <default>false</default>
+                <label>5 Activation Event</label>
+            </value>
+            <value>
+                <fullName>6 Loss</fullName>
+                <default>false</default>
+                <label>6 Loss</label>
+            </value>
+            <value>
+                <fullName>7 Others</fullName>
+                <default>false</default>
+                <label>7 Others</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Foreign bank outsourcing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Thai Baht Clearing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Card Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Liquidity Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Supply Chain &amp; Cash Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Cross-selling/Up-selling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_BAU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Cash_Stop Negative Income / Increase Fee Income</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>LG_Boost Utilization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>LG_Increase/New limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Credit_Replace existing loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Credit_Sell down existing loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>IB &amp; Derivative_Multi-Market Fund Raising</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>IB &amp; Derivative_Capturing the Merger and Acquisition Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>IB &amp; Derivative_Embedded Derivatives solution into Fundraising transaction and part of hedging advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>IB &amp; Derivative_Risk Management Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>TF&amp;FX_Acquire New Customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>TF&amp;FX_Boost Utilization and Problem Solving</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>TF&amp;FX_Boost Utilization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>TF&amp;FX_Maintain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Float Charge - Cash Collateral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>Float Charge - Machine Collateral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>BusinessClick_CASH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>BusinessClick_TRADE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>BusinessClick_FX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MB</controllingFieldValue>
+            <valueName>BusinessClick_CREDIT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>0 RM&amp;CMS Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>1 HR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>2 Presented Pack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>3 Staff Commu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>4 Fin lit/Investment Day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>5 Activation Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>6 Loss</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>สอบถาม / ขอข้อมูลลูกค้า</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลเพื่อดำเนินการในขั้นต่อไป</controllingFieldValue>
+            <controllingFieldValue>ประชาสัมพันธ์ผ่านทาง Email / Group Line</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว / นัดหมายขอเข้าพบลูกค้า</controllingFieldValue>
+            <controllingFieldValue>เข้าพบเพื่อสร้างความสัมพันธ์กับลูกค้า</controllingFieldValue>
+            <controllingFieldValue>นำเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>ติดตาม / สอบถามปัญหา / การใช้บริการ (สอนใช้บริการ)</controllingFieldValue>
+            <controllingFieldValue>เชิญเข้าร่วมกิจกรรมต่างๆ / ส่งเสริมการขาย</controllingFieldValue>
+            <controllingFieldValue>ติดตามผลการเสนอขายผลิตภัณฑ์และบริการ</controllingFieldValue>
+            <controllingFieldValue>เก็บข้อมูลเพื่อพัฒนาสินค้าและบริการ</controllingFieldValue>
+            <controllingFieldValue>สำรวจสถานที่ในการจัดกิจกรรม</controllingFieldValue>
+            <controllingFieldValue>ระบุช่องรายละเอียดอื่นเพิ่มเติม</controllingFieldValue>
+            <controllingFieldValue>แนะนำตัว</controllingFieldValue>
+            <controllingFieldValue>ขอนัดหมายในการเข้าพบลูกค้า/จัดกิจกรรม</controllingFieldValue>
+            <valueName>7 Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>Doc. Collection</controllingFieldValue>
+            <valueName>Floating Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Propose Refinance package</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Offer Top up W/C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Register Full Amount, No additional limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB</controllingFieldValue>
+            <controllingFieldValue>SE</controllingFieldValue>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge_Register Proportionate Amount, No additional limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <valueName>Annual Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <valueName>QRS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <valueName>Selling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BB.</controllingFieldValue>
+            <controllingFieldValue>SE.</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service review for non-credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Service review for credit product (Interview cust need)</controllingFieldValue>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Others (ให้ระบุ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit review</controllingFieldValue>
+            <valueName>EWS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <valueName>Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <valueName>Non-Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boost u% (Business Volume)</controllingFieldValue>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <controllingFieldValue>Find Oppty</controllingFieldValue>
+            <controllingFieldValue>Product pitching / Present Product</controllingFieldValue>
+            <controllingFieldValue>Follow up sales</controllingFieldValue>
+            <controllingFieldValue>Submit proposal</controllingFieldValue>
+            <controllingFieldValue>Sign Agreement</controllingFieldValue>
+            <controllingFieldValue>Implementation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>On-boarding new product</controllingFieldValue>
+            <valueName>Credit&amp;Non-Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Executive lunch / dinner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Senior visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Event by TMB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Event by Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <valueName>EWS Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <valueName>DPD Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Control quality &amp; Follow up debt</controllingFieldValue>
+            <valueName>NPL Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>First visit</controllingFieldValue>
+            <valueName>Visit for wealth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solve problem</controllingFieldValue>
+            <valueName>Promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Cash_Fleet Card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Cash_Maintain (Existing high %SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Cash_Deepen SOW (Existing low %SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Cash_Reactivate Inactive and Acquire New Customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>LG_Boost Utilization and Deepen SOW (existing low %SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>LG_Acquire New Customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>TF&amp;FX_Maintain (Existing high %SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>TF&amp;FX_Boost Utilization and deepen SOW (existing low %SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CB</controllingFieldValue>
+            <valueName>Float Charge (Phase1 : to perfect Cash/Machine Collateral)</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

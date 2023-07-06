@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OLAP_Validate_Acc_Owner_Within_Same_Zone</fullName>
+    <active>true</active>
+    <description>Don&apos;t allow change account owner across zone.</description>
+    <errorConditionFormula>IF(ISCHANGED(OwnerId),AND(Owner_Zone__c &lt;&gt; PRIORVALUE(Owner_Zone__c), $User.LastName = &quot;sfextapi&quot;), False)</errorConditionFormula>
+    <errorMessage>New owner must be in the same zone as prior owner.</errorMessage>
+</ValidationRule>

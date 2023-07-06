@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opened_Complaint__c</fullName>
+    <description>Number of open complaints of the customer</description>
+    <externalId>false</externalId>
+    <inlineHelpText>จำนวน Customer Complaint ที่ถูกเปิดอยู่ในระบบ CCRP (ข้อมูลจะถูก update ภายใน 2 วัน)</inlineHelpText>
+    <label>Opened Complaint</label>
+    <summaryFilterItems>
+        <field>Customer_Complaint__c.Status__c</field>
+        <operation>notEqual</operation>
+        <value>CLOSED, CANCEL, REJECTED</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Customer_Complaint__c.Account__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

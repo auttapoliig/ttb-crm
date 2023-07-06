@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Phone_length</fullName>
+    <active>true</active>
+    <description>Validate phone change cannot greater than 18 digits</description>
+    <errorConditionFormula>if( CONTAINS(RecordType.Name, &apos;Prospect&apos;),LEN(Phone) &gt; 18,false)</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Office number is too large: length 18 digits</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Mapping between product name / group / sub group users want to show on CustomerProductHoldingAndNBO page and key</description>
+    <label>Product Group Label Mapping</label>
+    <pluralLabel>Product Group Label Mapping</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

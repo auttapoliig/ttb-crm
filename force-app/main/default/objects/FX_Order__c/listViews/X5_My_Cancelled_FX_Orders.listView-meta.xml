@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X5_My_Cancelled_FX_Orders</fullName>
+    <columns>FXO_BuySell__c</columns>
+    <columns>FXO_CurrencyPair__c</columns>
+    <columns>FXO_RequestAmount__c</columns>
+    <columns>FXO_CustomerRate__c</columns>
+    <columns>FXO_InterbankRate__c</columns>
+    <columns>FXO_Customer__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>FXO_Expiration_Date__c</columns>
+    <columns>FXO_Remark__c</columns>
+    <columns>NAME</columns>
+    <columns>FXO_FXOrderSummary__c</columns>
+    <columns>FXO_OrderStatus__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Owner_s_Segment_stamp__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>FXO_OrderStatus__c</field>
+        <operation>equals</operation>
+        <value>Cancelled,Expired,Not Allocated</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>lessOrEqual</operation>
+        <value>LAST_N_DAYS:14</value>
+    </filters>
+    <label>5. My Cancelled FX Orders</label>
+    <language>en_US</language>
+</ListView>

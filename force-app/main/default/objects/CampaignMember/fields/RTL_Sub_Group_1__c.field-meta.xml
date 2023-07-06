@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Sub_Group_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Group 1</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RTL_Product_Group_1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LIFE</fullName>
+                <default>false</default>
+                <label>Life</label>
+            </value>
+            <value>
+                <fullName>NON LIFE</fullName>
+                <default>false</default>
+                <label>Non Life</label>
+            </value>
+            <value>
+                <fullName>CREDIT CARDS</fullName>
+                <default>false</default>
+                <label>Credit Cards</label>
+            </value>
+            <value>
+                <fullName>RDC</fullName>
+                <default>false</default>
+                <label>RDC</label>
+            </value>
+            <value>
+                <fullName>NON TRANSACTIONAL</fullName>
+                <default>false</default>
+                <label>NON TRANSACTIONAL</label>
+            </value>
+            <value>
+                <fullName>TRANSACTIONAL</fullName>
+                <default>false</default>
+                <label>TRANSACTIONAL</label>
+            </value>
+            <value>
+                <fullName>MM</fullName>
+                <default>false</default>
+                <label>MM</label>
+            </value>
+            <value>
+                <fullName>NON MM</fullName>
+                <default>false</default>
+                <label>NON MM</label>
+            </value>
+            <value>
+                <fullName>PERSONAL LOAN</fullName>
+                <default>false</default>
+                <label>Personal Loan</label>
+            </value>
+            <value>
+                <fullName>SECURED LOAN</fullName>
+                <default>false</default>
+                <label>Secured Loan</label>
+            </value>
+            <value>
+                <fullName>HOME LOAN</fullName>
+                <default>false</default>
+                <label>Home Loan</label>
+            </value>
+            <value>
+                <fullName>COMBO</fullName>
+                <default>false</default>
+                <label>Combo</label>
+            </value>
+            <value>
+                <fullName>COMMERCIAL PRODUCTS</fullName>
+                <default>false</default>
+                <label>Commercial products</label>
+            </value>
+            <value>
+                <fullName>UP-SELLING</fullName>
+                <default>false</default>
+                <label>Up-selling</label>
+            </value>
+            <value>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>LOAN</fullName>
+                <default>false</default>
+                <label>Loan</label>
+            </value>
+            <value>
+                <fullName>LIFE INSURANCE</fullName>
+                <default>false</default>
+                <label>Life Insurance</label>
+            </value>
+            <value>
+                <fullName>NON LIFE INSURANCE</fullName>
+                <default>false</default>
+                <label>NON LIFE INSURANCE</label>
+            </value>
+            <value>
+                <fullName>INVESTMENT</fullName>
+                <default>false</default>
+                <label>INVESTMENT</label>
+            </value>
+            <value>
+                <fullName>MIXED</fullName>
+                <default>false</default>
+                <label>MIXED</label>
+            </value>
+            <value>
+                <fullName>BOND</fullName>
+                <default>false</default>
+                <label>BOND</label>
+            </value>
+            <value>
+                <fullName>TMB VISA INFINITE</fullName>
+                <default>false</default>
+                <label>TMB VISA INFINITE</label>
+            </value>
+            <value>
+                <fullName>SO SMART</fullName>
+                <default>false</default>
+                <label>SO SMART</label>
+            </value>
+            <value>
+                <fullName>SO FAST</fullName>
+                <default>false</default>
+                <label>SO FAST</label>
+            </value>
+            <value>
+                <fullName>SO CHILL</fullName>
+                <default>false</default>
+                <label>SO CHILL</label>
+            </value>
+            <value>
+                <fullName>TOP BRASS</fullName>
+                <default>false</default>
+                <label>TOP BRASS</label>
+            </value>
+            <value>
+                <fullName>WEALTH</fullName>
+                <default>false</default>
+                <label>WEALTH</label>
+            </value>
+            <value>
+                <fullName>HOME EQUITY</fullName>
+                <default>false</default>
+                <label>HOME EQUITY</label>
+            </value>
+            <value>
+                <fullName>TMB ABSOLUTE VISA SIGNATURE</fullName>
+                <default>false</default>
+                <label>TMB ABSOLUTE VISA SIGNATURE</label>
+            </value>
+            <value>
+                <fullName>TMB SO CHILL</fullName>
+                <default>false</default>
+                <label>TMB So Chill</label>
+            </value>
+            <value>
+                <fullName>TMB SO SMART</fullName>
+                <default>false</default>
+                <label>TMB So Smart</label>
+            </value>
+            <value>
+                <fullName>TMB ROYAL TOP BRASS</fullName>
+                <default>false</default>
+                <label>TMB Royal Top Brass</label>
+            </value>
+            <value>
+                <fullName>TMB SO FAST</fullName>
+                <default>false</default>
+                <label>TMB So Fast</label>
+            </value>
+            <value>
+                <fullName>READY CASH</fullName>
+                <default>false</default>
+                <label>READY CASH</label>
+            </value>
+            <value>
+                <fullName>PPF</fullName>
+                <default>false</default>
+                <label>PPF</label>
+            </value>
+            <value>
+                <fullName>TMB VISA SIGNATURE</fullName>
+                <default>false</default>
+                <label>TMB VISA SIGNATURE</label>
+            </value>
+            <value>
+                <fullName>HIRE PURCHASE</fullName>
+                <default>false</default>
+                <label>HIRE PURCHASE</label>
+            </value>
+            <value>
+                <fullName>AL PERSONAL LOAN</fullName>
+                <default>false</default>
+                <label>AL Personal Loan</label>
+            </value>
+            <value>
+                <fullName>UNSECURED REVOLVING</fullName>
+                <default>false</default>
+                <label>UNSECURED REVOLVING</label>
+            </value>
+            <value>
+                <fullName>TTB SO CHILL CREDIT CARD(MASTER CARD)</fullName>
+                <default>false</default>
+                <label>TTB SO CHILL CREDIT CARD(MASTER CARD)</label>
+            </value>
+            <value>
+                <fullName>TTB SO FAST CREDIT CARD(VISA CARD)</fullName>
+                <default>false</default>
+                <label>TTB SO FAST CREDIT CARD(VISA CARD)</label>
+            </value>
+            <value>
+                <fullName>TTB SO SMART CREDIT CARD(VISA CARD)</fullName>
+                <default>false</default>
+                <label>TTB SO SMART CREDIT CARD(VISA CARD)</label>
+            </value>
+            <value>
+                <fullName>TTB ROYAL TOP BRASS (VISA CARD)</fullName>
+                <default>false</default>
+                <label>TTB ROYAL TOP BRASS (VISA CARD)</label>
+            </value>
+            <value>
+                <fullName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</fullName>
+                <default>false</default>
+                <label>TTB ABSOLUTE CREDIT CARD(VISA CARD)</label>
+            </value>
+            <value>
+                <fullName>COMMERCIAL TERM LOAN</fullName>
+                <default>false</default>
+                <label>COMMERCIAL TERM LOAN</label>
+            </value>
+            <value>
+                <fullName>DOMESTIC</fullName>
+                <default>false</default>
+                <label>DOMESTIC</label>
+            </value>
+            <value>
+                <fullName>HOME EQUITY FOR STAFF</fullName>
+                <default>false</default>
+                <label>HOME EQUITY FOR STAFF</label>
+            </value>
+            <value>
+                <fullName>HOME LOAN FOR STAFF</fullName>
+                <default>false</default>
+                <label>HOME LOAN FOR STAFF</label>
+            </value>
+            <value>
+                <fullName>OD</fullName>
+                <default>false</default>
+                <label>OD</label>
+            </value>
+            <value>
+                <fullName>OTHER SECURED</fullName>
+                <default>false</default>
+                <label>OTHER SECURED</label>
+            </value>
+            <value>
+                <fullName>PERSONAL LOAN FOR STAFF</fullName>
+                <default>false</default>
+                <label>PERSONAL LOAN FOR STAFF</label>
+            </value>
+            <value>
+                <fullName>STAFF LOAN</fullName>
+                <default>false</default>
+                <label>STAFF LOAN</label>
+            </value>
+            <value>
+                <fullName>TTB GLOBAL HOUSE CREDIT</fullName>
+                <default>false</default>
+                <label>TTB GLOBAL HOUSE CREDIT</label>
+            </value>
+            <value>
+                <fullName>flashcard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>flashcard</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>LIFE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>NON LIFE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>LIFE INSURANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
+            <valueName>NON LIFE INSURANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>CREDIT CARDS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>RDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB VISA INFINITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>SO SMART</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>SO FAST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>SO CHILL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TOP BRASS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>WEALTH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB ABSOLUTE VISA SIGNATURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB SO CHILL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB SO SMART</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB ROYAL TOP BRASS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB SO FAST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>READY CASH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TMB VISA SIGNATURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB SO CHILL CREDIT CARD(MASTER CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB SO FAST CREDIT CARD(VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB SO SMART CREDIT CARD(VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB ROYAL TOP BRASS (VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB GLOBAL HOUSE CREDIT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <valueName>NON TRANSACTIONAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEPOSIT</controllingFieldValue>
+            <valueName>TRANSACTIONAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>NON MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>INVESTMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>MIXED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INVESTMENT</controllingFieldValue>
+            <valueName>BOND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>PERSONAL LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>SECURED LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>HOME LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>HOME EQUITY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>PPF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>UNSECURED REVOLVING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>COMMERCIAL TERM LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>DOMESTIC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>HOME EQUITY FOR STAFF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>HOME LOAN FOR STAFF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>OD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>OTHER SECURED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>PERSONAL LOAN FOR STAFF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LOAN</controllingFieldValue>
+            <valueName>STAFF LOAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>COMBO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>COMMERCIAL PRODUCTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>UP-SELLING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>OTHERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>HIRE PURCHASE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AUTO LOAN</controllingFieldValue>
+            <valueName>AL PERSONAL LOAN</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

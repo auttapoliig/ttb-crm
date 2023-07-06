@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Campaign_Channel_formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>SUBSTITUTE(
+SUBSTITUTE(
+    IF(RTL_Channel_Branch__c, 
+         &quot;Branch, &quot;,
+        NULL
+    ) + 
+    IF(RTL_Channel_DirectMail__c, 
+        &quot;DirectMail, &quot;,
+        NULL
+    ) + 
+    IF(RTL_Channel_SMS__c, 
+        &quot;SMS, &quot;,
+        NULL
+    ) + 
+    IF(RTL_Channel_MIB__c, 
+        &quot;MIB, &quot;,
+        NULL
+    ) +
+    IF(RTL_Channel_OBD__c, 
+        &quot;OBD, &quot;,
+        NULL
+    ) +
+    IF(RTL_Channel_Outbound__c, 
+        &quot;Outbound, &quot;,
+        NULL
+    ) +
+   IF(RTL_Channel_Edm__c, 
+        &quot;Edm, &quot;,
+        NULL
+    ) +
+   IF(RTL_Channel_Subsidiary__c, 
+        &quot;Subsidiary, &quot;,
+        NULL
+    ) +
+
+ &quot;.&quot;,
+
+    &quot;, .&quot;,
+
+    NULL
+),&quot;.&quot;,&quot;&quot;)</formula>
+    <label>Campaign Channel</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

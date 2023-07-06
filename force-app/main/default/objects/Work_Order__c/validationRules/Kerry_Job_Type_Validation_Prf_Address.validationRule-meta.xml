@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kerry_Job_Type_Validation_Prf_Address</fullName>
+    <active>true</active>
+    <description>Job type is Kerry check Field, Prefer Address and Prefer Phone</description>
+    <errorConditionFormula>IF(ISPICKVAL(Job_Type__c, &quot;Kerry&quot;) 
+			&amp;&amp; ISBLANK(TEXT(Prefer_Address__c))
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorDisplayField>Prefer_Address__c</errorDisplayField>
+    <errorMessage>Please enter Prefer Address</errorMessage>
+</ValidationRule>

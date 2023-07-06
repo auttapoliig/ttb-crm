@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Branch_Manager_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field is created to keep Branch Manager for each from , implement on CR Referral Enhancement 22 Aug</description>
+    <externalId>false</externalId>
+    <label>Branch Manager User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Branch_and_Zone1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

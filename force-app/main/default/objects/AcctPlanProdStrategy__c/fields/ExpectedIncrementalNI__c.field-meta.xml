@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExpectedIncrementalNI__c</fullName>
+    <description>Expected amount of incremental NI in THB</description>
+    <externalId>false</externalId>
+    <formula>if( SEQ__c == 9.00 || SEQ__c == 13.00 || SEQ__c == 14.00 || SEQ__c == 3.00 ,
+      BLANKVALUE(ExpectedIncrementalNIFreeText__c ,0)
+
+
+,((AspirationSOW__c - ExistingSOW__c ) * WalletSizing__c) / 100)</formula>
+    <inlineHelpText>Expected amount of incremental NI in THB</inlineHelpText>
+    <label>Expected Incremental NI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

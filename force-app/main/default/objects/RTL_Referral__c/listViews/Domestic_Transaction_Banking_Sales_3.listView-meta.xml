@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Domestic_Transaction_Banking_Sales_3</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Channel_Segment__c</columns>
+    <columns>RTL_Interested_Product__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <label>Domestic Transaction Banking Sales 3</label>
+    <language>en_US</language>
+    <queue>Domestic_Transaction_Banking_Sales_3</queue>
+    <sharedTo>
+        <group>Domestic_Transaction_Banking_Sales_3</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Check_ID_Number_format</fullName>
+    <active>true</active>
+    <errorConditionFormula>if( AND(CONTAINS(RecordType.Name, &apos;Prospect&apos;),NOT(ISPICKVAL(ID_Type_PE__c, &apos;Other ID&apos;)) ),OR( CONTAINS( ID_Number_PE__c  , &apos; &apos;) ,CONTAINS( ID_Number_PE__c, &apos;-&apos;)),false)</errorConditionFormula>
+    <errorDisplayField>ID_Number_PE__c</errorDisplayField>
+    <errorMessage>Format incorrect, it shouldn&apos;t be contains &apos;-&apos; and Space.</errorMessage>
+</ValidationRule>

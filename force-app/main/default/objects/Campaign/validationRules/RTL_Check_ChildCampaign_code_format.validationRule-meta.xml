@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_ChildCampaign_code_format</fullName>
+    <active>true</active>
+    <description>Campaign Code 10 digits must align with 9 digits on Master campaign</description>
+    <errorConditionFormula>AND ( NOT (OR (Contains(RecordType.Name, &apos;Master Campaign&apos;), 
+                                     RecordType.Name = &quot;Commercial&quot;, RecordType.Name = &quot;Dummy Campaign&quot;)),
+            LEFT(RTL_Campaign_Code_10_digits__c , 9) &lt;&gt; Parent.RTL_Campaign_Code_9_digits__c  
+           )</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Code_10_digits__c</errorDisplayField>
+    <errorMessage>Child campaign code mismatch with the Master campaign code.</errorMessage>
+</ValidationRule>

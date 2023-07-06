@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Field_5__c</fullName>
+    <externalId>false</externalId>
+    <label>Entry Criteria Field 5</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core_Banking_Suggested_Segment__c</fullName>
+                <default>false</default>
+                <label>Core_Banking_Suggested_Segment__c</label>
+            </value>
+            <value>
+                <fullName>Province_Primary_PE__c</fullName>
+                <default>false</default>
+                <label>Province_Primary_PE__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

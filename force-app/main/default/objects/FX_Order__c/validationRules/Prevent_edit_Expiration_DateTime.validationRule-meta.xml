@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_edit_Expiration_DateTime</fullName>
+    <active>true</active>
+    <description>Not allow to edit datetime value when the interval &lt; 1hr.</description>
+    <errorConditionFormula>ISCHANGED(FXO_Expiration_Date__c) &amp;&amp;  FXO_TempCalExpired__c &lt; 1</errorConditionFormula>
+    <errorMessage>Unable to change Expiration Date/Time now. This FX order is about to expire within an hour. Please cancel the order and create a new one if you insist on changing the Expiration Date/Time.</errorMessage>
+</ValidationRule>

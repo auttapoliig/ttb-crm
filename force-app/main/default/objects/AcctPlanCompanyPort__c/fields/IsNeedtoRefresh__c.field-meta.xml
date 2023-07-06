@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsNeedtoRefresh__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* No groupmaster */
+IF( ISBLANK(Account__r.Group__c),
+
+
+OR( 
+ /* GroupPort is not Null */
+NOT(  ISBLANK( AcctPlanGroupPort__c )  ),
+ /* check Acctplan */
+IF( ISBLANK(Account_Plan_Company_Profile__c),FALSE,
+ /* Companyprofile is not Null */
+    NOT( ISBLANK( Account_Plan_Company_Profile__r.AcctPlanGroup__c ) ) )
+
+) 
+
+,
+
+/* has groupmaster */
+
+/* no groupport */
+OR( IF( ISBLANK(AcctPlanGroupPort__c),TRUE,
+
+/* groupPort not equal groupmaster */
+
+ IF(NOT( ISBLANK( Account_Plan_Company_Profile__c)),
+/* have company Profile */
+IF(NOT( ISBLANK( Account_Plan_Company_Profile__r.AcctPlanGroup__c ) ),
+/* if company profile has group */
+Account_Plan_Company_Profile__r.AcctPlanGroup__r.Group__c != Account__r.Group__c
+,
+true
+)
+,
+/* not has company Profile */
+AcctPlanGroupPort__r.Group__c != Account__r.Group__c )
+) 
+,
+
+/* already has groupmaster */
+
+IF( ISBLANK(AcctPlanGroupPort__r.Account_Plan_Group_Profile__c ),
+AcctPlanGroupPort__r.Group__c != Account__r.Group__c 
+,
+IF(NOT(ISBLANK(Account_Plan_Company_Profile__c))
+,AcctPlanGroupPort__r.Account_Plan_Group_Profile__c != Account_Plan_Company_Profile__r.AcctPlanGroup__c
+,AcctPlanGroupPort__r.Account_Plan_Group_Profile__r.Group__c != Account__r.Group__c )
+)
+
+
+
+
+)
+
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsNeedtoRefresh</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

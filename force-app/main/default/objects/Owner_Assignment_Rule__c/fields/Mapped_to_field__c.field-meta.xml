@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mapped_to_field__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Field of Mapping Table to be mapped with Assigned Object.</inlineHelpText>
+    <label>Mapped to field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Mapped_to_table__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TMBCode__c</fullName>
+                <default>false</default>
+                <label>TMBCode__c</label>
+            </value>
+            <value>
+                <fullName>Name</fullName>
+                <default>false</default>
+                <label>Name</label>
+            </value>
+            <value>
+                <fullName>Cust_Type_Code__c</fullName>
+                <default>false</default>
+                <label>Cust_Type_Code__c</label>
+            </value>
+            <value>
+                <fullName>ID</fullName>
+                <default>false</default>
+                <label>ID</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Branch_and_Zone__c</controllingFieldValue>
+            <valueName>ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IndustryMaster__c</controllingFieldValue>
+            <valueName>TMBCode__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Province__c</controllingFieldValue>
+            <valueName>Name</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cust_Type_Master__c</controllingFieldValue>
+            <valueName>Cust_Type_Code__c</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

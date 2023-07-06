@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Purpose__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(Customer__r.Sub_Purpose__c, &quot;Annual Review&quot;), &quot;Annual Review&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;QRS&quot;), &quot;QRS&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;EWS&quot;), &quot;EWS&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Price&quot;), &quot;Price&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Executive lunch / dinner&quot;), &quot;Executive lunch / dinner&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Senior visit&quot;), &quot;Senior visit&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Event by TMB&quot;), &quot;Event by TMB&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Event by Customer&quot;), &quot;Event by Customer&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;EWS Customer&quot;), &quot;EWS Customer&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;DPD Customer&quot;), &quot;DPD Customer&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;NPL Customer&quot;), &quot;NPL Customer&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Product&quot;), &quot;Product&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Process&quot;), &quot;Process&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Service&quot;), &quot;Service&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Promotion&quot;), &quot;Promotion&quot;, &quot;&quot;) &amp;
+IF(INCLUDES(Customer__r.Sub_Purpose__c,&quot;Others (ให้ระบุ)&quot;), &quot;Others (ให้ระบุ)&quot;, &quot;&quot;)</formula>
+    <label>Sub Purpose</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

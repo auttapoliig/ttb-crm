@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RM_No_TMB_Cust_ID__c</fullName>
+    <externalId>false</externalId>
+    <formula>Customer__r.TMB_Customer_ID_PE__c</formula>
+    <label>RM No. (TMB Cust ID)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

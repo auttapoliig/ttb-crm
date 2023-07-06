@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Apex_function_only_retailtype</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(OR(ISPICKVAL(RTL_Lead_Record_Type__c, &apos;Retail Banking&apos;), ISPICKVAL(RTL_Lead_Record_Type__c, &apos;Retail Closed Lost&apos;))),  ISPICKVAL(RTL_Assigned_Apex__c, &apos;RTL_AssignmentCriteriaService&apos;))</errorConditionFormula>
+    <errorMessage>APEX function &apos;RTL_AssignmentCriteriaService&apos; is allowed for record type &apos;Retail Banking&apos;.</errorMessage>
+</ValidationRule>

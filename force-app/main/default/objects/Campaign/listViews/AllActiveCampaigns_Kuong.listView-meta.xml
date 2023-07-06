@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllActiveCampaigns_Kuong</fullName>
+    <columns>RTL_Campaign_Code_10_digits__c</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Segment__c</columns>
+    <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>CAMPAIGN.NUM_CONVERTED_LEADS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Commercial</value>
+    </filters>
+    <filters>
+        <field>RTL_Campaign_Code_10_digits__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All Active Campaigns (Kuong)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>CEO</role>
+        <roleAndSubordinates>DTB_Acquiring</roleAndSubordinates>
+    </sharedTo>
+</ListView>

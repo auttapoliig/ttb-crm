@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Not_Allow_Edit_Closed</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(ISPICKVAL(Lead__r.Status,&apos;Closed Lost&apos;),
+AND(
+ISPICKVAL(Lead__r.Status,&apos;Duplicated&apos;),Lead__r.RTL_IsDuplicate_Lead__c = false ))</errorConditionFormula>
+    <errorMessage>Closed Lead cannot be edited</errorMessage>
+</ValidationRule>

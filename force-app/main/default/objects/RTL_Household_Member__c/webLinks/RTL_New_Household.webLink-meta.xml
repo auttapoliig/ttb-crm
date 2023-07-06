@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_New_Household</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Household</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!
+IF(
+$User.UIThemeDisplayed = &apos;Theme3&apos;,
+&apos;/apex/RTL_Household_Creation?acctid=&apos; + Account.Id,
+URLFOR(&apos;/apex/RTL_HouseHold_Proxy&apos;,null,[accountId=Account.Id],TRUE)
+)
+}</url>
+</WebLink>

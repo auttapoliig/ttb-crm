@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Suvey</fullName>
+    <columns>NAME</columns>
+    <columns>No_of_Surveys__c</columns>
+    <columns>No_of_Completed_Surveys__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Campaign__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Suvey</label>
+    <language>en_US</language>
+</ListView>

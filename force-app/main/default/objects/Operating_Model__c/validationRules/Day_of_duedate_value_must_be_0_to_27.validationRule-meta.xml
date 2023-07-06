@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Day_of_duedate_value_must_be_0_to_27</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(OR(ISNULL(Day_of_due_date__c),AND(Day_of_due_date__c  &gt;= 0, Day_of_due_date__c &lt;= 27)) , false, true)</errorConditionFormula>
+    <errorDisplayField>Day_of_due_date__c</errorDisplayField>
+    <errorMessage>Day of duedate value must be (0 - 27)</errorMessage>
+</ValidationRule>

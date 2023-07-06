@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section__c</fullName>
+    <externalId>false</externalId>
+    <label>Section</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DepositDemestic</fullName>
+                <default>false</default>
+                <label>DepositDemestic</label>
+            </value>
+            <value>
+                <fullName>DepositInterUsd</fullName>
+                <default>false</default>
+                <label>DepositInterUsd</label>
+            </value>
+            <value>
+                <fullName>DepositInterOther</fullName>
+                <default>false</default>
+                <label>DepositInterOther</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

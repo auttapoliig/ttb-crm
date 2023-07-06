@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>To stamp primary customer name and Register No.</description>
+    <interviewLabel>Stamp Primary Customer Name and REG No {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Stamp Primary Customer Name and REG No</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>to stamp primary customer name and registration No</description>
+        <name>Update_Registration_number_and_primary_Customer_name</name>
+        <label>Update Registration number and primary Customer name</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>Primary_Customer_Name__c</field>
+            <value>
+                <elementReference>$Record.Primary_Customer__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Regis_No__c</field>
+            <value>
+                <elementReference>$Record.Primary_Customer__r.ID_Number_PE__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Short_Regis_No__c</field>
+            <value>
+                <elementReference>$Record.Primary_Customer__r.RTL_NID__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Registration_number_and_primary_Customer_name</targetReference>
+        </connector>
+        <object>SLL_Group__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

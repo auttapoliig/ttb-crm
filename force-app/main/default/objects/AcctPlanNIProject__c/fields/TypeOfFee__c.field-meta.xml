@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TypeOfFee__c</fullName>
+    <description>Type of NI/Fee</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of NI/Fee</inlineHelpText>
+    <label>TypeOfFee</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TF Fee</fullName>
+                <default>false</default>
+                <label>TF Fee</label>
+            </value>
+            <value>
+                <fullName>FX fee</fullName>
+                <default>false</default>
+                <label>FX fee</label>
+            </value>
+            <value>
+                <fullName>L/G fee</fullName>
+                <default>false</default>
+                <label>L/G fee</label>
+            </value>
+            <value>
+                <fullName>Cash fee</fullName>
+                <default>false</default>
+                <label>Cash fee</label>
+            </value>
+            <value>
+                <fullName>Credit fee</fullName>
+                <default>false</default>
+                <label>Credit fee</label>
+            </value>
+            <value>
+                <fullName>BA fee</fullName>
+                <default>false</default>
+                <label>BA fee</label>
+            </value>
+            <value>
+                <fullName>Derivative fee</fullName>
+                <default>false</default>
+                <label>Derivative fee</label>
+            </value>
+            <value>
+                <fullName>IB Fee</fullName>
+                <default>false</default>
+                <label>IB Fee</label>
+            </value>
+            <value>
+                <fullName>AS Fee</fullName>
+                <default>false</default>
+                <label>AS Fee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

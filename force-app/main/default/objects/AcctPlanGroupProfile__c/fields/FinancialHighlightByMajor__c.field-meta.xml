@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinancialHighlightByMajor__c</fullName>
+    <description>Financial Highlight By Major</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ตัวเลขหลักทางการเงินของบริษัทที่สำคัญในกลุ่ม</inlineHelpText>
+    <label>Financial Highlight (By Major Company)</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

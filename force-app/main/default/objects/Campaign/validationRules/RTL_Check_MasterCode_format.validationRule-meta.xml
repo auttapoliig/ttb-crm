@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_MasterCode_format</fullName>
+    <active>true</active>
+    <description>Campaign Code 9 digits must start with,
+- D   for Exclusive Campaign
+- S   for Research Campaign
+- M for Mass Campaign</description>
+    <errorConditionFormula>AND(Contains(RecordType.Name, &apos;Master Campaign&apos;), 
+        IF(TEXT(RTL_Campaign_Type__c) &lt;&gt; &apos;Local Exclusive&apos;,
+          LEFT(RTL_Campaign_Code_9_digits__c,1) &lt;&gt;
+           CASE(TEXT(RTL_Campaign_Type__c),
+                  &apos;Exclusive&apos;, &apos;D&apos;,
+                  &apos;Research&apos;, &apos;S&apos;,
+                  &apos;Mass&apos;,&apos;M&apos;,&apos;&apos;
+                ),
+           FALSE)
+                
+      )</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Code_9_digits__c</errorDisplayField>
+    <errorMessage>Campaign Code must start with D for Exclusive, M for Mass, S for Research.</errorMessage>
+</ValidationRule>

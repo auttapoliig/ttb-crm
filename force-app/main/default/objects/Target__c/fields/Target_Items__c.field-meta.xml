@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Items__c</fullName>
+    <externalId>false</externalId>
+    <label>Target Items</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan</fullName>
+                <default>false</default>
+                <label>Loan</label>
+            </value>
+            <value>
+                <fullName>OD</fullName>
+                <default>false</default>
+                <label>OD</label>
+            </value>
+            <value>
+                <fullName>Loan Core Asset</fullName>
+                <default>false</default>
+                <label>Loan Core Asset</label>
+            </value>
+            <value>
+                <fullName>OD Core Asset</fullName>
+                <default>false</default>
+                <label>OD Core Asset</label>
+            </value>
+            <value>
+                <fullName>TMB One Bank</fullName>
+                <default>false</default>
+                <label>TMB One Bank</label>
+            </value>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CA</label>
+            </value>
+            <value>
+                <fullName>SA</fullName>
+                <default>false</default>
+                <label>SA</label>
+            </value>
+            <value>
+                <fullName>You Card</fullName>
+                <default>false</default>
+                <label>You Card</label>
+            </value>
+            <value>
+                <fullName>You Trade</fullName>
+                <default>false</default>
+                <label>You Trade</label>
+            </value>
+            <value>
+                <fullName>EDC Volume</fullName>
+                <default>false</default>
+                <label>EDC Volume</label>
+            </value>
+            <value>
+                <fullName>BA Credit Life Premium</fullName>
+                <default>false</default>
+                <label>BA Credit Life Premium</label>
+            </value>
+            <value>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+                <label>Health Care</label>
+            </value>
+            <value>
+                <fullName>You Care</fullName>
+                <default>false</default>
+                <label>You Care</label>
+            </value>
+            <value>
+                <fullName>Front End</fullName>
+                <default>false</default>
+                <label>Front End</label>
+            </value>
+            <value>
+                <fullName>You Card Fee</fullName>
+                <default>false</default>
+                <label>You Card Fee</label>
+            </value>
+            <value>
+                <fullName>You Pay Fee</fullName>
+                <default>false</default>
+                <label>You Pay Fee</label>
+            </value>
+            <value>
+                <fullName>You Trade Fee</fullName>
+                <default>false</default>
+                <label>You Trade Fee</label>
+            </value>
+            <value>
+                <fullName>EDC Fee</fullName>
+                <default>false</default>
+                <label>EDC Fee</label>
+            </value>
+            <value>
+                <fullName>BA-Life Fee</fullName>
+                <default>false</default>
+                <label>BA-Life Fee</label>
+            </value>
+            <value>
+                <fullName>Health care Fee</fullName>
+                <default>false</default>
+                <label>Health care Fee</label>
+            </value>
+            <value>
+                <fullName>You Care Fee</fullName>
+                <default>false</default>
+                <label>You Care Fee</label>
+            </value>
+            <value>
+                <fullName>Others Fee</fullName>
+                <default>false</default>
+                <label>Others Fee</label>
+            </value>
+            <value>
+                <fullName>LG and other credit fee</fullName>
+                <default>false</default>
+                <label>LG and other credit fee</label>
+            </value>
+            <value>
+                <fullName>BA-Non Life</fullName>
+                <default>false</default>
+                <label>BA-Non Life</label>
+            </value>
+            <value>
+                <fullName>Cash Mgt</fullName>
+                <default>false</default>
+                <label>Cash Mgt</label>
+            </value>
+            <value>
+                <fullName>Merchant (Net)</fullName>
+                <default>false</default>
+                <label>Merchant (Net)</label>
+            </value>
+            <value>
+                <fullName>FX</fullName>
+                <default>false</default>
+                <label>FX</label>
+            </value>
+            <value>
+                <fullName>TF(Net)</fullName>
+                <default>false</default>
+                <label>TF(Net)</label>
+            </value>
+            <value>
+                <fullName>NIIc</fullName>
+                <default>false</default>
+                <label>NIIc</label>
+            </value>
+            <value>
+                <fullName>NIId</fullName>
+                <default>false</default>
+                <label>NIId</label>
+            </value>
+            <value>
+                <fullName>Llimit Setup</fullName>
+                <default>false</default>
+                <label>Llimit Setup</label>
+            </value>
+            <value>
+                <fullName>TF</fullName>
+                <default>false</default>
+                <label>TF</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>LG</fullName>
+                <default>false</default>
+                <label>LG</label>
+            </value>
+            <value>
+                <fullName>BA</fullName>
+                <default>false</default>
+                <label>BA</label>
+            </value>
+            <value>
+                <fullName>IB</fullName>
+                <default>false</default>
+                <label>IB</label>
+            </value>
+            <value>
+                <fullName>Derivaties</fullName>
+                <default>false</default>
+                <label>Derivaties</label>
+            </value>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <label>Cash</label>
+            </value>
+            <value>
+                <fullName>Dep</fullName>
+                <default>false</default>
+                <label>Dep</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

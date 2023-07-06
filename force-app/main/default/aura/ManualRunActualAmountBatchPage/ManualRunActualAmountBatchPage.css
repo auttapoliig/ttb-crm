@@ -1,0 +1,13 @@
+.THIS {
+}
+
+.THIS .select-auto-width > .slds-form-element__control > .slds-select_container{
+    width: auto;
+}
+
+.THIS.exampleHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}

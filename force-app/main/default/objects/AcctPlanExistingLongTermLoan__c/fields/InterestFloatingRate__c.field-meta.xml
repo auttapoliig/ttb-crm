@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InterestFloatingRate__c</fullName>
+    <description>Floating rate</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Floating rate</inlineHelpText>
+    <label>InterestFloatingRate</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>THB FIX</fullName>
+                <default>false</default>
+                <label>THB FIX</label>
+            </value>
+            <value>
+                <fullName>MLR</fullName>
+                <default>false</default>
+                <label>MLR</label>
+            </value>
+            <value>
+                <fullName>BIBOR</fullName>
+                <default>false</default>
+                <label>BIBOR</label>
+            </value>
+            <value>
+                <fullName>LIBOR</fullName>
+                <default>false</default>
+                <label>LIBOR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

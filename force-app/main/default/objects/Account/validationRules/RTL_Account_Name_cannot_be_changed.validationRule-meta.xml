@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Account_Name_cannot_be_changed</fullName>
+    <active>true</active>
+    <description>Customer Name can be changed only through integration . $User.Id  value in the rule must be updated if the integration user is changed.</description>
+    <errorConditionFormula>AND (CONTAINS($RecordType.Name,&quot;Retail&quot;) ,ISCHANGED(Name), $Profile.Name &lt;&gt; &quot;System Administrator&quot;,$Profile.Name &lt;&gt; &quot;Retail Integration API Only&quot; )</errorConditionFormula>
+    <errorMessage>Customer name cannot be modified.</errorMessage>
+</ValidationRule>

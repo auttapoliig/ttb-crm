@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Fetch_NBO</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Fetch NBO</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/28.0/integration.js&quot;)} 
+
+var url = &apos;/apex/RTL_NBOSummaryView?acctId={!Account.Id}&apos;; 
+
+if (sforce.console.isInConsole()) { 
+srcUp(url+&apos;&amp;isdtp=vw&apos;);
+} else { 
+window.open(url,&apos;_self&apos;);
+}</url>
+</WebLink>

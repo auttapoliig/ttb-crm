@@ -1,0 +1,187 @@
+.THIS .section-row {
+    height: 300px;
+}
+
+
+.THIS .sum-tb td {
+    text-align: center;
+}
+
+.THIS .section-title {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+}
+
+.THIS .section-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.THIS .wrap-row {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.THIS .Lbox {
+    margin: 2px;
+    height: 100px;
+    width: calc(40% + 4px);
+    text-align: center;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.THIS .dummyLbox {
+    margin: 2px;
+    height: 100px;
+    width: calc(40% + 4px);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.THIS .Sbox {
+    margin: 2px;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.THIS .dummySbox {
+    margin: 2px;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.THIS .Cbox {
+    height: 175px;
+    width: 100%;
+    /* text-align: center;
+    justify-content: center; */
+}
+
+.THIS .Per-Box {
+    width: 20%;
+    margin: 2px;
+    font-size: 9px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.THIS .dropdown-width {
+    width: 200px;
+}
+
+.THIS .show-btn {
+    margin-top: 20px;
+}
+
+.THIS .period-selection-container {
+    padding: 5px 20px;
+}
+
+.THIS .col-section {
+    margin-right: 5%;
+}
+
+.THIS .table-data {
+    width: 100%;
+    display: flex;
+}
+
+
+.THIS .KPI0 {
+    background: transparent;
+}
+
+.THIS .KPI1 {
+    background-color: #FE4E4E;
+}
+
+.THIS .KPI2 {
+    background-color: #E5C952;
+}
+
+.THIS .KPI3 {
+    background-color: #CEFE9B;
+}
+
+.THIS .KPI4 {
+    background-color: #5FCDB2;
+}
+
+.THIS .KPI5 {
+    background-color: #379FFF;
+}
+
+.THIS .notify-container {
+    display: flex;
+}
+
+.THIS .notify-txt {
+    display: flex;
+    flex-direction: column;
+}
+
+.THIS .warning-icon {
+    margin-right: 5px;
+}
+
+.THIS .error-title {
+    font-weight: 600;
+    color: #666666;
+}
+
+@media print {
+    .THIS * {
+        -webkit-print-color-adjust: exact !important;
+        /*Chrome, Safari */
+        color-adjust: exact !important;
+        /*Firefox*/
+    }
+
+    .THIS .slds-button {
+        background-color: var(--slds-c-button-color-background, var(--sds-c-button-color-background, transparent)) !important;
+        color: var(--slds-c-button-text-color, var(--sds-c-button-text-color, var(--lwc-brandAccessible, rgb(1, 118, 211)))) !important;
+        font-weight: 400;
+    }
+
+    .THIS .KPI1 {
+        background-color: #FE4E4E !important;
+    }
+
+    .THIS .KPI2 {
+        background-color: #E5C952 !important;
+    }
+
+    .THIS .KPI3 {
+        background-color: #CEFE9B !important;
+    }
+
+    .THIS .KPI4 {
+        background-color: #5FCDB2 !important;
+    }
+
+    .THIS .KPI5 {
+        background-color: #379FFF !important;
+    }
+}

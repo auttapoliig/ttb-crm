@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Sales_Amount_Per_Year</fullName>
+    <active>true</active>
+    <description>Sales Amount Per Year must input 
+if
+ Referral Record type is &apos;Refer_within_Commercial&apos;
+ Account is not Existing Customer</description>
+    <errorConditionFormula>IF(RecordType.DeveloperName &lt;&gt; &apos;Refer_within_Commercial&apos;, False,
+			IF(ISPICKVAL(RTL_Type__c,&apos;To Product Team (เพื่อส่งให้ทีม Product)&apos;) , False,
+						IF(AND( RTL_Account_Name__c &lt;&gt; null 
+   ,RTL_Account_Name__r.RecordType.DeveloperName = &apos;Existing_Customer&apos;
+   ,RTL_Account_Name__r.Segment2__c &lt;&gt; null)
+, False
+, IF(ISPICKVAL(RTL_Sales_Amount_Per_Year__c ,&quot;&quot;), True,  False) ) )
+
+)</errorConditionFormula>
+    <errorDisplayField>RTL_Sales_Amount_Per_Year__c</errorDisplayField>
+    <errorMessage>“Sales Amount per Year” is required.</errorMessage>
+</ValidationRule>

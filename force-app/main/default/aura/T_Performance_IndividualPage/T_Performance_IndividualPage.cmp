@@ -1,0 +1,44 @@
+<aura:component controller="T_PerformanceController"
+    implements="force:hasRecordId,lightning:utilityItem,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable">
+
+    <aura:attribute name="userObj" type="Object" />
+    <aura:attribute name="userType" type="Object" />
+    <aura:attribute name="renderPage" type="String" />
+    <aura:attribute name="branchCode" type="String" />
+    <aura:attribute name="channel" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <!-- Water Mark -->
+    <aura:attribute name="waterMarkImage" type="String" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:html tag="style">
+        .slds-card__footer{
+        text-align:left;
+        }
+    </aura:html>
+
+    <aura:if isTrue="{!v.renderPage == 'LandingPage'}">
+        <c:T_Performance_LandingPage userObj="{!v.userObj}" />
+    </aura:if>
+    <aura:if isTrue="{!v.renderPage == 'P4'}">
+        <c:T_Performance_P4 userType="{!v.userType}" branchCode="{!v.branchCode}" channel="{!v.channel}" />
+    </aura:if>
+    <aura:if isTrue="{!v.renderPage == 'P1'}">
+        <c:T_Performance_P1 selectedEmpId="{!v.userObj.user.Employee_ID__c}" />
+    </aura:if>
+
+    <aura:if isTrue="{!v.renderPage == ''}">
+        <lightning:card>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-8" style="width: 10px;margin-left: 10px;">
+                    <lightning:icon class="some-indicator" variant="warning" iconName="utility:warning"
+                        alternativeText="warning" title="warning" size="x-small" />
+                </div>
+                <div class="slds-col slds-size_7-of-8">
+                    <p class="slds-p-horizontal_small">
+                        {!$Label.c.T_Performance_ErrorMsg}
+                    </p>
+                </div>
+            </div>
+        </lightning:card>
+    </aura:if>
+</aura:component>

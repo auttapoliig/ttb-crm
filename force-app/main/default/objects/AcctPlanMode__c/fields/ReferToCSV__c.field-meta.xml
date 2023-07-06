@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReferToCSV__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Refer to Customer Single View Account Plan Form = True , then check Account Plan Form</description>
+    <externalId>false</externalId>
+    <label>Refer to CSV Account Plan Form</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

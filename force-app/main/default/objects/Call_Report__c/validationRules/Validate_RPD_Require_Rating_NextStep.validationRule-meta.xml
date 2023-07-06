@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_RPD_Require_Rating_NextStep</fullName>
+    <active>true</active>
+    <description>SCR0378480 - validate RPD Require Rating and Next Step</description>
+    <errorConditionFormula>IF(CONTAINS(TEXT(Categories__c), &quot;RPD Team&quot;)
+	,IF( OR( LEN(TRIM(TEXT(Rating__c)))=0,LEN(TRIM(TEXT(Next_Step__c)))=0   ) , TRUE ,FALSE)
+	,FALSE)</errorConditionFormula>
+    <errorMessage>Please Input Rating/Next Step</errorMessage>
+</ValidationRule>

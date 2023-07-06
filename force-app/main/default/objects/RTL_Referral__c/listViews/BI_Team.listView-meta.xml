@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BI_Team</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Interested_Product__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Zone_Team__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <label>BI Team</label>
+    <language>en_US</language>
+    <queue>BI_Team</queue>
+    <sharedTo>
+        <group>BI_Team</group>
+    </sharedTo>
+</ListView>

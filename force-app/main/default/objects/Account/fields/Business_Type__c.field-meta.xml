@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>เคมีภัณฑ์ และเวชภัณฑ์</fullName>
+                <default>false</default>
+                <label>เคมีภัณฑ์ และเวชภัณฑ์</label>
+            </value>
+            <value>
+                <fullName>เครื่องจักรและเครื่องใช้ที่ใช้ไฟฟ้า</fullName>
+                <default>false</default>
+                <label>เครื่องจักรและเครื่องใช้ที่ใช้ไฟฟ้า</label>
+            </value>
+            <value>
+                <fullName>เครื่องดื่ม</fullName>
+                <default>false</default>
+                <label>เครื่องดื่ม</label>
+            </value>
+            <value>
+                <fullName>เสื้อผ้า และเครื่องแต่งกาย</fullName>
+                <default>false</default>
+                <label>เสื้อผ้า และเครื่องแต่งกาย</label>
+            </value>
+            <value>
+                <fullName>โลหะขั้นมูลฐาน</fullName>
+                <default>false</default>
+                <label>โลหะขั้นมูลฐาน</label>
+            </value>
+            <value>
+                <fullName>ไม้ และผลิตภัณฑ์จากไม้</fullName>
+                <default>false</default>
+                <label>ไม้ และผลิตภัณฑ์จากไม้</label>
+            </value>
+            <value>
+                <fullName>กระดาษ ผลิตภัณฑ์กระดาษ เครื่องเขียน และธุรกิจการพิมพ์</fullName>
+                <default>false</default>
+                <label>กระดาษ ผลิตภัณฑ์กระดาษ เครื่องเขียน และธุรกิจการพิมพ์</label>
+            </value>
+            <value>
+                <fullName>การเกษตร ป่าไม้ และประมง</fullName>
+                <default>false</default>
+                <label>การเกษตร ป่าไม้ และประมง</label>
+            </value>
+            <value>
+                <fullName>การก่อสร้าง</fullName>
+                <default>false</default>
+                <label>การก่อสร้าง</label>
+            </value>
+            <value>
+                <fullName>การขาย ซ่อมแซมยานยนต์ ขายน้ำมันรถ</fullName>
+                <default>false</default>
+                <label>การขาย ซ่อมแซมยานยนต์ ขายน้ำมันรถ</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกเครื่องโลหะ สี และกระจก</fullName>
+                <default>false</default>
+                <label>การขายปลีกเครื่องโลหะ สี และกระจก</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกเครื่องมือ สิ่งของ และเครื่องใช้ในครัวเรือน</fullName>
+                <default>false</default>
+                <label>การขายปลีกเครื่องมือ สิ่งของ และเครื่องใช้ในครัวเรือน</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกสิ่งทอสิ่งถัก เสื้อผ้า รองเท้า และเครื่องหนัง</fullName>
+                <default>false</default>
+                <label>การขายปลีกสิ่งทอสิ่งถัก เสื้อผ้า รองเท้า และเครื่องหนัง</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกสินค้าทั่วไปอื่น ๆ หรือห้างสรรพสินค้า</fullName>
+                <default>false</default>
+                <label>การขายปลีกสินค้าทั่วไปอื่น ๆ หรือห้างสรรพสินค้า</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกสินค้าทางเภสัชกรรมและเวชภัณฑ์ เครื่องสำอาง และเครื่องหอม</fullName>
+                <default>false</default>
+                <label>การขายปลีกสินค้าทางเภสัชกรรมและเวชภัณฑ์ เครื่องสำอาง และเครื่องหอม</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกสินค้านอกร้านค้า</fullName>
+                <default>false</default>
+                <label>การขายปลีกสินค้านอกร้านค้า</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกสินค้าอื่น ๆ ในร้านค้าเฉพาะอย่าง</fullName>
+                <default>false</default>
+                <label>การขายปลีกสินค้าอื่น ๆ ในร้านค้าเฉพาะอย่าง</label>
+            </value>
+            <value>
+                <fullName>การขายปลีกอาหาร เครื่องดื่ม ยาสูบ</fullName>
+                <default>false</default>
+                <label>การขายปลีกอาหาร เครื่องดื่ม ยาสูบ</label>
+            </value>
+            <value>
+                <fullName>การขายส่งเครื่องจักร อุปกรณ์เครื่องจักรและเครื่องมือเครื่องใช้</fullName>
+                <default>false</default>
+                <label>การขายส่งเครื่องจักร อุปกรณ์เครื่องจักรและเครื่องมือเครื่องใช้</label>
+            </value>
+            <value>
+                <fullName>การขายส่งเครื่องดื่มและยาสูบ</fullName>
+                <default>false</default>
+                <label>การขายส่งเครื่องดื่มและยาสูบ</label>
+            </value>
+            <value>
+                <fullName>การขายส่งเชื้อเพลิง แก๊ส และผลิตภัณฑ์ที่เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>การขายส่งเชื้อเพลิง แก๊ส และผลิตภัณฑ์ที่เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>การขายส่งโดยได้รับค่าธรรมเนียม หรือโดยการทำสัญญา</fullName>
+                <default>false</default>
+                <label>การขายส่งโดยได้รับค่าธรรมเนียม หรือโดยการทำสัญญา</label>
+            </value>
+            <value>
+                <fullName>การขายส่งโลหะ และแร่โลหะ</fullName>
+                <default>false</default>
+                <label>การขายส่งโลหะ และแร่โลหะ</label>
+            </value>
+            <value>
+                <fullName>การขายส่งวัตถุดิบทางการเกษตร และสัตว์ที่มีชีวิต</fullName>
+                <default>false</default>
+                <label>การขายส่งวัตถุดิบทางการเกษตร และสัตว์ที่มีชีวิต</label>
+            </value>
+            <value>
+                <fullName>การขายส่งวัสดุก่อสร้าง เครื่องโลหะ อุปกรณ์การวางท่อ การทำความร้อน และเครื่องมือเครื่องใช้</fullName>
+                <default>false</default>
+                <label>การขายส่งวัสดุก่อสร้าง เครื่องโลหะ อุปกรณ์การวางท่อ การทำความร้อน และเครื่องมือเครื่องใช้</label>
+            </value>
+            <value>
+                <fullName>การขายส่งสิ่งทอ สิ่งถัก เสื้อผ้า รองเท้า</fullName>
+                <default>false</default>
+                <label>การขายส่งสิ่งทอ สิ่งถัก เสื้อผ้า รองเท้า</label>
+            </value>
+            <value>
+                <fullName>การขายส่งสินค้าขั้นกลางอื่น ๆ และของที่ไม่ใช้แล้ว</fullName>
+                <default>false</default>
+                <label>การขายส่งสินค้าขั้นกลางอื่น ๆ และของที่ไม่ใช้แล้ว</label>
+            </value>
+            <value>
+                <fullName>การขายส่งสินค้าที่ใช้ในครัวเรือนอื่น ๆ</fullName>
+                <default>false</default>
+                <label>การขายส่งสินค้าที่ใช้ในครัวเรือนอื่น ๆ</label>
+            </value>
+            <value>
+                <fullName>การขายส่งสินค้าหลายชนิด</fullName>
+                <default>false</default>
+                <label>การขายส่งสินค้าหลายชนิด</label>
+            </value>
+            <value>
+                <fullName>การขายส่งอาหารประเภทต่าง ๆ</fullName>
+                <default>false</default>
+                <label>การขายส่งอาหารประเภทต่าง ๆ</label>
+            </value>
+            <value>
+                <fullName>การทำเหมืองแร่และเหมืองหิน</fullName>
+                <default>false</default>
+                <label>การทำเหมืองแร่และเหมืองหิน</label>
+            </value>
+            <value>
+                <fullName>การธนาคารและธุรกิจการเงิน</fullName>
+                <default>false</default>
+                <label>การธนาคารและธุรกิจการเงิน</label>
+            </value>
+            <value>
+                <fullName>การบริการ</fullName>
+                <default>false</default>
+                <label>การบริการ</label>
+            </value>
+            <value>
+                <fullName>การผลิตอื่น ๆ</fullName>
+                <default>false</default>
+                <label>การผลิตอื่น ๆ</label>
+            </value>
+            <value>
+                <fullName>การสาธารณูปโภค</fullName>
+                <default>false</default>
+                <label>การสาธารณูปโภค</label>
+            </value>
+            <value>
+                <fullName>ธุรกิจที่เกี่ยวกับอสังหาริมทรัพย์</fullName>
+                <default>false</default>
+                <label>ธุรกิจที่เกี่ยวกับอสังหาริมทรัพย์</label>
+            </value>
+            <value>
+                <fullName>น้ำตาล</fullName>
+                <default>false</default>
+                <label>น้ำตาล</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์โลหะ เครื่องจักร และอุปกรณ์</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์โลหะ เครื่องจักร และอุปกรณ์</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์จากแร่อโลหะ</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์จากแร่อโลหะ</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์จากธัญพืช</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์จากธัญพืช</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์จากน้ำมันปิโตรเลียม และถ่านหิน</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์จากน้ำมันปิโตรเลียม และถ่านหิน</label>
+            </value>
+            <value>
+                <fullName>ยาง และผลิตภัณฑ์ยาง</fullName>
+                <default>false</default>
+                <label>ยาง และผลิตภัณฑ์ยาง</label>
+            </value>
+            <value>
+                <fullName>ยานพาหนะและอุปกรณ์</fullName>
+                <default>false</default>
+                <label>ยานพาหนะและอุปกรณ์</label>
+            </value>
+            <value>
+                <fullName>สิ่งทอ</fullName>
+                <default>false</default>
+                <label>สิ่งทอ</label>
+            </value>
+            <value>
+                <fullName>อาหารอื่น และยาสูบ</fullName>
+                <default>false</default>
+                <label>อาหารอื่น และยาสูบ</label>
+            </value>
+            <value>
+                <fullName>อื่น ๆ</fullName>
+                <default>false</default>
+                <label>อื่น ๆ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

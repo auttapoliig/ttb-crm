@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Account_Team</fullName>
+    <active>true</active>
+    <description>Add Account Team</description>
+    <label>Add Account Team</label>
+    <picklistValues>
+        <picklist>Account_Access__c</picklist>
+        <values>
+            <fullName>Edit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Read</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Access__c</picklist>
+        <values>
+            <fullName>Edit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Read</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Change_Owner_Approval_Status__c</picklist>
+        <values>
+            <fullName>1st Approver Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Approver Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3rd Approver Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending for Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Access__c</picklist>
+        <values>
+            <fullName>Edit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Read</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Team_Role__c</picklist>
+        <values>
+            <fullName>ARM %2F ABDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Service %2F Client Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RM %2F BDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Head %2F Zone Manager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

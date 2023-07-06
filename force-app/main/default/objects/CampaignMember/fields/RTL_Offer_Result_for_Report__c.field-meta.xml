@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Offer_Result_for_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR( TEXT(RTL_Contact_Status__c) = &apos;Unused&apos;, 
+TEXT(RTL_Contact_Status__c) = &apos;Close&apos;, 
+RTL_Count_Offer_Product__c = 0), 
+&apos;Pending&apos;, 
+IF( RTL_Count_Interest__c+RTL_Count_Not_Interest__c+RTL_Count_NA__c &lt; RTL_Count_Offer_Product__c , 
+&apos;Pending&apos;, 
+IF( RTL_Count_Interest__c&gt;0 , 
+&apos;Interested&apos;, 
+IF( RTL_Count_Not_Interest__c = RTL_Count_Offer_Product__c, 
+&apos;Not Interested&apos;, 
+&apos;Pending&apos; 
+) 
+) 
+) 
+)</formula>
+    <label>Offer Result for Report</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Pending_Referral_to_AL_App</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Product_Name__c</columns>
+    <columns>RTL_Preferred_Branch__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Branch__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>RTL_ReferralOwner__c</columns>
+    <columns>WS_Response_Detail__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>RTL_Referral__c.Retail_Cross_Channel_Referral</value>
+    </filters>
+    <filters>
+        <field>RTL_IsReferralinmyBranch__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RTL_Preferred_Branch__c</field>
+        <operation>equals</operation>
+        <value>AL Marketing</value>
+    </filters>
+    <filters>
+        <field>RTL_Product_Group__c</field>
+        <operation>equals</operation>
+        <value>Auto Loan</value>
+    </filters>
+    <label>My Team Pending Referral to AL App</label>
+    <sharedTo>
+        <roleAndSubordinates>Automotive_Lending_Solution_Advisory_LineTH</roleAndSubordinates>
+    </sharedTo>
+</ListView>

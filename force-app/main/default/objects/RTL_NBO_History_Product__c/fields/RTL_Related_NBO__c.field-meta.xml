@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Related_NBO__c</fullName>
+    <description>NBO that this NBO Product is related to</description>
+    <externalId>false</externalId>
+    <label>Related NBO</label>
+    <referenceTo>RTL_NBO_History__c</referenceTo>
+    <relationshipName>NBO_History_Products</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

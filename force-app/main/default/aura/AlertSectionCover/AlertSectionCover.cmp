@@ -1,0 +1,89 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable" access="global">
+    <lightning:workspaceAPI aura:id="TestForAccordion"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="activeSections" type="List" default="['MomentTrig']"/>
+    <aura:attribute name="activeSectionsMessage" type="String" default="" />  
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordId" type="Id" />
+
+    <aura:attribute name="birthDayLabel" type="String" />
+    <aura:attribute name="riskLabel" type="String" />
+    <aura:attribute name="pdpaLabel" type="String" />
+    <aura:attribute name="marketLabel" type="String" />
+    <aura:attribute name="kycLabel" type="String" />
+    <aura:attribute name="IdCardLabel" type="String" />
+    <aura:attribute name="dormantAccLabel" type="String" />
+    <aura:attribute name="depositInLabel" type="String" />
+    <aura:attribute name="MFMLabel" type="String" />
+    <aura:attribute name="InsuranceAnLabel" type="String" />
+    <aura:attribute name="InsurancePaidLabel" type="String" />
+    <aura:attribute name="InsuranceMatureLabel" type="String" />
+    <aura:attribute name="AUMPlusLabel" type="String" />
+    <aura:attribute name="AUMMinusLabel" type="String" />
+    <aura:attribute name="largeMinusLabel" type="String" />
+    <aura:attribute name="largePlusLabel" type="String" />
+    <aura:attribute name="campaignLabel" type="String" />
+
+    <lightning:accordion
+        onsectiontoggle="{! c.handleSectionToggle }"
+        activeSectionName="{! v.activeSections }">
+
+
+        <lightning:accordionSection name="MomentTrig" label="Moment Trigger" class="background">
+            <p class="labelName">{!v.birthDayLabel}</p>
+            <c:BirthdayReport aura:id="BirthdayReport" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name="risk" label="Regulation Trigger" class="background">
+            <p class="labelName">{!v.riskLabel}</p>
+            <c:RiskReport aura:id="RiskReport" />
+            <br/>
+            <p class="labelName">{!v.pdpaLabel}</p>
+            <c:PDPAReport aura:id="PDPAReport" />
+            <br/>
+            <p class="labelName">{!v.marketLabel}</p>
+            <c:MarketConductReport aura:id="MarketConductReport" />
+            <br/>
+            <p class="labelName">{!v.kycLabel}</p>
+            <c:KYCReport aura:id="KYCReport" />
+            <br/>
+            <p class="labelName">{!v.IdCardLabel}</p>
+            <c:IDCardReport aura:id="IDCardReport" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name="ProductTrig" label="Product Trigger" class="background">
+            <p class="labelName">{!v.dormantAccLabel}</p>
+            <c:DormantAccountReport aura:id="DormantAccountReport" />
+            <br/>
+            <p class="labelName">{!v.depositInLabel}</p>
+            <c:DepositInvestmentReport aura:id="DepositInvestmentReport" />
+            <br/>
+            <p class="labelName">{!v.MFMLabel}</p>
+            <c:MFMaturityReport aura:id="MFMaturityReport" />
+            <br/>
+            <p class="labelName">{!v.InsuranceAnLabel}</p>
+            <c:InsuranceAnniversaryReport aura:id="InsuranceAnniversaryReport" />
+            <br/>
+            <p class="labelName">{!v.InsurancePaidLabel}</p>
+            <c:InsurancePaidUpReport aura:id="InsurancePaidUpReport" />
+            <br/>
+            <p class="labelName">{!v.InsuranceMatureLabel}</p>
+            <c:InsuranceMatureReport aura:id="InsuranceMatureReport" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name="MoneyTrig" label="Portfolio Trigger" class="background">
+            <p class="labelName">{!v.AUMPlusLabel}</p>
+            <c:AUMPlusReport aura:id="AUMPlusReport" />
+            <br/>
+            <p class="labelName">{!v.AUMMinusLabel}</p>
+            <c:AUMMinusReport aura:id="AUMMinusReport" />
+            <br/>
+            <p class="labelName">{!v.largePlusLabel}</p>
+            <c:LargeTransactionMovementPlus aura:id="LargeTransactionMovementPlus" />
+            <br/>
+            <p class="labelName">{!v.largeMinusLabel}</p>
+            <c:LargeTransactionMovementMinus aura:id="LargeTransactionMovementMinus" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name="CampaignTrig" label="Benefit/Campaign Trigger" class="background">
+            <p class="labelName">{!v.campaignLabel}</p>
+            <c:CampaignReport aura:id="CampaignReport" />
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

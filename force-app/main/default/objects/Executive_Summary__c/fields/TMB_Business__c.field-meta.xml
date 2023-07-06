@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMB_Business__c</fullName>
+    <description>Narrative of TMB Business with the customer (can be text of picture)</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ข้อมูลผลิตภัณฑ์ปัจจุบันที่ลูกค้ามีอยู่ เช่น วงเงิน, หลักทรัพย์ที่ใช้ค้ำประกัน หรือการวางแผนผลิตภัณฑ์อื่น ๆ กับลูกค้า โดยข้อมูลมาจาก Account Plan Customer Profile (Step 2)</inlineHelpText>
+    <label>TMB Business</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

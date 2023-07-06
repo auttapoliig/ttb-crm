@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validate_require_field_mobile_and_office</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(OR(RecordType.Name = &apos;Refer within Commercial&apos;,RecordType.Name = &apos;Refer to Commercial&apos;, RecordType.Name = &apos;Refer to Retail&apos;),AND( RTL_Mobile1__c = null, RTL_Phone1__c = null),false)</errorConditionFormula>
+    <errorDisplayField>RTL_Mobile1__c</errorDisplayField>
+    <errorMessage>Must be input Mobile1 or Office No</errorMessage>
+</ValidationRule>

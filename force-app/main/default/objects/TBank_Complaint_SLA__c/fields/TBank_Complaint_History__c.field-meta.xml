@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TBank_Complaint_History__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>TBank Complaint History</label>
+    <referenceTo>TBank_Complaint_History__c</referenceTo>
+    <relationshipLabel>SLA ย่อยของหน่วยงานปลายทาง</relationshipLabel>
+    <relationshipName>TBank_Complaint_SLA</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

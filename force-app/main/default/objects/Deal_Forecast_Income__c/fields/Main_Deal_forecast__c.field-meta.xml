@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_Deal_forecast__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Main Deal forecast</label>
+    <referenceTo>Deal_Forecast_Income__c</referenceTo>
+    <relationshipLabel>Deal Forecast Incomes</relationshipLabel>
+    <relationshipName>Deal_Forecast_Incomes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

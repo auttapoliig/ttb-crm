@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BargainingPowerOfBuyerDescription__c</fullName>
+    <description>Bargaining  power of buyers Description</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>การใส่คำอธิบายเพื่อขยายความอำนาจการต่อรองของ Buyers ให้ชัดเจนยิ่งขึ้น</inlineHelpText>
+    <label>Bargaining  power of buyers Description</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

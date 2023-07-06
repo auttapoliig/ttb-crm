@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_to_Referral__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Related to referral is same as FNA activity.</description>
+    <externalId>false</externalId>
+    <label>Related to Referral</label>
+    <referenceTo>RTL_Referral__c</referenceTo>
+    <relationshipLabel>Referrals (Related to Referral)</relationshipLabel>
+    <relationshipName>Referrals1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

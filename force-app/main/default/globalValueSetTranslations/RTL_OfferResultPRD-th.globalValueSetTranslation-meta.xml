@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Interested</masterLabel>
+        <translation>สนใจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>N/A</masterLabel>
+        <translation><!-- N/A --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Interested</masterLabel>
+        <translation>ไม่สนใจ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Qualified</masterLabel>
+        <translation>ไม่เข้าเงื่อนไข</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Referred</masterLabel>
+        <translation><!-- Referred --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

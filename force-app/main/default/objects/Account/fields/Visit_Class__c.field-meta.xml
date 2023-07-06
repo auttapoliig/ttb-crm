@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Class__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The recommended frequency of customer visits</inlineHelpText>
+    <label>Visit Class</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly Visit</fullName>
+                <default>false</default>
+                <label>Monthly Visit</label>
+            </value>
+            <value>
+                <fullName>Once per 2 Months</fullName>
+                <default>false</default>
+                <label>Once per 2 Months</label>
+            </value>
+            <value>
+                <fullName>Quarterly Visit</fullName>
+                <default>false</default>
+                <label>Quarterly Visit</label>
+            </value>
+            <value>
+                <fullName>Half-Yearly Visit</fullName>
+                <default>false</default>
+                <label>Half-Yearly Visit</label>
+            </value>
+            <value>
+                <fullName>Annually Visit</fullName>
+                <default>false</default>
+                <label>Annually Visit</label>
+            </value>
+            <value>
+                <fullName>When Available</fullName>
+                <default>false</default>
+                <label>When Available</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

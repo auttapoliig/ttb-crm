@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>level_zone</fullName>
+    <active>true</active>
+    <label>level_zone</label>
+    <picklistValues>
+        <picklist>Channel_Name__c</picklist>
+        <values>
+            <fullName>Branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mortgage Loan Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Advisory Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Business Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsecured Lending Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Banking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group_Channel__c</picklist>
+        <values>
+            <fullName>BBD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RASC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb consumer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

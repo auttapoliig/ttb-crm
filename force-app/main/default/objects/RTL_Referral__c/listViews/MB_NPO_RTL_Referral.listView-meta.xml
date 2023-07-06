@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MB_NPO_RTL_Referral</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Zone_Team_Code__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>MB NPO</label>
+    <language>en_US</language>
+    <queue>MB_NPO</queue>
+    <sharedTo>
+        <group>MB_NPO</group>
+    </sharedTo>
+</ListView>

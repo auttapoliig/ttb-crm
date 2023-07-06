@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Preferred_Staff_SBO_RM</fullName>
+    <active>true</active>
+    <description>Branch = SBO_RM , Preferred Staff is not null for recordtype retail and Retail Cross Channel Referral</description>
+    <errorConditionFormula>IF(AND(
+RTL_Preferred_Branch__r.Name = &quot;SBO_RM&quot;,
+RTL_Preferred_Staff__c = null,
+OR(RecordType.DeveloperName==&apos;Refer_to_Retail&apos;,
+RecordType.DeveloperName==&apos;Retail_Cross_Channel_Referral&apos;)
+),(RTL_Preferred_Staff__c = null),false)</errorConditionFormula>
+    <errorDisplayField>RTL_Preferred_Staff__c</errorDisplayField>
+    <errorMessage>Please selected Preferred staff is in SBO_RM.</errorMessage>
+</ValidationRule>

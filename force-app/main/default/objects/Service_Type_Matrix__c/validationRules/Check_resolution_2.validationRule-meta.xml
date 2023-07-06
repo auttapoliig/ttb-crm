@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_resolution_2</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(OR(AND( TEXT(Resolution_2__c) = &apos;&apos;,  SMS_Code_Resolution_2__c &lt;&gt; null), AND( Text(Resolution_2__c) &lt;&gt; &apos;&apos;,  SMS_Code_Resolution_2__c = null)), true,false)</errorConditionFormula>
+    <errorDisplayField>Resolution_2__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่าให้ครบถ้วนทั้ง Resolution 2 และ  SMS Code Resolution 2</errorMessage>
+</ValidationRule>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FATCA__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(ISPICKVAL(FATCA_Form_Completed__c, &apos;Yes&apos;), 
+CASE( RTL_FATCA__c , 
+&quot;N&quot;, &quot;ทำ FATCA (complete)&quot;, 
+&quot;8&quot;, &quot;ทำ FATCA แล้วรอ W8&quot;, 
+&quot;9&quot;, &quot;ทำ FATCA แล้วรอ W9&quot;, 
+&quot;U&quot;, &quot;ทำ FATCA, W9 (complete)&quot;, 
+&quot;P&quot;, &quot;อยู่ระหว่างรอเอกสาร&quot;, 
+&quot;R&quot;, &quot;ลูกค้าไม่ให้ความร่วมมือ&quot;, 
+&quot;0&quot;, &quot;ยังไม่ได้ทำ FATCA&quot;, 
+&quot;&quot;), 
+CASE( RTL_FATCA__c , 
+&quot;N&quot;, &quot;ทำ FATCA (complete)&quot;, 
+&quot;8&quot;, &quot;ทำ FATCA แล้วรอ W8&quot;, 
+&quot;9&quot;, &quot;ทำ FATCA แล้วรอ W9&quot;, 
+&quot;U&quot;, &quot;ทำ FATCA, W9 (complete)&quot;, 
+&quot;P&quot;, &quot;อยู่ระหว่างรอเอกสาร&quot;, 
+&quot;R&quot;, &quot;ลูกค้าไม่ให้ความร่วมมือ&quot;, 
+&quot;0&quot;, &quot;ยังไม่ได้ทำ FATCA&quot;, 
+&quot;&quot;)+ 
+IF( OR(CONTAINS( $Profile.Name, &quot;Contact Center&quot;),FATCA_Remark__c = null),&quot;&quot;, &quot; / &quot;+ FATCA_Remark__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FATCA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

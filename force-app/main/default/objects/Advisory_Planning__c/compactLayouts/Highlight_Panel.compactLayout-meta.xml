@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Highlight_Panel</fullName>
+    <fields>Advisory_Planning_Name__c</fields>
+    <fields>Customer__c</fields>
+    <fields>Baseline_Advisory_Planning_Date__c</fields>
+    <fields>Target_Advisory_Planning_Date__c</fields>
+    <label>Highlight Panel</label>
+</CompactLayout>

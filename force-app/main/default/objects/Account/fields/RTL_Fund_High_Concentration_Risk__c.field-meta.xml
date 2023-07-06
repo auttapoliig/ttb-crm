@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Fund_High_Concentration_Risk__c</fullName>
+    <description>To store fund name of customer having high concentration risk more than 50%</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>ลูกค้ามีการลงทุนกระจุกตัวในกองทุน Type B กองใดกองหนึ่งเกินกว่า 50% ของเงินลงทุน</inlineHelpText>
+    <label>Single Fund Concentration &gt; 50%</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

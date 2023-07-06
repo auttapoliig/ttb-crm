@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Over_SLA__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Number_of_Workduration__c &lt;= 0,&apos;&apos;,
+if( Over_time__c &gt; 0, IMAGE(&quot;/servlet/servlet.FileDownload?file=0150o00000GuPvV&quot;, &quot;Red&quot;, 25,25), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150o00000GuPvQ&quot;, &quot;Green&quot;, 25,25)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Over SLA</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

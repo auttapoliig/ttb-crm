@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_User_in_My_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Region_Code_Group_Code__c = $User.Region_Code__c , true ,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is User in My Region</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

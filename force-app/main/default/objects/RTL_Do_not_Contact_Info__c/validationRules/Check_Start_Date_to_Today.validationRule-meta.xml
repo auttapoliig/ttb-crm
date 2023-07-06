@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Start_Date_to_Today</fullName>
+    <active>true</active>
+    <description>if the period is changed user must enter Start_Date as TODAY or more than TODAY</description>
+    <errorConditionFormula>IF(((ISCHANGED(Period__c) &amp;&amp; Start_Date__c &lt; TODAY())
+|| (ISCHANGED(Start_Date__c) &amp;&amp; Start_Date__c &lt; TODAY())
+|| (ISNEW() &amp;&amp; Start_Date__c &lt; TODAY())
+&amp;&amp; ($User.Employee_ID__c  != &apos;99999&apos;))
+,TRUE
+,FALSE)</errorConditionFormula>
+    <errorDisplayField>Start_Date__c</errorDisplayField>
+    <errorMessage>Start date can not less than current Date</errorMessage>
+</ValidationRule>

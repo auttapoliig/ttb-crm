@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_Other_End_Date_Check_With_Start</fullName>
+    <active>true</active>
+    <description>Period = other, End Date must more than Start Date</description>
+    <errorConditionFormula>IF( ISPICKVAL(Period__c, &apos;Other&apos;) &amp;&amp; (End_Date__c &lt;  Start_Date__c) 
+, TRUE
+, FALSE )</errorConditionFormula>
+    <errorDisplayField>End_Date__c</errorDisplayField>
+    <errorMessage>End Date can not less than Start Date</errorMessage>
+</ValidationRule>

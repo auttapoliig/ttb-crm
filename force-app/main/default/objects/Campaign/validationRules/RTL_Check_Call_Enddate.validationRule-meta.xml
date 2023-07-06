@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Check_Call_Enddate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(Contains(RecordType.Name, &apos;Master Campaign&apos;)),
+    RecordType.Name != &apos;Commercial&apos; , RecordType.Name != &quot;Dummy Campaign&quot;,    
+    OR(
+        
+        RTL_Call_End_Date__c &lt; StartDate , 
+        RTL_Call_End_Date__c &gt; EndDate
+    )
+)</errorConditionFormula>
+    <errorDisplayField>RTL_Call_End_Date__c</errorDisplayField>
+    <errorMessage>The call end date cannot be later than campaign end date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Income__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LeadId==null, 
+IF(Contact.Account.RTL_Income_Conditional__c==0,&apos;-&apos;,Text(Contact.Account.RTL_Income_Conditional__c)), 
+IF(Lead.RTL_Income__c==0,&apos;-&apos;,Text(Lead.RTL_Income__c)))</formula>
+    <label>Income</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

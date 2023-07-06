@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMC_Regulation_Alert__c</fullName>
+    <externalId>false</externalId>
+    <formula>KYC_next_review_date__c &lt; TODAY() || isblank(KYC_next_review_date__c )
+||
+RMC_ID_Card_Expiry_Date__c &lt; TODAY() || isblank(RMC_ID_Card_Expiry_Date__c )
+||
+RMC_Suitability_Risk_Expiry_Date__c &lt; TODAY() || isblank(RMC_Suitability_Risk_Expiry_Date__c )
+||
+RTL_FATCA__c != &apos;N&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Regulation Alert</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

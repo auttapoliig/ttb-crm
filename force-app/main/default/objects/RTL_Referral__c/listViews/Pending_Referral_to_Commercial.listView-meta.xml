@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Referral_to_Commercial</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_FirstName__c</columns>
+    <columns>RTL_LastName__c</columns>
+    <columns>RTL_Account_Name__c</columns>
+    <columns>RTL_Stage__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>RTL_Refer_Branch_Name__c</columns>
+    <columns>RTL_Last_Assigned_Date_time__c</columns>
+    <columns>RTL_ReferralOwner__c</columns>
+    <columns>RTL_Owner_Role__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_Stage__c</field>
+        <operation>equals</operation>
+        <value>New,In progress_Contacted</value>
+    </filters>
+    <filters>
+        <field>RTL_RecordType_Name__c</field>
+        <operation>equals</operation>
+        <value>Refer within Commercial,Refer to Commercial</value>
+    </filters>
+    <label>Pending Referral - to Commercial</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>DTB_Acquiring</roleAndSubordinates>
+        <roleAndSubordinates>Product_Team</roleAndSubordinates>
+    </sharedTo>
+</ListView>

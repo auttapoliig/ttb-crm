@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Offer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>render last offer when this value is true</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Last Offer</label>
+    <type>Checkbox</type>
+</CustomField>

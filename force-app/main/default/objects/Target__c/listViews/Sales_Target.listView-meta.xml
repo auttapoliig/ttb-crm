@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Target</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>Monthly_Target_Date__c</columns>
+    <columns>Segment__c</columns>
+    <columns>Zone__c</columns>
+    <columns>Product__c</columns>
+    <columns>Actual_Monthly_Target__c</columns>
+    <columns>Reference_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Target__c.Sales_Target</value>
+    </filters>
+    <label>Sales Target</label>
+</ListView>

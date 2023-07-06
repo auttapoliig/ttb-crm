@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_new_account_owner</fullName>
+    <active>false</active>
+    <description>Validate new account owner&apos;s segment when click change owner by SM</description>
+    <errorConditionFormula>IF(ISCHANGED(OwnerId),AND(text(Owner.Segment__c)  &lt;&gt;  Core_Banking_Suggested_Segment__c,  text(Account_Type__c) = &quot;Existing Customer&quot;, $Profile.Name &lt;&gt; &quot;System Administrator&quot; ),False)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>New owner must be in the same segment as customer segment.</errorMessage>
+</ValidationRule>

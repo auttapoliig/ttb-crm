@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Previous_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>capture the previous owner of the opportunity</description>
+    <externalId>false</externalId>
+    <label>Previous Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Channel_Referrals1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

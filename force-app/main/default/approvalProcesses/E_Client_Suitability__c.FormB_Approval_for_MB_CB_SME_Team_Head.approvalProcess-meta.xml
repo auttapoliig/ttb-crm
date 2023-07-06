@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>MB_CB_CM_Sales_TH_TL</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>CS_Customer__c</field>
+        <field>CS_Expiry_Date_Next__c</field>
+        <field>Owner</field>
+        <field>CS_RM__c</field>
+        <field>CS_Status__c</field>
+        <field>Total_Score__c</field>
+        <field>New_CS_Level__c</field>
+        <field>Previous_CS_Level__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>21181@tmbbank.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>46751@tmbbank.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Sales TH Approval</label>
+        <name>Sales_TH_Approval</name>
+    </approvalStep>
+    <description>send approval to MB CB SME TH</description>
+    <emailTemplate>unfiled$public/CS_Alert_to_Sale_TH_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(  CS_Sales_Owner__r.Reporting_Segment__c   =  $User.Reporting_Segment__c ,
+OR( (CS_Stamped_Customer_Segment__c = &quot;CB&quot;),( CS_Stamped_Customer_Segment__c = &quot;MB&quot;) ),
+OR( ISPICKVAL( CS_Status__c , &quot;Pending Sales&quot;),
+ ISPICKVAL( CS_Status__c , &quot;Sales TH Rejected&quot;) ),
+ ISPICKVAL( CS_Customer_Survey_B__r.Status__c , &quot;Ready for Review&quot;) 
+ )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Alert_email_approved_to_Sales_Owner</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Change_Status_to_Complete</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Sale_TH_Approve_Date_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Record_Type_to_Complete</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Sales_TH_approver</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Alert_email_rejecting_to_Sales_Owner</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Change_CS_Status_to_Sales_TH_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Change_Status_to_Pending_Sales_TH</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Sale_Submit_Date_Time</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Stamp_Summitter_Name</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>FormB Approval for MB CB SME Team Head</label>
+    <processOrder>5</processOrder>
+    <recallActions>
+        <action>
+            <name>Recall_record_to_Pending_Sale</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Recall_to_Pending_Sales</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

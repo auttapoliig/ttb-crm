@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Node_Key__c</fullName>
+    <description>Use in EIMManager.cls</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(ParentNode__c),Node__c,ParentNode__c+&apos;_&apos;+Node__c )</formula>
+    <label>Node Key</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

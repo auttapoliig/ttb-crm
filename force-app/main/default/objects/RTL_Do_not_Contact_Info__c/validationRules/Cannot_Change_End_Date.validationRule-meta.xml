@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_End_Date</fullName>
+    <active>true</active>
+    <description>if period != other, end date cannot be changed</description>
+    <errorConditionFormula>IF( !ISPICKVAL(Period__c,&quot;Other&quot;) 
+			&amp;&amp; ISCHANGED(End_Date__c) &amp;&amp; !ISNEW()
+		,TRUE
+		,FALSE)</errorConditionFormula>
+    <errorDisplayField>End_Date__c</errorDisplayField>
+    <errorMessage>End Date Cannot Be Changed</errorMessage>
+</ValidationRule>

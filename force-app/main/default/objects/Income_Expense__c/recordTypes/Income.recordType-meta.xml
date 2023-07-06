@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income</fullName>
+    <active>true</active>
+    <label>Income</label>
+    <picklistValues>
+        <picklist>Expense_Amount__c</picklist>
+        <values>
+            <fullName>1%2C000%2C000 Baht - 5%2C000%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100%2C000 Baht - 500%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500%2C000 Baht - 1%2C000%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower than 100%2E00 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More than 5%2C000%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Expense_Category__c</picklist>
+        <values>
+            <fullName>Education Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pay Wages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rental Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Frequency__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_Amount__c</picklist>
+        <values>
+            <fullName>1%2C000%2C000 Baht - 3%2E000%2E000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2C000%2C000 Baht - 10%2C000%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300%2C000 Baht - 1%2C000%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower than 300%2C000 Baht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More than 10%2C000%2C000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_Category__c</picklist>
+        <values>
+            <fullName>Income from Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interest - Dividend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

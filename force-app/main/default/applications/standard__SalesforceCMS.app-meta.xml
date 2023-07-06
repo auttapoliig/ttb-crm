@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Salesforce CMS</label>
+    <navType>Console</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>(Not Use) TMB BB LSP Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>(Not use) TMB DBDM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>(Not Use) TMB Retail Wealth Advisory</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>App External API</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Retail Integration API Only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB AAD Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB ABDM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Account Operation Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB ARM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Audit Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB ARM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB Group Head Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB RM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB Regional Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB Segment Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB Sales Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BB Zone Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB BDM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Card and Account Operations Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Card Operation Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CB/MB Sales Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CEO Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Client Support Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CM Product Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CM Product Specialist Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CM Trader Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Commercial Workbench Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Commercial Report Specialist Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Complaint Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CRM Admin Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CS-Corp.Call Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CS-Investigation Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CSBO Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CS-Technology Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB CWBO Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Group Head Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB ISA</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Marketing Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB MM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Operations Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Partner Distribution Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Product Control Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Product Analyst Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Product Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Product Specialist Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB QA Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Business Activity Upload</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Business Document Upload</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Business Lead Upload</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Business Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Channel Sales</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Channel Sales Mobile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Channel Sales Pilot FNA</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Channel Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Business Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Customer Care</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Fulfillment Outbound</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Multi</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Multi Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound NonVoice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound NonVoice Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Inbound Voice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Outbound</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Report Specialist</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Contact Center Training</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail CRM Specialist</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Flagship Sales</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Management</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Mktg Analytic</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Mktg Analytic TL</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Mktg Campaign Mgmt</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Mktg Campaign Mgmt TL</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Navigator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Product Retention</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Report Specialist</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Wealth Management (WAP POC)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Wealth Advisory Multi</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Wealth Advisory Multi Supervisor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Wealth Management</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Retail Workbench Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB RMA Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB RM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB RMC QA Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB ABDM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB BDM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB Client Support Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB RMC / Telesales Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB TH&amp;TL RMC / Telesales Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SB Zone Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE Group Head Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE Regional Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE RMC / Telesales Outsource Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE RMC / Telesales Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE Sales Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SE Zone Manager Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Segment Head Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Segment Management Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB SEPM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB Team Head Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB TH&amp;TL Marketing Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB TH&amp;TL RMC / Telesales Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB TH&amp;TL SEPM Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TBank_Complaint</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>TBank_Complaint_History__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TMB UW Profile</profile>
+    </profileActionOverrides>
+    <tabs>standard-CmsAuthorHome</tabs>
+    <tabs>standard-CmsChannel</tabs>
+    <tabs>standard-CmsWorkspaces</tabs>
+    <tabs>standard-CmsExperiences</tabs>
+    <tabs>Invesment_Model__c</tabs>
+    <uiType>Lightning</uiType>
+    <workspaceConfig>
+        <mappings>
+            <tab>Invesment_Model__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-CmsAuthorHome</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-CmsChannel</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-CmsExperiences</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-CmsWorkspaces</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

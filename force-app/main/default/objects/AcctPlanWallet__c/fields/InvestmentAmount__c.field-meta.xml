@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvestmentAmount__c</fullName>
+    <description>Investment ในส่วนอื่นๆ ซึ่งไม่ใช่การเก็บเงินไว้ที่ธนาคาร หรือ hold เงินสดไว้ g=jo นำเงินไปลงทุนใน BE เป็นต้น</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Investment ในส่วนอื่นๆ ซึ่งไม่ใช่การเก็บเงินไว้ที่ธนาคาร หรือ hold เงินสดไว้ เช่น นำเงินไปลงทุนใน BE เป็นต้น</inlineHelpText>
+    <label>Investment amount</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

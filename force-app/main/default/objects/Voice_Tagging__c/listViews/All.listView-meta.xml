@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Call_Log_ID__c</columns>
+    <columns>Channel__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Error_Message__c</columns>
+    <columns>Extension__c</columns>
+    <columns>Import_Result__c</columns>
+    <columns>Import_Datetime__c</columns>
+    <columns>Import_Type__c</columns>
+    <columns>Verint_Call_ID__c</columns>
+    <columns>Unique_Id__c</columns>
+    <columns>Transaction_Group_Id__c</columns>
+    <columns>NAME</columns>
+    <columns>Private_Data__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Call_Log_ID__c</field>
+        <operation>equals</operation>
+        <value>10004137181658405604</value>
+    </filters>
+    <label>All</label>
+</ListView>

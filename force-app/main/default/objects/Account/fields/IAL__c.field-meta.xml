@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IAL__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( IAL_level__c, 
+					&quot;No&quot;,&quot;ไม่มีข้อมูล IAL&quot;, 
+					&quot;2.1&quot;, &quot;ต่ำ 2.1&quot;,
+					&quot;2.2&quot;, &quot;ต่ำ 2.2&quot;,
+					&quot;2.3&quot;, &quot;ปานกลาง 2.3&quot;,
+					&quot;3.0&quot;, &quot;สูง 3.0&quot;,
+					&quot;&quot;)</formula>
+    <label>IAL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

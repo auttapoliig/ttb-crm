@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EBITDAContributionPercent__c</fullName>
+    <description>EBITDA Contribution Percent</description>
+    <externalId>false</externalId>
+    <inlineHelpText>สัดส่วน EBITDA ต่อรายรับทั้งหมด ซึ่งจะเป็นรายรับในแต่ละประเภทของ contribution โดยค่าดังกล่าวบวกกันต้องไม่เกิน 100%</inlineHelpText>
+    <label>EBITDA Contribution Percent</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

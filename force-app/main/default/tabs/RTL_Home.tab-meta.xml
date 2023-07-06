@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Home for Retail Phasell</description>
+    <label>Home</label>
+    <motif>Custom237: TV Widescreen</motif>
+    <page>RTL_HomeScreenCallListComponentSF1</page>
+</CustomTab>

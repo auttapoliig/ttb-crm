@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisory_Planning__c</fullName>
+    <description>The advisory planning master.</description>
+    <externalId>false</externalId>
+    <label>Advisory Planning</label>
+    <referenceTo>Advisory_Planning__c</referenceTo>
+    <relationshipLabel>Advisory Planning Items</relationshipLabel>
+    <relationshipName>Advisory_Planning_and_RTL_Product_Master</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

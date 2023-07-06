@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CD_WalletFee__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Account_Plan_Flow_Header__r.Method__c ,
+
+&quot;Collection Domestic&quot;, 
+IF(  Account_Plan_Flow_Header__r.isNoTransactions__c ,
+
+IF( NoOfTransaction__c &gt;0,NoOfTransaction__c,0) 
+,
+Volume__c
+)
+*12
+
+* if( Account_Plan_Flow_Header__r.isFreeCharge__c,
+    if( NOT(ISBLANK(FeeCharge__c)),
+               IF( TEXT(Account_Plan_Flow_Header__r.Fee_Charge_Type__c) =&apos;Number&apos; ,FeeCharge__c*100,FeeCharge__c)
+               ,1)
+
+,0)
+
+
+,
+&quot;Collection Export&quot;,
+
+IF(  Account_Plan_Flow_Header__r.isNoTransactions__c ,
+
+IF( NoOfTransaction__c &gt;0,NoOfTransaction__c,0)
+,
+Volume__c)
+
+*12
+
+* if( Account_Plan_Flow_Header__r.isFreeCharge__c,
+    if( NOT(ISBLANK(FeeCharge__c)),
+IF( TEXT(Account_Plan_Flow_Header__r.Fee_Charge_Type__c) =&apos;Number&apos; ,FeeCharge__c*100,FeeCharge__c)
+,1)
+
+,0)
+
+
+,
+
+&quot;Payment Domestic&quot;,
+
+IF(  Account_Plan_Flow_Header__r.isNoTransactions__c ,
+IF( NoOfTransaction__c &gt;0,NoOfTransaction__c,0),Volume__c)
+* 12
+* IF( Account_Plan_Flow_Header__r.isFreeCharge__c,
+    if( NOT(ISBLANK(FeeCharge__c)),
+IF( TEXT(Account_Plan_Flow_Header__r.Fee_Charge_Type__c) =&apos;Number&apos; ,FeeCharge__c*100,FeeCharge__c),1)
+,0)
+
+
+
+
+
+
+,
+&quot;Payment Import&quot;, 	 	 
+if( ISPICKVAL( Account_Plan_Flow_Header__r.Type_of_Fee__c ,&apos;Engagement Fee&apos;) , 
+( TermDays__c /365),1)
+
+*Volume__c
+*12
+* if( Account_Plan_Flow_Header__r.isFreeCharge__c,
+    if( NOT(ISBLANK(FeeCharge__c)),
+IF( TEXT(Account_Plan_Flow_Header__r.Fee_Charge_Type__c) =&apos;Number&apos; ,FeeCharge__c*100,FeeCharge__c)
+,1)
+
+,0)
+
+,
+
+
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WalletFee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

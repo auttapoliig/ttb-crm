@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Hold_Unhold</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Hold/Unhold</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>{!IF(TEXT(Campaign.Status) = &apos;On Hold&apos;,
+					URLFOR(&apos;/apex/RTL_CampaignChangeStatusConfirmPage&apos;, null, [id=Campaign.Id, activity=&apos;unhold&apos;, isdtp=&apos;vw&apos;], TRUE),
+					URLFOR(&apos;/apex/RTL_CampaignChangeStatusConfirmPage&apos;, null, [id=Campaign.Id, activity=&apos;hold&apos;, isdtp=&apos;vw&apos;], TRUE)
+				)
+}</url>
+</WebLink>

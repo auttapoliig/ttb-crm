@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Prevent_edit_CampName_when_expired</fullName>
+    <active>true</active>
+    <description>You cannot edit campaign when campaign has expired.</description>
+    <errorConditionFormula>AND(Contains(RecordType.Name, &apos;Expired&apos;) ,  ISCHANGED(Name)  )</errorConditionFormula>
+    <errorMessage>Not allow to edit the campaign that already expired.</errorMessage>
+</ValidationRule>

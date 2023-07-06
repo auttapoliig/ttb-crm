@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Length_of_Fax_no_Acct</fullName>
+    <active>true</active>
+    <description>Validate Fax no on PE field</description>
+    <errorConditionFormula>if( CONTAINS(RecordType.Name, &apos;Prospect&apos;),AND( NOT( ISBLANK( Fax ) ) ,NOT(REGEX( Fax , &quot;[\\d\\-\\s]*&quot;))),false)</errorConditionFormula>
+    <errorDisplayField>Fax</errorDisplayField>
+    <errorMessage>Invalid phone number.
+
+Only : Number (0-9), The hyphen (‐), Space ( ) are allowed.</errorMessage>
+</ValidationRule>

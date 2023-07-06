@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Region_Short_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(RTL_Assigned_Region_Code_Rpt__c,
+&apos;1800&apos;,&apos;R1&apos;,
+&apos;6900&apos;,&apos;R2&apos;,
+&apos;9200&apos;,&apos;R3&apos;,
+&apos;7100&apos;,&apos;R4&apos;,
+&apos;7400&apos;,&apos;R5&apos;,
+&apos;7800&apos;,&apos;R6&apos;,
+&apos;8800&apos;,&apos;SB2&apos;,
+&apos;8300&apos;,&apos;SB1&apos;,
+&apos;8841&apos;,&apos;SBRMC&apos;,
+&apos;8843&apos;,&apos;SBRMC&apos;,
+&apos;9530&apos;,&apos;PWA1&apos;,
+&apos;9540&apos;,&apos;PWA2&apos;,
+&apos;9560&apos;,&apos;WA&apos;,
+&apos;7880&apos;,&apos;Wealth&apos;,
+&apos;WMTH&apos;,&apos;Wealth&apos;,
+&apos;3010&apos;,&apos;ALSAL&apos;,
+&apos;5530&apos;,&apos;Retail.Adv&apos;,
+&apos;5130&apos;,&apos;Unsec.Lending&apos;,
+&apos;Others&apos;)</formula>
+    <label>Region Short Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

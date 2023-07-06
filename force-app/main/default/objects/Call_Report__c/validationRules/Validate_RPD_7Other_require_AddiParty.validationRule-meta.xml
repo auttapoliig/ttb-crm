@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_RPD_7Other_require_AddiParty</fullName>
+    <active>true</active>
+    <description>SCR0378480 - validate RPD Require if Sub Purpose 7 Other then require Additional Party</description>
+    <errorConditionFormula>IF(CONTAINS(TEXT(Categories__c), &quot;RPD Team&quot;)
+	,IF( AND( INCLUDES(Sub_Purpose__c,&quot;7 Others&quot;),LEN(TRIM(Additional_Party__c)) = 0 ) , TRUE, FALSE)
+	,FALSE)</errorConditionFormula>
+    <errorDisplayField>Additional_Party__c</errorDisplayField>
+    <errorMessage>please input additional party while subpurpose is other</errorMessage>
+</ValidationRule>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Input__c</fullName>
+    <externalId>false</externalId>
+    <label>Require Input</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Require</fullName>
+                <default>false</default>
+                <label>Not Require</label>
+            </value>
+            <value>
+                <fullName>Require One</fullName>
+                <default>false</default>
+                <label>Require One</label>
+            </value>
+            <value>
+                <fullName>Require All</fullName>
+                <default>false</default>
+                <label>Require All</label>
+            </value>
+            <value>
+                <fullName>Require All or None</fullName>
+                <default>false</default>
+                <label>Require All or None</label>
+            </value>
+            <value>
+                <fullName>Require One or more</fullName>
+                <default>false</default>
+                <label>Require One or more</label>
+            </value>
+            <value>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+                <label>Percentage</label>
+            </value>
+            <value>
+                <fullName>Require One on Sub Question</fullName>
+                <default>false</default>
+                <label>Require One on Sub Question</label>
+            </value>
+            <value>
+                <fullName>Require One or More on Sub Question</fullName>
+                <default>false</default>
+                <label>Require One or More on Sub Question</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_All_Work_Order</fullName>
+    <columns>NAME</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Campaign__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Opportunity_Owner__c</columns>
+    <columns>Job_Type__c</columns>
+    <columns>Owner_Name__c</columns>
+    <columns>Work_Order_Owner_Team__c</columns>
+    <columns>Work_Order_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Work_Order_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancel,Closed</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_MONTHS:6</value>
+    </filters>
+    <label>My All Work Order</label>
+    <sharedTo>
+        <role>CEO</role>
+        <role>Contact_Center</role>
+        <role>SB_RMC</role>
+        <role>Team_Lead_SB_RMC</role>
+        <roleAndSubordinates>Inbound_TH</roleAndSubordinates>
+        <roleAndSubordinates>Investment_Line_TH</roleAndSubordinates>
+        <roleAndSubordinates>Outbound_TH</roleAndSubordinates>
+        <roleAndSubordinates>Retail_Advisory_TH</roleAndSubordinates>
+    </sharedTo>
+</ListView>

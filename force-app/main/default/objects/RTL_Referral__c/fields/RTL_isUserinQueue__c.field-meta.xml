@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_isUserinQueue__c</fullName>
+    <externalId>false</externalId>
+    <formula>CONTAINS(Owner:Queue.DeveloperName,$User.RTL_Branch_Code__c) &amp;&amp; NOT(ISBLANK($User.RTL_Branch_Code__c))</formula>
+    <label>isUserinQueue</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

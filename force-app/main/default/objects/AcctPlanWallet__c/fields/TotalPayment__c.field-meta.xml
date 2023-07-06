@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPayment__c</fullName>
+    <description>ค่าใช้จ่ายรวมทั้งต้นทุนขายและ operating expense เข้าด้วยกัน</description>
+    <externalId>false</externalId>
+    <formula>COGSAmount__c  +  OperatingExpAmount__c</formula>
+    <inlineHelpText>ค่าใช้จ่ายรวมทั้งต้นทุนขายและ operating expense เข้าด้วยกัน</inlineHelpText>
+    <label>TotalPayment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

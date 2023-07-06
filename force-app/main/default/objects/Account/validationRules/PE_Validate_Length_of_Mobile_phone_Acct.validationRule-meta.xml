@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PE_Validate_Length_of_Mobile_phone_Acct</fullName>
+    <active>true</active>
+    <description>Validate mobile PE field</description>
+    <errorConditionFormula>if( AND(CONTAINS(RecordType.Name, &apos;Prospect&apos;),RecordType.Name &lt;&gt; &quot;Inactive Customer&quot;),AND(NOT(CONTAINS(RecordType.Name, &apos;Retail&apos;)),
+AND( NOT( ISBLANK( Mobile_Number_PE__c ) ) ,NOT(REGEX( Mobile_Number_PE__c , &quot;[\\d\\-\\s]*&quot;)))
+),false)</errorConditionFormula>
+    <errorDisplayField>Mobile_Number_PE__c</errorDisplayField>
+    <errorMessage>Invalid phone number.
+
+Only : Number (0-9), The hyphen (‐), Space ( ) are allowed.</errorMessage>
+</ValidationRule>

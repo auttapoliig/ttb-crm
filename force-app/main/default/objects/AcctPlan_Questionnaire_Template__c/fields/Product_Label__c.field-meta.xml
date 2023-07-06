@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Label__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Label</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Collection</fullName>
+                <default>false</default>
+                <label>Collection</label>
+            </value>
+            <value>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <label>Payment</label>
+            </value>
+            <value>
+                <fullName>Business Click</fullName>
+                <default>false</default>
+                <label>Business Click</label>
+            </value>
+            <value>
+                <fullName>Liquidity Management</fullName>
+                <default>false</default>
+                <label>Liquidity Management</label>
+            </value>
+            <value>
+                <fullName>L/G transaction with Government sector</fullName>
+                <default>false</default>
+                <label>L/G transaction with Government sector</label>
+            </value>
+            <value>
+                <fullName>L/G issuing : Aval/Acceptance</fullName>
+                <default>false</default>
+                <label>L/G issuing : Aval/Acceptance</label>
+            </value>
+            <value>
+                <fullName>L/G issuing : International bank guarantee or Standby L/C</fullName>
+                <default>false</default>
+                <label>L/G issuing : International bank guarantee or Standby L/C</label>
+            </value>
+            <value>
+                <fullName>L/G issuing : Shipping guarantee</fullName>
+                <default>false</default>
+                <label>L/G issuing : Shipping guarantee</label>
+            </value>
+            <value>
+                <fullName>Request L/G from Buyer</fullName>
+                <default>false</default>
+                <label>Request L/G from Buyer</label>
+            </value>
+            <value>
+                <fullName>Normal business transaction : Credit risk protection</fullName>
+                <default>false</default>
+                <label>Normal business transaction : Credit risk protection</label>
+            </value>
+            <value>
+                <fullName>Normal business transaction : Other revenue/ expenditure</fullName>
+                <default>false</default>
+                <label>Normal business transaction : Other revenue/ expenditure</label>
+            </value>
+            <value>
+                <fullName>Insurance : Credit life insurance</fullName>
+                <default>false</default>
+                <label>Insurance : Credit life insurance</label>
+            </value>
+            <value>
+                <fullName>Insurance : Non credit life insurance</fullName>
+                <default>false</default>
+                <label>Insurance : Non credit life insurance</label>
+            </value>
+            <value>
+                <fullName>Insurance : Non life insurance</fullName>
+                <default>false</default>
+                <label>Insurance : Non life insurance</label>
+            </value>
+            <value>
+                <fullName>Balance sheet management : Liability management</fullName>
+                <default>false</default>
+                <label>Balance sheet management : Liability management</label>
+            </value>
+            <value>
+                <fullName>Balance sheet management : Investment &amp; Capital expenditure plan</fullName>
+                <default>false</default>
+                <label>Balance sheet management : Investment &amp; Capital expenditure plan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

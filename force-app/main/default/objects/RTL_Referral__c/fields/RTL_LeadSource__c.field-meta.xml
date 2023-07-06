@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_LeadSource__c</fullName>
+    <externalId>false</externalId>
+    <label>LeadSource</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>by Sale Management</fullName>
+                <default>false</default>
+                <label>by Sale Management</label>
+            </value>
+            <value>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <label>Campaign</label>
+            </value>
+            <value>
+                <fullName>CM Referral</fullName>
+                <default>false</default>
+                <label>CM Referral</label>
+            </value>
+            <value>
+                <fullName>Credit System</fullName>
+                <default>false</default>
+                <label>Credit System</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Marketing event</fullName>
+                <default>false</default>
+                <label>Marketing event</label>
+            </value>
+            <value>
+                <fullName>Refer from branch</fullName>
+                <default>false</default>
+                <label>Refer from branch</label>
+            </value>
+            <value>
+                <fullName>Refer from customer</fullName>
+                <default>false</default>
+                <label>Refer from customer</label>
+            </value>
+            <value>
+                <fullName>Refer from RM/BDM</fullName>
+                <default>false</default>
+                <label>Refer from RM/BDM</label>
+            </value>
+            <value>
+                <fullName>Refer from RMC</fullName>
+                <default>false</default>
+                <label>Refer from RMC</label>
+            </value>
+            <value>
+                <fullName>Refer from TBANK</fullName>
+                <default>false</default>
+                <label>Refer from TBANK</label>
+            </value>
+            <value>
+                <fullName>Walk In / Call in</fullName>
+                <default>false</default>
+                <label>Walk In / Call in</label>
+            </value>
+            <value>
+                <fullName>Walk-in customer</fullName>
+                <default>false</default>
+                <label>Walk-in customer</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Others Referral</fullName>
+                <default>false</default>
+                <label>Others Referral</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Refer within Commercial</fullName>
+                <default>false</default>
+                <label>Refer within Commercial</label>
+            </value>
+            <value>
+                <fullName>Biztouch</fullName>
+                <default>false</default>
+                <label>Biztouch</label>
+            </value>
+            <value>
+                <fullName>Hiring Lead</fullName>
+                <default>false</default>
+                <label>Hiring Lead</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าเดิมจากที่อื่นๆ</fullName>
+                <default>false</default>
+                <label>ลูกค้าเดิมจากที่อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>คนรู้จัก</fullName>
+                <default>false</default>
+                <label>คนรู้จัก</label>
+            </value>
+            <value>
+                <fullName>EDM</fullName>
+                <default>false</default>
+                <label>EDM</label>
+            </value>
+            <value>
+                <fullName>FB Boost Post</fullName>
+                <default>false</default>
+                <label>FB Boost Post</label>
+            </value>
+            <value>
+                <fullName>FB Dark post</fullName>
+                <default>false</default>
+                <label>FB Dark post</label>
+            </value>
+            <value>
+                <fullName>Line</fullName>
+                <default>false</default>
+                <label>Line</label>
+            </value>
+            <value>
+                <fullName>SEM</fullName>
+                <default>false</default>
+                <label>SEM</label>
+            </value>
+            <value>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <label>SMS</label>
+            </value>
+            <value>
+                <fullName>Organic</fullName>
+                <default>false</default>
+                <label>Organic</label>
+            </value>
+            <value>
+                <fullName>TBANK</fullName>
+                <default>false</default>
+                <label>TBANK</label>
+            </value>
+            <value>
+                <fullName>Touch</fullName>
+                <default>false</default>
+                <label>Touch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

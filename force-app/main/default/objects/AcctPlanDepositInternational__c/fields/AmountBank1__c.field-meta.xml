@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmountBank1__c</fullName>
+    <description>Deposit Amount - Bank 1 (Thai baht equivalent)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deposit Amount - Bank 1 (Thai baht equivalent)</inlineHelpText>
+    <label>Amount (THB)-[Bank1]</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

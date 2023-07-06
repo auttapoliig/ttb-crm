@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SumOfWalletFXFeePerYear__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>4.1,&apos;FX Fee Products&apos;    &gt;&gt;     SumWalletFX   &gt;&gt; SumOfWalletFXFeePerYear__c
+Avg. FX Margin (calculated from weighted average)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Avg. FX Margin (calculated from weighted average)</inlineHelpText>
+    <label>SumOfWalletFXFeePerYear</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

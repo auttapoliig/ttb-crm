@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Require_CampaignCode_If_not_Local_Ex</fullName>
+    <active>true</active>
+    <description>if campaign type &lt;&gt; &apos;Local Exclusive&apos;, the Campaign 9 digits must be entered and must be 9 digits</description>
+    <errorConditionFormula>AND(   Contains(RecordType.Name, &apos;Master Campaign&apos;),
+       NOT(ISPICKVAL(RTL_Campaign_Type__c, &apos;Local Exclusive&apos;)),
+     LEN(RTL_Campaign_Code_9_digits__c ) &lt;&gt; 9)</errorConditionFormula>
+    <errorDisplayField>RTL_Campaign_Code_9_digits__c</errorDisplayField>
+    <errorMessage>Campaign code 9 digits must be entered and must be only 9 digits.</errorMessage>
+</ValidationRule>

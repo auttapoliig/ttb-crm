@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsDisqualified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>if its True will set a record to Disqualified</description>
+    <externalId>false</externalId>
+    <label>IsDisqualified</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

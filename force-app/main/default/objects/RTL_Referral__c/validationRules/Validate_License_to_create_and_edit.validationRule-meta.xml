@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_License_to_create_and_edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+					AND(
+					    ISNEW(),
+									$User.RTL_License_No_Complex_P2__c == null || $User.RTL_License_No_Complex_P2__c == &apos;&apos; || $User.RTL_Expiry_Date_Complex_P2__c &lt; TODAY(),
+	        $User.RTL_License_No_Paper_1__c == null || $User.RTL_License_No_Paper_1__c == &apos;&apos; || $User.RTL_Expiry_Date_Paper_1__c &lt; TODAY(),
+									RecordType.DeveloperName == &quot;Retail_Order_Transaction&quot;
+					),
+					AND(
+									!ISNEW(),
+									RecordType.DeveloperName == &quot;Retail_Order_Transaction&quot;,
+									AND( 
+													Owner:User.Id != null,
+													Owner:User.RTL_License_No_Complex_P2__c == null || Owner:User.RTL_License_No_Complex_P2__c == &apos;&apos; || Owner:User.RTL_Expiry_Date_Complex_P2__c &lt; TODAY(),
+									    Owner:User.RTL_License_No_Paper_1__c == null || Owner:User.RTL_License_No_Paper_1__c == &apos;&apos; || Owner:User.RTL_Expiry_Date_Paper_1__c &lt; TODAY()
+									)									
+					)
+	)</errorConditionFormula>
+    <errorMessage>User does not have License No. or License is expired.</errorMessage>
+</ValidationRule>
