@@ -27,6 +27,11 @@
                 <label>Cold</label>
             </value>
             <value>
+                <fullName>Cold Opp</fullName>
+                <default>false</default>
+                <label>Cold Opp</label>
+            </value>
+            <value>
                 <fullName>C</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

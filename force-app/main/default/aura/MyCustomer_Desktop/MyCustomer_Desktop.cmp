@@ -1,0 +1,1718 @@
+<aura:component controller="MyCustomerControllerClass" access="global" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes" >
+    <!-- handler -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:attribute name="parent" type="Aura.Component"/>
+
+    <!-- Filter -->
+    <aura:attribute name="valueFilter" type="Object[]" />
+    <aura:attribute name="openFilter" type="Boolean" />
+    <aura:attribute name="sortableColumns" type="List" default="['aum_is', 'dp_os', 'mf_os', 'mf_gain_loss']"/>
+
+    <!-- Search -->
+    <aura:attribute name="disableButtonSearch" type="Boolean" default="false" />
+    <aura:attribute name="selectedField" type="String" />
+
+    <!-- Data -->
+    <aura:attribute name="columns" type="Object"/>
+    <aura:attribute name="taskFieldLabelMap" type="Object"/>
+    <aura:attribute name="dataRow" type="Object"/>
+    <aura:attribute name="countSelectCust" type="Integer" default="0" />
+    <aura:attribute name="countSelectCustWarning" type="Boolean" default="false" />
+    <aura:attribute name="dataSelectCust" type="Object" />
+    <aura:attribute name="userName" type="String" />
+    <aura:attribute name="isAUMSort" type="Boolean" default="false"/>
+    <aura:attribute name="isDPSort" type="Boolean" default="false"/>
+    <aura:attribute name="isMFSort" type="Boolean" default="false"/>
+    <aura:attribute name="isMFGainLossSort" type="Boolean" default="false"/>
+    <aura:attribute name="isLastSelectedSort" type="Boolean" default="false"/>
+    <aura:attribute name="isLastActivitySort" type="Boolean" default="false"/>
+    <aura:attribute name="isNameSort" type="Boolean" default="false"/>
+    <aura:attribute name="isReserveInviteSort" type="Boolean" default="false"/>
+    <aura:attribute name="countSuccess" type="Integer" default="0" />
+    <aura:attribute name="Task_Activity_Days" type="String"/>
+    <aura:attribute name="Task_Priority" type="String"/>
+    <aura:attribute name="Task_Subject" type="String"/>
+
+
+    <!-- icons -->
+    <aura:attribute name="iconsNameSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsAUMSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsDPSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsMFSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsMFGainLossSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsLastSelectedSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsLastActivitySort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsReserveInviteSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="activeSortName" type="Boolean" default="true"/>
+    <aura:attribute name="activeSortAUM" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortDP" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortMF" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortMFgainloss" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortLastSelect" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortLastActivety" type="Boolean" default="false"/>
+    <aura:attribute name="activeSortReserve" type="Boolean" default="false"/>
+
+    <!-- Viewmore -->
+    <aura:attribute name="openViewMore" type="Boolean" default="false" />
+
+    <!-- Create Task -->
+    <aura:attribute name="openCreateTask" type="Boolean" default="false" />
+    <aura:attribute name="openCreateTaskResult" type="Boolean" default="false" />
+
+    <!-- Spinner -->
+    <aura:attribute name="openSpinner" type="Boolean" default="false" />
+    <aura:attribute name="openSpinnerTable" type="Boolean" default="false" />
+    <aura:attribute name="openSpinnerViewmore" type="Boolean" default="false" />
+
+    <!-- link -->
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+<!-- ============================================================================== -->
+    <div style="height: 100%;display:flex;flex-direction:column;overflow:auto;">
+
+        <!-- spinner for create task (Full) -->
+        <aura:if isTrue="{!v.openSpinner}">
+            <div class="demo-only">
+                <div class="slds-spinner_container slds-is-fixed">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+
+        <!-- Spinner for Table -->
+        <aura:if isTrue="{!v.openSpinnerTable}">
+            <div class="spinner">
+                <lightning:spinner size="medium" variant="brand" alternativeText="Loading.."/>
+            </div>
+        </aura:if>
+
+        <!-- GroupBtn -->
+        <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+            <div class="groupBtn">
+                <lightning:button variant="brand" label="Search" title="search action" onclick="{!c.onSearchData}" disabled="{!v.disableButtonSearch}"/>
+                <div class="groupBtn-right">
+                    <aura:if isTrue="{!v.countSelectCustWarning}">
+                        <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:error" 
+                            title="{!$Label.c.warnning_for_maxSelectCustomer}" 
+                            class="slds-m-right_xx-small" 
+                            style="background-color:rgb(254, 147, 57);"/>
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!v.countSelectCust == 0}">
+                                <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" 
+                                    title="{!$Label.c.warnning_for_noneSelectCustomer}" 
+                                    class="slds-m-right_xx-small" 
+                                    style="background-color:rgb(201, 199, 197);"/>
+                                <aura:set attribute="else">
+                                    <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" class="slds-m-right_xx-small" />
+                                </aura:set>
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+                    <lightning:button variant="brand" label="Select &amp; Create Task" title="create Task action" onclick="{!c.onOpenCreateTask}"/>
+                    <lightning:button variant="brand" label="Download" title="download action" onclick="{!c.onExportExcelData}"/>
+                    <lightning:button variant="brand" label="View More" title="view more action" onclick="{!c.onOpenModalViewMore}"/>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="groupBtn">
+                    <lightning:button variant="brand" label="Search" title="search action" onclick="{!c.onSearchData}" disabled="{!v.disableButtonSearch}"/>
+                    <div class="groupBtn-right">
+                        <aura:if isTrue="{!v.countSelectCustWarning}">
+                            <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:error" 
+                                title="{!$Label.c.warnning_for_maxSelectCustomer}" 
+                                class="slds-m-right_xx-small" 
+                                style="background-color:rgb(254, 147, 57);"/>
+                            <aura:set attribute="else">
+                                <aura:if isTrue="{!v.countSelectCust == 0}">
+                                    <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" 
+                                        title="{!$Label.c.warnning_for_noneSelectCustomer}" 
+                                        class="slds-m-right_xx-small" 
+                                        style="background-color:rgb(201, 199, 197);"/>
+                                    <aura:set attribute="else">
+                                        <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" class="slds-m-right_xx-small" />
+                                    </aura:set>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                        <lightning:button variant="brand" label="Select &amp; Create Task" title="create Task action" onclick="{!c.onOpenCreateTask}"/>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+        <!-- Table Main-->
+        <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+            <div class="table slds-scrollable">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead class="fixed-allCol">
+                        <tr class="slds-line-height_reset">
+                            <th class="sticky-col" scope="col">
+                                <div title="{!$Label.c.Select_customer}" style="width: 20px;" class="slds-text-align_center">
+                                    <p>{!$Label.c.Select_customer}</p> 
+                                </div>
+                            </th>
+                            <th class="sticky-col" scope="col">
+                                <aura:if isTrue="{!v.activeSortName}">
+                                    <a class="sortcolumnHover" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
+                                        <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                            {!$Label.c.Name_My_Customer}
+                                            <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                        </div>
+                                    </a>
+                                    <aura:set attribute="else">
+                                        <a class="sortcolumn" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                                {!$Label.c.Name_My_Customer}
+                                                <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                    </aura:set>
+                                </aura:if>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Relationship_Level}" class="slds-text-align_center">
+                                    {!$Label.c.Relationship_Level}
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Moment_Trigger}" class="slds-text-align_center">
+                                    {!$Label.c.Moment_Trigger}
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Regulation_Trigger}" class="slds-text-align_center" style="width: 47px;">
+                                    {!$Label.c.Regulation_Trigger}
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Product_Trigger}" class="slds-text-align_center">
+                                    {!$Label.c.Product_Trigger}
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Portfolio_Trigger}" class="slds-text-align_center">
+                                    {!$Label.c.Portfolio_Trigger}
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div title="{!$Label.c.Campaign_Trigger}" class="slds-text-align_center">
+                                    {!$Label.c.Campaign_Trigger}
+                                </div>
+                            </th>
+                            <th scope="col" class="slds-is-sortable">
+                                <aura:if isTrue="{!v.activeSortAUM}">
+                                    <a class="sortcolumnHover " data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                        <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                            {!$Label.c.AUM_OS}
+                                            <lightning:icon iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                        </div>
+                                    </a>
+                                    <aura:set attribute="else">
+                                        <a class="sortcolumn" data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.AUM_OS}
+                                                <lightning:icon iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                    </aura:set>
+                                </aura:if>
+                            </th>
+                            <th scope="col">
+                                <aura:if isTrue="{!v.activeSortDP}">
+                                    <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                        <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                            {!$Label.c.DP_OS}
+                                            <lightning:icon iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                        </div>
+                                    </a>
+                                    <aura:set attribute="else">
+                                        <a class="sortcolumn" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.DP_OS}
+                                                <lightning:icon iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                    </aura:set>
+                                </aura:if>
+                            </th>
+                            <th scope="col">
+                                <aura:if isTrue="{!v.activeSortMF}">
+                                    <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                        <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                            {!$Label.c.MF_OS}
+                                            <lightning:icon iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                        </div>
+                                    </a>
+                                    <aura:set attribute="else">
+                                        <a class="sortcolumn" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.MF_OS}
+                                                <lightning:icon iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                    </aura:set>
+                                </aura:if>
+                            </th>
+                            <th scope="col">
+                                <aura:if isTrue="{!v.activeSortLastSelect}">
+                                    <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                        <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                            {!$Label.c.Select_Date_Time}
+                                            <lightning:icon iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                        </div>
+                                    </a>
+                                    <aura:set attribute="else">
+                                        <a class="sortcolumn" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                                {!$Label.c.Select_Date_Time}
+                                                <lightning:icon iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                    </aura:set>
+                                </aura:if>
+                            </th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <aura:iteration items="{!v.dataRow}" var="row">
+                            <tr class="slds-hint-parent">
+                                <td class="sticky-row">
+                                    <lightning:input aura:id="customerSelection" 
+                                        type="checkbox" 
+                                        value="{!row.id}" 
+                                        checked="{!row.candidate}"
+                                        onchange="{!c.onUpdateDataFromViewMore}"
+                                        style="width: 20px;"
+                                        />
+                                </td>
+                                <td class="sticky-row">
+                                    <a data-id="{!row.id}" onclick="{!c.navigateTab}">
+                                        <div class="slds-truncate">{!row.name}</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.relationship}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.moment_trigger}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.regulartion_trigger}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.product_trigger}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.portfolio_trigger}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.campaign_trigger}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.aum_is}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.dp_op}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.mf_os}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate slds-text-align_right">
+                                        {!row.last_selected_date}
+                                    </div>
+                                </td>    
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+    
+                </table>
+            </div>
+
+            <aura:set attribute="else">
+                <div class="tableViewMore slds-scrollable slds-m-top_small">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead class="fixed-allCol">
+                            <tr class="slds-line-height_reset">
+                                <th class="sticky-col" scope="col">
+                                    <div title="{!$Label.c.Select_customer}" style="width: 35px;" class="slds-text-align_center">
+                                        <p>{!$Label.c.Select_customer}</p> 
+                                    </div>
+                                </th>
+                                <th class="sticky-col" scope="col">
+                                    <div title="{!$Label.c.tmb_cust_id}" style="width: 274.03px;" class="slds-text-align_center">
+                                        <p>{!$Label.c.tmb_cust_id}</p> 
+                                    </div>
+                                </th>
+                                <th class="sticky-col" scope="col">
+                                    <aura:if isTrue="{!v.activeSortName}">
+                                        <a class="sortcolumnHover" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                                {!$Label.c.Name_My_Customer}
+                                                <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.Name_My_Customer}
+                                                    <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Relationship_Level}" class="slds-text-align_center">
+                                        {!$Label.c.Relationship_Level}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Moment_Trigger}" class="slds-text-align_center">
+                                        {!$Label.c.Moment_Trigger}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Regulation_Trigger}" class="slds-text-align_center" style="width: 47px;">
+                                        {!$Label.c.Regulation_Trigger}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Product_Trigger}" class="slds-text-align_center">
+                                        {!$Label.c.Product_Trigger}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Portfolio_Trigger}" class="slds-text-align_center">
+                                        {!$Label.c.Portfolio_Trigger}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Campaign_Trigger}" class="slds-text-align_center">
+                                        {!$Label.c.Campaign_Trigger}
+                                    </div>
+                                </th>
+                                <th scope="col" class="slds-is-sortable">
+                                    <aura:if isTrue="{!v.activeSortAUM}">
+                                        <a class="sortcolumnHover" data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.AUM_OS}
+                                                <lightning:icon iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" aura:id="aum_is_double" data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.AUM_OS}
+                                                    <lightning:icon aura:id="aum_is_doubleVM" iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortDP}">
+                                        <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.DP_OS}
+                                                <lightning:icon aura:id="dp_op_double" iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.DP_OS}
+                                                    <lightning:icon aura:id="dp_op_double" iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortMF}">
+                                        <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.MF_OS}
+                                                <lightning:icon aura:id="mf_os_double" iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.MF_OS}
+                                                    <lightning:icon aura:id="mf_os_double" iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortLastSelect}">
+                                        <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                                {!$Label.c.Select_Date_Time}
+                                                <lightning:icon aura:id="last_selected_date_value" iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.Select_Date_Time}
+                                                    <lightning:icon aura:id="last_selected_date_value" iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.AGE}" class="slds-text-align_center">
+                                        {!$Label.c.AGE}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.AGE_Range}" class="slds-text-align_center">
+                                        {!$Label.c.AGE_Range}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Cust_Sub_Segment}" class="slds-text-align_center">
+                                        {!$Label.c.Cust_Sub_Segment}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.SUIT_SCORE_FIN}" class="slds-text-align_center">
+                                        {!$Label.c.SUIT_SCORE_FIN}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.WEALTH_FLAG}" class="slds-text-align_center">
+                                        {!$Label.c.WEALTH_FLAG}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Employer_Flag}" class="slds-text-align_center">
+                                        {!$Label.c.Employer_Flag}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.MOU_payroll_flag}" class="slds-text-align_center">
+                                        {!$Label.c.MOU_payroll_flag}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Debenture}" class="slds-text-align_center">
+                                        {!$Label.c.Debenture}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Last_Activity}" class="slds-text-align_center">
+                                        {!$Label.c.Last_Activity}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortLastActivety}">
+                                        <a class="sortcolumnHover" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
+                                                {!$Label.c.Last_Activity_Date}
+                                                <lightning:icon aura:id="last_activity_dateTime_value" iconName="{!v.iconsLastActivitySort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.Last_Activity_Date}
+                                                    <lightning:icon aura:id="last_activity_dateTime_value" iconName="{!v.iconsLastActivitySort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.AUM_Range}" class="slds-text-align_center">
+                                        {!$Label.c.AUM_Range}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.AllFree_OS}" class="slds-text-align_center">
+                                        {!$Label.c.AllFree_OS}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.NFX_OS}" class="slds-text-align_center">
+                                        {!$Label.c.NFX_OS}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.TD_OS}" class="slds-text-align_center">
+                                        {!$Label.c.TD_OS}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.other_dp_os}" class="slds-text-align_center">
+                                        {!$Label.c.other_dp_os}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortMFgainloss}">
+                                        <a class="sortcolumnHover" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
+                                                {!$Label.c.mf_gain_loss}
+                                                <lightning:icon aura:id="mfGainLoss_double" iconName="{!v.iconsMFGainLossSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.mf_gain_loss}
+                                                    <lightning:icon aura:id="mfGainLoss_double" iconName="{!v.iconsMFGainLossSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.nfx_rate}" class="slds-text-align_center">
+                                        {!$Label.c.nfx_rate}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.total_maturity_this_month}" class="slds-text-align_center">
+                                        {!$Label.c.total_maturity_this_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.td_maturity_this_month}" class="slds-text-align_center">
+                                        {!$Label.c.td_maturity_this_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.term_fund_maturity_this_month}" class="slds-text-align_center">
+                                        {!$Label.c.term_fund_maturity_this_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.ba_ape_this_month}" class="slds-text-align_center">
+                                        {!$Label.c.ba_ape_this_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Debenture_this_month}" class="slds-text-align_center">
+                                        {!$Label.c.Debenture_this_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.total_maturity_next_month}" class="slds-text-align_center">
+                                        {!$Label.c.total_maturity_next_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.TD_next_month}" class="slds-text-align_center">
+                                        {!$Label.c.TD_next_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Mutual_FUND_next_month}" class="slds-text-align_center">
+                                        {!$Label.c.Mutual_FUND_next_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.ba_ape_next_month}" class="slds-text-align_center">
+                                        {!$Label.c.ba_ape_next_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.Debentured_next_month}" class="slds-text-align_center">
+                                        {!$Label.c.Debentured_next_month}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <aura:if isTrue="{!v.activeSortReserve}">
+                                        <a class="sortcolumnHover" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
+                                                {!$Label.c.CC_Reserve_Eligible}
+                                                <lightning:icon aura:id="cc_ttb_reserve_invitation_value" iconName="{!v.iconsReserveInviteSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.CC_Reserve_Eligible}
+                                                    <lightning:icon aura:id="cc_ttb_reserve_invitation_value" iconName="{!v.iconsReserveInviteSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.CC_RESERVE_POINT}" class="slds-text-align_center">
+                                        {!$Label.c.CC_RESERVE_POINT}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.CC_RESERVE_ANUAL_POINT}" class="slds-text-align_center">
+                                        {!$Label.c.CC_RESERVE_ANUAL_POINT}
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div title="{!$Label.c.CC_Other_POINT_BALANCE}" class="slds-text-align_center">
+                                        {!$Label.c.CC_Other_POINT_BALANCE}
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.dataRow}" var="row">
+                                <tr class="slds-hint-parent">
+                                    <td class="sticky-row">
+                                        <lightning:input aura:id="customerSelection" 
+                                            type="checkbox" 
+                                            value="{!row.id}" 
+                                            checked="{!row.candidate}"
+                                            onchange="{!c.onUpdateDataFromViewMore}"
+                                            style="width: 20px;"
+                                            />
+                                    </td>
+                                    <td class="sticky-row">
+                                        <div class="slds-truncate" style="width: 274.03px;font-size:15px;">
+                                            {!row.tmb_cust_id}
+                                        </div>
+                                    </td>
+                                    <td class="sticky-row">
+                                        <a data-id="{!row.id}" onclick="{!c.navigateTab}">
+                                            <div class="slds-truncate">
+                                                {!row.name}
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.relationship}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.moment_trigger}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.regulartion_trigger}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.product_trigger}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.portfolio_trigger}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.campaign_trigger}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.aum_is}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.dp_op}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.mf_os}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.last_selected_date}
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.age}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                            {!row.age_range}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.cust_sub_segment}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                            {!row.suit_score}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.wealth_flag}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.shareholder_flag}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                            {!row.mou_payroll_flag}
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                            {!row.debenture_flag}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.last_activity}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.last_activity_dateTime}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right">
+                                            {!row.aum_range}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.allFree_os}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.nfx_os}
+                                        </div>
+                                    </td>   
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.td_os}
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.other_deposit_os}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.mfGainLoss}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.nfx_rate}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.all_matur_this_month}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.deposit_matur_this_month}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.mf_matur_this_month}
+                                        </div>
+                                    </td>   
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.insurnace_anni_this_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.deb_matur_this_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.all_matur_next_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.deposit_matur_next_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.mf_matur_next_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.insurnace_anni_next_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.deb_matur_next_month}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.cc_reserve_eligible}
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.cc_reserve_point}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.cc_reserve_annual_point}
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                            {!row.cc_other_point_balance}
+                                        </div>
+                                    </td>   
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </aura:set>
+        </aura:if>
+
+        <!-- View more -->
+        <aura:if isTrue="{!v.openViewMore}">
+            <section role="dialog" 
+                tabindex="-1" 
+                aria-labelledby="modal-heading-01" 
+                aria-modal="true" 
+                aria-describedby="modal-content-id-1"   
+                class="modalViewMore slds-modal slds-fade-in-open slds-modal_large"
+            >
+                <div class="slds-modal__container slds-modal__content">
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                            View More
+                        </h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <aura:if isTrue="{!v.openSpinnerViewmore}">
+                            <div class="spinner">
+                                <lightning:spinner size="medium" variant="brand" alternativeText="Loading.."/>
+                            </div>
+                        </aura:if>
+                        <div class="slds-m-bottom_x-small">
+                            <aura:if isTrue="{!v.countSelectCustWarning}">
+                                <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:error" 
+                                    title="{!$Label.c.warnning_for_maxSelectCustomer}" 
+                                    class="slds-m-right_xx-small" 
+                                    style="background-color:rgb(254, 147, 57);"/>
+                                <aura:set attribute="else">
+                                    <aura:if isTrue="{!v.countSelectCust == 0}">
+                                        <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" 
+                                            title="{!$Label.c.warnning_for_noneSelectCustomer}" 
+                                            class="slds-m-right_xx-small" 
+                                            style="background-color:rgb(201, 199, 197);"/>
+                                        <aura:set attribute="else">
+                                            <lightning:badge label="{!'Selected Row : '+v.countSelectCust}" iconName="utility:success" class="slds-m-right_xx-small" />
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                        <div class="tableViewMore slds-scrollable">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead class="fixed-allCol">
+                                    <tr class="slds-line-height_reset">
+                                        <th class="sticky-col" scope="col">
+                                            <div title="{!$Label.c.Select_customer}" style="width: 20px;" class="slds-text-align_center">
+                                                <p>{!$Label.c.Select_customer}</p> 
+                                            </div>
+                                        </th>
+                                        <th class="sticky-col" scope="col">
+                                            <div title="{!$Label.c.tmb_cust_id}" style="width: 254.03px;" class="slds-text-align_center">
+                                                <p>{!$Label.c.tmb_cust_id}</p> 
+                                            </div>
+                                        </th>
+                                        <th class="sticky-col-viewmore" scope="col">
+                                            <aura:if isTrue="{!v.activeSortName}">
+                                                <a class="sortcolumnHover" data-sort="name" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.Name_My_Customer}
+                                                        <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="name" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.Name_My_Customer}
+                                                            <lightning:icon iconName="{!v.iconsNameSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Relationship_Level}" class="slds-text-align_center">
+                                                {!$Label.c.Relationship_Level}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Moment_Trigger}" class="slds-text-align_center">
+                                                {!$Label.c.Moment_Trigger}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Regulation_Trigger}" class="slds-text-align_center" style="width: 47px;">
+                                                {!$Label.c.Regulation_Trigger}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Product_Trigger}" class="slds-text-align_center">
+                                                {!$Label.c.Product_Trigger}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Portfolio_Trigger}" class="slds-text-align_center">
+                                                {!$Label.c.Portfolio_Trigger}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Campaign_Trigger}" class="slds-text-align_center">
+                                                {!$Label.c.Campaign_Trigger}
+                                            </div>
+                                        </th>
+                                        <th scope="col" class="slds-is-sortable">
+                                            <aura:if isTrue="{!v.activeSortAUM}">
+                                                <a class="sortcolumnHover" data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.AUM_OS}
+                                                        <lightning:icon iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="aum_is_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.AUM_OS}
+                                                            <lightning:icon iconName="{!v.iconsAUMSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortDP}">
+                                                <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.DP_OS}
+                                                        <lightning:icon iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="dp_op_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.DP_OS}
+                                                            <lightning:icon iconName="{!v.iconsDPSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortMF}">
+                                                <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.MF_OS}
+                                                        <lightning:icon iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="mf_os_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.MF_OS}
+                                                            <lightning:icon iconName="{!v.iconsMFSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortLastSelect}">
+                                                <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.Select_Date_Time}
+                                                        <lightning:icon iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.Select_Date_Time}
+                                                            <lightning:icon iconName="{!v.iconsLastSelectedSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.AGE}" class="slds-text-align_center">
+                                                {!$Label.c.AGE}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.AGE_Range}" class="slds-text-align_center">
+                                                {!$Label.c.AGE_Range}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Cust_Sub_Segment}" class="slds-text-align_center">
+                                                {!$Label.c.Cust_Sub_Segment}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.SUIT_SCORE_FIN}" class="slds-text-align_center">
+                                                {!$Label.c.SUIT_SCORE_FIN}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.WEALTH_FLAG}" class="slds-text-align_center">
+                                                {!$Label.c.WEALTH_FLAG}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Employer_Flag}" class="slds-text-align_center">
+                                                {!$Label.c.Employer_Flag}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.MOU_payroll_flag}" class="slds-text-align_center">
+                                                {!$Label.c.MOU_payroll_flag}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Debenture}" class="slds-text-align_center">
+                                                {!$Label.c.Debenture}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Last_Activity}" class="slds-text-align_center">
+                                                {!$Label.c.Last_Activity}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortLastActivety}">
+                                                <a class="sortcolumnHover" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.Last_Activity_Date}
+                                                        <lightning:icon iconName="{!v.iconsLastActivitySort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.Last_Activity_Date}
+                                                            <lightning:icon iconName="{!v.iconsLastActivitySort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.AUM_Range}" class="slds-text-align_center">
+                                                {!$Label.c.AUM_Range}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.AllFree_OS}" class="slds-text-align_center">
+                                                {!$Label.c.AllFree_OS}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.NFX_OS}" class="slds-text-align_center">
+                                                {!$Label.c.NFX_OS}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.TD_OS}" class="slds-text-align_center">
+                                                {!$Label.c.TD_OS}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.other_dp_os}" class="slds-text-align_center">
+                                                {!$Label.c.other_dp_os}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortMFgainloss}">
+                                                <a class="sortcolumnHover" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.mf_gain_loss}
+                                                        <lightning:icon iconName="{!v.iconsMFGainLossSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.mf_gain_loss}
+                                                            <lightning:icon iconName="{!v.iconsMFGainLossSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.nfx_rate}" class="slds-text-align_center">
+                                                {!$Label.c.nfx_rate}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.total_maturity_this_month}" class="slds-text-align_center">
+                                                {!$Label.c.total_maturity_this_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.td_maturity_this_month}" class="slds-text-align_center">
+                                                {!$Label.c.td_maturity_this_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.term_fund_maturity_this_month}" class="slds-text-align_center">
+                                                {!$Label.c.term_fund_maturity_this_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.ba_ape_this_month}" class="slds-text-align_center">
+                                                {!$Label.c.ba_ape_this_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Debenture_this_month}" class="slds-text-align_center">
+                                                {!$Label.c.Debenture_this_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.total_maturity_next_month}" class="slds-text-align_center">
+                                                {!$Label.c.total_maturity_next_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.TD_next_month}" class="slds-text-align_center">
+                                                {!$Label.c.TD_next_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Mutual_FUND_next_month}" class="slds-text-align_center">
+                                                {!$Label.c.Mutual_FUND_next_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.ba_ape_next_month}" class="slds-text-align_center">
+                                                {!$Label.c.ba_ape_next_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.Debentured_next_month}" class="slds-text-align_center">
+                                                {!$Label.c.Debentured_next_month}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <aura:if isTrue="{!v.activeSortReserve}">
+                                                <a class="sortcolumnHover" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.CC_Reserve_Eligible}
+                                                        <lightning:icon iconName="{!v.iconsReserveInviteSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.CC_Reserve_Eligible}
+                                                            <lightning:icon iconName="{!v.iconsReserveInviteSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.CC_RESERVE_POINT}" class="slds-text-align_center">
+                                                {!$Label.c.CC_RESERVE_POINT}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.CC_RESERVE_ANUAL_POINT}" class="slds-text-align_center">
+                                                {!$Label.c.CC_RESERVE_ANUAL_POINT}
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div title="{!$Label.c.CC_Other_POINT_BALANCE}" class="slds-text-align_center">
+                                                {!$Label.c.CC_Other_POINT_BALANCE}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.dataRow}" var="row">
+                                        <tr class="slds-hint-parent">
+                                            <td class="sticky-row">
+                                                <lightning:input aura:id="customerSelection" 
+                                                    type="checkbox" 
+                                                    value="{!row.id}" 
+                                                    checked="{!row.candidate}"
+                                                    onchange="{!c.onUpdateDataFromViewMore}"
+                                                    style="width: 20px;"
+                                                    />
+                                            </td>
+                                            <td class="sticky-row">
+                                                <div class="slds-truncate" style="width: 254.03px">{!row.tmb_cust_id}</div>
+                                            </td>
+                                            <td class="sticky-row-viewmore">
+                                                <a data-id="{!row.id}" onclick="{!c.navigateTab}">
+                                                    <div class="slds-truncate">{!row.name}</div>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.relationship}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.moment_trigger}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.regulartion_trigger}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.product_trigger}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.portfolio_trigger}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.campaign_trigger}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.aum_is}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.dp_op}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.mf_os}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.last_selected_date}
+                                                </div>
+                                            </td>  
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.age}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                                    {!row.age_range}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.cust_sub_segment}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                                    {!row.suit_score}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.wealth_flag}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.shareholder_flag}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                                    {!row.mou_payroll_flag}
+                                                </div>
+                                            </td>  
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                                    {!row.debenture_flag}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.last_activity}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.last_activity_dateTime}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    {!row.aum_range}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.allFree_os}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.nfx_os}
+                                                </div>
+                                            </td>   
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.td_os}
+                                                </div>
+                                            </td>  
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.other_deposit_os}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.mfGainLoss}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.nfx_rate}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.all_matur_this_month}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.deposit_matur_this_month}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.mf_matur_this_month}
+                                                </div>
+                                            </td>   
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.insurnace_anni_this_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.deb_matur_this_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.all_matur_next_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.deposit_matur_next_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.mf_matur_next_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.insurnace_anni_next_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.deb_matur_next_month}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.cc_reserve_eligible}
+                                                </div>
+                                            </td>  
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.cc_reserve_point}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.cc_reserve_annual_point}
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                    {!row.cc_other_point_balance}
+                                                </div>
+                                            </td>   
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <footer class="slds-modal__footer footerViewMore">
+                            <div>
+                                <lightning:button variant="brand" label="Select &amp; Create Task" title="create Task action" onclick="{!c.onOpenCreateTask}"/>
+                                <lightning:button variant="brand" label="Download" title="download action" onclick="{!c.onExportExcelData}"/>
+                            </div>
+                            <lightning:button variant="Neutral"
+                            label="Close"
+                            title="Close"
+                            onclick="{! c.onCloseModal }"
+                            />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>                   
+        </aura:if>
+
+        <!-- Create Task -->
+        <aura:if isTrue="{!v.openCreateTask}">
+            <section role="dialog" 
+                tabindex="-1" 
+                aria-labelledby="modal-heading-01" 
+                aria-modal="true" 
+                aria-describedby="modal-content-id-1"   
+                class="modalCreateTask slds-modal slds-fade-in-open"
+            >
+                <div class="slds-modal__container slds-modal__content">
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                            Create Task : {!v.countSelectCust}
+                        </h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="table slds-scrollable">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example table of Opportunities with a single column">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Name">{!$Label.c.Name_My_Customer}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.priority}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.subject}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.activitydate}</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.dataSelectCust}" var="data">
+                                        <tr class="slds-hint-parent">
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate" title="Cloudhub">
+                                                    <a data-id="{!data.Customer_Id}" onclick="{!c.navigateTab}">
+                                                        {!data.name}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate slds-text-align_center" title="Cloudhub">
+                                                    {!data.priority}
+                                                </div>
+                                            </td>
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate slds-text-align_center" title="Cloudhub">
+                                                    {!data.subject}
+                                                </div>
+                                            </td>
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate slds-text-align_center" title="Cloudhub">
+                                                    {!data.duedate}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <footer class="footer slds-modal__footer">
+                        <lightning:button variant="brand"
+                            label="Confirm"
+                            title="ConfirmCreateTask"
+                            onclick="{! c.onConfirmCreateTask }"
+                            />
+                        <lightning:button variant="Neutral"
+                            label="Cancel"
+                            title="Cancel"
+                            onclick="{! c.onCloseModal }"
+                            />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </aura:if>
+
+        <!-- Result Create Task -->
+        <aura:if isTrue="{!v.openCreateTaskResult}">
+            <section role="dialog" 
+                tabindex="-1" 
+                aria-labelledby="modal-heading-01" 
+                aria-modal="true" 
+                aria-describedby="modal-content-id-1"   
+                class="modalCreateTask slds-modal slds-fade-in-open"
+            >
+                <div class="slds-modal__container slds-modal__content">
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                            Create Task Success : {!v.countSuccess}/{!v.countSelectCust}
+                        </h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="table slds-scrollable">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example table of Opportunities with a single column">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Name">{!$Label.c.Name_My_Customer}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Name">{!v.taskFieldLabelMap.subject}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Name">{!v.taskFieldLabelMap.status}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Name">{!v.taskFieldLabelMap.description}</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.dataSelectCust}" var="data">
+                                        <tr class="slds-hint-parent">
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate" title="Cloudhub">
+                                                    <a data-id="{!data.Customer_Id}" onclick="{!c.navigateTab}">
+                                                        {!data.name}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td data-label="Opportunity Name">
+                                                <div class="slds-truncate" title="Cloudhub">
+                                                    <a data-id="{!data.Task_Id}" onclick="{!c.navigateTab}">
+                                                        {!v.Task_Subject}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <aura:if isTrue="{!data.IsSuccess}">
+                                                <td data-label="Opportunity Name" style="background-color: greenyellow;">
+                                                    <div class="slds-truncate" title="Cloudhub">
+                                                        Success
+                                                    </div>
+                                                </td>
+                                                <td data-label="Opportunity Name">
+                                                    <div class="slds-truncate" title="Cloudhub">
+                                                        {!data.Message}
+                                                    </div>
+                                                </td>
+                                                <aura:set attribute="else">
+                                                    <td data-label="Opportunity Name" style="background-color: red; color:white;">
+                                                        <div class="slds-truncate" title="Cloudhub">
+                                                            Error
+                                                        </div>
+                                                    </td>
+                                                    <td data-label="Opportunity Name" style="color: red;">
+                                                        <div class="slds-truncate" title="Cloudhub">
+                                                            {!data.Message}
+                                                        </div>
+                                                    </td>
+                                                </aura:set>
+                                            </aura:if>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <footer class="footer slds-modal__footer">
+                        <lightning:button variant="Neutral"
+                            label="Close"
+                            title="Close"
+                            onclick="{! c.onCloseResultCreateTask }"
+                            />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </aura:if>
+
+    </div>
+</aura:component>

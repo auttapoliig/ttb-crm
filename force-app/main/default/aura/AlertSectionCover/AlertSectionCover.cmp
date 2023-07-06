@@ -24,6 +24,8 @@
     <aura:attribute name="largePlusLabel" type="String" />
     <aura:attribute name="campaignLabel" type="String" />
 
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
+
     <lightning:accordion
         onsectiontoggle="{! c.handleSectionToggle }"
         activeSectionName="{! v.activeSections }">
@@ -31,59 +33,59 @@
 
         <lightning:accordionSection name="MomentTrig" label="Moment Trigger" class="background">
             <p class="labelName">{!v.birthDayLabel}</p>
-            <c:BirthdayReport aura:id="BirthdayReport" />
+            <c:BirthdayReport aura:id="BirthdayReport" queryLimit="{!v.queryLimit}"/>
         </lightning:accordionSection>
         <lightning:accordionSection name="risk" label="Regulation Trigger" class="background">
             <p class="labelName">{!v.riskLabel}</p>
-            <c:RiskReport aura:id="RiskReport" />
+            <c:RiskReport aura:id="RiskReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.pdpaLabel}</p>
-            <c:PDPAReport aura:id="PDPAReport" />
+            <c:PDPAReport aura:id="PDPAReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.marketLabel}</p>
-            <c:MarketConductReport aura:id="MarketConductReport" />
+            <c:MarketConductReport aura:id="MarketConductReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.kycLabel}</p>
-            <c:KYCReport aura:id="KYCReport" />
+            <c:KYCReport aura:id="KYCReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.IdCardLabel}</p>
-            <c:IDCardReport aura:id="IDCardReport" />
+            <c:IDCardReport aura:id="IDCardReport" queryLimit="{!v.queryLimit}"/>
         </lightning:accordionSection>
         <lightning:accordionSection name="ProductTrig" label="Product Trigger" class="background">
             <p class="labelName">{!v.dormantAccLabel}</p>
-            <c:DormantAccountReport aura:id="DormantAccountReport" />
+            <c:DormantAccountReport aura:id="DormantAccountReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.depositInLabel}</p>
-            <c:DepositInvestmentReport aura:id="DepositInvestmentReport" />
+            <c:DepositInvestmentReport aura:id="DepositInvestmentReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.MFMLabel}</p>
-            <c:MFMaturityReport aura:id="MFMaturityReport" />
+            <c:MFMaturityReport aura:id="MFMaturityReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.InsuranceAnLabel}</p>
-            <c:InsuranceAnniversaryReport aura:id="InsuranceAnniversaryReport" />
+            <c:InsuranceAnniversaryReport aura:id="InsuranceAnniversaryReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.InsurancePaidLabel}</p>
-            <c:InsurancePaidUpReport aura:id="InsurancePaidUpReport" />
+            <c:InsurancePaidUpReport aura:id="InsurancePaidUpReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.InsuranceMatureLabel}</p>
-            <c:InsuranceMatureReport aura:id="InsuranceMatureReport" />
+            <c:InsuranceMatureReport aura:id="InsuranceMatureReport" queryLimit="{!v.queryLimit}"/>
         </lightning:accordionSection>
         <lightning:accordionSection name="MoneyTrig" label="Portfolio Trigger" class="background">
             <p class="labelName">{!v.AUMPlusLabel}</p>
-            <c:AUMPlusReport aura:id="AUMPlusReport" />
+            <c:AUMPlusReport aura:id="AUMPlusReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.AUMMinusLabel}</p>
-            <c:AUMMinusReport aura:id="AUMMinusReport" />
+            <c:AUMMinusReport aura:id="AUMMinusReport" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.largePlusLabel}</p>
-            <c:LargeTransactionMovementPlus aura:id="LargeTransactionMovementPlus" />
+            <c:LargeTransactionMovementPlus aura:id="LargeTransactionMovementPlus" queryLimit="{!v.queryLimit}"/>
             <br/>
             <p class="labelName">{!v.largeMinusLabel}</p>
-            <c:LargeTransactionMovementMinus aura:id="LargeTransactionMovementMinus" />
+            <c:LargeTransactionMovementMinus aura:id="LargeTransactionMovementMinus" queryLimit="{!v.queryLimit}"/>
         </lightning:accordionSection>
         <lightning:accordionSection name="CampaignTrig" label="Benefit/Campaign Trigger" class="background">
             <p class="labelName">{!v.campaignLabel}</p>
-            <c:CampaignReport aura:id="CampaignReport" />
+            <c:CampaignReport aura:id="CampaignReport" queryLimit="{!v.queryLimit}"/>
         </lightning:accordionSection>
     </lightning:accordion>
 </aura:component>

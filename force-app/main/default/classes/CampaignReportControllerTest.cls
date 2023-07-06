@@ -19,7 +19,7 @@ public class CampaignReportControllerTest {
         c2.RTL_Campaign_Code_10_digits__c = '1234567890';
         insert c;
 */
-        CampaignReportController.getCampaignList();
+        CampaignReportController.getCampaignList(5);
     }
     
 }

@@ -2,6 +2,6 @@
 public class DormantAccountControllerTest {
 	@isTest
     static void test(){
-        DormantAccountController.getDormantAccount();
+        DormantAccountController.getDormantAccount(5);
     }
 }

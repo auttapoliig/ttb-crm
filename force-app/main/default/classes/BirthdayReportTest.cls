@@ -11,6 +11,6 @@ public class BirthdayReportTest {
         acc.RTL_Date_Of_Birth__c = Date.today();
         acc.RTL_Wealth_RM__c = UserInfo.getUserId();
         insert acc;
-        BirthdayReport.getBirthdayList();
+        BirthdayReport.getBirthdayList(5);
     }
 }

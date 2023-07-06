@@ -1,15 +1,10 @@
 public with sharing class AUMReport {
 
     @AuraEnabled
-    public static Map<String, Object> getAUMPlus(){
+    public static Map<String, Object> getAUMPlus(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
-            List<Account> AccountList = [SELECT Id, Name, RMC_AUM_Calculation_Date__c, Type, RMC_AUM_Change__c, RMC_AUM__c
-                                    FROM Account 
-                                    WHERE RTL_Wealth_RM__c = :UserInfo.getUserId() AND RMC_AUM_Change__c > 0 
-                                     
-                                    //    AND RMC_AUM_Calculation_Date__c >= LAST_N_DAYS:3
-                                    ORDER BY RMC_AUM_Change__c DESC LIMIT 5];
+            List<Account> AccountList = getAUMPlusData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'AUM_Change_Tqt'];
 
@@ -28,16 +23,25 @@ public with sharing class AUMReport {
         return response;
     }
 
+    public static List<Account> getAUMPlusData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, RMC_AUM_Calculation_Date__c, Type, RMC_AUM_Change__c, RMC_AUM__c FROM Account ';
+            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND RMC_AUM_Change__c > 0 ORDER BY RMC_AUM_Change__c DESC ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Account>();
+        }
+    }
+
     @AuraEnabled
-    public static Map<String, Object> getAUMMinus(){
+    public static Map<String, Object> getAUMMinus(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
-            List<Account> AccountList = [SELECT Id, Name, RMC_AUM_Calculation_Date__c, Type, RMC_AUM_Change__c, RMC_AUM__c
-                                        FROM Account 
-                                        WHERE RTL_Wealth_RM__c = :UserInfo.getUserId() AND RMC_AUM_Change__c < 0 
-                                         
-                                           // AND RMC_AUM_Calculation_Date__c >= LAST_N_DAYS:3
-                                        ORDER BY RMC_AUM_Change__c  LIMIT 5];
+            List<Account> AccountList = getAUMMinusData(queryLimit);
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'AUM_0Km'];
 
             if(reportList!=null && reportList.size() > 0){
@@ -53,5 +57,19 @@ public with sharing class AUMReport {
             response.put('Message', e.getMessage());
         }
         return response;
+    }
+
+    public static List<Account> getAUMMinusData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, RMC_AUM_Calculation_Date__c, Type, RMC_AUM_Change__c, RMC_AUM__c FROM Account ';
+            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND RMC_AUM_Change__c < 0 ORDER BY RMC_AUM_Change__c ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Account>();
+        }
     }
 }

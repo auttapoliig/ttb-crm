@@ -28,6 +28,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>MyCustomer_Tablet</componentName>
+                <identifier>c_MyCustomer_Tablet</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>decorate</name>
                     <value>true</value>
@@ -320,6 +326,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>AlertSectionCover</componentName>
                 <identifier>c_AlertSectionCover</identifier>
             </componentInstance>

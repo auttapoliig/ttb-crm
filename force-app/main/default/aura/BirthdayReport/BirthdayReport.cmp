@@ -3,6 +3,8 @@
     <lightning:workspaceAPI aura:id="birthdayReportCmp"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
+
     <aura:attribute name="data" type="Object" />
     <aura:attribute name="reportId" type="String" />
     <aura:attribute name="columns" type="List" />

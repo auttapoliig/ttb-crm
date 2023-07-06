@@ -3,6 +3,8 @@
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
     <lightning:workspaceAPI aura:id="riskReportCmp"/>
 
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
+
     <aura:attribute name="data" type="Object" />
     <aura:attribute name="columns" type="List" />
     <aura:attribute name="isLoading" type="Boolean" default="true" />

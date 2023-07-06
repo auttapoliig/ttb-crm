@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Age_Range__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RTL_Age__c &lt; 20,&quot;&lt; 20&quot;,
+			IF(RTL_Age__c &gt;= 20 &amp;&amp; RTL_Age__c &lt; 30, &quot;20-29&quot;, 
+						IF(RTL_Age__c &gt;= 30 &amp;&amp; RTL_Age__c &lt;40, &quot;30-39&quot;, 
+									IF(RTL_Age__c &gt;= 40 &amp;&amp; RTL_Age__c &lt; 50, &quot;40-49&quot;, 
+												IF(RTL_Age__c &gt;= 50 &amp;&amp; RTL_Age__c &lt; 55, &quot;50-54&quot;, 
+															IF(RTL_Age__c &gt;= 55 &amp;&amp; RTL_Age__c &lt;60, &quot;55-59&quot;, 
+																		IF(RTL_Age__c &gt;= 60 &amp;&amp; RTL_Age__c &lt;64, &quot;60-64&quot;, 
+																					IF(RTL_Age__c &gt;= 65 &amp;&amp; RTL_Age__c &lt;70, &quot;65-69&quot;, 
+																								IF(RTL_Age__c &gt;= 70 &amp;&amp; RTL_Age__c &lt;75, &quot;70-75&quot;, &quot;&gt;=80&quot;)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RTL_Age_Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,16 +1,9 @@
 public with sharing class InvestmentReportController {
     @AuraEnabled
-    public static Map<String, Object> getDeposit(){
+    public static Map<String, Object> getDeposit(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
-            List<Customer_Product_Alert__c> AccountList = [SELECT Id, Name, Customer__c, Customer__r.Name, Product_Name__c,
-                                            Maturity_Date__c, Amount__c
-                                        FROM Customer_Product_Alert__c 
-                                        WHERE  Customer__r.RTL_Wealth_RM__c = :UserInfo.getUserId() AND CreatedDate >= LAST_N_DAYS:30 
-                                            AND Financial_Account_Group__c = 'DP'
-                                            AND Maturity_Date__c <= NEXT_N_DAYS:30    
-                                            AND Maturity_Date__c >= TODAY                                   
-                                        ORDER BY CreatedDate LIMIT 5];
+            List<Customer_Product_Alert__c> AccountList = getDepositData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Deposit_Maturity_in_30_Days_4R9'];
 
@@ -31,18 +24,25 @@ public with sharing class InvestmentReportController {
         return response;
     }
 
+    public static List<Customer_Product_Alert__c> getDepositData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, Customer__c, Customer__r.Name, Product_Name__c, Maturity_Date__c, Amount__c FROM Customer_Product_Alert__c ';
+            String whereCon = 'WHERE Customer__r.RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND CreatedDate >= LAST_N_DAYS:30  AND Financial_Account_Group__c = \'DP\' AND Maturity_Date__c <= NEXT_N_DAYS:30 AND Maturity_Date__c >= TODAY ORDER BY CreatedDate ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Customer_Product_Alert__c>();
+        }
+    }
+
     @AuraEnabled
-    public static Map<String, Object> getMF(){
+    public static Map<String, Object> getMF(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
-            List<Customer_Product_Alert__c> AccountList = [SELECT Id, Name, Customer__c, Customer__r.Name, Product_Name__c,
-                Maturity_Date__c, Amount__c
-                                        FROM Customer_Product_Alert__c 
-                                        WHERE Customer__r.RTL_Wealth_RM__c = :UserInfo.getUserId()  AND  CreatedDate >= LAST_N_DAYS:30 
-                                            AND Financial_Account_Group__c = 'MF'
-                                            AND Maturity_Date__c <= NEXT_N_DAYS:30    
-                                            AND Maturity_Date__c >= TODAY
-                                        ORDER BY CreatedDate LIMIT 5];
+            List<Customer_Product_Alert__c> AccountList = getMFData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Mutual_Fund_Maturity_in_30_Days_Wv0'];
 
@@ -60,5 +60,19 @@ public with sharing class InvestmentReportController {
             response.put('Message', e.getMessage());
         }
         return response;
+    }
+
+    public static List<Customer_Product_Alert__c> getMFData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, Customer__c, Customer__r.Name, Product_Name__c, Maturity_Date__c, Amount__c FROM Customer_Product_Alert__c ';
+            String whereCon = 'WHERE Customer__r.RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND CreatedDate >= LAST_N_DAYS:30 AND Financial_Account_Group__c = \'MF\' AND Maturity_Date__c <= NEXT_N_DAYS:30 AND Maturity_Date__c >= TODAY ORDER BY CreatedDate ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Customer_Product_Alert__c>();
+        }
     }
 }

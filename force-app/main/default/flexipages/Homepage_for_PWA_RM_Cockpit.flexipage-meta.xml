@@ -22,6 +22,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>MyCustomer_Cover</componentName>
+                <identifier>c_MyCustomer_Cover</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-998a422f-0043-4bb3-956e-a5f55f19346c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>dashboardName</name>
                     <value>xWMEptinzRMbxkgDlutZsMIJPDcnKd</value>
@@ -203,6 +213,20 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-998a422f-0043-4bb3-956e-a5f55f19346c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>My Customer</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>active</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -260,6 +284,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>MyCustomer_Cover</componentName>
+                <identifier>c_MyCustomer_Cover2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ad6gsvrznw</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>dashboardName</name>
                     <value>xWMEptinzRMbxkgDlutZsMIJPDcnKd</value>
@@ -294,7 +328,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -306,6 +340,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab21</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-ad6gsvrznw</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>My Customer</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -360,7 +412,7 @@
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset1</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.UserRoleName__c}</leftValue>
                         <operator>CONTAINS</operator>
@@ -376,6 +428,11 @@
                         <operator>CONTAINS</operator>
                         <rightValue>WM-TH</rightValue>
                     </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>TMB System Administrator</rightValue>
+                    </criteria>
                 </visibilityRule>
             </componentInstance>
         </itemInstances>
@@ -388,7 +445,7 @@
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset7</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.UserRoleName__c}</leftValue>
                         <operator>CONTAINS</operator>
@@ -398,6 +455,11 @@
                         <leftValue>{!$User.UserRoleName__c}</leftValue>
                         <operator>CONTAINS</operator>
                         <rightValue>WM-SS</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>TMB System Administrator</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -433,6 +495,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>BirthdayReport</componentName>
                 <identifier>c_BirthdayReport1</identifier>
             </componentInstance>
@@ -457,6 +523,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>RiskReport</componentName>
                 <identifier>c_RiskReport1</identifier>
             </componentInstance>
@@ -477,6 +547,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>PDPAReport</componentName>
                 <identifier>c_PDPAReport1</identifier>
             </componentInstance>
@@ -497,6 +571,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>MarketConductReport</componentName>
                 <identifier>c_MarketConductReport</identifier>
             </componentInstance>
@@ -517,6 +595,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>KYCReport</componentName>
                 <identifier>c_KYCReport</identifier>
             </componentInstance>
@@ -537,6 +619,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>IDCardReport</componentName>
                 <identifier>c_IDCardReport</identifier>
             </componentInstance>
@@ -561,6 +647,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>DormantAccountReport</componentName>
                 <identifier>c_DormantAccountReport</identifier>
             </componentInstance>
@@ -581,6 +671,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>DepositInvestmentReport</componentName>
                 <identifier>c_DepositInvestmentReport</identifier>
             </componentInstance>
@@ -601,6 +695,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>MFMaturityReport</componentName>
                 <identifier>c_MFMaturityReport</identifier>
             </componentInstance>
@@ -621,6 +719,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>InsuranceAnniversaryReport</componentName>
                 <identifier>c_InsuranceAnniversaryReport</identifier>
             </componentInstance>
@@ -641,6 +743,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>InsurancePaidUpReport</componentName>
                 <identifier>c_InsurancePaidUpReport</identifier>
             </componentInstance>
@@ -661,6 +767,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>InsuranceMatureReport</componentName>
                 <identifier>c_InsuranceMatureReport</identifier>
             </componentInstance>
@@ -685,6 +795,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>AUMPlusReport</componentName>
                 <identifier>c_AUMPlusReport</identifier>
             </componentInstance>
@@ -705,6 +819,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>AUMMinusReport</componentName>
                 <identifier>c_AUMMinusReport</identifier>
             </componentInstance>
@@ -725,6 +843,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>LargeTransactionMovementPlus</componentName>
                 <identifier>c_LargeTransactionMovementPlus</identifier>
             </componentInstance>
@@ -745,6 +867,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>LargeTransactionMovementMinus</componentName>
                 <identifier>c_LargeTransactionMovementMinus</identifier>
             </componentInstance>
@@ -769,6 +895,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>CampaignReport</componentName>
                 <identifier>c_CampaignReport1</identifier>
             </componentInstance>

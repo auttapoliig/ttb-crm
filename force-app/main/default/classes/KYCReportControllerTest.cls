@@ -1,6 +1,6 @@
 @Istest
 public class KYCReportControllerTest {
     @Istest static void test(){
-        KYCReportController.getAccountList();
+        KYCReportController.getAccountList(5);
     }
 }

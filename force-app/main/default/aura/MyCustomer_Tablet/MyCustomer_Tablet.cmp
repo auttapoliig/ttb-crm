@@ -1,0 +1,15 @@
+<aura:component access="global" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+        <aura:set attribute="else">
+            <lightning:card class="slds-p-horizontal_small slds-p-vertical_x-small">
+                <p class="slds-text-body_small">My Customer</p>
+            </lightning:card>
+
+            <lightning:card class="slds-p-horizontal_small slds-m-horizontal_small">
+                <p class="mycust-tablet">My Customer</p>
+                <a onclick="{!c.navigateToMyCustomerComponent}">{!$Label.c.link_for_My_Customer_Tablet}</a>
+            </lightning:card>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

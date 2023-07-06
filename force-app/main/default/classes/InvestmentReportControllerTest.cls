@@ -2,7 +2,7 @@
 public class InvestmentReportControllerTest {
 	@istest
     static void test(){
-        InvestmentReportController.getDeposit();
-        InvestmentReportController.getMF();
+        InvestmentReportController.getDeposit(5);
+        InvestmentReportController.getMF(5);
     }
 }

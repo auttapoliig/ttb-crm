@@ -2,6 +2,6 @@
 public class IdCardReportControllerTest {
 	@istest
     static void test(){
-        IdCardReportController.getAccountList();
+        IdCardReportController.getAccountList(5);
     }
 }

@@ -2,8 +2,8 @@
 public class InsuranceReportControllerTest {
 	@isTest
     static void test(){
-        InsuranceReportController.getAnniversaryInsurance();
-        InsuranceReportController.getMatureInsurance();
-        InsuranceReportController.getPaidUpInsurance();
+        InsuranceReportController.getAnniversaryInsurance(5);
+        InsuranceReportController.getMatureInsurance(5);
+        InsuranceReportController.getPaidUpInsurance(5);
     }
 }

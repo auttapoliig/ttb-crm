@@ -7,6 +7,9 @@
 
         ]);
         var action = component.get('c.getTransactionPlus');
+        action.setParams({
+            "queryLimit" : component.get('v.queryLimit') ? component.get('v.queryLimit') : 5
+        })
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();

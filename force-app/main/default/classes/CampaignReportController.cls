@@ -1,12 +1,9 @@
 public with sharing class CampaignReportController {
     @AuraEnabled
-    public static Map<String, Object> getCampaignList(){
+    public static Map<String, Object> getCampaignList(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
-            List<Campaign> campaignList = [SELECT Id, Name, StartDate, EndDate 
-                                        FROM Campaign 
-                                        WHERE RTL_Campaign_Type__c = 'Mass'
-                                        ORDER BY StartDate DESC LIMIT 5];
+            List<Campaign> campaignList = getQueryData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'New_Campaigns_and_Promotions_pLK'];
 
@@ -24,5 +21,19 @@ public with sharing class CampaignReportController {
             response.put('Message', e.getMessage());
         }
         return response;
+    }
+
+    public static List<Campaign> getQueryData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, StartDate, EndDate FROM Campaign ';
+            String whereCon = 'WHERE RTL_Campaign_Type__c = \'Mass\' ORDER BY StartDate DESC ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Campaign>();
+        }
     }
 }

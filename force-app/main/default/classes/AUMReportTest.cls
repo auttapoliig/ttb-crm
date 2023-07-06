@@ -2,7 +2,7 @@
 public class AUMReportTest {
 	@istest
     static void test(){
-        AUMReport.getAUMPlus();
-        AUMReport.getAUMMinus();
+        AUMReport.getAUMPlus(5);
+        AUMReport.getAUMMinus(5);
     }
 }
