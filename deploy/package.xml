@@ -68,6 +68,7 @@
         <members>Account.RMC_NFX_Rate__c</members>
         <members>Account.RMC_Number_of_Selected__c</members>
         <members>Account.RMC_OtherDP_OS__c</members>
+        <members>Account.RMC_Payroll_Flag__c</members>
         <members>Account.RMC_Percent_Deposit_Change__c</members>
         <members>Account.RMC_Percent_MF_Change__c</members>
         <members>Account.RMC_Relationship_Level__c</members>
