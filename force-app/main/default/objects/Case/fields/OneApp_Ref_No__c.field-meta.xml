@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OneApp_Ref_No__c</fullName>
+    <description>Calculate last 8 digit of case number to be sent to OneApp</description>
+    <externalId>false</externalId>
+    <formula>RIGHT(CaseNumber,8)</formula>
+    <label>OneApp Ref No</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

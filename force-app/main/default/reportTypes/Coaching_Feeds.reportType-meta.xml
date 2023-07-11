@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Reports on the coaching feed</description>
+    <label>Coaching Feeds</label>
+    <sections>
+        <masterLabel>Coaching</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Coaching Feed</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Comments</masterLabel>
+    </sections>
+</ReportType>

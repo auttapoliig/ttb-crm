@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AAD_Pending_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>AAD Pending Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>AAD_Action__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RG001 - ส่งงานผิด Flow</fullName>
+                <default>false</default>
+                <label>RG001 - ส่งงานผิด Flow</label>
+            </value>
+            <value>
+                <fullName>RG004 - ลูกค้าต่อรองเรื่องค่าใช้จ่าย หลัง Survey</fullName>
+                <default>false</default>
+                <label>RG004 - ลูกค้าต่อรองเรื่องค่าใช้จ่าย หลัง Survey</label>
+            </value>
+            <value>
+                <fullName>RG005 - ลูกค้าเลื่อนนัด</fullName>
+                <default>false</default>
+                <label>RG005 - ลูกค้าเลื่อนนัด</label>
+            </value>
+            <value>
+                <fullName>RG006 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</fullName>
+                <default>false</default>
+                <label>RG006 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</label>
+            </value>
+            <value>
+                <fullName>RG008 - ลูกค้าติดปัญหาวงเงินเดิม</fullName>
+                <default>false</default>
+                <label>RG008 - ลูกค้าติดปัญหาวงเงินเดิม</label>
+            </value>
+            <value>
+                <fullName>RG009 - ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</fullName>
+                <default>false</default>
+                <label>RG009 - ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</label>
+            </value>
+            <value>
+                <fullName>RG010 - ไม่มีเอกสารกรรมสิทธิ์สิ่งปลูกสร้าง</fullName>
+                <default>false</default>
+                <label>RG010 - ไม่มีเอกสารกรรมสิทธิ์สิ่งปลูกสร้าง</label>
+            </value>
+            <value>
+                <fullName>RG011 - BDM - แจ้งชลอเรื่อง</fullName>
+                <default>false</default>
+                <label>RG011 - BDM - แจ้งชลอเรื่อง</label>
+            </value>
+            <value>
+                <fullName>RG012 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</fullName>
+                <default>false</default>
+                <label>RG012 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RG013 - ไม่มีใบนัดสำรวจและประเมินราคาหลักทรัพย์ในระบบ ECM</fullName>
+                <default>false</default>
+                <label>RG013 - ไม่มีใบนัดสำรวจและประเมินราคาหลักทรัพย์ในระบบ ECM</label>
+            </value>
+            <value>
+                <fullName>RG014 - ไม่มีสำเนาโฉนด/นส.3/นส.3ก ในระบบ ECM</fullName>
+                <default>false</default>
+                <label>RG014 - ไม่มีสำเนาโฉนด/นส.3/นส.3ก ในระบบ ECM</label>
+            </value>
+            <value>
+                <fullName>RG015 - ไม่สามารถติดต่อลูกค้าได้</fullName>
+                <default>false</default>
+                <label>RG015 - ไม่สามารถติดต่อลูกค้าได้</label>
+            </value>
+            <value>
+                <fullName>RG016 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</fullName>
+                <default>false</default>
+                <label>RG016 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RG017 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</fullName>
+                <default>false</default>
+                <label>RG017 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RO001 -  ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</fullName>
+                <default>false</default>
+                <label>RO001 -  ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</label>
+            </value>
+            <value>
+                <fullName>RO002 - ลูกค้าเลื่อนนัดสำรวจหลักทรัพย์ไม่มีกำหนด</fullName>
+                <default>false</default>
+                <label>RO002 - ลูกค้าเลื่อนนัดสำรวจหลักทรัพย์ไม่มีกำหนด</label>
+            </value>
+            <value>
+                <fullName>RO003 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</fullName>
+                <default>false</default>
+                <label>RO003 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</label>
+            </value>
+            <value>
+                <fullName>RO004 - ลูกค้ามีรอการแบ่งแยกโฉนด</fullName>
+                <default>false</default>
+                <label>RO004 - ลูกค้ามีรอการแบ่งแยกโฉนด</label>
+            </value>
+            <value>
+                <fullName>RO005 - ข้อมูลในเอกสารสิทธิ์หลักประกันไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>RO005 - ข้อมูลในเอกสารสิทธิ์หลักประกันไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>RO006 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</fullName>
+                <default>false</default>
+                <label>RO006 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RO007 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</fullName>
+                <default>false</default>
+                <label>RO007 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RO008 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</fullName>
+                <default>false</default>
+                <label>RO008 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>RO009 - ลูกค้าขอเวลาปรึกษาผู้เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>RO009 - ลูกค้าขอเวลาปรึกษาผู้เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>RO010 - ลูกค้ายังไม่สะดวกสนทนา</fullName>
+                <default>false</default>
+                <label>RO010 - ลูกค้ายังไม่สะดวกสนทนา</label>
+            </value>
+            <value>
+                <fullName>RO011 - ลูกค้าขอติดต่อ BDM ก่อน เนื่องจาก…(กรุณาระบุเหตุผลชัดเจนเพิ่มใน Comment)</fullName>
+                <default>false</default>
+                <label>RO011 - ลูกค้าขอติดต่อ BDM ก่อน เนื่องจาก…(กรุณาระบุเหตุผลชัดเจนเพิ่มใน Comment)</label>
+            </value>
+            <value>
+                <fullName>RO012 - เบอร์ติดต่อลูกค้าไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>RO012 - เบอร์ติดต่อลูกค้าไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>RO013 - เบอร์ติดต่อลูกค้าไม่มีผู้รับสาย</fullName>
+                <default>false</default>
+                <label>RO013 - เบอร์ติดต่อลูกค้าไม่มีผู้รับสาย</label>
+            </value>
+            <value>
+                <fullName>RO014 - เบอร์ติดต่อสายไม่ว่าง</fullName>
+                <default>false</default>
+                <label>RO014 - เบอร์ติดต่อสายไม่ว่าง</label>
+            </value>
+            <value>
+                <fullName>RO015 - ปิดโทรศัพท์</fullName>
+                <default>false</default>
+                <label>RO015 - ปิดโทรศัพท์</label>
+            </value>
+            <value>
+                <fullName>RO016 - ไม่มีสัญญาณโทรศัพท์</fullName>
+                <default>false</default>
+                <label>RO016 - ไม่มีสัญญาณโทรศัพท์</label>
+            </value>
+            <value>
+                <fullName>RO017 - หลักประกันไม่อยู่ในเกณฑ์การขอสินเชื่อเพิ่ม</fullName>
+                <default>false</default>
+                <label>RO017 - หลักประกันไม่อยู่ในเกณฑ์การขอสินเชื่อเพิ่ม</label>
+            </value>
+            <value>
+                <fullName>RO098 - ลูกค้าไม่พร้อมชำระ/ไม่ยินยอมชำระค่าธรรมเนียมการใช้ประเมินภายใน</fullName>
+                <default>false</default>
+                <label>RO098 - ลูกค้าไม่พร้อมชำระ/ไม่ยินยอมชำระค่าธรรมเนียมการใช้ประเมินภายใน</label>
+            </value>
+            <value>
+                <fullName>RO099 - ลูกค้าไม่ชำระ ค่าธรรมเนียมประเมินตามที่แจ้งไว้กับเจ้าหน้าที่ประเมิน</fullName>
+                <default>false</default>
+                <label>RO099 - ลูกค้าไม่ชำระ ค่าธรรมเนียมประเมินตามที่แจ้งไว้กับเจ้าหน้าที่ประเมิน</label>
+            </value>
+            <value>
+                <fullName>RO101 - อื่นๆ (โปรดระบุเหตุผลในช่อง Comment)</fullName>
+                <default>false</default>
+                <label>RO101 - อื่นๆ (โปรดระบุเหตุผลในช่อง Comment)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG001 - ส่งงานผิด Flow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG004 - ลูกค้าต่อรองเรื่องค่าใช้จ่าย หลัง Survey</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG005 - ลูกค้าเลื่อนนัด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG006 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG008 - ลูกค้าติดปัญหาวงเงินเดิม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG009 - ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG010 - ไม่มีเอกสารกรรมสิทธิ์สิ่งปลูกสร้าง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG011 - BDM - แจ้งชลอเรื่อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG012 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG013 - ไม่มีใบนัดสำรวจและประเมินราคาหลักทรัพย์ในระบบ ECM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG014 - ไม่มีสำเนาโฉนด/นส.3/นส.3ก ในระบบ ECM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG015 - ไม่สามารถติดต่อลูกค้าได้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG016 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RG017 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO001 -  ลูกค้าต่อรองเรื่องค่าใช้จ่ายในการประเมินราคา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO002 - ลูกค้าเลื่อนนัดสำรวจหลักทรัพย์ไม่มีกำหนด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO003 - เอกสารกรรมสิทธิ์สิ่งปลูกสร้างไม่ครบถ้วน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO004 - ลูกค้ามีรอการแบ่งแยกโฉนด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO005 - ข้อมูลในเอกสารสิทธิ์หลักประกันไม่ถูกต้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO006 - ลูกค้าไม่สะดวกให้เข้าสำรวจหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO007 - ลูกค้าขอเปลี่ยนแปลงหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO008 - ลูกค้าไม่รับนัดสำรวจหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO009 - ลูกค้าขอเวลาปรึกษาผู้เกี่ยวข้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO010 - ลูกค้ายังไม่สะดวกสนทนา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO011 - ลูกค้าขอติดต่อ BDM ก่อน เนื่องจาก…(กรุณาระบุเหตุผลชัดเจนเพิ่มใน Comment)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO012 - เบอร์ติดต่อลูกค้าไม่ถูกต้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO013 - เบอร์ติดต่อลูกค้าไม่มีผู้รับสาย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO014 - เบอร์ติดต่อสายไม่ว่าง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO015 - ปิดโทรศัพท์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO016 - ไม่มีสัญญาณโทรศัพท์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO017 - หลักประกันไม่อยู่ในเกณฑ์การขอสินเชื่อเพิ่ม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO098 - ลูกค้าไม่พร้อมชำระ/ไม่ยินยอมชำระค่าธรรมเนียมการใช้ประเมินภายใน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO099 - ลูกค้าไม่ชำระ ค่าธรรมเนียมประเมินตามที่แจ้งไว้กับเจ้าหน้าที่ประเมิน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>RO101 - อื่นๆ (โปรดระบุเหตุผลในช่อง Comment)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

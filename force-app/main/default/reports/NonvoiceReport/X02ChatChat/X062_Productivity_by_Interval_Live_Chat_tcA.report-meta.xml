@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF((iigproduct_2__ChatSession__c.Within_20_Sec__c:SUM+iigproduct_2__ChatSession__c.Over_20_Sec__c:SUM) != 0,iigproduct_2__ChatSession__c.Within_20_Sec__c:SUM/(iigproduct_2__ChatSession__c.Within_20_Sec__c:SUM+iigproduct_2__ChatSession__c.Over_20_Sec__c:SUM),0)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>%SLA</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF((iigproduct_2__ChatSession__c.Within_20_Sec__c:SUM+iigproduct_2__ChatSession__c.Over_20_Sec__c:SUM) != 0,(iigproduct_2__ChatSession__c.iigproduct_2__Duration__c:SUM/60)/(iigproduct_2__ChatSession__c.Within_20_Sec__c:SUM+iigproduct_2__ChatSession__c.Over_20_Sec__c:SUM),0)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AHT (min)</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_45386487</developerName>
+        <masterLabel>Channel</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>iigproduct_2__ChatSession__c$iigproduct_2__Channel__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>ttb Website</sourceValue>
+            </sourceValues>
+            <value>ttb Website</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.CaseNumber</field>
+    </columns>
+    <columns>
+        <field>iigproduct_2__ChatSession__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$Owner</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$Within_20_Sec__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$Over_20_Sec__c</field>
+    </columns>
+    <description>Productivity by Interval for Live Chat (ttb Website)</description>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_45386487</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ttb Website</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>iigproduct_2__ChatSession__c$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>iigproduct_2__ChatSession__c$Interval__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_45386487</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>06-2 Productivity by Interval :Live Chat</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>ChatSession_with_Case__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

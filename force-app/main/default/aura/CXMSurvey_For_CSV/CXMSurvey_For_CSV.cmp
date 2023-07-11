@@ -14,10 +14,7 @@
     <aura:attribute name="CXMMeta" type="Object[]"/>
     <aura:attribute name="CXMFace" type="String"/>
     <aura:attribute name="recordId" type="String"/>
-	
-    <!--20/07/2023 by Attasit K. 
-	SCR0592580 change logic NPS Score 5 = Red Face/ 4 = Yellow Face/ 
-    1-3 = Red Face/ 0 = Now show / Null = Grey Face-->
+
     <div class="slds-card">
         <aura:set attribute="title"></aura:set>
         <lightning:accordion allowMultipleSectionsOpen="true" activeSectionName="{! v.isActiveCXMSection == 'true' ? 'CustomerCXMSection':'' }">
@@ -26,19 +23,13 @@
                 <aura:if isTrue="{!v.hasCXM}">
                     <div>
                         <aura:if isTrue="{!v.CXMFace == 'Red_Face'}">
-                            <!--<img src="{!$Resource.Red_Face}" style="height:36px;width:36px;margin-right:10px;"/>-->
-                            <lightning:icon iconName="utility:sentiment_negative" alternativeText="Redface" title="Redface" size="large" style="--sds-c-icon-color-foreground-default: #ba0517;"/>
+                            <img src="{!$Resource.Red_Face}" style="height:36px;width:36px;margin-right:10px;"/>
                         </aura:if>
                         <aura:if isTrue="{!v.CXMFace == 'Yellow_Face'}">
-                            <!--<img src="{!$Resource.Yellow_Face}" style="height:36px;width:36px;margin-right:10px;"/>-->
-                            <lightning:icon iconName="utility:sentiment_neutral" alternativeText="Yellowface" title="Yellowface" size="large" style="--sds-c-icon-color-foreground-default: #fcc003;"/>
+                            <img src="{!$Resource.Yellow_Face}" style="height:36px;width:36px;margin-right:10px;"/>
                         </aura:if>
                         <aura:if isTrue="{!v.CXMFace == 'Green_Face'}">
-                            <!--<img src="{!$Resource.Green_Face}" style="height:36px;width:36px;margin-right:10px;"/>-->
-                            <lightning:icon iconName="utility:smiley_and_people" alternativeText="Greenface" title="Greenface" size="large" style="--sds-c-icon-color-foreground-default: #45c65a;"/>
-                        </aura:if>
-                        <aura:if isTrue="{!v.CXMFace == 'Grey_Face'}">
-                            <lightning:icon iconName="utility:sentiment_neutral" alternativeText="Greyface" title="Greyface" size="large" />
+                            <img src="{!$Resource.Green_Face}" style="height:36px;width:36px;margin-right:10px;"/>
                         </aura:if>
                         <a onclick="{!c.openCXM}">CXM Survey Details</a>                       
                     </div>

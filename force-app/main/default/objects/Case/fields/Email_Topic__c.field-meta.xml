@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Topic__c</fullName>
+    <externalId>false</externalId>
+    <label>Email Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงค์กิ้ง</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงค์กิ้ง</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับเงินฝาก</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับเงินฝาก</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์สินเชื่อ</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์สินเชื่อ</label>
+            </value>
+            <value>
+                <fullName>สอบถามเรื่องอื่น ๆ</fullName>
+                <default>false</default>
+                <label>สอบถามเรื่องอื่น ๆ</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน</fullName>
+                <default>false</default>
+                <label>ร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ</fullName>
+                <default>false</default>
+                <label>เสนอแนะ</label>
+            </value>
+            <value>
+                <fullName>ปรึกษาข้อมูลการลงทุนด้านกองทุน</fullName>
+                <default>false</default>
+                <label>ปรึกษาข้อมูลการลงทุนด้านกองทุน</label>
+            </value>
+            <value>
+                <fullName>TMB Touch &amp; Internet Banking Usage</fullName>
+                <default>false</default>
+                <label>TMB Touch &amp; Internet Banking Usage</label>
+            </value>
+            <value>
+                <fullName>Deposits &amp; Savings</fullName>
+                <default>false</default>
+                <label>Deposits &amp; Savings</label>
+            </value>
+            <value>
+                <fullName>Loans &amp; Cards</fullName>
+                <default>false</default>
+                <label>Loans &amp; Cards</label>
+            </value>
+            <value>
+                <fullName>Other Enquiries</fullName>
+                <default>false</default>
+                <label>Other Enquiries</label>
+            </value>
+            <value>
+                <fullName>Complaints</fullName>
+                <default>false</default>
+                <label>Complaints</label>
+            </value>
+            <value>
+                <fullName>Suggest</fullName>
+                <default>false</default>
+                <label>Suggest</label>
+            </value>
+            <value>
+                <fullName>TMB Advisory</fullName>
+                <default>false</default>
+                <label>TMB Advisory</label>
+            </value>
+            <value>
+                <fullName>TMB Deposit Account</fullName>
+                <default>false</default>
+                <label>TMB Deposit Account</label>
+            </value>
+            <value>
+                <fullName>TMB Lending Product</fullName>
+                <default>false</default>
+                <label>TMB Lending Product</label>
+            </value>
+            <value>
+                <fullName>บัญชีเงินฝากธนาคารทหารไทย</fullName>
+                <default>false</default>
+                <label>บัญชีเงินฝากธนาคารทหารไทย</label>
+            </value>
+            <value>
+                <fullName>MEBYTMB</fullName>
+                <default>false</default>
+                <label>MEBYTMB</label>
+            </value>
+            <value>
+                <fullName>Not Match</fullName>
+                <default>false</default>
+                <label>Not Match</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับสินเชื่อ</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับสินเชื่อ</label>
+            </value>
+            <value>
+                <fullName>สอบถามเรื่องอื่นๆ</fullName>
+                <default>false</default>
+                <label>สอบถามเรื่องอื่นๆ</label>
+            </value>
+            <value>
+                <fullName>MEBYttb</fullName>
+                <default>false</default>
+                <label>MEBYttb</label>
+            </value>
+            <value>
+                <fullName>ttb Advisory</fullName>
+                <default>false</default>
+                <label>ttb Advisory</label>
+            </value>
+            <value>
+                <fullName>Deposit product</fullName>
+                <default>false</default>
+                <label>Deposit product</label>
+            </value>
+            <value>
+                <fullName>Lending Product</fullName>
+                <default>false</default>
+                <label>Lending Product</label>
+            </value>
+            <value>
+                <fullName>Touch Mobile Banking &amp; Internet Banking</fullName>
+                <default>false</default>
+                <label>Touch Mobile Banking &amp; Internet Banking</label>
+            </value>
+            <value>
+                <fullName>สอบถามบริการ Touch</fullName>
+                <default>false</default>
+                <label>สอบถามบริการ Touch</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์เงินฝากและบัตรเดบิต</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์เงินฝากและบัตรเดบิต</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์บัตรเครดิต/บัตรสินเชื่อ</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์บัตรเครดิต/บัตรสินเชื่อ</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์สินเชื่อบุคคล สินเชื่อบ้าน และสินเชื่ออื่นๆ</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์สินเชื่อบุคคล สินเชื่อบ้าน และสินเชื่ออื่นๆ</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์สินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์สินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>สินทรัพย์พร้อมขาย (NPA)</fullName>
+                <default>false</default>
+                <label>สินทรัพย์พร้อมขาย (NPA)</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับ ทีทีบี ทัช/อินเทอร์เน็ตแบงค์กิ้ง</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับ ทีทีบี ทัช/อินเทอร์เน็ตแบงค์กิ้ง</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับ แอป touch /ทีทีบี อินเทอร์เน็ตแบงก์กิ้ง</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับ แอป touch /ทีทีบี อินเทอร์เน็ตแบงก์กิ้ง</label>
+            </value>
+            <value>
+                <fullName>ttb Deposit Account</fullName>
+                <default>false</default>
+                <label>ttb Deposit Account</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - ชื่นชม</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - ชื่นชม</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - ร้องเรียน</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - ร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - เสนอแนะ</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - เสนอแนะ</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - ขอใช้บริการ</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - ขอใช้บริการ</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - สอบถามข้อมูล</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - สอบถามข้อมูล</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Compliment</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Compliment</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Complaint</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Complaint</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Feedback</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Feedback</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Request</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Request</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Inquiry</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Inquiry</label>
+            </value>
+            <value>
+                <fullName>[Contact Us Form] - Approval Status / Current Status</fullName>
+                <default>false</default>
+                <label>[Contact Us Form] - Approval Status / Current Status</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - ชื่นชม</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - ชื่นชม</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - ร้องเรียน</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - ร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - เสนอแนะ</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - เสนอแนะ</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - ขอใช้บริการ</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - ขอใช้บริการ</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - สอบถามข้อมูล</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - สอบถามข้อมูล</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Compliment</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Compliment</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Complaint</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Complaint</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Feedback</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Feedback</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Request</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Request</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Inquiry</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Inquiry</label>
+            </value>
+            <value>
+                <fullName>RBG [QR name card Form] - Approval Status / Current Status</fullName>
+                <default>false</default>
+                <label>RBG [QR name card Form] - Approval Status / Current Status</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - ชื่นชม</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - ชื่นชม</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - ร้องเรียน</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - ร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - เสนอแนะ</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - เสนอแนะ</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - ขอใช้บริการ</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - ขอใช้บริการ</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - สอบถามข้อมูล</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - สอบถามข้อมูล</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Compliment</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Compliment</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Complaint</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Complaint</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Feedback</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Feedback</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Request</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Request</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Inquiry</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Inquiry</label>
+            </value>
+            <value>
+                <fullName>WBG [QR name card Form] - Approval Status / Current Status</fullName>
+                <default>false</default>
+                <label>WBG [QR name card Form] - Approval Status / Current Status</label>
+            </value>
+            <value>
+                <fullName>ttb Lending Product</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ttb Lending Product</label>
+            </value>
+            <value>
+                <fullName>ttb Touch &amp; Internet Banking Usage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ttb Touch &amp; Internet Banking Usage</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - ขอตรวจสอบรายการ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - ขอตรวจสอบรายการ</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - ขอรายการเดินบัญชี / เอกสารรับรองยอดเงิน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - ขอรายการเดินบัญชี / เอกสารรับรองยอดเงิน</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - ขอเปลี่ยนแปลงข้อมูล</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - ขอเปลี่ยนแปลงข้อมูล</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - ขอให้ธนาคารติดต่อกลับ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - ขอให้ธนาคารติดต่อกลับ</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - ติดตามสถานะจากมาตรการช่วยเหลือ Covid-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - ติดตามสถานะจากมาตรการช่วยเหลือ Covid-19</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - สมัครบริการ / ยกเลิกการหักบัญชีอัตโนมัติ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - สมัครบริการ / ยกเลิกการหักบัญชีอัตโนมัติ</label>
+            </value>
+            <value>
+                <fullName>ขอใช้บริการ - อื่นๆ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอใช้บริการ - อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>ชื่นชม - ผลิตภัณฑ์และสิทธิประโยชน์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ชื่นชม - ผลิตภัณฑ์และสิทธิประโยชน์</label>
+            </value>
+            <value>
+                <fullName>ชื่นชม - อื่นๆ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ชื่นชม - อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>ชื่นชม - โปรโมชัน / แคมเปญ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ชื่นชม - โปรโมชัน / แคมเปญ</label>
+            </value>
+            <value>
+                <fullName>ติดตามผลอนุมัติ / ติดตามสถานะ - บัตรเครดิต</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ติดตามผลอนุมัติ / ติดตามสถานะ - บัตรเครดิต</label>
+            </value>
+            <value>
+                <fullName>ติดตามผลอนุมัติ / ติดตามสถานะ - สินเชื่อบุคคล</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ติดตามผลอนุมัติ / ติดตามสถานะ - สินเชื่อบุคคล</label>
+            </value>
+            <value>
+                <fullName>ติดตามผลอนุมัติ / ติดตามสถานะ - สินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ติดตามผลอนุมัติ / ติดตามสถานะ - สินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - กองทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - กองทุน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การทำรายการธุรกรรมผ่านตู้ ATM/CDM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การทำรายการธุรกรรมผ่านตู้ ATM/CDM</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การล็อกอิน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การล็อกอิน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การสมัคร ทีทีบี ID</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การสมัคร ทีทีบี ID</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การเปลี่ยนพาสเวิร์ดใหม่</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การเปลี่ยนพาสเวิร์ดใหม่</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การโอนเงิน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การโอนเงิน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การโอนเงินผ่านตู้ ATM/CDM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การโอนเงินผ่านตู้ ATM/CDM</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - การไถ่ถอนหลักประกัน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - การไถ่ถอนหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ขอตรวจสอบการได้รับ SMS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ขอตรวจสอบการได้รับ SMS</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ขอตรวจสอบการได้รับข้อมูล / SMS ของบุคคลอื่น</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ขอตรวจสอบการได้รับข้อมูล / SMS ของบุคคลอื่น</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ขอตรวจสอบการได้รับข้อมูล / ข่าวสาร / ผลิตภัณฑ์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ขอตรวจสอบการได้รับข้อมูล / ข่าวสาร / ผลิตภัณฑ์</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ขอตรวจสอบการได้รับเอกสารจากธนาคาร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ขอตรวจสอบการได้รับเอกสารจากธนาคาร</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ขอตรวจสอบข้อมูลที่อยู่</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ขอตรวจสอบข้อมูลที่อยู่</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ตู้ ATM / CDM / PUM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ตู้ ATM / CDM / PUM</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - บัตรเครดิตทำรายการไม่ได้</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - บัตรเครดิตทำรายการไม่ได้</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - ผลิตภัณฑ์ประกัน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - ผลิตภัณฑ์ประกัน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - สมุดบัญชีติดที่เครื่องอัพเดทสมุด</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - สมุดบัญชีติดที่เครื่องอัพเดทสมุด</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - สินเชื่อธุรกิจ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - สินเชื่อธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - สินเชื่อบุคคล</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - สินเชื่อบุคคล</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - สินเชื่อบ้าน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - สินเชื่อบ้าน</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - สินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - สินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - เงินฝาก</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - เงินฝาก</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - เงื่อนไข / ขั้นตอนการเคลม</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - เงื่อนไข / ขั้นตอนการเคลม</label>
+            </value>
+            <value>
+                <fullName>ร้องเรียน - แอป ทีทีบี ทัช</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ร้องเรียน - แอป ทีทีบี ทัช</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - การเคลม</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - การเคลม</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - การไถ่ถอนหลักประกัน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - การไถ่ถอนหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ข้อมูลผลิตภัณฑ์ / โปรโมชัน / ผลตอบแทน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ข้อมูลผลิตภัณฑ์ / โปรโมชัน / ผลตอบแทน</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ข้อมูลผลิตภัณฑ์ / โปรโมชัน / อัตราดอกเบี้ย</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ข้อมูลผลิตภัณฑ์ / โปรโมชัน / อัตราดอกเบี้ย</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ติดตามสถานะจากมาตรการช่วยเหลือ Covid-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ติดตามสถานะจากมาตรการช่วยเหลือ Covid-19</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ที่ตั้งสาขา</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ที่ตั้งสาขา</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ยอดชำระ / ยอดเงินคงเหลือ / วันครบกำหนดชำระ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ยอดชำระ / ยอดเงินคงเหลือ / วันครบกำหนดชำระ</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ยอดชำระ / วงเงินคงเหลือ / วันครบกำหนดชำระ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ยอดชำระ / วงเงินคงเหลือ / วันครบกำหนดชำระ</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - ยอดชำระ / วันครบกำหนดชำระ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - ยอดชำระ / วันครบกำหนดชำระ</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - รายการที่ถูกหักจากบัญชี / ยอดเงินคงเหลือ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - รายการที่ถูกหักจากบัญชี / ยอดเงินคงเหลือ</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - รายการเดินบัญชี</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - รายการเดินบัญชี</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - วันและเวลาเปิดทำการ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - วันและเวลาเปิดทำการ</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - วิธีการ / เอกสารการสมัคร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - วิธีการ / เอกสารการสมัคร</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - วิธีการเปิดใช้งานครั้งแรก (Activate)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - วิธีการเปิดใช้งานครั้งแรก (Activate)</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - วิธีการใช้งาน ตู้ ATM / ADM / PUM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - วิธีการใช้งาน ตู้ ATM / ADM / PUM</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - สถานะการสมัคร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - สถานะการสมัคร</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - สถานะบัตร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - สถานะบัตร</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - สถานะบัตรเดบิต / ATM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - สถานะบัตรเดบิต / ATM</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูล - สอบถามเรื่องอื่นๆ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามข้อมูล - สอบถามเรื่องอื่นๆ</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงก์กิ้ง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงก์กิ้ง</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - การติดตามงานและความรวดเร็วในการดำเนินการ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - การติดตามงานและความรวดเร็วในการดำเนินการ</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - การให้ข้อมูลของเจ้าหน้าที่</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - การให้ข้อมูลของเจ้าหน้าที่</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - ข่าวสารการเปลี่ยนแปลง เงื่อนไขบริการ / ผลิตภัณฑ์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - ข่าวสารการเปลี่ยนแปลง เงื่อนไขบริการ / ผลิตภัณฑ์</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - สินเชื่อบ้าน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - สินเชื่อบ้าน</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - สินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - สินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - อื่นๆ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - เงื่อนไขของผลิตภัณฑ์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - เงื่อนไขของผลิตภัณฑ์</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - เจ้าหน้าที่</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - เจ้าหน้าที่</label>
+            </value>
+            <value>
+                <fullName>เสนอแนะ - เสนอแนะเกี่ยวกับขั้นตอนการดำเนินงาน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอแนะ - เสนอแนะเกี่ยวกับขั้นตอนการดำเนินงาน</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

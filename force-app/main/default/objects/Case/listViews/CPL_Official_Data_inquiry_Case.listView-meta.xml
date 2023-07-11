@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPL_Official_Data_inquiry_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CPL- Official Data inquiry</label>
+    <queue>CPL_Official_Data_inquiry</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

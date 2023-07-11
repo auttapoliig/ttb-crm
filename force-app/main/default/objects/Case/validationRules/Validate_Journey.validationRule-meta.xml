@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Journey</fullName>
+    <active>true</active>
+    <description>If category is &apos;Complaint&apos; require input value for Journey</description>
+    <errorConditionFormula>if( AND(Category__c = &apos;Complaint&apos;, TEXT( Journey__c) =&apos;&apos;),true,  false)</errorConditionFormula>
+    <errorDisplayField>Journey__c</errorDisplayField>
+    <errorMessage>Please input value.(กรุณาระบุค่า)</errorMessage>
+</ValidationRule>

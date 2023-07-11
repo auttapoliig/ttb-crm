@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Transaction_Method</fullName>
+    <active>true</active>
+    <description>validate field ทำรายการโดยวิธี</description>
+    <errorConditionFormula>If( DATEVALUE(CreatedDate ) &lt; DATE(2019,06,21) ,false ,If( AND(OR(Service_Type_Matrix_Code__c = &apos;V0001&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0002&apos;,
+Service_Type_Matrix_Code__c = &apos;V0003&apos;,
+Service_Type_Matrix_Code__c = &apos;V0004&apos;,
+Service_Type_Matrix_Code__c = &apos;V0005&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0006&apos;,
+Service_Type_Matrix_Code__c = &apos;V0007&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0008&apos;,
+Service_Type_Matrix_Code__c = &apos;V0009&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0010&apos;,
+Service_Type_Matrix_Code__c = &apos;V0011&apos;,
+Service_Type_Matrix_Code__c = &apos;V0012&apos;,
+Service_Type_Matrix_Code__c = &apos;V0013&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0014&apos;,
+Service_Type_Matrix_Code__c = &apos;V0015&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0016&apos;,
+Service_Type_Matrix_Code__c = &apos;V0017&apos;,
+Service_Type_Matrix_Code__c = &apos;V0018&apos;,
+Service_Type_Matrix_Code__c = &apos;V0019&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0020&apos;,
+Service_Type_Matrix_Code__c = &apos;V0021&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0022&apos;,
+Service_Type_Matrix_Code__c = &apos;12323&apos;, 
+Service_Type_Matrix_Code__c = &apos;12324&apos;, 
+Service_Type_Matrix_Code__c = &apos;12325&apos;, 
+Service_Type_Matrix_Code__c = &apos;12326&apos;, 
+Service_Type_Matrix_Code__c = &apos;12327&apos;, 
+Service_Type_Matrix_Code__c = &apos;12345&apos;, 
+Service_Type_Matrix_Code__c = &apos;12346&apos;, 
+Service_Type_Matrix_Code__c = &apos;12347&apos;, 
+Service_Type_Matrix_Code__c = &apos;12348&apos;, 
+Service_Type_Matrix_Code__c = &apos;12423&apos;, 
+Service_Type_Matrix_Code__c = &apos;12424&apos;, 
+Service_Type_Matrix_Code__c = &apos;12425&apos;, 
+Service_Type_Matrix_Code__c = &apos;12426&apos;, 
+Service_Type_Matrix_Code__c = &apos;12427&apos;, 
+Service_Type_Matrix_Code__c = &apos;12428&apos;, 
+Service_Type_Matrix_Code__c = &apos;12429&apos;, 
+Service_Type_Matrix_Code__c = &apos;12430&apos;, 
+Service_Type_Matrix_Code__c = &apos;12431&apos;, 
+Service_Type_Matrix_Code__c = &apos;12432&apos;, 
+Service_Type_Matrix_Code__c = &apos;12433&apos;, 
+Service_Type_Matrix_Code__c = &apos;12434&apos;, 
+Service_Type_Matrix_Code__c = &apos;12435&apos;
+), 
+ISBLANK(TEXT(Transaction_Method__c)),NOT( Is_Migrated__c )), true,false))</errorConditionFormula>
+    <errorDisplayField>Transaction_Method__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

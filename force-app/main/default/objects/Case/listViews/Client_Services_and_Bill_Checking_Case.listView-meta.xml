@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Services_and_Bill_Checking_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Category__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>SLA_Day__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Commit_Date__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>BOIBO-Client Services and Bill Checking</label>
+    <language>en_US</language>
+    <queue>BOIBO_Client_Services_and_Bill_Checking</queue>
+    <sharedTo>
+        <group>BOIBO_Client_Services_and_Bill_Checking</group>
+    </sharedTo>
+</ListView>

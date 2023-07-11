@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validate_ATM_ADM_Location</fullName>
+    <active>true</active>
+    <errorConditionFormula>If( DATEVALUE(CreatedDate ) &lt; DATE(2019,08,23) ,false,If( AND(OR(Service_Type_Matrix_Code__c = &apos;V0003&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0004&apos;,      
+Service_Type_Matrix_Code__c = &apos;V0016&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0017&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0018&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0019&apos;,   
+Service_Type_Matrix_Code__c = &apos;12326&apos;, 
+Service_Type_Matrix_Code__c = &apos;12327&apos;, 
+Service_Type_Matrix_Code__c = &apos;12347&apos;, 
+Service_Type_Matrix_Code__c = &apos;12348&apos;,
+Service_Type_Matrix_Code__c = &apos;12432&apos;, 
+Service_Type_Matrix_Code__c = &apos;12433&apos; 
+), 
+ISBLANK(ATM_ADM_Location__c),NOT( Is_Migrated__c )), true,false))</errorConditionFormula>
+    <errorDisplayField>ATM_ADM_Location__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

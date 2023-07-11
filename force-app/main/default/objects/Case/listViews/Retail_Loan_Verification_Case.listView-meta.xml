@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retail_Loan_Verification_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Retail Loan Verification</label>
+    <queue>Retail_Loan_Verification</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

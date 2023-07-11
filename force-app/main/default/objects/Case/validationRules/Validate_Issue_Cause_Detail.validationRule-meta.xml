@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Issue_Cause_Detail</fullName>
+    <active>true</active>
+    <errorConditionFormula>If(AND(TEXT(Root_Cause_List__c) = &apos;Other&apos;, Root_Cause__c = &apos;&apos; ), True, False)</errorConditionFormula>
+    <errorDisplayField>Root_Cause__c</errorDisplayField>
+    <errorMessage>Issue Cause เป็น Other กรุณาอธิบายเพิ่มเติม</errorMessage>
+</ValidationRule>

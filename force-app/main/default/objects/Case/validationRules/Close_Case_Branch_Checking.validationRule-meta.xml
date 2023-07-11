@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Case_Branch_Checking</fullName>
+    <active>true</active>
+    <description>check if branch in case match with users</description>
+    <errorConditionFormula>IF(ISBLANK( Closed_By_BU__c ) &amp;&amp; 
+(($User.RTL_Branch_Code__c &lt;&gt; Owner:User.RTL_Branch_Code__c) 
+&amp;&amp;(($User.RTL_Branch_Code__c) &lt;&gt; RIGHT( Owner:Queue.DeveloperName ,3) )) 
+&amp;&amp; 
+(OR(ISPICKVAL( Status , &quot;Completed&quot;),( ISPICKVAL( Status , &quot;Cancel&quot;) ))) ,TRUE,FALSE)</errorConditionFormula>
+    <errorMessage>User doesn&apos;t has permission to close or cancel this case</errorMessage>
+</ValidationRule>
