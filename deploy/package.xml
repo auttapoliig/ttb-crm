@@ -13,5 +13,13 @@
         <members>RTL_LeadTriggerHandlerTest</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>Campaign.RTL_Campaign_Approval_Exclusive</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
+        <members>Opportunity</members>
+        <name>SharingRules</name>
+    </types>
     <version>58.0</version>
 </Package>
