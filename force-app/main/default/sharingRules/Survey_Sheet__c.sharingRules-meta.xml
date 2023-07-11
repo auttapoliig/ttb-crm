@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Survey_Sheet_to_CEO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Survey Sheet to CEO</label>
+        <sharedTo>
+            <roleAndSubordinates>CEO</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>E-Client Suitability</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_from_Role_MB_CB_CM_Sales_TH_TL_to_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet from Role: MB/CB CM Sales TH/TL to CB</label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_from_Role_MB_CB_CM_Sales_TH_TL_to_MB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>MB CM TH/TL and MB CM roles can edit MB/CB CM TH/TL role&apos;s record</description>
+        <label>Share Survey Sheet from Role: MB/CB CM Sales TH/TL to MB</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Role_MB_CB_CM_Sales_TH_TL_From_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>MB and CB records are shared to MB/CB role</description>
+        <label>Share Survey Sheet to Role: MB/CB CM Sales TH/TL From CB</label>
+        <sharedTo>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Role_MB_CB_CM_Sales_TH_TL_From_MB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>MB CB records are shared to MB/CB role</description>
+        <label>Share Survey Sheet to Role: MB/CB CM Sales TH/TL From MB</label>
+        <sharedTo>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_CB_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: CB CM Sales TH/TL </label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_CB_CM_Sales_TH_TL_From_Role_MB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: CB CM Sales TH/TL From Role MB</label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_FI_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: FI CM Sales TH/TL </label>
+        <sharedTo>
+            <roleAndSubordinates>FI_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>FI_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_MB_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: MB CM Sales TH/TL </label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_MB_CM_Sales_TH_TL_From_Role_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: MB CM Sales TH/TL From Role CB</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Survey_Sheet_to_Roles_and_Sub_SME_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Survey Sheet to Roles and Sub: SME CM Sales TH/TL </label>
+        <sharedTo>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
