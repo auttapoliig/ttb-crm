@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
-    <caseAccessLevel>Read</caseAccessLevel>
+    <caseAccessLevel>None</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
-    <description>Senior Specialist - SME5</description>
+    <description>SE ZM SME7 Samutsakorn</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Senior Specialist - SME5</name>
+    <name>SE ZM SME7 Samutsakorn</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>Team_Head_of_SABS_SME5</parentRole>
+    <parentRole>SE_RG_SME7</parentRole>
 </Role>
