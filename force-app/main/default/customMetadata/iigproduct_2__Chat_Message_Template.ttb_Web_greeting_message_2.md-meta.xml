@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ttb_Web_greeting_message_2</label>
+    <protected>false</protected>
+    <values>
+        <field>iigproduct_2__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Chat_Channel__c</field>
+        <value xsi:type="xsd:string">Chat - ttb web</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Message_EN__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>iigproduct_2__Message_Type__c</field>
+        <value xsi:type="xsd:string">Greeting</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Message__c</field>
+        <value xsi:type="xsd:string">เพื่อความปลอดภัยในบัญชีของท่าน
+กรุณาห้ามเปิดเผยข้อมูลส่วนตัวระหว่างสนทนา
+และเพื่อความต่อเนื่องในการรับบริการ
+สำหรับลูกค้าที่ใช้โทรศัพท์มือถือในการแชท
+กรุณาหลีกเลี่ยงการใช้โหมดประหยัดพลังงาน
+การสลับใช้งานแอปพลิเคชันอื่น หรือการกดปุ่มย้อนกลับ (Back)</value>
+    </values>
+</CustomMetadata>

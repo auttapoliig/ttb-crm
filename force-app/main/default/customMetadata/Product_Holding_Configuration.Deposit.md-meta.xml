@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Deposit</label>
+    <protected>false</protected>
+    <values>
+        <field>Product_Group__c</field>
+        <value xsi:type="xsd:string">Deposit</value>
+    </values>
+    <values>
+        <field>RTL_Remark__c</field>
+        <value xsi:type="xsd:string">- Current Account แสดงเฉพาะสถานะ 00-NORMAL, 01-FROZEN; NO DDA ACTIVITY, 02-NO CHECK ACTIVITY, 06-DORMANT, 07-INACTIVE, 09-CREDITS ONLY ALLOWED
+- Savings Account แสดงเฉพาะสถานะ 00-ACTIVE (Normal), 01-INACTIVE, 02-DORMANT, 06-UNREDEEMED (CD or Club), 07-FROZEN (No monetary activity), 08-FROZEN (No external activity except status changes)</value>
+    </values>
+</CustomMetadata>

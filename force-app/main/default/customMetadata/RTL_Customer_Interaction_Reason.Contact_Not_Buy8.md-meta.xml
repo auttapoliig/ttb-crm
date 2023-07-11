@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contact-Not Buy8</label>
+    <protected>false</protected>
+    <values>
+        <field>RTL_Result_Business__c</field>
+        <value xsi:type="xsd:string">Contact-Not Buy</value>
+    </values>
+    <values>
+        <field>RTL_Result_Detail__c</field>
+        <value xsi:type="xsd:string">1-อายุงานไม่ถึง 4 เดือนยังไม่ผ่านทดลองงาน</value>
+    </values>
+    <values>
+        <field>RTL_Sub_Reason__c</field>
+        <value xsi:type="xsd:string">หลักเกณฑ์- ไม่ผ่านคุณสมบัติ/เงื่อนไข</value>
+    </values>
+</CustomMetadata>

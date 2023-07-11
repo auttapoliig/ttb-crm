@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>extract cust request web contact</label>
+    <protected>false</protected>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">LastModifiedDate &gt;= [yyyy]-[MM-1]-[dd-1]T00:00:00+07:00
+AND LastModifiedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
+AND RTL_Contact_Method__c in (&apos;Call Me Now&apos;,&apos;Call Me Later&apos;,&apos;Normal Request&apos;,&apos;Others&apos;,&apos;AL Sales&apos;)
+AND RecordType.DeveloperName = &apos;Retail_Campaign_Member&apos;
+AND Contact.Id != NULL</value>
+    </values>
+    <values>
+        <field>Field_Set__c</field>
+        <value xsi:type="xsd:string">RTL_Web_Unique_ID__c
+,FirstName
+,LastName
+,RTL_CampHis_Phone__c
+,Campaign.RTL_Campaign_Code_10_digits__c
+,Campaign.Name
+,Campaign.StartDate
+,Campaign.EndDate
+,Campaign.RTL_Call_Start_Date__c
+,Campaign.RTL_Call_End_Date__c
+,RTL_Campaign_Product_1__r.Name
+,RTL_Lead_Group__c
+,RTL_TMB_Campaign_Source__c
+,RTL_TMB_Campaign_Reference__c
+,CreatedDate
+,RTL_Source_ZipCode__c
+,RTL_Branch_Team_Name_Code_Rpt__c
+,Contact.Account.TMB_Customer_ID_PE__c
+,Status
+,Id
+,RTL_Assigned_Channel__c
+,LastModifiedDate
+,RTL_Contact_Method__c
+,LeadSource
+,RTL_AL_available_time__c
+,RTL_AL_car_bought_from__c
+,RTL_AL_car_brand__c
+,RTL_AL_car_gear__c
+,RTL_AL_car_group__c
+,RTL_AL_car_plate_no__c
+,RTL_AL_car_subtype__c
+,RTL_AL_car_type__c
+,RTL_AL_car_year__c
+,RTL_AL_comment__c
+,RTL_AL_contact_channel__c
+,RTL_AL_ContactDistrict__c
+,RTL_AL_ContactProvince__c
+,RTL_AL_ContactSubDistrict__c
+,RTL_AL_ContactZipcode__c
+,RTL_AL_installment_amount__c
+,RTL_AL_installment_periods__c
+,RTL_AL_Interested_Rate__c
+,RTL_AL_max_set_up_amount__c
+,RTL_AL_normal_price__c
+,RTL_AL_oa_ref_code__c
+,RTL_AL_response__c
+,RTL_AL_wanted_amount__c
+,RTL_Cus_Refer_Code__c</value>
+    </values>
+    <values>
+        <field>sObject__c</field>
+        <value xsi:type="xsd:string">CampaignMember</value>
+    </values>
+</CustomMetadata>

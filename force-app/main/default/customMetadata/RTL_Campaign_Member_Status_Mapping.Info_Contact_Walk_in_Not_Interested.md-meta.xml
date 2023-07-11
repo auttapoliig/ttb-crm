@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Info Contact(Walk-in) Not Interested</label>
+    <protected>false</protected>
+    <values>
+        <field>RTL_Campaign_Catgory__c</field>
+        <value xsi:type="xsd:string">Information Update</value>
+    </values>
+    <values>
+        <field>RTL_Campaign_Member_Stage__c</field>
+        <value xsi:type="xsd:string">New</value>
+    </values>
+    <values>
+        <field>RTL_Campaign_Member_Status__c</field>
+        <value xsi:type="xsd:string">Not Interested</value>
+    </values>
+    <values>
+        <field>RTL_Contact_Status__c</field>
+        <value xsi:type="xsd:string">Contact (Walk-in/Call-in)</value>
+    </values>
+    <values>
+        <field>RTL_Default_Flag__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>RTL_Offer_Result__c</field>
+        <value xsi:type="xsd:string">Not Interested</value>
+    </values>
+    <values>
+        <field>RTL_Product_Offer_Result__c</field>
+        <value xsi:type="xsd:string">Interested</value>
+    </values>
+    <values>
+        <field>RTL_Responded_Flag__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

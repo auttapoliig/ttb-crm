@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>extract cust request web lead</label>
+    <protected>false</protected>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">Lead.LastModifiedDate &gt;= [yyyy]-[MM]-[dd-5]T00:00:00+07:00
+AND Lead.LastModifiedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
+AND RTL_Contact_Method__c IN (&apos;Call Me Now&apos;,&apos;Call Me Later&apos;,&apos;Normal Request&apos;,&apos;Others&apos;,&apos;AL Sales&apos;)
+AND Lead.RecordType.DeveloperName IN (&apos;Retail_Banking&apos;,&apos;Retail_Closed_Lost&apos;)
+AND Lead.Id != NULL AND Lead.FirstName !=NULL</value>
+    </values>
+    <values>
+        <field>Field_Set__c</field>
+        <value xsi:type="xsd:string">Lead.RTL_Web_Unique_ID_c__c
+,Lead.FirstName
+,Lead.LastName
+,Lead.RTL_Mobile_Number__c
+,Campaign.RTL_Campaign_Code_10_digits__c
+,Campaign.Name
+,Campaign.StartDate
+,Campaign.EndDate
+,Campaign.RTL_Call_Start_Date__c 
+,Campaign.RTL_Call_End_Date__c
+,Lead.RTL_Product_Name__c
+,Lead.RTL_Customer_Segment__c 
+,Lead.RTL_TMB_Campaign_Source__c
+,Lead.RTL_TMB_Campaign_Reference__c
+,Lead.CreatedDate
+,Lead.RTL_BranchW2L_Area__c
+,Lead.RTL_Branch_Code_Rpt__c
+,Lead.RTL_W2L_Transfer_Period__c
+,Lead.Status
+,Lead.ConvertedDate
+,Lead.Id
+,Lead.Owner.Name
+,Lead.LastModifiedDate
+,Lead.IsDeleted
+,RTL_Assigned_Channel__c
+,RTL_Contact_Method__c
+,LeadSource
+,Lead.Rating
+,Lead.RTL_Media_Source__c
+,Lead.RTL_Medium__c
+,Lead.RTL_Promotion__c
+,Lead.RTL_Employee_ID__c
+,Lead.RTL_AL_available_time__c
+,Lead.RTL_AL_car_bought_from__c
+,Lead.RTL_AL_car_brand__c
+,Lead.RTL_AL_car_gear__c
+,Lead.RTL_AL_car_group__c
+,Lead.RTL_AL_car_plate_no__c
+,Lead.RTL_AL_car_subtype__c
+,Lead.RTL_AL_car_type__c
+,Lead.RTL_AL_car_year__c
+,Lead.RTL_AL_comment__c
+,Lead.RTL_AL_contact_channel__c
+,Lead.RTL_AL_ContactDistrict__c
+,Lead.RTL_AL_ContactProvince__c
+,Lead.RTL_AL_ContactSubDistrict__c
+,Lead.RTL_AL_ContactZipcode__c
+,Lead.RTL_AL_installment_amount__c
+,Lead.RTL_AL_installment_periods__c
+,Lead.RTL_AL_Interested_Rate__c
+,Lead.RTL_AL_max_set_up_amount__c
+,Lead.RTL_AL_normal_price__c
+,Lead.RTL_AL_oa_ref_code__c
+,Lead.RTL_AL_response__c
+,Lead.RTL_AL_wanted_amount__c
+,Lead.RTL_Cus_Refer_Code__c</value>
+    </values>
+    <values>
+        <field>sObject__c</field>
+        <value xsi:type="xsd:string">CampaignMember</value>
+    </values>
+</CustomMetadata>

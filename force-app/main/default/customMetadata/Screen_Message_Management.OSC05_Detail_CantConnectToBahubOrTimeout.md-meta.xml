@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>OSC05_Detail_CantConnectToBahubOrTimeout</label>
+    <protected>false</protected>
+    <values>
+        <field>CallOut_Name__c</field>
+        <value xsi:type="xsd:string">callout:OSC05_Detail</value>
+    </values>
+    <values>
+        <field>Screen_Message__c</field>
+        <value xsi:type="xsd:string">Service Timeout (OSC05|500|Timeout exceeded : Error sending HTTP request to https://ibshub.tmbbank.local:443/I8SService/PolicyService.asmx.)</value>
+    </values>
+    <values>
+        <field>Service_Name__c</field>
+        <value xsi:type="xsd:string">BancassuranceAccount - OSC05 Low Level</value>
+    </values>
+    <values>
+        <field>StatusCode__c</field>
+        <value xsi:type="xsd:string">500</value>
+    </values>
+    <values>
+        <field>StatusDesc__c</field>
+        <value xsi:type="xsd:string">Timeout exceeded : Error sending HTTP request to https://ibshub.tmbbank.local:443/IBSService/PolicyService.asmx.</value>
+    </values>
+    <values>
+        <field>isAPI__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>
