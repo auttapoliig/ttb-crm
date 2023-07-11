@@ -195,4 +195,16 @@
             <role>Team_Lead_SME_Client_Support</role>
         </sharedFrom>
     </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Wealth_Support</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>SCR0590879 : Add Wealth Support list to receive cases</description>
+        <label>Wealth Support</label>
+        <sharedTo>
+            <role>Pool_WA_SS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>WM_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>

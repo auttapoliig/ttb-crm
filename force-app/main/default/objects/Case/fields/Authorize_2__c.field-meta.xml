@@ -27,11 +27,6 @@
                 <label>นางกันทิมา คงทน  (CF3)</label>
             </value>
             <value>
-                <fullName>นายวรา ยุติธาดา  (CF3)</fullName>
-                <default>false</default>
-                <label>นายวรา ยุติธาดา  (CF3)</label>
-            </value>
-            <value>
                 <fullName>นางอมรรัตน์ โชคท่าพระ  (CF3)</fullName>
                 <default>false</default>
                 <label>นางอมรรัตน์ โชคท่าพระ  (CF3)</label>
@@ -77,11 +72,6 @@
                 <label>นางกรุณา เหล่าประชัยวัลย์ (CF4)</label>
             </value>
             <value>
-                <fullName>น.ส.ชญานิษฐ์ อิศรางกูร ณ อยุธยา  (CF3)</fullName>
-                <default>false</default>
-                <label>น.ส.ชญานิษฐ์ อิศรางกูร ณ อยุธยา  (CF3)</label>
-            </value>
-            <value>
                 <fullName>น.ส.เบญจมาศ วัฒนะโชติ  (CF3)</fullName>
                 <default>false</default>
                 <label>น.ส.เบญจมาศ วัฒนะโชติ  (CF3)</label>
@@ -117,19 +107,9 @@
                 <label>น.ส.จารุวรรณ ขุนประเสริฐ (CF5)</label>
             </value>
             <value>
-                <fullName>น.ส.ไพลิน สันติวานิชกุล (CF6)</fullName>
-                <default>false</default>
-                <label>น.ส.ไพลิน สันติวานิชกุล (CF6)</label>
-            </value>
-            <value>
                 <fullName>น.ส.รวิวรรณ นันตา (CF4)</fullName>
                 <default>false</default>
                 <label>น.ส.รวิวรรณ นันตา (CF4)</label>
-            </value>
-            <value>
-                <fullName>น.ส.กมลฉัตร ยมภักดี (CF6)</fullName>
-                <default>false</default>
-                <label>น.ส.กมลฉัตร ยมภักดี (CF6)</label>
             </value>
             <value>
                 <fullName>นายธีรเดช วิริยะ  (CF7)</fullName>
@@ -175,11 +155,6 @@
                 <fullName>น.ส.สุธาดา รสน้อย (CF6)</fullName>
                 <default>false</default>
                 <label>น.ส.สุธาดา รสน้อย (CF6)</label>
-            </value>
-            <value>
-                <fullName>น.ส.ปวันฉัตร อรุษสิริสาธิตา (CF6)</fullName>
-                <default>false</default>
-                <label>น.ส.ปวันฉัตร อรุษสิริสาธิตา (CF6)</label>
             </value>
             <value>
                 <fullName>น.ส.ณัฐชนันท เจริญผล (CF5)</fullName>
@@ -235,6 +210,16 @@
                 <fullName>น.ส.วรพิชชา ลาภหลาย(CF6)</fullName>
                 <default>false</default>
                 <label>น.ส.วรพิชชา ลาภหลาย(CF6)</label>
+            </value>
+            <value>
+                <fullName>นางสุมณฑล วิศวชิต(CF2)</fullName>
+                <default>false</default>
+                <label>นางสุมณฑล วิศวชิต(CF2)</label>
+            </value>
+            <value>
+                <fullName>นายภัทรวิศว์ พุฒาพิทักษ์(CF4)</fullName>
+                <default>false</default>
+                <label>นายภัทรวิศว์ พุฒาพิทักษ์(CF4)</label>
             </value>
         </valueSetDefinition>
     </valueSet>
