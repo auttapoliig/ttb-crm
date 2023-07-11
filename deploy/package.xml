@@ -4,5 +4,9 @@
         <members>customerHighlightPanel</members>
         <name>LightningComponentBundle</name>
     </types>
+    <types>
+        <members>CXMSurvey_For_CSV</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
     <version>58.0</version>
 </Package>
