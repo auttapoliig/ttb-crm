@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>BOIBO-Client Services and Bill Checking</name>
+    <queueMembers>
+        <roles>
+            <role>Client_Services_and_Bill_Checking_TL</role>
+            <role>Client_Services_and_Bill_Checking_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

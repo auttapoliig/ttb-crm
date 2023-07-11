@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Asset Appraisal of Review TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Asset Appraisal of Review TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Asset_Appraisal_TH</parentRole>
+</Role>

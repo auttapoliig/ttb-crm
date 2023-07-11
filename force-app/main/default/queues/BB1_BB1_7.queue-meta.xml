@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>dummy@tmbbank.com</email>
+    <name>BB1 BB1-7</name>
+    <queueMembers>
+        <roles>
+            <role>BB1_RG_BB1_7</role>
+            <role>CCBO_Sales_Management</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

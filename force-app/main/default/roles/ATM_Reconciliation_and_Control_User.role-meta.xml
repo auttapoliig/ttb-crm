@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>ATM Reconciliation and Control User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>ATM Reconciliation and Control User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>ATM_Reconciliation_and_Control_TL</parentRole>
+</Role>

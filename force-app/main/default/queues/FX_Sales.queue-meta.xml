@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>FX Sales</name>
+    <queueMembers>
+        <users>
+            <user>15071@tmbbank.com</user>
+            <user>80322@tmbbank.com</user>
+            <user>80560@tmbbank.com</user>
+            <user>10139@tmbbank.com</user>
+            <user>27599@tmbbank.com</user>
+            <user>20835@tmbbank.com</user>
+            <user>05640@tmbbank.com</user>
+            <user>10672@tmbbank.com</user>
+            <user>10184@tmbbank.com</user>
+            <user>14949@tmbbank.com</user>
+            <user>80323@tmbbank.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

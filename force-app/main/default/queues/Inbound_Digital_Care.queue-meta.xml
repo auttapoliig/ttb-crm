@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Inbound Digital Care</name>
+    <queueMembers>
+        <roles>
+            <role>Digital_MGR_01</role>
+            <role>Digital_TL</role>
+            <role>Digital_User_01</role>
+            <role>ME_MGR_01</role>
+            <role>ME_User_01</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

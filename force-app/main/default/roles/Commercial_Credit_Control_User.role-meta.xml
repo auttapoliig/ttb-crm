@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Commercial Credit Control User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Commercial Credit Control User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Commercial_Credit_Control_TL</parentRole>
+</Role>

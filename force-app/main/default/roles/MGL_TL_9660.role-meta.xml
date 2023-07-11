@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>MGL-TL-9660</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>MGL-TL-9660</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>MGL_TH_9660</parentRole>
+</Role>

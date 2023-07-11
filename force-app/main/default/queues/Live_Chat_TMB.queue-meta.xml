@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Live Chat - TMB</name>
+    <queueMembers>
+        <users>
+            <user>47473@tmbbank.com</user>
+            <user>41995@tmbbank.com</user>
+            <user>47084@tmbbank.com</user>
+            <user>47498@tmbbank.com</user>
+            <user>48464@tmbbank.com</user>
+            <user>45006@tmbbank.com</user>
+            <user>41996@tmbbank.com</user>
+            <user>33150@tmbbank.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Assign_Chat_to_Agent</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>
