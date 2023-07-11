@@ -924,7 +924,8 @@ History
         }
 
         if(lastName_List.size() > 0){
-           leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Customer_Segment__c = 'TMB Web' AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
+           //leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Customer_Segment__c = 'TMB Web' AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
+           leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
         }
 
         //Map all existing lead for check duplicate
@@ -947,7 +948,8 @@ History
             //If Lead duplicate tick RTL_IsDuplicate_Lead__c = True and not process assignment rule
             String keyCheckDup = leadObj.FirstName + leadObj.LastName + leadObj.RTL_Mobile_Number__c + leadObj.RTL_Product_Name__c;
 
-            if(mapCheckDupLead.size() > 0 &&  mapCheckDupLead.containsKey(keyCheckDup.toLowerCase()) && leadObj.RTL_Web_Unique_ID_c__c != mapCheckDupLead.get(keyCheckDup.toLowerCase()) && leadObj.RTL_Customer_Segment__c == 'TMB Web'){
+            //if(mapCheckDupLead.size() > 0 &&  mapCheckDupLead.containsKey(keyCheckDup.toLowerCase()) && leadObj.RTL_Web_Unique_ID_c__c != mapCheckDupLead.get(keyCheckDup.toLowerCase()) && leadObj.RTL_Customer_Segment__c == 'TMB Web'){
+            if(mapCheckDupLead.size() > 0 &&  mapCheckDupLead.containsKey(keyCheckDup.toLowerCase()) && leadObj.RTL_Web_Unique_ID_c__c != mapCheckDupLead.get(keyCheckDup.toLowerCase())){
                 leadObj.OwnerID = tmbAdmin.ID;
                 leadObj.RTL_IsDuplicate_Lead__c = true;
                 leadObj.RTL_Duplicate_With_ID__c = 'Duplicated with record ID ' + mapCheckDupLead.get(keyCheckDup.toLowerCase());
