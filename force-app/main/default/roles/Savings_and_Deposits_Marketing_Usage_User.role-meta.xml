@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Savings and Deposits Marketing - Usage- User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Savings and Deposits Marketing - Usage- User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Savings_and_Deposits_Marketing_TL</parentRole>
+</Role>

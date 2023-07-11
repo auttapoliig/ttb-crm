@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Unsecured Loan Verification User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Unsecured Loan Verification User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Unsecured_Loan_Verification_TL</parentRole>
+</Role>

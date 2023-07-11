@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>SB1 RG Chonburi</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>SB1 RG Chonburi</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Head_of_Small_Business_Sales1</parentRole>
+</Role>

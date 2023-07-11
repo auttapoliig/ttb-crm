@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Debt Recovery Management</name>
+    <queueMembers>
+        <roles>
+            <role>Retail_Credit_Restructuring_Insourcing_Management</role>
+            <role>SME_Credit_Restructuring_Insourcing_Management</role>
+            <role>TH_Credit_Restructuring_Insourcing_Management</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

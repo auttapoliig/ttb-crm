@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CSVCustomer Type Segment Codition</label>
+    <protected>true</protected>
+    <values>
+        <field>condition__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;Condition&quot;: [
+    {
+      &quot;Segment_crm__c&quot;: &quot;1&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #acacac;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;greyBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;2&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #acacac;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;greyBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;3&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #acacac;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;greyBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;4&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #acacac;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;greyBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;5&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #8c522a;color: white;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;brownBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: [
+        &quot;WB&quot;,
+        &quot;PB&quot;
+      ]
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;5&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #f98b1f;color: black;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;orangeBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;6&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #002d63;color: white;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;darkBlueBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    },
+    {
+      &quot;Segment_crm__c&quot;: &quot;7&quot;,
+      &quot;style&quot;: &quot;display:inline-block;background-color: #0056ff;color:black;padding: 2px 10px;&quot;,
+      &quot;class&quot;: &quot;lightBuleBg&quot;,
+      &quot;RTL_Privilege1__c&quot;: []
+    }
+  ]
+}</value>
+    </values>
+    <values>
+        <field>format_name__c</field>
+        <value xsi:type="xsd:string">segment_coloring</value>
+    </values>
+</CustomMetadata>

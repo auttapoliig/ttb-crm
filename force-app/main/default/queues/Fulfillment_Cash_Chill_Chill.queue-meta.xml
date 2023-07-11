@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Fulfillment Cash Chill Chill</name>
+    <queueMembers>
+        <roles>
+            <role>RASL_Fulfillment_Day2_MGR_01</role>
+            <role>RASL_Fulfillment_Day2_User_01</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

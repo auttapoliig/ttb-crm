@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>OSG-SSFO</name>
+    <queueMembers>
+        <roles>
+            <role>Fund_Settlement_Services_Operations_TL</role>
+            <role>Fund_Settlement_Services_Operations_User</role>
+            <role>Securities_and_Fund_Support_Operations_TL</role>
+            <role>Securities_and_Fund_Support_Operations_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

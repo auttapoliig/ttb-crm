@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>extract lead web atm lead</label>
+    <protected>false</protected>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">Lead.CreatedDate &gt;= [yyyy]-[MM]-[dd-1]T00:00:00+07:00
+AND Lead.CreatedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
+AND Lead.RTL_Contact_Method__c not in (&apos;Call Me Now&apos;,&apos;Call Me Later&apos;)
+AND (Lead.LeadSource IN (&apos;Website&apos;,&apos;ATM&apos;,&apos;Touch&apos;) AND Lead.Owner.Id = &apos;00G900000030GlP&apos;)
+AND Lead.RTL_Product_Name__c IN (&apos;Cash2Go&apos;,&apos;Flash PLUS&apos;,&apos;Credit Card&apos;,&apos;Credit Cards&apos;
+,&apos;So Fast&apos;,&apos;So Smart&apos;,&apos;So Chill&apos;,&apos;Top Brass&apos;,&apos;Other Credit Card&apos;,&apos;TMB VISA SIGNATURE&apos;
+,&apos;Home Loan&apos;,&apos;Refinance Home Loan&apos;,&apos;Home Equity&apos;,&apos;Easy Saver 15/9 (Par)&apos;
+,&apos;Happy Retire 90 (Enhance Death Benefit)&apos;,&apos;Pay Light High Protect 20/10&apos;,&apos;The Treasure&apos;
+,&apos;Payroll&apos;,&apos;Protection Gap&apos;,&apos;Easy Care Plan 1&apos;,&apos;PA Prestige (Silver)&apos;,&apos;PA CI (PA and health)&apos;,&apos;Happy life protect 99/10 (PAR)&apos;,&apos;Flexi Care 7.5 mn&apos;,&apos;CI Prompt Care Plan1&apos;,&apos;Payroll_Secure&apos;, &apos;Payroll_BA&apos;, &apos;Payroll_Investment&apos;, &apos;Payroll_Unsecure&apos;,&apos;BA tax campaign&apos;,&apos;BenefitPlus (HL)&apos;,&apos;BenefitPlus (HE)&apos;,&apos;BenefitPlus (Unsecured Loan)&apos;,&apos;GBHCC&apos;,&apos;GBHFC&apos;)
+AND Lead.RecordType.DeveloperName IN (&apos;Retail_Banking&apos;,&apos;Retail_Closed_Lost&apos;)
+AND Lead.Id != null AND Lead.FirstName != NULL</value>
+    </values>
+    <values>
+        <field>Field_Set__c</field>
+        <value xsi:type="xsd:string">Lead.RTL_Web_Unique_ID_c__c 
+,Lead.FirstName
+,Lead.LastName
+,Lead.RTL_Mobile_Number__c
+,Lead.RTL_Phone_Number__c
+,Lead.RTL_Office_Number__c
+,Lead.RTL_Branch_Code_Rpt__c 
+,Campaign_Member_URL__c 
+,Campaign.EndDate 
+,Id
+,RTL_Remark__c
+,CreatedDate
+,RTL_Product_Name__c
+,Campaign.RTL_Campaign_Code_10_digits__c
+,Lead.RTL_Customer_Segment__c</value>
+    </values>
+    <values>
+        <field>sObject__c</field>
+        <value xsi:type="xsd:string">CampaignMember</value>
+    </values>
+</CustomMetadata>

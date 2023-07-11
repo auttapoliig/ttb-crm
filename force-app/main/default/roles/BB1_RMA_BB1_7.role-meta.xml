@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>BB1 ARM Central Samutsakhon2</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>BB1 RMA BB1-7</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>BB1_RG_BB1_7</parentRole>
+</Role>

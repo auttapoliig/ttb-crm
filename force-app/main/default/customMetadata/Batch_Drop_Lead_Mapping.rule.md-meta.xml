@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>rule</label>
+    <protected>false</protected>
+    <values>
+        <field>FileName__c</field>
+        <value xsi:type="xsd:string">rule.sdl</value>
+    </values>
+    <values>
+        <field>Mapping_Value__c</field>
+        <value xsi:type="xsd:string">No Fix=1
+No Fee=1
+Home Loan=1
+Refinance Home Loan=1
+Home Equity=1
+Credit Card=1
+RDC=1
+Cash2Go=1
+Other personal loan=1
+Other BA=1
+Mutual Funds=1
+Closed Converted=P
+TMB for Life 85/5=10
+TMB Life Care 99/5=9
+TMB For Life 85/60=11
+So Smart=2
+So Chill=3
+So Fast=4
+Top Brass=6
+Life Saver 15/9=3
+Life Protection 99/9=4
+TMB Smart Life 15/8=5
+Other Credit Card=1
+TMB Health Care Max (IPD)=7
+TMB Health Care Max (IPD+OPD)=8
+TMB Wealth Link=6</value>
+    </values>
+</CustomMetadata>

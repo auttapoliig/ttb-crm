@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Retail Loan Verification</name>
+    <queueMembers>
+        <roles>
+            <role>Secured_Loan_Verification_TL</role>
+            <role>Secured_Loan_Verification_User</role>
+            <role>Unsecured_Loan_Verification_TL</role>
+            <role>Unsecured_Loan_Verification_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

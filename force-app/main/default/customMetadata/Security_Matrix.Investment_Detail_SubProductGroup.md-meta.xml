@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Investment_Detail_SubProductGroup</label>
+    <protected>false</protected>
+    <values>
+        <field>Field__c</field>
+        <value xsi:type="xsd:string">Investment_Detail_SubProductGroup</value>
+    </values>
+    <values>
+        <field>Page__c</field>
+        <value xsi:type="xsd:string">Details of Investment Product</value>
+    </values>
+    <values>
+        <field>Section__c</field>
+        <value xsi:type="xsd:string">RtlCust:Customer Product Holding (Low)</value>
+    </values>
+</CustomMetadata>

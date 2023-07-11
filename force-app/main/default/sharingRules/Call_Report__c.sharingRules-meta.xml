@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Visit_Client_Service</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Visit_Client_Service</label>
+        <sharedTo>
+            <roleAndSubordinates>Head_of_Client_Service</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CCBO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

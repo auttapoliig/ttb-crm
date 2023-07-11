@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Data Entry and Application Verification User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Data Entry and Application Verification User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Data_Entry_and_Application_Verification_TL</parentRole>
+</Role>
