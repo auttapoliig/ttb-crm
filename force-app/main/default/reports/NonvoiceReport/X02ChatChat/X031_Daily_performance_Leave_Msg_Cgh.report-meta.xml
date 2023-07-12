@@ -69,6 +69,10 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$SLA_No_Value__c</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$Number_case_answered__c</field>
+    </columns>
     <description>Daily performance for Leave Chat (Facebook, Line, TOUCH)</description>
     <filter>
         <criteriaItems>
@@ -83,7 +87,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Bot Call Centre Chat Queue</value>
+            <value>Bot Call Centre Chat Queue,Chat - TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -104,9 +108,9 @@
     </params>
     <reportType>ChatSession_with_Case__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_THISMONTH</interval>
