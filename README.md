@@ -31,7 +31,7 @@ sf org list
 | SCR0590879 | Add Wealth Support list to receive cases | CoE (Attasit) | 20 July 2023 |
 | SCR0587873 | ขอเพิ่มสิทธิ์ ให้กับ คุณ Nalinee  Imsaard สามารถทำการ Approve Campaign ได้เหมือนกับคุณ Panawat Innurak (เฉพาะ Campaign type = Exclusive) | CoE (Attasit) | 20 July 2023 |
 | SCR0592580 | change logic NPS Score เพื่อให้ในระบบ CRM show NPS score ตรงกับที่ สื่อความ | CoE (Attasit) | 20 July 2023 |
-| SCR0581170 | Clear Close branch (Krittisak) | CoE | 20 July 2023 |
+| SCR0581170 | Clear Close branch | CoE (Krittisak) | 20 July 2023 |
 | SCR0586993 | Access right to KYC review template | CoE (Todsapol) | 20 July 2023 |
 | SCR0589780 | Update UW name list on case management | CoE (Todsapol) | 20 July 2023 |
 | SCR0592422 | Reorg SME : Add new role & profile | CoE (Todsapol) | 20 July 2023 |
