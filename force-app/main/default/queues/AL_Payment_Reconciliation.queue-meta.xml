@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>AL Payment &amp; Reconciliation</name>
+    <queueMembers>
+        <roles>
+            <role>AL_Operation_TL</role>
+            <role>AL_Operation_User</role>
+            <role>AL_Receipt_PaymentTL</role>
+            <role>AL_Receipt_PaymentUser</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

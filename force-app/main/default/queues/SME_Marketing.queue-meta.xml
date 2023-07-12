@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>SME_Marketing</name>
+    <queueMembers>
+        <roles>
+            <role>DTB_Acquiring</role>
+        </roles>
+        <users>
+            <user>22555@tmbbank.com</user>
+            <user>43247@tmbbank.com</user>
+            <user>22923@tmbbank.com</user>
+            <user>20964@tmbbank.com</user>
+            <user>48226@tmbbank.com</user>
+            <user>46675@tmbbank.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

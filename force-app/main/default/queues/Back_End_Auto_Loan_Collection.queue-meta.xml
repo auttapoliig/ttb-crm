@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Back End Auto Loan Collection</name>
+    <queueMembers>
+        <roles>
+            <role>Back_End_Auto_Loan_Collection_TL</role>
+            <role>Back_End_Auto_Loan_Collection_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

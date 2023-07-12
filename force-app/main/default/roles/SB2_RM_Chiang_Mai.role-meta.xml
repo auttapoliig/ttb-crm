@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>SB2 RM Chiang Mai</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>SB2 RM Chiang Mai</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>SB2_ZM_Chiang_Mai</parentRole>
+</Role>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Branch Supervision and Compliance</name>
+    <queueMembers>
+        <roles>
+            <role>Branch_Supervision_and_Compliance_User</role>
+            <role>Branch_Supervision_and_Compliance_TL</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

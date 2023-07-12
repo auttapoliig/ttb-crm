@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>AL WS Loan Maintenance - Settlement-TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>AL WS Loan Maintenance - Settlement-TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Automotive_Lending_Wholesale_Support_and_Services_TH</parentRole>
+</Role>

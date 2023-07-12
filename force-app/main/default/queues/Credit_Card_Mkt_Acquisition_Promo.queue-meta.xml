@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Credit Card Mkt-Acquisition Promo</name>
+    <queueMembers>
+        <roles>
+            <role>Credit_Card_Marketing_Acquisition_Promo_User</role>
+            <role>Credit_Card_Marketing_TL</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

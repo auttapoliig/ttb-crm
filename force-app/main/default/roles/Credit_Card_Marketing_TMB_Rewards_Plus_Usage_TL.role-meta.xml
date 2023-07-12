@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Credit Card Marketing-TMB Rewards Plus &amp; Usage-TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Credit Card Marketing-TMB Rewards Plus &amp; Usage-TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Credit_Card_Marketing_TL</parentRole>
+</Role>
