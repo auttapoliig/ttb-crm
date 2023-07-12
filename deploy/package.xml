@@ -38,9 +38,6 @@
         <members>SE_ZM_SME7_Phuket</members>
         <members>SE_RMA_SME7_Phuket</members>
         <members>SE_RM_SME7_Phuket</members>
-        <members>SE_ZM_SME2_Samutsakorn</members>
-        <members>SE_RMA_SME2_Samutsakorn</members>
-        <members>SE_RM_SME2_Samutsakorn</members>
         <name>Role</name>
     </types>
     <types>
