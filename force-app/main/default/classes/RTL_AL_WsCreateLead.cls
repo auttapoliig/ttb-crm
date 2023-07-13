@@ -250,8 +250,8 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                  * AL Integration Phase 2
                  * Checking if system send marketing code in body request
                  */
-                if((campaignMemberTouch != null || dropLeadO2O.Id != null) && campaignMemberTouch.RTL_AL_response__c && campaignMemberTouch.RTL_Contact_Method__c != 'AL Sales') {
-                    // System.debug('Email -->' + JSON.serializePretty(campaignMemberTouch));
+                if((campaignMemberTouch != null && dropLeadO2O.Id != null) && campaignMemberTouch.RTL_AL_response__c && campaignMemberTouch.RTL_Contact_Method__c != 'AL Sales') {
+                    //System.debug('Email -->' + JSON.serializePretty(campaignMemberTouch));
                     RTL_AL_NotificationToOwner noti = new RTL_AL_NotificationToOwner(campaignMemberTouch);
                     noti.run();
                 }
