@@ -15,7 +15,6 @@
     </types>
     <types>
         <members>RTL_AL_WsCreateLead</members>
-        <members>
         <members>RTL_LeadTriggerHandler</members>
         <members>RTL_LeadTriggerHandlerTest</members>
         <name>ApexClass</name>
