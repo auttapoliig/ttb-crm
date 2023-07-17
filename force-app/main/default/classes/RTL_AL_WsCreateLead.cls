@@ -92,7 +92,7 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                 if(checkIsEmpty(marketingCode)) {
                     if(isSuccess) {
                         insert dropLeadO2O;
-                        campaignMemberTouch = [SELECT Id, RTL_Marketing_Code__c, Name, Customer__c, RTL_TMB_Cust_ID__c,
+                        List<CampaignMember> listcm = [SELECT Id, RTL_Marketing_Code__c, Name, Customer__c, RTL_TMB_Cust_ID__c,
                         Campaign.Name, LeadOrContactOwner.Name, RTL_AL_response__c,
                         RTL_CampHis_Phone__c, RTL_Register_Date__c, 
                         RTL_AL_car_brand__c, RTL_AL_car_subtype__c, RTL_AL_car_year__c, RTL_AL_car_plate_no__c, 
@@ -107,7 +107,6 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         if(listcm.size() > 0){
                             campaignMemberTouch = listcm[0];
                         }
-
                     }
                     response = responseMsg(
                         isSuccess, 
