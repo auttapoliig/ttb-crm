@@ -24,7 +24,7 @@ git checkout STAGING
 ```
 2. Validate Component in Production
 ```
-sf project deploy start --manifest .\deploy\package.xml --dry-run -o ttb-prod -l RunLocalTests --async
+sf project deploy validate --manifest .\deploy\package.xml --target-org ttb-prod --test-level RunLocalTests --async
 ```
 3. Get Update Deployment Status
 ```
