@@ -28,11 +28,11 @@ sf project deploy start --manifest .\deploy\package.xml --dry-run -o ttb-prod -l
 ```
 3. Get Update Deployment Status
 ```
-sf project deploy report --job-id _<<jobid>_
+sf project deploy report --job-id _<<jobid>>_
 ```
 4. Quick Deploy
 ```
-sf project deploy quick --job-id _<<jobid>_
+sf project deploy quick --job-id _<<jobid>>_
 ```
 ---
 # Release Track
@@ -49,5 +49,5 @@ sf project deploy quick --job-id _<<jobid>_
 | SCR0592423 | KYC review on case management : Add new queue KYC – Customer Data Managment | CoE (Todsapol) | 20 July 2023 |
 ---
 ## Ref Link
-[Source Control](https://bitbucket.tmbbank.local:7990/projects/CRMSAL/repos/ttb-crm/browse)
-[SF Command](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_top.htm)
+* [Source Control](https://bitbucket.tmbbank.local:7990/projects/CRMSAL/repos/ttb-crm/browse)
+* [SF Command](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_top.htm)
