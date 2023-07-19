@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CCOutbound_CSVController</members>
+        <members>RetailCSVLightningUtil</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>OutboundCallCenterCSV_InfomationAddressContact</members>
+        <members>OutboundCallCenterCSV_InfomationBasic</members>
+        <members>OutboundCallCenterCSV_InfomationImportant</members>
+        <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Customer_Record_Page_Contact_Center_Outbound</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Security_Matrix__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <name>SharingRules</name>
+    </types>
+    <version>58.0</version>
+</Package>
