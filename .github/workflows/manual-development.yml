@@ -1,0 +1,39 @@
+name: Manual into SIT / UAT
+on:
+  workflow_dispatch:
+    inputs:
+      sfOrg:
+        description: 'Target Salesforce Org'
+        required: true
+        type: choice
+        options:
+          - SIT
+env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+# Jobs to be executed
+jobs:
+  deploy-branch-development:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.sfOrg }}
+    steps:
+      - name: 'Install Salesforce CLI'
+        run: |
+              wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+              mkdir ~/sfdx
+              tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
+              echo "$HOME/sfdx/bin" >> $GITHUB_PATH
+              ~/sfdx/bin/sf version
+      # Checkout the source code
+      - name: 'Checkout source code'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # Authenticate to org
+      - name: 'Authenticate to Integration Org'
+        run: |
+          echo "${{ secrets.SF_PRIVATE_KEY }}" > server.key
+          sf org login jwt --username ${{ vars.SF_DEPLOY_USER }} --jwt-key-file server.key --client-id ${{ vars.SF_CONSUMER_KEY }} --alias ttb-target --instance-url ${{ vars.SF_TARGET_URL }}
+      - name: 'Deploy Source to Org'
+        run: |
+          sf project deploy start --source-dir ./force-app/main/default -o ttb-target --dry-run
