@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Pool Beyond Banking-Car owner ecosystem</name>
+    <queueMembers>
+        <roles>
+            <role>Pool_Beyond_Banking_Car_owner_ecosystem_TL</role>
+            <role>Pool_Beyond_Banking_Car_owner_ecosystem_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

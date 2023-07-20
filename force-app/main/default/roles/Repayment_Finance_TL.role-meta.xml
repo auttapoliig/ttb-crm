@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Repayment-Finance-TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Repayment-Finance-TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Repayment_Loan_Maintenance_TL</parentRole>
+</Role>

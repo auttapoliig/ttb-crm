@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>HP Doc. Process – Admin.</name>
+    <queueMembers>
+        <roles>
+            <role>HP_Doc_Process_Admin_TL</role>
+            <role>HP_Doc_Process_Admin_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

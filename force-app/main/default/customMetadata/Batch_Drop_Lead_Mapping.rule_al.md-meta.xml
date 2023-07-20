@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>rule_al</label>
+    <protected>false</protected>
+    <values>
+        <field>FileName__c</field>
+        <value xsi:type="xsd:string">rule_al.sdl</value>
+    </values>
+    <values>
+        <field>Mapping_Value__c</field>
+        <value xsi:type="xsd:string">3:NEW=1
+3:USED=2
+3:CYC=3
+3:CYB=4</value>
+    </values>
+</CustomMetadata>

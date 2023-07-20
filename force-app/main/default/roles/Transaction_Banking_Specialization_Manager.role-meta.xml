@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Transaction Banking Specialization Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Transaction Banking Specialization Manager</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>TH_of_International_Transaction_Banking_Specialization</parentRole>
+</Role>

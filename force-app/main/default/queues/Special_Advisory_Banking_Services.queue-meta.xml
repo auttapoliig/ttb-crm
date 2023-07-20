@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Special Advisory Banking Services</name>
+    <queueMembers>
+        <roles>
+            <role>Special_Advisory_Banking_Services2</role>
+            <role>Special_Advisory_Banking_Services2_TL</role>
+            <role>Special_Advisory_Banking_Services2_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

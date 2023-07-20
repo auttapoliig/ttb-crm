@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Role for Delete CSBO</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Role for Delete CSBO</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Role_for_Delete_CWBO</parentRole>
+</Role>

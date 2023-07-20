@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Tele Marketing-Credit Card (tcon)</name>
+    <queueMembers>
+        <roles>
+            <role>Telemarketing_1_GL_01</role>
+            <role>Telemarketing_1_TL</role>
+            <role>Telemarketing_2_GL_01</role>
+            <role>Telemarketing_2_TL</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

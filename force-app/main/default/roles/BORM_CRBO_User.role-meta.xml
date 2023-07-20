@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>BORM - CRBO - User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>BORM - CRBO - User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>BORM_CRBO_TL</parentRole>
+</Role>

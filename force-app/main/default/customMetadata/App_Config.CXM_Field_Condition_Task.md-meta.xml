@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CXM Field Condition Task</label>
+    <protected>false</protected>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:string">AccountId,RTL_Task_Created_Branch_Code__c,RTL_Task_Created_Zone_Code__c,RTL_Task_Created_Region_Code__c,RTL_Task_Created_Emp_Id__c,WhatId,RTL_Task_Created_Channel__c,RTL_Task_Subject__c,Status,ActivityDate</value>
+    </values>
+</CustomMetadata>

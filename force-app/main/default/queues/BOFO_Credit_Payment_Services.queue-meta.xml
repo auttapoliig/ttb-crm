@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>BO/FO - Credit Payment Services</name>
+    <queueMembers>
+        <roles>
+            <role>Repayment_Finance_TL</role>
+            <role>Repayment_Finance_User</role>
+            <role>Repayment_Loan_Maintenance_TL</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

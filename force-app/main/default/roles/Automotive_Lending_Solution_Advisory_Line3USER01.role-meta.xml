@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Automotive Lending Solution Advisory Line-3-USER-01</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Automotive Lending Solution Advisory Line-3-USER-01</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Automotive_Lending_Solution_Advisory_Line3MGR01</parentRole>
+</Role>

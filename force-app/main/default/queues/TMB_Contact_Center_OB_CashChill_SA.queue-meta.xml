@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>TMB Contact Center-OB (CashChill-SA)</name>
+    <queueMembers>
+        <roles>
+            <role>Advisory_Line_6_MGR_01</role>
+            <role>Advisory_Line_6_TL</role>
+            <role>Outbound_TH</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

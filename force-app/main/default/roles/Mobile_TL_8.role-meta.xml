@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Mobile-TL-8</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Mobile-TL-8</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Mobile_TH</parentRole>
+</Role>

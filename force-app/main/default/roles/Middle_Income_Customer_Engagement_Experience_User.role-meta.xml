@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Middle Income Customer Engagement &amp; Experience -User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Middle Income Customer Engagement &amp; Experience-User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Middle_Income_Customer_Engagement_Experience_TL</parentRole>
+</Role>

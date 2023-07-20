@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_CB_FX_Orders_to_MB_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share CB FX Orders to MB/CB</label>
+        <sharedTo>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_MB_CB_FX_Orders_to_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share MB/CB FX Orders to CB</label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_MB_CB_FX_Orders_to_MB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share MB/CB FX Orders to MB</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_MB_FX_Orders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share MB FX Orders</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_MB_FX_Orders_to_MB_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share MB FX Orders to MB/CB</label>
+        <sharedTo>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Read_Write_for_CB_CM_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Read/Write for CB CM Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Read_Write_for_CB_CM_Team_From_MB_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>share MB&apos;s FX order records to CB Role</description>
+        <label>Share Read/Write for CB CM Team From MB Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Read_Write_for_FI_CM_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Read/Write for FI CM Team</label>
+        <sharedTo>
+            <roleAndSubordinates>FI_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>FI_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Read_Write_for_MB_CM_Team_From_CB_CM_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>share CB&apos;s FX order records to MB role</description>
+        <label>Share Read/Write for MB CM Team From CB CM Team</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Compliance_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Read_Write_for_SE_CM_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Read/Write for SE CM Team</label>
+        <sharedTo>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
