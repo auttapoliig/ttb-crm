@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_CRBO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share CRBO</label>
+        <sharedTo>
+            <role>CRBO</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRBO</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

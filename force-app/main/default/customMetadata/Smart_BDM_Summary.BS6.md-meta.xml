@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BS6</label>
+    <protected>false</protected>
+    <values>
+        <field>Business_Info_Code__c</field>
+        <value xsi:type="xsd:string">white</value>
+    </values>
+    <values>
+        <field>Color_Code__c</field>
+        <value xsi:type="xsd:string">red</value>
+    </values>
+    <values>
+        <field>Credit_Info_Code__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Risk_Info_Code__c</field>
+        <value xsi:type="xsd:string">red</value>
+    </values>
+</CustomMetadata>

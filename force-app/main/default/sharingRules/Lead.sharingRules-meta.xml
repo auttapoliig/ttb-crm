@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Digital_Lead_to_CWBO_Sales_Management</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share digital Lead to CWBO Sales Management</description>
+        <label>Digital Lead to CWBO Sales Management</label>
+        <sharedTo>
+            <roleAndSubordinates>CCBO_Sales_Management</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Digital Channel</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Digital_Lead_to_SME_Sales_Management</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share digital Lead to SME Sales Management</description>
+        <label>Digital Lead to SME Sales Management</label>
+        <sharedTo>
+            <roleAndSubordinates>SB_Sales_Management</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Digital Channel</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SetLead</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SetLead</label>
+        <sharedTo>
+            <roleAndSubordinates>CALO</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Banking,Retail Closed Lost</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_all_Retail_Leads_with_Retail_user</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>All retail leads must be seen by retail users</description>
+        <label>Share all Retail Leads with Retail user</label>
+        <sharedTo>
+            <roleAndSubordinates>CRBO</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Banking,Retail Closed Lost</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Shared_to_ttb_consumer_MD</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Shared to ttb consumer MD</label>
+        <sharedTo>
+            <roleAndSubordinates>ttb_consumer_MD</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Banking,Retail Closed Lost</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Share_Lead_From_CWBO_to_Product_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Lead From CWBO to Product Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Product_Team</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CCBO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Lead_From_Head_of_Client_Service_to_CB_MB_Sales_Management</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share_Lead_From_Head_of_Client_Service_to_CB_MB_Sales_Management</label>
+        <sharedTo>
+            <role>CCBO_Sales_Management</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Head_of_Client_Service</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_SB_RMC_to_SME_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SB RMC to SME RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SME_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SB_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_SME_RMC_to_SB_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SME RMC to SB RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SB_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SME_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

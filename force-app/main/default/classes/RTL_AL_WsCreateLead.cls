@@ -51,17 +51,12 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
 
             Response response;
             Boolean isSuccess = fieldsMissing.size() == 0;
-            // System.debug('testdebug');
-            // System.debug(fieldsMissing);
-            // System.debug('isSuccess -> ' + isSuccess);
-            // System.debug('requestBodyDecrypt -> ' + requestBodyDecrypt);
             if(isSuccess){
                 /**
                  * AL Ingretaion Phase 2 - checking marketgin code in campaign member for update existing
                  */
                 CampaignMember campaignMemberTouch;
                 String marketingCode = (String)AbstractCoreClass.getResult('RTL_Marketing_Code__c', JSON.deserializeUntyped(requestBodyDecrypt));
-                // System.debug('marketingCode -->' + marketingCode);
                 if(!checkIsEmpty(marketingCode)) {
                     List<CampaignMember> campaigns = [SELECT Id, RTL_Marketing_Code__c, Name, Customer__c, RTL_TMB_Cust_ID__c,
                         Campaign.Name, LeadOrContactOwner.Name, LeadId, RTL_AL_response__c,
@@ -94,13 +89,10 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         (Id)campaignMemberTouch?.Id
                     );
                 }
-                // System.debug('response -->' + response);
                 if(checkIsEmpty(marketingCode)) {
                     if(isSuccess) {
-                        // System.debug('Remark -->' + dropLeadO2O.RTL_Remark__c);
                         insert dropLeadO2O;
-                        // System.debug('testdrop' + dropLeadO2O);
-                        campaignMemberTouch = [SELECT Id, RTL_Marketing_Code__c, Name, Customer__c, RTL_TMB_Cust_ID__c,
+                        List<CampaignMember> listcm = [SELECT Id, RTL_Marketing_Code__c, Name, Customer__c, RTL_TMB_Cust_ID__c,
                         Campaign.Name, LeadOrContactOwner.Name, RTL_AL_response__c,
                         RTL_CampHis_Phone__c, RTL_Register_Date__c, 
                         RTL_AL_car_brand__c, RTL_AL_car_subtype__c, RTL_AL_car_year__c, RTL_AL_car_plate_no__c, 
@@ -112,7 +104,9 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Email, RTL_Assigned_Agent__r.Email, RTL_Contact_Staff_Name__r.Email
                         FROM CampaignMember 
                         WHERE LeadId = :dropLeadO2O.Id LIMIT 1];
-                        // System.debug(campaignMemberTouch);
+                        if(listcm.size() > 0){
+                            campaignMemberTouch = listcm[0];
+                        }
                     }
                     response = responseMsg(
                         isSuccess, 
@@ -230,7 +224,6 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         campaignMemberTouch.RTL_Remark__c = 'ลูกค้าระบุวงเงินที่ต้องการ ' + campaignMemberTouch.RTL_AL_wanted_amount__c + ' ระยะเวลาผ่อน (งวด) ' + campaignMemberTouch.RTL_AL_installment_periods__c + ' ประมาณค่างวด ' + campaignMemberTouch.RTL_AL_installment_amount__c ;
                     }
                     campaignMemberTouch.WS_Stamp_Date__c = Datetime.now();
-                    // System.debug(campaignMemberTouch);	
                     if(campaignMemberTouch.RTL_Contact_Method__c == 'AL Sales')
                     {                  
                         if(campaignMemberTouch.createReferDate__c == null){
@@ -250,8 +243,7 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                  * AL Integration Phase 2
                  * Checking if system send marketing code in body request
                  */
-                if((campaignMemberTouch != null || dropLeadO2O.Id != null) && campaignMemberTouch.RTL_AL_response__c && campaignMemberTouch.RTL_Contact_Method__c != 'AL Sales') {
-                    // System.debug('Email -->' + JSON.serializePretty(campaignMemberTouch));
+                if((campaignMemberTouch != null && dropLeadO2O.Id != null) && campaignMemberTouch.RTL_AL_response__c && campaignMemberTouch.RTL_Contact_Method__c != 'AL Sales') {
                     RTL_AL_NotificationToOwner noti = new RTL_AL_NotificationToOwner(campaignMemberTouch);
                     noti.run();
                 }

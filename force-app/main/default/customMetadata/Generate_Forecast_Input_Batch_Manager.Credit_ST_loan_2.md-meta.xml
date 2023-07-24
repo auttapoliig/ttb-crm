@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Credit-ST loan-2</label>
+    <protected>false</protected>
+    <values>
+        <field>Additional_Criteria__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Batch_size__c</field>
+        <value xsi:type="xsd:double">200.0</value>
+    </values>
+    <values>
+        <field>Customer_Segment__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Main_Query__c</field>
+        <value xsi:type="xsd:string">SELECT Id, Name, As_of_Date__c, Customer__c,Customer__r.Segment_crm__c, Account_Suffix_Ref__c, TMB_Account_ID__c, TMB_Suffix__c, TMB_Ref__c, Product_Type__c, Loan_Status__c, Limit_Loan__c, Ending_Balance_BE__c, Ending_Balance_Deposit__c, Ending_Balance_Loan__c, Average_Balance_BE__c, Average_Balance_Deposit__c, Average_Balance_Loan__c,Product_Group__c, Gross_Rate__c, Interest_Revenue__c, Product_Code__c, Issue_Date__c, Maturity_Date__c, Origination_Date__c, Account_Status_Desc__c, Liability_O_S__c, Unused_Balance__c,RPN_Type__c, SABS_Type__c, Current_4G__c, Business_Readiness_Level_BRL__c, Product__c, Product__r.Financial_Product_Domain__c, Product__r.Remark__c FROM Product_Volume_Information__c WHERE Name LIKE &apos;CreditSTloan2%&apos;</value>
+    </values>
+    <values>
+        <field>Order_By_Query__c</field>
+        <value xsi:type="xsd:string">ORDER BY Customer__c, Product__c</value>
+    </values>
+    <values>
+        <field>Priority__c</field>
+        <value xsi:type="xsd:double">5.0</value>
+    </values>
+    <values>
+        <field>Product_Domain__c</field>
+        <value xsi:type="xsd:string">Credit</value>
+    </values>
+    <values>
+        <field>Product_Remark__c</field>
+        <value xsi:type="xsd:string">ST loan</value>
+    </values>
+    <values>
+        <field>Requied_Sync__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>
