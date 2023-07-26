@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iigproduct_2__Subject__c</fullName>
+    <deprecated>false</deprecated>
+    <description>stamp by skill master mapping
+ - Web-snippet : หัวข้อที่เลือกมาจากหน้า Web
+ - Facebook , Line : Default</description>
+    <externalId>false</externalId>
+    <label>Subject</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>สอบถามเรื่องทั่วไปและข้อเสนอแนะ</fullName>
+                <default>true</default>
+                <label>สอบถามเรื่องทั่วไปและข้อเสนอแนะ</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์เงินฝากและบริการ</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์เงินฝากและบริการ</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์เงินกู้และสินเชื่อ</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์เงินกู้และสินเชื่อ</label>
+            </value>
+            <value>
+                <fullName>ปรึกษาข้อมูลการลงทุนด้านกองทุน</fullName>
+                <default>false</default>
+                <label>ปรึกษาข้อมูลการลงทุนด้านกองทุน</label>
+            </value>
+            <value>
+                <fullName>สอบถามข้อมูลโครงการช่วยเหลือ covid-19</fullName>
+                <default>false</default>
+                <label>สอบถามข้อมูลโครงการช่วยเหลือ covid-19</label>
+            </value>
+            <value>
+                <fullName>แจ้งปัญหา / ร้องเรียน</fullName>
+                <default>false</default>
+                <label>แจ้งปัญหา / ร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>สอบถามผลิตภัณฑ์/บริการ/เรื่องทั่วไป</fullName>
+                <default>false</default>
+                <label>สอบถามผลิตภัณฑ์/บริการ/เรื่องทั่วไป</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับสินเชื่อรถยนต์</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับสินเชื่อรถยนต์</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับกองทุน</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับกองทุน</label>
+            </value>
+            <value>
+                <fullName>สอบถามเกี่ยวกับการใช้งาน ttb touch</fullName>
+                <default>false</default>
+                <label>สอบถามเกี่ยวกับการใช้งาน ttb touch</label>
+            </value>
+            <value>
+                <fullName>ติดตามสถานะการสมัคร</fullName>
+                <default>false</default>
+                <label>ติดตามสถานะการสมัคร</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

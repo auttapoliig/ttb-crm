@@ -205,6 +205,7 @@
         <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
         <members>TMB Retail Wealth Advisory Multi</members>
         <members>TMB Retail Wealth Advisory Multi Supervisor</members>
+        <members>Retail Integration API Only</members>
         <name>Profile</name>
     </types>
     <types>

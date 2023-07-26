@@ -65,4 +65,20 @@
         <readable>true</readable>
         <field>iigproduct_2__ChatSession__c.SLA_No_Value__c</field>
     </fieldPermissions>
+    <tabVisibilities>
+        <tab>iigproduct_2__ChatSession__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>iigproduct_2__Chat_Transfer_Log__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>iigproduct_2__Survey__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>iigproduct_2__Setup_Social_Chat</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
 </Profile>
