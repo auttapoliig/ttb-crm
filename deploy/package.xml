@@ -198,6 +198,12 @@
         <members>TMB Retail Contact Center Training</members>
         <members>TMB CRM Admin Profile</members>
         <members>TMB System Administrator</members>
+        <members>TMB Retail Contact Center Inbound Multi</members>
+        <members>TMB Retail Contact Center Inbound Multi Supervisor</members>
+        <members>TMB Retail Contact Center Inbound NonVoice</members>
+        <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
+        <members>TMB Retail Wealth Advisory Multi</members>
+        <members>TMB Retail Wealth Advisory Multi Supervisor</members>
         <name>Profile</name>
     </types>
     <types>
@@ -234,6 +240,10 @@
     <types>
         <members>Production</members>
         <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>iigproduct_2__Setup_Social_Chat</members>
+        <name>CustomTab</name>
     </types>
     <version>58.0</version>
 </Package>
