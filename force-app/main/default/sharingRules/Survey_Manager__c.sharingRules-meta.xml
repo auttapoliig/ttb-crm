@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_e_Client_Suit_to_CRM_Admin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share e-Client Suit to CRM Admin</label>
+        <sharedTo>
+            <role>CEO</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>E-Client Suitability</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_e_Client_Suitability_to_CM_Product_Manager</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share e-Client Suitability to CM Product Manager</label>
+        <sharedTo>
+            <role>Capital_Market_Analyst</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>E-Client Suitability</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

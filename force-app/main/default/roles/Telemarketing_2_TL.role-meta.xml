@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Telemarketing-2-TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Telemarketing-2-TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Director_of_Telemarketing</parentRole>
+</Role>

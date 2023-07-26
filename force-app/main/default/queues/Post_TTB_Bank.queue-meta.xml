@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Post - TTB Bank</name>
+    <queueMembers>
+        <users>
+            <user>47085@tmbbank.com</user>
+            <user>45185@tmbbank.com</user>
+            <user>87934@tmbbank.com</user>
+            <user>47473@tmbbank.com</user>
+            <user>45102@tmbbank.com</user>
+            <user>50716@tmbbank.com</user>
+            <user>28315@tmbbank.com</user>
+            <user>33278@tmbbank.com</user>
+            <user>46407@tmbbank.com</user>
+            <user>87935@tmbbank.com</user>
+            <user>25637@tmbbank.com</user>
+            <user>31862@tmbbank.com</user>
+            <user>45006@tmbbank.com</user>
+            <user>33150@tmbbank.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Assign_Post_to_Agent</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Social_Post__c</sobjectType>
+    </queueSobject>
+</Queue>

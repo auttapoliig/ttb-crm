@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Update Customer Info Monitor</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>DurationDate__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Email_Template__c</field>
+        <value xsi:type="xsd:string">Upsert_Customer_Invalid_Monitoring</value>
+    </values>
+    <values>
+        <field>Email_list__c</field>
+        <value xsi:type="xsd:string">nattaphat.koj@tmbbank.com;noppanan.sri@tmbbank.com;Khwanjai.Iam@tmbbank.com;wanida.tri@tmbbank.com;krittiyarat.pha@tmbbank.com;sirirat.jan@tmbbank.com;SME_CRM@tmbbank.com;Jatuporn.Wat@tmbbank.com;preediorn.klu@tmbbank.com;Surapong.Dab@tmbbank.com;vorakarn.chi@tmbbank.com;panuvat.par@tmbbank.com;burarat.por@tmbbank.com;danudath.lee@tmbbank.com;bhumipat.che@tmbbank.com</value>
+    </values>
+    <values>
+        <field>External_Id__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">update</value>
+    </values>
+    <values>
+        <field>Request_Field__c</field>
+        <value xsi:type="xsd:string">TMB_Customer_ID_PE__c,Segment_crm__c</value>
+    </values>
+    <values>
+        <field>Response_Error__c</field>
+        <value xsi:type="xsd:string">nullvalue</value>
+    </values>
+</CustomMetadata>

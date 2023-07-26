@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Wealth TH &amp; TLs</name>
+    <queueMembers>
+        <roles>
+            <role>BR_MGR_Zone_1820</role>
+            <role>BR_MGR_Zone_1840</role>
+            <role>BR_MGR_Zone_1860</role>
+            <role>BR_Sales_Zone_1850</role>
+            <role>BR_Sales_Zone_1880</role>
+            <role>President</role>
+            <role>Zone_1820</role>
+            <role>Zone_1850</role>
+            <role>Zone_1870</role>
+            <role>Zone_1880</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

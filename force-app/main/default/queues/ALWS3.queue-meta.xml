@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>ALWS3</name>
+    <queueMembers>
+        <roleAndSubordinates>
+            <roleAndSubordinate>ALWS3_TH</roleAndSubordinate>
+        </roleAndSubordinates>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

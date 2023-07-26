@@ -78,6 +78,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Contact.Verify</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -86,11 +91,6 @@
             <actionName>Log_a_Call2</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Contact.Verify</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

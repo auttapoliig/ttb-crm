@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>TH&amp;TL SEPM</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>TH&amp;TL SEPM</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>SME_Process</parentRole>
+</Role>

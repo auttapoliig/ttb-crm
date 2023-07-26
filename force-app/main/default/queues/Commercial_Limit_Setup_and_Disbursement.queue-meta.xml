@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Commercial Limit Setup and Disbursement</name>
+    <queueMembers>
+        <roles>
+            <role>Commercial_Limit_Set_up_and_Disbursement_TL</role>
+            <role>Commercial_Limit_Set_up_and_Disbursement_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

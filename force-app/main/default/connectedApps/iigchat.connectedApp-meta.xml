@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>pcs@ii.co.th</contactEmail>
+    <label>iigchat</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:8080/callback</callbackUrl>
+        <certificate>MIIDbDCCAlQCCQDasUU0t35cWzANBgkqhkiG9w0BAQsFADB4MQswCQYDVQQGEwJUSDEQMA4GA1UECAwHQmFuZ2tvazEQMA4GA1UEBwwHQmFuZ2tvazEMMAoGA1UECgwDSUlHMQwwCgYDVQQLDANJSUcxDDAKBgNVBAMMA0lJRzEbMBkGCSqGSIb3DQEJARYMcGNzQGlpLmNvLnRoMB4XDTIzMDExOTAzMDgwNVoXDTI0MDExOTAzMDgwNVoweDELMAkGA1UEBhMCVEgxEDAOBgNVBAgMB0Jhbmdrb2sxEDAOBgNVBAcMB0Jhbmdrb2sxDDAKBgNVBAoMA0lJRzEMMAoGA1UECwwDSUlHMQwwCgYDVQQDDANJSUcxGzAZBgkqhkiG9w0BCQEWDHBjc0BpaS5jby50aDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANLPg9I0bM8I/uOM5a8AxI1MKE1fcseZdTSwDd7rmpfJXL+Wh17QJ+j3yL62NyhVXAUi8rDYPID4UI9yyFJ6oqacLKNIoZlIzy33kxEtdg3dvSribY1IS78dDhdiqLtWfd5WtZ4TAfeb/2XzITAeDZs3EW1PZJ/yKg4QatDEkDEAIhrYOM4X0Os8VbF1ov56kM+5szPgmyaBQJBNyZk152gz1uFrv2wdnrc1Wm6UXAhRikFwJj+IAOztufvQi7laA/XHpLKUhgegwCpWK3cd9sIx1g9RZL/Q8/6Cu+ho+d6MA/EWefeFTeIWlUKN7kavRJbr+gP2BYpULx2hGCIitNsCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAFtFn58GPKXrd/umdsTzCWE6A291T/9qkGHLXixZIO1MqevQqd8bziido/VVNQ63EHqEziFe6q7yHOGAcDkeSjdkf53mTJrn2f4IeyHP8Jqxo7AnI6gm8zbWl6mzj50hQW1R6KLj1QRQpDctx1fwzcRBsm1dj0mTsl8/ZVto0IFzIak9I24PlyHjaRnKgLIA+ugvEmzi5sGWy1/R26W0yTMrJXjfBd7MCbPQu6ANnaAhGiF60z9aVy/e2iYj/nj6Xvg0fmK2p6tnav4h6/CUoCfSifcS5XzbMRUuiR1gBU2kQAiFoB2PhItwBWT/19EdqZzV2RxrvdFL/EldBt19RTg==</certificate>
+        <consumerKey>3MVG9Nvmjd9lcjRmlqds874VuC8N3KHM87IZNm1QrcqGegLqoQVKXd0YpV8iTG8cwBgJ.OOwqpv3bauPiCQA6</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Retail Integration API Only</profileName>
+</ConnectedApp>

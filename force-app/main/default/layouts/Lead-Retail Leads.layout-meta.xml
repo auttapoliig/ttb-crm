@@ -399,6 +399,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Lead.RTL_new_event</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -417,11 +422,6 @@
             <actionName>Lead.RTL_new_task</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>3</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Lead.RTL_new_event</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Lead.RTL_logacall</actionName>

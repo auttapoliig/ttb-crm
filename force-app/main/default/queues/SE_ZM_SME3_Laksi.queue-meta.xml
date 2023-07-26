@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>dummy@tmbbank.com</email>
+    <name>_(NotUse)SE ZM SME3 Laksi</name>
+    <queueMembers>
+        <roles>
+            <role>CCBO_Sales_Management</role>
+            <role>SE_RG_SME3</role>
+            <role>Team_Head_of_PAMCO_SME2</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

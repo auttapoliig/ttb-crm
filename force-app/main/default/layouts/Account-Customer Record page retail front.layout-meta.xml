@@ -526,21 +526,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>RTL_Fetch_NBO_S1</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>11</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>RTL_Retail_Campaign_SF1</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>13</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>NewOpportunity</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>3</sortOrder>
@@ -594,6 +579,21 @@
             <actionName>Product_Holding_S1</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>RTL_Fetch_NBO_S1</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SendEmail</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>RTL_Retail_Campaign_SF1</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>13</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>

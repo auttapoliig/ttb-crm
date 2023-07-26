@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>TBK_T-Broker</name>
+    <queueMembers>
+        <roles>
+            <role>Subsidiary</role>
+            <role>TBK_Telesale_MGR01</role>
+            <role>TBK_Telesale_MGR02</role>
+            <role>TBK_Telesale_MGR03</role>
+            <role>TBK_Telesale_MGR04</role>
+            <role>TBK_Telesale_TH</role>
+            <role>TBK_Telesale_TL</role>
+            <role>TBK_Telesale_USER01</role>
+            <role>TBK_Telesale_USER02</role>
+            <role>TBK_Telesale_USER03</role>
+            <role>TBK_Telesale_USER04</role>
+            <role>ttb_broker</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

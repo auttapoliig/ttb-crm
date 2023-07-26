@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>RMC_Sharing_Comm_Referral</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share  Record type : Refer to Commercial ,Closed Refer to Commercial, Refer within Commercial ,Closed Refer within commercial.
+To Role:Team Lead RMC</description>
+        <label>RMC Sharing Comm Referral</label>
+        <sharedTo>
+            <roleAndSubordinates>Team_Lead_SME_RMC</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Closed Refer within Commercial,Refer to Commercial,Closed Refer to Commercial,Refer within Commercial</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Refer_to_AL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Refer to AL</label>
+        <sharedTo>
+            <roleAndSubordinates>CALO</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Retail,Refer from Digital Channel,Retail Order Transaction,Closed Retail Cross Channel Referral,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Refer_to_Retail</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Refer to Retail</label>
+        <sharedTo>
+            <roleAndSubordinates>CRBO</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Retail,Refer from Digital Channel,Closed Retail Cross Channel Referral,Retail Order Transaction,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_referral_to_ttb_consumer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share referral to ttb consumer</label>
+        <sharedTo>
+            <roleAndSubordinates>ttb_consumer_MD</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Retail,Refer from Digital Channel,Closed Retail Cross Channel Referral,Retail Order Transaction,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>sharing_subsidiary</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>sharing subsidiary</label>
+        <sharedTo>
+            <roleAndSubordinates>ttb_broker</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Retail,Refer from Digital Channel,Retail Order Transaction,Closed Retail Cross Channel Referral,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Share_SB_RMC_to_SME_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SB RMC to SME RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SME_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SB_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_SME_RMC_to_SB_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SME RMC to SB RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SB_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SME_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_CM_Sales</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sharing CM Sales</label>
+        <sharedTo>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

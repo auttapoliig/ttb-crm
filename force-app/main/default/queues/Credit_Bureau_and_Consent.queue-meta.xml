@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Credit Bureau and Consent</name>
+    <queueMembers>
+        <roles>
+            <role>Credit_Bureau_and_Consent_TL</role>
+            <role>Credit_Bureau_Consent_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

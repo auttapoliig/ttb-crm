@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Deposit Products</name>
+    <queueMembers>
+        <roles>
+            <role>Deposit_Product_TL</role>
+            <role>Deposit_Product_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

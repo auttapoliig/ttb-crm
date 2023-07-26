@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Upsert Account Email Error</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Assign_New_Value__c</field>
+        <value xsi:type="xsd:string">nullvalue</value>
+    </values>
+    <values>
+        <field>Datetime_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>DurationDate__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Email_Template__c</field>
+        <value xsi:type="xsd:string">Upsert_Customer_Invalid_Monitoring</value>
+    </values>
+    <values>
+        <field>Email_list__c</field>
+        <value xsi:type="xsd:string">panuvat.par@tmbbank.com;vorakarn.chi@tmbbank.com</value>
+    </values>
+    <values>
+        <field>External_Id__c</field>
+        <value xsi:type="xsd:string">TMB_Customer_ID_PE__c</value>
+    </values>
+    <values>
+        <field>New_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Old_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">upsert</value>
+    </values>
+    <values>
+        <field>Replace_Value_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Request_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Response_Error__c</field>
+        <value xsi:type="xsd:string">invalid email</value>
+    </values>
+    <values>
+        <field>Transform_Assign_Field__c</field>
+        <value xsi:type="xsd:string">Email_Address_PE__c</value>
+    </values>
+    <values>
+        <field>Transform_DateTime_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

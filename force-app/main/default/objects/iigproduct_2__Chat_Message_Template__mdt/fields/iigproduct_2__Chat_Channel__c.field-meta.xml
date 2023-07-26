@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iigproduct_2__Chat_Channel__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Chat Channel</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chat - OneApp</fullName>
+                <default>true</default>
+                <label>Chat - OneApp</label>
+            </value>
+            <value>
+                <fullName>Chat - ttb web</fullName>
+                <default>false</default>
+                <label>Chat - ttb web</label>
+            </value>
+            <value>
+                <fullName>Chat - Facebook</fullName>
+                <default>false</default>
+                <label>Chat - Facebook</label>
+            </value>
+            <value>
+                <fullName>Chat - Line</fullName>
+                <default>false</default>
+                <label>Chat - Line</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
