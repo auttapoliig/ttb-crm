@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AL_Unsecured_Retail_Loan_Restructuring_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Unuse_AL-Unsecured Retail Loan Rest</label>
+    <queue>AL_Unsecured_Retail_Loan_Restructuring</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

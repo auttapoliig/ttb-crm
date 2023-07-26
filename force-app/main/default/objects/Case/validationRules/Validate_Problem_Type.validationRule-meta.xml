@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Problem_Type</fullName>
+    <active>true</active>
+    <description>If category is &apos;Complaint&apos; require input value for Problem Type</description>
+    <errorConditionFormula>if( AND(Category__c = &apos;Complaint&apos;, TEXT(Problem_Type__c) = &apos;&apos;  ), true, false)</errorConditionFormula>
+    <errorDisplayField>Problem_Type__c</errorDisplayField>
+    <errorMessage>Please input value.(กรุณาระบุค่า)</errorMessage>
+</ValidationRule>

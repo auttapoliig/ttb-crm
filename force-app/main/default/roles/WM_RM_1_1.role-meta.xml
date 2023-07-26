@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>WM-RM 1-1</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>WM-RM 1-1</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>WM_TL_1_1_9531</parentRole>
+</Role>

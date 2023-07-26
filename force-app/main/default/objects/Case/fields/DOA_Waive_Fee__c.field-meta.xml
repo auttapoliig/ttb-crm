@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DOA_Waive_Fee__c</fullName>
+    <externalId>false</externalId>
+    <label>DOA Waive Fee</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Zone</fullName>
+                <default>false</default>
+                <label>Zone</label>
+            </value>
+            <value>
+                <fullName>RGM</fullName>
+                <default>false</default>
+                <label>RGM</label>
+            </value>
+            <value>
+                <fullName>GH</fullName>
+                <default>false</default>
+                <label>GH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

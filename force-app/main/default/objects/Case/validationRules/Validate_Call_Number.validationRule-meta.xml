@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Call_Number</fullName>
+    <active>true</active>
+    <description>Validate &apos;Call Number&apos; to 20 digit</description>
+    <errorConditionFormula>if(LEN(Call_Number__c) &gt; 20, true, false)</errorConditionFormula>
+    <errorDisplayField>Call_Number__c</errorDisplayField>
+    <errorMessage>กรุณาใส่แค่ 1 เบอร์</errorMessage>
+</ValidationRule>

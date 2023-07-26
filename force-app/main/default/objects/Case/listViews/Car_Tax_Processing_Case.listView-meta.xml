@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Car_Tax_Processing_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Category__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Commit_Date__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Car Tax Processing</label>
+    <language>en_US</language>
+    <queue>Car_Tax_Processing</queue>
+    <sharedTo>
+        <group>Car_Tax_Processing</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_FCR_Issue_Cause</fullName>
+    <active>true</active>
+    <description>When FCR validate issue cause for category 
+Complaint
+Request
+Feedback</description>
+    <errorConditionFormula>If(AND(FCR__c = True,  OR(Category__c = &apos;Complaint&apos;,Category__c = &apos;Request&apos;, Category__c = &apos;Feedback&apos;), TEXT(Root_Cause_List__c) = &apos;&apos;), true,false )</errorConditionFormula>
+    <errorDisplayField>Root_Cause_List__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

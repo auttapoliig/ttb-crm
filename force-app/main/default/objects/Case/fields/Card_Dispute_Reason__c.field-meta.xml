@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Dispute_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Card Dispute Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1. ผู้ถือบัตรไม่ได้ใช้รายการเรียกเก็บดังกล่าวและยืนยันว่าบัตรเครดิต/บัตรเดบิตอยู่ในความครอบครองตลอดเวลาที่เกิดรายการใช้จ่ายข้างต้น</fullName>
+                <default>false</default>
+                <label>1. ผู้ถือบัตรไม่ได้ใช้รายการเรียกเก็บดังกล่าวและยืนยันว่าบัตรเครดิต/บัตรเดบิตอยู่ในความครอบครองตลอดเวลาที่เกิดรายการใช้จ่ายข้างต้น</label>
+            </value>
+            <value>
+                <fullName>2. ผู้ถือบัตรพบว่ามีรายการเรียกเก็บซ้ำ</fullName>
+                <default>false</default>
+                <label>2. ผู้ถือบัตรพบว่ามีรายการเรียกเก็บซ้ำ</label>
+            </value>
+            <value>
+                <fullName>3. ผู้ถือบัตรพบว่ามียอดเงินที่เรียกเก็บไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>3. ผู้ถือบัตรพบว่ามียอดเงินที่เรียกเก็บไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>4. ผู้ถือบัตรไม่ได้รับเงินคืนตามหลักฐานการคืนเงินที่ได้รับจากร้านค้า</fullName>
+                <default>false</default>
+                <label>4. ผู้ถือบัตรไม่ได้รับเงินคืนตามหลักฐานการคืนเงินที่ได้รับจากร้านค้า</label>
+            </value>
+            <value>
+                <fullName>5. ผู้ถือบัตรได้ชำระเงินด้วยวิธีอื่นแล้ว</fullName>
+                <default>false</default>
+                <label>5. ผู้ถือบัตรได้ชำระเงินด้วยวิธีอื่นแล้ว</label>
+            </value>
+            <value>
+                <fullName>6. ผู้ถือบัตรไม่ได้รับสินค้า/บริการ ซึ่งร้านค้าแจ้งว่าส่งให้</fullName>
+                <default>false</default>
+                <label>6. ผู้ถือบัตรไม่ได้รับสินค้า/บริการ ซึ่งร้านค้าแจ้งว่าส่งให้</label>
+            </value>
+            <value>
+                <fullName>7. ผู้ถือบัตรได้แจ้งยกเลิกรายการแล้ว</fullName>
+                <default>false</default>
+                <label>7. ผู้ถือบัตรได้แจ้งยกเลิกรายการแล้ว</label>
+            </value>
+            <value>
+                <fullName>8. อื่นๆ ( ใส่รายละเอียดใน Comment)</fullName>
+                <default>false</default>
+                <label>8. อื่นๆ ( ใส่รายละเอียดใน Comment)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

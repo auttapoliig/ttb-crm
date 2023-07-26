@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Edit_Branch_Queue__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(AND(Owner:Queue.DeveloperName &lt;&gt; &apos;&apos;, ISPICKVAL($User.RTL_Channel__c, &apos;Branch&apos;)) , 
+if(AND(CONTAINS( Owner:Queue.DeveloperName , $User.RTL_Branch_Code__c ), NOT(ISBLANK( $User.RTL_Branch_Code__c ))), true, 
+if( AND(LEN(All_Previous_Owner__c) &lt; 2, CreatedById = $User.Id, TEXT(Status) = &apos;New&apos; ), true, false) ), 
+true )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Edit Branch Queue</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

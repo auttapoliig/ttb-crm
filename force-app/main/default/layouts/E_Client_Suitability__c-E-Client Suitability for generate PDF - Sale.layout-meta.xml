@@ -154,11 +154,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>E_Client_Suitability__c.Change_RM_Sales</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>E_Client_Suitability__c.Reverse_Form_A</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
@@ -172,6 +167,11 @@
             <actionName>Submit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>E_Client_Suitability__c.Change_RM_Sales</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>E_Client_Suitability__c.Cancel_E_Client_Suitability</actionName>

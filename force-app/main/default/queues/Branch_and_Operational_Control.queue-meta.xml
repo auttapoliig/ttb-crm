@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Branch and Operational Control</name>
+    <queueMembers>
+        <roles>
+            <role>Branch_and_Operational_Control_TL</role>
+            <role>Branch_and_Operational_Control_User</role>
+            <role>COO</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

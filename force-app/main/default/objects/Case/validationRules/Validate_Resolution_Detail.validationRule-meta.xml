@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Resolution_Detail</fullName>
+    <active>true</active>
+    <errorConditionFormula>If(AND(TEXT(Resolution_LIst__c) = &apos;Other&apos;, Resolution__c = &apos;&apos; ), True, False)</errorConditionFormula>
+    <errorDisplayField>Resolution__c</errorDisplayField>
+    <errorMessage>Resolution เป็น Other กรุณาอธิบายเพิ่มเติม</errorMessage>
+</ValidationRule>

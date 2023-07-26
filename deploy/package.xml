@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+<<<<<<< HEAD
         <members>AUMReport</members>
         <members>AUMReportTest</members>
         <members>BirthdayReport</members>
@@ -180,6 +181,54 @@
     <types>
         <members>th</members>
         <name>Translations</name>
+=======
+        <members>customerHighlightPanel</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>CXMSurvey_For_CSV</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Case.Authorize_1__c</members>
+        <members>Case.Authorize_2__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>RTL_AL_WsCreateLead</members>
+        <members>RTL_LeadTriggerHandler</members>
+        <members>RTL_LeadTriggerHandlerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Campaign.RTL_Campaign_Approval_Exclusive</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
+        <members>Case</members>
+        <members>Opportunity</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>KYC_Customer_Data_Management</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>SE_ZM_SME5_Phrae</members>
+        <members>SE_RMA_SME5_Phrae</members>
+        <members>SE_RM_SME5_Phrae</members>
+        <members>SE_ZM_SME7_Phuket</members>
+        <members>SE_RMA_SME7_Phuket</members>
+        <members>SE_RM_SME7_Phuket</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>CXM_Survey_Condition.Condition1</members>
+        <members>CXM_Survey_Condition.Condition2</members>
+        <members>CXM_Survey_Condition.Condition3</members>
+        <members>CXM_Survey_Condition.Condition4</members>
+        <name>CustomMetadata</name>
+>>>>>>> production
     </types>
     <version>58.0</version>
 </Package>

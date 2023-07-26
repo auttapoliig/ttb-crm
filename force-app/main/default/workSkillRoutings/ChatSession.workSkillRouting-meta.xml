@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkSkillRouting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <masterLabel>ChatSession</masterLabel>
+    <relatedEntity>iigproduct_2__ChatSession__c</relatedEntity>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์เงินฝากและบริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์เงินกู้และสินเชื่อ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_MF_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>ปรึกษาข้อมูลการลงทุนด้านกองทุน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเรื่องทั่วไปและข้อเสนอแนะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามข้อมูลโครงการช่วยเหลือ covid-19</value>
+    </workSkillRoutingAttributes>
+</WorkSkillRouting>

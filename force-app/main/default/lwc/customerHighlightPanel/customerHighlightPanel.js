@@ -76,23 +76,28 @@ export default class CockpitCSVCustomerInfo extends NavigationMixin(LightningEle
         score = result.score;
         var nps = {};
         nps.score = score;
-        if (score == '-') {
+        if (score == null) {
           nps.class = 'greyFace';
           nps.icon = 'utility:sentiment_neutral';
           nps.url = '#';
-        } else if (score >= 9) {
+        } else if (score >= 5) {
           nps.class = 'greenFace';
           nps.icon = 'utility:smiley_and_people';
           nps.url = result.recordId;
-        } else if (score >= 7) {
+        } else if (score >= 4) {
           nps.class = 'yellowFace';
           nps.icon = 'utility:sentiment_neutral';
           nps.url = result.recordId;
-        } else {
+        } else if (score >= 1){
           nps.class = 'redFace';
           nps.icon = 'utility:sentiment_negative';
           nps.url = result.recordId;
+        } else {
+          nps.score = null;
+          nps.url = result.recordId;
+          console.log('nps score',nps.score);
         }
+        console.log('nps var',JSON.stringify(nps));
         this.nps = nps;
       }
     ).catch(

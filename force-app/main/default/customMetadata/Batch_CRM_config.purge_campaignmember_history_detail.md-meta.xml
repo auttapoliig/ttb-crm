@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>purge_campaignmember_history_detail</label>
+    <protected>false</protected>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">(LastModifiedDate &gt; 2023-03-15T17:00:00Z) and (LastModifiedDate &lt;= 2023-03-31T17:00:00Z)</value>
+    </values>
+    <values>
+        <field>Field_Set__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>sObject__c</field>
+        <value xsi:type="xsd:string">RTL_Campaign_Member_History_detail__c  USING SCOPE EVERYTHING</value>
+    </values>
+</CustomMetadata>

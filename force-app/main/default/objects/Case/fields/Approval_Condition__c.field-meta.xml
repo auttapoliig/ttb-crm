@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Condition__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( OR(KYC_Risk_Level__c=&apos;1&apos;,KYC_Data_type__c=&apos;Y&apos;),null, 
+if( OR(ISPICKVAL(Status,&apos;Completed&apos;),ISPICKVAL(Status,&apos;Cancel&apos;)),
+    $Label.KYC_Approval_Condition_01,
+    
+			if(BEGINS(OwnerId,&quot;005&quot;),
+			
+    if(KYC_Risk_Level__c=&apos;2&apos;,
+							
+							 if(OR(KYC_Approver__c=null,NOT(KYC_Approver__r.IsActive)),
+											$Label.KYC_Approval_Condition_03,
+											$Label.KYC_Approval_Condition_02),
+
+        if(AND(KYC_Risk_Level__c!=&apos;1&apos;,KYC_Risk_Level__c!=&apos;2&apos;),
+            if(OR(Owner:User.Profile.Name=&apos;TMB BDM Profile&apos;,Owner:User.Profile.Name=&apos;TMB ABDM Profile&apos;,Owner:User.Profile.Name=&apos;TMB SEPM Profile&apos;),
+                if(AND(OR(KYC_Approver__c=null,NOT(KYC_Approver__r.IsActive)),OR(KYC_Approver2__c=null,NOT(KYC_Approver2__r.IsActive))),
+                    $Label.KYC_Approval_Condition_05,
+                    if(OR(KYC_Approver__c=null,NOT(KYC_Approver__r.IsActive)),
+                        $Label.KYC_Approval_Condition_03,
+                        if(OR(KYC_Approver2__c=null,NOT(KYC_Approver2__r.IsActive)),
+                            $Label.KYC_Approval_Condition_04,
+                            $Label.KYC_Approval_Condition_02))),
+                if(OR(KYC_Approver__c=null,NOT(KYC_Approver__r.IsActive)),
+                    $Label.KYC_Approval_Condition_03,
+                    $Label.KYC_Approval_Condition_02)),
+            null))
+					,null)
+)
+)</formula>
+    <label>Approval Condition</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

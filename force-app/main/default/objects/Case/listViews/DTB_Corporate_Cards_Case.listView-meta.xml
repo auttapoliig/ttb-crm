@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DTB_Corporate_Cards_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>DTB-Corporate Cards</label>
+    <queue>DTB_Corporate_Cards</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

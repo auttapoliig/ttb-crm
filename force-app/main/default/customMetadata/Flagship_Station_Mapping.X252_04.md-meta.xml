@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>252-04</label>
+    <protected>false</protected>
+    <values>
+        <field>Branch_Code__c</field>
+        <value xsi:type="xsd:string">252</value>
+    </values>
+    <values>
+        <field>Branch_Name__c</field>
+        <value xsi:type="xsd:string">United Center</value>
+    </values>
+    <values>
+        <field>FNA_Product_Group__c</field>
+        <value xsi:type="xsd:string">For Protect</value>
+    </values>
+    <values>
+        <field>Station_Name_EN__c</field>
+        <value xsi:type="xsd:string">Protection for &lt;em&gt;MORE Assurance&lt;/em&gt;</value>
+    </values>
+    <values>
+        <field>Station_Number__c</field>
+        <value xsi:type="xsd:string">04</value>
+    </values>
+</CustomMetadata>

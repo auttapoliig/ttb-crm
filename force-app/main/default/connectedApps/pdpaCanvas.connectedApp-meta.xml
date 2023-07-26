@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://f2fonboarding.tmbbank.com/api/pdpa/v1/crm/auth</canvasUrl>
+        <locations>Visualforce</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>krittayaporn.too@tmbbank.com</contactEmail>
+    <label>pdpaCanvas</label>
+    <oauthConfig>
+        <callbackUrl>https://f2fonboarding.tmbbank.com/api/pdpa/v1/crm/auth</callbackUrl>
+        <consumerKey>3MVG9Nvmjd9lcjRmlqds874VuC94Zn05USg_Yybskc1y.jEdBIq62TT6JoWcKYeE9cds.nUk861ln9G7m2Ezf</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>CustomApplications</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>TMB Retail Flagship Sales</profileName>
+    <profileName>TMB Retail Channel Sales Pilot FNA</profileName>
+    <profileName>TMB System Administrator</profileName>
+    <profileName>TMB Auto Loan Sales Profile</profileName>
+    <profileName>TMB Retail Wealth Management RM Cockpit</profileName>
+    <profileName>ttb Retail Branch Specialist</profileName>
+    <profileName>ttb Retail Branch Manager</profileName>
+    <profileName>TMB Retail Channel Sales</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>TMB CRM Admin Profile</profileName>
+    <profileName>TMB Retail Wealth Management</profileName>
+    <profileName>TMB Retail Channel Sales Mobile</profileName>
+</ConnectedApp>

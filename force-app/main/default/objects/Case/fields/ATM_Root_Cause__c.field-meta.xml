@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ATM_Root_Cause__c</fullName>
+    <externalId>false</externalId>
+    <label>ATM Root Cause</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 จำนวนเงินที่เครื่องฯนับได้ไม่ตรงกับยอดที่ลูกค้าแจ้งฝากเงินไม่เข้าบัญชี</fullName>
+                <default>false</default>
+                <label>1 จำนวนเงินที่เครื่องฯนับได้ไม่ตรงกับยอดที่ลูกค้าแจ้งฝากเงินไม่เข้าบัญชี</label>
+            </value>
+            <value>
+                <fullName>2 ภายหลัง Close-out ไม่มียอดเงินเกิน หรือยอดเงินน้อยกว่าที่ลูกค้าแจ้ง</fullName>
+                <default>false</default>
+                <label>2 ภายหลัง Close-out ไม่มียอดเงินเกิน หรือยอดเงินน้อยกว่าที่ลูกค้าแจ้ง</label>
+            </value>
+            <value>
+                <fullName>3 รอ Close-out</fullName>
+                <default>false</default>
+                <label>3 รอ Close-out</label>
+            </value>
+            <value>
+                <fullName>4 รอพิสูจน์ Log ของเครื่องฯ</fullName>
+                <default>false</default>
+                <label>4 รอพิสูจน์ Log ของเครื่องฯ</label>
+            </value>
+            <value>
+                <fullName>5 เป็นรายการที่อยู่ในรายงาน DATM1027</fullName>
+                <default>false</default>
+                <label>5 เป็นรายการที่อยู่ในรายงาน DATM1027</label>
+            </value>
+            <value>
+                <fullName>6 เป็นรายการที่อยู่ในรายงาน DATM1004 * SUC รายการสุดท้ายของวัน</fullName>
+                <default>false</default>
+                <label>6 เป็นรายการที่อยู่ในรายงาน DATM1004 * SUC รายการสุดท้ายของวัน</label>
+            </value>
+            <value>
+                <fullName>7 เป็นรายการที่อยู่ในรายงาน DATM1004 * SUC</fullName>
+                <default>false</default>
+                <label>7 เป็นรายการที่อยู่ในรายงาน DATM1004 * SUC</label>
+            </value>
+            <value>
+                <fullName>8 เครื่องฯ จ่ายธนบัตรปกติ</fullName>
+                <default>false</default>
+                <label>8 เครื่องฯ จ่ายธนบัตรปกติ</label>
+            </value>
+            <value>
+                <fullName>9 เป็นรายการ Diff Settlement</fullName>
+                <default>false</default>
+                <label>9 เป็นรายการ Diff Settlement</label>
+            </value>
+            <value>
+                <fullName>10 เป็นรายการ Lost From Tandem</fullName>
+                <default>false</default>
+                <label>10 เป็นรายการ Lost From Tandem</label>
+            </value>
+            <value>
+                <fullName>11 เป็นรายการ Core Bank ล่ม</fullName>
+                <default>false</default>
+                <label>11 เป็นรายการ Core Bank ล่ม</label>
+            </value>
+            <value>
+                <fullName>12 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินตรงกับที่ลูกค้าแจ้ง</fullName>
+                <default>false</default>
+                <label>12 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินตรงกับที่ลูกค้าแจ้ง</label>
+            </value>
+            <value>
+                <fullName>13 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินได้น้อยกว่าที่แจ้ง</fullName>
+                <default>false</default>
+                <label>13 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินได้น้อยกว่าที่แจ้ง</label>
+            </value>
+            <value>
+                <fullName>14 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินได้มากกว่าที่แจ้ง</fullName>
+                <default>false</default>
+                <label>14 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนเงินได้มากกว่าที่แจ้ง</label>
+            </value>
+            <value>
+                <fullName>15 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนธนบัตรไม่ได้</fullName>
+                <default>false</default>
+                <label>15 ธนบัตรติดขณะทำรายการฝาก Log นับจำนวนธนบัตรไม่ได้</label>
+            </value>
+            <value>
+                <fullName>16 เป็นรายการ Time out Log นับจำนวนเงินตรงกับที่ลูกค้าแจ้ง</fullName>
+                <default>false</default>
+                <label>16 เป็นรายการ Time out Log นับจำนวนเงินตรงกับที่ลูกค้าแจ้ง</label>
+            </value>
+            <value>
+                <fullName>17 เป็นรายการ Time out Log นับจำนวนเงินได้น้อยกว่าที่แจ้ง</fullName>
+                <default>false</default>
+                <label>17 เป็นรายการ Time out Log นับจำนวนเงินได้น้อยกว่าที่แจ้ง</label>
+            </value>
+            <value>
+                <fullName>18 เป็นรายการ Time out Log นับจำนวนเงินได้มากกว่าที่แจ้ง</fullName>
+                <default>false</default>
+                <label>18 เป็นรายการ Time out Log นับจำนวนเงินได้มากกว่าที่แจ้ง</label>
+            </value>
+            <value>
+                <fullName>19 เป็นรายการ Time out Log นับจำนวนธนบัตรไม่ได้</fullName>
+                <default>false</default>
+                <label>19 เป็นรายการ Time out Log นับจำนวนธนบัตรไม่ได้</label>
+            </value>
+            <value>
+                <fullName>20 ไม่มี Log ของเครื่องฯ</fullName>
+                <default>false</default>
+                <label>20 ไม่มี Log ของเครื่องฯ</label>
+            </value>
+            <value>
+                <fullName>21 ลูกค้าโอนเงินโดยระบุเลขที่บัญชีปลายทางไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>21 ลูกค้าโอนเงินโดยระบุเลขที่บัญชีปลายทางไม่ถูกต้อง</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

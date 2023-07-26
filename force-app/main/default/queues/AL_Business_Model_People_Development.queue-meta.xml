@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>AL Business Model-People Development</name>
+    <queueMembers>
+        <roles>
+            <role>Automotive_Lending_Business_Model_and_People_Development_TL</role>
+            <role>Automotive_Lending_Business_Model_and_People_Development_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

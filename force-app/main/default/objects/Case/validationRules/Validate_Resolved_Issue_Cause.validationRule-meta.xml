@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Resolved_Issue_Cause</fullName>
+    <active>true</active>
+    <errorConditionFormula>if( AND(TEXT(Status) = &apos;Resolved&apos;,  TEXT(Root_Cause_List__c) = &apos;&apos;), true, false)</errorConditionFormula>
+    <errorDisplayField>Root_Cause_List__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

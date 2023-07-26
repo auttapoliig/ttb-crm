@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>rule_mf</label>
+    <protected>false</protected>
+    <values>
+        <field>FileName__c</field>
+        <value xsi:type="xsd:string">rule_mf.sdl</value>
+    </values>
+    <values>
+        <field>Mapping_Value__c</field>
+        <value xsi:type="xsd:string">3:TSP=1
+3:MF=2
+3:Payroll_Investment=3</value>
+    </values>
+</CustomMetadata>

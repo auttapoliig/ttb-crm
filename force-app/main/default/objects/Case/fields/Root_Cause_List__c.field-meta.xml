@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Root_Cause_List__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue Cause</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ttb_Application Error เช่น ttb touch / Internet Banking</fullName>
+                <default>false</default>
+                <label>ttb_Application Error เช่น ttb touch / Internet Banking</label>
+            </value>
+            <value>
+                <fullName>ttb_Set Up ข้อมูลไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>ttb_Set Up ข้อมูลไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ttb_ข้อมูลผลิตภัณฑ์ / Compaign ไม่ชัดเจน</fullName>
+                <default>false</default>
+                <label>ttb_ข้อมูลผลิตภัณฑ์ / Compaign ไม่ชัดเจน</label>
+            </value>
+            <value>
+                <fullName>ttb_ข้อมูลในระบบไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>ttb_ข้อมูลในระบบไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ttb_ปัญหาอื่นๆ จากกระบวนการภายใน</fullName>
+                <default>false</default>
+                <label>ttb_ปัญหาอื่นๆ จากกระบวนการภายใน</label>
+            </value>
+            <value>
+                <fullName>ttb_ปัญหาเกิดจากพนักงาน</fullName>
+                <default>false</default>
+                <label>ttb_ปัญหาเกิดจากพนักงาน</label>
+            </value>
+            <value>
+                <fullName>ttb_ผลิตภัณฑ์และบริการไม่ตรงตามความต้องการลูกค้า</fullName>
+                <default>false</default>
+                <label>ttb_ผลิตภัณฑ์และบริการไม่ตรงตามความต้องการลูกค้า</label>
+            </value>
+            <value>
+                <fullName>ttb_ฟังก์ชั่นการทำงานของเครื่อง ATM/ADM ขัดข้อง</fullName>
+                <default>false</default>
+                <label>ttb_ฟังก์ชั่นการทำงานของเครื่อง ATM/ADM ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>ttb_ระบบงานภายในขัดข้อง เช่น F2F /SD /SCS</fullName>
+                <default>false</default>
+                <label>ttb_ระบบงานภายในขัดข้อง เช่น F2F /SD /SCS</label>
+            </value>
+            <value>
+                <fullName>ttb_ระบบภายในปิดปรับปรุง</fullName>
+                <default>false</default>
+                <label>ttb_ระบบภายในปิดปรับปรุง</label>
+            </value>
+            <value>
+                <fullName>ttb_ลูกค้าไม่ยอมรับนโยบายและหลักการปฏิบัติของธนาคาร</fullName>
+                <default>false</default>
+                <label>ttb_ลูกค้าไม่ยอมรับนโยบายและหลักการปฏิบัติของธนาคาร</label>
+            </value>
+            <value>
+                <fullName>ttb_เครือข่ายภายในขัดข้อง Host Down / Time out</fullName>
+                <default>false</default>
+                <label>ttb_เครือข่ายภายในขัดข้อง Host Down / Time out</label>
+            </value>
+            <value>
+                <fullName>ttb_เจ้าหน้าที่ดำเนินการล่าช้า</fullName>
+                <default>false</default>
+                <label>ttb_เจ้าหน้าที่ดำเนินการล่าช้า</label>
+            </value>
+            <value>
+                <fullName>ttb_เจ้าหน้าที่ทำรายการไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>ttb_เจ้าหน้าที่ทำรายการไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ttb_เจ้าหน้าที่สอนการใช้งานระบบให้ลูกค้าไม่ครบถ้วน</fullName>
+                <default>false</default>
+                <label>ttb_เจ้าหน้าที่สอนการใช้งานระบบให้ลูกค้าไม่ครบถ้วน</label>
+            </value>
+            <value>
+                <fullName>ttb_เจ้าหน้าที่ให้ข้อมูลลูกค้าไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>ttb_เจ้าหน้าที่ให้ข้อมูลลูกค้าไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ttb_ไม่มี Process รองรับความต้องการลูกค้า</fullName>
+                <default>false</default>
+                <label>ttb_ไม่มี Process รองรับความต้องการลูกค้า</label>
+            </value>
+            <value>
+                <fullName>Customer_ลูกค้าร้องขอบริการ</fullName>
+                <default>false</default>
+                <label>Customer_ลูกค้าร้องขอบริการ</label>
+            </value>
+            <value>
+                <fullName>Customer_เกิดจากลูกค้าเข้าใจผิด</fullName>
+                <default>false</default>
+                <label>Customer_เกิดจากลูกค้าเข้าใจผิด</label>
+            </value>
+            <value>
+                <fullName>Third Party_ATM/ ADM ต่างธนาคารขัดข้อง (Timeout)</fullName>
+                <default>false</default>
+                <label>Third Party_ATM/ ADM ต่างธนาคารขัดข้อง (Timeout)</label>
+            </value>
+            <value>
+                <fullName>Third Party_ATM Timeout</fullName>
+                <default>false</default>
+                <label>Third Party_ATM Timeout</label>
+            </value>
+            <value>
+                <fullName>Third Party_Hardware_Machine_Error</fullName>
+                <default>false</default>
+                <label>Third Party_Hardware_Machine_Error</label>
+            </value>
+            <value>
+                <fullName>Third Party_Network ขัดข้อง</fullName>
+                <default>false</default>
+                <label>Third Party_Network ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>Third Party_การดำเนินการ / การติดต่อที่ไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>Third Party_การดำเนินการ / การติดต่อที่ไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>Third Party_ปิดระบบ / Network ขัดข้อง</fullName>
+                <default>false</default>
+                <label>Third Party_ปิดระบบ / Network ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>Third Party_ระบบงานภายนอกขัดข้อง</fullName>
+                <default>false</default>
+                <label>Third Party_ระบบงานภายนอกขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>Third Party_ระบบภายนอกปิดปรับปรุง</fullName>
+                <default>false</default>
+                <label>Third Party_ระบบภายนอกปิดปรับปรุง</label>
+            </value>
+            <value>
+                <fullName>Third Party_ระบบเครื่อข่ายภายนอกขัดข้อง</fullName>
+                <default>false</default>
+                <label>Third Party_ระบบเครื่อข่ายภายนอกขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>Third Party_ระบบเครื่อข่ายภายนอกขัดข้อง_ไฟฟ้าดับ</fullName>
+                <default>false</default>
+                <label>Third Party_ระบบเครื่อข่ายภายนอกขัดข้อง_ไฟฟ้าดับ</label>
+            </value>
+            <value>
+                <fullName>Third Party_อยู่ระหว่างตรวจสอบ</fullName>
+                <default>false</default>
+                <label>Third Party_อยู่ระหว่างตรวจสอบ</label>
+            </value>
+            <value>
+                <fullName>TMB_Network ขัดข้อง</fullName>
+                <default>false</default>
+                <label>TMB_Network ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>TTB Require KYC Review</fullName>
+                <default>false</default>
+                <label>TTB Require KYC Review</label>
+            </value>
+            <value>
+                <fullName>ตามคำสั่งหน่วยงานราชการ</fullName>
+                <default>false</default>
+                <label>ตามคำสั่งหน่วยงานราชการ</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>TMB_Application Error</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Application Error</label>
+            </value>
+            <value>
+                <fullName>TMB_Hard Disk เสีย</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Hard Disk เสีย</label>
+            </value>
+            <value>
+                <fullName>TMB_Hardware ขัดข้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Hardware ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_Network ปิดปรับปรุง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Network ปิดปรับปรุง</label>
+            </value>
+            <value>
+                <fullName>TMB_Product  ขัดข้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Product  ขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_Set Up ข้อมูลไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Set Up ข้อมูลไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_Set Up ไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Set Up ไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_Time out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_Time out</label>
+            </value>
+            <value>
+                <fullName>TMB_การสื่อสารขัดข้อง Host Down</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_การสื่อสารขัดข้อง Host Down</label>
+            </value>
+            <value>
+                <fullName>TMB_ข้อมูลผลิตภัณฑ์/Campaignไม่ชัดเจน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ข้อมูลผลิตภัณฑ์/Campaignไม่ชัดเจน</label>
+            </value>
+            <value>
+                <fullName>TMB_ข้อมูลในระบบไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ข้อมูลในระบบไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_ธนบัตรติด</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ธนบัตรติด</label>
+            </value>
+            <value>
+                <fullName>TMB_ปัญหาอื่นๆ จากกระบวนการภายใน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ปัญหาอื่นๆ จากกระบวนการภายใน</label>
+            </value>
+            <value>
+                <fullName>TMB_ปัญหาอื่นๆ จากพนักงาน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ปัญหาอื่นๆ จากพนักงาน</label>
+            </value>
+            <value>
+                <fullName>TMB_ระบบขัดข้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ระบบขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_ระบบงานภายในขัดข้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ระบบงานภายในขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_ระบบปิดปรับปรุง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ระบบปิดปรับปรุง</label>
+            </value>
+            <value>
+                <fullName>TMB_ระบบภายในปิดปรับปรุง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ระบบภายในปิดปรับปรุง</label>
+            </value>
+            <value>
+                <fullName>TMB_เจ้าหน้าที่ดำเนินการล่าช้า</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_เจ้าหน้าที่ดำเนินการล่าช้า</label>
+            </value>
+            <value>
+                <fullName>TMB_เจ้าหน้าที่ทำรายการไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_เจ้าหน้าที่ทำรายการไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_เจ้าหน้าที่สอนการใช้งานระบบให้ลูกค้าไม่ครบถ้วน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_เจ้าหน้าที่สอนการใช้งานระบบให้ลูกค้าไม่ครบถ้วน</label>
+            </value>
+            <value>
+                <fullName>TMB_เจ้าหน้าที่สาขาทำรายการไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_เจ้าหน้าที่สาขาทำรายการไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_เจ้าหน้าที่ให้ข้อมูลลูกค้าไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_เจ้าหน้าที่ให้ข้อมูลลูกค้าไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>TMB_ไฟดับ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ไฟดับ</label>
+            </value>
+            <value>
+                <fullName>TMB_ไม่มีProcess รองรับความต้องการลูกค้า</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ไม่มีProcess รองรับความต้องการลูกค้า</label>
+            </value>
+            <value>
+                <fullName>TMB_ไม่เป็นไปตามนโยบายและหลักการปฏิบัติของธนาคาร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB_ไม่เป็นไปตามนโยบายและหลักการปฏิบัติของธนาคาร</label>
+            </value>
+            <value>
+                <fullName>Third party_ระบบต่างธนาคารขัดข้อง</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Third party_ระบบต่างธนาคารขัดข้อง</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

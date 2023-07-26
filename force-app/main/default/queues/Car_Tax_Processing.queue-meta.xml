@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Car Tax Processing</name>
+    <queueMembers>
+        <roles>
+            <role>AL_Car_Tax_ProcessingTL</role>
+            <role>AL_Car_Tax_ProcessingUser</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

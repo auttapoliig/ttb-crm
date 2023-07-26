@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BI15</label>
+    <protected>false</protected>
+    <values>
+        <field>Business_Code__c</field>
+        <value xsi:type="xsd:string">white</value>
+    </values>
+    <values>
+        <field>Color_Code__c</field>
+        <value xsi:type="xsd:string">red</value>
+    </values>
+    <values>
+        <field>Segment_Code__c</field>
+        <value xsi:type="xsd:string">red</value>
+    </values>
+    <values>
+        <field>Status_Total_Revenue__c</field>
+        <value xsi:type="xsd:string">red</value>
+    </values>
+</CustomMetadata>

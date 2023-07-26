@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appraisal_Company_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Appraisal Company 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>บริษัท โคมายด์ อัลลายน์เอนซ์ เรียล เอสเตท จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท โคมายด์ อัลลายน์เอนซ์ เรียล เอสเตท จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เคแทค แอพเพรซัล แอนด์ เซอร์วิส จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เคแทค แอพเพรซัล แอนด์ เซอร์วิส จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แพนซ์ อินทิเกรดเต็ด พร๊อพเพอร์ตี้ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แพนซ์ อินทิเกรดเต็ด พร๊อพเพอร์ตี้ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ทรู แวลูเอชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ทรู แวลูเอชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แวลูแอสเซ็ท จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แวลูแอสเซ็ท จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ชาเตอร์ แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ชาเตอร์ แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เวลท์ แอพไพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เวลท์ แอพไพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ที.เอ.มาเนจเม้นท์ คอร์โปเรชั่น (1999) จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ที.เอ.มาเนจเม้นท์ คอร์โปเรชั่น (1999) จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ควอลิตี้ แอพไพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ควอลิตี้ แอพไพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท บางกอก แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท บางกอก แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท โกร เอสทิเมชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท โกร เอสทิเมชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ซีพีเอ็ม แคปปิทัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ซีพีเอ็ม แคปปิทัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เบรนท์โจ โคเซนส์ คอนซัลติ้ง จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เบรนท์โจ โคเซนส์ คอนซัลติ้ง จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เค.ที.แอพไพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เค.ที.แอพไพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ไทยเซอร์เวเยอร์ แอนด์ แอ็ดไวท์เซอร์รี่ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ไทยเซอร์เวเยอร์ แอนด์ แอ็ดไวท์เซอร์รี่ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แอสเซ็ทเอเซีย คอร์ปอเรชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แอสเซ็ทเอเซีย คอร์ปอเรชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท โนเบิ้ล พร็อพเพอร์ตี้ แวลูเอชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท โนเบิ้ล พร็อพเพอร์ตี้ แวลูเอชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แอดวานซ์ พร๊อพเพอร์ตี้ แอนด์ คอนซัลแทนท์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แอดวานซ์ พร๊อพเพอร์ตี้ แอนด์ คอนซัลแทนท์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ทีเอพี แวลูเอชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ทีเอพี แวลูเอชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เยนเนอรัล แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เยนเนอรัล แวลูเอชั่น แอนด์ คอนซัลแตนท์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แอดวานซ์ แอพไพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แอดวานซ์ แอพไพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท จี.พี.วี.โกลบอล พร็อพเพอร์ตี้ แวลูเอชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท จี.พี.วี.โกลบอล พร็อพเพอร์ตี้ แวลูเอชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แกรนด์ แอสเซท แอดไวเซอรี่ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แกรนด์ แอสเซท แอดไวเซอรี่ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท โมเดิร์น พร็อพเพอร์ตี้ คอนซัลแตนท</fullName>
+                <default>false</default>
+                <label>บริษัท โมเดิร์น พร็อพเพอร์ตี้ คอนซัลแตนท</label>
+            </value>
+            <value>
+                <fullName>บริษัท เอเชี่ยน เอ็นจิเนียริ่ง แวลูเอชั่น</fullName>
+                <default>false</default>
+                <label>บริษัท เอเชี่ยน เอ็นจิเนียริ่ง แวลูเอชั่น</label>
+            </value>
+            <value>
+                <fullName>บริษัท ซิมส์ พร็อพเพอร์ตี้ คอนซัลแทนท์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ซิมส์ พร็อพเพอร์ตี้ คอนซัลแทนท์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ฟานิก แอพเพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ฟานิก แอพเพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท อเมริกัน แอ๊พเพรซัล (ประเทศไทย) จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท อเมริกัน แอ๊พเพรซัล (ประเทศไทย) จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท แลนด์มาร์ค คอนซัลแทนส์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท แลนด์มาร์ค คอนซัลแทนส์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เอเจนซี่ ฟอร์ เรียลเอสเตท แอฟแฟร์ส จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เอเจนซี่ ฟอร์ เรียลเอสเตท แอฟแฟร์ส จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เดอะแวลูเอชั่น แอนด์ คอนซัลแทนท์ส จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เดอะแวลูเอชั่น แอนด์ คอนซัลแทนท์ส จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท จัสติส พร็อพเพอร์ตี้ แอนด์ แอพไพรซัล จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท จัสติส พร็อพเพอร์ตี้ แอนด์ แอพไพรซัล จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ที่ปรึกษา เฟิร์สสตาร์ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ที่ปรึกษา เฟิร์สสตาร์ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท 15 ที่ปรึกษาธุรกิจ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท 15 ที่ปรึกษาธุรกิจ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท กรุงสยามประเมินค่าทรัพย์สิน จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท กรุงสยามประเมินค่าทรัพย์สิน จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ไซมอน ลิม และหุ้นส่วน จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ไซมอน ลิม และหุ้นส่วน จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ซาลแมนน์ (ฟาร์อีสท์) จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ซาลแมนน์ (ฟาร์อีสท์) จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ยูเค แวลูเอชั่น แอนด์ เอเจนซี่ จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ยูเค แวลูเอชั่น แอนด์ เอเจนซี่ จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท ไนท์แฟรงค์ ชาร์เตอร์ (ประเทศไทย) จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท ไนท์แฟรงค์ ชาร์เตอร์ (ประเทศไทย) จำกัด</label>
+            </value>
+            <value>
+                <fullName>บริษัท เค.เค.แวลูเอชั่น จำกัด</fullName>
+                <default>false</default>
+                <label>บริษัท เค.เค.แวลูเอชั่น จำกัด</label>
+            </value>
+            <value>
+                <fullName>ประเมินภายใน</fullName>
+                <default>false</default>
+                <label>ประเมินภายใน</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

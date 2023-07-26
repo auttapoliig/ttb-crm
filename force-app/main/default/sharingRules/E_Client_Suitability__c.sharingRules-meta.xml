@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_CS_from_MB_CB_to_Role_SME_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>share MB/CB record to SME TH</description>
+        <label>Share CS from MB CB to Role: SME CM Sales TH/TL</label>
+        <sharedTo>
+            <role>BB_SMERetail_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>MB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>CB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_CS_to_Roles_and_Sub_MB_CM_Sales_TH_TL_From_Role_CB</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share CS to Roles and Sub: MB CM Sales TH/TL From Role CB</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>CB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_CS_to_Roles_and_sub_FI_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share CS to Roles and sub: FI CM Sales TH/TL</label>
+        <sharedTo>
+            <roleAndSubordinates>FI_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>FI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_CS_to_Roles_and_sub_MB_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share CS to Roles and sub: MB CM Sales TH/TL</label>
+        <sharedTo>
+            <roleAndSubordinates>MB_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>MB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_CS_to_Roles_and_sub_SME_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share CS to Roles and sub: SME CM Sales TH/TL</label>
+        <sharedTo>
+            <roleAndSubordinates>BB_SMERetail_CM_Sales_TH_TL</roleAndSubordinates>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>SE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>BB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_E_client_to_Role_MB_CB_CM_Sales_TH_TL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>if stamped customer segment is MB or CB, share to MB/CB role</description>
+        <label>Share E-client to Role: MB/CB CM Sales TH/TL</label>
+        <sharedTo>
+            <role>MB_CB_CM_Sales_TH_TL</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>CB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CS_Stamped_Customer_Segment__c</field>
+            <operation>equals</operation>
+            <value>MB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_one_time</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>share one time</description>
+        <label>Share one time</label>
+        <sharedTo>
+            <role>COM_1_4_TH</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CS_Murex_ID__c</field>
+            <operation>equals</operation>
+            <value>12593</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sharing_COM_1_6_to_TH_Com_1_1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing 1 time</description>
+        <label>Sharing COM 1-6 to TH Com 1-1</label>
+        <sharedTo>
+            <role>COM_1_1_TH</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CS_RM__c</field>
+            <operation>equals</operation>
+            <value>00590000004umUo,0059000000UWygH,0050o00000WhZuB,0052j000000M2jh</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

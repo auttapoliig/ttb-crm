@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_validate_service_template</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(OR(CONTAINS($Profile.Name, &quot;System Administrator&quot;)), false,
+IF(AND(ISPICKVAL( Status ,&apos;New&apos; ), OR(ISPICKVAL( Origin ,&apos;Chat - ttb Web&apos; ), ISPICKVAL( Origin ,&apos;Chat - Facebook&apos; ), ISPICKVAL( Origin ,&apos;Chat - Line&apos; ), ISPICKVAL( Origin ,&apos;Chat - ttb touch&apos; ), ISPICKVAL( Origin ,&apos;Facebook&apos; ), ISPICKVAL( Origin ,&apos;Other Media Type&apos; ), ISPICKVAL( Origin ,&apos;Twitter&apos; ), ISPICKVAL( Origin ,&apos;Pantip&apos; ))), false,
+OR(AND(NOT( ISNEW()),
+NOT(ISBLANK(Service_Type_Matrix_Code__c )),
+ISBLANK(TEXT(Current_Service_Template__c)),
+$User.Id &lt;&gt; &quot;00590000003ClbG&quot;,
+$User.Id &lt;&gt; &quot;00590000003xcZv&quot;,
+Quick_Case__c = false,
+NOT( ISCHANGED( Email_Status__c ) ) ,
+TEXT(Email_Status__c) &lt;&gt; &quot;Sent&quot;,
+CXM_write_log_flag__c = false,
+IsClosed = false
+),
+AND(ISBLANK(TEXT(Current_Service_Template__c)) ,
+ISNEW() ,
+$User.Id &lt;&gt; &quot;00590000003xcZv&quot;,
+Quick_Case__c = false,
+FCR__c = false,
+$User.Id &lt;&gt; &quot;00590000003ClbG&quot;
+))))</errorConditionFormula>
+    <errorMessage>There are some internal error, Please cancel and create again.
+(ระบบเกิดข้อผิดพลาด กรุณาปิดแล้วสร้างเคสใหม่อีกครั้ง)</errorMessage>
+</ValidationRule>

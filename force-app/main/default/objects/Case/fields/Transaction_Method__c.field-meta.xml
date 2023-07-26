@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Method__c</fullName>
+    <externalId>false</externalId>
+    <label>ทำรายการโดยวิธี</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>เครื่องถอน / ฝากเงิน อัตโนมัติ (ATM /ADM)</fullName>
+                <default>false</default>
+                <label>เครื่องถอน / ฝากเงิน อัตโนมัติ (ATM /ADM)</label>
+            </value>
+            <value>
+                <fullName>Internet / Mobile Banking</fullName>
+                <default>false</default>
+                <label>Internet / Mobile Banking</label>
+            </value>
+            <value>
+                <fullName>เงินสด</fullName>
+                <default>false</default>
+                <label>เงินสด</label>
+            </value>
+            <value>
+                <fullName>เคาน์เตอร์สาขา</fullName>
+                <default>false</default>
+                <label>เคาน์เตอร์สาขา</label>
+            </value>
+            <value>
+                <fullName>เคาน์เตอร์ Service</fullName>
+                <default>false</default>
+                <label>เคาน์เตอร์ Service</label>
+            </value>
+            <value>
+                <fullName>เครื่อง EDC</fullName>
+                <default>false</default>
+                <label>เครื่อง EDC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

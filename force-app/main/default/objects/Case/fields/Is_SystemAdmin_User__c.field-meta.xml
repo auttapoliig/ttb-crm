@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_SystemAdmin_User__c</fullName>
+    <description>If user login is system admin return True, else return False. This field for use in Apex class only</description>
+    <externalId>false</externalId>
+    <formula>if(OR( $User.UserProfileName__c = &apos;System Administrator&apos;, $User.UserProfileName__c = &apos;TMB System Administrator&apos;), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is SystemAdmin User</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

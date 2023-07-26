@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Forecast Input Sync Batch Main Query</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:string">SELECT Id, Year__c, Month__c, RecordtypeId, Recordtype.Name, adjustMonthYear__c, YearMonthAcctSuffRef__c, Account_Suffix_Ref__c, Current_Ending_Balance__c, F_Projected_Balance__c, Last_Month_Ending_Balance__c, Ending_Balance__c, Repay_Due_Amount_Week1__c, Repay_Due_Amount_Week2__c, Repay_Due_Amount_Week3__c, Repay_Due_Amount_Week4__c, Repay_Due_Amount_Week5__c, Repay_Due_Amount_Week6__c, Total_Repay_Due_Amount__c, Hold_Commitment__c, FTP__c, Interest_Income__c, Last_Month_Forecast__c, Actual_NIM__c, Forecast_NIM__c, Last_Month_Forecast__r.Actual_NIM__c, Last_Month_Forecast__r.Forecast_NIM__c, Last_Month_Forecast__r.Hold_Commitment__c, Last_Month_Forecast__r.FTP__c, Last_Month_Forecast__r.Interest_Income__c, Product__r.Financial_Product_Domain__c, Customer__r.Owner.Segment__c, NI_Monthly_Performance__c FROM Monthly_Forecast_Input__c WHERE LastmodifiedDate = TODAY AND RecordtypeId =: RTExistingRepay</value>
+    </values>
+</CustomMetadata>

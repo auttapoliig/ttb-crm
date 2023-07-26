@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Province__c</fullName>
+    <externalId>false</externalId>
+    <label>Province</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Appraisal_Area__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>กระบี่</fullName>
+                <default>false</default>
+                <label>กระบี่</label>
+            </value>
+            <value>
+                <fullName>กรุงเทพมหานคร</fullName>
+                <default>false</default>
+                <label>กรุงเทพมหานคร</label>
+            </value>
+            <value>
+                <fullName>กาญจนบุรี</fullName>
+                <default>false</default>
+                <label>กาญจนบุรี</label>
+            </value>
+            <value>
+                <fullName>กาฬสินธุ์</fullName>
+                <default>false</default>
+                <label>กาฬสินธุ์</label>
+            </value>
+            <value>
+                <fullName>กำแพงเพชร</fullName>
+                <default>false</default>
+                <label>กำแพงเพชร</label>
+            </value>
+            <value>
+                <fullName>ขอนแก่น</fullName>
+                <default>false</default>
+                <label>ขอนแก่น</label>
+            </value>
+            <value>
+                <fullName>จันทบุรี</fullName>
+                <default>false</default>
+                <label>จันทบุรี</label>
+            </value>
+            <value>
+                <fullName>ฉะเชิงเทรา</fullName>
+                <default>false</default>
+                <label>ฉะเชิงเทรา</label>
+            </value>
+            <value>
+                <fullName>ชลบุรี</fullName>
+                <default>false</default>
+                <label>ชลบุรี</label>
+            </value>
+            <value>
+                <fullName>ชัยนาท</fullName>
+                <default>false</default>
+                <label>ชัยนาท</label>
+            </value>
+            <value>
+                <fullName>ชัยภูมิ</fullName>
+                <default>false</default>
+                <label>ชัยภูมิ</label>
+            </value>
+            <value>
+                <fullName>ชุมพร</fullName>
+                <default>false</default>
+                <label>ชุมพร</label>
+            </value>
+            <value>
+                <fullName>ตรัง</fullName>
+                <default>false</default>
+                <label>ตรัง</label>
+            </value>
+            <value>
+                <fullName>ตราด</fullName>
+                <default>false</default>
+                <label>ตราด</label>
+            </value>
+            <value>
+                <fullName>ตาก</fullName>
+                <default>false</default>
+                <label>ตาก</label>
+            </value>
+            <value>
+                <fullName>นครนายก</fullName>
+                <default>false</default>
+                <label>นครนายก</label>
+            </value>
+            <value>
+                <fullName>นครปฐม</fullName>
+                <default>false</default>
+                <label>นครปฐม</label>
+            </value>
+            <value>
+                <fullName>นครพนม</fullName>
+                <default>false</default>
+                <label>นครพนม</label>
+            </value>
+            <value>
+                <fullName>นครราชสีมา</fullName>
+                <default>false</default>
+                <label>นครราชสีมา</label>
+            </value>
+            <value>
+                <fullName>นครศรีธรรมราช</fullName>
+                <default>false</default>
+                <label>นครศรีธรรมราช</label>
+            </value>
+            <value>
+                <fullName>นครสวรรค์</fullName>
+                <default>false</default>
+                <label>นครสวรรค์</label>
+            </value>
+            <value>
+                <fullName>นนทบุรี</fullName>
+                <default>false</default>
+                <label>นนทบุรี</label>
+            </value>
+            <value>
+                <fullName>นราธิวาส</fullName>
+                <default>false</default>
+                <label>นราธิวาส</label>
+            </value>
+            <value>
+                <fullName>น่าน</fullName>
+                <default>false</default>
+                <label>น่าน</label>
+            </value>
+            <value>
+                <fullName>บึงกาฬ</fullName>
+                <default>false</default>
+                <label>บึงกาฬ</label>
+            </value>
+            <value>
+                <fullName>บุรีรัมย์</fullName>
+                <default>false</default>
+                <label>บุรีรัมย์</label>
+            </value>
+            <value>
+                <fullName>ปทุมธานี</fullName>
+                <default>false</default>
+                <label>ปทุมธานี</label>
+            </value>
+            <value>
+                <fullName>ประจวบคีรีขันธ์</fullName>
+                <default>false</default>
+                <label>ประจวบคีรีขันธ์</label>
+            </value>
+            <value>
+                <fullName>ปราจีนบุรี</fullName>
+                <default>false</default>
+                <label>ปราจีนบุรี</label>
+            </value>
+            <value>
+                <fullName>ปัตตานี</fullName>
+                <default>false</default>
+                <label>ปัตตานี</label>
+            </value>
+            <value>
+                <fullName>พระนครศรีอยุธยา</fullName>
+                <default>false</default>
+                <label>พระนครศรีอยุธยา</label>
+            </value>
+            <value>
+                <fullName>พะเยา</fullName>
+                <default>false</default>
+                <label>พะเยา</label>
+            </value>
+            <value>
+                <fullName>พังงา</fullName>
+                <default>false</default>
+                <label>พังงา</label>
+            </value>
+            <value>
+                <fullName>พัทลุง</fullName>
+                <default>false</default>
+                <label>พัทลุง</label>
+            </value>
+            <value>
+                <fullName>พิจิตร</fullName>
+                <default>false</default>
+                <label>พิจิตร</label>
+            </value>
+            <value>
+                <fullName>พิษณุโลก</fullName>
+                <default>false</default>
+                <label>พิษณุโลก</label>
+            </value>
+            <value>
+                <fullName>ภูเก็ต</fullName>
+                <default>false</default>
+                <label>ภูเก็ต</label>
+            </value>
+            <value>
+                <fullName>มหาสารคาม</fullName>
+                <default>false</default>
+                <label>มหาสารคาม</label>
+            </value>
+            <value>
+                <fullName>มุกดาหาร</fullName>
+                <default>false</default>
+                <label>มุกดาหาร</label>
+            </value>
+            <value>
+                <fullName>ยะลา</fullName>
+                <default>false</default>
+                <label>ยะลา</label>
+            </value>
+            <value>
+                <fullName>ยโสธร</fullName>
+                <default>false</default>
+                <label>ยโสธร</label>
+            </value>
+            <value>
+                <fullName>ระนอง</fullName>
+                <default>false</default>
+                <label>ระนอง</label>
+            </value>
+            <value>
+                <fullName>ระยอง</fullName>
+                <default>false</default>
+                <label>ระยอง</label>
+            </value>
+            <value>
+                <fullName>ราชบุรี</fullName>
+                <default>false</default>
+                <label>ราชบุรี</label>
+            </value>
+            <value>
+                <fullName>ร้อยเอ็ด</fullName>
+                <default>false</default>
+                <label>ร้อยเอ็ด</label>
+            </value>
+            <value>
+                <fullName>ลพบุรี</fullName>
+                <default>false</default>
+                <label>ลพบุรี</label>
+            </value>
+            <value>
+                <fullName>ลำปาง</fullName>
+                <default>false</default>
+                <label>ลำปาง</label>
+            </value>
+            <value>
+                <fullName>ลำพูน</fullName>
+                <default>false</default>
+                <label>ลำพูน</label>
+            </value>
+            <value>
+                <fullName>ศรีสะเกษ</fullName>
+                <default>false</default>
+                <label>ศรีสะเกษ</label>
+            </value>
+            <value>
+                <fullName>สกลนคร</fullName>
+                <default>false</default>
+                <label>สกลนคร</label>
+            </value>
+            <value>
+                <fullName>สงขลา</fullName>
+                <default>false</default>
+                <label>สงขลา</label>
+            </value>
+            <value>
+                <fullName>สตูล</fullName>
+                <default>false</default>
+                <label>สตูล</label>
+            </value>
+            <value>
+                <fullName>สมุทรปราการ</fullName>
+                <default>false</default>
+                <label>สมุทรปราการ</label>
+            </value>
+            <value>
+                <fullName>สมุทรสงคราม</fullName>
+                <default>false</default>
+                <label>สมุทรสงคราม</label>
+            </value>
+            <value>
+                <fullName>สมุทรสาคร</fullName>
+                <default>false</default>
+                <label>สมุทรสาคร</label>
+            </value>
+            <value>
+                <fullName>สระบุรี</fullName>
+                <default>false</default>
+                <label>สระบุรี</label>
+            </value>
+            <value>
+                <fullName>สระแก้ว</fullName>
+                <default>false</default>
+                <label>สระแก้ว</label>
+            </value>
+            <value>
+                <fullName>สิงห์บุรี</fullName>
+                <default>false</default>
+                <label>สิงห์บุรี</label>
+            </value>
+            <value>
+                <fullName>สุพรรณบุรี</fullName>
+                <default>false</default>
+                <label>สุพรรณบุรี</label>
+            </value>
+            <value>
+                <fullName>สุราษฎร์ธานี</fullName>
+                <default>false</default>
+                <label>สุราษฎร์ธานี</label>
+            </value>
+            <value>
+                <fullName>สุรินทร์</fullName>
+                <default>false</default>
+                <label>สุรินทร์</label>
+            </value>
+            <value>
+                <fullName>สุโขทัย</fullName>
+                <default>false</default>
+                <label>สุโขทัย</label>
+            </value>
+            <value>
+                <fullName>หนองคาย</fullName>
+                <default>false</default>
+                <label>หนองคาย</label>
+            </value>
+            <value>
+                <fullName>หนองบัวลำภู</fullName>
+                <default>false</default>
+                <label>หนองบัวลำภู</label>
+            </value>
+            <value>
+                <fullName>อำนาจเจริญ</fullName>
+                <default>false</default>
+                <label>อำนาจเจริญ</label>
+            </value>
+            <value>
+                <fullName>อุดรธานี</fullName>
+                <default>false</default>
+                <label>อุดรธานี</label>
+            </value>
+            <value>
+                <fullName>อุตรดิตถ์</fullName>
+                <default>false</default>
+                <label>อุตรดิตถ์</label>
+            </value>
+            <value>
+                <fullName>อุทัยธานี</fullName>
+                <default>false</default>
+                <label>อุทัยธานี</label>
+            </value>
+            <value>
+                <fullName>อุบลราชธานี</fullName>
+                <default>false</default>
+                <label>อุบลราชธานี</label>
+            </value>
+            <value>
+                <fullName>อ่างทอง</fullName>
+                <default>false</default>
+                <label>อ่างทอง</label>
+            </value>
+            <value>
+                <fullName>เชียงราย</fullName>
+                <default>false</default>
+                <label>เชียงราย</label>
+            </value>
+            <value>
+                <fullName>เชียงใหม่</fullName>
+                <default>false</default>
+                <label>เชียงใหม่</label>
+            </value>
+            <value>
+                <fullName>เพชรบุรี</fullName>
+                <default>false</default>
+                <label>เพชรบุรี</label>
+            </value>
+            <value>
+                <fullName>เพชรบูรณ์</fullName>
+                <default>false</default>
+                <label>เพชรบูรณ์</label>
+            </value>
+            <value>
+                <fullName>เลย</fullName>
+                <default>false</default>
+                <label>เลย</label>
+            </value>
+            <value>
+                <fullName>แพร่</fullName>
+                <default>false</default>
+                <label>แพร่</label>
+            </value>
+            <value>
+                <fullName>แม่ฮ่องสอน</fullName>
+                <default>false</default>
+                <label>แม่ฮ่องสอน</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>กรุงเทพมหานคร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครปฐม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นนทบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ปทุมธานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สมุทรปราการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>กรุงเทพฯ</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สมุทรสาคร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>กระบี่</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>กาญจนบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>กาฬสินธุ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>กำแพงเพชร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ขอนแก่น</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>จันทบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ฉะเชิงเทรา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ชลบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ชัยนาท</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ชัยภูมิ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ชุมพร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ตรัง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ตราด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ตาก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครนายก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครพนม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครราชสีมา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครศรีธรรมราช</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นครสวรรค์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>นราธิวาส</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>น่าน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>บึงกาฬ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>บุรีรัมย์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ประจวบคีรีขันธ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ปราจีนบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ปัตตานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พระนครศรีอยุธยา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พะเยา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พังงา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พัทลุง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พิจิตร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>พิษณุโลก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ภูเก็ต</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>มหาสารคาม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>มุกดาหาร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ยะลา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ยโสธร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ระนอง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ระยอง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ราชบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ร้อยเอ็ด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ลพบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ลำปาง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ลำพูน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>ศรีสะเกษ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สกลนคร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สงขลา</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สตูล</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สมุทรสงคราม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สระบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สระแก้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สิงห์บุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สุพรรณบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สุราษฎร์ธานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สุรินทร์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>สุโขทัย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>หนองคาย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>หนองบัวลำภู</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อำนาจเจริญ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อุดรธานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อุตรดิตถ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อุทัยธานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อุบลราชธานี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>อ่างทอง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>เชียงราย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>เชียงใหม่</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>เพชรบุรี</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>เพชรบูรณ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>เลย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>แพร่</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ต่างจังหวัด</controllingFieldValue>
+            <controllingFieldValue>Case พิเศษ</controllingFieldValue>
+            <valueName>แม่ฮ่องสอน</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

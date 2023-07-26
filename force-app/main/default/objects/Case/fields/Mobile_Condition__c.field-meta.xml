@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Condition__c</fullName>
+    <description>Condition to filter only &apos;Contact Person Phone&apos; is correct mobile number</description>
+    <externalId>false</externalId>
+    <formula>if(AND(LEN(SUBSTITUTE(SUBSTITUTE(Contact_Person_Phone__c , &apos; &apos;, &apos;&apos;),&apos;-&apos;,&apos;&apos;)) = 10, 
+		OR(BEGINS(SUBSTITUTE(SUBSTITUTE(Contact_Person_Phone__c , &apos; &apos;, &apos;&apos;),&apos;-&apos;,&apos;&apos;),&apos;08&apos;), 
+		   BEGINS(SUBSTITUTE(SUBSTITUTE(Contact_Person_Phone__c , &apos; &apos;, &apos;&apos;),&apos;-&apos;,&apos;&apos;),&apos;09&apos;), 
+		   BEGINS(SUBSTITUTE(SUBSTITUTE(Contact_Person_Phone__c , &apos; &apos;, &apos;&apos;),&apos;-&apos;,&apos;&apos;),&apos;06&apos;)
+			)
+		),
+	SUBSTITUTE(SUBSTITUTE(Contact_Person_Phone__c , &apos; &apos;, &apos;&apos;),&apos;-&apos;,&apos;&apos;),
+null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Mobile Condition</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

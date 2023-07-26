@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UW_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>UW Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>UW_Action__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>สำเนาทะเบียนบ้าน</fullName>
+                <default>false</default>
+                <label>สำเนาทะเบียนบ้าน</label>
+            </value>
+            <value>
+                <fullName>สำเนาทะเบียนพาณิชย์ (เฉพาะผู้กู้)</fullName>
+                <default>false</default>
+                <label>สำเนาทะเบียนพาณิชย์ (เฉพาะผู้กู้)</label>
+            </value>
+            <value>
+                <fullName>สำเนาบัตรประชาชน  / Passport / บัตรข้าราชการ</fullName>
+                <default>false</default>
+                <label>สำเนาบัตรประชาชน  / Passport / บัตรข้าราชการ</label>
+            </value>
+            <value>
+                <fullName>ห.ส. 2 กรณีห้างหุ้นส่วนจำกัด (กรณีคณะบุคคล/หสม.)</fullName>
+                <default>false</default>
+                <label>ห.ส. 2 กรณีห้างหุ้นส่วนจำกัด (กรณีคณะบุคคล/หสม.)</label>
+            </value>
+            <value>
+                <fullName>สำเนาวัตถุประสงค์ (กรณีคณะบุคคล/หสม.)</fullName>
+                <default>false</default>
+                <label>สำเนาวัตถุประสงค์ (กรณีคณะบุคคล/หสม.)</label>
+            </value>
+            <value>
+                <fullName>หนังสือรับรองและวัตถุประสงค์ (ไม่เกิน 3 เดือน) </fullName>
+                <default>false</default>
+                <label>หนังสือรับรองและวัตถุประสงค์ (ไม่เกิน 3 เดือน) </label>
+            </value>
+            <value>
+                <fullName>บอจ. 2 หนังสือบริคณห์สนธิ</fullName>
+                <default>false</default>
+                <label>บอจ. 2 หนังสือบริคณห์สนธิ</label>
+            </value>
+            <value>
+                <fullName>บอจ. 3 รายการจดทะเบียนจัดตั้ง</fullName>
+                <default>false</default>
+                <label>บอจ. 3 รายการจดทะเบียนจัดตั้ง</label>
+            </value>
+            <value>
+                <fullName>บอจ. 5 สำเนาบัญชีรายชื่อผู้ถือหุ้นไม่เกิน 3 เดือน</fullName>
+                <default>false</default>
+                <label>บอจ. 5 สำเนาบัญชีรายชื่อผู้ถือหุ้นไม่เกิน 3 เดือน</label>
+            </value>
+            <value>
+                <fullName>เอกสารพิสูจน์ประสบการณ์</fullName>
+                <default>false</default>
+                <label>เอกสารพิสูจน์ประสบการณ์</label>
+            </value>
+            <value>
+                <fullName>Bank Statement</fullName>
+                <default>false</default>
+                <label>Bank Statement</label>
+            </value>
+            <value>
+                <fullName>ภพ.30 (กรณีใช้พิสูจน์รายได้แทน Bank Statement)</fullName>
+                <default>false</default>
+                <label>ภพ.30 (กรณีใช้พิสูจน์รายได้แทน Bank Statement)</label>
+            </value>
+            <value>
+                <fullName>งบการเงินสรรพากรปีล่าสุด พร้อมหมายเหตุประกอบงบฯ</fullName>
+                <default>false</default>
+                <label>งบการเงินสรรพากรปีล่าสุด พร้อมหมายเหตุประกอบงบฯ</label>
+            </value>
+            <value>
+                <fullName>รูปถ่ายสถานประกอบการ</fullName>
+                <default>false</default>
+                <label>รูปถ่ายสถานประกอบการ</label>
+            </value>
+            <value>
+                <fullName>รายงานประเมินหลักประกัน</fullName>
+                <default>false</default>
+                <label>รายงานประเมินหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>เอกสารสำรวจความเสียหาย / หลักฐานการชดเชยค่าสินไหมของบริษัทประกัน</fullName>
+                <default>false</default>
+                <label>เอกสารสำรวจความเสียหาย / หลักฐานการชดเชยค่าสินไหมของบริษัทประกัน</label>
+            </value>
+            <value>
+                <fullName>Form Q</fullName>
+                <default>false</default>
+                <label>Form Q</label>
+            </value>
+            <value>
+                <fullName>ใบมรณะบัตร</fullName>
+                <default>false</default>
+                <label>ใบมรณะบัตร</label>
+            </value>
+            <value>
+                <fullName>คำสั่งศาลแต่งตั้งผู้จัดการมรดก</fullName>
+                <default>false</default>
+                <label>คำสั่งศาลแต่งตั้งผู้จัดการมรดก</label>
+            </value>
+            <value>
+                <fullName>คำสั่งศาลทุพลลภาพ</fullName>
+                <default>false</default>
+                <label>คำสั่งศาลทุพลลภาพ</label>
+            </value>
+            <value>
+                <fullName>หนังสือรับสภาพหนี้</fullName>
+                <default>false</default>
+                <label>หนังสือรับสภาพหนี้</label>
+            </value>
+            <value>
+                <fullName>เอกสารแสดงค่างวด/ภาระหนี้ของธนาคารอื่น</fullName>
+                <default>false</default>
+                <label>เอกสารแสดงค่างวด/ภาระหนี้ของธนาคารอื่น</label>
+            </value>
+            <value>
+                <fullName>สัญญาสินเชื่อ สัญญาจำนอง / จำนำ, หนังสือค้ำประกันเดิม</fullName>
+                <default>false</default>
+                <label>สัญญาสินเชื่อ สัญญาจำนอง / จำนำ, หนังสือค้ำประกันเดิม</label>
+            </value>
+            <value>
+                <fullName>มติอนุมัติเดิม</fullName>
+                <default>false</default>
+                <label>มติอนุมัติเดิม</label>
+            </value>
+            <value>
+                <fullName>Creditwrothiness (ผู้เกี่ยวข้อง)</fullName>
+                <default>false</default>
+                <label>Creditwrothiness (ผู้เกี่ยวข้อง)</label>
+            </value>
+            <value>
+                <fullName>ผลตรวจ NCB</fullName>
+                <default>false</default>
+                <label>ผลตรวจ NCB</label>
+            </value>
+            <value>
+                <fullName>ผลการจัดทำ KYC / CDD</fullName>
+                <default>false</default>
+                <label>ผลการจัดทำ KYC / CDD</label>
+            </value>
+            <value>
+                <fullName>ผลตรวจ CLIS</fullName>
+                <default>false</default>
+                <label>ผลตรวจ CLIS</label>
+            </value>
+            <value>
+                <fullName>ผลตรวจ CSI</fullName>
+                <default>false</default>
+                <label>ผลตรวจ CSI</label>
+            </value>
+            <value>
+                <fullName>Credit Excel Sheet</fullName>
+                <default>false</default>
+                <label>Credit Excel Sheet</label>
+            </value>
+            <value>
+                <fullName>ชี้แจงการใช้ประโยชน์บนหลักประกัน</fullName>
+                <default>false</default>
+                <label>ชี้แจงการใช้ประโยชน์บนหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>ชี้แจงการหมุนเวียนบัญชีกับธนาคารฯ</fullName>
+                <default>false</default>
+                <label>ชี้แจงการหมุนเวียนบัญชีกับธนาคารฯ</label>
+            </value>
+            <value>
+                <fullName>ชี้แจงการประกอบธุรกิจของผู้กู้</fullName>
+                <default>false</default>
+                <label>ชี้แจงการประกอบธุรกิจของผู้กู้</label>
+            </value>
+            <value>
+                <fullName>กรอกรายละเอียดข้อมูลใน CA ไม่ครบถ้วน/ไม่ถูกต้อง</fullName>
+                <default>false</default>
+                <label>กรอกรายละเอียดข้อมูลใน CA ไม่ครบถ้วน/ไม่ถูกต้อง</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าอยู่ในความดูแลของหน่วยงานอื่น</fullName>
+                <default>false</default>
+                <label>ลูกค้าอยู่ในความดูแลของหน่วยงานอื่น</label>
+            </value>
+            <value>
+                <fullName>เป็นคำขอที่ไม่ต้องใช้อำนาจอนุมัติ UW</fullName>
+                <default>false</default>
+                <label>เป็นคำขอที่ไม่ต้องใช้อำนาจอนุมัติ UW</label>
+            </value>
+            <value>
+                <fullName>ลูกค้ายกเลิกคำขอ</fullName>
+                <default>false</default>
+                <label>ลูกค้ายกเลิกคำขอ</label>
+            </value>
+            <value>
+                <fullName>ขอยกเลิกเนื่องจากกดส่งงานผิด</fullName>
+                <default>false</default>
+                <label>ขอยกเลิกเนื่องจากกดส่งงานผิด</label>
+            </value>
+            <value>
+                <fullName>ไม่มีคำชี้แจง / ไม่ได้รับเอกสารประกอบคำขอฯ</fullName>
+                <default>false</default>
+                <label>ไม่มีคำชี้แจง / ไม่ได้รับเอกสารประกอบคำขอฯ</label>
+            </value>
+            <value>
+                <fullName>คำขอฯ ส่งผลให้ธนาคารฯ มีความเสี่ยงเพิ่มขึ้นอย่างมีนัยสำคัญ โดยไม่มีเหตุผลอันควร</fullName>
+                <default>false</default>
+                <label>คำขอฯ ส่งผลให้ธนาคารฯ มีความเสี่ยงเพิ่มขึ้นอย่างมีนัยสำคัญ โดยไม่มีเหตุผลอันควร</label>
+            </value>
+            <value>
+                <fullName>ไม่นำรายได้หมุนเวียนบัญชีกับธนาคารฯ</fullName>
+                <default>false</default>
+                <label>ไม่นำรายได้หมุนเวียนบัญชีกับธนาคารฯ</label>
+            </value>
+            <value>
+                <fullName>DBR ไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>DBR ไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>SCF Score ไม่อยู่ในระดับที่ยอมรับได้</fullName>
+                <default>false</default>
+                <label>SCF Score ไม่อยู่ในระดับที่ยอมรับได้</label>
+            </value>
+            <value>
+                <fullName>ยอดขายรวม / วงเงินรวมกลุ่ม / เกินเกณฑ์ Segment</fullName>
+                <default>false</default>
+                <label>ยอดขายรวม / วงเงินรวมกลุ่ม / เกินเกณฑ์ Segment</label>
+            </value>
+            <value>
+                <fullName>การค้ำประกันไม่เป็นไปตามเงื่อนไขที่ธนาคาร /บสย. กำหนด</fullName>
+                <default>false</default>
+                <label>การค้ำประกันไม่เป็นไปตามเงื่อนไขที่ธนาคาร /บสย. กำหนด</label>
+            </value>
+            <value>
+                <fullName>ไม่อยู่ใน BRL Group เป้าหมายของธนาคารฯ</fullName>
+                <default>false</default>
+                <label>ไม่อยู่ใน BRL Group เป้าหมายของธนาคารฯ</label>
+            </value>
+            <value>
+                <fullName>ผู้กู้มีประวัติค้างชำระหนี้</fullName>
+                <default>false</default>
+                <label>ผู้กู้มีประวัติค้างชำระหนี้</label>
+            </value>
+            <value>
+                <fullName>ผู้กู้ติด CSI</fullName>
+                <default>false</default>
+                <label>ผู้กู้ติด CSI</label>
+            </value>
+            <value>
+                <fullName>คุณสมบัติของผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</fullName>
+                <default>false</default>
+                <label>คุณสมบัติของผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</label>
+            </value>
+            <value>
+                <fullName>การขอครั้งนี้เป็น Conflict of Interest</fullName>
+                <default>false</default>
+                <label>การขอครั้งนี้เป็น Conflict of Interest</label>
+            </value>
+            <value>
+                <fullName>ผู้บริหารมีประสบการณ์ในธุรกิจที่ขอสินเชื่อไม่เพียงพอ / ไม่ชัดเจน</fullName>
+                <default>false</default>
+                <label>ผู้บริหารมีประสบการณ์ในธุรกิจที่ขอสินเชื่อไม่เพียงพอ / ไม่ชัดเจน</label>
+            </value>
+            <value>
+                <fullName>ไม่ปฏิบัติตามเงื่อนไขอนุมัติเดิม เช่น กู้ซื้อสถานประกอบการ แต่ไม่ใช้ประโยชน์</fullName>
+                <default>false</default>
+                <label>ไม่ปฏิบัติตามเงื่อนไขอนุมัติเดิม เช่น กู้ซื้อสถานประกอบการ แต่ไม่ใช้ประโยชน์</label>
+            </value>
+            <value>
+                <fullName>เอกสารปลอมแปลง</fullName>
+                <default>false</default>
+                <label>เอกสารปลอมแปลง</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า/บุคคลที่เกี่ยวข้อง มีรายชื่ออยู่ใน Comment ของ ICR/BOT/Internal Auditor</fullName>
+                <default>false</default>
+                <label>ลูกค้า/บุคคลที่เกี่ยวข้อง มีรายชื่ออยู่ใน Comment ของ ICR/BOT/Internal Auditor</label>
+            </value>
+            <value>
+                <fullName>เกี่ยวข้องหรืออยู่ในธุรกิจที่ธนาคารฯ ไม่สนับสนน (High Risk, Suspend, Negative)</fullName>
+                <default>false</default>
+                <label>เกี่ยวข้องหรืออยู่ในธุรกิจที่ธนาคารฯ ไม่สนับสนน (High Risk, Suspend, Negative)</label>
+            </value>
+            <value>
+                <fullName>มียอดใช้ OD เกินวงเงินไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>มียอดใช้ OD เกินวงเงินไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>สัดส่วนผู้ถือหุ้นที่นำมาค้ำประกันต่ำกว่า 51%</fullName>
+                <default>false</default>
+                <label>สัดส่วนผู้ถือหุ้นที่นำมาค้ำประกันต่ำกว่า 51%</label>
+            </value>
+            <value>
+                <fullName>ส่วนของผู้ถือหุ้นรวมสุทธิติดลบ</fullName>
+                <default>false</default>
+                <label>ส่วนของผู้ถือหุ้นรวมสุทธิติดลบ</label>
+            </value>
+            <value>
+                <fullName>ค้างชำระค่าธรรมเนียม LG / ค่าเบี้ยประกันภัย / บสย</fullName>
+                <default>false</default>
+                <label>ค้างชำระค่าธรรมเนียม LG / ค่าเบี้ยประกันภัย / บสย</label>
+            </value>
+            <value>
+                <fullName>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ TDR / Reschedule</fullName>
+                <default>false</default>
+                <label>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ TDR / Reschedule</label>
+            </value>
+            <value>
+                <fullName>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ NPL</fullName>
+                <default>false</default>
+                <label>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ NPL</label>
+            </value>
+            <value>
+                <fullName>ประวัติ / มีข้อบ่งชี้ว่านำสินเชื่อเดิมไปใช้ผิดวัตถุประสงค์</fullName>
+                <default>false</default>
+                <label>ประวัติ / มีข้อบ่งชี้ว่านำสินเชื่อเดิมไปใช้ผิดวัตถุประสงค์</label>
+            </value>
+            <value>
+                <fullName>ข้อมูล / เอกสารประกอบการพิจารณา เกี่ยวกับการดำเนินธุรกิจขาดความน่าเชื่อถือ / มีความผิดปกติ</fullName>
+                <default>false</default>
+                <label>ข้อมูล / เอกสารประกอบการพิจารณา เกี่ยวกับการดำเนินธุรกิจขาดความน่าเชื่อถือ / มีความผิดปกติ</label>
+            </value>
+            <value>
+                <fullName>KYC เท่ากับ 4</fullName>
+                <default>false</default>
+                <label>KYC เท่ากับ 4</label>
+            </value>
+            <value>
+                <fullName>ผลการตรวจสอบความน่าเชื่อถือของผู้ค้ำฯ, ผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</fullName>
+                <default>false</default>
+                <label>ผลการตรวจสอบความน่าเชื่อถือของผู้ค้ำฯ, ผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</label>
+            </value>
+            <value>
+                <fullName>เจ้าของกรรมสิทธิ์หลักประกันไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>เจ้าของกรรมสิทธิ์หลักประกันไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ประเภทหลักประกันไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ประเภทหลักประกันไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ทรัพย์เกรดของหลักประกันไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ทรัพย์เกรดของหลักประกันไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ประเมินไม่รับเป็นหลักประกัน / ไม่มีเอกสารแสดงกรรมสิทธิ์สิ่งปลูกสร้าง / ราคาประเมิน = 0</fullName>
+                <default>false</default>
+                <label>ประเมินไม่รับเป็นหลักประกัน / ไม่มีเอกสารแสดงกรรมสิทธิ์สิ่งปลูกสร้าง / ราคาประเมิน = 0</label>
+            </value>
+            <value>
+                <fullName>ไม่มี Core Asset กับธนาคารฯ</fullName>
+                <default>false</default>
+                <label>ไม่มี Core Asset กับธนาคารฯ</label>
+            </value>
+            <value>
+                <fullName>สัดส่วน Core Asset ไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>สัดส่วน Core Asset ไม่เป็นไปตามเกณฑ์</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>สำเนาทะเบียนบ้าน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>สำเนาทะเบียนพาณิชย์ (เฉพาะผู้กู้)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>สำเนาบัตรประชาชน  / Passport / บัตรข้าราชการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ห.ส. 2 กรณีห้างหุ้นส่วนจำกัด (กรณีคณะบุคคล/หสม.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>สำเนาวัตถุประสงค์ (กรณีคณะบุคคล/หสม.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>หนังสือรับรองและวัตถุประสงค์ (ไม่เกิน 3 เดือน) </valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>บอจ. 2 หนังสือบริคณห์สนธิ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>บอจ. 3 รายการจดทะเบียนจัดตั้ง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>บอจ. 5 สำเนาบัญชีรายชื่อผู้ถือหุ้นไม่เกิน 3 เดือน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>เอกสารพิสูจน์ประสบการณ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>Bank Statement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ภพ.30 (กรณีใช้พิสูจน์รายได้แทน Bank Statement)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>งบการเงินสรรพากรปีล่าสุด พร้อมหมายเหตุประกอบงบฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>รูปถ่ายสถานประกอบการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>รายงานประเมินหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>เอกสารสำรวจความเสียหาย / หลักฐานการชดเชยค่าสินไหมของบริษัทประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>Form Q</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ใบมรณะบัตร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>คำสั่งศาลแต่งตั้งผู้จัดการมรดก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>คำสั่งศาลทุพลลภาพ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>หนังสือรับสภาพหนี้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>เอกสารแสดงค่างวด/ภาระหนี้ของธนาคารอื่น</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>สัญญาสินเชื่อ สัญญาจำนอง / จำนำ, หนังสือค้ำประกันเดิม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>มติอนุมัติเดิม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>Creditwrothiness (ผู้เกี่ยวข้อง)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ผลตรวจ NCB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ผลการจัดทำ KYC / CDD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ผลตรวจ CLIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ผลตรวจ CSI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>Credit Excel Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ชี้แจงการใช้ประโยชน์บนหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ชี้แจงการหมุนเวียนบัญชีกับธนาคารฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>ชี้แจงการประกอบธุรกิจของผู้กู้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pending</controllingFieldValue>
+            <valueName>กรอกรายละเอียดข้อมูลใน CA ไม่ครบถ้วน/ไม่ถูกต้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ลูกค้าอยู่ในความดูแลของหน่วยงานอื่น</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>เป็นคำขอที่ไม่ต้องใช้อำนาจอนุมัติ UW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ลูกค้ายกเลิกคำขอ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ขอยกเลิกเนื่องจากกดส่งงานผิด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ไม่มีคำชี้แจง / ไม่ได้รับเอกสารประกอบคำขอฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>คำขอฯ ส่งผลให้ธนาคารฯ มีความเสี่ยงเพิ่มขึ้นอย่างมีนัยสำคัญ โดยไม่มีเหตุผลอันควร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ไม่นำรายได้หมุนเวียนบัญชีกับธนาคารฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>DBR ไม่ผ่านเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>SCF Score ไม่อยู่ในระดับที่ยอมรับได้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ยอดขายรวม / วงเงินรวมกลุ่ม / เกินเกณฑ์ Segment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>การค้ำประกันไม่เป็นไปตามเงื่อนไขที่ธนาคาร /บสย. กำหนด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ไม่อยู่ใน BRL Group เป้าหมายของธนาคารฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผู้กู้มีประวัติค้างชำระหนี้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผู้กู้ติด CSI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>คุณสมบัติของผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>การขอครั้งนี้เป็น Conflict of Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผู้บริหารมีประสบการณ์ในธุรกิจที่ขอสินเชื่อไม่เพียงพอ / ไม่ชัดเจน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ไม่ปฏิบัติตามเงื่อนไขอนุมัติเดิม เช่น กู้ซื้อสถานประกอบการ แต่ไม่ใช้ประโยชน์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>เอกสารปลอมแปลง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ลูกค้า/บุคคลที่เกี่ยวข้อง มีรายชื่ออยู่ใน Comment ของ ICR/BOT/Internal Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>เกี่ยวข้องหรืออยู่ในธุรกิจที่ธนาคารฯ ไม่สนับสนน (High Risk, Suspend, Negative)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>มียอดใช้ OD เกินวงเงินไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>สัดส่วนผู้ถือหุ้นที่นำมาค้ำประกันต่ำกว่า 51%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ส่วนของผู้ถือหุ้นรวมสุทธิติดลบ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ค้างชำระค่าธรรมเนียม LG / ค่าเบี้ยประกันภัย / บสย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ TDR / Reschedule</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผู้กู้ / ผู้เกี่ยวข้องมีประวัติเป็นหนี้ NPL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ประวัติ / มีข้อบ่งชี้ว่านำสินเชื่อเดิมไปใช้ผิดวัตถุประสงค์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ข้อมูล / เอกสารประกอบการพิจารณา เกี่ยวกับการดำเนินธุรกิจขาดความน่าเชื่อถือ / มีความผิดปกติ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>KYC เท่ากับ 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ผลการตรวจสอบความน่าเชื่อถือของผู้ค้ำฯ, ผู้เกี่ยวข้อง ไม่อยู่ในเกณฑ์ที่ยอมรับได้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>เจ้าของกรรมสิทธิ์หลักประกันไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ประเภทหลักประกันไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ทรัพย์เกรดของหลักประกันไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ประเมินไม่รับเป็นหลักประกัน / ไม่มีเอกสารแสดงกรรมสิทธิ์สิ่งปลูกสร้าง / ราคาประเมิน = 0</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>ไม่มี Core Asset กับธนาคารฯ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>สัดส่วน Core Asset ไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

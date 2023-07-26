@@ -1,18 +1,53 @@
-# Salesforce DX Project: Next Steps
-
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+# Pre-Required
+1. Install [Visual Studio Code](https://code.visualstudio.com/)
+2. Install [Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm#sfdx_setup_install_cli_windows)
+3. Install [Git Command](https://git-scm.com/)
+---
+# Salesforce CLI setup
+1. Validate Salesforce CLI
+```
+sf --version
+```
+2. Login to Salesforce CLI
+```
+sf org login web --instance-url https://tmbbank.my.salesforce.com --alias ttb-prod
+```
+3. Verify Login
+```
+sf org list
+```
+---
+# Production Deployment Step
+1. Checkout code from STAGING Branch
+```
+git checkout STAGING
+```
+2. Validate Component in Production
+```
+sf project deploy validate --manifest .\deploy\package.xml --target-org ttb-prod --test-level RunLocalTests --async
+```
+3. Get Update Deployment Status
+```
+sf project deploy report --job-id _<<jobid>>_
+```
+4. Quick Deploy
+```
+sf project deploy quick --job-id _<<jobid>>_
+```
+---
+# Release Track
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
+| SCR0592576 | Check Duplicate Lead | IIG | 20 July 2023 |
+| SCR0590879 | Add Wealth Support list to receive cases | CoE (Attasit) | 20 July 2023 |
+| SCR0587873 | ขอเพิ่มสิทธิ์ ให้กับ คุณ Nalinee  Imsaard สามารถทำการ Approve Campaign ได้เหมือนกับคุณ Panawat Innurak (เฉพาะ Campaign type = Exclusive) | CoE (Attasit) | 20 July 2023 |
+| SCR0592580 | change logic NPS Score เพื่อให้ในระบบ CRM show NPS score ตรงกับที่ สื่อความ | CoE (Attasit) | 20 July 2023 |
+| SCR0581170 | Clear Close branch | CoE (Krittisak) | 20 July 2023 |
+| SCR0586993 | Access right to KYC review template | CoE (Todsapol) | 20 July 2023 |
+| SCR0589780 | Update UW name list on case management | CoE (Todsapol) | 20 July 2023 |
+| SCR0592422 | Reorg SME : Add new role & profile | CoE (Todsapol) | 20 July 2023 |
+| SCR0592423 | KYC review on case management : Add new queue KYC – Customer Data Managment | CoE (Todsapol) | 20 July 2023 |
+---
+## Ref Link
+* [Source Control](https://bitbucket.tmbbank.local:7990/projects/CRMSAL/repos/ttb-crm/browse)
+* [SF Command](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_top.htm)

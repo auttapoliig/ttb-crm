@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Recipient_Bank__c</fullName>
+    <externalId>false</externalId>
+    <label>ธนาคารผู้รับโอนที่ถูกต้อง</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AIG Retail Bank PCL. (AIGB)</fullName>
+                <default>false</default>
+                <label>AIG Retail Bank PCL. (AIGB)</label>
+            </value>
+            <value>
+                <fullName>CHINA UNION PAY (CUP)</fullName>
+                <default>false</default>
+                <label>CHINA UNION PAY (CUP)</label>
+            </value>
+            <value>
+                <fullName>GE Money Retail Bank (GEMB)</fullName>
+                <default>false</default>
+                <label>GE Money Retail Bank (GEMB)</label>
+            </value>
+            <value>
+                <fullName>MALAYSIAN ELECTRONIC PAYMENT SYSTEMS (MEPS)</fullName>
+                <default>false</default>
+                <label>MALAYSIAN ELECTRONIC PAYMENT SYSTEMS (MEPS)</label>
+            </value>
+            <value>
+                <fullName>Standard Charter Bank (Thai) PCL. (SCBT)</fullName>
+                <default>false</default>
+                <label>Standard Charter Bank (Thai) PCL. (SCBT)</label>
+            </value>
+            <value>
+                <fullName>Thai Credit Retail Bank (TCRB)</fullName>
+                <default>false</default>
+                <label>Thai Credit Retail Bank (TCRB)</label>
+            </value>
+            <value>
+                <fullName>ธ.กรุงศรีอยุธยา (BAY)</fullName>
+                <default>false</default>
+                <label>ธ.กรุงศรีอยุธยา (BAY)</label>
+            </value>
+            <value>
+                <fullName>ธ.กรุงเทพ (BBL)</fullName>
+                <default>false</default>
+                <label>ธ.กรุงเทพ (BBL)</label>
+            </value>
+            <value>
+                <fullName>ธ.กรุงไทย (KTB)</fullName>
+                <default>false</default>
+                <label>ธ.กรุงไทย (KTB)</label>
+            </value>
+            <value>
+                <fullName>ธ.กสิกรไทย (KBNK)</fullName>
+                <default>false</default>
+                <label>ธ.กสิกรไทย (KBNK)</label>
+            </value>
+            <value>
+                <fullName>ธ.การเกษตรและสหกรณ์การเกษตร (BAAC)</fullName>
+                <default>false</default>
+                <label>ธ.การเกษตรและสหกรณ์การเกษตร (BAAC)</label>
+            </value>
+            <value>
+                <fullName>ธ.ซิตี้แบงก์ (CITI)</fullName>
+                <default>false</default>
+                <label>ธ.ซิตี้แบงก์ (CITI)</label>
+            </value>
+            <value>
+                <fullName>ธ.ทหารไทย (TMB)</fullName>
+                <default>false</default>
+                <label>ธ.ทหารไทย (TMB)</label>
+            </value>
+            <value>
+                <fullName>ธ.ธนชาติ (TBNK)</fullName>
+                <default>false</default>
+                <label>ธ.ธนชาติ (TBNK)</label>
+            </value>
+            <value>
+                <fullName>ธ.นครหลวงไทย (SCIB)</fullName>
+                <default>false</default>
+                <label>ธ.นครหลวงไทย (SCIB)</label>
+            </value>
+            <value>
+                <fullName>ธ.ยูโอบี จำกัด (มหาชน) (UOBT)</fullName>
+                <default>false</default>
+                <label>ธ.ยูโอบี จำกัด (มหาชน) (UOBT)</label>
+            </value>
+            <value>
+                <fullName>ธ.ออมสิน (GSB)</fullName>
+                <default>false</default>
+                <label>ธ.ออมสิน (GSB)</label>
+            </value>
+            <value>
+                <fullName>ธ.อาคารสงเคราะห์ (GHB)</fullName>
+                <default>false</default>
+                <label>ธ.อาคารสงเคราะห์ (GHB)</label>
+            </value>
+            <value>
+                <fullName>ธ.ฮ่องกงและเซี่ยงไฮ้ (HSBL)</fullName>
+                <default>false</default>
+                <label>ธ.ฮ่องกงและเซี่ยงไฮ้ (HSBL)</label>
+            </value>
+            <value>
+                <fullName>ธ.โตเกียวมิตซูบิชิ (BTMU)</fullName>
+                <default>false</default>
+                <label>ธ.โตเกียวมิตซูบิชิ (BTMU)</label>
+            </value>
+            <value>
+                <fullName>ธ.ไทยธนาคาร (BTB)</fullName>
+                <default>false</default>
+                <label>ธ.ไทยธนาคาร (BTB)</label>
+            </value>
+            <value>
+                <fullName>ธ.ไทยพาณิชย์ (SCB)</fullName>
+                <default>false</default>
+                <label>ธ.ไทยพาณิชย์ (SCB)</label>
+            </value>
+            <value>
+                <fullName>ธ.อิสลามแห่งประเทศไทย (ISBT)</fullName>
+                <default>false</default>
+                <label>ธ.อิสลามแห่งประเทศไทย (ISBT)</label>
+            </value>
+            <value>
+                <fullName>บมจ.ธนาคารทิสโก้ (TSCO)</fullName>
+                <default>false</default>
+                <label>บมจ.ธนาคารทิสโก้ (TSCO)</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

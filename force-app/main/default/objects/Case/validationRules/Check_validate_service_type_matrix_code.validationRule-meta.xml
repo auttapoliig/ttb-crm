@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_validate_service_type_matrix_code</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND($User.UserProfileName__c != &apos;TMB System Administrator&apos;, $User.UserProfileName__c != &apos;System Administrator&apos;),
+IF(AND(ISPICKVAL( Status ,&apos;New&apos; ), OR(ISPICKVAL( Origin ,&apos;Chat - ttb Web&apos; ), ISPICKVAL( Origin ,&apos;Chat - Facebook&apos; ), ISPICKVAL( Origin ,&apos;Chat - Line&apos; ), ISPICKVAL( Origin ,&apos;Chat - ttb touch&apos; ), ISPICKVAL( Origin ,&apos;Facebook&apos; ), ISPICKVAL( Origin ,&apos;Other Media Type&apos; ), ISPICKVAL( Origin ,&apos;Twitter&apos; ), ISPICKVAL( Origin ,&apos;Pantip&apos; ))), false, 
+IF(AND(PTA_Segment__c &lt;&gt; &apos;&apos;, Category__c &lt;&gt; &apos;&apos;, Sub_Category__c &lt;&gt; &apos;&apos;, Service_Type_Matrix_Code__c = null), true, false)), false)</errorConditionFormula>
+    <errorMessage>There are some internal error, Please cancel and create again.
+(ระบบเกิดข้อผิดพลาด กรุณาปิดแล้วสร้างเคสใหม่อีกครั้ง)</errorMessage>
+</ValidationRule>

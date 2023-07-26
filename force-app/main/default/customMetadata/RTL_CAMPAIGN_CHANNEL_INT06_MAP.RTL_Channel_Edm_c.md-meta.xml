@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>RTL_Channel_Edm__c</label>
+    <protected>false</protected>
+    <values>
+        <field>RTL_CHANNEL_FIELD_NAME__c</field>
+        <value xsi:type="xsd:string">rtl_channel_edm_c</value>
+    </values>
+    <values>
+        <field>RTL_MDM_CAMPAIGN_CHANNEL_VALUE__c</field>
+        <value xsi:type="xsd:string">Edm</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Prompt_Pay</fullName>
+    <active>true</active>
+    <errorConditionFormula>If( DATEVALUE(CreatedDate ) &lt; DATE(2019,06,21) ,false ,If( AND(OR( 
+Service_Type_Matrix_Code__c = &apos;V0003&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0006&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0009&apos;, 
+Service_Type_Matrix_Code__c = &apos;V0021&apos;,
+Service_Type_Matrix_Code__c = &apos;12424&apos;,
+Service_Type_Matrix_Code__c = &apos;12427&apos;,
+Service_Type_Matrix_Code__c = &apos;12430&apos;,
+Service_Type_Matrix_Code__c = &apos;12433&apos;
+), 
+ISBLANK(Prompt_Pay__c),NOT( Is_Migrated__c )), true,false))</errorConditionFormula>
+    <errorDisplayField>Prompt_Pay_Temp__c</errorDisplayField>
+    <errorMessage>กรุณาระบุค่า</errorMessage>
+</ValidationRule>

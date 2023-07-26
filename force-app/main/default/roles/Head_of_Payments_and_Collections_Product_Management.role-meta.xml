@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Head of Payments and Collections Product Management</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Head of Payments and Collections Product Management</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Head_of_DTB_Products</parentRole>
+</Role>

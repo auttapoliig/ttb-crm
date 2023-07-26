@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CRM Admin</name>
+    <queueMembers>
+        <users>
+            <user>42743@tmbbank.com</user>
+            <user>43108@tmbbank.com</user>
+            <user>41696@tmbbank.com</user>
+            <user>40061@tmbbank.com</user>
+            <user>44270@tmbbank.com</user>
+            <user>46310@tmbbank.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

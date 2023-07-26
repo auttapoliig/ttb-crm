@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Retail Advisory-1-TL</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Retail Advisory-1-TL</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Retail_Advisory_TH</parentRole>
+</Role>

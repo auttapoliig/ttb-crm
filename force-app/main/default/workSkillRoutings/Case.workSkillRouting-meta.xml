@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkSkillRouting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <masterLabel>Case</masterLabel>
+    <relatedEntity>Case</relatedEntity>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_MF</skill>
+        <skillLevel>10</skillLevel>
+        <value>ปรึกษาข้อมูลการลงทุนด้านกองทุน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>TMB Touch &amp; Internet Banking Usage</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>Deposits &amp; Savings</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>Other Enquiries</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Complaint</skill>
+        <skillLevel>10</skillLevel>
+        <value>Complaints</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>Suggest</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - ขอใช้บริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - สอบถามข้อมูล</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_MF</skill>
+        <skillLevel>10</skillLevel>
+        <value>TMB Advisory</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>TMB Deposit Account</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>TMB Lending Product</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>บัญชีเงินฝากธนาคารทหารไทย</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_ME</skill>
+        <skillLevel>10</skillLevel>
+        <value>MEBYTMB</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับสินเชื่อ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเรื่องอื่นๆ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_ME</skill>
+        <skillLevel>10</skillLevel>
+        <value>MEBYttb</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_MF</skill>
+        <skillLevel>10</skillLevel>
+        <value>ttb Advisory</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>Deposit product</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>Lending Product</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับ แอป touch /ทีทีบี อินเทอร์เน็ตแบงก์กิ้ง</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>ttb Deposit Account</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - ชื่นชม</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Complaint</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - ร้องเรียน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - เสนอแนะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Compliment</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Complaint</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Complaint</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Feedback</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Request</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Inquiry</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>[Contact Us Form] - Approval Status / Current Status</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>Touch Mobile Banking &amp; Internet Banking</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามบริการ Touch</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์เงินฝากและบัตรเดบิต</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์บัตรเครดิต/บัตรสินเชื่อ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์สินเชื่อบุคคล สินเชื่อบ้าน และสินเชื่ออื่นๆ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์สินเชื่อรถยนต์</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>Loans &amp; Cards</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงก์กิ้ง</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_MIB</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับ ทีเอ็มบี ทัช/อินเทอร์เน็ตแบงค์กิ้ง</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Deposit</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับเงินฝาก</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Loan</skill>
+        <skillLevel>10</skillLevel>
+        <value>ผลิตภัณฑ์สินเชื่อ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเรื่องอื่น ๆ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Complaint</skill>
+        <skillLevel>10</skillLevel>
+        <value>ร้องเรียน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>เสนอแนะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - ชื่นชม</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Complaint</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - ร้องเรียน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - เสนอแนะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - ขอใช้บริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - สอบถามข้อมูล</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_TH_Feedback</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Compliment</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Complaint</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Feedback</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Request</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Inquiry</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>X1558_Email_EN_General</skill>
+        <skillLevel>10</skillLevel>
+        <value>RBG [QR name card Form] - Approval Status / Current Status</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - ชื่นชม</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - ร้องเรียน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - เสนอแนะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - ขอใช้บริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - สอบถามข้อมูล</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_TH</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - ติดตามผลอนุมัติ / ติดตามสถานะ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Compliment</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Complaint</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Feedback</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Request</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Inquiry</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Email_Topic__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>XCommercial_Email_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>WBG [QR name card Form] - Approval Status / Current Status</value>
+    </workSkillRoutingAttributes>
+</WorkSkillRouting>

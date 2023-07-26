@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_User_Resolved__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Resolved_By__c &lt;&gt; null ,CONTAINS(Resolved_By__c,$User.Employee_ID__c ),false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is User Resolved</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

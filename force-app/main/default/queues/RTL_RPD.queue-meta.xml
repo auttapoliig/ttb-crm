@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>RPD</name>
+    <queueMembers>
+        <roles>
+            <role>PD_Manager_Activity</role>
+            <role>PD_RM_Activity</role>
+            <role>PD_TL_Activity</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>RTL_Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

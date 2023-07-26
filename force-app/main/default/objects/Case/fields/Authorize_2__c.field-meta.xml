@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Authorize_2__c</fullName>
+    <externalId>false</externalId>
+    <label>Authorize 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>นายเอกณัติ เกียรตินภาสินธุ์ (CF1)</fullName>
+                <default>false</default>
+                <label>นายเอกณัติ เกียรตินภาสินธุ์ (CF1)</label>
+            </value>
+            <value>
+                <fullName>นางศรินรัตน์ เนตรกิจเจริญ  (CF2)</fullName>
+                <default>false</default>
+                <label>นางศรินรัตน์ เนตรกิจเจริญ  (CF2)</label>
+            </value>
+            <value>
+                <fullName>นางกันทิมา คงทน  (CF3)</fullName>
+                <default>false</default>
+                <label>นางกันทิมา คงทน  (CF3)</label>
+            </value>
+            <value>
+                <fullName>นางอมรรัตน์ โชคท่าพระ  (CF3)</fullName>
+                <default>false</default>
+                <label>นางอมรรัตน์ โชคท่าพระ  (CF3)</label>
+            </value>
+            <value>
+                <fullName>นางสุพัตรา แย้มแสงสังข์ (CF4)</fullName>
+                <default>false</default>
+                <label>นางสุพัตรา แย้มแสงสังข์ (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.ชุติกาญจน์ นาคปฐม (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.ชุติกาญจน์ นาคปฐม (CF4)</label>
+            </value>
+            <value>
+                <fullName>นายนัทธี ถีระพงศ์  (CF3)</fullName>
+                <default>false</default>
+                <label>นายนัทธี ถีระพงศ์  (CF3)</label>
+            </value>
+            <value>
+                <fullName>นางธัญญพัทธ์ ศิริพัฒน์ธนากร (CF4)</fullName>
+                <default>false</default>
+                <label>นางธัญญพัทธ์ ศิริพัฒน์ธนากร (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.เสาวลักษณ์ ถึงศรีปั้น  (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.เสาวลักษณ์ ถึงศรีปั้น  (CF4)</label>
+            </value>
+            <value>
+                <fullName>นายชัชมณินทร์ เจริญวรรณกูล (CF4)</fullName>
+                <default>false</default>
+                <label>นายชัชมณินทร์ เจริญวรรณกูล (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.เพ็ญสิริ ดีภาพร  (CF3)</fullName>
+                <default>false</default>
+                <label>น.ส.เพ็ญสิริ ดีภาพร  (CF3)</label>
+            </value>
+            <value>
+                <fullName>นางกรุณา เหล่าประชัยวัลย์ (CF4)</fullName>
+                <default>false</default>
+                <label>นางกรุณา เหล่าประชัยวัลย์ (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.เบญจมาศ วัฒนะโชติ  (CF3)</fullName>
+                <default>false</default>
+                <label>น.ส.เบญจมาศ วัฒนะโชติ  (CF3)</label>
+            </value>
+            <value>
+                <fullName>น.ส.เพลินจิตร ตันติพิพัฒนา (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.เพลินจิตร ตันติพิพัฒนา (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.ศิริพร สุประพาส (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.ศิริพร สุประพาส (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.กานต์ธีรา แก้วแท้  (CF3)</fullName>
+                <default>false</default>
+                <label>น.ส.กานต์ธีรา แก้วแท้  (CF3)</label>
+            </value>
+            <value>
+                <fullName>น.ส.สุภิดา นาคะเกศ (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.สุภิดา นาคะเกศ (CF4)</label>
+            </value>
+            <value>
+                <fullName>นายเกษมศักดิ์ ภาณุทัตภิญโญ (CF4)</fullName>
+                <default>false</default>
+                <label>นายเกษมศักดิ์ ภาณุทัตภิญโญ (CF4)</label>
+            </value>
+            <value>
+                <fullName>น.ส.จารุวรรณ ขุนประเสริฐ (CF5)</fullName>
+                <default>false</default>
+                <label>น.ส.จารุวรรณ ขุนประเสริฐ (CF5)</label>
+            </value>
+            <value>
+                <fullName>น.ส.รวิวรรณ นันตา (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.รวิวรรณ นันตา (CF4)</label>
+            </value>
+            <value>
+                <fullName>นายธีรเดช วิริยะ  (CF7)</fullName>
+                <default>false</default>
+                <label>นายธีรเดช วิริยะ  (CF7)</label>
+            </value>
+            <value>
+                <fullName>น.ส.อัญชนา รัตนวัจ (CF5)</fullName>
+                <default>false</default>
+                <label>น.ส.อัญชนา รัตนวัจ (CF5)</label>
+            </value>
+            <value>
+                <fullName>น.ส.อมรรัตน์ ภู่ให้ผล (CF4)</fullName>
+                <default>false</default>
+                <label>น.ส.อมรรัตน์ ภู่ให้ผล (CF4)</label>
+            </value>
+            <value>
+                <fullName>นายพิสิษฐ์  ว่องธีรกิจโกศล (CF5)</fullName>
+                <default>false</default>
+                <label>นายพิสิษฐ์  ว่องธีรกิจโกศล (CF5)</label>
+            </value>
+            <value>
+                <fullName>นางจุฑามาศ เกิดก่อแก้ว (CF5)</fullName>
+                <default>false</default>
+                <label>นางจุฑามาศ เกิดก่อแก้ว (CF5)</label>
+            </value>
+            <value>
+                <fullName>น.ส.สาริศา ควรเดชะคุปต์ (CF5)</fullName>
+                <default>false</default>
+                <label>น.ส.สาริศา ควรเดชะคุปต์ (CF5)</label>
+            </value>
+            <value>
+                <fullName>นายศุภชัย หลิมสกุล (CF5)</fullName>
+                <default>false</default>
+                <label>นายศุภชัย หลิมสกุล (CF5)</label>
+            </value>
+            <value>
+                <fullName>น.ส.สุภาพร เจนกุลประสูตร (CF5)</fullName>
+                <default>false</default>
+                <label>น.ส.สุภาพร เจนกุลประสูตร (CF5)</label>
+            </value>
+            <value>
+                <fullName>น.ส.สุธาดา รสน้อย (CF6)</fullName>
+                <default>false</default>
+                <label>น.ส.สุธาดา รสน้อย (CF6)</label>
+            </value>
+            <value>
+                <fullName>น.ส.ณัฐชนันท เจริญผล (CF5)</fullName>
+                <default>false</default>
+                <label>น.ส.ณัฐชนันท เจริญผล (CF5)</label>
+            </value>
+            <value>
+                <fullName>นายชวนัท อรุณไพร (CF5)</fullName>
+                <default>false</default>
+                <label>นายชวนัท อรุณไพร (CF5)</label>
+            </value>
+            <value>
+                <fullName>ETELKA DALLON (CF1)</fullName>
+                <default>false</default>
+                <label>ETELKA DALLON (CF1)</label>
+            </value>
+            <value>
+                <fullName>น.ส.สุวีณา ศรีโสภาจิต (CF1)</fullName>
+                <default>false</default>
+                <label>น.ส.สุวีณา ศรีโสภาจิต (CF1)</label>
+            </value>
+            <value>
+                <fullName>นายสมธร ชุณหวิกสิต (CF2)</fullName>
+                <default>false</default>
+                <label>นายสมธร ชุณหวิกสิต (CF2)</label>
+            </value>
+            <value>
+                <fullName>น.ส.กรมิษฐ์ บุญเกิด (CF3)</fullName>
+                <default>false</default>
+                <label>น.ส.กรมิษฐ์ บุญเกิด (CF3)</label>
+            </value>
+            <value>
+                <fullName>นายธงไชย นิษฐานนท์ (CF3)</fullName>
+                <default>false</default>
+                <label>นายธงไชย นิษฐานนท์ (CF3)</label>
+            </value>
+            <value>
+                <fullName>น.ส.ศศิธร พวงเกษ (CF1)</fullName>
+                <default>false</default>
+                <label>น.ส.ศศิธร พวงเกษ (CF1)</label>
+            </value>
+            <value>
+                <fullName>นายธนากร นาคคงคำ (CF3)</fullName>
+                <default>false</default>
+                <label>นายธนากร นาคคงคำ (CF3)</label>
+            </value>
+            <value>
+                <fullName>น.ส.ประภาพร ธนวิรุฬห์ (CF3)</fullName>
+                <default>false</default>
+                <label>น.ส.ประภาพร ธนวิรุฬห์ (CF3)</label>
+            </value>
+            <value>
+                <fullName>น.ส.วรพิชชา ลาภหลาย(CF6)</fullName>
+                <default>false</default>
+                <label>น.ส.วรพิชชา ลาภหลาย(CF6)</label>
+            </value>
+            <value>
+                <fullName>นางสุมณฑล วิศวชิต(CF2)</fullName>
+                <default>false</default>
+                <label>นางสุมณฑล วิศวชิต(CF2)</label>
+            </value>
+            <value>
+                <fullName>นายภัทรวิศว์ พุฒาพิทักษ์(CF4)</fullName>
+                <default>false</default>
+                <label>นายภัทรวิศว์ พุฒาพิทักษ์(CF4)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

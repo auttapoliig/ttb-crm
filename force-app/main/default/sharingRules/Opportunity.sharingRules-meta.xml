@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Opportunity_with_Referral</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share commercial opportunity which related to refer to commercial referral to retail users</description>
+        <label>Opportunity with Referral</label>
+        <sharedTo>
+            <role>BBG</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Referral_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Refer to Commercial,Closed Refer to Commercial</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_OLAP_Opportunity_for_RMC</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share OLAP Opportunity for RMC</label>
+        <sharedTo>
+            <group>RMC_Queue</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>LeadSource</field>
+            <operation>equals</operation>
+            <value>OLAP</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_OLAP_Opportunity_for_SME_Sales_Management</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share OLAP Opportunity for SME Sales Management</label>
+        <sharedTo>
+            <group>SME_Sales_Management</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>LeadSource</field>
+            <operation>equals</operation>
+            <value>OLAP</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_OLAP_to_CCBO_Sales_Management</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share OLAP to CCBO Sales Management</label>
+        <sharedTo>
+            <role>CCBO_Sales_Management</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>LeadSource</field>
+            <operation>equals</operation>
+            <value>OLAP</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_AL_Admin</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to AL Admin</label>
+        <sharedTo>
+            <role>AL_Center_Sales</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Auto Loan Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_AL_SAL</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to AL SAL</label>
+        <sharedTo>
+            <roleAndSubordinates>Automotive_Lending_Solution_Advisory_LineTH</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Auto Loan Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_CRBO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to CRBO</label>
+        <sharedTo>
+            <role>CRBO</role>
+        </sharedTo>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_CRBO_exclude_BBD_and_PWA</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>SCR0587122 - Change Oppty Data Partition</description>
+        <label>Share to CRBO exclude BBD and PWA</label>
+        <sharedTo>
+            <group>CRBO_exclude_BBD_and_PWA</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_RASL_Sales_Support</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to RASL Sales Support</label>
+        <sharedTo>
+            <roleAndSubordinates>RASL_Sales_Support_TL</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC,Retail Card and RDC Closed,Retail Others Closed,Retail Others,Retail Loans Closed,Retail Loans</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Opty_Client_Service</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Opty_Client_Service</label>
+        <sharedTo>
+            <roleAndSubordinates>Head_of_Client_Service</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CCBO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_CWBO_to_Product_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share CWBO to Product Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Product_Team</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CCBO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_SB_RMC_to_SME_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SB RMC to SME RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SME_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SB_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_SME_RMC_to_SB_RMC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SME RMC to SB RMC</label>
+        <sharedTo>
+            <role>Team_Lead_SB_RMC</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Team_Lead_SME_RMC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Team_Lead_Client_Support</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Team Lead Client Support</label>
+        <sharedTo>
+            <role>Team_Lead_SME_Client_Support</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Team_Lead_SME_Client_Support</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Wealth_Support</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>SCR0590879 : Add Wealth Support list to receive cases</description>
+        <label>Wealth Support</label>
+        <sharedTo>
+            <role>Pool_WA_SS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>WM_TH</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

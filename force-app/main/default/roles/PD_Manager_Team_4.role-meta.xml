@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>PD Manager Team 4</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>PD Manager Team 4</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>PD_TL_Team_4</parentRole>
+</Role>

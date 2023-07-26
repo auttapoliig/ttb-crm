@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AL_Contract_and_Credit_File_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>AL Contract and Credit File</label>
+    <queue>AL_Contract_and_Credit_File</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

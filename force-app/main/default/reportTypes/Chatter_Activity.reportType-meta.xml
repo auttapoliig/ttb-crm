@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>ChatterActivity</baseObject>
+    <category>other</category>
+    <deployed>false</deployed>
+    <description>For create report to present to COO and CEO</description>
+    <label>Chatter Activity</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CommentCount</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CommentReceivedCount</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>InfluenceRawRank</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LikeReceivedCount</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Parent</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PostCount</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Parent.Name</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Parent.Segment__c</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Parent.Reporting_Segment__c</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Parent.Employee_ID__c</field>
+            <table>ChatterActivity</table>
+        </columns>
+        <masterLabel>Chatter Activity</masterLabel>
+    </sections>
+</ReportType>

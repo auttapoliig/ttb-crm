@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>OSC05_List_Method not allow [ETE]</label>
+    <protected>false</protected>
+    <values>
+        <field>CallOut_Name__c</field>
+        <value xsi:type="xsd:string">callout:OSC05_List</value>
+    </values>
+    <values>
+        <field>Screen_Message__c</field>
+        <value xsi:type="xsd:string">Service not available (OSC05|405|Method not Allow)</value>
+    </values>
+    <values>
+        <field>Service_Name__c</field>
+        <value xsi:type="xsd:string">BancassuranceAccount - OSC05 High Level</value>
+    </values>
+    <values>
+        <field>StatusCode__c</field>
+        <value xsi:type="xsd:string">405</value>
+    </values>
+    <values>
+        <field>StatusDesc__c</field>
+        <value xsi:type="xsd:string">Method not Allow</value>
+    </values>
+    <values>
+        <field>isAPI__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

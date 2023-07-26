@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>BO - Client Services and Investigation</name>
+    <queueMembers>
+        <roles>
+            <role>ATM_Reconciliation_and_Control_TL</role>
+            <role>ATM_Reconciliation_and_Control_User</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>
