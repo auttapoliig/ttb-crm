@@ -154,11 +154,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>E_Client_Suitability__c.FormList</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>E_Client_Suitability__c.New_E_Client_Suitability</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
@@ -167,6 +162,11 @@
             <actionName>E_Client_Suitability__c.Cancel_E_Client_Suitability</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>E_Client_Suitability__c.FormList</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
