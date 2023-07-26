@@ -63,6 +63,7 @@
         <members>iigproduct_2__ChatSession__c.Authentication__c</members>
         <members>iigproduct_2__ChatSession__c.First_Message_DateTime__c</members>
         <members>iigproduct_2__ChatSession__c.isTracking__c</members>
+        <members>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</members>
         <members>EmailMessage.Over_24_hrs__c</members>
         <members>EmailMessage.within_24_hrs__c</members>
         <members>iigproduct_2__Survey__c.IsDetractors__c</members>
