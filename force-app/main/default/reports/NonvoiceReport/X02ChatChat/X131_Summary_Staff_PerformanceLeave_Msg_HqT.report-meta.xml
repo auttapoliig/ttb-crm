@@ -100,7 +100,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Bot Call Centre Chat Queue,Chat - OneApp</value>
+            <value>Bot Call Centre Chat Queue,Chat - OneApp,Chat – TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -128,7 +128,7 @@
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_LASTMONTH</interval>

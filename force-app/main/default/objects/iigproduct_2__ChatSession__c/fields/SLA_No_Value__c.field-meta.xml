@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLA_No_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(ISBLANK(First_Message_DateTime__c),!ISBLANK(iigproduct_2__Case__r.ClosedDate)), TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Customer Message No Value</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

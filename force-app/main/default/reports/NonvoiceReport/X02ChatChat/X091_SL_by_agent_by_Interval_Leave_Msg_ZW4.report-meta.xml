@@ -94,7 +94,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Bot Call Centre Chat Queue</value>
+            <value>Bot Call Centre Chat Queue,Chat - TOUCH,Chat – OneApp</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
