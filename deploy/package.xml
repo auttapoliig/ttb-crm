@@ -166,5 +166,75 @@
         <members>Check_validate_service_type_matrix_code</members>
         <name>ValidationRule</name>
     </types>
+    <types>
+        <members>Production</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>WebChat</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
+        <members>iigproduct_2__Chat_Topic__mdt.Advisory</members>
+        <members>iigproduct_2__Chat_Topic__mdt.Covid_19</members>
+        <members>iigproduct_2__Chat_Topic__mdt.Deposit</members>
+        <members>iigproduct_2__Chat_Topic__mdt.Feedback</members>
+        <members>iigproduct_2__Chat_Topic__mdt.Lending</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>ChatSession1</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>TMB Retail Contact Center</members>
+        <members>TMB Retail Contact Center Business Support</members>
+        <members>TMB Retail Contact Center Customer Care</members>
+        <members>TMB Retail Contact Center Fulfillment Outbound</members>
+        <members>TMB Retail Contact Center Inbound Multi</members>
+        <members>TMB Retail Contact Center Inbound Multi Supervisor</members>
+        <members>TMB Retail Contact Center Inbound NonVoice</members>
+        <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
+        <members>TMB Retail Contact Center Outbound</members>
+        <members>TMB Retail Contact Center Report Specialist</members>
+        <members>TMB Retail Contact Center Training</members>
+        <members>TMB CRM Admin Profile</members>
+        <members>TMB System Administrator</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Setup_Social_Chat</members>
+        <members>ChatSession</members>
+        <members>Chat Transfer Log</members>
+        <members>Survey</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Chat</members>
+        <name>ServiceChannel</name>
+    </types>
+    <types>
+        <members>Available_Email_Chat</members>
+        <name>ServicePresenceStatus</name>
+    </types>
+    <types>
+        <members>Assign_ttb_Web_to_Agent</members>
+        <members>Assign_FB_chat_to_Agent</members>
+        <members>Assign_Line_to_Agent</members>
+        <members>Assign_TOUCH_to_Agent</members>
+        <name>ServicePresenceStatus</name>
+    </types>
+    <types>
+        <members>MB_Chat_Complaint_TH_EN</members>
+        <members>MB_Chat_General_TH_EN</members>
+        <members>MB_Chat_HP_TH_EN</members>
+        <members>MB_Chat_MF_TH_EN</members>
+        <members>MB_Chat_Digital_TH_EN</members>
+        <name>Skill</name>
+    </types>
+    <types>
+        <members>ChatSession</members>
+        <name>WorkSkillRouting</name>
+    </types>
     <version>58.0</version>
 </Package>
