@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsPromotors__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( NPS_Group__c = &apos;Promotors&apos;, true, false)</formula>
+    <label>IsPromotors</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
