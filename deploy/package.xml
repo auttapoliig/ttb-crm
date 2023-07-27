@@ -64,6 +64,7 @@
         <members>iigproduct_2__ChatSession__c.First_Message_DateTime__c</members>
         <members>iigproduct_2__ChatSession__c.isTracking__c</members>
         <members>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</members>
+        <members>iigproduct_2__ChatSession__c.Within_30_Min__c</members>
         <members>EmailMessage.Over_24_hrs__c</members>
         <members>EmailMessage.within_24_hrs__c</members>
         <members>iigproduct_2__Survey__c.IsDetractors__c</members>
@@ -72,6 +73,12 @@
         <members>iigproduct_2__Survey__c.Survey_Submitted__c</members>
         <members>iigproduct_2__SocialAccount__c.iigproduct_2__Social_Type__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>Chat_Line</members>
+        <members>Chat_TOUCH</members>
+        <members>Chat_Facebook</members>
+        <name>Queue</name>
     </types>
     <types>
         <members>SLA_Config__mdt</members>
