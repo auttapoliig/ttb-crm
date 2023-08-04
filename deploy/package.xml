@@ -18,12 +18,15 @@
         <members>KYCReportController</members>
         <members>KYCReportControllerTest</members>
         <members>MyCustomerControllerClass</members>
+        <members>MyCustomerControllerClassTest</members>
         <members>PDPAReportController</members>
         <members>PDPAReportControllerTest</members>
         <members>PerformanceUtils</members>
+        <members>PerformanceUtilsTest</members>
         <members>RiskReportController</members>
         <members>RiskReportControllerTest</members>
         <members>RM_Cockpit_My_Customer_CreateTask</members>
+        <members>RM_Cockpit_My_Customer_CreateTaskTest</members>
         <members>TransactionMovementReport</members>
         <members>TransactionMovementReportTest</members>
         <name>ApexClass</name>
