@@ -8,12 +8,10 @@ public with sharing class PowerBiUtils {
             Blob tmbBlob = Blob.valueOf(strParam);
             Blob hash = Crypto.generateDigest(ALGORITHYM, tmbBlob);
             encryptedString = EncodingUtil.convertToHex(hash);
-            System.debug('hash :'+ encryptedString);
             return encryptedString;
         } catch (Exception e) {
             return 'error';
         }
-           
     }
 
     @AuraEnabled(cacheable=true)
@@ -24,7 +22,6 @@ public with sharing class PowerBiUtils {
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
-      
     }
 
     @AuraEnabled(cacheable=true)
@@ -41,10 +38,9 @@ public with sharing class PowerBiUtils {
     //Copy function from RTL_ProductHoldingSummaryController
     @AuraEnabled(cacheable=true)
     public static Map<String, Boolean> getFieldVisibilityByPage(String recordId, String pageName){
-        User currentUser = [SELECT Id, Name, RTL_Branch__c, RTL_Branch_Code__c, ProfileId, UserRoleId FROM User WHERE Id=: UserInfo.getUserId() LIMIT 1];
-        Profile p = [SELECT Name FROM Profile WHERE Id =: currentUser.ProfileId];
+        Profile currentUserProfile = [SELECT Name FROM Profile WHERE Id =: UserInfo.getProfileId()];
         String dataHidden = Label.Data_Condition_Hidden_Text;
-        String profileName = p.Name;
+        String profileName = currentUserProfile.Name;
         Boolean isAuth = false;
         List<Security_Matrix__mdt> autoLoan = [SELECT Field__c, Section__c FROM Security_Matrix__mdt WHERE Page__c LIKE :pageName];
         Map<String, String> mapFieldSection = new Map<String, String>();
@@ -66,7 +62,6 @@ public with sharing class PowerBiUtils {
             Boolean isVisible = false;
             String section = mapFieldSection.get(i);
             String accessType = sectionAccessMap.get(section);
-
             if(accessType == 'All'){
                 isVisible = true;
                 isAuth = true;

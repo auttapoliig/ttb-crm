@@ -2,6 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>PowerBiListComponentExtension</members>
+        <members>PowerBiListComponentExtension_Test</members>
         <members>PowerBiReportExtension</members>
         <members>PowerBiUtils</members>
         <name>ApexClass</name>
