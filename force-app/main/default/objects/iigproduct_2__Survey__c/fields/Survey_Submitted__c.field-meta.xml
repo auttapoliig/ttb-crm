@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Survey_Submitted__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR( NOT(ISNULL(iigproduct_2__OSAT_Score__c )),  
+        NOT(ISNULL( iigproduct_2__NPS_Score__c )) ,
+        NOT(ISBLANK( iigproduct_2__Verbatim__c )) 
+  ) 
+, true
+, false)</formula>
+    <label>Survey Submitted</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
