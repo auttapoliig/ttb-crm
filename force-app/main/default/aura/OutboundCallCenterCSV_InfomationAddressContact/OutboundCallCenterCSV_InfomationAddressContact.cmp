@@ -1,0 +1,222 @@
+<aura:component controller="RetailCSVLightningUtil" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="fields" type="Object" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="isRerender" type="Boolean" default="false" /> 
+    <!-- Water Mark -->
+    <aura:attribute name="waterMarkImage" type="String" />
+    <aura:handler event="c:RetailCSV_Event" action="{!c.handleRefreshfield}" />
+
+    <!-- ======================================================================== -->
+
+    <aura:if isTrue="{! v.isRerender }">
+        <lightning:spinner alternativeText="Loading" size="medium" variant="brand" />
+    </aura:if>
+
+    <!-- Water Mark -->
+    <div class="slds-no-print" style="{! 'background-image: ' + v.waterMarkImage + ';width:100%;height:100%;'}">
+        <lightning:layout verticalAlign="stretch" multipleRows="true">
+
+            <!-- RTL_Primary_Address__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Primary_Address__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Primary_Address__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Primary_Address__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Primary_Address__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Primary_Address__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Primary_Address__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Primary_Address__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Registered_Address__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Registered_Address__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Registered_Address__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Registered_Address__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Registered_Address__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Registered_Address__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Registered_Address__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Registered_Address__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Office_Address__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly' + v.fields.RTL_Office_Address__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Office_Address__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Office_Address__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Office_Address__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Office_Address__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Office_Address__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Office_Address__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!--  -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small hideMinWidth">
+            </lightning:layoutItem>
+
+            <!-- RTL_Alternative_Number__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Alternative_Number__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Alternative_Number__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Alternative_Number__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Alternative_Number__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Alternative_Number__c.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedPhone value="{!v.fields.RTL_Alternative_Number__c.value}" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.fields.RTL_Alternative_Number__c.value}" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- C_Home_phone_PE__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly '+ v.fields.C_Home_phone_PE__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.C_Home_phone_PE__c.label}
+                            <aura:if isTrue="{! v.fields.C_Home_phone_PE__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.C_Home_phone_PE__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.C_Home_phone_PE__c.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedPhone value="{!v.fields.C_Home_phone_PE__c.value}" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.fields.C_Home_phone_PE__c.value}" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Office_Phone_Number__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Office_Phone_Number__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Office_Phone_Number__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Office_Phone_Number__c.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Office_Phone_Number__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Office_Phone_Number__c.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedPhone value="{!v.fields.RTL_Office_Phone_Number__c.value}" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.fields.RTL_Office_Phone_Number__c.value}" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Fax -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly' + v.fields.Fax.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.Fax.label}
+                            <aura:if isTrue="{! v.fields.Fax.inlineHelpText != ''}">
+                                <lightning:helptext class="helptext" content="{! v.fields.Fax.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.Fax.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedPhone value="{!v.fields.Fax.value}" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.fields.Fax.value}" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+</aura:component>

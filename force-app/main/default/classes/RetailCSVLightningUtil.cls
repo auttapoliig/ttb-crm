@@ -56,6 +56,12 @@ public with sharing class RetailCSVLightningUtil {
         return [SELECT Id, Name, Profile.Name FROM User WHERE Id = :userId].Profile.Name;
     }
 
+    @AuraEnabled(continuation=true)
+    public static Object getCVSAnalyticsDataByAccID(String accId)
+    {    
+        Account acc = [SELECT Id, TMB_Customer_ID_PE__c, Name FROM Account WHERE Id = :accId];
+        return RTL_CSVLightningUtil.getCVSAnalyticsData(acc.TMB_Customer_ID_PE__c);
+    }
 
     @AuraEnabled(continuation=true)
     public static Object getCVSAnalyticsData(String rmId)
@@ -354,6 +360,10 @@ public with sharing class RetailCSVLightningUtil {
         }catch(Exception e){
             throw new AuraHandledException(e.getMessage());
         }
+    }
+    @AuraEnabled
+    public static String getMessengerCoverArea(String recordId){
+        return RTL_CSVLightningUtil.getMessengerCoverArea(recordId);
     }
 
 }

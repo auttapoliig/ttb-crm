@@ -140,6 +140,26 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ttb_subsidiary</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ttb subsidiary</label>
+        <sharedTo>
+            <roleAndSubordinates>Subsidiary</roleAndSubordinates>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
     <sharingOwnerRules>
         <fullName>Opty_Client_Service</fullName>
         <accessLevel>Read</accessLevel>
@@ -201,7 +221,7 @@
         <description>SCR0590879 : Add Wealth Support list to receive cases</description>
         <label>Wealth Support</label>
         <sharedTo>
-            <role>Pool_WA_SS</role>
+            <role>Pool_WA_TL</role>
         </sharedTo>
         <sharedFrom>
             <roleAndSubordinates>WM_TH</roleAndSubordinates>

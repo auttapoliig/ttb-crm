@@ -94,6 +94,33 @@ public class RetailCSVLightningUtil_test {
        	Test.stopTest();
     }
 
+    @isTest static void test_ServiceByAccId () {
+        List<Account> accList = RTL_TestUtility.createAccounts(1, true);
+        Test.startTest();
+            // Set mock callout class
+            Test.setMock(HttpCalloutMock.class, new SmartBDM_MockHttpResponseToken());
+            String tokenKeyEnliteGateWay = SmartBDM_Utility.tokenKeyEnliteGateWay;
+
+            Continuation conti = (Continuation)RetailCSVLightningUtil.getCVSAnalyticsDataByAccID(accList.get(0).Id);
+            Map<String, HttpRequest> requests = conti.getRequests();
+            // Set the fake response for the continuation
+            String requestLabel = requests.keyset().iterator().next();
+            
+            // respone is success
+            HttpResponse response = new HttpResponse();
+            response.setBody('{ "GetCVSAnalyticsDataResponse": { "Result": { "Status": "SUCCESS", "MIBStatus": "YES/YES", "UsagePercentage": "0:37:5:18:21:18", "suitability": "", "currentPrivilege2Desc": "- ดอกเบี้ยพิเศษ NO FIXED", "touchStatus": "YES", "ibStatus": "YES" } }, "Status": { "StatusCode": "200", "StatusDesc": "Success" } }');
+            response.setStatusCode(200);
+            Test.setContinuationResponse(requestLabel, response);
+            // Invoke callback method
+            RetailCSVLightningUtil.callbackCVSAnalyticsData(new List<String>{requestLabel}, new Map<String, Object>{
+                'RMID' => '001100000000000000000000051187',
+                'RequestBody' => '{ "GetCVSAnalyticsDataRequest": { "RMID": "001100000000000000000000051187" } }',
+                'StartTime' => (Datetime)Datetime.now(),
+                'Account' => new Account()
+            });
+       	Test.stopTest();
+    }
+
     @isTest static void test_SaveAssignBRC2Mainbank () {
 
         List<Account> accList = RTL_TestUtility.createAccounts(1, true);
@@ -245,6 +272,12 @@ public class RetailCSVLightningUtil_test {
         Test.stopTest();
     }
 
+    @isTest static void test_getMessengerCoverArea(){
+        List<Account> accList = RTL_TestUtility.createAccounts(1, true);
+        Test.startTest();
+            RetailCSVLightningUtil.getMessengerCoverArea(accList.get(0).Id);
+        Test.stopTest();
+    }
 
     //@isTest
     //static void testGetDescribeFieldResultAndValue(){
