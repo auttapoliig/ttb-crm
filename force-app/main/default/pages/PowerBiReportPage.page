@@ -1,0 +1,22 @@
+<apex:page standardController="Account" applyBodyTag="false" showHeader="true" standardstylesheets="true" extensions="PowerBiReportExtension"
+    readonly="true" >
+
+    <head>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>{!titleReportName}</title>
+
+        <apex:includescript value="{!URLFOR($Resource.TMBjquery, '/TMBassets/jquery/jquery-1.11.2.min.js')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrapsf1, 'dist/css/bootstrap-namespaced.css')}" />
+        <apex:includeScript value="/support/console/49.0/integration.js" />
+
+        <script type="text/javascript">
+        sforce.console.setTabTitle('{!titleReportName}'); //Tab name 
+           
+        </script>
+    </head>
+
+    <iframe height="1500px" id="reportBi" name="reportBi" src="{!embedURL}" width="1500px" referrerPolicy='referrer' sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
+        frameborder='0' style="width: 100%; height: 100%; position: absolute; overflow: hidden;"></iframe>
+</apex:page>

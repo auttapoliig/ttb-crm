@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Wealth 9-Step</label>
+    <protected>false</protected>
+    <values>
+        <field>ReportId__c</field>
+        <value xsi:type="xsd:string">RP_001</value>
+    </values>
+    <values>
+        <field>ReportName__c</field>
+        <value xsi:type="xsd:string">Wealth 9-Step</value>
+    </values>
+    <values>
+        <field>Report_Type__c</field>
+        <value xsi:type="xsd:string">CSV</value>
+    </values>
+    <values>
+        <field>URL_Report__c</field>
+        <value xsi:type="xsd:string">https://app.powerbi.com/reportEmbed?reportId=3cdd4a72-b730-4159-992f-b63cb390737c&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=false&amp;pageName=ReportSectionaff4ada000cc3171148b&amp;filter=AccPlan/param_1
+eq</value>
+    </values>
+</CustomMetadata>
