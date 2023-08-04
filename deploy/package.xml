@@ -1,52 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>customerHighlightPanel</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>CXMSurvey_For_CSV</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>Case.Authorize_1__c</members>
-        <members>Case.Authorize_2__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
+        <members>CampaignMemberToALBatch</members>
+        <members>CampaignMemberToALBatchTest</members>
+        <members>CampaignMemberToALSchedule</members>
+        <members>RTL_AL_CampaignMemberToAL</members>
+        <members>RTL_AL_CampaignMemberToALTest</members>
+        <members>RTL_AL_SubmitHPAPCtrl</members>
         <members>RTL_AL_WsCreateLead</members>
-        <members>RTL_LeadTriggerHandler</members>
-        <members>RTL_LeadTriggerHandlerTest</members>
+        <members>RTL_AL_WsCreateLeadTest</members>
+        <members>RTL_AL_WsOpportunity</members>
+        <members>RTL_AL_WsOpportunityTest</members>
+        <members>RTL_AL_WsOpportunityTestExtended</members>
+        <members>RTL_CampaignMemberExtension</members>
+        <members>RTL_CampaignMemberTriggerHandler</members>
+        <members>RTL_CampaignMemberExtensionTest</members>
+        <members>RTL_CampaignMemberTriggerHandlerTest</members>
+        <members>RTL_Distribute_CM_Batch</members>
+        <members>RTL_Distribute_CM_BatchTest</members>
+        <members>RTL_LeadDistribution</members>
+        <memebrs>RTL_LeadDistributionTest</memebrs>
+        <memebrs>RTL_LeadTriggerHandler</memebrs>
+        <memebrs>RTL_LeadTriggerHandlerTest</memebrs>
+        <memebrs>RTL_OpportunityTriggerHandler</memebrs>
+        <memebrs>RTL_OpportunityTriggerHandlerTest</memebrs>
+        <memebrs>RTL_ReferralTriggerHandler</memebrs>
+        <memebrs>RTL_ReferralTriggerHandlerTest</memebrs>
+        <memebrs>RTL_SubmitReferralToALAPPCtrl</memebrs>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>Campaign.RTL_Campaign_Approval_Exclusive</members>
-        <name>ApprovalProcess</name>
+        <members>App_Config.Referral_Lead_Source_Default</members>
+        <members>App_Config.Referral_LGS_Partner_Default</members>
+        <members>App_Config.Campaign_Member_LGS_Partner_Default</members>
+        <members>App_Config.Opportunity_LGS_Partner_Default</members>
+        <members>Distribute_Mapping.HPAP</members>
+        <name>CustomMetadata</name>
     </types>
     <types>
-        <members>Case</members>
-        <members>Opportunity</members>
-        <name>SharingRules</name>
+        <members>CampaignMember_AutoLoanCalInfo</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>KYC_Customer_Data_Management</members>
+        <members>CampaignMember.Car_Reference_No__c</members>
+        <members>CampaignMember.Corebank_Approved_Date_Time_1__c</members>
+        <members>CampaignMember.Corebank_Branch_Code_1__c</members>
+        <members>CampaignMember.Corebank_Branch_Name_1__c</members>
+        <members>CampaignMember.Corebank_Sales_Manager_Head_1__c</members>
+        <members>CampaignMember.Corebank_Sales_Manager_Head_Id_1__c</members>
+        <members>CampaignMember.Lead_Score__c</members>
+        <members>CampaignMember.Lead_Score_Level__c</members>
+        <members>CampaignMember.LGS_Assignment_Code__c</members>
+        <members>CampaignMember.LGS_BrandCode__c</members>
+        <members>CampaignMember.LGS_BrandShowroomCode__c</members>
+        <members>CampaignMember.LGS_CAMPAIGN_END_DATE__c</members>
+        <members>CampaignMember.LGS_CAMPAIGN_START_DATE__c</members>
+        <members>CampaignMember.LGS_Child_Campaign_ID__c</members>
+        <members>CampaignMember.LGS_File_Upload__c</members>
+        <members>CampaignMember.LGS_LinkInfo__c</members>
+        <members>CampaignMember.LGS_PartnerCode__c</members>
+        <members>CampaignMember.LGS_VIN_No__c</members>
+        <members>CampaignMember.Partner_Lead_ID__c</members>
+        <members>CampaignMember.RTL_AL_CarBooked__c</members>
+        <members>CampaignMember.RTL_Dealer_Code_1__c</members>
+        <members>CampaignMember.RTL_Dealer_Name_1__c</members>
+        <members>CampaignMember.RTL_Partner_Branch_Code__c</members>
+        <members>CampaignMember.RTL_Partner_Employee_Code__c</members>
+        <members>CampaignMember.RTL_Product_Campaign_Code_1__c</members>
+        <members>CampaignMember.RTL_Product_Campaign_Name_1__c</members>
+        <members>CampaignMember.RTL_Refer_Date_1__c</members>
+        <members>CampaignMember.RTL_Request_Hub_Code_1__c</members>
+        <members>CampaignMember.RTL_Request_Hub_Name_1__c</members>
+        <members>CampaignMember.RTL_Stage_Name_Date_Time_1__c</members>
+        <members>CampaignMember.RTL_Status_Approve_1__c</members>
+        <members>CampaignMember.RTL_Submit_Date_1__c</members>
+        <members>CampaignMember.Scoring_Condition_ID__c</members>
+        <members>Cross_Sell_Product__c.Corebank_Branch_Code__c</members>
+        <members>Cross_Sell_Product__c.Corebank_Branch_Name__c</members>
+        <members>Cross_Sell_Product__c.Corebank_Sales_Manager_Head__c</members>
+        <members>Cross_Sell_Product__c.Corebank_Sales_Manager_Head_Id__c</members>
+        <members>Cross_Sell_Product__c.RTL_Dealer_Code__c</members>
+        <members>Cross_Sell_Product__c.RTL_Dealer_Name__c</members>
+        <members>Cross_Sell_Product__c.RTL_Product_Campaign_Code__c</members>
+        <members>Cross_Sell_Product__c.RTL_Product_Campaign_Name__c</members>
+        <members>Cross_Sell_Product__c.RTL_Refer_Date__c</members>
+        <members>Cross_Sell_Product__c.RTL_Stage_Name_Date_Time__c</members>
+        <members>Distribute_Mapping__mdt.Integration_System_Name__c</members>
+        <members>Distribute_Mapping__mdt.Integration_Type__c</members>
+        <members>Distribute_Mapping__mdt.Name_Credentials__c</members>
+        <members>Lead.Car_Reference_No__c</members>
+        <members>Lead.Lead_Score__c</members>
+        <members>Lead.Lead_Score_Level__c</members>
+        <members>Lead.LGS_Assignment_Code__c</members>
+        <members>Lead.LGS_BrandCode__c</members>
+        <members>Lead.LGS_BrandShowroomCode__c</members>
+        <members>Lead.LGS_CAMPAIGN_END_DATE__c</members>
+        <members>Lead.LGS_CAMPAIGN_START_DATE__c</members>
+        <members>Lead.LGS_Child_Campaign_ID__c</members>
+        <members>Lead.LGS_File_Upload__c</members>
+        <members>Lead.LGS_LinkInfo__c</members>
+        <members>Lead.LGS_PartnerCode__c</members>
+        <members>Lead.LGS_VIN_No__c</members>
+        <members>Lead.Partner_Lead_ID__c</members>
+        <members>Lead.RTL_AL_CarBooked__c</members>
+        <members>Lead.RTL_AL_Showroom__c</members>
+        <members>Lead.RTL_AL_TentName__c</members>
+        <members>Lead.RTL_Partner_Branch_Code__c</members>
+        <members>Lead.RTL_Partner_Employee_Code__c</members>
+        <members>Lead.Scoring_Condition_ID__c</members>
+        <members>Opportunity.Corebank_Approved_Date_Time__c</members>
+        <members>Opportunity.Corebank_Branch_Code__c</members>
+        <members>Opportunity.Corebank_Branch_Name__c</members>
+        <members>Opportunity.Corebank_Sales_Manager_Head__c</members>
+        <members>Opportunity.Corebank_Sales_Manager_Head_Id__c</members>
+        <members>Opportunity.RTL_Contact_Status__c</members>
+        <members>Opportunity.RTL_Dealer_Code__c</members>
+        <members>Opportunity.RTL_Dealer_Name__c</members>
+        <members>Opportunity.RTL_Product_Campaign_Code__c</members>
+        <members>Opportunity.RTL_Product_Campaign_Name__c</members>
+        <members>Opportunity.RTL_Refer_Date__c</members>
+        <members>Opportunity.RTL_Request_Hub_Code__c</members>
+        <members>Opportunity.RTL_Request_Hub_Name__c</members>
+        <members>Opportunity.RTL_Stage_Name_Date_Time__c</members>
+        <members>Opportunity.RTL_Status_Approve__c</members>
+        <members>Opportunity.RTL_Ws_Reason__c</members>
+        <members>Opportunity.Submit_Date__c</members>
+        <members>RTL_Lead_Assignment_Rule__c.RTL_Integration_Type__c</members>
+        <members>RTL_Referral__c.Corebank_Branch_Code__c</members>
+        <members>RTL_Referral__c.Corebank_Branch_Name__c</members>
+        <members>RTL_Referral__c.Corebank_Sales_Manager_Head__c</members>
+        <members>RTL_Referral__c.Corebank_Sales_Manager_Head_Id__c</members>
+        <members>RTL_Referral__c.RTL_Contact_Status__c</members>
+        <members>RTL_Referral__c.RTL_Dealer_Code__c</members>
+        <members>RTL_Referral__c.RTL_Dealer_Name__c</members>
+        <members>RTL_Referral__c.RTL_Product_Campaign_Code__c</members>
+        <members>RTL_Referral__c.RTL_Product_Campaign_Name__c</members>
+        <members>RTL_Referral__c.RTL_Refer_Date__c</members>
+        <members>RTL_Referral__c.RTL_Stage_Name_Date_Time__c</members>
+        <members>RTL_Referral__c.RTL_Ws_Reason__c</members>
+        <members>RTL_Referral__c.RTL_Ws_Stage__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Distribute_Mapping__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>AL_Marketing_Queue</members>
+        <members>RTL_ALA</members>
         <name>Queue</name>
     </types>
     <types>
-        <members>SE_ZM_SME5_Phrae</members>
-        <members>SE_RMA_SME5_Phrae</members>
-        <members>SE_RM_SME5_Phrae</members>
-        <members>SE_ZM_SME7_Phuket</members>
-        <members>SE_RMA_SME7_Phuket</members>
-        <members>SE_RM_SME7_Phuket</members>
+        <members>Customer_Incident_Control_Center_TL</members>
+        <members>Customer_Incident_Control_Center_User</members>
         <name>Role</name>
     </types>
     <types>
-        <members>CXM_Survey_Condition.Condition1</members>
-        <members>CXM_Survey_Condition.Condition2</members>
-        <members>CXM_Survey_Condition.Condition3</members>
-        <members>CXM_Survey_Condition.Condition4</members>
-        <name>CustomMetadata</name>
+        <members>RTL_CampaignMemberEdit</members>
+        <members>RTL_ViewCampaignMember</members>
+        <name>ApexPage</name>
     </types>
     <version>58.0</version>
 </Package>
