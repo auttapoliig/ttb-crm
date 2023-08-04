@@ -29,5 +29,18 @@
         <members>Opportunity</members>
         <name>SharingRules</name>
     </types>
+    <types>
+        <members>Account.EditCCOutbound</members>
+        <name>WebLink</name>
+    </types>
+    <types>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Report_Specialist</members>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Sales</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>th</members>
+        <name>Translations</name>
+    </types>
     <version>58.0</version>
 </Package>
