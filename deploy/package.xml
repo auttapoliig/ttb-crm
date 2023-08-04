@@ -184,5 +184,12 @@
         <members>th</members>
         <name>Translations</name>
     </types>
+    <types>
+        <members>App_Config.RMC_My_Customer_Task_Activity_Days</members>
+        <members>App_Config.RMC_My_Customer_Task_Priority</members>
+        <members>App_Config.RMC_My_Customer_Task_Status</members>
+        <members>App_Config.RMC_My_Customer_Task_Subject</members>
+        <name>CustomMetadata</name>
+    </types>
     <version>58.0</version>
 </Package>
