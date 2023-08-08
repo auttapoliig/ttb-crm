@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>URL_Report__c</fullName>
+    <description>Example:
+https://app.powerbi.com/reportEmbed?reportId=9ffdc28e-d080-4a09-8e35-cb145cd7e212&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=false&amp;pageName=ReportSection396a3b0a4a96e811c68c&amp;filter=dim_cust_profiles/param_1 eq{!encryptedString}</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
     <label>URL Report</label>

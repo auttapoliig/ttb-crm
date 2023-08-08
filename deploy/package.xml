@@ -19,7 +19,7 @@
     <types>
         <members>RTL_Power_Bi_subject</members>
         <members>RTL_Power_Bi_Error_No_Access</members>
-        <name>CustomLabels</name>
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>powerBiReportProductHolding</members>
@@ -32,7 +32,7 @@
     <types>
         <members>Power_Bi_Report.MF_Dashboard_HD</members>
         <members>Power_Bi_Report.MF_Dashboard</members>
-        <members>Power_Bi_Report.Wealth_9_Step</members>
+        <members>Power_Bi_Report.AC_Plan_Customer_Card</members>
         <name>CustomMetadata</name>
     </types>
     <version>58.0</version>

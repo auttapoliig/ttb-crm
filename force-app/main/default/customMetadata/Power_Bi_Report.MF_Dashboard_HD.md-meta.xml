@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>ReportId__c</field>
-        <value xsi:type="xsd:string">RP_HD</value>
+        <value xsi:type="xsd:string">RP_HD1</value>
     </values>
     <values>
         <field>ReportName__c</field>
@@ -16,6 +16,6 @@
     </values>
     <values>
         <field>URL_Report__c</field>
-        <value xsi:type="xsd:string">https://app.powerbi.com/reportEmbed?reportId=9ffdc28e-d080-4a09-8e35-cb145cd7e212&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=false&amp;pageName=ReportSection396a3b0a4a96e811c68c&amp;filter=dim_cust_profiles/param_1 eq</value>
+        <value xsi:type="xsd:string">https://app.powerbi.com/reportEmbed?reportId=9ffdc28e-d080-4a09-8e35-cb145cd7e212&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=false&amp;pageName=ReportSection396a3b0a4a96e811c68c&amp;filter=dim_cust_profiles/param_1%20eq%20</value>
     </values>
 </CustomMetadata>

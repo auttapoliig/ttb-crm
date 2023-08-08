@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ReportId__c</fullName>
     <caseSensitive>false</caseSensitive>
-    <description>example:
+    <description>example: 
 RP_001</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
