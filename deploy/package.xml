@@ -23,14 +23,14 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_contact</members>
-        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_contact_AL</members>
-        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_lead</members>
-        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_lead_AL</members>
-		<members>Batch_Drop_Lead__mdt.extract_cust_request_web_lead</members>
-        <members>Batch_Drop_Lead_Mapping__mdt.rule_credit</members>
-        <members>Batch_Drop_Lead_Mapping__mdt.rule_rdc</members>
-		<members>Batch_Drop_Lead_Mapping__mdt.rule_al</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_contact</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_contact_AL</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_lead</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_lead_AL</members>
+		<members>Batch_Drop_Lead.extract_cust_request_web_lead</members>
+        <members>Batch_Drop_Lead_Mapping.rule_credit</members>
+        <members>Batch_Drop_Lead_Mapping.rule_rdc</members>
+		<members>Batch_Drop_Lead_Mapping.rule_al</members>
         <name>CustomMetadata</name>    
     </types>
 	<types>
