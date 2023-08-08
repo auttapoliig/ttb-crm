@@ -37,5 +37,26 @@
         <members>Lead_Assigment_Email/Drop_Lead_Notify_Lead_Owner</members>
         <name>EmailTemplate</name>
     </types>
+    <types>
+        <members>Customer_Incident_Control_Center</members>
+        <members>RTL_WTH_WSS</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>Customer_Incident_Control_Center_TL</members>
+        <members>Customer_Incident_Control_Center_User</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>Customer_Incident_Control_Center</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
+        <name>Profile</name>
+    </types>
     <version>58.0</version>
 </Package>
