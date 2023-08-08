@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iigproduct_2__Message_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Message Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Greeting</fullName>
+                <default>true</default>
+                <label>Greeting</label>
+            </value>
+            <value>
+                <fullName>Inform</fullName>
+                <default>false</default>
+                <label>Inform</label>
+            </value>
+            <value>
+                <fullName>Warning</fullName>
+                <default>false</default>
+                <label>Warning</label>
+            </value>
+            <value>
+                <fullName>Thank you</fullName>
+                <default>false</default>
+                <label>Thank you</label>
+            </value>
+            <value>
+                <fullName>Greeting-bot</fullName>
+                <default>false</default>
+                <label>Greeting-bot</label>
+            </value>
+            <value>
+                <fullName>Greeting-existing-customer</fullName>
+                <default>false</default>
+                <label>Greeting-existing-customer</label>
+            </value>
+            <value>
+                <fullName>Greeting-none-customer</fullName>
+                <default>false</default>
+                <label>Greeting-none-customer</label>
+            </value>
+            <value>
+                <fullName>Greeting-existing-customer-bot</fullName>
+                <default>false</default>
+                <label>Greeting-existing-customer-bot</label>
+            </value>
+            <value>
+                <fullName>Greeting-none-customer-bot</fullName>
+                <default>false</default>
+                <label>Greeting-none-customer-bot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

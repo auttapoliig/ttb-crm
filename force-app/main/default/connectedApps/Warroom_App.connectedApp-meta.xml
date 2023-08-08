@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>todsapol.jor@ttbbank.com</contactEmail>
+    <label>Warroom App</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:8080/callback</callbackUrl>
+        <certificate>MIIDPjCCAiYCCQDu2DKaH3g14jANBgkqhkiG9w0BAQsFADBhMQswCQYDVQQGEwJUSDEQMA4GA1UECAwHQmFuZ2tvazEyMDAGA1UECgwpVE1CVGhhbmFjaGFydCBCYW5rIFB1YmxpYyBDb21wYW55IExpbWl0ZWQxDDAKBgNVBAMMA3R0YjAeFw0yMzA2MTUxMTU1MThaFw0yNDA2MTQxMTU1MThaMGExCzAJBgNVBAYTAlRIMRAwDgYDVQQIDAdCYW5na29rMTIwMAYDVQQKDClUTUJUaGFuYWNoYXJ0IEJhbmsgUHVibGljIENvbXBhbnkgTGltaXRlZDEMMAoGA1UEAwwDdHRiMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5ebq3z0Z0nVYIbxYlWVA+dpa54dTQKxk7yzv+e0i3O2R8rlS+l+3nqaFxCIYCeykTd19UBYd/dwvJb+lMMAX51LxLwJqJ6FDtF2/0W+baMO6MDd1U6bVWyQ+abq6MQTnh3JOA2tIw0BU/1u7T9dhSkWM4z4fPED8Wv1WEwHgOFncDa/OzhXb2CBcIvbkPlYImfRiCEOMhwbfWgfdUKSwHWku7QRToZkULxLAcKUYg+xyN5vabGAJTMTh4uN+PEthOuh0kCB4gMmVN7Go5sY8r1pL4eDB8zZEJghYFKGC8cPYsOJ+X0AJRYt2BH4sn87SHUXsd5WZ4xj1OK2xB5XP0wIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBg+L4G53PCXB6t7t9zSlWWhDJNj0udEGXegdFeewSCe/1xoOqKCOMVKlfYDrFDD2E02cCuBIfdCjMl+49b6Kc1jXm9h45PLW17sOFCmOLktZh4Yf1ptDaGeyY42lb9wXAbYzajv2l9jn57FDXgGwIJQXX8sx6J/KRmtkyl51VnvlhkPcKDQhxGXS7mnOYeifK1OCoB3xAJFos/R2OJhTyPQD/Jd/yTAik7MdNz6wOazirveQ7MH+gIp98rFXJsJZN9NfosO/Ahexgjs/zxlMd1yUDLPCfmDSvoxDz8NPoqQX/9bFA1/RWMOuft68huUIbjRBsP67W7pqy9615/QISG</certificate>
+        <consumerKey>3MVG9Nvmjd9lcjRmlqds874VuC8N3KHM87IZNgBldDv9zs4j1T9wy2TCLqYsRNzIJBvLXgc3GL9sjslccv1GA</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>
