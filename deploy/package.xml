@@ -1,52 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>customerHighlightPanel</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>CXMSurvey_For_CSV</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>Case.Authorize_1__c</members>
-        <members>Case.Authorize_2__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>RTL_AL_WsCreateLead</members>
         <members>RTL_LeadTriggerHandler</members>
-        <members>RTL_LeadTriggerHandlerTest</members>
+        <members>LeadAssignmentUtil</members>
+        <members>RTL_ReferAssignmentService</members>
+		<members>RTL_LeadTriggerHandlerTest</members>
+        <members>LeadAssignmentUtilTest</members>
+        <members>RTL_TestUtility</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>Campaign.RTL_Campaign_Approval_Exclusive</members>
-        <name>ApprovalProcess</name>
+        <members>RTL_Assignment_Criterias__c.Referral_single_BKK__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_single_UPC__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_multiple_BKK__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_multiple_UPC__c</members>
+        <members>Lead.RTL_Priority_Product__c</members>
+        <members>RTL_Lead_Assignment_Rule__c.RTL_Assigned_Apex__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>Case</members>
-        <members>Opportunity</members>
-        <name>SharingRules</name>
+        <members>RTL_Assignment_Criterias__c-Assignment Criterias Layout</members>
+        <name>Layout</name>
     </types>
     <types>
-        <members>KYC_Customer_Data_Management</members>
-        <name>Queue</name>
+        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_contact</members>
+        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_contact_AL</members>
+        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_lead</members>
+        <members>Batch_Drop_Lead__mdt.extract_lead_web_atm_lead_AL</members>
+		<members>Batch_Drop_Lead__mdt.extract_cust_request_web_lead</members>
+        <members>Batch_Drop_Lead_Mapping__mdt.rule_credit</members>
+        <members>Batch_Drop_Lead_Mapping__mdt.rule_rdc</members>
+		<members>Batch_Drop_Lead_Mapping__mdt.rule_al</members>
+        <name>CustomMetadata</name>    
     </types>
-    <types>
-        <members>SE_ZM_SME5_Phrae</members>
-        <members>SE_RMA_SME5_Phrae</members>
-        <members>SE_RM_SME5_Phrae</members>
-        <members>SE_ZM_SME7_Phuket</members>
-        <members>SE_RMA_SME7_Phuket</members>
-        <members>SE_RM_SME7_Phuket</members>
-        <name>Role</name>
-    </types>
-    <types>
-        <members>CXM_Survey_Condition.Condition1</members>
-        <members>CXM_Survey_Condition.Condition2</members>
-        <members>CXM_Survey_Condition.Condition3</members>
-        <members>CXM_Survey_Condition.Condition4</members>
-        <name>CustomMetadata</name>
+	<types>
+        <members>Lead_Assigment_Email/Drop_Lead_Notify_Lead_Owner</members>
+        <name>EmailTemplate</name>
     </types>
     <version>58.0</version>
 </Package>
