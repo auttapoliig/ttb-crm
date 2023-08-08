@@ -14,5 +14,12 @@
         <members>Customer_Incident_Control_Center</members>
         <name>Group</name>
     </types>
+    <types>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
+        <name>Profile</name>
+    </types>
     <version>58.0</version>
 </Package>
