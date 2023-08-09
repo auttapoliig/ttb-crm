@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <classAccesses>
+        <apexClass>PowerBiListComponentExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PowerBiReportExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PowerBiUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>RTL_ReferAssignmentService</apexClass>
         <enabled>true</enabled>
@@ -29,4 +42,12 @@
         <field>RTL_Assignment_Criterias__c.Referral_multiple_UPC__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <pageAccesses>
+        <apexPage>PowerBiListComponent</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PowerBiReportPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
 </Profile>

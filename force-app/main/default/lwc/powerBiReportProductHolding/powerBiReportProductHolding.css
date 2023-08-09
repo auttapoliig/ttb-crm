@@ -1,0 +1,8 @@
+.d-inline-flex {
+    display:inline-flex;
+}
+.spinnerInline {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+}
