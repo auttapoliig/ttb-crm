@@ -45,7 +45,7 @@ History
         get{
             if(branchZoneMap == null){
                 branchZoneMap = new Map<String,Branch_and_Zone__c>();
-                for(Branch_and_Zone__c eachBranch : [SELECT Id, Name, Branch_Name__c, Branch_Code__c, RTL_Branch_Manager_User__c,RTL_Branch_Manager_User__r.Email,RTL_Branch_Manager_User__r.Name
+                for(Branch_and_Zone__c eachBranch : [SELECT Id, Name, Branch_Name__c, Branch_Code__c, RTL_Branch_Manager_User__c,RTL_Branch_Manager_User__r.Email,RTL_Branch_Manager_User__r.Name,RTL_Branch_Manager_User__r.IsActive 
                                                         FROM Branch_and_Zone__c 
                                                         WHERE RTL_Branch_Manager_User__c != null]){
                     branchZoneMap.put(eachBranch.Branch_Code__c,eachBranch);                    
@@ -237,7 +237,7 @@ History
         
         Map<ID,ID> convertedLeadsAccountIDMap = new Map<ID,ID>();
         List<Lead> leadSendToOutboundCisco = new List<Lead>();
-        List<Lead> leadSendToOutboundAvaya = new List<Lead>();
+        // List<Lead> leadSendToOutboundAvaya = new List<Lead>();
         /*
          * Loop through the leads submitted through this
          * trigger.  Populate the appropriate sets of Ids
@@ -269,7 +269,7 @@ History
                 if(leadObj.RTL_Call_Me_Now_Retry_Count__c != oldLeadObj.RTL_Call_Me_Now_Retry_Count__c && leadObj.RTL_Call_Me_Now_Retry_Count__c < 3){
                     RTL_Lead_Assignment_Rule__c rule = leadAssignmentRule.get(leadObj.RTL_Lead_Assigned_By_Rule__c);
                     if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Cisco') leadSendToOutboundCisco.add(leadObj);
-                    if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Avaya') leadSendToOutboundAvaya.add(leadObj);
+                    // if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Avaya') leadSendToOutboundAvaya.add(leadObj);
                 }
             }    
         }
@@ -401,9 +401,9 @@ History
             sendToCallMeNowServiceCisco(leadSendToOutboundCisco);
         }
 
-        if(leadSendToOutboundAvaya.size() > 0){
-            sendToCallMeNowServiceAvaya(leadSendToOutboundAvaya);
-        }
+        // if(leadSendToOutboundAvaya.size() > 0){
+        //     sendToCallMeNowServiceAvaya(leadSendToOutboundAvaya);
+        // }
     }
     
     protected override void beforeInsert(List<SObject> leads) {        
@@ -436,7 +436,7 @@ History
         //CR Lead to MDM assign WebDropLead to Campaign
         List<Lead> leadAssignCampaign = new List<Lead>();
         List<Lead> leadSendToOutboundCisco = new List<Lead>();
-        List<Lead> leadSendToOutboundAvaya = new List<Lead>();
+        // List<Lead> leadSendToOutboundAvaya = new List<Lead>();
 
         for (Id lId : newMap.keySet()){
             Lead leadObj = (lead)newMap.get(lId);
@@ -445,7 +445,7 @@ History
             if(rule != null && rule.RTL_IsAssign_Campaign__c) leadAssignCampaign.add(leadObj);
             
             if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Cisco') leadSendToOutboundCisco.add(leadObj);
-            if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Avaya' && LeadAssignmentUtil.mapIdQueue.containsKey(leadObj.OwnerId) && LeadAssignmentUtil.mapIdQueue.get(leadObj.OwnerId).DeveloperName == 'RTLQ_Outbound') leadSendToOutboundAvaya.add(leadObj);
+            // if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c == 'Avaya' && LeadAssignmentUtil.mapIdQueue.containsKey(leadObj.OwnerId) && LeadAssignmentUtil.mapIdQueue.get(leadObj.OwnerId).DeveloperName == 'RTLQ_Outbound') leadSendToOutboundAvaya.add(leadObj);
             //If it is lead from Web and a Retail Lead
             // if(leadObj.RTL_TMB_Campaign_Source__c != null && (leadObj.RTL_TMB_Campaign_Source__c.equalsIgnoreCase('Web') || leadObj.RTL_TMB_Campaign_Source__c.equalsIgnoreCase('Call Me Now')) && RTL_Utility.getObjectRecordTypeIdsByDevNamePrefix(Lead.SObjectType, 'Retail').contains(leadObj.RecordTypeId)){
             //     webLeadList.add(leadObj);
@@ -460,9 +460,9 @@ History
             sendToCallMeNowServiceCisco(leadSendToOutboundCisco);
         }
 
-        if(leadSendToOutboundAvaya.size() > 0){
-            sendToCallMeNowServiceAvaya(leadSendToOutboundAvaya);
-        }
+        // if(leadSendToOutboundAvaya.size() > 0){
+        //     sendToCallMeNowServiceAvaya(leadSendToOutboundAvaya);
+        // }
 
         if(leadBranchList.size() > 0){
             sendEmailToProductSpecialist();
@@ -483,7 +483,7 @@ History
         String sfdcBaseLightningURL = lightCF == null ? 'https://tmbbank--rq006.sandbox.lightning.force.com' : lightCF.Value__c;
 
         Messaging.SingleEmailMessage[] messages = new List<Messaging.SingleEmailMessage>();
-        for(CampaignMember eachCampaign : [SELECT Id, LeadId,Lead.Name,Lead.OwnerId,Lead.Owner.Name, Name,Lead.Owner.Profile.Name FROM CampaignMember WHERE LeadId IN: leadBranchIdList]){
+        for(CampaignMember eachCampaign : [SELECT Id, LeadId,Lead.Name,Lead.OwnerId,Lead.Owner.Name, Lead.Owner.Email,Name,Lead.Owner.Profile.Name FROM CampaignMember WHERE LeadId IN: leadBranchIdList]){
 
             Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();
             message.setUseSignature(false);
@@ -513,6 +513,14 @@ History
                 if (branchZoneMap.containsKey(branchCode)) {
                     emailBody = emailBody.replace('{!Lead.Owner}',branchZoneMap.get(branchCode).RTL_Branch_Manager_User__r.Name);
                     message.toAddresses = new String[] {branchZoneMap.get(branchCode).RTL_Branch_Manager_User__r.Email};
+                    messages.add(message);
+                }
+            }
+            //Owner is Branch Manager
+            else{
+                if(String.valueOf(eachCampaign.Lead.OwnerId).startsWith('005')){
+                    emailBody = emailBody.replace('{!Lead.Owner}',eachCampaign.Lead.Owner.Name);
+                    message.toAddresses = new String[] {eachCampaign.Lead.Owner.Email};
                     messages.add(message);
                 }
             }
@@ -924,8 +932,7 @@ History
         }
 
         if(lastName_List.size() > 0){
-           //leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Customer_Segment__c = 'TMB Web' AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
-           leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
+            leadForCheckDup = [SELECT Id, FirstName, LastName, RTL_Customer_Segment__c, RTL_Product_Name__c, RTL_Web_Unique_ID_c__c, RTL_Mobile_Number__c FROM Lead WHERE CreatedDate = Today AND RTL_Web_Unique_ID_c__c != '' AND RTL_IsDuplicate_Lead__c = false AND LastName IN: lastName_List]; 
         }
 
         //Map all existing lead for check duplicate
@@ -948,7 +955,6 @@ History
             //If Lead duplicate tick RTL_IsDuplicate_Lead__c = True and not process assignment rule
             String keyCheckDup = leadObj.FirstName + leadObj.LastName + leadObj.RTL_Mobile_Number__c + leadObj.RTL_Product_Name__c;
 
-            //if(mapCheckDupLead.size() > 0 &&  mapCheckDupLead.containsKey(keyCheckDup.toLowerCase()) && leadObj.RTL_Web_Unique_ID_c__c != mapCheckDupLead.get(keyCheckDup.toLowerCase()) && leadObj.RTL_Customer_Segment__c == 'TMB Web'){
             if(mapCheckDupLead.size() > 0 &&  mapCheckDupLead.containsKey(keyCheckDup.toLowerCase()) && leadObj.RTL_Web_Unique_ID_c__c != mapCheckDupLead.get(keyCheckDup.toLowerCase())){
                 leadObj.OwnerID = tmbAdmin.ID;
                 leadObj.RTL_IsDuplicate_Lead__c = true;
@@ -1030,11 +1036,11 @@ History
         }
         
         if(leadNotDup.size() > 0) LeadAssignmentUtil.assignLeadOwnerByLeadAssignmentrule(leadNotDup);
-        
         List<String> productGroupList = new List<String>();
         List<String> branchList = new List<String>();
 
         for (Lead leadObj : leadNotDup) {
+            String prodName = leadObj.RTL_Multiple_Interested_Product_s__c ? leadObj.RTL_Priority_Product__c : leadObj.RTL_Product_Name__c;
             if(LeadAssignmentUtil.mapIdQueue.containsKey(leadObj.OwnerId)){
                 String branchCode = LeadAssignmentUtil.mapIdQueue.get(leadObj.OwnerId).DeveloperName;
                 System.debug('Owner BR: ' + branchCode);
@@ -1050,8 +1056,7 @@ History
                     leadObj.RTL_Region_Code_Rpt__c = branch.RTL_Region_Code__c;
                     leadObj.RTL_Zone_Code_Rpt__c = branch.RTL_Zone_Code__c;
                     leadBranchList.add(leadObj); 
-                    
-                    RTL_product_master__c productMaster = productMap.get(leadObj.RTL_Product_Name__c);
+                    RTL_product_master__c productMaster = productMap.get(prodName);
                     productGroupList.add(productMaster.Product_Group__c);
                     branchList.add(branchCode);
                     
@@ -1092,8 +1097,9 @@ History
         }
         Map<Id,Specialist_and_Product_Group_Mapping__c> mapSpecialistId = new Map<Id,Specialist_and_Product_Group_Mapping__c>();
         for(Lead eachLead : leadBranchList){
-            if(productMap.containsKey(eachLead.RTL_Product_Name__c)){
-                RTL_product_master__c productMaster = productMap.get(eachLead.RTL_Product_Name__c);
+            String prodName = eachLead.RTL_Multiple_Interested_Product_s__c ? eachLead.RTL_Priority_Product__c : eachLead.RTL_Product_Name__c;
+            if(productMap.containsKey(prodName)){
+                RTL_product_master__c productMaster = productMap.get(prodName);
                 String branchCode = LeadAssignmentUtil.mapIdQueue.get(eachLead.OwnerId).DeveloperName;
                 if(branchCode.indexOf('_') != -1) {
                     branchCode = branchCode.substring(branchCode.indexOf('_') + 1, branchCode.length());
@@ -1109,6 +1115,17 @@ History
                     productSpecialWrapper.currentIndex += 1;
                     if(productSpecialWrapper.currentIndex > productSpecialWrapper.specialistProductList.size()-1){
                         productSpecialWrapper.currentIndex = 0;
+                    }
+                }else{
+                    //Set Owner from queueName to Branch Manager
+                    if(LeadAssignmentUtil.mapIdQueue.containsKey(eachLead.OwnerId)){
+                        // String branchCode = LeadAssignmentUtil.mapIdQueue.get(eachLead.OwnerId).DeveloperName;
+                        // if(branchCode.indexOf('_') != -1) {
+                        //     branchCode = branchCode.substring(branchCode.indexOf('_') + 1, branchCode.length());
+                        // }
+                        if (branchZoneMap.containsKey(branchCode) && branchZoneMap.get(branchCode).RTL_Branch_Manager_User__r.IsActive) {
+                            eachLead.OwnerId =  branchZoneMap.get(branchCode).RTL_Branch_Manager_User__c;
+                        }
                     }
                 }
             }   
@@ -1905,17 +1922,17 @@ History
         }
     }
 
-    private static void sendToCallMeNowServiceAvaya(List<Lead> leadLst){
-        System.debug('sendToCallMeNowServiceAvaya :::::');
-        System.debug('leadLst : ' + leadLst);
+    // private static void sendToCallMeNowServiceAvaya(List<Lead> leadLst){
+    //     System.debug('sendToCallMeNowServiceAvaya :::::');
+    //     System.debug('leadLst : ' + leadLst);
 
-        Map<Id, Lead> leadIdSet = new Map<Id, Lead>(leadLst);
+    //     Map<Id, Lead> leadIdSet = new Map<Id, Lead>(leadLst);
 
-        if(leadIdSet.size() > 0){
-            //avayaCallListLeadBatch bat = new avayaCallListLeadBatch(leadIdSet.keySet());
-            //DataBase.executeBatch(bat, 100);
-        }
-    }
+    //     if(leadIdSet.size() > 0){
+    //         //avayaCallListLeadBatch bat = new avayaCallListLeadBatch(leadIdSet.keySet());
+    //         //DataBase.executeBatch(bat, 100);
+    //     }
+    // }
 
 
       /* end private methods */

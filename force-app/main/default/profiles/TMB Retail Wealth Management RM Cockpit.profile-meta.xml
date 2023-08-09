@@ -21,4 +21,8 @@
         <apexPage>PowerBiReportPage</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
+    <tabVisibilities>
+        <tab>standard-Campaign</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
 </Profile>
