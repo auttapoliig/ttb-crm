@@ -82,6 +82,8 @@
         <name>Group</name>
     </types>
     <types>
+        <members>Admin</members>
+        <members>Retail Integration API Only</members>
         <members>App External API</members>
         <members>TMB AAD Profile</members>
         <members>TMB ABDM Profile</members>
