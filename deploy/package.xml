@@ -5,6 +5,7 @@
         <members>PowerBiListComponentExtension_Test</members>
         <members>PowerBiReportExtension</members>
         <members>PowerBiUtils</members>
+        <members>PowerBiUtils_Test</members>
         <name>ApexClass</name>
     </types>
     <types>
