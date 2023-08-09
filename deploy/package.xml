@@ -61,6 +61,8 @@
         <members>Power_Bi_Report.MF_Dashboard_HD</members>
         <members>Power_Bi_Report.MF_Dashboard</members>
         <members>Power_Bi_Report.AC_Plan_Customer_Card</members>
+        <members>Security_Matrix.Power_Bi_List_Report</members>
+        <members>Security_Matrix.Power_Bi_On_Product_Holding</members>
         <name>CustomMetadata</name>    
     </types>
 	<types>
