@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>LeadAssignmentUtil</members>
+        <members>LeadAssignmentUtilTest</members>
+        <members>RTL_ReferAssignmentService</members>
+        <members>RTL_LeadTriggerHandler</members>
+		<members>RTL_LeadTriggerHandlerTest</members>
+        <members>RTL_TestUtility</members>
         <members>PowerBiListComponentExtension</members>
         <members>PowerBiListComponentExtension_Test</members>
         <members>PowerBiReportExtension</members>
@@ -18,9 +24,22 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>RTL_Assignment_Criterias__c.Referral_single_BKK__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_single_UPC__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_multiple_BKK__c</members>
+        <members>RTL_Assignment_Criterias__c.Referral_multiple_UPC__c</members>
+        <members>Lead.RTL_Priority_Product__c</members>
+        <members>RTL_Lead_Assignment_Rule__c.RTL_Assigned_Apex__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
         <members>RTL_Power_Bi_subject</members>
         <members>RTL_Power_Bi_Error_No_Access</members>
         <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>RTL_Assignment_Criterias__c-Assignment Criterias Layout</members>
+        <name>Layout</name>
     </types>
     <types>
         <members>powerBiReportProductHolding</members>
@@ -31,10 +50,43 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_contact</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_contact_AL</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_lead</members>
+        <members>Batch_Drop_Lead.extract_lead_web_atm_lead_AL</members>
+		<members>Batch_Drop_Lead.extract_cust_request_web_lead</members>
+        <members>Batch_Drop_Lead_Mapping.rule_credit</members>
+        <members>Batch_Drop_Lead_Mapping.rule_rdc</members>
+		<members>Batch_Drop_Lead_Mapping.rule_al</members>
         <members>Power_Bi_Report.MF_Dashboard_HD</members>
         <members>Power_Bi_Report.MF_Dashboard</members>
         <members>Power_Bi_Report.AC_Plan_Customer_Card</members>
-        <name>CustomMetadata</name>
+        <name>CustomMetadata</name>    
+    </types>
+	<types>
+        <members>Lead_Assigment_Email/Drop_Lead_Notify_Lead_Owner</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Customer_Incident_Control_Center</members>
+        <members>RTL_WTH_WSS</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>Customer_Incident_Control_Center_TL</members>
+        <members>Customer_Incident_Control_Center_User</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>Customer_Incident_Control_Center</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
+        <name>Profile</name>
     </types>
     <version>58.0</version>
 </Package>
