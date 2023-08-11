@@ -38,7 +38,7 @@ sf project deploy quick --job-id _<<jobid>>_
 # Release Track
 | SCR No.     | Description    | Implementor | Release Date |
 | --------|---------|-------|-------|
-| SCR0596488 | GBH Phase 1 | IIG
+| SCR0596488 | GBH Phase 1 | IIG | 24 Aug 2023 |
 | SCR0596488 | AL CR Separate Batch Normal Request | IIG | 24 Aug 2023 |
 | SCR0579629 | CRM SalesForce to show Mutual Fund Dashboad on Power BI | CoE (Todsapol) | 24 Aug 2023 |
 | SCR0593679 | ขอเพิ่ม/ขอแก้ไขสิทธิ load bulk ปิดเคส | CoE (Kitisak) | 24 Aug 2023 |
