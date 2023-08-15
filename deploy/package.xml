@@ -15,6 +15,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>Customer_Record_Page_for_PWA_RM_Cockpit</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
         <members>PowerBiListComponent</members>
         <members>PowerBiReportPage</members>
         <name>ApexPage</name>
