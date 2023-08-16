@@ -518,6 +518,20 @@
                 <identifier>flexipage_tab8</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-58b39dc1-6ad5-4b9e-affb-e97e8798deee</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Account Plan</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab22</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-063fa628-37e6-4d98-80b3-250b57a195de</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -766,6 +780,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
                 <identifier>runtime_sales_activities_activityPanel1</identifier>
             </componentInstance>
