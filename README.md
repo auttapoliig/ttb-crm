@@ -36,6 +36,7 @@ sf project deploy quick --job-id _<<jobid>>_
 ```
 ---
 # Release Track
+## 24 Aug 2023
 | SCR No.     | Description    | Implementor | Release Date |
 | --------|---------|-------|-------|
 | SCR0596488 | GBH Phase 1 | IIG | 24 Aug 2023 |
@@ -48,6 +49,9 @@ sf project deploy quick --job-id _<<jobid>>_
 | SCR0595231 | Enable Global Search Campaign Code | CoE (Attasit) | 24 Aug 2023 |
 | SCR0595867 | Wealth Support Revolk เพื่อสิทธิ์รับเคส | CoE (Attasit) | 24 Aug 2023 |
 | SCR0595725 | Merge Customer from 01-Jan-23 to 31-Jul-23 | CoE (Todsapol) | 24 Aug 2023 |
+## 20 July 2023
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
 | SCR0592576 | Check Duplicate Lead | IIG | 20 July 2023 |
 | SCR0590879 | Add Wealth Support list to receive cases | CoE (Attasit) | 20 July 2023 |
 | SCR0587873 | ขอเพิ่มสิทธิ์ ให้กับ คุณ Nalinee  Imsaard สามารถทำการ Approve Campaign ได้เหมือนกับคุณ Panawat Innurak (เฉพาะ Campaign type = Exclusive) | CoE (Attasit) | 20 July 2023 |
