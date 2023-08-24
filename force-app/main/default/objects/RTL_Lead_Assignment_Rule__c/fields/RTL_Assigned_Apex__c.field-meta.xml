@@ -16,6 +16,11 @@
                 <default>false</default>
                 <label>RTL_AssignmentCriteriaService</label>
             </value>
+            <value>
+                <fullName>RTL_ReferAssignmentService</fullName>
+                <default>false</default>
+                <label>RTL_ReferAssignmentService</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

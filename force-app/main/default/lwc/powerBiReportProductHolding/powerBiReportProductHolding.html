@@ -1,0 +1,13 @@
+<template>
+  <template if:true={_isRetailProfile}>
+    <template if:true={_isAccess}>
+      <lightning-button
+      class={_class}
+      label={_title}
+      disabled={isLoading}
+      variant=brand-outline
+      onclick={handlerOpenPowerBi}
+    ></lightning-button>
+    </template>
+  </template>
+</template>

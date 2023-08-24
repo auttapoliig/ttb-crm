@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 **/venv/
 
 .vscode
+
+scripts/data/logs/
+scripts/data/source/
+scripts/data/target/
+scripts/data/binary_cache/
+scripts/data/*.csv
