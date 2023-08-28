@@ -44,7 +44,7 @@
     </values>
     <values>
         <field>Summary_Page__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Group of channel</value>
     </values>
     <values>
         <field>isChannelDisable__c</field>
