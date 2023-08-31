@@ -81,6 +81,10 @@
         <name>customMetadata</name>
     </types>
     <types>
+        <members>ERROR_SEGMENT</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
         <members>App External API</members>
         <members>Retail Integration API Only</members>
         <members>TMB AAD Profile</members>
