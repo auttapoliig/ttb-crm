@@ -6,6 +6,7 @@
         <members>TPerf_SummarizeActualAmoutBatchScheduler</members>
         <members>TPerf_SummarizeActualBatchScheduler_Test</members>
         <members>T_Performance_SummaryController</members>
+        <members>AccountTriggerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
