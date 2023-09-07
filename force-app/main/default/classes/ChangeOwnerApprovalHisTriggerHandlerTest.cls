@@ -102,6 +102,11 @@ public class ChangeOwnerApprovalHisTriggerHandlerTest {
         }
         insert existingAccts;
 
+        Sub_Segment_Mapping__c subSegment = new Sub_Segment_Mapping__c();
+        subSegment.Zone_Code_Team_Code__c = '9999';
+        subSegment.Sub_Segment_Code__c = '20';
+        subSegment.Zone_Team__c='CB1-2';
+        insert subSegment;
         list<Change_Owner_Approval_History__c> appHistory = new list<Change_Owner_Approval_History__c>();
 
         Change_Owner_Approval_History__c changeOwnerHistory = new Change_Owner_Approval_History__c();
