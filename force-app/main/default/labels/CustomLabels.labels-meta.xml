@@ -16,4 +16,12 @@
         <shortDescription>RTL_Power_Bi_subject</shortDescription>
         <value>Hot Link to &quot;Power BI&quot; แหล่วงรวมข้อแนะนำเพื่อการนำเสนอผลิตภัณฑ์ต่างๆ ให้กับลูกค้า</value>
     </labels>
+    <labels>
+        <fullName>ERROR_SEGMENT</fullName>
+        <categories>Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ERROR_SEGMENT</shortDescription>
+        <value>พนักงานที่ถูก assign งานอยู่ใน  branch/zone  ที่ยังไม่มีการกำหนดใน sub segment mapping</value>
+    </labels>
 </CustomLabels>

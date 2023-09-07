@@ -600,7 +600,8 @@ public with sharing class T_Performance_SummaryController{
         Map<String, Decimal> mapProductWithVolume = new Map<string, Decimal>();
         Map<String, Decimal> mapActualWithRunrate = new Map<string, Decimal>();
         for (T_Performance_Target_Product_by_Team__c tb1 : TperfTBTList){
-            String groupKey = tb1.Group_Channel__c + tb1.Product_Group_Name__c;
+            String groupKey = tb1.Group_Channel__c + tb1.Product_Group_Code__c;
+            // String groupKey = tb1.Group_Channel__c + tb1.Product_Group_Name__c;
             if (tb1.Month__c == selectedMonth && tb1.Year__c == selectedYear){
                 if (!mapProductWithVolume.containsKey(groupKey)){
                     mapProductWithVolume.put(groupKey, (tb1.volumn__c != null ? tb1.volumn__c : 1));
@@ -608,11 +609,14 @@ public with sharing class T_Performance_SummaryController{
             }
         }
         for (T_Performance_Target_Product_by_Team__c tb : TperfTBTList){
-            String key = tb.Product_Group_Name__c;
+            String key = tb.Product_Group_Code__c;
+            // String key = tb.Product_Group_Name__c;
             // System.debug('key : '+ key);
             Decimal volume = 1;
-            if (mapProductWithVolume.containsKey(tb.Group_Channel__c + tb.Product_Group_Name__c)){
-                volume = mapProductWithVolume.get(tb.Group_Channel__c + tb.Product_Group_Name__c);
+            // if (mapProductWithVolume.containsKey(tb.Group_Channel__c + tb.Product_Group_Name__c)){
+                // volume = mapProductWithVolume.get(tb.Group_Channel__c + tb.Product_Group_Name__c);
+            if (mapProductWithVolume.containsKey(tb.Group_Channel__c + tb.Product_Group_Code__c)){
+                volume = mapProductWithVolume.get(tb.Group_Channel__c + tb.Product_Group_Code__c);
             }
             
             if (mapProductWithActual.containsKey(key)){
