@@ -7,6 +7,7 @@
         <members>TPerf_SummarizeActualBatchScheduler_Test</members>
         <members>T_Performance_SummaryController</members>
         <members>AccountTriggerHandler</members>
+        <members>ChangeOwnerApprovalHisTriggerHandlerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -197,6 +198,7 @@
         <members>ttb Subsidiary Report Specialist</members>
         <members>ttb Subsidiary Sales</members>
         <members>TMB SB TH%26TL RMC %2F Telesales Profile</members>
+        <members>Admin</members>
         <name>Profile</name>
     </types>
     <version>57.0</version>
