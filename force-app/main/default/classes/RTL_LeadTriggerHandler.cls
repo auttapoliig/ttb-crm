@@ -1,24 +1,24 @@
 public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {//Use without sharing to allow lead conversion from non-owner
-/*------------------------------------------------------------------------
-Author:        Debi Prasad Baral
-Company:       Salesforce
-Description:   A class created to manage trigger actions from the Lead object 
-               Responsible for:
-               1 - Validating that the Lead Status is qualified and the at least one associated interested product is primary
-               2 - Updating the opportunity created during lead conversion according to the correct record type.
-History
-<Date>            <Authors Name>    <Brief Description of Change> 
---------------------------------------------------------------------------*/
-      
-    List<Account> updateAccounts = new List<Account>(); 
-    List<Opportunity> updateOpportunities = new List<Opportunity>(); 
-    List<RTL_Interested_products_c__c> updateInterestedProducts = new List<RTL_Interested_products_c__c>();
-    List<RTL_Referral__c> updateReferrals = new List<RTL_Referral__c>();
-    List<FNA_Activity__c> updateFnaActivity = new List<FNA_Activity__c>();
-    public static List<Lead> leadBranchList = new List<Lead>();
-    public static List<Id> specialistAssignedIdList = new List<Id>();
-    public static List<String> branchAssignIdList = new List<String>();
-    public static Set<Specialist_and_Product_Group_Mapping__c> assignSpecialist = new Set<Specialist_and_Product_Group_Mapping__c>();
+    /*------------------------------------------------------------------------
+    Author:        Debi Prasad Baral
+    Company:       Salesforce
+    Description:   A class created to manage trigger actions from the Lead object 
+                   Responsible for:
+                   1 - Validating that the Lead Status is qualified and the at least one associated interested product is primary
+                   2 - Updating the opportunity created during lead conversion according to the correct record type.
+    History
+    <Date>            <Authors Name>    <Brief Description of Change> 
+    --------------------------------------------------------------------------*/
+          
+        List<Account> updateAccounts = new List<Account>(); 
+        List<Opportunity> updateOpportunities = new List<Opportunity>(); 
+        List<RTL_Interested_products_c__c> updateInterestedProducts = new List<RTL_Interested_products_c__c>();
+        List<RTL_Referral__c> updateReferrals = new List<RTL_Referral__c>();
+        List<FNA_Activity__c> updateFnaActivity = new List<FNA_Activity__c>();
+        public static List<Lead> leadBranchList = new List<Lead>();
+        public static List<Id> specialistAssignedIdList = new List<Id>();
+        public static List<String> branchAssignIdList = new List<String>();
+        public static Set<Specialist_and_Product_Group_Mapping__c> assignSpecialist = new Set<Specialist_and_Product_Group_Mapping__c>();
 
     // private static RTL_Lead_Assignment_Rule__c LeadMatchAssignmentRule;
 
