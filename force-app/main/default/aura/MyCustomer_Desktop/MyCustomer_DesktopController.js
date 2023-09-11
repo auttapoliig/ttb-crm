@@ -26,10 +26,10 @@
             {label: $A.get('$Label.c.Last_Activity'), fieldName: 'last_activity',type: 'text'},
             {label: $A.get('$Label.c.Last_Activity_Date'), fieldName: 'last_activity_dateTime',type: 'text', sortBy: 'last_activity_dateTime_value'},
             {label: $A.get('$Label.c.AUM_Range'), fieldName: 'aum_range',type: 'text'},
-            {label: $A.get('$Label.c.AllFree_OS'), fieldName: 'allFree_os',type: 'text'},
-            {label: $A.get('$Label.c.NFX_OS'), fieldName: 'nfx_os',type: 'text'},
-            {label: $A.get('$Label.c.TD_OS'), fieldName: 'td_os',type: 'text'},
-            {label: $A.get('$Label.c.other_dp_os'), fieldName: 'other_deposit_os',type: 'text'},
+            {label: $A.get('$Label.c.AllFree_OS'), fieldName: 'allFree_os',type: 'text', sortBy: 'allFree_os_double'},
+            {label: $A.get('$Label.c.NFX_OS'), fieldName: 'nfx_os',type: 'text', sortBy: 'nfx_os_double'},
+            {label: $A.get('$Label.c.TD_OS'), fieldName: 'td_os',type: 'text', sortBy: 'td_os_double'},
+            {label: $A.get('$Label.c.other_dp_os'), fieldName: 'other_deposit_os',type: 'text', sortBy: 'other_deposit_os_double'},
             {label: $A.get('$Label.c.mf_gain_loss'), fieldName: 'mfGainLoss',type: 'text', sortBy: 'mfGainLoss_double'},
             {label: $A.get('$Label.c.nfx_rate'), fieldName: 'nfx_rate',type: 'text'},
             {label: $A.get('$Label.c.total_maturity_this_month'), fieldName: 'all_matur_this_month',type: 'text'},
@@ -49,13 +49,13 @@
         ];
 
         component.set('v.columns',columns);
+        helper.setSortColumnObject(component, event, helper);
         helper.getCurrentUserName(component, event, helper);
         helper.getTaskFieldLabel(component, event, helper);
         helper.fetchDataTable(component, event, helper);
     },
     onOpenCSV : function(component, event, helper) {
         let currentTarget = event.currentTarget.dataset.id ;
-        /* console.log(currentTarget); */
         var workspaceAPI = component.find("workspace");
                 
         workspaceAPI.openTab({
@@ -72,7 +72,6 @@
         navEvt.fire();
     },
     onSearchData : function(component, event, helper) {
-        helper.resetDataSort(component);
         component.set('v.openSpinnerTable',true);
         helper.getDataFilter(component, event, helper);
         component.set('v.countSelectCust',0)
@@ -82,137 +81,23 @@
         helper.showSpinner(component);
         let accList = component.get('v.dataRow');
         let selectField = event.currentTarget.dataset.sort;
-        console.log(accList);
-        console.log('event' + selectField);
-
+        const columnMap = component.get('v.sortColumnObject');
         setTimeout(() => {
-            if(selectField == 'aum_is_double' && component.get('v.isAUMSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
+            if(columnMap[selectField].icon == component.get('v.arrowAt')){
+                helper.reversData(accList)
                 .then(function(data){
                     component.set('v.dataRow', data);
+                    helper.resetIcons(component, selectField);
                     helper.hideSpinner(component);
                 });
             }
-            else if (selectField == 'dp_op_double' && component.get('v.isDPSort') == false){
-                helper.resetIcons(component,selectField);
+            else{
                 helper.prepForSortingDataRow(component, event, helper, accList, selectField)
                 .then(function(data){
                     component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'mf_os_double' && component.get('v.isMFSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'mfGainLoss_double' && component.get('v.isMFGainLossSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'last_activity_dateTime_value' && component.get('v.isLastActivitySort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'last_selected_date_value' && component.get('v.isLastSelectedSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'name' && component.get('v.isNameSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if (selectField == 'cc_ttb_reserve_invitation_value' && component.get('v.isReserveInviteSort') == false){
-                helper.resetIcons(component,selectField);
-                helper.prepForSortingDataRow(component, event, helper, accList, selectField)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if(selectField == 'aum_is_double' && component.get('v.isAUMSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
+                    helper.resetIcons(component, selectField);
                     helper.hideSpinner(component);
                 });
-            }
-            else if(selectField == 'dp_op_double' && component.get('v.isDPSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if(selectField == 'mf_os_double' && component.get('v.isMFSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if(selectField == 'mfGainLoss_double' && component.get('v.isMFGainLossSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });            
-            }
-            else if(selectField == 'last_activity_dateTime_value' && component.get('v.isLastActivitySort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });           
-            }
-            else if(selectField == 'last_selected_date_value' && component.get('v.isLastSelectedSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });           
-            }
-            else if(selectField == 'name' && component.get('v.isNameSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });           
-            }
-            else if(selectField == 'cc_ttb_reserve_invitation_value' && component.get('v.isReserveInviteSort') == true){
-                helper.displayIcons(component, selectField);
-                helper.reversData(accList)
-                .then(function(data){
-                    component.set('v.dataRow', data);
-                    helper.hideSpinner(component);
-                });           
             }
         }, 200);
     },

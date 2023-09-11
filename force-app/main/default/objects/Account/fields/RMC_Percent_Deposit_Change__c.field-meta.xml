@@ -3,7 +3,7 @@
     <fullName>RMC_Percent_Deposit_Change__c</fullName>
     <externalId>false</externalId>
     <label>RMC Percent Deposit Change</label>
-    <precision>12</precision>
+    <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>

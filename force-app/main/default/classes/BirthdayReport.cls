@@ -1,10 +1,20 @@
 public with sharing class BirthdayReport {
+
+    public static String currentUserId{
+        get{
+            if(currentUserId == null){
+                currentUserId = UserInfo.getUserId();
+            }
+            return currentUserId;
+        }set;
+    }
+
     @AuraEnabled
     public static Map<String, Object> getBirthdayList(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
         try {
             List<Account> accList = getQueryData(queryLimit);
-            List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Customer_Birthday_in_Next_7_Days_pAw'];
+            List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Customer_Upcoming_Birthday_nGS'];
 
             if(reportList!=null && reportList.size() > 0){
                 response.put('reportId', reportList[0].Id);      
@@ -24,8 +34,8 @@ public with sharing class BirthdayReport {
 
     public static List<Account> getQueryData(Integer queryLimit){
         try{
-            String query = 'SELECT Id, Name, RTL_Date_Of_Birth__c FROM Account ';
-            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND RMC_Next_Birthday__c <= Next_N_Days:7 ORDER BY RMC_Next_Birthday__c ';
+            String query = 'SELECT Id, Name, RTL_Date_Of_Birth__c, RMC_Next_Birthday__c FROM Account ';
+            String whereCon = 'WHERE OwnerId = \'' + currentUserId + '\' ' + 'AND (RMC_Next_Birthday__c >= TODAY AND RMC_Next_Birthday__c <= NEXT_MONTH) ORDER BY RMC_Next_Birthday__c ';
             query += whereCon;
             if(queryLimit > 0){
                 query += 'LIMIT ' + queryLimit;

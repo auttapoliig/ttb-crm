@@ -1,21 +1,13 @@
 ({
     init: function (component, event, helper) {
         component.set('v.columns', [
-            { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
-            {
-                label: 'KYC next review date', fieldName: 'KYC_next_review_date__c', type: 'date',
-                cellAttributes:
-                {
-                    class: { fieldName: 'textColor' }
-                }
-            },
-            { label: 'IAL', fieldName: 'IAL__c', type: 'text' },
-
-
+            { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } }},
+            { label: 'KYC Status', fieldName: 'KYC_flag', type: 'text', cellAttributes: {class: { fieldName: 'textColor' }}},
+            { label: 'IAL', fieldName: 'IAL', type: 'text'},
         ]);
         var action = component.get('c.getAccountList');
         action.setParams({
-            "queryLimit" : component.get('v.queryLimit') ? component.get('v.queryLimit') : 5
+            "queryLimit" : 0
         })
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
@@ -23,20 +15,14 @@
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {
-                    var url = element.Id;
-                    element.Id = '/' + url;
-
-                    var today = new Date();
-                    var duedate = new Date(element.KYC_next_review_date__c);
-                   
-                    if (duedate < today) {                      
+                    element.Id = '/' + element.Id;
+                    if (element.KYC_flag_limited_value == 0) {                      
                         element.textColor = 'redText';
                     }
-
                     finalData.push(element);
-
+                    
                 });
-                component.set('v.data', finalData);
+                helper.sortData(component, helper, 'KYC_flag_limited_value', 'desc', finalData);
                 component.set('v.reportId', resp.reportId);
             } else {
             }
@@ -70,6 +56,22 @@
             });
             urlEvent.fire();
         }
-    }
+    },
+    handleSort: function(component,event,helper){
+        var sortField = event.getParam("fieldName");
+        var sortDirection = event.getParam("sortDirection");
+        let columns = component.get('v.columns');
+        let sortBy;
+        columns.forEach((e) => {
+            if(e.fieldName == sortField){
+                sortBy = e.sortBy;
+            }
+        })
+   
+        component.set("v.sortBy",sortField);
+        component.set("v.sortDirection",sortDirection);
+         
+        helper.sortData(component,sortBy,sortDirection, null);
+    },
 
 })

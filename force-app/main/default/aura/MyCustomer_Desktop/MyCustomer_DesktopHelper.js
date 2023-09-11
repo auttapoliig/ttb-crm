@@ -1,46 +1,7 @@
 ({
     fetchDataTable : function(component, event, helper){
-        component.set('v.disableButtonSearch',true);
-        helper.resetDataSort(component);
-        /* function handle data table */
-        let getCustomerData = component.get('c.getCustomerTableData');
-        getCustomerData.setParams({
-            "params": []
-        });
-        getCustomerData.setCallback(this, function (response) {
-            var state = response.getState();
-            if (component.isValid() && state === 'SUCCESS') {
-                let result = response.getReturnValue();
-                for (let e of result){
-                    e.last_selected_date_value = !e['last_selected_date_value'] ? 0 : Date.parse(e['last_selected_date_value']);
-                    e.last_activity_dateTime_value = !e['last_activity_dateTime_value'] ? 0 : Date.parse(e['last_activity_dateTime_value']);
-                }
-
-                let sortedList = helper.sortThaiString(component, event, helper, result);
-                component.set('v.isNameSort', true);
-                component.set('v.disableButtonSearch',false);
-                component.set('v.dataRow',sortedList);
-                helper.hideSpinner(component);
-            }
-            else if (state === "ERROR") {
-                var errors = getCustomerData.getError();
-                if (errors) {
-                    if (errors[0] && errors[0].message) {
-                        console.error(errors[0].message);
-                        helper.handleError(component, event, helper, errors[0].message);
-                        component.set('v.disableButtonSearch',false);
-                    }
-                }
-                helper.hideSpinner(component);
-            } else {
-                console.error(response);
-                helper.hideSpinner(component);
-            }
-        })
-        $A.enqueueAction(getCustomerData);
-
+        helper.getDataFilter(component, event, helper);
         let taskForConfirm = component.get('c.getTaskCustomSetting');
-
         taskForConfirm.setCallback(this, function (response) {
             var state = response.getState();
             if (component.isValid() && state === 'SUCCESS') {
@@ -65,7 +26,6 @@
             }
         })
         $A.enqueueAction(taskForConfirm);
-
     },
 
     getTaskFieldLabel : function(component, event, helper){
@@ -114,7 +74,8 @@
     },
     getDataFilter : function(component, event, helper){
         /* function filter data */
-        helper.resetDataSort(component);
+        helper.resetIcons(component, 'name');
+        component.set('v.iconsNameSort','utility:arrowdown');
         component.set('v.disableButtonSearch',true);
         let getCustomerData = component.get('c.getCustomerTableData');
         let filter = component.get("v.valueFilter");
@@ -126,15 +87,14 @@
             if (component.isValid() && state === 'SUCCESS') {
                 let result = response.getReturnValue();
                 for (let e of result){
-                    e.last_selected_date_value = !e['last_selected_date'] ? 0 : Date.parse(e['last_selected_date']);
-                    e.last_activity_dateTime_value = !e['last_activity_dateTime'] ? 0 : Date.parse(e['last_activity_dateTime']);
+                    e.last_selected_date_value = !e['last_selected_date_value'] ? 0 : Date.parse(e['last_selected_date_value']);
+                    e.last_activity_dateTime_value = !e['last_activity_dateTime_value'] ? 0 : Date.parse(e['last_activity_dateTime_value']);
                 }
                 let sortedList = helper.sortThaiString(component, event, helper, result);
                 component.set('v.isNameSort', true);
                 component.set('v.dataRow',sortedList);
                 component.set('v.disableButtonSearch',false);
                 helper.hideSpinner(component);
-
             }
             else if (state === "ERROR") {
                 var errors = getCustomerData.getError();
@@ -339,86 +299,6 @@
                 else{
                     sortList = helper.sortThaiString(component, event, helper, accList);
                 }
-                if(selectField == 'aum_is_double'){
-                    component.set('v.isAUMSort', true);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if (selectField == 'dp_op_double'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', true);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if (selectField == 'mf_os_double'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', true);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if (selectField == 'mfGainLoss_double'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', true);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if (selectField == 'last_activity_dateTime_value'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', true);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if (selectField == 'last_selected_date_value'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', true);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false);
-                    component.set('v.isReserveInviteSort', false);
-                }
-                else if(selectField == 'name'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', true); 
-                    component.set('v.isReserveInviteSort', false); 
-                }
-                else if(selectField == 'cc_ttb_reserve_invitation_value'){
-                    component.set('v.isAUMSort', false);
-                    component.set('v.isDPSort', false);
-                    component.set('v.isMFSort', false);
-                    component.set('v.isMFGainLossSort', false);
-                    component.set('v.isLastSelectedSort', false);
-                    component.set('v.isLastActivitySort', false);
-                    component.set('v.isNameSort', false); 
-                    component.set('v.isReserveInviteSort', true); 
-                }
                 resolve(sortList);
             }catch(e){
                 reject(component.get('v.dataRow'));
@@ -495,237 +375,27 @@
             component.set('v.openSpinnerTable', false);
         }
     },
-    displayIcons : function(component,selectField){
-        let iconsAUM = component.get('v.iconsAUMSort');
-        let iconsDP = component.get('v.iconsDPSort');
-        let iconsMF = component.get('v.iconsMFSort');
-        let iconsGainLoss = component.get('v.iconsMFGainLossSort');
-        let iconsLastSelect = component.get('v.iconsLastSelectedSort');
-        let iconsLastActivity = component.get('v.iconsLastActivitySort');
-        let iconsReserve = component.get('v.iconsReserveInviteSort');
-        let iconsName = component.get('v.iconsNameSort');
 
-        if (selectField == 'aum_is_double'){
-            if (iconsAUM == 'utility:arrowdown'){
-                component.set('v.iconsAUMSort','utility:arrowup')
-            }else{
-                component.set('v.iconsAUMSort','utility:arrowdown')
-            }
-        }
-        else if (selectField == 'dp_op_double'){
-            if (iconsDP == 'utility:arrowdown'){
-                component.set('v.iconsDPSort','utility:arrowup')
-            }else{
-                component.set('v.iconsDPSort','utility:arrowdown')
-            }
-        } 
-        else if (selectField == 'mf_os_double'){
-            if (iconsMF == 'utility:arrowdown'){
-                component.set('v.iconsMFSort','utility:arrowup')
-            }else{
-                component.set('v.iconsMFSort','utility:arrowdown')
-            }
-        }
-        else if (selectField == 'mfGainLoss_double'){
-            if (iconsGainLoss == 'utility:arrowdown'){
-                component.set('v.iconsMFGainLossSort','utility:arrowup')
-            }else{
-                component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            }
-        }
-        else if (selectField == 'last_activity_dateTime_value'){
-            if (iconsLastActivity == 'utility:arrowdown'){
-                component.set('v.iconsLastActivitySort','utility:arrowup')
-            }else{
-                component.set('v.iconsLastActivitySort','utility:arrowdown')
-            }
-        }   
-        else if (selectField == 'last_selected_date_value'){
-            if (iconsLastSelect == 'utility:arrowdown'){
-                component.set('v.iconsLastSelectedSort','utility:arrowup')
-            }else{
-                component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            }
-        }    
-        else if (selectField == 'name'){
-            if (iconsName == 'utility:arrowdown'){
-                component.set('v.iconsNameSort','utility:arrowup')
-            }else{
-                component.set('v.iconsNameSort','utility:arrowdown')
-            }
-        }   
-        else if (selectField == 'cc_ttb_reserve_invitation_value'){
-            if (iconsReserve == 'utility:arrowdown'){
-                component.set('v.iconsReserveInviteSort','utility:arrowup')
-            }else{
-                component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            }
-        }          
-    },
     resetIcons : function(component,selectField){
-         /* set default icon */
-        if (selectField == 'aum_is_double'){
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
+        const down = 'utility:arrowdown';
+        const up = 'utility:arrowup';
 
-            component.set('v.activeSortAUM',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortReserve',false)
+        const sortColumnObject = component.get('v.sortColumnObject');
+        const focusIcon = sortColumnObject[selectField].icon;
+        let allIcon = [];
+        for(const key in sortColumnObject){
+            allIcon.push(sortColumnObject[key].icon);
         }
-        else if(selectField == 'dp_op_double'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
 
-            component.set('v.activeSortDP',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'mf_os_double'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
-
-            component.set('v.activeSortMF',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'mfGainLoss_double'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
-
-            component.set('v.activeSortMFgainloss',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'last_activity_dateTime_value'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
-
-            component.set('v.activeSortLastActivety',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'last_selected_date_value'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
-
-            component.set('v.activeSortLastSelect',true)
-
-            component.set('v.activeSortName',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'name'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsReserveInviteSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-
-            component.set('v.activeSortName',true)
-
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortReserve',false)
-        }
-        else if(selectField == 'cc_ttb_reserve_invitation_value'){
-            component.set('v.iconsAUMSort','utility:arrowdown')
-            component.set('v.iconsDPSort','utility:arrowdown')
-            component.set('v.iconsMFSort','utility:arrowdown')
-            component.set('v.iconsLastActivitySort','utility:arrowdown')
-            component.set('v.iconsMFGainLossSort','utility:arrowdown')
-            component.set('v.iconsNameSort','utility:arrowdown')
-            component.set('v.iconsLastSelectedSort','utility:arrowdown')
-
-            component.set('v.activeSortReserve',true)
-
-            component.set('v.activeSortLastSelect',false)
-            component.set('v.activeSortAUM',false)
-            component.set('v.activeSortDP',false)
-            component.set('v.activeSortMF',false)
-            component.set('v.activeSortLastActivety',false)
-            component.set('v.activeSortMFgainloss',false)
-            component.set('v.activeSortName',false)
-        }
-    },
-    resetDataSort : function(component){
-        component.set('v.isAUMSort', false);
-        component.set('v.isDPSort', false);
-        component.set('v.isMFSort', false);
-        component.set('v.isMFGainLossSort', false);
-        component.set('v.isLastSelectedSort', false);
-        component.set('v.isLastActivitySort', false);
-        component.set('v.isNameSort', false); 
-        component.set('v.isReserveInviteSort', false); 
+        allIcon.forEach((e) => {
+            if(e != focusIcon){
+                component.set(`v.${e}`, down);
+            }
+            else{
+                component.set(`v.${focusIcon}`, component.get(`v.arrowAt`) == focusIcon && component.get(`v.${focusIcon}`) == down ? up : down);
+                component.set(`v.arrowAt`, focusIcon);
+            }
+        });
     },
 
     handleError: function(component, event, helper, errorMessage){
@@ -735,5 +405,23 @@
     callParentMethod : function(component, event, helper) {
         var parentComponent = component.get("v.parent");                         
 		parentComponent.AfterCreateTask(true);
+    },
+
+    setSortColumnObject : function(component, event, helper){
+        const sortColumnObject = {
+            'name' : { icon : 'iconsNameSort', column : 'activeSortName'},
+            'aum_is_double' : { icon : 'iconsAUMSort', column : 'activeSortAUM'},
+            'dp_op_double' : { icon : 'iconsDPSort', column : 'activeSortDP'},
+            'mf_os_double' : { icon : 'iconsMFSort', column : 'activeSortMF'},
+            'mfGainLoss_double' : { icon : 'iconsMFGainLossSort', column : 'activeSortMFgainloss'},
+            'last_activity_dateTime_value' : { icon : 'iconsLastActivitySort', column : 'activeSortLastActivety'},
+            'last_selected_date_value' : { icon : 'iconsLastSelectedSort', column : 'activeSortLastSelect'},
+            'cc_ttb_reserve_invitation_value' : { icon : 'iconsReserveInviteSort', column : 'activeSortReserve'},
+            'allFree_os_double' : { icon : 'iconsAllFreeSort', column : 'activeSortAllFree'},
+            'td_os_double' : { icon : 'iconsTDOSSort', column : 'activeSortTDOS'},
+            'nfx_os_double' : { icon : 'iconsNFXOSSort', column : 'activeSortNFXOS'},
+            'other_deposit_os_double' : { icon : 'iconsOTHEROSSort', column : 'activeSortOTHEROS'},
+        };
+        component.set('v.sortColumnObject', sortColumnObject);
     }
 })

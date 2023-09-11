@@ -96,6 +96,7 @@ public class RM_Cockpit_My_Customer_CreateTask {
         for(Account accObj : accountList){
             Task tsk = new Task();
             tsk.Subject = appConfig.get('RMC_My_Customer_Task_Subject') +'';
+            tsk.RTL_Task_Subject__c = appConfig.get('RMC_My_Customer_Task_Subject') +'';
             tsk.Status = appConfig.get('RMC_My_Customer_Task_Status') + '';
             tsk.Priority = appConfig.get('RMC_My_Customer_Task_Priority') + '';
             tsk.WhatId = accObj.Id;

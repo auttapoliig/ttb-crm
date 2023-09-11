@@ -9,7 +9,17 @@
     <aura:attribute name="reportId" type="String" />
     <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
 
-    <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true" />
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:attribute name="sortDirection" type="String"/>
+
+    <lightning:datatable 
+        keyField="id" 
+        data="{! v.data }" 
+        columns="{! v.columns }" 
+        hideCheckboxColumn="true"
+        sortedBy="{!v.sortBy}"
+        sortedDirection="{!v.sortDirection}"
+        onsort="{!c.handleSort}"/>
 
     <br />
     <aura:if isTrue="{!v.isLoading}">

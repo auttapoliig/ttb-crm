@@ -41,8 +41,98 @@ public class MyCustomerControllerClass {
         }set;
     }
 
+    public static Map<String, String> subsegmentMap{
+        get{
+            if(subsegmentMap == null){
+                List<Sub_Segment_Code_Mapping__mdt> subsegmentList = [SELECT Description__c, Sub_Segment_Code__c FROM Sub_Segment_Code_Mapping__mdt];
+                subsegmentMap = new Map<String, String>();
+                for(Sub_Segment_Code_Mapping__mdt each : subsegmentList){
+                    subsegmentMap.put(each.Sub_Segment_Code__c, each.Description__c);
+                }
+            }
+            return subsegmentMap;
+        }set;
+    }
+
     public static List<String> currentWealthRmCustomer = new List<String>();
 
+    //====== Moment Trigger ======
+    public static List<String> birthDayList{
+        get{
+            if(birthDayList == null){
+                birthDayList = new List<String>();
+                for(Account a : BirthdayReport.getQueryData(0)){
+                    birthDayList.add(a.Id);
+                }
+            }
+            return birthDayList;
+        }set;
+    }
+    //================================
+
+    //====== Portfolio Trigger =======
+    public static List<String> lastTransWealthList{
+        get{
+            if(lastTransWealthList == null){
+                lastTransWealthList = new List<String>();
+                for(Large_Transaction_Movements__c each : TransactionMovementReport.getTransactionData(0, 'Yes')){
+                    lastTransWealthList.add(each.Customer__c);
+                }
+            }
+            return lastTransWealthList;
+        }set;
+    }
+
+    public static List<String> lastTransNonWealthList{
+        get{
+            if(lastTransNonWealthList == null){
+                lastTransNonWealthList = new List<String>();
+                for(Large_Transaction_Movements__c each : TransactionMovementReport.getTransactionData(0, 'No')){
+                    lastTransNonWealthList.add(each.Customer__c);
+                }
+            }
+            return lastTransNonWealthList;
+        }set;
+    }
+
+    public static List<String> aumChangeList{
+        get{
+            if(aumChangeList == null){
+                aumChangeList = new List<String>();
+                for(Account a : AUMReport.getAUMPlusAndMinusData(0)){
+                    aumChangeList.add(a.Id);
+                }
+            }
+            return aumChangeList;
+        }set;
+    }
+
+    public static List<String> riskMisMatchList{
+        get{
+            if(riskMisMatchList == null){
+                riskMisMatchList = new List<String>();
+                for(Account a : TransactionMovementReport.getRiskMisMatchData(0)){
+                    riskMisMatchList.add(a.Id);
+                }
+            }
+            return riskMisMatchList;
+        }set;
+    }
+    //================================
+
+    public static List<String> mfAdjustList{
+        get{
+            if(mfAdjustList == null){
+                mfAdjustList = new List<String>();
+                for(Customer_Product_Alert__c a : TransactionMovementReport.getMFPortAdjustData(0)){
+                    mfAdjustList.add(a.Customer__c);
+                }
+            }
+            return mfAdjustList;
+        }set;
+    }
+
+    //===== Product Trigger =====
     public static List<String> dormantAccountIdList{
         get
         {
@@ -52,6 +142,7 @@ public class MyCustomerControllerClass {
                     dormantAccountIdList.add(each.Customer__c);
                 }
             }
+            // System.debug(dormantAccountIdList);
             return dormantAccountIdList;
             
         }set;
@@ -93,18 +184,6 @@ public class MyCustomerControllerClass {
         }set;
     }
 
-    public static List<String> insuranPaidUpList{
-        get{
-            if(insuranPaidUpList == null){
-                insuranPaidUpList = new List<String>();
-                for(Customer_Product_Alert__c each : InsuranceReportController.getPaidUpInsuranceData(0)){
-                    insuranPaidUpList.add(each.Customer__c);
-                }
-            }
-            return insuranPaidUpList;
-        }set;
-    }
-
     public static List<String> insuranMaturityList{
         get{
             if(insuranMaturityList == null){
@@ -116,43 +195,9 @@ public class MyCustomerControllerClass {
             return insuranMaturityList;
         }set;
     }
+    //================================
 
-    public static List<String> lastTransPlusList{
-        get{
-            if(lastTransPlusList == null){
-                lastTransPlusList = new List<String>();
-                for(Large_Transaction_Movements__c each : TransactionMovementReport.getTransactionPlusData(0)){
-                    lastTransPlusList.add(each.Customer__c);
-                }
-            }
-            return lastTransPlusList;
-        }set;
-    }
-
-    public static List<String> lastTransMinusList{
-        get{
-            if(lastTransMinusList == null){
-                lastTransMinusList = new List<String>();
-                for(Large_Transaction_Movements__c each : TransactionMovementReport.getTransactionMinusData(0)){
-                    lastTransMinusList.add(each.Customer__c);
-                }
-            }
-            return lastTransMinusList;
-        }set;
-    }
-
-    public static List<String> birthDayList{
-        get{
-            if(birthDayList == null){
-                birthDayList = new List<String>();
-                for(Account a : BirthdayReport.getQueryData(0)){
-                    birthDayList.add(a.Id);
-                }
-            }
-            return birthDayList;
-        }set;
-    }
-
+    //===== Regulation Trigger =====
     public static List<String> riskList{
         get{
             if(riskList == null){
@@ -162,30 +207,6 @@ public class MyCustomerControllerClass {
                 }
             }
             return riskList;
-        }set;
-    }
-
-    public static List<String> pdpaList{
-        get{
-            if(pdpaList == null){
-                pdpaList = new List<String>();
-                for(Account a : PDPAReportController.getPDPAQueryData(0)){
-                    pdpaList.add(a.Id);
-                }
-            }
-            return pdpaList;
-        }set;
-    }
-
-    public static List<String> marketConductList{
-        get{
-            if(marketConductList == null){
-                marketConductList = new List<String>();
-                for(Account a : PDPAReportController.getMarketConductQueryData(0)){
-                    marketConductList.add(a.Id);
-                }
-            }
-            return marketConductList;
         }set;
     }
 
@@ -212,43 +233,45 @@ public class MyCustomerControllerClass {
             return idCardList;
         }set;
     }
+    //================================
 
-    public static List<String> aumPlusList{
+    //===== Benefit and Campaign Trigger =====
+    public static List<String> instantList{
         get{
-            if(aumPlusList == null){
-                aumPlusList = new List<String>(); 
-                for(Account a : AUMReport.getAUMPlusData(0)){
-                    aumPlusList.add(a.Id);
+            if(instantList == null){
+                instantList = new List<String>();
+                for(Retail_Instant_Lending__c a : CampaignReportController.getInstantLendingData(0)){
+                    instantList.add(a.Customer__c);
                 }
             }
-            return aumPlusList;
+            return instantList;
         }set;
     }
 
-    public static List<String> aumMinusList{
+    public static List<String> fulfillmentList{
         get{
-            if(aumMinusList == null){
-                aumMinusList = new List<String>();
-                for(Account a : AUMReport.getAUMMinusData(0)){
-                    aumMinusList.add(a.Id);
+            if(fulfillmentList == null){
+                fulfillmentList = new List<String>();
+                for(RTL_Fulfillment__c a : CampaignReportController.getFulfillmentData(0)){
+                    fulfillmentList.add(a.RTL_Customer__c);
                 }
             }
-            return aumMinusList;
+            return fulfillmentList;
         }set;
     }
 
-    public static Map<String, String> subsegmentMap{
+    public static List<String> ttbReserveList{
         get{
-            if(subsegmentMap == null){
-                List<Sub_Segment_Code_Mapping__mdt> subsegmentList = [SELECT Description__c, Sub_Segment_Code__c FROM Sub_Segment_Code_Mapping__mdt];
-                subsegmentMap = new Map<String, String>();
-                for(Sub_Segment_Code_Mapping__mdt each : subsegmentList){
-                    subsegmentMap.put(each.Sub_Segment_Code__c, each.Description__c);
+            if(ttbReserveList == null){
+                ttbReserveList = new List<String>();
+                for(Account a : CampaignReportController.getTTBReseveInvitationData(0)){
+                    ttbReserveList.add(a.Id);
                 }
             }
-            return subsegmentMap;
+            return ttbReserveList;
         }set;
     }
+    //================================
 
     public static Map<String, Double> insuranceThisMonth{
         get{
@@ -426,11 +449,11 @@ public class MyCustomerControllerClass {
         get{
             if(accIdLastActivityDate == null){
                 accIdLastActivityDate = new Map<String, Object>();
-                List<Task> taskList = [SELECT Id, Subject, LastModifiedDate, AccountId FROM Task WHERE AccountId IN :currentWealthRmCustomer AND LastModifiedDate <= Last_N_Days:90 ORDER BY LastModifiedDate DESC LIMIT 50000];
+                List<Task> taskList = [SELECT Id, Subject, LastModifiedDate, AccountId FROM Task WHERE AccountId IN :currentWealthRmCustomer AND LastModifiedDate >= Last_N_Days:90 ORDER BY LastModifiedDate DESC LIMIT 50000];
                 for(Task t : taskList){
                     Map<String, Object> lastTaskNameDateMap = new Map<String, Object>();
                     lastTaskNameDateMap.put('taskName', t.Subject + '');
-                    lastTaskNameDateMap.put('lastModifiedString', t.LastModifiedDate.format());
+                    lastTaskNameDateMap.put('lastModifiedString', parseDateFormat(t.LastModifiedDate));
                     lastTaskNameDateMap.put('lastModifiedDate', t.LastModifiedDate);
                     if(accIdLastActivityDate.get(t.AccountId) == null){
                         accIdLastActivityDate.put(t.AccountId, lastTaskNameDateMap);
@@ -438,6 +461,15 @@ public class MyCustomerControllerClass {
                 }
             }
             return accIdLastActivityDate;
+        }set;
+    }
+
+    private static Date dateValueForNull{
+        get{
+            if(dateValueForNull == null){
+                dateValueForNull = date.newinstance(1970, 1, 1);
+            }
+            return dateValueForNull;
         }set;
     }
 
@@ -532,7 +564,7 @@ public class MyCustomerControllerClass {
                 'RTL_Age_Range__c,',
                 'RMC_AUM_RANGE__c,',
                 'RMC_Shareholder_Flag__c,',
-                'RMC_MOU_Payroll_Flag__c,',
+                'RMC_Payroll_Flag__c,',
                 'Last_Selected_Date__c,',
                 'RMC_Sub_Debt_Flag__c,',
                 'RMC_Suitability_Risk_Level_Required__c'
@@ -541,8 +573,9 @@ public class MyCustomerControllerClass {
                 query += field + ' ';
             }
             query += 'FROM Account ';        
-            String whereSOQl = 'WHERE (OwnerId = \'' + currentUserId + '\' OR RTL_Wealth_RM__c = \'' + currentUserId + '\')';
+            String whereSOQl = 'WHERE (OwnerId = \'' + currentUserId + '\' OR RTL_Wealth_RM__c = \'' + currentUserId + '\') AND RecordType.Name != \'Inactive Customer\'';
             for (Object obj : params) {
+                System.debug(obj);
                 Map<String, Object> selectedFilter = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(obj));
                 whereSOQL += ' AND';
                 if (selectedFilter.get('recordType') == 'Text Equals') {
@@ -566,7 +599,10 @@ public class MyCustomerControllerClass {
                 }
             }
             query += whereSOQL;
+            System.debug(query);
             List<Object> outputList = prepCustomerTableData(query);
+            System.debug(outputList);
+            PerformanceUtils.checkMyPerformance();
             return outputList;
         }catch(Exception e){
             throw newMessageException(e.getMessage());
@@ -622,11 +658,11 @@ public class MyCustomerControllerClass {
                 perCust.put('tmb_cust_id', each.TMB_Customer_ID_PE__c);
                 perCust.put('candidate', false);
                 perCust.put('name', each.First_name_PE__c);
-                perCust.put('product_trigger', dormantAccountIdList.contains(each.Id) || depositInvestmentList.contains(each.Id) || mfMaturityList.contains(each.Id) || insuranceAnniList.contains(each.Id) || insuranPaidUpList.contains(each.Id) || insuranMaturityList.contains(each.Id) ? 'Yes' : 'No');
+                perCust.put('product_trigger', dormantAccountIdList.contains(each.Id) || depositInvestmentList.contains(each.Id) || mfMaturityList.contains(each.Id) || insuranceAnniList.contains(each.Id) || insuranMaturityList.contains(each.Id) ? 'Yes' : 'No');
                 perCust.put('moment_trigger', birthDayList.contains(each.Id) ? 'Yes' : 'No');
-                perCust.put('regulartion_trigger', riskList.contains(each.Id) || marketConductList.contains(each.Id) || pdpaList.contains(each.Id) || kycList.contains(each.Id) || idCardList.contains(each.Id) ? 'Yes' : 'No');
-                perCust.put('portfolio_trigger', aumMinusList.contains(each.Id) || aumPlusList.contains(each.Id) || lastTransMinusList.contains(each.Id) || lastTransPlusList.contains(each.Id) ? 'Yes' : 'No');
-                perCust.put('campaign_trigger', 'No');
+                perCust.put('regulartion_trigger', riskList.contains(each.Id) || kycList.contains(each.Id) || idCardList.contains(each.Id) ? 'Yes' : 'No');
+                perCust.put('portfolio_trigger', aumChangeList.contains(each.Id) || riskMisMatchList.contains(each.Id) || mfAdjustList.contains(each.Id) || lastTransNonWealthList.contains(each.Id) || lastTransWealthList.contains(each.Id) ? 'Yes' : 'No');
+                perCust.put('campaign_trigger', instantList.contains(each.Id) || fulfillmentList.contains(each.Id) || ttbReserveList.contains(each.Id) ? 'Yes' : 'No');//ทำ pharse 2
                 perCust.put('last_activity', taskSubjectLastModifyMap == null ? '-' : taskSubjectLastModifyMap.get('taskName'));
                 perCust.put('last_activity_dateTime', taskSubjectLastModifyMap == null ? '-' : taskSubjectLastModifyMap.get('lastModifiedString'));
                 perCust.put('aum_is', getCents(each.RMC_AUM__c));
@@ -634,44 +670,48 @@ public class MyCustomerControllerClass {
                 perCust.put('mf_os', getCents(each.RMC_Sum_of_MF_Current_Amount__c));
                 perCust.put('age', each.RTL_Age__c == null ? '' : each.RTL_Age__c + '');
                 perCust.put('relationship', each.RMC_Relationship_Level__c == null ? '-' : each.RMC_Relationship_Level__c);
-                perCust.put('mfGainLoss', each.RMC_MF_Gain_Loss_Percent__c == null ? '0.00%' : each.RMC_MF_Gain_Loss_Percent__c + '%');
+                perCust.put('mfGainLoss', each.RMC_MF_Gain_Loss_Percent__c == null ? '-' : genPercentValue(each.RMC_MF_Gain_Loss_Percent__c));
                 perCust.put('suit_score', each.RMC_Suitability_Risk_Level__c == null ? '-' : each.RMC_Suitability_Risk_Level__c + '');
-                perCust.put('debenture_flag', each.RMC_Sub_Debt_Flag__c == null ? 'No' : each.RMC_Sub_Debt_Flag__c);
+                perCust.put('debenture_flag', each.RMC_Sub_Debt_Flag__c == null ? '-' : each.RMC_Sub_Debt_Flag__c);
                 perCust.put('cust_sub_segment', each.Sub_segment__c == null ? '-' : subsegmentMap.get(each.Sub_segment__c));
-                perCust.put('insurnace_anni_this_month', insuranceThisMonth.get(each.Id) == null ? '0.00' : getCents(insuranceThisMonth.get(each.Id)));
-                perCust.put('insurnace_anni_next_month', insuranceNextMonth.get(each.Id) == null ? '0.00' : getCents(insuranceNextMonth.get(each.Id)));
-                perCust.put('deposit_matur_this_month', depositMaturThisMonth.get(each.Id) == null ? '0.00' : getCents(depositMaturThisMonth.get(each.Id)));
-                perCust.put('deposit_matur_next_month', depositMaturNextMonth.get(each.Id) == null ? '0.00' : getCents(depositMaturNextMonth.get(each.Id)));
-                perCust.put('mf_matur_this_month', mfMaturThisMonth.get(each.Id) == null ? '0.00' : getCents(mfMaturThisMonth.get(each.Id)));
-                perCust.put('mf_matur_next_month', mfMaturNextMonth.get(each.Id) == null ? '0.00' : getCents(mfMaturNextMonth.get(each.Id)));
-                perCust.put('deb_matur_this_month', debMaturThisMonth.get(each.Id) == null ? '0.00' : getCents(debMaturThisMonth.get(each.Id)));
-                perCust.put('deb_matur_next_month', debMaturNextMonth.get(each.Id) == null ? '0.00' : getCents(debMaturNextMonth.get(each.Id)));
+                perCust.put('insurnace_anni_this_month', insuranceThisMonth.get(each.Id) == null ? '-' : getCents(insuranceThisMonth.get(each.Id)));
+                perCust.put('insurnace_anni_next_month', insuranceNextMonth.get(each.Id) == null ? '-' : getCents(insuranceNextMonth.get(each.Id)));
+                perCust.put('deposit_matur_this_month', depositMaturThisMonth.get(each.Id) == null ? '-' : getCents(depositMaturThisMonth.get(each.Id)));
+                perCust.put('deposit_matur_next_month', depositMaturNextMonth.get(each.Id) == null ? '-' : getCents(depositMaturNextMonth.get(each.Id)));
+                perCust.put('mf_matur_this_month', mfMaturThisMonth.get(each.Id) == null ? '-' : getCents(mfMaturThisMonth.get(each.Id)));
+                perCust.put('mf_matur_next_month', mfMaturNextMonth.get(each.Id) == null ? '-' : getCents(mfMaturNextMonth.get(each.Id)));
+                perCust.put('deb_matur_this_month', debMaturThisMonth.get(each.Id) == null ? '-' : getCents(debMaturThisMonth.get(each.Id)));
+                perCust.put('deb_matur_next_month', debMaturNextMonth.get(each.Id) == null ? '-' : getCents(debMaturNextMonth.get(each.Id)));
                 perCust.put('all_matur_this_month', getCents(allMaturityThisMonth));
                 perCust.put('all_matur_next_month', getCents(allMaturityNextMonth));
-                perCust.put('nfx_rate', each.RMC_NFX_Rate__c == null ? '0.00%' : each.RMC_NFX_Rate__c + '%');
+                perCust.put('nfx_rate', each.RMC_NFX_Rate__c == null ? '-' : genPercentValue(each.RMC_NFX_Rate__c));
                 perCust.put('nfx_os', getCents(each.RMC_NFX_OS__c));
                 perCust.put('td_os', getCents(each.RMC_TD_OS__c));
                 perCust.put('allFree_os', getCents(each.RMC_Allfree_OS__c));
-                perCust.put('wealth_flag', each.RMC_Wealth_Flag__c == null ? 'No' : each.RMC_Wealth_Flag__c);
-                perCust.put('cc_reserve_eligible', each.CC_Reserve_Eligible__c == null ? 'No' : each.CC_Reserve_Eligible__c);
+                perCust.put('wealth_flag', each.RMC_Wealth_Flag__c == null ? '-' : each.RMC_Wealth_Flag__c);
+                perCust.put('cc_reserve_eligible', each.CC_Reserve_Eligible__c == null ? '-' : each.CC_Reserve_Eligible__c);
                 perCust.put('cc_other_point_balance', getCents(each.CC_Other_Point_Balance__c));
                 perCust.put('cc_reserve_annual_point', getCents(each.CC_Reserve_Anual_Point__c));
                 perCust.put('cc_reserve_point', getCents(each.CC_Reserve_Point__c));
                 perCust.put('age_range', each.RTL_Age__c == null ? '' : each.RTL_Age_Range__c);
-                perCust.put('aum_range', each.RMC_AUM_RANGE__c);
+                perCust.put('aum_range', each.RMC_AUM_RANGE__c == null ? '' : each.RMC_AUM_RANGE__c);
                 perCust.put('other_deposit_os', getCents(each.RMC_OtherDP_OS__c));
-                perCust.put('shareholder_flag', each.RMC_Shareholder_Flag__c == null ? 'No' : each.RMC_Shareholder_Flag__c);
-                perCust.put('mou_payroll_flag', each.RMC_MOU_Payroll_Flag__c == null ? 'No' : each.RMC_MOU_Payroll_Flag__c);
-                perCust.put('last_selected_date', each.Last_Selected_Date__c == null ? '-' : each.Last_Selected_Date__c.format());
+                perCust.put('shareholder_flag', each.RMC_Shareholder_Flag__c == null ? '-' : each.RMC_Shareholder_Flag__c);
+                perCust.put('mou_payroll_flag', each.RMC_Payroll_Flag__c == null ? '-' : each.RMC_Payroll_Flag__c);
+                perCust.put('last_selected_date', each.Last_Selected_Date__c == null ? '-' : parseDateFormat(each.Last_Selected_Date__c));
 
                 //for sorting
-                perCust.put('aum_is_double', each.RMC_AUM__c == null ? 0 : each.RMC_AUM__c);
-                perCust.put('dp_op_double', each.RMC_Sum_of_Deposit_Amount__c == null ? 0 : each.RMC_Sum_of_Deposit_Amount__c);
-                perCust.put('mf_os_double', each.RMC_Sum_of_MF_Current_Amount__c == null ? 0 : each.RMC_Sum_of_MF_Current_Amount__c);
-                perCust.put('mfGainLoss_double', each.RMC_MF_Gain_Loss_Percent__c == null ? 0 : each.RMC_MF_Gain_Loss_Percent__c);
-                perCust.put('cc_ttb_reserve_invitation_value', each.CC_Reserve_Eligible__c == 'Yes' ? 0 : 1);
-                perCust.put('last_selected_date_value', each.Last_Selected_Date__c == null ? null : each.Last_Selected_Date__c);
-                perCust.put('last_activity_dateTime_value', taskSubjectLastModifyMap == null ? null : taskSubjectLastModifyMap.get('lastModifiedDate'));
+                perCust.put('aum_is_double', each.RMC_AUM__c == null ? -99 : each.RMC_AUM__c);
+                perCust.put('dp_op_double', each.RMC_Sum_of_Deposit_Amount__c == null ? -99 : each.RMC_Sum_of_Deposit_Amount__c);
+                perCust.put('mf_os_double', each.RMC_Sum_of_MF_Current_Amount__c == null ? -99 : each.RMC_Sum_of_MF_Current_Amount__c);
+                perCust.put('mfGainLoss_double', each.RMC_MF_Gain_Loss_Percent__c == null ? -99 : each.RMC_MF_Gain_Loss_Percent__c);
+                perCust.put('cc_ttb_reserve_invitation_value', each.CC_Reserve_Eligible__c == 'Yes' ? 0 : each.CC_Reserve_Eligible__c == 'No' ? 1 : -99);
+                perCust.put('last_selected_date_value', each.Last_Selected_Date__c == null ? dateValueForNull : each.Last_Selected_Date__c);
+                perCust.put('last_activity_dateTime_value', taskSubjectLastModifyMap == null ? dateValueForNull : taskSubjectLastModifyMap.get('lastModifiedDate'));
+                perCust.put('allFree_os_double', each.RMC_Allfree_OS__c == null ? -99 : each.RMC_Allfree_OS__c);
+                perCust.put('td_os_double', each.RMC_TD_OS__c == null ? -99 : each.RMC_TD_OS__c);
+                perCust.put('nfx_os_double', each.RMC_NFX_OS__c == null ? -99 : each.RMC_NFX_OS__c);
+                perCust.put('other_deposit_os_double', each.RMC_OtherDP_OS__c == null ? -99 : each.RMC_OtherDP_OS__c);
                 outputList.add(perCust);
             }
             return outputList;
@@ -695,7 +735,7 @@ public class MyCustomerControllerClass {
             }
         }
         catch(Exception e){
-            return '0.00';
+            return '-';
         }
     }
 
@@ -720,6 +760,11 @@ public class MyCustomerControllerClass {
     }
 
     @AuraEnabled
+    public static Map<String, Object> getTaskCustomSetting(){
+        return RM_Cockpit_My_Customer_CreateTask.appConfig;
+    }
+    
+    @AuraEnabled
     public static String getCurrentUserName(){
         try {
             return currentUserName;
@@ -734,7 +779,20 @@ public class MyCustomerControllerClass {
     }
 
     @AuraEnabled
-    public static Map<String, Object> getTaskCustomSetting(){
-        return RM_Cockpit_My_Customer_CreateTask.appConfig;
+    public static string parseDateFormat(DateTime input){
+        try {
+            input = input.addHours(7);
+            return input.format('dd/MM/yyyy, HH:mm', 'th_TH');
+        } catch (Exception e) {
+            return '-';
+        }
+    }
+
+    public static string genPercentValue(Decimal input){
+        try{
+            return input.setScale(2) + '%';
+        }catch(Exception e){
+            return '-';
+        }
     }
 }

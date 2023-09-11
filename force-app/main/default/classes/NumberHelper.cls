@@ -458,4 +458,37 @@ public class NumberHelper {
 		return uid;
     }
 
+	public static String getCents(Decimal x){
+        try{
+            String i = String.valueOf(x);
+			if(x >= 0){
+				if(i.contains('.')){
+					String s = ( Decimal.valueOf(i==null||i.trim()==''?'0':i).setScale(2) + 0.001).format();
+					String p = s.substring(0,s.length()-1);
+					return p;
+				}
+				else{
+					List<String> args = new String[]{'0','number','###,###,##0.00'};
+					String s = String.format(x.format(), args);
+					return s + '.00';
+				}
+            }
+			else{
+				if(i.contains('.')){
+					String s = ( Decimal.valueOf(i==null||i.trim()==''?'0':i).setScale(2) - 0.001).format();
+					String p = s.substring(0,s.length()-1);
+					return p;
+				}
+				else{
+					List<String> args = new String[]{'0','number','###,###,##0.00'};
+					String s = String.format(x.format(), args);
+					return s + '.00';
+				}
+			}
+        }
+        catch(Exception e){
+            return '0.00';
+        }
+    }
+
 }

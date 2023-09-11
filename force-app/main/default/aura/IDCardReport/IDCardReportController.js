@@ -7,7 +7,7 @@
                 cellAttributes:
                 {
                     class: { fieldName: 'textColor' }
-                }
+                },
             }
 
         ]);
@@ -34,7 +34,7 @@
                     finalData.push(element);
 
                 });
-                component.set('v.data', finalData);
+                helper.sortData(component, 'RMC_ID_Card_Expiry_Date__c', 'desc', finalData)
                 component.set('v.reportId', resp.reportId);
             } else {
             }
@@ -68,6 +68,23 @@
             });
             urlEvent.fire();
         }
-    }
+    },
+
+    handleSort: function(component,event,helper){
+        var sortField = event.getParam("fieldName");
+        var sortDirection = event.getParam("sortDirection");
+        let columns = component.get('v.columns');
+        let sortBy;
+        columns.forEach((e) => {
+            if(e.fieldName == sortField){
+                sortBy = e.sortBy;
+            }
+        })
+   
+        component.set("v.sortBy",sortField);
+        component.set("v.sortDirection",sortDirection);
+         
+        helper.sortData(component, sortBy, sortDirection, null);
+    },
 
 })

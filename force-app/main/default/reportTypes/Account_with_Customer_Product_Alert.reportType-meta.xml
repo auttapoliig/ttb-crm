@@ -2918,6 +2918,21 @@
             <field>Dept_No_Fund_Code__c</field>
             <table>Account.Product_Maturities__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Insurance_Fully_Paid_Flag__c</field>
+            <table>Account.Product_Maturities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MF_Gain_Loss_Percent__c</field>
+            <table>Account.Product_Maturities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MF_Outstanding__c</field>
+            <table>Account.Product_Maturities__r</table>
+        </columns>
         <masterLabel>Customer Product Alerts</masterLabel>
     </sections>
     <sections>
@@ -3179,6 +3194,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RMC_MF_TSP__c</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Update_RMC10__c</field>
             <table>Account</table>
         </columns>
         <masterLabel>Customers</masterLabel>

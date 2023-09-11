@@ -20,14 +20,6 @@
     <aura:attribute name="countSelectCustWarning" type="Boolean" default="false" />
     <aura:attribute name="dataSelectCust" type="Object" />
     <aura:attribute name="userName" type="String" />
-    <aura:attribute name="isAUMSort" type="Boolean" default="false"/>
-    <aura:attribute name="isDPSort" type="Boolean" default="false"/>
-    <aura:attribute name="isMFSort" type="Boolean" default="false"/>
-    <aura:attribute name="isMFGainLossSort" type="Boolean" default="false"/>
-    <aura:attribute name="isLastSelectedSort" type="Boolean" default="false"/>
-    <aura:attribute name="isLastActivitySort" type="Boolean" default="false"/>
-    <aura:attribute name="isNameSort" type="Boolean" default="false"/>
-    <aura:attribute name="isReserveInviteSort" type="Boolean" default="false"/>
     <aura:attribute name="countSuccess" type="Integer" default="0" />
     <aura:attribute name="Task_Activity_Days" type="String"/>
     <aura:attribute name="Task_Priority" type="String"/>
@@ -43,14 +35,13 @@
     <aura:attribute name="iconsLastSelectedSort" type="String" default="utility:arrowdown"/>
     <aura:attribute name="iconsLastActivitySort" type="String" default="utility:arrowdown"/>
     <aura:attribute name="iconsReserveInviteSort" type="String" default="utility:arrowdown"/>
-    <aura:attribute name="activeSortName" type="Boolean" default="true"/>
-    <aura:attribute name="activeSortAUM" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortDP" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortMF" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortMFgainloss" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortLastSelect" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortLastActivety" type="Boolean" default="false"/>
-    <aura:attribute name="activeSortReserve" type="Boolean" default="false"/>
+    <aura:attribute name="iconsAllFreeSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsTDOSSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsNFXOSSort" type="String" default="utility:arrowdown"/>
+    <aura:attribute name="iconsOTHEROSSort" type="String" default="utility:arrowdown"/>
+
+    <aura:attribute name="arrowAt" type="String" default="iconsNameSort"/>
+    <aura:attribute name="sortColumnObject" type="Object"/>
 
     <!-- Viewmore -->
     <aura:attribute name="openViewMore" type="Boolean" default="false" />
@@ -155,7 +146,7 @@
                                 </div>
                             </th>
                             <th class="sticky-col" scope="col">
-                                <aura:if isTrue="{!v.activeSortName}">
+                                <aura:if isTrue="{!(v.arrowAt == 'iconsNameSort')}">
                                     <a class="sortcolumnHover" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
                                         <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
                                             {!$Label.c.Name_My_Customer}
@@ -203,7 +194,7 @@
                                 </div>
                             </th>
                             <th scope="col" class="slds-is-sortable">
-                                <aura:if isTrue="{!v.activeSortAUM}">
+                                <aura:if isTrue="{!(v.arrowAt == 'iconsAUMSort')}">
                                     <a class="sortcolumnHover " data-sort="aum_is_double" onclick="{!c.sortingData}">
                                         <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
                                             {!$Label.c.AUM_OS}
@@ -221,7 +212,7 @@
                                 </aura:if>
                             </th>
                             <th scope="col">
-                                <aura:if isTrue="{!v.activeSortDP}">
+                                <aura:if isTrue="{!(v.arrowAt == 'iconsDPSort')}">
                                     <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
                                         <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
                                             {!$Label.c.DP_OS}
@@ -239,7 +230,7 @@
                                 </aura:if>
                             </th>
                             <th scope="col">
-                                <aura:if isTrue="{!v.activeSortMF}">
+                                <aura:if isTrue="{!(v.arrowAt == 'iconsMFSort')}">
                                     <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
                                         <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
                                             {!$Label.c.MF_OS}
@@ -257,7 +248,7 @@
                                 </aura:if>
                             </th>
                             <th scope="col">
-                                <aura:if isTrue="{!v.activeSortLastSelect}">
+                                <aura:if isTrue="{!(v.arrowAt == 'iconsLastSelectedSort')}">
                                     <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
                                         <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
                                             {!$Label.c.Select_Date_Time}
@@ -367,7 +358,7 @@
                                     </div>
                                 </th>
                                 <th class="sticky-col" scope="col">
-                                    <aura:if isTrue="{!v.activeSortName}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsNameSort')}">
                                         <a class="sortcolumnHover" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
                                                 {!$Label.c.Name_My_Customer}
@@ -415,7 +406,7 @@
                                     </div>
                                 </th>
                                 <th scope="col" class="slds-is-sortable">
-                                    <aura:if isTrue="{!v.activeSortAUM}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsAUMSort')}">
                                         <a class="sortcolumnHover" data-sort="aum_is_double" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
                                                 {!$Label.c.AUM_OS}
@@ -433,7 +424,7 @@
                                     </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortDP}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsDPSort')}">
                                         <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
                                                 {!$Label.c.DP_OS}
@@ -451,7 +442,7 @@
                                     </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortMF}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsMFSort')}">
                                         <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
                                                 {!$Label.c.MF_OS}
@@ -469,7 +460,7 @@
                                     </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortLastSelect}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsLastSelectedSort')}">
                                         <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
                                                 {!$Label.c.Select_Date_Time}
@@ -532,7 +523,7 @@
                                     </div>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortLastActivety}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsLastActivitySort')}">
                                         <a class="sortcolumnHover" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
                                                 {!$Label.c.Last_Activity_Date}
@@ -555,27 +546,79 @@
                                     </div>
                                 </th>
                                 <th scope="col">
-                                    <div title="{!$Label.c.AllFree_OS}" class="slds-text-align_center">
-                                        {!$Label.c.AllFree_OS}
-                                    </div>
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsAllFreeSort')}">
+                                        <a class="sortcolumnHover" data-sort="allFree_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.AllFree_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.AllFree_OS}
+                                                <lightning:icon aura:id="allFree_os_double" iconName="{!v.iconsAllFreeSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="allFree_os_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.AllFree_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.AllFree_OS}
+                                                    <lightning:icon aura:id="allFree_os_double" iconName="{!v.iconsAllFreeSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <div title="{!$Label.c.NFX_OS}" class="slds-text-align_center">
-                                        {!$Label.c.NFX_OS}
-                                    </div>
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsNFXOSSort')}">
+                                        <a class="sortcolumnHover" data-sort="nfx_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.NFX_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.NFX_OS}
+                                                <lightning:icon aura:id="nfx_os_double" iconName="{!v.iconsNFXOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="nfx_os_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.NFX_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.NFX_OS}
+                                                    <lightning:icon aura:id="nfx_os_double" iconName="{!v.iconsNFXOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <div title="{!$Label.c.TD_OS}" class="slds-text-align_center">
-                                        {!$Label.c.TD_OS}
-                                    </div>
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsTDOSSort')}">
+                                        <a class="sortcolumnHover" data-sort="td_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.TD_OS}" class="sortData slds-text-align_center">
+                                                {!$Label.c.TD_OS}
+                                                <lightning:icon aura:id="td_os_double" iconName="{!v.iconsTDOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="td_os_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.TD_OS}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.TD_OS}
+                                                    <lightning:icon aura:id="td_os_double" iconName="{!v.iconsTDOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <div title="{!$Label.c.other_dp_os}" class="slds-text-align_center">
-                                        {!$Label.c.other_dp_os}
-                                    </div>
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsOTHEROSSort')}">
+                                        <a class="sortcolumnHover" data-sort="other_deposit_os_double" onclick="{!c.sortingData}">
+                                            <div title="{!$Label.c.other_dp_os}" class="sortData slds-text-align_center">
+                                                {!$Label.c.other_dp_os}
+                                                <lightning:icon aura:id="other_deposit_os_double" iconName="{!v.iconsOTHEROSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                            </div>
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="sortcolumn" data-sort="other_deposit_os_double" onclick="{!c.sortingData}">
+                                                <div title="{!$Label.c.other_dp_os}" class="sortData slds-text-align_center">
+                                                    {!$Label.c.other_dp_os}
+                                                    <lightning:icon aura:id="other_deposit_os_double" iconName="{!v.iconsOTHEROSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                </div>
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortMFgainloss}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsMFGainLossSort')}">
                                         <a class="sortcolumnHover" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
                                                 {!$Label.c.mf_gain_loss}
@@ -648,7 +691,7 @@
                                     </div>
                                 </th>
                                 <th scope="col">
-                                    <aura:if isTrue="{!v.activeSortReserve}">
+                                    <aura:if isTrue="{!(v.arrowAt == 'iconsReserveInviteSort')}">
                                         <a class="sortcolumnHover" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
                                                 {!$Label.c.CC_Reserve_Eligible}
@@ -976,7 +1019,7 @@
                                             </div>
                                         </th>
                                         <th class="sticky-col-viewmore" scope="col">
-                                            <aura:if isTrue="{!v.activeSortName}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsNameSort')}">
                                                 <a class="sortcolumnHover" data-sort="name" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
                                                         {!$Label.c.Name_My_Customer}
@@ -1024,7 +1067,7 @@
                                             </div>
                                         </th>
                                         <th scope="col" class="slds-is-sortable">
-                                            <aura:if isTrue="{!v.activeSortAUM}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsAUMSort')}">
                                                 <a class="sortcolumnHover" data-sort="aum_is_double" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.AUM_OS}" class="sortData slds-text-align_center">
                                                         {!$Label.c.AUM_OS}
@@ -1042,7 +1085,7 @@
                                             </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortDP}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsDPSort')}">
                                                 <a class="sortcolumnHover" data-sort="dp_op_double" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.DP_OS}" class="sortData slds-text-align_center">
                                                         {!$Label.c.DP_OS}
@@ -1060,7 +1103,7 @@
                                             </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortMF}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsMFSort')}">
                                                 <a class="sortcolumnHover" data-sort="mf_os_double" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.MF_OS}" class="sortData slds-text-align_center">
                                                         {!$Label.c.MF_OS}
@@ -1078,7 +1121,7 @@
                                             </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortLastSelect}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsLastSelectedSort')}">
                                                 <a class="sortcolumnHover" data-sort="last_selected_date_value" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.Select_Date_Time}" class="sortData slds-text-align_center">
                                                         {!$Label.c.Select_Date_Time}
@@ -1141,7 +1184,7 @@
                                             </div>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortLastActivety}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsLastActivitySort')}">
                                                 <a class="sortcolumnHover" data-sort="last_activity_dateTime_value" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.Last_Activity_Date}" class="sortData slds-text-align_center">
                                                         {!$Label.c.Last_Activity_Date}
@@ -1164,27 +1207,79 @@
                                             </div>
                                         </th>
                                         <th scope="col">
-                                            <div title="{!$Label.c.AllFree_OS}" class="slds-text-align_center">
-                                                {!$Label.c.AllFree_OS}
-                                            </div>
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsAllFreeSort')}">
+                                                <a class="sortcolumnHover" data-sort="allFree_os_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.AllFree_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.AllFree_OS}
+                                                        <lightning:icon aura:id="allFree_os_double" iconName="{!v.iconsAllFreeSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="allFree_os_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.AllFree_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.AllFree_OS}
+                                                            <lightning:icon aura:id="allFree_os_double" iconName="{!v.iconsAllFreeSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <div title="{!$Label.c.NFX_OS}" class="slds-text-align_center">
-                                                {!$Label.c.NFX_OS}
-                                            </div>
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsNFXOSSort')}">
+                                                <a class="sortcolumnHover" data-sort="nfx_os_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.NFX_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.NFX_OS}
+                                                        <lightning:icon aura:id="nfx_os_double" iconName="{!v.iconsNFXOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="nfx_os_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.NFX_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.NFX_OS}
+                                                            <lightning:icon aura:id="nfx_os_double" iconName="{!v.iconsNFXOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <div title="{!$Label.c.TD_OS}" class="slds-text-align_center">
-                                                {!$Label.c.TD_OS}
-                                            </div>
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsTDOSSort')}">
+                                                <a class="sortcolumnHover" data-sort="td_os_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.TD_OS}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.TD_OS}
+                                                        <lightning:icon aura:id="td_os_double" iconName="{!v.iconsTDOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="td_os_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.TD_OS}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.TD_OS}
+                                                            <lightning:icon aura:id="td_os_double" iconName="{!v.iconsTDOSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <div title="{!$Label.c.other_dp_os}" class="slds-text-align_center">
-                                                {!$Label.c.other_dp_os}
-                                            </div>
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsOTHEROSSort')}">
+                                                <a class="sortcolumnHover" data-sort="other_deposit_os_double" onclick="{!c.sortingData}">
+                                                    <div title="{!$Label.c.other_dp_os}" class="sortData slds-text-align_center">
+                                                        {!$Label.c.other_dp_os}
+                                                        <lightning:icon aura:id="other_deposit_os_double" iconName="{!v.iconsOTHEROSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                    </div>
+                                                </a>
+                                                <aura:set attribute="else">
+                                                    <a class="sortcolumn" data-sort="other_deposit_os_double" onclick="{!c.sortingData}">
+                                                        <div title="{!$Label.c.other_dp_os}" class="sortData slds-text-align_center">
+                                                            {!$Label.c.other_dp_os}
+                                                            <lightning:icon aura:id="other_deposit_os_double" iconName="{!v.iconsOTHEROSSort}" alternativeText="Sort Data" title="Sort Data"/>
+                                                        </div>
+                                                    </a>
+                                                </aura:set>
+                                            </aura:if>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortMFgainloss}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsMFGainLossSort')}">
                                                 <a class="sortcolumnHover" data-sort="mfGainLoss_double" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.mf_gain_loss}" class="sortData slds-text-align_center">
                                                         {!$Label.c.mf_gain_loss}
@@ -1257,7 +1352,7 @@
                                             </div>
                                         </th>
                                         <th scope="col">
-                                            <aura:if isTrue="{!v.activeSortReserve}">
+                                            <aura:if isTrue="{!(v.arrowAt == 'iconsReserveInviteSort')}">
                                                 <a class="sortcolumnHover" data-sort="cc_ttb_reserve_invitation_value" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.CC_Reserve_Eligible}" class="sortData slds-text-align_center">
                                                         {!$Label.c.CC_Reserve_Eligible}
@@ -1563,13 +1658,13 @@
                                             <div class="slds-truncate" title="Name">{!$Label.c.Name_My_Customer}</div>
                                         </th>
                                         <th class="" scope="col">
-                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.priority}</div>
-                                        </th>
-                                        <th class="" scope="col">
                                             <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.subject}</div>
                                         </th>
                                         <th class="" scope="col">
-                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.activitydate}</div>
+                                            <div class="slds-truncate slds-text-align_center" title="Name">{!v.taskFieldLabelMap.priority}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-text-align_center" title="Name">{!$Label.c.Task_DueDate}</div>
                                         </th>
                                     </tr>
                                 </thead>
@@ -1585,12 +1680,12 @@
                                             </td>
                                             <td data-label="Opportunity Name">
                                                 <div class="slds-truncate slds-text-align_center" title="Cloudhub">
-                                                    {!data.priority}
+                                                    {!data.subject}
                                                 </div>
                                             </td>
                                             <td data-label="Opportunity Name">
                                                 <div class="slds-truncate slds-text-align_center" title="Cloudhub">
-                                                    {!data.subject}
+                                                    {!$Label.c.Task_Priority}
                                                 </div>
                                             </td>
                                             <td data-label="Opportunity Name">

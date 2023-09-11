@@ -2,9 +2,9 @@
     init: function (component, event, helper) {
         component.set('v.columns', [
             { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
-            { label: 'Insurance Policy No.', fieldName: 'Account_Number__c', type: 'text', wrapText: true },
-            { label: 'Insurance Sum Insured', fieldName: 'Insurance_Sum_Insured__c', type: 'currency', wrapText: true },
-            { label: 'Insurance Maturity Date', fieldName: 'Insurance_Maturity_Date__c', type: 'date', wrapText: true }
+            { label: 'Insurance Policy No.', fieldName: 'Account_Number', type: 'text', wrapText: true },
+            { label: 'Insurance Sum Insured', fieldName: 'Insurance_Sum_Insured', type: 'currency', wrapText: true },
+            { label: 'Insurance Maturity Date', fieldName: 'Insurance_Maturity_Date', type: 'date', wrapText: true }
         ]);
 
         var action = component.get('c.getMatureInsurance');
@@ -19,8 +19,7 @@
                 var data = resp.data;
                 if (data) {
                     data.forEach(element => {
-                        element.Id = '/' + element.Customer__c;
-                        element.Name = element.Customer__r.Name;
+                        element.Id = '/' + element.Id;
                         finalData.push(element);
 
                     });
@@ -35,11 +34,28 @@
         $A.enqueueAction(action);
     },
 
+    handleSort: function(component,event,helper){
+        var sortField = event.getParam("fieldName");
+        var sortDirection = event.getParam("sortDirection");
+        let columns = component.get('v.columns');
+        let sortBy;
+        columns.forEach((e) => {
+            if(e.fieldName == sortField){
+                sortBy = e.sortBy;
+            }
+        })
+   
+        component.set("v.sortBy",sortField);
+        component.set("v.sortDirection",sortDirection);
+         
+        helper.sortData(component,sortBy,sortDirection);
+    },
+
     openTab: function (component, event, helper) {
         var device = $A.get("$Browser.formFactor");
         var reportId = component.get('v.reportId');
         if(device == 'DESKTOP'){
-            var workspaceAPI = component.find("riskReportCmp");
+            var workspaceAPI = component.find("InsuranceMature");
             workspaceAPI.openTab({
                 recordId: component.get('v.reportId'),
                 focus: true

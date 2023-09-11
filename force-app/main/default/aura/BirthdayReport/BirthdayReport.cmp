@@ -10,8 +10,18 @@
     <aura:attribute name="columns" type="List" />
     <aura:attribute name="isLoading" type="Boolean" default="true" />
 
-    <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true" />
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:attribute name="sortDirection" type="String"/>
 
+    <lightning:datatable 
+        keyField="id" 
+        data="{! v.data }" 
+        columns="{! v.columns }"         
+        sortedBy="{!v.sortBy}"
+        sortedDirection="{!v.sortDirection}"
+        onsort="{!c.handleSort}"
+        hideCheckboxColumn="true" />
+        
     <br />
     <aura:if isTrue="{!v.isLoading}">
         <div class="spinner">

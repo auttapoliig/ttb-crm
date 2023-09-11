@@ -17,6 +17,14 @@
         <value>Age Range</value>
     </labels>
     <labels>
+        <fullName>AUMChangeAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report AUMChangeAlertReport</shortDescription>
+        <value>Customer Portfolio AUM Change (Compare to Last Month AUM)</value>
+    </labels>
+    <labels>
         <fullName>AUM_OS</fullName>
         <categories>rmCockpit-MyCustomer</categories>
         <language>en_US</language>
@@ -39,6 +47,14 @@
         <protected>false</protected>
         <shortDescription>All Free Deposit balance(AllFree_OS)</shortDescription>
         <value>All Free Deposit balance</value>
+    </labels>
+    <labels>
+        <fullName>BirthdayReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BirthdayReport</shortDescription>
+        <value>Customer Upcoming Birthdays in This Month/Next Month</value>
     </labels>
     <labels>
         <fullName>CC_Other_POINT_BALANCE</fullName>
@@ -72,6 +88,37 @@
         <value>CC Reserve invitation</value>
     </labels>
     <labels>
+        <fullName>CampaignFulfillmentAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report CampaignFulfillmentAlertReport</shortDescription>
+        <value>Campaign with fulfillment</value>
+    </labels>
+    <labels>
+        <fullName>CampaignInstantLendingAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report CampaignInstantLendingAlertReport</shortDescription>
+        <value>Campaign Instant Lending Waive Document</value>
+    </labels>
+    <labels>
+        <fullName>CampaignReport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampaignReport</shortDescription>
+        <value>New Mass Campaigns &amp; Promotions</value>
+    </labels>
+    <labels>
+        <fullName>CampaignTTBReserveAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report CampaignTTBReserveAlertReport</shortDescription>
+        <value>Campaign ttb reserve Invitation</value>
+    </labels>
+    <labels>
         <fullName>Campaign_Trigger</fullName>
         <categories>rmCockpit-MyCustomer</categories>
         <language>en_US</language>
@@ -86,6 +133,46 @@
         <protected>false</protected>
         <shortDescription>Customer Sub Segment</shortDescription>
         <value>Customer Sub Segment</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Deposit_Mature</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Deposit Mature</shortDescription>
+        <value>Customer Deposit Mature in Next 30 Days</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Dormant_Accounts</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Dormant Accounts</shortDescription>
+        <value>Customer Dormant Accounts in Next 30 Days</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Insurance_Anniversary</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Insurance Anniversary</shortDescription>
+        <value>Customer Insurance Anniversary in Next 30 Days with Fully Paid Flag</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Insurance_Mature</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Insurance Mature</shortDescription>
+        <value>Customer Insurance Mature in Next 30 Days</value>
+    </labels>
+    <labels>
+        <fullName>Customer_MF_Mature</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer MF Mature</shortDescription>
+        <value>Customer Mutual Fund Mature in Next 30 Days</value>
     </labels>
     <labels>
         <fullName>DP_OS</fullName>
@@ -128,6 +215,38 @@
         <value>Employer Flag</value>
     </labels>
     <labels>
+        <fullName>IDCardReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IDCardReport</shortDescription>
+        <value>Customer ID Card Require Update in Next 30 Days/Already Expired</value>
+    </labels>
+    <labels>
+        <fullName>KYCReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KYCReport</shortDescription>
+        <value>Customer KYC Require Update Urgently</value>
+    </labels>
+    <labels>
+        <fullName>LargeTransactionNonWealthAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report LargeTransactionNonWealthAlertReport</shortDescription>
+        <value>Non-Wealth Customer Transaction Movement +/-1MB and Above in Last 5 Days</value>
+    </labels>
+    <labels>
+        <fullName>LargeTransactionWealthAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report LargeTransactionWealthAlertReport</shortDescription>
+        <value>Wealth Customer Transaction Movement +/-3MB and Above in Last 5 Days</value>
+    </labels>
+    <labels>
         <fullName>Last_Activity</fullName>
         <categories>rmCockpit-MyCustomer</categories>
         <language>en_US</language>
@@ -142,6 +261,14 @@
         <protected>false</protected>
         <shortDescription>Last_Activity_Date</shortDescription>
         <value>Last Activity Date</value>
+    </labels>
+    <labels>
+        <fullName>MFAdjustAlertReportLabel</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MFAdjustAlertReportLabel</shortDescription>
+        <value>MF Port Adjustment</value>
     </labels>
     <labels>
         <fullName>MF_OS</fullName>
@@ -165,7 +292,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Max Select Customer on My Customer Screen</shortDescription>
-        <value>10</value>
+        <value>50</value>
     </labels>
     <labels>
         <fullName>Moment_Trigger</fullName>
@@ -236,7 +363,23 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Relationship Level (H W C ระดับ RM ต้นเดือน)</shortDescription>
-        <value>H-W-C by RM</value>
+        <value>H-W-C (Team Level)</value>
+    </labels>
+    <labels>
+        <fullName>RiskMisMatchAlertReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label สำหรับ alert report RiskMisMatchAlertReport</shortDescription>
+        <value>MF Risk Mismatch</value>
+    </labels>
+    <labels>
+        <fullName>RiskReport</fullName>
+        <categories>rmcockpit2-trigger</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RiskReport</shortDescription>
+        <value>Customer Risk Suitability Require Update in Next 30 Days/Already Expired</value>
     </labels>
     <labels>
         <fullName>SUIT_SCORE_FIN</fullName>
@@ -277,6 +420,13 @@
         <protected>false</protected>
         <shortDescription>TD Maturity Next Month</shortDescription>
         <value>TD Maturity Next Month</value>
+    </labels>
+    <labels>
+        <fullName>Task_Priority</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Task_Priority</shortDescription>
+        <value>Normal</value>
     </labels>
     <labels>
         <fullName>WEALTH_FLAG</fullName>

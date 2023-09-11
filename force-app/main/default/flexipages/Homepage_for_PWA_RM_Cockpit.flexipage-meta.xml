@@ -196,7 +196,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -212,6 +212,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-998a422f-0043-4bb3-956e-a5f55f19346c</value>
@@ -487,7 +491,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;b&gt;&lt;u&gt;{!$Label.Customer_Upcoming_Birthdays}&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.BirthdayReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText8</identifier>
@@ -515,7 +519,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Risk_Update}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.RiskReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText9</identifier>
@@ -539,55 +543,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_PDPA_Update}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText10</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>queryLimit</name>
-                    <value>5</value>
-                </componentInstanceProperties>
-                <componentName>PDPAReport</componentName>
-                <identifier>c_PDPAReport1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Market_Conduct_Update}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText11</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>queryLimit</name>
-                    <value>5</value>
-                </componentInstanceProperties>
-                <componentName>MarketConductReport</componentName>
-                <identifier>c_MarketConductReport</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_KYC_Update}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.KYCReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText12</identifier>
@@ -611,7 +567,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_ID_Card_Update}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.IDCardReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText16</identifier>
@@ -663,7 +619,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 12px; color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Deposit_Mature}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 12px;&quot;&gt;&lt;u&gt;{!$Label.Customer_Deposit_Mature}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText20</identifier>
@@ -735,30 +691,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 12px; color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Insurance_Paid_Up}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText18</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>queryLimit</name>
-                    <value>5</value>
-                </componentInstanceProperties>
-                <componentName>InsurancePaidUpReport</componentName>
-                <identifier>c_InsurancePaidUpReport</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
                     <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 12px;&quot;&gt;&lt;u&gt;{!$Label.Customer_Insurance_Mature}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
@@ -787,10 +719,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_AUM_Change_Positive}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.AUMChangeAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText4</identifier>
+                <identifier>flexipage_richText2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -799,8 +731,8 @@
                     <name>queryLimit</name>
                     <value>5</value>
                 </componentInstanceProperties>
-                <componentName>AUMPlusReport</componentName>
-                <identifier>c_AUMPlusReport</identifier>
+                <componentName>AUMChangeAlertReport</componentName>
+                <identifier>c_AUMChangeAlertReport</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -811,31 +743,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_AUM_Change_Negative}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>queryLimit</name>
-                    <value>5</value>
-                </componentInstanceProperties>
-                <componentName>AUMMinusReport</componentName>
-                <identifier>c_AUMMinusReport</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Large_Transaction_Positive}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.LargeTransactionWealthAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText6</identifier>
@@ -847,8 +755,8 @@
                     <name>queryLimit</name>
                     <value>5</value>
                 </componentInstanceProperties>
-                <componentName>LargeTransactionMovementPlus</componentName>
-                <identifier>c_LargeTransactionMovementPlus</identifier>
+                <componentName>LargeTransactionWealthAlertReport</componentName>
+                <identifier>c_LargeTransactionWealthAlertReport</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -859,7 +767,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.Customer_Large_Transaction_Negative}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.LargeTransactionNonWealthAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText7</identifier>
@@ -871,8 +779,56 @@
                     <name>queryLimit</name>
                     <value>5</value>
                 </componentInstanceProperties>
-                <componentName>LargeTransactionMovementMinus</componentName>
-                <identifier>c_LargeTransactionMovementMinus</identifier>
+                <componentName>LargeTransactionNonWealthAlertReport</componentName>
+                <identifier>c_LargeTransactionNonWealthAlertReport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.RiskMisMatchAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>RiskMisMatchAlertReport</componentName>
+                <identifier>c_RiskMisMatchAlertReport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.MFAdjustAlertReportLabel}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>MFAdjustAlertReport</componentName>
+                <identifier>c_MFAdjustAlertReport</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-9fe8c670-b95a-4a81-8d66-507d80d8f7a6</name>
@@ -887,7 +843,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;b&gt;&lt;u&gt;{!$Label.New_Mass_Campaign_and_Promotion}&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;strong&gt;&lt;u&gt;{!$Label.New_Mass_Campaign_and_Promotion}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText13</identifier>
@@ -901,6 +857,78 @@
                 </componentInstanceProperties>
                 <componentName>CampaignReport</componentName>
                 <identifier>c_CampaignReport1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.CampaignInstantLendingAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>CampaignInstantLendingAlertReport</componentName>
+                <identifier>c_CampaignInstantLendingAlertReport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.CampaignTTBReserveAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>CampaignTTBReserveAlertReport</componentName>
+                <identifier>c_CampaignTTBReserveAlertReport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;u&gt;{!$Label.CampaignFulfillmentAlertReport}&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>CampaignFulfillmentAlertReport</componentName>
+                <identifier>c_CampaignFulfillmentAlertReport</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e3e57be7-77f5-4abc-8559-8a944657bbbc</name>

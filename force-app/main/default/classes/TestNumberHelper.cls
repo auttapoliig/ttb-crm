@@ -263,4 +263,10 @@ private class TestNumberHelper {
 		marked = NumberHelper.TrimDirectDebit('');
 	}
 
+	@isTest
+	static void testGetCents() {
+		String cents1 = NumberHelper.getCents(2000100.99);
+		String cents2 = NumberHelper.getCents(500003);
+	}
+
 }

@@ -1,5 +1,14 @@
 public with sharing class RiskReportController {
 
+    public static String currentUserId{
+        get{
+            if(currentUserId == null){
+                currentUserId = UserInfo.getUserId();
+            }
+            return currentUserId;
+        }set;
+    }
+
     @AuraEnabled
     public static Map<String, Object> getAccountList(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
@@ -27,7 +36,7 @@ public with sharing class RiskReportController {
     public static List<Account> getQueryData(Integer queryLimit){
         try{
             String query = 'SELECT Id, Name, RMC_Suitability_Risk_Expiry_Date__c, RMC_Suitability_Risk_Level__c FROM Account  ';
-            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND RMC_Suitability_Risk_Expiry_Date__c <= NEXT_N_DAYS:14 ORDER BY RMC_Suitability_Risk_Expiry_Date__c ';
+            String whereCon = 'WHERE OwnerId = \'' + currentUserId + '\' ' + 'AND RMC_Suitability_Risk_Expiry_Date__c <= NEXT_N_DAYS:30 ORDER BY RMC_Suitability_Risk_Expiry_Date__c ';
             query += whereCon;
             if(queryLimit > 0){
                 query += 'LIMIT ' + queryLimit;

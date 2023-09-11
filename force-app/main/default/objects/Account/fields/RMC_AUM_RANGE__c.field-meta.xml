@@ -2,11 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RMC_AUM_RANGE__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( RMC_AUM__c &gt; 30000000, &quot;มากกว่า 30 ล้านบาท&quot;, 
+    <formula>IF(ISBLANK(RMC_AUM__c)|| ISNULL(RMC_AUM__c), NULL, IF( RMC_AUM__c &gt; 30000000, &quot;มากกว่า 30 ล้านบาท&quot;, 
 			IF(RMC_AUM__c&gt;5000000 &amp;&amp; RMC_AUM__c&lt;=30000000, &quot;มากกว่า 5-30 ล้านบาท&quot;, 
 					IF(RMC_AUM__c &gt; 1000000 &amp;&amp; RMC_AUM__c &lt;= 5000000, &quot;มากกว่า 1-5 ล้านบาท&quot;,
-							IF(RMC_AUM__c &gt; 500000 &amp;&amp; RMC_AUM__c &lt;= 1000000, &quot;มากกว่า 0.5-1 ล้านบาท&quot;, &quot;น้อยกว่าหรือเท่ากับ 5 แสนบาท&quot; ))))</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+							IF(RMC_AUM__c &gt; 500000 &amp;&amp; RMC_AUM__c &lt;= 1000000, &quot;มากกว่า 0.5-1 ล้านบาท&quot;,&quot;น้อยกว่าหรือเท่ากับ 5 แสนบาท&quot;)))))</formula>
     <label>RMC_AUM_RANGE</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

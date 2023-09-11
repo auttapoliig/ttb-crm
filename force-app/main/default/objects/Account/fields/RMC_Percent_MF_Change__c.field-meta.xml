@@ -3,7 +3,7 @@
     <fullName>RMC_Percent_MF_Change__c</fullName>
     <externalId>false</externalId>
     <label>RMC Percent MF Change</label>
-    <precision>12</precision>
+    <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
