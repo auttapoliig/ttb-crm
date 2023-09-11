@@ -48,6 +48,13 @@ public class RTL_CSVLightningUtil_Test {
         acct.TMB_Customer_ID_PE__c = '001100000001100000000000000500';
         insert acct;
 
+        Retail_Instant_lending_Manual__c ril = new Retail_Instant_lending_Manual__c();
+        ril.Lending_Privileges_Detail__c = 'ผ่านเกณฑ์สมัคร ผลิตภัณฑ์ผ่านทัช ภายใน ม.ค. 65(ไม่ต้องใช้เอกสารรายได้ Waive doc - Instant)<ul><li>C2G วงเงิน 513,000 บาท</li><li> บัตรเครดิต (ABSOLUTE, SO SMART, SO FAST, SO CHILL) วงเงิน 513,000 บาท</li><li>บัตรกดเงินสด วงเงิน 300,000 บาท</li></ul>';
+        ril.Promotion_Condition_Detail__c = 'สิทธิพิเศษบริการวงเงินผ่าน Cash Chill ภายในวันที่ 20-01-2565<ul><li>บัตรเครดิต อัตราดอกเบี้ย Flat Rate xxx ต่อปี นาน 6 ถึง 12 เดือน หรือ ดอกเบี้ย Effective Rate xxx%</li><li>บัตร Flash อัตราดอกเบี้ย Flat Rate xxx ต่อปี นาน 6 ถึง 12 เดือนหรือ ดอกเบี้ย Effective Rate xxx% </li><ul></ul></ul>';
+        ril.As_of_Date__c = Date.today();
+        ril.Customer__c = [SELECT Id FROM Account LIMIT 1].Id;
+        insert ril;
+
     }
 
     @isTest static void test_Utility() {
@@ -246,6 +253,21 @@ public class RTL_CSVLightningUtil_Test {
         List<Account> accList = RTL_TestUtility.createAccounts(1, true);
         Test.startTest();
         RTL_CSVLightningUtil.getSubSegmentDesc(accList.get(0).Id);
+        Test.stopTest();
+    }
+
+    @isTest static void test_getRILendingManualData(){
+        String recordId = [SELECT Id FROM Account WHERE TMB_Customer_ID_PE__c = '001100000001100000000000000500' LIMIT 1].Id;
+        Test.startTest();
+        Map<String, Object> output =  RetailCSVLightningUtil.getRILendingManualData(recordId, 'pro_con');
+        Map<String, Object> output2 =  RetailCSVLightningUtil.getRILendingManualData(recordId, 'lend_priv');
+        Test.stopTest();
+    }
+
+    @isTest static void test_getRILendingManualDataError(){
+        String recordId = 'aaa';
+        Test.startTest();
+        Map<String, Object> output =  RTL_CSVLightningUtil.getRILendingManualData(recordId, 'pro_con');
         Test.stopTest();
     }
     

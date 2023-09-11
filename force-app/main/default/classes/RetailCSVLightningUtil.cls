@@ -366,4 +366,25 @@ public with sharing class RetailCSVLightningUtil {
         return RTL_CSVLightningUtil.getMessengerCoverArea(recordId);
     }
 
+
+    @AuraEnabled
+    public static Map<String, Object> getRILendingManualData(String recordId, String field){
+        try {
+            Retail_Instant_lending_Manual__c e = [SELECT Lending_Privileges_Detail__c, Promotion_Condition_Detail__c FROM Retail_Instant_lending_Manual__c WHERE Customer__c =: recordId LIMIT 1];
+            Map<String, Object> returnMap = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(e));
+            returnMap.remove('Id');
+            returnMap.remove('attributes');
+            if(field == 'pro_con'){
+                returnMap.remove('Lending_Privileges_Detail__c');
+            }
+            else if(field == 'lend_priv'){
+                returnMap.remove('Promotion_Condition_Detail__c');
+            }
+            
+            return returnMap;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
 }
