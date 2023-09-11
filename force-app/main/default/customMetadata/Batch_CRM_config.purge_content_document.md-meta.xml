@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Condition__c</field>
-        <value xsi:type="xsd:string">FileType = &apos;TEXT&apos; and Title in(&apos;requestBody.txt&apos;,&apos;responseBody.txt&apos;) and CreatedDate&gt; 2022-01-01T01:02:03Z and CreatedDate &lt; 2023-01-01T01:00:00Z limit 500000</value>
+        <value xsi:type="xsd:string">FileType = &apos;TEXT&apos; and Title in(&apos;requestBody.txt&apos;,&apos;responseBody.txt&apos;) and CreatedDate &lt;= LAST_N_DAYS:30  limit 50000</value>
     </values>
     <values>
         <field>Field_Set__c</field>

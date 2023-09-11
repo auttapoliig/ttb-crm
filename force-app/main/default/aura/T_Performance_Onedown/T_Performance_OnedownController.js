@@ -12,14 +12,6 @@
         var selectedYear = myPageRef.state.c__selectedYear;
         var selectedMonthInt = myPageRef.state.c__selectedMonthInt;
         var channelName = myPageRef.state.c__channelName;
-        console.log('Debug params',summaryGroupType,summaryGroupValue)
-        //for testing
-        // var summaryGroupType = 'Zone';
-        // var summaryGroupValue = '1860';
-        // var selectedYear = '2022';
-        // var selectedMonthInt = '01';
-        // var channelName = ['RASC','BBD','ttb consumer'];
-        //
 
         component.set("v.summaryGroupType", summaryGroupType); //เปิดต่อนส่งค่ามาแล้ว
         component.set("v.summaryGroupValue", summaryGroupValue); 
@@ -31,28 +23,15 @@
         helper.getWatermarkHTML(component,helper);;
 
         component.set("v.loading", true);
-        //helper.checkHasSelectedTarget(component,helper).then((hasSelectedTarget) => {
-            //component.set('v.hasSelectedTarget',hasSelectedTarget);
-            //if(hasSelectedTarget) {
-                helper.makeData(component,event,helper);
-            //} else {
-            //    component.set("v.loading", false);
-            //}
-        //})
+        helper.makeData(component,event,helper);
 
     },
 
     handleClickShow: function(component, event, helper) {
         component.set("v.loading", true);
-        //helper.checkHasSelectedTarget(component,helper).then((hasSelectedTarget) => {
-            //var hasSelectedTarget = true;
-            //component.set('v.hasSelectedTarget',hasSelectedTarget);
-            //if(hasSelectedTarget) {
-                helper.makeData(component,event,helper);
-            //} else {
-            //    component.set("v.loading", false);
-            //}
-        //})
+        component.set('v.teamLabelList', []);
+        component.set('v.selectedTeam', []);
+        helper.makeData(component,event,helper);
     },
 
     filterTeamHandle: function(component, event, helper) {
@@ -108,7 +87,6 @@
             channelName = selectedValue;
         }
 
-        // console.log('Send Channel value to Summary : '+ channelName)
         var evt = $A.get("e.force:navigateToComponent");
         evt.setParams({
           componentDef: "c:T_Performance_SummaryPage",

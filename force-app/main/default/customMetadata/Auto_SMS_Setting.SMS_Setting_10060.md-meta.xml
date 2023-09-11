@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Resolution__c</field>
-        <value xsi:type="xsd:string">ดำเนินการตามที่ลูกค้าร้องขอ</value>
+        <value xsi:type="xsd:string">ส่งบัตร/เอกสารให้ลูกค้าแล้ว</value>
     </values>
     <values>
         <field>Service_Type_Matrix_Code__c</field>

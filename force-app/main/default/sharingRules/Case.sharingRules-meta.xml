@@ -2,7 +2,7 @@
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
         <fullName>KYC_Case_Review_Sharing</fullName>
-        <accessLevel>Read</accessLevel>
+        <accessLevel>Edit</accessLevel>
         <label>KYC Case Review Sharing</label>
         <sharedTo>
             <role>Customer_Data_Management_TL</role>
@@ -74,19 +74,5 @@
             <value>Queue</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
-    <sharingCriteriaRules>
-        <fullName>TMB_KYC_Profile</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>TMB KYC Profile</label>
-        <sharedTo>
-            <roleAndSubordinates>KYC_Team</roleAndSubordinates>
-        </sharedTo>
-        <criteriaItems>
-            <field>RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Closed KYC System,KYC System</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
 </SharingRules>

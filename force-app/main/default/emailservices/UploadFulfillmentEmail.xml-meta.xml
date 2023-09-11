@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexClass>UploadFulfillmentEmail</apexClass>
+    <attachmentOption>BinaryOnly</attachmentOption>
+    <authenticationFailureAction>Bounce</authenticationFailureAction>
+    <authorizationFailureAction>Bounce</authorizationFailureAction>
+    <authorizedSenders>chamaiporn.sae@ttbbank.com,a-jaree.kli@ttbbank.com,pattaraporn.pup@ttbbank.com,nalin.jar@ttbbank.com ,saovarin.tho@ttbbank.com,sansanun.sin@ttbbank.com</authorizedSenders>
+    <functionInactiveAction>Bounce</functionInactiveAction>
+    <functionName>UploadFulfillmentEmail</functionName>
+    <isActive>true</isActive>
+    <isAuthenticationRequired>false</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Bounce</overLimitAction>
+</EmailServicesFunction>

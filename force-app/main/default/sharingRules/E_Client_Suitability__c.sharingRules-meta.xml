@@ -1,63 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
-        <fullName>E_Client_Suit_Share_from_RM_COM2_5_to_Team_Head_COM2_4</fullName>
-        <accessLevel>Edit</accessLevel>
-        <description>This sharing setting will share E-Client Suit from RM COM2-5 to Team Head COM2-4.</description>
-        <label>E-Client Suit Share from RM COM2-5 to Team Head COM2-4</label>
-        <sharedTo>
-            <role>COM_2_4_TH</role>
-        </sharedTo>
-        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>00590000006UoZH</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0052j000000MCCE</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0052j000000MKJ3</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0052j000000MKG9</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
-    <sharingCriteriaRules>
-        <fullName>E_Client_Suit_Share_from_RM_team_3_to_Team_Head_MB_team_5</fullName>
-        <accessLevel>Edit</accessLevel>
-        <description>This sharing setting will share E-Client Suit from RM team 3 to Team Head RM team 5.</description>
-        <label>E-Client Suit Share from RM team 3 to Team Head MB team 5</label>
-        <sharedTo>
-            <role>COM_2_5_TH</role>
-        </sharedTo>
-        <booleanFilter>1 OR 2 OR 3</booleanFilter>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0050o00000XdaOrAAJ</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>00590000006U0rPAAS</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>005900000074U6LAAU</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
-    <sharingCriteriaRules>
         <fullName>Share_CS_from_MB_CB_to_Role_SME_CM_Sales_TH_TL</fullName>
         <accessLevel>Edit</accessLevel>
         <description>share MB/CB record to SME TH</description>
@@ -162,68 +105,32 @@
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>Share_for_Approved</fullName>
+        <fullName>Share_one_time</fullName>
         <accessLevel>Edit</accessLevel>
-        <description>Incident only</description>
-        <label>Share for Approved</label>
+        <description>share one time</description>
+        <label>Share one time</label>
         <sharedTo>
-            <role>COM_1_10_TH</role>
+            <role>COM_1_4_TH</role>
         </sharedTo>
         <criteriaItems>
-            <field>CS_RM__c</field>
+            <field>CS_Murex_ID__c</field>
             <operation>equals</operation>
-            <value>0059000000Tt3nf</value>
+            <value>12593</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>Share_for_COM_1_1</fullName>
+        <fullName>Sharing_COM_1_6_to_TH_Com_1_1</fullName>
         <accessLevel>Edit</accessLevel>
-        <description>Share for user RM COM 1-4 to Manager COM 1-1</description>
-        <label>Share for COM 1-1</label>
+        <description>Sharing 1 time</description>
+        <label>Sharing COM 1-6 to TH Com 1-1</label>
         <sharedTo>
             <role>COM_1_1_TH</role>
         </sharedTo>
-        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
         <criteriaItems>
             <field>CS_RM__c</field>
             <operation>equals</operation>
-            <value>0052j000000MCBuAAO</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>00590000003xja9AAA</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>005900000074U6JAAU</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0050o00000XbWZWAA3</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>00590000003xjXJAAY</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
-    <sharingCriteriaRules>
-        <fullName>Share_record</fullName>
-        <accessLevel>Edit</accessLevel>
-        <description>Incident only</description>
-        <label>Share record</label>
-        <sharedTo>
-            <role>COM_2_3_TH</role>
-        </sharedTo>
-        <criteriaItems>
-            <field>CS_RM__c</field>
-            <operation>equals</operation>
-            <value>0050o00000Xaw2Q</value>
+            <value>00590000004umUo,0059000000UWygH,0050o00000WhZuB,0052j000000M2jh</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>

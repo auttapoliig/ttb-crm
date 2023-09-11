@@ -87,7 +87,8 @@
           runrateDay = curDoM / (curDay);   
         }
       }
-      if (result.Label == data.Product_Group_Name__c) {
+      if (result.ProductCode == data.Product_Group_Code__c) {
+      // if (result.Label == data.Product_Group_Name__c) {
         
           
           if (parseInt(data.Month__c) == selectedMonth && parseInt(data.Year__c) == selectedYear) {
@@ -251,9 +252,9 @@
         var PointRunrate = "";
           // console.log('Debug actual map section C',actualMap ? true : false,actualMap)
         if(actualMap){
-          if(actualMap.mapProductWithActual.hasOwnProperty(KPI[i].productList[j].Label)){
+          if(actualMap.mapProductWithActual.hasOwnProperty(KPI[i].productList[j].ProductCode)){
             
-            KPI[i].productList[j].UNIT.actualYTD = helper.calDecimal(helper, "round", (actualMap.mapProductWithActual[KPI[i].productList[j].Label]), null);
+            KPI[i].productList[j].UNIT.actualYTD = helper.calDecimal(helper, "round", (actualMap.mapProductWithActual[KPI[i].productList[j].ProductCode]), null);
             UnitPercent = (parseFloat(KPI[i].productList[j].UNIT.actualYTD)).toFixed(2) / helper.calDecimal(helper, "round", ((parseFloat(KPI[i].productList[j].UNIT.tgYTDValue))), null);
             if(parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == 0 || parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == ""){
               UnitPercent = "";
@@ -261,8 +262,8 @@
             KPI[i].productList[j].UNIT.percent = UnitPercent
           }
           if(actualMap.mapProductWithActualMTD){
-            if(actualMap.mapProductWithActualMTD.hasOwnProperty(KPI[i].productList[j].Label)){
-              KPI[i].productList[j].UNIT.actualMTD = helper.calDecimal(helper, "round", (actualMap.mapProductWithActualMTD[KPI[i].productList[j].Label]), null);
+            if(actualMap.mapProductWithActualMTD.hasOwnProperty(KPI[i].productList[j].ProductCode)){
+              KPI[i].productList[j].UNIT.actualMTD = helper.calDecimal(helper, "round", (actualMap.mapProductWithActualMTD[KPI[i].productList[j].ProductCode]), null);
 
               PointPercent = ((parseFloat(KPI[i].productList[j].UNIT.actualMTD)).toFixed(2)) / helper.calDecimal(helper, "round", ((parseFloat(KPI[i].productList[j].UNIT.tgMTDValue))), null);
               if(parseFloat(KPI[i].productList[j].UNIT.tgMTDValue) == 0 || parseFloat(KPI[i].productList[j].UNIT.tgMTDValue) == ""){
@@ -273,16 +274,16 @@
             }
           }
           if(actualMap.mapActualWithRunrate){
-            if(actualMap.mapActualWithRunrate.hasOwnProperty(KPI[i].productList[j].Label)){
-              KPI[i].productList[j].POINTs.actualForRunrate = (actualMap.mapActualWithRunrate[KPI[i].productList[j].Label]);
+            if(actualMap.mapActualWithRunrate.hasOwnProperty(KPI[i].productList[j].ProductCode)){
+              KPI[i].productList[j].POINTs.actualForRunrate = (actualMap.mapActualWithRunrate[KPI[i].productList[j].ProductCode]);
             }
           }
         }
         // console.log(KPI[i].productList[j].UNIT.tgYTDValue.toFixed(2))
         var targetRV = helper.calDecimal(helper, "multiply", (helper.calDecimal(helper, "round", (parseFloat(KPI[i].productList[j].UNIT.tgYTDValue)), null)) , parseFloat(KPI[i].productList[j].POINTs.RV));
         KPI[i].productList[j].POINTs.tgYTDValue =  helper.calDecimal(helper, "round", parseFloat(targetRV), null);
-        var actualRV = helper.calDecimal(helper, "round", (parseFloat(KPI[i].productList[j].UNIT.actualYTD)), null) * parseFloat(KPI[i].productList[j].POINTs.RV);
-        if(KPI[i].productList[j].POINTs.Capmax != ""){
+        var actualRV = helper.calDecimal(helper, "round",  (parseFloat(KPI[i].productList[j].UNIT.actualYTD)), null) * parseFloat(KPI[i].productList[j].POINTs.RV);
+        if(KPI[i].productList[j].POINTs.Capmax != "" && KPI[i].productList[j].POINTs.tgYTDValue != ""){
             // console.log('targetRV : '+ targetRV + ' ' + (KPI[i].productList[j].POINTs.Capmax / 100))
           if(actualRV > (KPI[i].productList[j].POINTs.tgYTDValue * (KPI[i].productList[j].POINTs.Capmax / 100))){
             KPI[i].productList[j].POINTs.actualYTD = helper.calDecimal(helper, "multiply", helper.calDecimal(helper, "round", parseFloat(targetRV), null), (KPI[i].productList[j].POINTs.Capmax / 100));
@@ -319,12 +320,12 @@
              targetRunrate =  helper.calDecimal(helper, "round", parseFloat(KPI[i].productList[j].UNIT.tgYTDValue), null);
           }
           let runrate = (parseFloat((KPI[i].productList[j].UNIT.runrate)));
-          runrate =  helper.calDecimal(helper, "round", (parseFloat(runrate)), null)
+          runrate =  parseFloat(runrate);
           let actualRunrate = helper.calDecimal(helper, 'plus', ac, runrate);
           if(targetRunrate != 0 && targetRunrate !=""){
             PointRunrate = actualRunrate/targetRunrate;
           }
-          // console.log(typeof runrate + ' ' + runrate )
+          // console.log('PointRunrate : '+PointRunrate)
           // console.log('Actual before runrate: '+ ac)
           // console.log('targetRunrate: '+ targetRunrate)
           // console.log('actualRunrate: '+ actualRunrate)

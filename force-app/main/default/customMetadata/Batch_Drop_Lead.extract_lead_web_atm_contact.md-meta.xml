@@ -6,12 +6,9 @@
         <field>Condition__c</field>
         <value xsi:type="xsd:string">CreatedDate &gt;= [yyyy]-[MM]-[dd-1]T00:00:00+07:00
 AND CreatedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
-AND RTL_TMB_Campaign_Source__c IN (&apos;Website&apos;,&apos;ATM Request&apos;)
-AND RecordType.DeveloperName IN (&apos;Retail_Campaign_Member&apos;)
-AND RTL_Product_Name__c IN (&apos;Cash2Go&apos;,&apos;Flash PLUS&apos;,&apos;Credit Card&apos;,&apos;Credit Cards&apos;,&apos;So Fast&apos;,&apos;So Smart&apos;,&apos;So Chill&apos;,&apos;Top Brass&apos;,&apos;Other Credit Card&apos;,&apos;TMB VISA SIGNATURE&apos;
-,&apos;Home Loan&apos;,&apos;Refinance Home Loan&apos;,&apos;Home Equity&apos;,&apos;Easy Saver 15/9 (Par)&apos;
-,&apos;Happy Retire 90 (Enhance Death Benefit)&apos;,&apos;Pay Light High Protect 20/10&apos;,&apos;The Treasure&apos;
-,&apos;Payroll&apos;,&apos;Protection Gap&apos;,&apos;Easy Care Plan 1&apos;,&apos;PA Prestige (Silver)&apos;,&apos;PA CI (PA and health)&apos;,&apos;Happy life protect 99/10 (PAR)&apos;,&apos;Flexi Care 7.5 mn&apos;,&apos;CI Prompt Care Plan1&apos;,&apos;Payroll_Secure&apos;, &apos;Payroll_BA&apos;, &apos;Payroll_Investment&apos;, &apos;Payroll_Unsecure&apos;,&apos;BA tax campaign&apos;)
+AND RTL_Contact_Method__c in (&apos;Normal Request&apos;)
+AND RTL_Contact_Method__c &lt;&gt; null
+AND RTL_Product_Name__c NOT IN (&apos;NEW&apos;,&apos;USED&apos;,&apos;CYC&apos;,&apos;CYB&apos;,&apos;CYB Revolving&apos;)
 AND Contact.Id != NULL
 AND RTL_Assigned_Channel__c = &apos;Outbound&apos;</value>
     </values>
@@ -29,10 +26,11 @@ AND RTL_Assigned_Channel__c = &apos;Outbound&apos;</value>
 ,Campaign.EndDate
 ,Id
 ,RTL_Remark__c
-,RTL_Register_Date__c
+,CreatedDate
 ,RTL_Product_Name__c
 ,Campaign.RTL_Campaign_Code_10_digits__c
-,RTL_Lead_Group__c</value>
+,RTL_Lead_Group__c
+,RTL_AL_Income__c</value>
     </values>
     <values>
         <field>sObject__c</field>

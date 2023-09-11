@@ -4,6 +4,6 @@
     <protected>false</protected>
     <values>
         <field>value__c</field>
-        <value xsi:type="xsd:string">SCLSLSMBWAV1</value>
+        <value xsi:type="xsd:string">STMCLSAPP</value>
     </values>
 </CustomMetadata>

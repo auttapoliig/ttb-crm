@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>Section__c</field>
-        <value xsi:type="xsd:string">RtlCust:Sales Support Information (Medium)</value>
+        <value xsi:type="xsd:string">RtlCust:Sales Support Information</value>
     </values>
 </CustomMetadata>

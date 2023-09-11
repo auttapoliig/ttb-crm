@@ -8,7 +8,7 @@
 AND LastModifiedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
 AND RTL_Contact_Method__c in (&apos;Call Me Now&apos;,&apos;Call Me Later&apos;,&apos;Normal Request&apos;,&apos;Others&apos;,&apos;AL Sales&apos;)
 AND RecordType.DeveloperName = &apos;Retail_Campaign_Member&apos;
-AND Contact.Id != NULL</value>
+AND Contact.Id != NULL and RTL_Web_Unique_ID__c not in (&apos;ttbbankcom-37b4f00b-304296&apos;,&apos;ttbbankcom-799f47a8-514108&apos;,&apos;ttbbankcom-8c031e72-279328&apos;,&apos;ttbbankcom-90c8e474-452385&apos;)</value>
     </values>
     <values>
         <field>Field_Set__c</field>

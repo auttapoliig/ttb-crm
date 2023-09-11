@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>URL_Link__c</field>
-        <value xsi:type="xsd:string">https://tmbbank.sharepoint.com/sites/TPerformance/Help/Help</value>
+        <value xsi:type="xsd:string">https://tmbbank.sharepoint.com/sites/BP/SalePerformance/All_View/Help_Manual/</value>
     </values>
 </CustomMetadata>

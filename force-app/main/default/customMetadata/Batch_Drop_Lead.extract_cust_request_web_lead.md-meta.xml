@@ -8,7 +8,7 @@
 AND Lead.LastModifiedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00
 AND RTL_Contact_Method__c IN (&apos;Call Me Now&apos;,&apos;Call Me Later&apos;,&apos;Normal Request&apos;,&apos;Others&apos;,&apos;AL Sales&apos;)
 AND Lead.RecordType.DeveloperName IN (&apos;Retail_Banking&apos;,&apos;Retail_Closed_Lost&apos;)
-AND Lead.Id != NULL AND Lead.FirstName !=NULL</value>
+AND Lead.Id != NULL and Lead.RTL_Web_Unique_ID_c__c not in (&apos;ttbbankcom-37b4f00b-304296&apos;,&apos;ttbbankcom-799f47a8-514108&apos;,&apos;ttbbankcom-8c031e72-279328&apos;,&apos;ttbbankcom-90c8e474-452385&apos;)</value>
     </values>
     <values>
         <field>Field_Set__c</field>
@@ -66,8 +66,7 @@ AND Lead.Id != NULL AND Lead.FirstName !=NULL</value>
 ,Lead.RTL_AL_normal_price__c
 ,Lead.RTL_AL_oa_ref_code__c
 ,Lead.RTL_AL_response__c
-,Lead.RTL_AL_wanted_amount__c
-,Lead.RTL_Cus_Refer_Code__c</value>
+,Lead.RTL_AL_wanted_amount__c</value>
     </values>
     <values>
         <field>sObject__c</field>

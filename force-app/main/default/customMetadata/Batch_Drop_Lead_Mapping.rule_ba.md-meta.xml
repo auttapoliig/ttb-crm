@@ -50,6 +50,9 @@
 3:Motor 3+ Max=45
 3:PA Care in car=46
 3:Home Guard=47
-3:Protection GAP=48</value>
+3:Protection GAP=48
+3:BA tax campaign=50
+3:BAMF tax campaign=51
+3:Payroll_BA=52</value>
     </values>
 </CustomMetadata>

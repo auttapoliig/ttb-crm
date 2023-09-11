@@ -4,10 +4,10 @@
     <protected>false</protected>
     <values>
         <field>Description__c</field>
-        <value xsi:type="xsd:string">SELECT Id, As_of_Date__c, YearMonthAcctSuffRef__c, Average_Balance__c, Average_Balance_YTD__c, NIIc__c, NIId__c, Fund_Transfer__c, Interest_Revenue__c, Product_Code__c, Product_Key__c, Product_Group__c, Loan_Status__c, NIId_DPA__c, DPA__c,  Unused_Balance__c, Gross_Rate_Deposit__c, Gross_Rate_Loan__c, SABS_Type__c, Origination_Date__c, TMB_Hold_Commitment__c, Product__c, Product__r.Financial_Product_Domain__c, Ending_Balance__c, Customer__c, Account_Suffix_Ref__c, TMB_Account_ID__c, TMB_Suffix__c, TMB_Ref__c, Issue_Date__c, Product_Type__c, Limit_Loan__c, Maturity_Date__c, Product__r.Remark__c FROM NI_Monthly_Performance__c WHERE CreatedDate = TODAY AND isUpdateToMFISuccess__c = false ORDER BY Customer__c, Product__c</value>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">SELECT Id, As_of_Date__c, YearMonthAcctSuffRef__c, Average_Balance__c, Average_Balance_YTD__c, NIIc__c, NIId__c, Fund_Transfer__c, Interest_Revenue__c, Product_Code__c, Product_Key__c, Product_Group__c, Loan_Status__c, NIId_DPA__c, DPA__c,  Unused_Balance__c, Gross_Rate_Deposit__c, Gross_Rate_Loan__c, SABS_Type__c, Origination_Date__c, TMB_Hold_Commitment__c, Product__c, Product__r.Financial_Product_Domain__c, Ending_Balance__c, Customer__c, Account_Suffix_Ref__c, TMB_Account_ID__c, TMB_Suffix__c, TMB_Ref__c, Issue_Date__c, Product_Type__c, Limit_Loan__c, Maturity_Date__c, Product__r.Remark__c FROM NI_Monthly_Performance__c WHERE Name LIKE &apos;202303%&apos; AND isUpdateToMFISuccess__c = false ORDER BY Customer__c, Product__c</value>
+        <value xsi:type="xsd:string">SELECT Id, As_of_Date__c, YearMonthAcctSuffRef__c, Average_Balance__c, Average_Balance_YTD__c, NIIc__c, NIId__c, Fund_Transfer__c, Interest_Revenue__c, Product_Code__c, Product_Key__c, Product_Group__c, Loan_Status__c, NIId_DPA__c, DPA__c,  Unused_Balance__c, Gross_Rate_Deposit__c, Gross_Rate_Loan__c, SABS_Type__c, Origination_Date__c, TMB_Hold_Commitment__c, Product__c, Product__r.Financial_Product_Domain__c, Ending_Balance__c, Customer__c, Account_Suffix_Ref__c, TMB_Account_ID__c, TMB_Suffix__c, TMB_Ref__c, Issue_Date__c, Product_Type__c, Limit_Loan__c, Maturity_Date__c, Product__r.Remark__c FROM NI_Monthly_Performance__c WHERE CreatedDate = TODAY AND isUpdateToMFISuccess__c = false ORDER BY Customer__c, Product__c</value>
     </values>
 </CustomMetadata>

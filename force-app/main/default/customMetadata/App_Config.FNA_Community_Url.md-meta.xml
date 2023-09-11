@@ -4,6 +4,6 @@
     <protected>false</protected>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">https://uat-tmbfind.cs5.force.com/fin</value>
+        <value xsi:type="xsd:string">https://tmbfind.tmbbank.com/fin</value>
     </values>
 </CustomMetadata>
