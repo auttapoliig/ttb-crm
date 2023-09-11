@@ -1,4 +1,5 @@
-public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {//Use without sharing to allow lead conversion from non-owner
+public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {
+    //Use without sharing to allow lead conversion from non-owner
     /*------------------------------------------------------------------------
     Author:        Debi Prasad Baral
     Company:       Salesforce
@@ -19,88 +20,6 @@ public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {//Us
         public static List<Id> specialistAssignedIdList = new List<Id>();
         public static List<String> branchAssignIdList = new List<String>();
         public static Set<Specialist_and_Product_Group_Mapping__c> assignSpecialist = new Set<Specialist_and_Product_Group_Mapping__c>();
-
-    // private static RTL_Lead_Assignment_Rule__c LeadMatchAssignmentRule;
-
-    public class ProductGroupSpecialistWrapper{
-        public Integer currentIndex{get;set;}
-        public List<Specialist_and_Product_Group_Mapping__c> specialistProductList{get;set;}
-    }
-
-    public static Map<String, RTL_product_master__c> productMap {
-        get{
-            if(productMap == null){
-                productMap = new Map<String,RTL_product_master__c>();
-                for(RTL_product_master__c eachProduct : [SELECT Id, Name, Product_Group__c, Product_Sub_group__c 
-                                                            FROM RTL_product_master__c WHERE Active__c = true]){
-                    productMap.put(eachProduct.Name, eachProduct);
-                }
-            }
-            return productMap;
-        }
-        set;
-    }
-
-    private static Map<String,Branch_and_Zone__c> branchZoneMap{
-        get{
-            if(branchZoneMap == null){
-                branchZoneMap = new Map<String,Branch_and_Zone__c>();
-                for(Branch_and_Zone__c eachBranch : [SELECT Id, Name, Branch_Name__c, Branch_Code__c, RTL_Branch_Manager_User__c,RTL_Branch_Manager_User__r.Email,RTL_Branch_Manager_User__r.Name,RTL_Branch_Manager_User__r.IsActive 
-                                                        FROM Branch_and_Zone__c 
-                                                        WHERE RTL_Branch_Manager_User__c != null]){
-                    branchZoneMap.put(eachBranch.Branch_Code__c,eachBranch);                    
-                }
-            }
-            return branchZoneMap;
-        }
-        set;
-    }
-
-    private static Map<Id, RTL_Lead_Assignment_Rule__c>  leadAssignmentRule {
-        get{
-            if(leadAssignmentRule == null){
-                leadAssignmentRule = new Map<Id, RTL_Lead_Assignment_Rule__c>([SELECT Id, Name, RTL_Active_Flag__c, RTL_Priority__c, RTL_Lead_Record_Type__c, RTL_Integration_Type__c, RTL_Lead_Field_Criteria_1__c, RTL_Lead_Field_Criteria_2__c, RTL_Lead_Field_Criteria_3__c, RTL_Lead_Field_Criteria_4__c, RTL_Lead_Field_Criteria_5__c, RTL_Lead_Field_Value_1__c, RTL_Lead_Field_Value_2__c, RTL_Lead_Field_Value_3__c, RTL_Lead_Field_Value_4__c, RTL_Lead_Field_Value_5__c, RTL_Assigned_User__c, RTL_Assigned_User_field__c, RTL_Assigned_Queue_Name__c, RTL_Branch_and_Zone_Queue_User_field__c, RTL_Default_Queue_Name__c, RTL_Default_User__c, RTL_IsAssign_Campaign__c, RTL_Assigned_Apex__c, RTL_IsInsertProduct__c FROM RTL_Lead_Assignment_Rule__c WHERE RTL_Active_Flag__c = true ORDER BY RTL_Priority__c]);
-            }
-            return leadAssignmentRule;
-        }
-        set{}
-    }
-
-    private static User tmbAdmin {
-        get{
-            if(tmbAdmin == null){
-                tmbAdmin = [SELECT Id, Name FROM User WHERE Name = 'TMB Administrator'];
-            }
-            return tmbAdmin;
-        }
-        set;
-    }
-
-    private static Map<String, RTL_Product_Outbound_Mapping__mdt> mapProductOutboundDetail {
-        get{
-            if(mapProductOutboundDetail == null){
-                mapProductOutboundDetail = new Map<String, RTL_Product_Outbound_Mapping__mdt>();
-                for(RTL_Product_Outbound_Mapping__mdt productOutbound : [SELECT RTL_Product_Name__c, RTL_Contact_Method__c, RTL_Lead_Campaign_Outbound__c, RTL_Lead_Channel_Outbound__c FROM RTL_Product_Outbound_Mapping__mdt] ){
-                    mapProductOutboundDetail.put(productOutbound.RTL_Product_Name__c + productOutbound.RTL_Contact_Method__c, productOutbound);
-                }
-            }
-            return mapProductOutboundDetail;
-        }
-        set;
-    }
-
-    private static List<String> profileAssignList {
-        get{
-            if(profileAssignList == null){
-                profileAssignList = new List<String>();
-                for(Campaign_Member_Profile_Assignment__mdt eachCampaign : [SELECT Id,MasterLabel,DeveloperName,Profile_Name__c FROM Campaign_Member_Profile_Assignment__mdt]){
-                    profileAssignList.add(eachCampaign.Profile_Name__c);
-                }
-            }
-            return profileAssignList;
-        }
-        set;
-    }
     
         public static List<CampaignMember> campaignMember = new List<CampaignMember>();
     
