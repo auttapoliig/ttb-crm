@@ -65,8 +65,8 @@
         <members>CampaignMember.LGS_Assignment_Code__c</members>
         <members>CampaignMember.LGS_BrandCode__c</members>
         <members>CampaignMember.LGS_BrandShowroomCode__c</members>
-        <members>CampaignMember.LGS_CAMPAIGN_END_DATE__c</members>
-        <members>CampaignMember.LGS_CAMPAIGN_START_DATE__c</members>
+        <members>CampaignMember.LGS_Campaign_End_Date__c</members>
+        <members>CampaignMember.LGS_Campaign_Start_Date__c</members>
         <members>CampaignMember.LGS_Child_Campaign_ID__c</members>
         <members>CampaignMember.LGS_File_Upload__c</members>
         <members>CampaignMember.LGS_LinkInfo__c</members>
@@ -106,8 +106,8 @@
         <members>Lead.LGS_Assignment_Code__c</members>
         <members>Lead.LGS_BrandCode__c</members>
         <members>Lead.LGS_BrandShowroomCode__c</members>
-        <members>Lead.LGS_CAMPAIGN_END_DATE__c</members>
-        <members>Lead.LGS_CAMPAIGN_START_DATE__c</members>
+        <members>Lead.LGS_Campaign_End_Date__c</members>
+        <members>Lead.LGS_Campaign_Start_Date__c</members>
         <members>Lead.LGS_Child_Campaign_ID__c</members>
         <members>Lead.LGS_File_Upload__c</members>
         <members>Lead.LGS_LinkInfo__c</members>
