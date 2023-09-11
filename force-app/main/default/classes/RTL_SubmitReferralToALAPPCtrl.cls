@@ -48,6 +48,40 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
         }
         set;
     }
+    private static final String RefLeadSource {
+        get {
+            if(RefLeadSource == null){
+                List<App_Config__mdt> tempMetatdata = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Referral Lead Source Default'];
+                RefLeadSource = tempMetatdata != null && tempMetatdata.size() > 0 ? String.valueOf(tempMetatdata.get(0).Value__c) : 'AL Advisory Line';
+            }
+            return RefLeadSource;
+        }
+        set;
+    }
+    private static final String RefLGSPartner {
+        get {
+            if(RefLGSPartner == null){
+                List<App_Config__mdt> tempMetatdata = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Referral LGS Partner Default'];
+                RefLGSPartner = tempMetatdata != null && tempMetatdata.size() > 0 ? String.valueOf(tempMetatdata.get(0).Value__c) : 'AL Advisory Line';
+            }
+            return RefLGSPartner;
+        }
+        set;
+    }
+    private static Set<String> ALPrdNameSet {
+        get{
+            if(ALPrdNameSet == null){
+                ALPrdNameSet = new Set<String>();
+                List<AL_screen_Product_Name__mdt> prdHLCALlst = AL_screen_Product_Name__mdt.getAll().values();
+
+                for (AL_screen_Product_Name__mdt prd : prdHLCALlst) {
+                    ALPrdNameSet.add(prd.Product_Name__c);
+                }
+            }
+            return ALPrdNameSet;
+        }
+        set;
+    }
 
     @AuraEnabled
     public static Referral_Detail getRecord(Id recordId){
@@ -69,25 +103,25 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 RefDetail.isAccess = false;
             }
         }
-        // System.debug('Is Send ? ' + ref.RTL_Is_Send_To_HPAP__c);
+        System.debug('Is Send ? ' + ref.RTL_Is_Send_To_HPAP__c);
         return RefDetail;
     }
 
     @AuraEnabled
     public static HPAP_Response_Detail submitALALPP(Id rec){
         HPAP_Response_Detail ReturnValue = new HPAP_Response_Detail();
-        // System.debug('RecordId ' + rec);
+        System.debug('RecordId ' + rec);
         List<RTL_Referral__c> referral = Database.query(String.format('SELECT {0} FROM RTL_Referral__c WHERE Id =: rec LIMIT 1', 
             new List<String>{
                 String.join(refFields, ',')
             }
         ));
-        // System.debug('Size' + referral.size());
+        System.debug('Size' + referral.size());
 
         String Status = null;
 
         if(referral.size() > 0){
-            // System.debug(referral);
+            System.debug(referral);
             RTL_Referral__c eachRef = referral[0];
             Id accId = eachRef.RTL_Account_Name__c;
             String RefName = eachRef.Name;
@@ -97,7 +131,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                     RefstartDate = Datetime.now();
                     callhttpReferral(eachRef);
                 }catch(Exception e){
-                    // System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e);
+                    System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e + ' || ' + e.getLineNumber());
                     Datetime ErrDateTime = Datetime.now();
                     //String ErrMsg = null;
                     if(e.getMessage().contains('Failed Cache.Org.put()') || e.getMessage().contains('Read timed out')){
@@ -108,13 +142,13 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
 
                     // if((retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')){
                     //     while ((COUNT_RETRY < 2) && (retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')) { // 0
-                    //         // System.debug('Retry : ' + COUNT_RETRY );
+                    //         System.debug('Retry : ' + COUNT_RETRY );
                     //         COUNT_RETRY++; //1 2 3
                     //         Datetime startDate = Datetime.now();
                     //         try{
                     //             callhttpReferral(eachRef); // 1 2 3
                     //         }catch(Exception err){
-                    //             // System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  err);
+                    //             System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  err);
                     //             // if(resCode == false){
                     //             //     OnlineServiceLog createlogRetry = new OnlineServiceLog(false,err.getMessage(),'','');
                     //             //     lstLogDetail.add(createlogRetry);
@@ -136,11 +170,11 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 }
                  //List SeviceLog, customername, Err, msLogId, userName, refId, serviceName, acc, startTime, endTime
                 if(ThisRefNo == null && Status != null){
-                    // System.debug('Update Field!');
+                    System.debug('Update Field!');
                     updateField(eachRef,false,null);
                 }
             }else{
-                // System.debug('No record Found');
+                System.debug('No record Found');
                 // CalloutException e = new CalloutException();
                 // e.setMessage('No record Found');
                 Status = 'No record Found';
@@ -153,12 +187,12 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
         }
 
         public static void callhttpReferral(RTL_Referral__c eachRef){
-            // System.debug('START callAPIcreateReferral !!!');
+            System.debug('START callAPIcreateReferral !!!');
             Datetime startDate = Datetime.now();
             Uuid uuidGenerateor = new Uuid();
             String uuid = uuidGenerateor.getValue();
             reflogId = uuid;
-            List<String> valid_product = new List<String>{'CYC','CYB','NEW','USED'};
+            Set<String> valid_product = ALPrdNameSet;
             if(eachRef.RTL_Product_Name__c != null && eachRef.RTL_Preferred_Branch__c != null && valid_product.contains(eachRef.RTL_Product_Name_Str__c) && eachRef.RTL_Preferred_Branch_Name__c == 'AL Marketing'){
                 if(eachRef.RTL_Type__c == 'Sell (เพื่อนำเสนอขาย)'){
                     if(eachRef.RTL_FirstName__c != null && eachRef.RTL_LastName__c != null && eachRef.RTL_Mobile1__c != null && eachRef.RTL_AL_ContactProvince__c != null && eachRef.RTL_AL_ContactDistrict__c != null &&
@@ -167,7 +201,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                         String privateKey = (String)SCSMessageAPIUtil.getEncryptKey(SCSMessageAPIUtil.fetchUserSessionId(), SCSMessageAPIUtil.INTEGRATE_SYSTEM.HPAPAPI);
                         String bodyRequestRaw = JSON.serializePretty(RefbodyRequest(eachRef));
                         String bodyRequestEncrypt = SCSMessageAPIUtil.encryptMessageWithKey(bodyRequestRaw, privateKey);
-                        // System.debug('Request body : ' + bodyRequestRaw);
+                        System.debug('Request body : ' + bodyRequestRaw);
 
                         Http http = new Http();
                         HttpRequest req = new HttpRequest();
@@ -182,38 +216,46 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                         req.setTimeout(timeout);
                         HttpResponse response = http.send(req);
                         if (response.getStatusCode() == 200) {
-                            // System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
+                            System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
                         }else{
                             OnlineServiceLog createlog = new OnlineServiceLog(false,String.valueOf(response.getStatusCode()),bodyRequestRaw,null);
                             lstLogDetail.add(createlog);
-                            // System.debug(response.getStatusCode());
+                            System.debug(response.getStatusCode());
                             CalloutException e = new CalloutException();
                             e.setMessage(String.valueOf(response.getStatusCode()));
                             throw e;                                        
                         }
                         String bodyResonseDecrypt = (String)SCSMessageAPIUtil.decryptMessageWithKey(response.getBody(), privateKey);
-                        // System.debug('Response : ' + bodyResonseDecrypt);
+                        System.debug('Response : ' + bodyResonseDecrypt);
                         Map<String, Object> result = bodyResonseDecrypt != null ? (Map<String, Object>)JSON.deserializeUntyped(bodyResonseDecrypt) : new Map<String, Object>();
                         String statusCode = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseCode', result) : '999');
                         String errorMsg = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseDetail', result) : AbstractCoreClass.getValuesWithRegex(response.getBody(), new List<String>{'errordesc'}));
                         Boolean isSuccess = statusCode == '000';
                         if((isSuccess && response.getStatusCode() == 200)){
                             String ResponseDetail = (String)result.get('ResponseDetail');
-                            // System.debug('Response Detail :' + ResponseDetail);
+                            System.debug('Response Detail :' + ResponseDetail);
                             eachRef.WS_Response_Detail__c = ResponseDetail;
                             eachRef.HPAP_Status_Code__c = (String)result.get('HPAPStatus');
+                            eachRef.RTL_Status__c = (String)result.get('HPAPStatusDesc');
+                            // eachRef.Details_of_Status__c = (String)result.get('Remark');
+                            eachRef.Corebank_Emp_Id__c = (String)result.get('EmpID');
+                            eachRef.Corebank_Emp_Name__c = (String)result.get('EmpName');
+                            eachRef.Corebank_Emp_Phone_No__c = (String)result.get('EmpMobileNo');
+                            eachRef.RTL_Hub_Code__c = (String)result.get('HubCode');
+                            eachRef.RTL_Hub_Name__c = (String)result.get('HubName');
                             OnlineServiceLog createlog = new OnlineServiceLog(true,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                             lstLogDetail.add(createlog);
-                            // System.debug('Success!');
-                            ThisRefNo = (String)result.get('RefCode3');
-                            updateField(eachRef,true,(String)result.get('RefCode3'));
+                            System.debug('Success!');
+                            ThisRefNo = (String)result.get('RefNo');
+                
+                            updateField(eachRef,true,(String)result.get('RefNo'));
                         }else{
-                            // System.debug('WS_Response_Detail__c' + errorMsg.length());
+                            System.debug('WS_Response_Detail__c' + errorMsg.length());
                             if(errorMsg.length() > 255){
                                 errorMsg = errorMsg.left(255);
                             }
                             eachRef.WS_Response_Detail__c = errorMsg;
-                            // System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + COUNT_RETRY + statusCode );
+                            System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + COUNT_RETRY + statusCode );
                             OnlineServiceLog createlog = new OnlineServiceLog(false,errorMsg,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                             lstLogDetail.add(createlog);
                             CalloutException e = new CalloutException();
@@ -221,24 +263,35 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                             throw e;
                         }
                     }else{
-                        // System.debug('Error field not valid!');
+                        System.debug('Error field not valid!');
                         CalloutException e = new CalloutException();
                         e.setMessage('Error field not valid!');
                         throw e;
                     }
                 }else{
-                    // System.debug('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
+                    System.debug('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
                     CalloutException e = new CalloutException();
                     e.setMessage('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
                     throw e;
                 }
             }else{
-                // System.debug('ขื่อผลิตภัณฑ์ (CYC, CYB, NEW, USED) หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง');
+                String errormsg = '';
+                errormsg += 'ขื่อผลิตภัณฑ์ (';
+                Integer count = 0;
+                for (String prd : valid_product){
+                    count++;
+                    if(count != valid_product.size()){
+                        errormsg += prd + ', ';
+                    }else{
+                        errormsg += prd + ') หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง';
+                    }
+                }
+                System.debug(errormsg);
                 CalloutException e = new CalloutException();
-                e.setMessage('ขื่อผลิตภัณฑ์ (CYC, CYB, NEW, USED) หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง');
+                e.setMessage(errormsg);
                 throw e;
             }
-            // System.debug('STOP callAPIcreateReferral !!!');
+            System.debug('STOP callAPIcreateReferral !!!');
         }
     public static Map<String, Object> RefbodyRequest(RTL_Referral__c ref) {
         String IdcardNo = null;
@@ -266,13 +319,21 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             CarBooked = '0' ; 
         }
 
+        String cmid = ref.RTL_Campaign_Member__c ;
+        List<CampaignMember> cmb = [SELECT RTL_Web_Unique_ID__c,LGS_Partner__c,LGS_Lead_Received_Time__c,RTL_AL_Interested_Rate__c,LGS_001__c,LGS_002__c,LGS_003__c,LGS_004__c,
+                            LGS_005__c,LGS_006__c,LGS_007__c,LGS_008__c,LGS_009__c,LGS_010__c,LGS_011__c,LGS_012__c,LGS_013__c,LGS_014__c,LGS_015__c,
+                            LGS_016__c,LGS_017__c,LGS_018__c,LGS_019__c,LGS_020__c,LGS_Assignment_Code__c,LGS_LinkInfo__c,LGS_BrandCode__c,
+                            LGS_BrandShowroomCode__c,LGS_PartnerCode__c,LGS_Child_Campaign_ID__c,RTL_W2L_Campaign_Name__c,Lead_Score__c,Lead_Score_level__c,LGS_VIN_No__c,LGS_File_Upload__c,
+                            LGS_Campaign_Start_Date__c,LGS_Campaign_End_Date__c   
+                            FROM CampaignMember WHERE ID =: cmid LIMIT 1];
+
         return new Map<String, Object> {
             'RefCode'=> ref.RTL_AL_oa_ref_code__c != null ? ref.RTL_AL_oa_ref_code__c : '',
             'RefCode2'=> ref.Id != null ? ref.Id : '',
             'ObjectType'=>'Referral',
-            'Channel'=> 'AL Advisory Line',
-            // 'Channel'=> 'Referral from Salesforce',
-            'System'=> 'SALESFORCE',
+            // 'Channel'=> 'AL Advisory Line',
+            'LeadSource'=> ref.RTL_LeadSource__c != null ? ref.RTL_LeadSource__c : RefLeadSource,
+            'CampaignSource'=> ref.RTL_TMB_Campaign_Source__c != null ? ref.RTL_TMB_Campaign_Source__c : '',
             'Product'=> ref.RTL_Product_Name_Str__c != null ? ref.RTL_Product_Name_Str__c : '',
             'CarTypeDesc'=> ref.RTL_AL_car_type__c != null ? ref.RTL_AL_car_type__c : '',
             'CarBrand'=> ref.RTL_AL_car_brand__c != null ? ref.RTL_AL_car_brand__c : '',
@@ -310,14 +371,53 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             'BranchProvince'=> '',
             'BranchDistrict'=> '',
             'TcifNo'=> '',
-            'EmpId'=> ref.Owner_Emp_ID__c != null ? ref.Owner_Emp_ID__c : '',
-            'ECNo'=> '',
+            'EmpId'=> ref.Owner_Emp_ID__c != null && ref.RTL_AL_contact_channel__c == 'BR'? ref.Owner_Emp_ID__c : '',
+            // 'ECNo'=> '',
             'RMNo'=> ref.RTL_Account_Name__c != null ? ref.RTL_Account_Name__r.TMB_Customer_ID_PE__c != null ? ref.RTL_Account_Name__r.TMB_Customer_ID_PE__c  : '' : '',
             'PlateNo' => ref.RTL_AL_car_plate_no__c != null ?  ref.RTL_AL_car_plate_no__c : '',
             'ProvincePlateNo' => ref.RTL_AL_province_car_plate_no__c != null ? ref.RTL_AL_province_car_plate_no__c : '',
             'RTLComment' => ref.RTL_Comment__c != null ? ref.RTL_Comment__c : '',
             'RTLComment2' => ref.RTL_Comment2__c != null ? ref.RTL_Comment2__c : '',
-            'RTLComment3' => ref.RTL_Comment3__c != null ? ref.RTL_Comment3__c : ''
+            'RTLComment3' => ref.RTL_Comment3__c != null ? ref.RTL_Comment3__c : '',
+
+            //Add from LGS
+            'LGS_Partner'=> cmb.size() > 0 ? cmb[0].LGS_Partner__c != null ? cmb[0].LGS_Partner__c : RefLGSPartner : RefLGSPartner,
+            'LGS_Lead_Received_Time'=> cmb.size() > 0 ? cmb[0].LGS_Lead_Received_Time__c != null ? cmb[0].LGS_Lead_Received_Time__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_Campaign_Start_Date'=> cmb.size() > 0 ? cmb[0].LGS_Campaign_Start_Date__c != null ? cmb[0].LGS_Campaign_Start_Date__c : null : null,
+            'LGS_Campaign_End_Date'=> cmb.size() > 0 ? cmb[0].LGS_Campaign_End_Date__c != null ? cmb[0].LGS_Campaign_End_Date__c : null : null,
+            'LGS_Interest' => cmb.size() > 0 ? cmb[0].RTL_AL_Interested_Rate__c != null ? cmb[0].RTL_AL_Interested_Rate__c : null : null,
+            'LGS_001'=> cmb.size() > 0 ? cmb[0].LGS_001__c != null ? cmb[0].LGS_001__c : '' : '',
+            'LGS_002'=> cmb.size() > 0 ? cmb[0].LGS_002__c != null ? cmb[0].LGS_002__c : '' : '',
+            'LGS_003'=> cmb.size() > 0 ? cmb[0].LGS_003__c != null ? cmb[0].LGS_003__c : '' : '',
+            'LGS_004'=> cmb.size() > 0 ? cmb[0].LGS_004__c != null ? cmb[0].LGS_004__c : '' : '',
+            'LGS_005'=> cmb.size() > 0 ? cmb[0].LGS_005__c != null ? cmb[0].LGS_005__c : '' : '',
+            'LGS_006'=> cmb.size() > 0 ? cmb[0].LGS_006__c != null ? cmb[0].LGS_006__c : '' : '',
+            'LGS_007'=> cmb.size() > 0 ? cmb[0].LGS_007__c != null ? cmb[0].LGS_007__c : '' : '',
+            'LGS_008'=> cmb.size() > 0 ? cmb[0].LGS_008__c != null ? cmb[0].LGS_008__c : '' : '',
+            'LGS_009'=> cmb.size() > 0 ? cmb[0].LGS_009__c != null ? cmb[0].LGS_009__c : '' : '',
+            'LGS_010'=> cmb.size() > 0 ? cmb[0].LGS_010__c != null ? cmb[0].LGS_010__c : null : null,
+            'LGS_011'=> cmb.size() > 0 ? cmb[0].LGS_011__c != null ? cmb[0].LGS_011__c : null : null,
+            'LGS_012'=> cmb.size() > 0 ? cmb[0].LGS_012__c != null ? cmb[0].LGS_012__c : null : null,
+            'LGS_013'=> cmb.size() > 0 ? cmb[0].LGS_013__c != null ? cmb[0].LGS_013__c : null : null,
+            'LGS_014'=> cmb.size() > 0 ? cmb[0].LGS_014__c != null ? cmb[0].LGS_014__c : null : null,
+            'LGS_015'=> cmb.size() > 0 ? cmb[0].LGS_015__c != null ? cmb[0].LGS_015__c : null : null,
+            'LGS_016'=> cmb.size() > 0 ? cmb[0].LGS_016__c != null ? cmb[0].LGS_016__c : null : null,
+            'LGS_017'=> cmb.size() > 0 ? cmb[0].LGS_017__c != null ? cmb[0].LGS_017__c : null : null,
+            'LGS_018'=> cmb.size() > 0 ? cmb[0].LGS_018__c != null ? cmb[0].LGS_018__c : null : null,
+            'LGS_019'=> cmb.size() > 0 ? cmb[0].LGS_019__c != null ? cmb[0].LGS_019__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_020'=> cmb.size() > 0 ? cmb[0].LGS_020__c != null ? cmb[0].LGS_020__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_Assignment_Code'=> cmb.size() > 0 ? cmb[0].LGS_Assignment_Code__c != null ? cmb[0].LGS_Assignment_Code__c : '' : '',
+            'LGS_LinkInfo'=> cmb.size() > 0 ? cmb[0].LGS_LinkInfo__c != null ? cmb[0].LGS_LinkInfo__c : '' : '',
+            'LGS_BrandCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandCode__c != null ? cmb[0].LGS_BrandCode__c : '' : '',
+            'LGS_BrandShowroomCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandShowroomCode__c != null ? cmb[0].LGS_BrandShowroomCode__c : '' : '',
+            'LGS_PartnerCode'=> cmb.size() > 0 ? cmb[0].LGS_PartnerCode__c != null ? cmb[0].LGS_PartnerCode__c : '' : '',
+            'LGS_ChildCampaignID'=> cmb.size() > 0 ? cmb[0].LGS_Child_Campaign_ID__c != null ? cmb[0].LGS_Child_Campaign_ID__c : '' : '',
+            'LGS_Campaign_Name'=> cmb.size() > 0 ? cmb[0].RTL_W2L_Campaign_Name__c != null ? cmb[0].RTL_W2L_Campaign_Name__c : '' : '',
+            'LeadScore'=> cmb.size() > 0 ? cmb[0].Lead_Score__c != null ? cmb[0].Lead_Score__c : null : null,
+            'LeadScorelevel'=> cmb.size() > 0 ? cmb[0].Lead_Score_level__c != null ? cmb[0].Lead_Score_level__c : '' : '',
+            'LGS_VIN_No'=> cmb.size() > 0 ? cmb[0].LGS_VIN_No__c != null ? cmb[0].LGS_VIN_No__c : '' : '',
+            'LGS_WebUniqueID'=> cmb.size() > 0 ? cmb[0].RTL_Web_Unique_ID__c != null ? cmb[0].RTL_Web_Unique_ID__c : '' : '',
+            'LGS_File_Upload'=> cmb.size() > 0 ? cmb[0].LGS_File_Upload__c != null ? cmb[0].LGS_File_Upload__c : '' : ''
 
         };
     }
@@ -380,7 +480,10 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 'RTL_Comment__c',
                 'RTL_Comment2__c',
                 'RTL_Comment3__c',
-                'RTL_Type__c'
+                'RTL_Type__c',
+                'RTL_Campaign_Member__c',
+                'RTL_LeadSource__c',
+                'RTL_TMB_Campaign_Source__c'
             };
         }
     }

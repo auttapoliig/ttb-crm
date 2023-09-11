@@ -383,19 +383,19 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
   
     update campaignMemberListforUpdate;
     
-    List<CampaignMember> campaignMemberToALList = new  List<CampaignMember>();
-    for(CampaignMember cm : newList)
-    {
-        if(cm.RTL_Contact_Method__c == 'AL Sales')
-        {
-            campaignMemberToALList.add(cm);
-        }
-    }
+    // List<CampaignMember> campaignMemberToALList = new  List<CampaignMember>();
+    // for(CampaignMember cm : newList)
+    // {
+    //     if(cm.RTL_Contact_Method__c == 'AL Sales')
+    //     {
+    //         campaignMemberToALList.add(cm);
+    //     }
+    // }
 
-    if(campaignMemberToALList.size() > 0)
-    {
-        RTL_AL_CampaignMemberToAL.sendCampaignMemberToAL(campaignMemberToALList);
-    }
+    // if(campaignMemberToALList.size() > 0)
+    // {
+    //     RTL_AL_CampaignMemberToAL.sendCampaignMemberToAL(campaignMemberToALList);
+    // }
 
   }
 

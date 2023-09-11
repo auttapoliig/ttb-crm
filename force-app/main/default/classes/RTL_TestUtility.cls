@@ -281,6 +281,45 @@ public class RTL_TestUtility {
         if(doInsert) insert retailUser;
         return retailUser;
     }
+        /* This test data is used for lead interested product GBH */
+        public static List<RTL_product_master__c> createRetailProductsGBH(Boolean doInsert) {
+            List<RTL_product_master__c> productList = new List<RTL_product_master__c>();
+            
+            RTL_product_master__c product = new RTL_product_master__c(Name='Cash2Go', Product_Group__c='Loan', Product_Sub_group__c='PERSONAL LOAN',Active__c=true);
+            productList.add(product);
+            product = new RTL_product_master__c(Name='Home Equity', Product_Group__c='Loan', Product_Sub_group__c='HOME EQUITY',Active__c=true);
+            productList.add(product);
+            product = new RTL_product_master__c(Name='CYC', Product_Group__c='Auto Loan', Product_Sub_group__c='HIRE PURCHASE',Active__c=true);
+            productList.add(product);
+            product = new RTL_product_master__c(Name='GBHCC', Product_Group__c='Credit Card & RDC', Product_Sub_group__c='TTB GLOBAL HOUSE CREDIT',Active__c=true);
+            productList.add(product);
+            product = new RTL_product_master__c(Name='GBHFC', Product_Group__c='Loan', Product_Sub_group__c='UNSECURED REVOLVING',Active__c=true);
+            productList.add(product);
+            if (doInsert)   insert productList;
+            return productList;
+        }
+            
+        /* This test data is used for GBH web-to-lead assignment criterias */
+        public static void createLeadAssignCriteriasGBH(Boolean doInsert) {
+            List<RTL_Assignment_Criterias__c> criteriaList = new List<RTL_Assignment_Criterias__c>();
+            List<RTL_product_master__c> productList = createRetailProductsGBH(true);
+            RTL_Assignment_Criterias__c assignCriteria = null;
+            for (RTL_product_master__c product: productList) {
+                if(product.Name == 'Cash2Go') {
+                    assignCriteria = new RTL_Assignment_Criterias__c(Product_Name__c=product.Id, Destination_BKK__c='Outbound', Destination_UPC__c='Branch', Referral_multiple_BKK__c='Outbound' ,Referral_multiple_UPC__c='Outbound', Referral_single_BKK__c='Outbound',Referral_single_UPC__c='Outbound');
+                } else if (product.Name == 'Home Equity') {
+                    assignCriteria = new RTL_Assignment_Criterias__c(Product_Name__c=product.Id, Destination_BKK__c='Outbound', Destination_UPC__c='Outbound', Referral_multiple_BKK__c='Branch' ,Referral_multiple_UPC__c='Branch', Referral_single_BKK__c='Branch',Referral_single_UPC__c='Branch');
+                } else if (product.Name == 'CYC') {
+                    assignCriteria = new RTL_Assignment_Criterias__c(Product_Name__c=product.Id, Destination_BKK__c='Outbound', Destination_UPC__c='Outbound', Referral_multiple_BKK__c='Branch' ,Referral_multiple_UPC__c='Branch', Referral_single_BKK__c='Outbound',Referral_single_UPC__c='Outbound');
+                } else if (product.Name == 'GBHFC') {
+                    assignCriteria = new RTL_Assignment_Criterias__c(Product_Name__c=product.Id, Destination_BKK__c='Outbound', Destination_UPC__c='Outbound', Referral_multiple_BKK__c='Outbound' ,Referral_multiple_UPC__c='Outbound', Referral_single_BKK__c='Outbound',Referral_single_UPC__c='Outbound');
+                } else if (product.Name == 'GBHCC') {
+                    assignCriteria = new RTL_Assignment_Criterias__c(Product_Name__c=product.Id, Destination_BKK__c='Outbound', Destination_UPC__c='Outbound', Referral_multiple_BKK__c='Outbound' ,Referral_multiple_UPC__c='Outbound', Referral_single_BKK__c='Outbound',Referral_single_UPC__c='Outbound');
+                }
+                criteriaList.add(assignCriteria);
+            }
+            if (doInsert) insert criteriaList;
+        } 
     
     public static User createRetailTestUserWithBranch(Boolean doInsert) {
         User retailUser = new User(FirstName='retail', LastName='test user2', 

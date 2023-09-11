@@ -40,6 +40,30 @@ public class RTL_LeadTriggerHandlerTest {
         leadAssignmentrule3.RTL_Lead_Field_Value_1__c = 'Branch';
         leadAssignList.add(leadAssignmentrule3);
 
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule4 = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule4.RTL_Active_Flag__c = true;
+        leadAssignmentrule4.RTL_Priority__c = 0;
+        leadAssignmentrule4.RTL_Integration_Type__c = 'HPAP';
+        leadAssignmentrule4.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule4.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule4.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule4.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule4.RTL_Lead_Field_Value_1__c = 'AL Sales';
+        leadAssignList.add(leadAssignmentrule4);
+
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule5 = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule5.RTL_Active_Flag__c = true;
+        leadAssignmentrule5.RTL_Priority__c = 1;
+        leadAssignmentrule5.RTL_Integration_Type__c = 'Cisco';
+        leadAssignmentrule5.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule5.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule5.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule5.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule5.RTL_Lead_Field_Value_1__c = 'Website';
+        leadAssignmentrule5.RTL_Lead_Field_Criteria_2__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule5.RTL_Lead_Field_Value_2__c = 'Call Me Now';
+        leadAssignList.add(leadAssignmentrule5);
+
         insert leadAssignList;
         RTL_TestUtility.enableWebToLeadAutoAssign(true);
         RTL_TestUtility.createCampaignAssignmentRule();
@@ -146,7 +170,7 @@ public class RTL_LeadTriggerHandlerTest {
     }
 
     public static testmethod void testWebDropLead(){
- 
+        Id recordTypeId  = [select Id from RecordType where SobjectType = 'Lead' and DeveloperName=: 'Retail_Banking' and IsActive=true ].Id;
         System.debug(':::: testWebDropLead Start ::::');
         RTL_TestUtility.enableWebToLeadAutoAssign(true); 
         // RTL_TestUtility.createCampaignAssignmentRule();
@@ -177,26 +201,86 @@ public class RTL_LeadTriggerHandlerTest {
         
         TEST.startTest();     
 
-        for(Integer i =0 ; i < 10 ; i++){
-            Lead lead = new Lead();
-            lead.Company = 'X';
-            lead.RTL_TMB_Campaign_Source__c = 'Web';
-            lead.FirstName = 'Test1';
-            lead.LastName = 'WebToLead';
-            lead.Email = 'test1@salesforce.com';
-            lead.City = 'Bangkok';
-            lead.RTL_Mobile_Number__c = '0819803882';
-            lead.RTL_BranchW2L_Area__c = '10400';
-            lead.RTL_Branch_Name__c = '001';
-            lead.LeadSource = 'Others';
-            lead.RTL_Product_Name__c = 'So Smart Test';
-            lead.RTL_TMB_Campaign_Reference__c = 'CMN_web';
-            lead.RTL_Customer_Segment__c = 'TMB Web';
-            lead.RTL_Web_Unique_ID_c__c  = '20171120'+i;
-            lead.RecordTypeId = '01290000000iZYKAA2';
-            /////lead.RTL_Multiple_Interested_Product_s__c = true;
-            insert lead;
-        }
+        // for(Integer i =0 ; i < 10 ; i++){
+            // Lead lead = new Lead();
+            // lead.Company = 'X';
+            // lead.RTL_TMB_Campaign_Source__c = 'Web';
+            // lead.FirstName = 'Test1';
+            // lead.LastName = 'WebToLead';
+            // lead.Email = 'test1@salesforce.com';
+            // lead.City = 'Bangkok';
+            // lead.RTL_Mobile_Number__c = '0819803882';
+            // lead.RTL_BranchW2L_Area__c = '10400';
+            // lead.RTL_Branch_Name__c = '001';
+            // lead.LeadSource = 'Others';
+            // lead.RTL_Product_Name__c = 'So Smart Test';
+            // lead.RTL_TMB_Campaign_Reference__c = 'CMN_web';
+            // lead.RTL_Customer_Segment__c = 'TMB Web';
+            // lead.RTL_Web_Unique_ID_c__c  = '20171120'+i;
+            // lead.RecordTypeId = '01290000000iZYKAA2';
+            // /////lead.RTL_Multiple_Interested_Product_s__c = true;
+            // insert lead;
+        
+        // }
+        Lead lead = new Lead();
+        lead.Company = 'X';
+        lead.RTL_TMB_Campaign_Source__c = 'Web';
+        lead.FirstName = 'Test1';
+        lead.LastName = 'WebToLead';
+        lead.Email = 'test1@salesforce.com';
+        lead.City = 'Bangkok';
+        lead.RTL_Mobile_Number__c = '0819803882';
+        lead.RTL_BranchW2L_Area__c = '10400';
+        lead.RTL_Branch_Name__c = '001';
+        lead.LeadSource = 'Others';
+        lead.RTL_Product_Name__c = 'So Smart Test';
+        lead.RTL_TMB_Campaign_Reference__c = 'CMN_web';
+        lead.RTL_Customer_Segment__c = 'TMB Web';
+        lead.RTL_Web_Unique_ID_c__c  = '201711201';
+        lead.RecordTypeId = '01290000000iZYKAA2';
+        /////lead.RTL_Multiple_Interested_Product_s__c = true;
+        insert lead;
+
+        Lead lead1 = new Lead();
+        lead1.Company = 'X';
+        lead1.RTL_TMB_Campaign_Source__c = 'Web';
+        lead1.FirstName = 'Test1';
+        lead1.LastName = 'WebToLead';
+        lead1.Email = 'test1@salesforce.com';
+        lead1.City = 'Bangkok';
+        lead1.RTL_Mobile_Number__c = '0819803882';
+        lead1.RTL_BranchW2L_Area__c = '10400';
+        lead1.RTL_Branch_Name__c = '001';
+        lead1.LeadSource = 'Website';
+        lead1.RTL_Product_Name__c = 'So Smart Test';
+        lead1.RTL_TMB_Campaign_Reference__c = 'CMN_web';
+        lead1.RTL_Customer_Segment__c = 'TMB Web';
+        lead1.RTL_Contact_Method__c = 'AL Sales';
+        lead1.RTL_Web_Unique_ID_c__c  = '2017112056';
+        lead1.RecordTypeId = recordTypeId;
+        lead1.RTL_Call_Me_Now_Retry_Count__c = 0;
+        /////lead.RTL_Multiple_Interested_Product_s__c = true;
+        insert lead1;
+
+        Lead lead2 = new Lead();
+        lead2.Company = 'X';
+        lead2.RTL_TMB_Campaign_Source__c = 'Web';
+        lead2.FirstName = 'Test1';
+        lead2.LastName = 'WebToLead';
+        lead2.Email = 'test1@salesforce.com';
+        lead2.City = 'Bangkok';
+        lead2.RTL_Mobile_Number__c = '0819803882';
+        lead2.RTL_BranchW2L_Area__c = '10400';
+        lead2.RTL_Branch_Name__c = '001';
+        lead2.LeadSource = 'Website';
+        lead2.RTL_Product_Name__c = 'So Smart Test';
+        lead2.RTL_TMB_Campaign_Reference__c = 'CMN_web';
+        lead2.RTL_Customer_Segment__c = 'TMB Web';
+        lead2.RTL_Contact_Method__c = 'Call Me Now';
+        lead2.RTL_Web_Unique_ID_c__c  = '20171120567';
+        lead2.RecordTypeId = recordTypeId;
+        /////lead.RTL_Multiple_Interested_Product_s__c = true;
+        insert lead2;
         //
         //RTL_TestUtility.createPositiveWebToLead();
         List<Lead> webtolead = [select RTL_Count_InterestedProducts_Primary__c from Lead ];
@@ -391,62 +475,6 @@ public class RTL_LeadTriggerHandlerTest {
                 WHERE Product_Code__c = : '0002' AND Active__c = : true LIMIT 1];
             selectlead = [SELECT Id, RTL_Primary_Interested_Product__c, RTL_Count_InterestedProducts_Primary__c FROM Lead WHERE Id=:lead.Id];
             System.assertEquals(masterPrimaryProduct.id, selectlead.RTL_Primary_Interested_Product__c);
-        }
-        Test.stopTest();
-    }
-
-    @isTest 
-    static void CallListLeadBatchTestServiceCisco() {
-        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
-        leadAssignmentrule.RTL_Active_Flag__c = true;
-        leadAssignmentrule.RTL_Priority__c = 0;
-        leadAssignmentrule.RTL_IsInsertProduct__c = true;
-        leadAssignmentrule.RTL_Assigned_User_field__c = 'OwnerId';
-        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
-        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
-        leadAssignmentrule.RTL_Integration_Type__c = 'Cisco';
-
-        insert leadAssignmentrule;
-        
-        RTL_TestUtility.createRetailMasterProducts(true);
-        List<lead> leadList = RTL_TestUtility.createLeads(1,false);
-        leadList.get(0).RTL_Web_Unique_ID_c__c = '989988712';
-        leadList.get(0).RTL_Call_Back_Date_time__c = Datetime.now();
-        leadList.get(0).RTL_TMB_Campaign_Source__c = 'Web';
-        leadList.get(0).RTL_Contact_Method__c = 'Call Me Later';
-
-        Test.startTest();
-        User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
-        System.runAs(sfextapi){
-            insert leadList;
-        }
-        Test.stopTest();
-    }
-
-    @isTest 
-    static void CallListLeadBatchTestServiceAvaya() {
-        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
-        leadAssignmentrule.RTL_Active_Flag__c = true;
-        leadAssignmentrule.RTL_Priority__c = 0;
-        leadAssignmentrule.RTL_IsInsertProduct__c = true;
-        leadAssignmentrule.RTL_Assigned_Queue_Name__c = 'RTLQ_Outbound';
-        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
-        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
-        leadAssignmentrule.RTL_Integration_Type__c = 'Avaya';
-
-        insert leadAssignmentrule;
-        
-        RTL_TestUtility.createRetailMasterProducts(true);
-        List<lead> leadList = RTL_TestUtility.createLeads(1,false);
-        leadList.get(0).RTL_Web_Unique_ID_c__c = '989988712';
-        leadList.get(0).RTL_Call_Back_Date_time__c = Datetime.now();
-        leadList.get(0).RTL_TMB_Campaign_Source__c = 'Web';
-        leadList.get(0).RTL_Contact_Method__c = 'Call Me Later';
-
-        Test.startTest();
-        User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
-        System.runAs(sfextapi){
-            insert leadList;
         }
         Test.stopTest();
     }

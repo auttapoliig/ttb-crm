@@ -36,6 +36,7 @@ public class LeadAssignmentUtilTest {
             insert qsObject;
             
             RTL_TestUtility.enableWebToLeadAutoAssign(true);
+            RTL_TestUtility.createCampaignAssignmentRule();
         }
     }
 
@@ -202,6 +203,324 @@ public class LeadAssignmentUtilTest {
         led2.LastName = 'LastName';
         led2.LeadSource = 'User';
         insert led2;
+        Test.stopTest();
+    }
+    @isTest
+    public static void testCreateLeadNoMultiCover(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+        Test.startTest();
+        Lead led = new Lead();
+        led.Company = 'Company';
+        led.RecordTypeId = '01290000000iZYK';
+        led.FirstName = 'Test';
+        led.LastName = 'Test';
+        led.RTL_Web_Unique_ID_c__c = 'WEB000000123001';
+        led.RTL_Mobile_Number__c= '0946528664';
+        led.RTL_Multiple_Interested_Product_s__c= false;
+        led.RTL_Product_Name__c = 'GBHCC';
+        led.RTL_Contact_Method__c = 'Normal Request';
+        led.LeadSource = 'Referral';
+        led.RTL_BranchW2L_Area__c = '18000';
+        led.RTL_Branch_Name__c = '444';
+        led.RTL_Priority_Product__c = '';
+        insert led;
+
+        Test.stopTest();
+    }
+
+    @isTest
+    public static void testCreateLeadNoMultiNoCover(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Not Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+        Test.startTest();
+        Lead led = new Lead();
+        led.Company = 'Company';
+        led.RecordTypeId = '01290000000iZYK';
+        led.FirstName = 'Test';
+        led.LastName = 'Test';
+        led.RTL_Web_Unique_ID_c__c = 'WEB000000123001';
+        led.RTL_Mobile_Number__c= '0946528664';
+        led.RTL_Multiple_Interested_Product_s__c= false;
+        led.RTL_Product_Name__c = 'GBHCC';
+        led.RTL_Contact_Method__c = 'Normal Request';
+        led.LeadSource = 'Referral';
+        led.RTL_BranchW2L_Area__c = '18000';
+        led.RTL_Branch_Name__c = '444';
+        led.RTL_Priority_Product__c = '';
+        insert led;
+
+        Test.stopTest();
+    }
+    @isTest
+    public static void testCreateLeadMultiCover(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+        Test.startTest();
+        Lead led1 = new Lead();
+        led1.Company = 'Company1';
+        led1.RecordTypeId = '01290000000iZYK';
+        led1.FirstName = 'multiple3';
+        led1.LastName = 'Test3';
+        led1.RTL_Web_Unique_ID_c__c = 'WEBtestclass123002';
+        led1.RTL_Mobile_Number__c= '0946527648';
+        led1.RTL_Multiple_Interested_Product_s__c= true;
+        led1.RTL_Product_Name__c = 'GBHCC;GBHFC';
+        led1.RTL_Contact_Method__c = 'Normal Request';
+        led1.LeadSource = 'Referral';
+        led1.RTL_BranchW2L_Area__c = '18000';
+        led1.RTL_Branch_Name__c = '444';
+        led1.RTL_Priority_Product__c = 'GBHCC';
+        insert led1;
+
+        Test.stopTest();
+    }
+    @isTest
+    public static void testCreateLeadMultiNotCover(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Not Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+        Test.startTest();
+        Lead led1 = new Lead();
+        led1.Company = 'Company1';
+        led1.RecordTypeId = '01290000000iZYK';
+        led1.FirstName = 'multiple3';
+        led1.LastName = 'Test3';
+        led1.RTL_Web_Unique_ID_c__c = 'WEBtestclass123002';
+        led1.RTL_Mobile_Number__c= '0946527648';
+        led1.RTL_Multiple_Interested_Product_s__c= true;
+        led1.RTL_Product_Name__c = 'GBHCC;GBHFC';
+        led1.RTL_Contact_Method__c = 'Normal Request';
+        led1.LeadSource = 'Referral';
+        led1.RTL_BranchW2L_Area__c = '18000';
+        led1.RTL_Branch_Name__c = '444';
+        led1.RTL_Priority_Product__c = 'GBHCC';
+        insert led1;
+
+        Test.stopTest();
+    }
+    @isTest
+    public static void testCreateLeadnoProductNobranch(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+
+        List<RTL_product_master__c> productList = new List<RTL_product_master__c>();
+        RTL_product_master__c product = new RTL_product_master__c(Name='Test', Product_Group__c='Credit Card', Product_Sub_group__c='Credit Card',Active__c=true);
+        insert productList;
+
+
+
+        Test.startTest();
+        Lead led1 = new Lead();
+        led1.Company = 'Company1';
+        led1.RecordTypeId = '01290000000iZYK';
+        led1.FirstName = 'multiple3';
+        led1.LastName = 'Test3';
+        led1.RTL_Web_Unique_ID_c__c = 'WEBtestclass123002';
+        led1.RTL_Mobile_Number__c= '0946527648';
+        led1.RTL_Multiple_Interested_Product_s__c= false;
+        led1.RTL_Product_Name__c = 'test';
+        led1.RTL_Contact_Method__c = 'Normal Request';
+        led1.LeadSource = 'Referral';
+        led1.RTL_BranchW2L_Area__c = '18000';
+        led1.RTL_Branch_Name__c = '';
+        led1.RTL_Priority_Product__c = '';
+        insert led1;
+
+        Test.stopTest();
+    }
+    // @isTest
+    // public static void testCreateLeadnoProduct(){
+    //     RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+    //     leadAssignmentrule.RTL_Active_Flag__c = true;
+    //     leadAssignmentrule.RTL_Priority__c = 40;
+    //     leadAssignmentrule.RTL_IsInsertProduct__c = true;
+    //     leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+    //     leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+    //     leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+    //     leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+    //     leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+    //     leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+    //     leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+    //     insert leadAssignmentrule;
+
+    //     RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+    //     coverarea.RTL_Area__c  ='Cover';
+    //     coverarea.RTL_Zip_Code__c  ='18000';
+    //     insert coverarea;
+
+    //     RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+
+    //     List<RTL_product_master__c> productList = new List<RTL_product_master__c>();
+    //     RTL_product_master__c product = new RTL_product_master__c(Name='Test', Product_Group__c='Credit Card', Product_Sub_group__c='Credit Card',Active__c=true);
+    //     insert productList;
+
+    //     Group newgroup = new Group();
+    //     newgroup.Name = 'Test_444';
+    //     newgroup.DeveloperName = 'Test_444';
+    //     newgroup.Type = 'Queue';
+    //     insert newgroup;
+
+    //     Branch_and_Zone__c newBranch = new Branch_and_Zone__c ();
+    //     newBranch.Name = 'Test';
+    //     newBranch.Branch_Code__c = '444';
+    //     newBranch.RTL_Region_Code__c = '444';
+    //     newBranch.RTL_Zone_Code__c = '444';
+    //     newBranch.IsActive__c = true;
+    //     insert newBranch;
+
+    //     Test.startTest();
+    //     Lead led1 = new Lead();
+    //     led1.Company = 'Company1';
+    //     led1.RecordTypeId = '01290000000iZYK';
+    //     led1.FirstName = 'multiple3';
+    //     led1.LastName = 'Test3';
+    //     led1.RTL_Web_Unique_ID_c__c = 'WEBtestclass123002';
+    //     led1.RTL_Mobile_Number__c= '0946527648';
+    //     led1.RTL_Multiple_Interested_Product_s__c= false;
+    //     led1.RTL_Product_Name__c = 'test';
+    //     led1.RTL_Contact_Method__c = 'Normal Request';
+    //     led1.LeadSource = 'Referral';
+    //     led1.RTL_BranchW2L_Area__c = '18000';
+    //     led1.RTL_Branch_Name__c = '444';
+    //     led1.RTL_Priority_Product__c = '';
+    //     insert led1;
+
+    //     Test.stopTest();
+    // }
+    @isTest
+    public static void testCreateLeadnoProductbranchnovalid(){
+        RTL_Lead_Assignment_Rule__c leadAssignmentrule = new RTL_Lead_Assignment_Rule__c ();
+        leadAssignmentrule.RTL_Active_Flag__c = true;
+        leadAssignmentrule.RTL_Priority__c = 40;
+        leadAssignmentrule.RTL_IsInsertProduct__c = true;
+        leadAssignmentrule.RTL_IsAssign_Campaign__c = true;
+        leadAssignmentrule.RTL_Lead_Record_Type__c = 'Retail Banking';
+        leadAssignmentrule.RTL_Assigned_Apex__c = 'RTL_ReferAssignmentService';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Normal Request';
+        leadAssignmentrule.RTL_Lead_Field_Criteria_1__c = 'LeadSource';
+        leadAssignmentrule.RTL_Lead_Field_Value_1__c = 'Referral';
+        insert leadAssignmentrule;
+
+        RTL_Messenger_Cover_Area__c coverarea = new RTL_Messenger_Cover_Area__c();
+        coverarea.RTL_Area__c  ='Cover';
+        coverarea.RTL_Zip_Code__c  ='18000';
+        insert coverarea;
+
+        RTL_TestUtility.createLeadAssignCriteriasGBH(true);
+
+        List<RTL_product_master__c> productList = new List<RTL_product_master__c>();
+        RTL_product_master__c product = new RTL_product_master__c(Name='Test', Product_Group__c='Credit Card', Product_Sub_group__c='Credit Card',Active__c=true);
+        insert productList;
+
+        Group newgroup = new Group();
+        newgroup.Name = 'Test_444';
+        newgroup.DeveloperName = 'Test_444';
+        newgroup.Type = 'Queue';
+        insert newgroup;
+
+        Test.startTest();
+        Lead led1 = new Lead();
+        led1.Company = 'Company1';
+        led1.RecordTypeId = '01290000000iZYK';
+        led1.FirstName = 'multiple3';
+        led1.LastName = 'Test3';
+        led1.RTL_Web_Unique_ID_c__c = 'WEBtestclass123002';
+        led1.RTL_Mobile_Number__c= '0946527648';
+        led1.RTL_Multiple_Interested_Product_s__c= false;
+        led1.RTL_Product_Name__c = 'test';
+        led1.RTL_Contact_Method__c = 'Normal Request';
+        led1.LeadSource = 'Referral';
+        led1.RTL_BranchW2L_Area__c = '18000';
+        led1.RTL_Branch_Name__c = '444';
+        led1.RTL_Priority_Product__c = '';
+        insert led1;
+
         Test.stopTest();
     }
 }

@@ -103,6 +103,9 @@
                 field_name : 'RTL_AL_PayPerMonth__c',
                 read_only : false         
             },
+
+
+            //LGSWS2
             {
                 field_name : 'RTL_AL_Car_Status__c',
                 read_only : false         
@@ -126,7 +129,40 @@
             {
                 field_name : 'RTL_Contact_Method__c',
                 read_only : true         
+            },
+            {
+                field_name : 'LGS_VIN_No__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Car_Reference_No__c',
+                read_only : true         
+            },
+            {
+                field_name : 'LGS_Assignment_Code__c',
+                read_only : true         
+            },
+            {
+                field_name : 'LGS_BrandShowroomCode__c',
+                read_only : true         
+            },
+            {
+                field_name : 'LGS_PartnerCode__c',
+                read_only : true         
+            },  
+            {
+                field_name : 'RTL_Partner_Branch_Code__c',
+                read_only : true         
+            },
+            {
+                field_name : 'LGS_BrandCode__c',
+                read_only : true         
+            },            
+            {
+                field_name : 'RTL_Partner_Employee_Code__c',
+                read_only : true         
             }
+            
         ];
 
         var secondSectionFields = [
@@ -196,18 +232,94 @@
                 field_name : 'RTL_Hub_Name_'+productNum+'__c',
                 read_only : true         
             },
+            //LGSWS2
             {
-                field_name : 'RTL_Status_'+productNum+'__c',
+                field_name : 'HPAP_Status_Code_1__c',
                 read_only : true         
             },
             {
-                field_name : 'Details_of_Status_'+productNum+'__c',
+                field_name : 'RTL_Status_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Details_of_Status_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'HPAP_Reason_Code_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'HPAP_Reason_Description_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Status_Approve_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Refer_Date_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Submit_Date_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Corebank_Approved_Date_Time_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Request_Hub_Code_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Stage_Name_Date_Time_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Request_Hub_Name_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Corebank_Branch_Code_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Product_Campaign_Code_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Corebank_Branch_Name_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Product_Campaign_Name_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Corebank_Sales_Manager_Head_Id_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Dealer_Code_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'Corebank_Sales_Manager_Head_1__c',
+                read_only : true         
+            },
+            {
+                field_name : 'RTL_Dealer_Name_1__c',
                 read_only : true         
             }
         ];
         component.set('v.firstSectionFields',firstSectionFields);
         component.set('v.secondSectionFields',secondSectionFields);
         component.set('v.thirdSectionFields',thirdSectionFields);
+        console.log('v.firstSectionFields',firstSectionFields);
+        console.log('v.secondSectionFields',secondSectionFields);
+        console.log('v.thirdSectionFields',thirdSectionFields);
         component.set('v.isLoading', false);
     },
 
