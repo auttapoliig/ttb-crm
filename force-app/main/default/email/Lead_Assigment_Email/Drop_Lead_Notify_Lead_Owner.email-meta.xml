@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>TH_TMB_Retail_Customer</letterhead>
+    <name>Drop Lead Notify Lead Owner</name>
+    <style>freeForm</style>
+    <subject>[New] CRM Customer Drop Lead</subject>
+    <textOnly>เรียน คุณ {!Lead.Owner}
+&lt;br&gt;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ขณะนี้มี Customer DropLead ใหม่สร้างขึ้นในระบบ CRM ส่งมาที่ {!Lead.Owner} กรุณาคลิก URL Link ด้านล่างและล็อคอินเข้าระบบ CRM เพื่อพิจารณารายละเอียดและดำเนินการในขั้นตอนต่อไป
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;{!Lead.Call_Me_Now_URL__c}
+&lt;br&gt;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;หมายเหตุ ท่านสามารถ Assign Customer Droplead ให้กับพนักงานสาขา เพื่อติดต่อกลับหาลูกค้า</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

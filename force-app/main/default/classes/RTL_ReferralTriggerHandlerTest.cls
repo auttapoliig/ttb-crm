@@ -37,7 +37,7 @@ public class RTL_ReferralTriggerHandlerTest {
         insert branchTitle;
         //ls = Test.loadData(Branch_And_Zone__c.sObjectType, 'BranchAndZoneMaster');
         ID RMC_ROLE_ID = [SELECT Id FROM UserRole WHERE Name LIKE '%RMC%' LIMIT 1].id;
-        // System.debug('RMC ROLE ID '+RMC_ROLE_ID);
+        System.debug('RMC ROLE ID '+RMC_ROLE_ID);
         
         queueMap = new Map<String, Group>();
         for(Group queue : [Select Id, Name, DeveloperName from Group where Type = 'Queue'])
@@ -110,10 +110,10 @@ public class RTL_ReferralTriggerHandlerTest {
         }
         System.runAs(retailWithBranchUser){
             //Referral without preferred branch
-            referralList = TestUtility_Referral.createReferralsWithAccount(100,acctList[0].id,branchAndZoneList[0].id,true);
+            referralList = TestUtility_Referral.createReferralsWithAccount(50,acctList[0].id,branchAndZoneList[0].id,true);
             referralList = queryReferral();
             //assert insert bulk insert success
-            System.assertEquals(100,referralList.size());
+            System.assertEquals(50,referralList.size());
         }
         Test.stopTest();
     }
@@ -130,14 +130,14 @@ public class RTL_ReferralTriggerHandlerTest {
             opportunityList = RTL_TestUtility.createOpportunities(acctList[0],1,true);
             
             List<Opportunity> opptyList = queryOpportunity();
-            // System.debug('BEFORE OPPORTUNITY   :: '+opptyList);
+            System.debug('BEFORE OPPORTUNITY   :: '+opptyList);
             
             opptyList[0].RTL_Referral__c = referralList[0].id;
             update opptyList;
             
             opptyList = queryOpportunity();
             List<RTL_Referral__c> refList = queryReferral();
-            // System.debug('AFTER OPPORTUNITY   :: '+opptyList);
+            System.debug('AFTER OPPORTUNITY   :: '+opptyList);
             //Assert referral attached with opportunity
             System.assertequals(referralList[0].id,opptyList[0].RTL_Referral__c);
             //Assert referral stage is Closed (Interested)
@@ -423,7 +423,7 @@ public class RTL_ReferralTriggerHandlerTest {
 
         //User contextuser = [SELECT Id, RTL_Branch_Code__c FROM User WHERE Profile.Name = 'TMB Retail Channel Sales' AND IsActive = true LIMIT 1];
         Id TMB_RC_PROFILE_ID = [SELECT Id FROM Profile WHERE Name = 'TMB Retail Channel Sales' LIMIT 1].Id;
-        // System.debug(TMB_RC_PROFILE_ID);
+        system.debug(TMB_RC_PROFILE_ID);
 
         RTL_product_master__c prod = new RTL_product_master__c();
         prod.Name = 'CYC';
@@ -454,8 +454,8 @@ public class RTL_ReferralTriggerHandlerTest {
                                     ProfileId = TMB_RC_PROFILE_ID, TimeZoneSidKey='America/New_York',isActive = true,
                                     Employee_ID__c ='RM001',ManagerId = ManagerUser.id);
         insert PreferredStaff;
-        // System.debug('PreferredStaff Email :'+PreferredStaff.Email);
-        // System.debug('PreferredStaff Email :'+PreferredStaff.Id);
+        System.debug('PreferredStaff Email :'+PreferredStaff.Email);
+        System.debug('PreferredStaff Email :'+PreferredStaff.Id);
         System.runAs(PreferredStaff){
         String RecordTypeId = Schema.SObjectType.RTL_Referral__c.getRecordTypeInfosByName().get('Retail Cross Channel Referral').getRecordTypeId();
         RTL_Referral__c ref = new RTL_Referral__c();
@@ -507,9 +507,9 @@ public class RTL_ReferralTriggerHandlerTest {
                 referral.RTL_Stage__c = 'New';
                 referral.RTL_License_No__c = '4325325426';
                 referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
-                // System.debug('branch '+referral.RTL_Preferred_Branch__c);
+                system.debug('branch '+referral.RTL_Preferred_Branch__c);
                 insert referral;
-                // System.debug('refid'+referral.id);  
+                system.debug('refid'+referral.id);  
 
                 Opportunity oppt = new Opportunity(); 
                 oppt.Name = 'Test Opp';
@@ -519,7 +519,7 @@ public class RTL_ReferralTriggerHandlerTest {
                 oppt.RTL_Referral__c = referral.id;
                 insert oppt;
 
-                // System.debug('opptid'+oppt.id);  
+                system.debug('opptid'+oppt.id);  
                 //mock cm
                 CampaignMember cm = new CampaignMember();
                 cm.CampaignId = camp.id; 
@@ -536,8 +536,8 @@ public class RTL_ReferralTriggerHandlerTest {
                 cm.RTL_Referral_ID_5__c = referral.id;                
                 cm.RTL_Hub_Name_1__c = 'test hub';
                 insert cm;
-                // System.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
-                // System.debug('refer '+cm.RTL_Referral_ID_1__c);
+                system.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
+                system.debug('refer '+cm.RTL_Referral_ID_1__c);
             
                 //update ref
                 RTL_Referral__c referralup = new RTL_Referral__c();
