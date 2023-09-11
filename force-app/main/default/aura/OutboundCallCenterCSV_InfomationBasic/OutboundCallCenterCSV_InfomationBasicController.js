@@ -43,6 +43,7 @@
             'Segment_crm__c',
             'RTL_Primary_Banking_All_Free_Benefit__c',
             'RTL_Main_Bank_Desc__c',
+            'RTL_Privilege1__c',
         ].map(m=> {
             return {
                 'fieldName': m

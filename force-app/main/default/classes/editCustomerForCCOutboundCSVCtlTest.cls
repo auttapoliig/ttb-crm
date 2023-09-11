@@ -52,7 +52,10 @@ public with sharing class editCustomerForCCOutboundCSVCtlTest {
 
                 Object returnObj = editCustomerForCCOutboundCSVController.getInitialData(acct.Id);
                 Map<String, Object> returnAccObj = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(returnObj));
-                System.assertEquals(acct.Id, returnAccObj.get('Id'));
+
+                Map<String, Object> returnAccountId = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(returnAccObj.get('account')));
+                
+                System.assertEquals(acct.Id, returnAccountId.get('Id'));
 
                 try {
                     Object falsereturnObj = editCustomerForCCOutboundCSVController.getInitialData(null);

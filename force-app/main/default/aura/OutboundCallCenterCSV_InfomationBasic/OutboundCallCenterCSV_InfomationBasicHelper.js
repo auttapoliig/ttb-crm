@@ -99,43 +99,43 @@
     },
     onCustomMainBank: function (component, objectInfoField) {
         var cmp = component.get('v.dataFields');
+        cmp.RTL_Primary_Banking_All_Free_Benefit__c.type = 'STRING';
         if(cmp.RTL_Primary_Banking_All_Free_Benefit__c.isAccessible) {
             var MainBankValue = objectInfoField['RTL_Primary_Banking_All_Free_Benefit__c'].value == true ? 'Yes':'No';
             var MainBankDes = objectInfoField['RTL_Main_Bank_Desc__c'].value == null || objectInfoField['RTL_Main_Bank_Desc__c'].value == '' ? '' : ' [' + objectInfoField['RTL_Main_Bank_Desc__c'].value + ']';
             cmp.RTL_Primary_Banking_All_Free_Benefit__c.value = MainBankValue + MainBankDes;
-            cmp.RTL_Primary_Banking_All_Free_Benefit__c.type = 'STRING';
             component.set('v.dataFields',cmp);
         }
     },
     onCustomSegment: function (component, objectInfoField) {
         var cmp = component.get('v.dataFields');
+        cmp.Core_Banking_Suggested_Segment__c.label = objectInfoField['Core_Banking_Suggested_Segment__c'].label + ' / ' + objectInfoField['Sub_segment__c'].label;
+        cmp.Core_Banking_Suggested_Segment__c.type = 'STRING';
         if(cmp.Core_Banking_Suggested_Segment__c.isAccessible) {
-            cmp.Core_Banking_Suggested_Segment__c.label = objectInfoField['Core_Banking_Suggested_Segment__c'].label + ' / ' + objectInfoField['Sub_segment__c'].label;
             cmp.Core_Banking_Suggested_Segment__c.value = objectInfoField['Core_Banking_Suggested_Segment__c'].value ? objectInfoField['Core_Banking_Suggested_Segment__c'].value : '';
-            cmp.Core_Banking_Suggested_Segment__c.type = 'STRING';
             component.set('v.dataFields',cmp);
         }
     },
     onCustomAUM: function (component, objectInfoField) {
         var cmp = component.get('v.dataFields');
+        cmp.RTL_AUM__c.label = objectInfoField['RTL_AUM__c'].label + ' (' + objectInfoField['RTL_AUM_Last_Calculated_Date__c'].label + ')';
+        cmp.RTL_AUM__c.inlineHelpText = objectInfoField['RTL_AUM_Last_Calculated_Date__c'].inlineHelpText;
+        cmp.RTL_AUM__c.type = 'STRING';
         if(cmp.RTL_AUM__c.isAccessible) {
-            cmp.RTL_AUM__c.label = objectInfoField['RTL_AUM__c'].label + ' (' + objectInfoField['RTL_AUM_Last_Calculated_Date__c'].label + ')';
             cmp.RTL_AUM__c.value = $A.get("$Locale.currency") + (objectInfoField['RTL_AUM__c'].value ? objectInfoField['RTL_AUM__c'].value.toLocaleString('en-US') : '0');
             cmp.RTL_AUM__c.value += objectInfoField['RTL_AUM_Last_Calculated_Date__c'].value ? ' [' + $A.localizationService.formatDate(objectInfoField['RTL_AUM_Last_Calculated_Date__c'].value) + ']' : '';
-            cmp.RTL_AUM__c.inlineHelpText = objectInfoField['RTL_AUM_Last_Calculated_Date__c'].inlineHelpText;
-            cmp.RTL_AUM__c.type = 'STRING';
             component.set('v.dataFields', cmp);
         }
         
     },
     onCustomSBOFlag: function (component, objectInfoField) {
         var cmp = component.get('v.dataFields');
+        cmp.RTL_SBO_FLAG__c.label = objectInfoField['RTL_SBO_FLAG__c'].label + ' / ';
+        cmp.RTL_SBO_FLAG__c.label += objectInfoField['RTL_EXIST_NONJU_FLAG__c'].label;
+        cmp.RTL_SBO_FLAG__c.type = 'STRING';
         if(cmp.RTL_SBO_FLAG__c.isAccessible) {
-            cmp.RTL_SBO_FLAG__c.label = objectInfoField['RTL_SBO_FLAG__c'].label + ' / ';
-            cmp.RTL_SBO_FLAG__c.label += objectInfoField['RTL_EXIST_NONJU_FLAG__c'].label;
             cmp.RTL_SBO_FLAG__c.value = (objectInfoField['RTL_SBO_FLAG__c'].value ? objectInfoField['RTL_SBO_FLAG__c'].value : '-') + ' / ';
             cmp.RTL_SBO_FLAG__c.value += (objectInfoField['RTL_EXIST_NONJU_FLAG__c'].value ? objectInfoField['RTL_EXIST_NONJU_FLAG__c'].value : '-');
-            cmp.RTL_SBO_FLAG__c.type = 'STRING';
             component.set('v.dataFields', cmp);
         }
     },
@@ -226,7 +226,7 @@
                 var result = response.getReturnValue();
                 var dataField = component.get('v.dataFields');
                 if (result && result.oscResponse.StatusCode == '200') {
-                    dataField.RTL_Privilege1__c = result.RTL_Privilege1__c;
+                    dataField.RTL_Privilege1_Display = result.RTL_Privilege1_Display;
 
                     if(result.RTL_Average_AUM__c.value != $A.get("$Label.c.Data_Condition_Hidden_Text")) {
                         result.RTL_Average_AUM__c.value =  result.RTL_Average_AUM__c.value ? parseFloat(result.RTL_Average_AUM__c.value) : 0;
@@ -245,13 +245,13 @@
                         result.RTL_Average_AUM__c.type = 'STRING';
                     }
 
-                    if(result.RTL_Privilege1__c.isAccessible) {
-                        result.RTL_Privilege1__c.value = 'Error getting data, retrying... ('+round+')';
+                    if(result.RTL_Privilege1_Display.isAccessible) {
+                        result.RTL_Privilege1_Display.value = 'Error getting data, retrying... ('+round+')';
                     }
 
                     dataField.TTB_Touch_Flag = result.TTB_Touch_Flag;
                     dataField.RTL_Average_AUM__c = result.RTL_Average_AUM__c;
-                    dataField.RTL_Privilege1__c = result.RTL_Privilege1__c;
+                    dataField.RTL_Privilege1_Display = result.RTL_Privilege1_Display;
                     component.set('v.round', round);
                     window.setTimeout(
                         $A.getCallback(function() {
@@ -264,10 +264,10 @@
                     result.RTL_Average_AUM__c.value = 'Error getting data';
                     result.RTL_Average_AUM__c.class = 'redErrorFontColor';
                     result.RTL_Average_AUM__c.type = 'STRING';
-                    result.RTL_Privilege1__c.value = 'Error getting data';
-                    result.RTL_Privilege1__c.class = 'redErrorFontColor';
+                    result.RTL_Privilege1_Display.value = 'Error getting data';
+                    result.RTL_Privilege1_Display.class = 'redErrorFontColor';
                     dataField.RTL_Average_AUM__c = result.RTL_Average_AUM__c;
-                    dataField.RTL_Privilege1__c = result.RTL_Privilege1__c;
+                    dataField.RTL_Privilege1_Display = result.RTL_Privilege1_Display;
                     dataField.TTB_Touch_Flag = result.TTB_Touch_Flag;
                 }
                 component.set('v.dataFields', dataField);

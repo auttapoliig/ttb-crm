@@ -843,31 +843,31 @@
              <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
             class="slds-p-bottom_small ">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1__c.isAccessible}">
-                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Privilege1__c.class }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Privilege1_Display.class }">
                             <span class="slds-form-element__label">
-                                {!v.dataFields.RTL_Privilege1__c.label}
-                                <aura:if isTrue="{!v.dataFields.RTL_Privilege1__c.inlineHelpText }">
-                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1__c.inlineHelpText }" />
+                                {!v.dataFields.RTL_Privilege1_Display.label}
+                                <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }" />
                                 </aura:if>
                             </span>
                             <div class="slds-form-element__control customField">
-                                <div aura:id="testprivid" class="{!'slds-form-element__static ' + v.dataFields.RTL_Privilege1__c.class}">
-                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Privilege1__c.type}" value="{!v.dataFields.RTL_Privilege1__c.value}" />
+                                <div aura:id="testprivid" class="{!'slds-form-element__static ' + v.dataFields.RTL_Privilege1_Display.class}">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Privilege1_Display.type}" value="{!v.dataFields.RTL_Privilege1_Display.value}" />
                                 </div>
                             </div>
                         </div>
                         <aura:set attribute="else">
                             <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
                                 <span class="slds-form-element__label">
-                                    {!v.dataFields.RTL_Privilege1__c.label}
-                                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1__c.inlineHelpText }">
-                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1__c.inlineHelpText }" />
+                                    {!v.dataFields.RTL_Privilege1_Display.label}
+                                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }" />
                                     </aura:if>
                                 </span>
                                 <div class="slds-form-element__control customField">
                                     <div>
-                                        <lightning:formattedText value="{!v.dataFields.RTL_Privilege1__c.value}" />
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Privilege1_Display.value}" />
                                     </div>
                                 </div>
                             </div>

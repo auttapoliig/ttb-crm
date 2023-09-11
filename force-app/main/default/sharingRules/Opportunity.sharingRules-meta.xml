@@ -86,6 +86,26 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>Share_to_CALO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to CALO</label>
+        <sharedTo>
+            <roleAndSubordinates>CALO</roleAndSubordinates>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>Share_to_CRBO</fullName>
         <accessLevel>Read</accessLevel>
         <label>Share to CRBO</label>

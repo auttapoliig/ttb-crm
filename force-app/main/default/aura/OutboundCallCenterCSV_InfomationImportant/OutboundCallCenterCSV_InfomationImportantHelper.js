@@ -42,69 +42,70 @@
                 result[i].type = 'STRING';
             };
         };
-        
+
+        var cpyResult = JSON.parse(JSON.stringify(result));
         /* Customer_Type__c */
-        result['Customer_Type__c'].label += ' / ' + result['Core_Banking_Suggested_Segment__c'].label + ' (' + result['Sub_segment__c'].label +')';
+        result['Customer_Type__c'].label += ' / ' + cpyResult['Core_Banking_Suggested_Segment__c'].label + ' (' + cpyResult['Sub_segment__c'].label +')';
         if (result['Customer_Type__c'].isAccessible == true){
-            result['Customer_Type__c'].value = result['Customer_Type__c'].value ? result['Customer_Type__c'].value  : '-';
+            result['Customer_Type__c'].value = cpyResult['Customer_Type__c'].value ? cpyResult['Customer_Type__c'].value  : '-';
             result['Customer_Type__c'].value += ' / ';
-            result['Customer_Type__c'].value += result['Core_Banking_Suggested_Segment__c'].value ? result['Core_Banking_Suggested_Segment__c'].value : '-';
+            result['Customer_Type__c'].value += cpyResult['Core_Banking_Suggested_Segment__c'].value ? cpyResult['Core_Banking_Suggested_Segment__c'].value : '-';
             helper.getSubSegmentData(component, helper,result);
         };
 
         /* RTL_Privilege1__c */
-        result['RTL_Privilege1__c'].label += ' / ' + result['RTL_Benefit_Status__c'].label;
+        result['RTL_Privilege1__c'].label += ' / ' + cpyResult['RTL_Benefit_Status__c'].label;
         if (result['RTL_Privilege1__c'].isAccessible == true){
-            result['RTL_Privilege1__c'].value = result['RTL_Privilege1__c'].value ? result['RTL_Privilege1__c'].value :'-';
+            result['RTL_Privilege1__c'].value = cpyResult['RTL_Privilege1__c'].value ? cpyResult['RTL_Privilege1__c'].value :'-';
             result['RTL_Privilege1__c'].value += ' / ';
-            result['RTL_Privilege1__c'].value += result['RTL_Benefit_Status__c'].value ? result['RTL_Benefit_Status__c'].value : (result['RTL_Privilege1__c'].value ? 'ไม่ได้รับสิทธิประโยชน์' :'-');
+            result['RTL_Privilege1__c'].value += cpyResult['RTL_Benefit_Status__c'].value ? cpyResult['RTL_Benefit_Status__c'].value : (cpyResult['RTL_Privilege1__c'].value ? 'ไม่ได้รับสิทธิประโยชน์' :'-');
         };
 
         /* RTL_Most_Operating_Branch__c */
-        result['RTL_Most_Operating_Branch__c'].label += ' (' + result['RTL_BRC_Type__c'].label + ')';
+        result['RTL_Most_Operating_Branch__c'].label += ' (' + cpyResult['RTL_BRC_Type__c'].label + ')';
         if (result['RTL_Most_Operating_Branch__c'].isAccessible == true){
-            result['RTL_Most_Operating_Branch__c'].value = result['RTL_Most_Operating_Branch__c'].value ? result['RTL_Most_Operating_Branch__c'].value : '';
-            result['RTL_Most_Operating_Branch__c'].value_addon = result['RTL_BRC_Type__c'].value ? result['RTL_BRC_Type__c'].value : '-';
-            result['RTL_Most_Operating_Branch__c'].inlineHelpText = result['RTL_BRC_Type__c'].inlineHelpText;
-            result['RTL_Most_Operating_Branch__c'].isAccessible = result['RTL_Most_Operating_Branch__c'] ? true : false ;
+            result['RTL_Most_Operating_Branch__c'].value = cpyResult['RTL_Most_Operating_Branch__c'].value ? cpyResult['RTL_Most_Operating_Branch__c'].value : '';
+            result['RTL_Most_Operating_Branch__c'].value_addon = cpyResult['RTL_BRC_Type__c'].value ? cpyResult['RTL_BRC_Type__c'].value : '-';
+            result['RTL_Most_Operating_Branch__c'].inlineHelpText = cpyResult['RTL_BRC_Type__c'].inlineHelpText;
+            result['RTL_Most_Operating_Branch__c'].isAccessible = cpyResult['RTL_Most_Operating_Branch__c'] ? true : false ;
             result['RTL_Most_Operating_Branch__c'].type = 'REFERENCE_ADDON'
         };
 
         /* RTL_Assigned_BRC__c */
-        result['RTL_Assigned_BRC__c'].label += ' (' + result['RTL_BRC_Updated_Date__c'].label + ')';
+        result['RTL_Assigned_BRC__c'].label += ' (' + cpyResult['RTL_BRC_Updated_Date__c'].label + ')';
         if (result['RTL_Assigned_BRC__c'].isAccessible == true){
-            result['RTL_Assigned_BRC__c'].value_addon = result['RTL_BRC_Updated_Date__c'].value ? $A.localizationService.formatDateTime((result['RTL_BRC_Updated_Date__c'].value),'dd/MM/yyyy') : '-';
-            result['RTL_Assigned_BRC__c'].inlineHelpText = result['RTL_BRC_Updated_Date__c'].inlineHelpText;
-            result['RTL_Assigned_BRC__c'].isAccessible = result['RTL_Assigned_BRC__c'] ? true : false ;
+            result['RTL_Assigned_BRC__c'].value_addon = cpyResult['RTL_BRC_Updated_Date__c'].value ? $A.localizationService.formatDateTime((cpyResult['RTL_BRC_Updated_Date__c'].value),'dd/MM/yyyy') : '-';
+            result['RTL_Assigned_BRC__c'].inlineHelpText = cpyResult['RTL_BRC_Updated_Date__c'].inlineHelpText;
+            result['RTL_Assigned_BRC__c'].isAccessible = cpyResult['RTL_Assigned_BRC__c'] ? true : false ;
             result['RTL_Assigned_BRC__c'].type = 'REFERENCE_ADDON'
         };
 
         /* RTL_AUM__c */
-        result['RTL_AUM__c'].label = result['RTL_AUM__c'].label + ' (' + result['RTL_AUM_Last_Calculated_Date__c'].label + ')';
+        result['RTL_AUM__c'].label = cpyResult['RTL_AUM__c'].label + ' (' + cpyResult['RTL_AUM_Last_Calculated_Date__c'].label + ')';
         if (result['RTL_AUM__c'].isAccessible == true){
-            result['RTL_AUM__c'].value = $A.get("$Locale.currency") + (result['RTL_AUM__c'].value ? result['RTL_AUM__c'].value.toLocaleString('en-US', {
+            result['RTL_AUM__c'].value = $A.get("$Locale.currency") + (cpyResult['RTL_AUM__c'].value ? cpyResult['RTL_AUM__c'].value.toLocaleString('en-US', {
                 style: 'decimal',
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             }) : '0.00');
-            result['RTL_AUM__c'].value += result['RTL_AUM_Last_Calculated_Date__c'].value ? ' [' + $A.localizationService.formatDateTime((result['RTL_AUM_Last_Calculated_Date__c'].value),'dd/MM/yyyy') + ']' : '';
+            result['RTL_AUM__c'].value += cpyResult['RTL_AUM_Last_Calculated_Date__c'].value ? ' [' + $A.localizationService.formatDateTime((cpyResult['RTL_AUM_Last_Calculated_Date__c'].value),'dd/MM/yyyy') + ']' : '';
             result['RTL_AUM__c'].type = 'STRING';
         };
 
         /* RTL_Wealth_RM__c */
         if (result['RTL_Wealth_RM__c'].isAccessible == true){
-            result['RTL_Wealth_RM__c'].value_addon = result['RTL_Check_WM_RM_as_PWA__c'].value != 'Undefined' ? result['RTL_Check_WM_RM_as_PWA__c'].value + ' ' : '';
-            result['RTL_Wealth_RM__c'].value_addon += result['Wealth_RM_EMP_Code__c'].value != 'Undefined' ? result['Wealth_RM_EMP_Code__c'].value : '';
+            result['RTL_Wealth_RM__c'].value_addon = cpyResult['RTL_Check_WM_RM_as_PWA__c'].value != 'Undefined' ? cpyResult['RTL_Check_WM_RM_as_PWA__c'].value + ' ' : '';
+            result['RTL_Wealth_RM__c'].value_addon += cpyResult['Wealth_RM_EMP_Code__c'].value != 'Undefined' ? cpyResult['Wealth_RM_EMP_Code__c'].value : '';
             result['RTL_Wealth_RM__c'].type = 'REFERENCE_ADDON';
         };
 
         /* RTL_Commercial_RM__c */
         if (result['RTL_Commercial_RM__c'].isAccessible == true){
-            result['RTL_Commercial_RM__c'].value_addon = result['RTL_Commercial_RM_Emp_ID__c'].value;
+            result['RTL_Commercial_RM__c'].value_addon = cpyResult['RTL_Commercial_RM_Emp_ID__c'].value;
             result['RTL_Commercial_RM__c'].type = 'REFERENCE_ADDON';
         };
 
-        component.set('v.fields',result);
+        component.set('v.dataFields',result);
     },
     getSubSegmentData : function(component, helper,result){
         var action = component.get('c.getSubSegmentDesc');
@@ -118,7 +119,7 @@
 
                 var subSegmentDesc = response.getReturnValue();  
                 result['Customer_Type__c'].value += (subSegmentDesc ? ' (' + subSegmentDesc + ')' : '');
-                component.set('v.fields', result);
+                component.set('v.dataFields', result);
                 helper.stopSpinner(component);
             } else {
                 var errors = response.getError();

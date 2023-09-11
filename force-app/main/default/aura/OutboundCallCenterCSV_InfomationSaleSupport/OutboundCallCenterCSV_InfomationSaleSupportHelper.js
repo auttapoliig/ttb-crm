@@ -237,7 +237,7 @@
     onMessengerCoverArea : function(component, event, helper){
         var action = component.get('c.getMessengerCoverArea');
         action.setParams({
-            "accId": component.get('v.recordId')
+            "recordId": component.get('v.recordId')
         });
         action.setCallback(this, function (response) {
             if (component.isValid() && response.getState() === 'SUCCESS') {

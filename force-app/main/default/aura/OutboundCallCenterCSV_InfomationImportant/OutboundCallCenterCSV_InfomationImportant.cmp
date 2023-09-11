@@ -4,6 +4,7 @@
     <aura:attribute name="userId" type="Id" default="{! $SObjectType.CurrentUser.Id }" />
     <aura:attribute name="profileName" type="String" />
     <aura:attribute name="fields" type="Object" />
+    <aura:attribute name="dataFields" type="Object" default="{}"/>
 
     <aura:attribute name="isRerender" type="Boolean" default="false" />
     <!-- Water Mark -->
@@ -23,17 +24,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.Customer_Type__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Customer_Type__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.Customer_Type__c.label}
-                            <aura:if isTrue="{! v.fields.Customer_Type__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.Customer_Type__c.inlineHelpText }" />
+                            {!v.dataFields.Customer_Type__c.label}
+                            <aura:if isTrue="{! v.dataFields.Customer_Type__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.Customer_Type__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.Customer_Type__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.Customer_Type__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.Customer_Type__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.Customer_Type__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -50,21 +51,21 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Relationship_Duration_Years__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Relationship_Duration_Years__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Relationship_Duration_Years__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Relationship_Duration_Years__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Relationship_Duration_Years__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Relationship_Duration_Years__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Relationship_Duration_Years__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Relationship_Duration_Years__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Relationship_Duration_Years__c.isAccessible}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Relationship_Duration_Years__c.isAccessible}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedNumber value="{!v.fields.RTL_Relationship_Duration_Years__c.value}" />
+                                    <lightning:formattedNumber value="{!v.dataFields.RTL_Relationship_Duration_Years__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
-                                        <lightning:formattedText value="{!v.fields.RTL_Relationship_Duration_Years__c.value}" />
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Relationship_Duration_Years__c.value}" />
                                     </div>
                                 </aura:set>
                             </aura:if>
@@ -72,22 +73,22 @@
                     </div>
                 </aura:if>
             </lightning:layoutItem>
-
+            
             <!-- RTL_Privilege1__c -->
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Privilege1__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Privilege1__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Privilege1__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Privilege1__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Privilege1__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Privilege1__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Privilege1__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Privilege1__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Privilege1__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Privilege1__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.RTL_Privilege1__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.RTL_Privilege1__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -104,17 +105,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Most_Operating_Branch__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Most_Operating_Branch__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Most_Operating_Branch__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Most_Operating_Branch__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Most_Operating_Branch__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Most_Operating_Branch__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Most_Operating_Branch__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Most_Operating_Branch__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Most_Operating_Branch__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Most_Operating_Branch__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Most_Operating_Branch__c.type}" value="{!v.fields.RTL_Most_Operating_Branch__c.value}" value_addon="{!v.fields.RTL_Most_Operating_Branch__c.value_addon}" />
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Most_Operating_Branch__c.type}" value="{!v.dataFields.RTL_Most_Operating_Branch__c.value}" value_addon="{!v.dataFields.RTL_Most_Operating_Branch__c.value_addon}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -131,17 +132,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Number_of_Benefit__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Number_of_Benefit__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Number_of_Benefit__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Number_of_Benefit__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Number_of_Benefit__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Number_of_Benefit__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Number_of_Benefit__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Number_of_Benefit__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Number_of_Benefit__c.isAccessible == true}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Number_of_Benefit__c.isAccessible == true}">
                                 <div class="slds-form-element__static">
-                                    <lightning:textarea readonly="true" value="{!v.fields.RTL_Number_of_Benefit__c.value}" />
+                                    <lightning:textarea readonly="true" value="{!v.dataFields.RTL_Number_of_Benefit__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -158,17 +159,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Assigned_BRC__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Assigned_BRC__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Assigned_BRC__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Assigned_BRC__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Assigned_BRC__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Assigned_BRC__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Assigned_BRC__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Assigned_BRC__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Assigned_BRC__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Assigned_BRC__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Assigned_BRC__c.type}" value="{!v.fields.RTL_Assigned_BRC__c.value}" value_addon="{!v.fields.RTL_Assigned_BRC__c.value_addon}" />
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Assigned_BRC__c.type}" value="{!v.dataFields.RTL_Assigned_BRC__c.value}" value_addon="{!v.dataFields.RTL_Assigned_BRC__c.value_addon}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -185,17 +186,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_AUM__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_AUM__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_AUM__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_AUM__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_AUM__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_AUM__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_AUM__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_AUM__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_AUM__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_AUM__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.RTL_AUM__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.RTL_AUM__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -212,17 +213,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Wealth_RM__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Wealth_RM__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Wealth_RM__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Wealth_RM__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Wealth_RM__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Wealth_RM__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Wealth_RM__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Wealth_RM__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Wealth_RM__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Wealth_RM__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Wealth_RM__c.type}" value="{!v.fields.RTL_Wealth_RM__c.value}" value_addon="{!v.fields.RTL_Wealth_RM__c.value_addon}"/>
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Wealth_RM__c.type}" value="{!v.dataFields.RTL_Wealth_RM__c.value}" value_addon="{!v.dataFields.RTL_Wealth_RM__c.value_addon}"/>
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -239,17 +240,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Benefit_Validity_Period__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Benefit_Validity_Period__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Benefit_Validity_Period__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Benefit_Validity_Period__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Benefit_Validity_Period__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Benefit_Validity_Period__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Benefit_Validity_Period__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Benefit_Validity_Period__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Benefit_Validity_Period__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Benefit_Validity_Period__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.RTL_Benefit_Validity_Period__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.RTL_Benefit_Validity_Period__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -266,17 +267,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_WA_Name__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_WA_Name__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_WA_Name__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_WA_Name__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_WA_Name__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_WA_Name__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_WA_Name__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_WA_Name__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_WA_Name__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_WA_Name__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.RTL_WA_Name__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.RTL_WA_Name__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -293,21 +294,21 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Average_AUM__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Average_AUM__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Average_AUM__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Average_AUM__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Average_AUM__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Average_AUM__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Average_AUM__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Average_AUM__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Average_AUM__c.isAccessible}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Average_AUM__c.isAccessible}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedNumber value="{!v.fields.RTL_Average_AUM__c.value}" style="currency"/>
+                                    <lightning:formattedNumber value="{!v.dataFields.RTL_Average_AUM__c.value}" style="currency"/>
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
-                                        <lightning:formattedText value="{!v.fields.RTL_Average_AUM__c.value}" />
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Average_AUM__c.value}" />
                                     </div>
                                 </aura:set>
                             </aura:if>
@@ -320,17 +321,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Commercial_RM__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Commercial_RM__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Commercial_RM__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Commercial_RM__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Commercial_RM__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Commercial_RM__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Commercial_RM__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Commercial_RM__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Commercial_RM__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Commercial_RM__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Commercial_RM__c.type}" value="{!v.fields.RTL_Commercial_RM__c.value}" value_addon="{!v.fields.RTL_Commercial_RM__c.value_addon}"/>
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Commercial_RM__c.type}" value="{!v.dataFields.RTL_Commercial_RM__c.value}" value_addon="{!v.dataFields.RTL_Commercial_RM__c.value_addon}"/>
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
@@ -347,17 +348,17 @@
             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
                 class="slds-p-bottom_small">
                 <aura:if isTrue="{! !v.isRerender }">
-                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Calculated_WB_PB_Amount__c.class }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Calculated_WB_PB_Amount__c.class }">
                         <span class="slds-form-element__label">
-                            {!v.fields.RTL_Calculated_WB_PB_Amount__c.label}
-                            <aura:if isTrue="{! v.fields.RTL_Calculated_WB_PB_Amount__c.inlineHelpText }">
-                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Calculated_WB_PB_Amount__c.inlineHelpText }" />
+                            {!v.dataFields.RTL_Calculated_WB_PB_Amount__c.label}
+                            <aura:if isTrue="{! v.dataFields.RTL_Calculated_WB_PB_Amount__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.RTL_Calculated_WB_PB_Amount__c.inlineHelpText }" />
                             </aura:if>
                         </span>
                         <div class="slds-form-element__control customField">
-                            <aura:if isTrue="{!v.fields.RTL_Calculated_WB_PB_Amount__c.isAccessible != ''}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Calculated_WB_PB_Amount__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <lightning:formattedText value="{!v.fields.RTL_Calculated_WB_PB_Amount__c.value}" />
+                                    <lightning:formattedText value="{!v.dataFields.RTL_Calculated_WB_PB_Amount__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">

@@ -1,17 +1,4 @@
 public with sharing class CCOutbound_CSVController extends AbstractCoreClass {
-    private static String APPID = AppConfig__c.getValues('APPID') == null ? 'A0291' : AppConfig__c.getValues('APPID').Value__c;
-    private static final Integer timeout {
-        get {
-            // 120000 ms
-            if(timeout == null){
-                List<App_Config__mdt> productHoldingTimeOut = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'ProductHolding_TIMEOUT_INT_SECS'];
-                return productHoldingTimeOut != null && productHoldingTimeOut.size() > 0 ? Integer.valueOf(productHoldingTimeOut.get(0).Value__c) * 1000 : 120000;
-            }
-            return timeout;
-        }
-        set;
-    }
-
     private static final User currUser {
         get {
             if(currUser == null){
@@ -59,8 +46,8 @@ public with sharing class CCOutbound_CSVController extends AbstractCoreClass {
         privilege.put('type','STRING');
         privilege.put('label',sObjectField.get('RTL_Privilege1__c').getDescribe().getLabel());
         privilege.put('value','');
-        privilege.put('name','RTL_Privilege1__c');
-        respObj.put('RTL_Privilege1__c',privilege);
+        privilege.put('name','RTL_Privilege1_Display');
+        respObj.put('RTL_Privilege1_Display',privilege);
 
         Map<String, Object> ttbTouch = new Map<String, Object>();
         ttbTouch.put('isAccessible',verifyFieldSecurity('TTB_Touch_Flag',accountId));
@@ -105,10 +92,10 @@ public with sharing class CCOutbound_CSVController extends AbstractCoreClass {
                 if(oscResult.get('GetCVSAnalyticsDataResponse') != null) {
                     result = (Map<String, Object>)((Map<String, Object>)oscResult.get('GetCVSAnalyticsDataResponse')).get('Result') == null ? new Map<String, Object>() : (Map<String, Object>)((Map<String, Object>)oscResult.get('GetCVSAnalyticsDataResponse')).get('Result');
                 }
-                if(respObj.get('RTL_Privilege1__c').get('isAccessible') == true) {
-                    String privValue = acc.RTL_Privilege1__c + (result.get('csProfWealthExpDt') == null ?  '' : ' [' + result.get('csProfWealthExpDt') + ']');
+                if(respObj.get('RTL_Privilege1_Display').get('isAccessible') == true) {
+                    String privValue = acc.RTL_Privilege1__c == null ? '-' : (acc.RTL_Privilege1__c + (result.get('csProfWealthExpDt') == null ?  '' : ' [' + result.get('csProfWealthExpDt') + ']'));
                     privValue = privValue == null ? '-' : privValue;
-                    respObj.get('RTL_Privilege1__c').put('value',privValue);
+                    respObj.get('RTL_Privilege1_Display').put('value',privValue);
                 }
 
                 if(respObj.get('TTB_Touch_Flag').get('isAccessible') == true) {
@@ -131,8 +118,7 @@ public with sharing class CCOutbound_CSVController extends AbstractCoreClass {
                     respObj.get('TTB_Touch_Flag').put('value',ttbTouchValue);
                 } 
                 if(respObj.get('RTL_Average_AUM__c').get('isAccessible') == true) {
-                    String aumValue = (result.get('csProfAvgaum12m') == null ? String.valueOf(acc.RTL_Average_AUM__c) : String.valueOf(result.get('csProfAvgaum12m')));
-                    aumValue = aumValue == null ? '0' : aumValue;
+                    String aumValue = (result.get('csProfAvgaum12m') == null ? '0' : String.valueOf(result.get('csProfAvgaum12m')));
                     respObj.get('RTL_Average_AUM__c').put('value',aumValue);
                 }
             }

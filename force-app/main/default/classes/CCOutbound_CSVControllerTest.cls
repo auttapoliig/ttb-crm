@@ -15,17 +15,33 @@ public with sharing class CCOutbound_CSVControllerTest {
         AppConfig__c appConfig4 = new AppConfig__c(Name='FilterRetailSegment', Value__c='5|6|7|8|9');
         insert appConfig4;
 
+        List<Data_Security_Matrix__c> dsmList = new List<Data_Security_Matrix__c>();
+
         Data_Security_Matrix__c dsm = new Data_Security_Matrix__c();
         dsm.Section_Name__c = 'RtlCust:Customer Relationship';
         dsm.Profile_Name__c = 'System Administrator';
         dsm.Access_Type__c = 'All';
-        insert dsm;
+        dsmList.add(dsm);
         
         Data_Security_Matrix__c dsm2 = new Data_Security_Matrix__c();
         dsm2.Section_Name__c = 'RtlCust:Sales Support Information';
         dsm2.Profile_Name__c = 'System Administrator';
         dsm2.Access_Type__c = 'All';
-        insert dsm2;
+        dsmList.add(dsm2);
+
+        Data_Security_Matrix__c dsm3 = new Data_Security_Matrix__c();
+        dsm3.Section_Name__c = 'RtlCust:Customer Demographic (Low)';
+        dsm3.Profile_Name__c = 'System Administrator';
+        dsm3.Access_Type__c = 'All';
+        dsmList.add(dsm3);
+
+        	
+        Data_Security_Matrix__c dsm4 = new Data_Security_Matrix__c();
+        dsm4.Section_Name__c = 'RtlCust:Customer Product Holding (High)';
+        dsm4.Profile_Name__c = 'System Administrator';
+        dsm4.Access_Type__c = 'All';
+        dsmList.add(dsm4);
+        insert dsmList;
     }
 
     @isTest
@@ -153,6 +169,7 @@ public with sharing class CCOutbound_CSVControllerTest {
 
     @isTest 
     static void testGetSubDebtTransaction() {
+        List<User> testUser = TestUtils.createUsers(1, 'myTest', 'User1', 'testUser1@example.com', true);
         Account acct = new Account();
         acct.Name = 'TEST ACCOUNT';
         acct.Mobile_Number_PE__c = '0123456789';
@@ -168,7 +185,9 @@ public with sharing class CCOutbound_CSVControllerTest {
         subdebt.Sub_Debt_Transaction_Name__c = 'TEST TRANSACTION';
         insert subdebt;
         Test.startTest();
-            CCOutbound_CSVController.getSubDebtTransaction(acct.Id);
+            System.runAs(testUser[0]) {
+                CCOutbound_CSVController.getSubDebtTransaction(acct.Id);
+            }
         Test.stopTest();
     }
 

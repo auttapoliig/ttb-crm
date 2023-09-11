@@ -41,7 +41,7 @@
     handleRefreshfield: function (component, event, helper) {
         var recordId = event.getParam('recordId');
         var fieldUpdate = event.getParam('fieldUpdate');
-        var dataFields = component.get('v.fields');
+        var dataFields = component.get('v.dataFields');
         var currRecordId = component.get('v.recordId');
         if (fieldUpdate && currRecordId && recordId == currRecordId.substring(0,15)) {
             helper.startSpinner(component);
@@ -50,7 +50,7 @@
                     dataFields[fieldName].value = fieldUpdate[fieldName];
                 }
             });
-            component.set('v.fields',dataFields);
+            component.set('v.dataFields',dataFields);
             helper.stopSpinner(component);
         }
     },

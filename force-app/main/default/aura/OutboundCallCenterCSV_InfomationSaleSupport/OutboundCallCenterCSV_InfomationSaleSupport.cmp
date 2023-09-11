@@ -324,9 +324,7 @@
                         <div class="slds-form-element__control customField">
                             <aura:if isTrue="{!v.fields.RTL_Most_Visited_Branch__c.isAccessible != ''}">
                                 <div class="slds-form-element__static">
-                                    <aura:unescapedHtml value="{!v.fields.RTL_Most_Visited_Branch__c.value}">
-                                        <lightning:formattedText value="{!v.fields.RTL_Most_Visited_Branch__c.value}" />
-                                    </aura:unescapedHtml>
+                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Most_Visited_Branch__c.type}" value="{!v.fields.RTL_Most_Visited_Branch__c.value}" />
                                 </div>
                                 <aura:set attribute="else">
                                     <div class="slds-form-element__static">
