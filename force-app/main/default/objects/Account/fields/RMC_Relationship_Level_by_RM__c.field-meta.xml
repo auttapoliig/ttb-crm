@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>RMC_Relationship_Level__c</fullName>
+    <fullName>RMC_Relationship_Level_by_RM__c</fullName>
     <externalId>false</externalId>
-    <label>Relationship Level by Team</label>
+    <label>Relationship Level by RM</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -30,24 +30,6 @@
                 <fullName>Cold Opp</fullName>
                 <default>false</default>
                 <label>Cold Opp</label>
-            </value>
-            <value>
-                <fullName>C</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>C</label>
-            </value>
-            <value>
-                <fullName>H</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>H</label>
-            </value>
-            <value>
-                <fullName>W</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>W</label>
             </value>
         </valueSetDefinition>
     </valueSet>

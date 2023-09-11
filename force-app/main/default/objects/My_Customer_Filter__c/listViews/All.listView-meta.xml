@@ -6,6 +6,7 @@
     <columns>Field_API__c</columns>
     <columns>Active__c</columns>
     <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

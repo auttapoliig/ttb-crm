@@ -3300,4 +3300,22 @@
         </columns>
         <masterLabel>Fulfillment</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RMC_Relationship_Level_by_RM__c</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Relationship_Level_by_Team_Last_Year__c</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Relationship_Level_by_RM_Last_Year__c</field>
+            <table>Account</table>
+        </columns>
+        <masterLabel>Customers</masterLabel>
+    </sections>
 </ReportType>

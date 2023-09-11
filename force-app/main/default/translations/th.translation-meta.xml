@@ -281,6 +281,10 @@
             <name>Accounts</name>
         </sections>
         <sections>
+            <label><!-- Customers --></label>
+            <name>Customers</name>
+        </sections>
+        <sections>
             <label><!-- Fulfillment --></label>
             <name>Fulfillment</name>
         </sections>
@@ -326,6 +330,10 @@
         <sections>
             <label><!-- Accounts --></label>
             <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Customers --></label>
+            <name>Customers</name>
         </sections>
         <sections>
             <label><!-- Large Transaction Movements --></label>
