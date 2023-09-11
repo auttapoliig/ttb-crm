@@ -293,6 +293,7 @@
                                 <lightning:spinner alternativeText="Loading" size="small" variant="brand" />
                             </div>
                         </aura:if>
+                        <c:powerBiReportProductHolding aura:id="powerBiReportProductHolding" recordId="{!v.recordId}" />
                     </aura:set>
                     <aura:if isTrue="{!and(v.accountChanged, v.readyToCallProduct)}">
                         <c:InvestmentProductSummaryView aura:id="investmentSummaryView" allowCallChild="{!v.allowCallChild}" recordId="{!v.recordId}" unmasked="{!v.unmasked}" account="{!v.account}" parent="{!this}" theme="{!v.theme}"/>
