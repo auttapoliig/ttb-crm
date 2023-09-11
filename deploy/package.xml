@@ -75,7 +75,7 @@
         <members>Account.RMC_Percent_Deposit_Change__c</members>
         <members>Account.RMC_Percent_MF_Change__c</members>
         <members>Account.RMC_Relationship_Level__c</members>
-        <members>Account.RMC_Reserve_Waive_Doc_Flag</members>
+        <members>Account.RMC_Reserve_Waive_Doc_Flag__c</members>
         <members>Account.RMC_Shareholder_Flag__c</members>
         <members>Account.RMC_Sub_Debt_Flag__c</members>
         <members>Account.RMC_Suitability_Risk_Level_Diff__c</members>
