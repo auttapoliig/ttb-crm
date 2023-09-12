@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>editCustomerForCCOutboundCSVController</members>
-        <members>editCustomerForCCOutboundCSVCtlTest</members>
         <members>CCOutbound_CSVController</members>
         <members>CCOutbound_CSVControllerTest</members>
+        <members>editCustomerForCCOutboundCSVController</members>
+        <members>editCustomerForCCOutboundCSVCtlTest</members>
         <members>RetailCSVLightningUtil</members>
         <members>RetailCSVLightningUtil_test</members>
         <members>RTL_CSVLightningUtil</members>
@@ -12,17 +12,34 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>OutboundCallCenterCSV_InfomationBasic</members>
-        <members>OutboundCallCenterCSV_InfomationAddressContact</members>
-        <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
-        <members>OutboundCallCenterCSV_InfomationImportant</members>
         <members>editCustomerForCCOutboundCSV</members>
+        <members>OutboundCallCenterCSV_InfomationAddressContact</members>
+        <members>OutboundCallCenterCSV_InfomationBasic</members>
+        <members>OutboundCallCenterCSV_InfomationImportant</members>
+        <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
         <members>RetailCSV_InformationSalesSupport</members>
         <members>CallCenterCSV_InfomationSaleSupport</members>
-        <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Customer_Record_Page_Contact_Center_Outbound</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Retail_Instant_lending_Manual__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Opportunity</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>Account.EditCCOutbound</members>
+        <name>WebLink</name>
+    </types>
+    <types>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Report_Specialist</members>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Sales</members>
         <members>Security_Matrix.Birthday</members>
         <members>Security_Matrix.Citizen_ID_Expiration_Date</members>
         <members>Security_Matrix.Do_Not_Contact</members>
@@ -38,46 +55,18 @@
         <members>Security_Matrix.Wealth_Advisor</members>
         <members>Security_Matrix.Zodiac</members>
         <members>Security_Matrix.Message_Cover_Area</members>
-        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Report_Specialist</members>
-        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Sales</members>
         <members>Tax_Certificate_profile_button.ttb_Subsidiary_Report_Specialist</members>
         <members>Tax_Certificate_profile_button.ttb_Subsidiary_Sales</members>
         <members>RTL_Customer_Call_Center.TMB_Retail_Contact_Center_Outbound</members>
         <members>RTL_Customer_Call_Center.TMB_System_Administrator</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Report_Specialist</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Sales</members>
-        <name>customMetadata</name>
-    </types>
-    <types>
-        <members>Opportunity</members>
-        <name>SharingRules</name>
-    </types>
-    <types>
-        <members>Customer_Record_Page_Contact_Center_Outbound</members>
-        <name>flexipage</name>
-    </types>
-    <types>
-        <members>Account-Retails Call Center Outbound</members>
-        <name>Layout</name>
+        <name>CustomMetadata</name>
     </types>
     <types>
         <members>th</members>
         <name>Translations</name>
     </types>
-    <types>
-        <members>Security_Matrix__mdt.CC_CSV</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>Account.EditCCOutbound</members>
-        <name>WebLink</name>
-    </types>
-
-    <types>
-        <members>Retail_Instant_lending_Manual__c</members>
-        <name>CustomObject</name>
-    </types>
-
     <types>
         <members>Retail_Instant_lending_Manual__c.Lending_Privileges_Detail__c</members>
         <members>Retail_Instant_lending_Manual__c.Promotion_Condition_Detail__c</members>
@@ -90,6 +79,13 @@
         <members>cyc_promo_cond</members>
         <name>CustomLabel</name>
     </types>
-
-    <version>57.0</version>
+    <types>
+        <members>Account-Retails Call Center Outbound</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Security_Matrix__mdt.CC_CSV</members>
+        <name>ListView</name>
+    </types>
+    <version>58.0</version>
 </Package>
