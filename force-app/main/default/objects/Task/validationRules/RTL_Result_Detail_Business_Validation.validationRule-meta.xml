@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Result_Detail_Business_Validation</fullName>
+    <active>true</active>
+    <description>Task is invalid when Result Business is &apos;NULL&apos; or Result Detail is &apos;Agent Reject Close&apos; or &apos;Agent Skip Close&apos;</description>
+    <errorConditionFormula>AND(RecordType.DeveloperName = &apos;RTL_Retail_Outbound_Phone_Call&apos;, OR( RTL_Result_Business__c =&apos;NULL&apos;, RTL_Result_Detail__c =&apos;Agent Reject Close&apos;,RTL_Result_Detail__c =&apos;Agent Skip Close&apos;) )</errorConditionFormula>
+    <errorMessage>Task is invalid when Result Business is &apos;NULL&apos; or Result Detail is &apos;Agent Reject Close&apos;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Cannot_Edit_Outbound_Call</fullName>
+    <active>true</active>
+    <description>Cannot edit Outbound Call record types</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &quot;RTL_Retail_Outbound_Phone_Call&quot;, 
+OR($Profile.Name &lt;&gt; &quot;Retail Integration API Only&quot;, 
+CONTAINS($Profile.Name,&quot;Admin&quot;)), 
+OR( 
+ISCHANGED( Status ), 
+ISCHANGED( OwnerId ), 
+ISCHANGED( Priority ) 
+))</errorConditionFormula>
+    <errorMessage>You are not authorised to make changes to this task.</errorMessage>
+</ValidationRule>
