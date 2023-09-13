@@ -51,6 +51,9 @@ export default class CockpitCSVCustomerInfo extends NavigationMixin(LightningEle
 
   nps = { isSurveyAvailable: false, class: '', icon: '', url: '' };
 
+  //SCR0595886 : NPS Score in case of no score / no survey 24 Sep 23
+  isNosurvey = false;
+
   isDisplayRMBM = false;
   mainBank = '';
 
@@ -77,9 +80,9 @@ export default class CockpitCSVCustomerInfo extends NavigationMixin(LightningEle
         var nps = {};
         nps.score = score;
         if (score == null) {
-          nps.class = 'greyFace';
-          nps.icon = 'utility:sentiment_neutral';
-          nps.url = '#';
+          nps.class = '';
+          nps.icon = '';
+          nps.url = result.recordId;
         } else if (score >= 5) {
           nps.class = 'greenFace';
           nps.icon = 'utility:smiley_and_people';
@@ -93,9 +96,12 @@ export default class CockpitCSVCustomerInfo extends NavigationMixin(LightningEle
           nps.icon = 'utility:sentiment_negative';
           nps.url = result.recordId;
         } else {
-          nps.score = null;
-          nps.url = result.recordId;
-          console.log('nps score',nps.score);
+          //nps.score = null;
+          //nps.url = result.recordId;
+          nps.class = '';
+          nps.icon = '';
+          nps.url = '#';
+          this.isNosurvey = true;
         }
         console.log('nps var',JSON.stringify(nps));
         this.nps = nps;

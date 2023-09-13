@@ -50,8 +50,15 @@
         <name>CustomMetadata</name>
     </types>
     <types>
+        <members>CXMSurvey_For_CSV</members>
+        <members>RetailCSV_InformationSalesSupport</members>
         <members>CampaignMember_AutoLoanCalInfo</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>customerHighlightPanel</members>
+        <members>powerBiReportProductHolding</members>
+        <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>CampaignMember.Car_Reference_No__c</members>
@@ -166,12 +173,14 @@
     <types>
         <members>AL_Marketing_Queue</members>
         <members>RTL_ALA</members>
+        <members>Salaryman_Ecosystem</members>
         <name>Queue</name>
     </types>
     <types>
         <!--wait confirm-->
         <members>Customer_Incident_Control_Center_TL</members>
         <members>Customer_Incident_Control_Center_User</members>
+        <members>Salaryman_Ecosystem</members>
         <name>Role</name>
     </types>
     <types>

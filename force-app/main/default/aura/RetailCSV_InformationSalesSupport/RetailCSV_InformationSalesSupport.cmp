@@ -510,6 +510,7 @@
                     </lightning:layoutItem>
 
                     <!-- RTL_Lifetime_link__c -->
+                    <!-- SCR0595232 : Remove fields life Time deploy 21 Sep 2023
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
                         <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
@@ -532,7 +533,7 @@
                             </div>
                         </div>
                     </lightning:layoutItem>
-
+                    -->
                     <!-- RTL_Credit_Card_History__c -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
