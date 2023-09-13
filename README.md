@@ -36,6 +36,28 @@ sf project deploy quick --job-id _<<jobid>>_
 ```
 ---
 # Release Track
+#### 07 Sep 2023
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
+| SCR0585931 | T-performance 1.2 : แสดงรายงาน kpi สำหรับสาขา | IIG | 07 Sep 2023 |
+| SCR0597267 | แก้ไข การ default ค่า sub service segment ก่อนส่งไปให้ dwh (Refer : INC0244604)| CoE (Kitisak) | 07 Sep 2023 |
+| SCR0599186 | แก้ไข program ให้สามารถ update ลูกค้าที่มี owner inactive| CoE (Attasit) | 07 Sep 2023 |
+| SCR0598849 | upload issue matrix related for OneApp K.Lalida (Upload manual file)| CoE (Todsapol) | 07 Sep 2023 |
+| INC0227328 | merge commercial customer (ต่อเนื่องที่ยังคงเหลือ 100 ราย) | CoE (Todsapol) | 07 Sep 2023 |
+#### 24 Aug 2023
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
+| SCR0596488 | GBH Phase 1 | IIG | 24 Aug 2023 |
+| SCR0596488 | AL CR Separate Batch Normal Request | IIG | 24 Aug 2023 |
+| SCR0579629 | CRM SalesForce to show Mutual Fund Dashboad on Power BI | CoE (Todsapol) | 24 Aug 2023 |
+| SCR0593679 | ขอเพิ่ม/ขอแก้ไขสิทธิ load bulk ปิดเคส | CoE (Kitisak) | 24 Aug 2023 |
+| SCR0593190 | ขอสิทธิ์ให้ 3 users สามารถ export report ได้ (Role : TMB Retail Contact Center Report Specialist) | CoE (Attasit) | 24 Aug 2023 |
+| SCR0592441 | ขอเพิ่มสิทธิ load bulk ปิดเคส ในระบบ CRM : BU Confirm Bulk File ที่จะปิด Case (Field : Case No, Case ID, Resolve, Resolution) | CoE (Attasit) | 24 Aug 2023 |
+| SCR0595356 | ขออนุมัติเพื่อดำเนินการ Create 2 role | CoE (Attasit) | 24 Aug 2023 |
+| SCR0595231 | Enable Global Search Campaign Code | CoE (Attasit) | 24 Aug 2023 |
+| SCR0595867 | Wealth Support Revolk เพื่อสิทธิ์รับเคส | CoE (Attasit) | 24 Aug 2023 |
+| SCR0595725 | Merge Customer from 01-Jan-23 to 31-Jul-23 | CoE (Todsapol) | 24 Aug 2023 |
+#### 20 July 2023
 | SCR No.     | Description    | Implementor | Release Date |
 | --------|---------|-------|-------|
 | SCR0592576 | Check Duplicate Lead | IIG | 20 July 2023 |

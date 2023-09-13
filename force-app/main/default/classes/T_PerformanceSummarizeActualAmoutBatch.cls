@@ -2,10 +2,8 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
 
     private String query;
     private Map<String, Decimal> actualMap = new Map<String, Decimal>();
-    private Map<String, T_Performance_Target_Product_by_Team__c> targetToUpsertMap = new Map<String, T_Performance_Target_Product_by_Team__c>();
+    private Integer targetUpsertSize = 0;
     private List<T_Performance_Target_Product_by_Team__c> targetList = new List<T_Performance_Target_Product_by_Team__c>();
-    private Set<T_Performance_Target_Product_by_Team__c> targetToUpsertList = new Set<T_Performance_Target_Product_by_Team__c>();
-    // private Map<String, Decimal> eachSumMap = new Map<String, Decimal>();
 
     private String currentLevel;
     private String year;
@@ -32,7 +30,6 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
     public T_PerformanceSummarizeActualAmoutBatch(String level, String year, String month, Integer BATCH_CHUNK_SIZE, List<Summary_Team_and_Product__c> productActual){
         // this.query = q;
         this.currentLevel = level;
-        // this.eachSumMap = productActualMap;
         this.year = year;
         this.month = month;
         this.BATCH_CHUNK_SIZE = BATCH_CHUNK_SIZE;
@@ -40,12 +37,9 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
     }
 
     public Database.QueryLocator start(Database.BatchableContext BC){
-        // this.eachSumMap.clear();
         System.debug('Start Summarize '+this.currentLevel);
-        this.targetToUpsertMap.clear();
-        this.targetList.clear();
-        this.targetToUpsertList.clear();
         this.recordUpsertSuccessful = 0;
+        this.targetUpsertSize = 0;
         this.actualMap.clear();
 
         if(this.productActual == null) { //first time
@@ -68,7 +62,7 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                     this.actualMap.put(actualKey,product.Actual_Amount__c);
                 }
             }
-            System.debug('Debug key product zone '+this.actualMap.keySet());
+
         } else if(this.currentLevel == 'region') {
             for(Summary_Team_and_Product__c product : this.productActual) {
                 actualKey = product.Year__c+product.Month__c+product.Channel_Name__c+product.Region_Code__c+product.Indicator_Code__c;
@@ -92,7 +86,6 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                 }
             }
         }
-        // System.debug('Debug product actual '+this.productActual);
         
 
         if( this.currentLevel == 'branch'){
@@ -109,27 +102,21 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
         else if(this.currentLevel == 'group of channel'){
             this.query = 'SELECT Id, Product_Group_Name__c, Actual_Amount__c, Cap_Max_Pct__c, Target_Unit_Month__c, Target_Unit_Year__c, Branch_Team_Code__c, Region_Code__c, Indicator_Level1__c, Zone_Code__c, Year__c, Month__c, Product_Group_Code__c, Product_List__c, Group_Channel__c, Channel_Name__c, Rank__c, Branch_Point_Engine__c FROM T_Performance_Target_Product_by_Team__c WHERE Year__c = \'' + this.year +  '\' AND Month__c = \'' + this.month + '\' AND RecordTypeId=\'' + this.recordTypeIdChannel + '\'';
         }
-            // else if(this.currentLevel == 'retail'){
-            //     this.query = 'SELECT Id, Product_Group_Name__c, Actual_Amount__c, Cap_Max_Pct__c, Target_Unit_Month__c, Target_Unit_Year__c, Branch_Team_Code__c, Region_Code__c, Indicator_Level1__c, Zone_Code__c, Year__c, Month__c, Product_Group_Code__c, Product_List__c, Group_Channel__c, Channel_Name__c, Rank__c, Branch_Point_Engine__c FROM T_Performance_Target_Product_by_Team__c WHERE Year__c = \'' + this.year +  '\' AND Month__c = \'' + this.month + '\' AND RecordTypeId=\'' + this.recordTypeIdGOC + '\'';
-            // }
 
         return Database.getQueryLocator(this.query);
     }
 
     public void execute(Database.BatchableContext bc, List<T_Performance_Target_Product_by_Team__c> scope){
         this.recordToSum += scope.size();
-        
+        List<T_Performance_Target_Product_by_Team__c> listTargetToUpsert = new List<T_Performance_Target_Product_by_Team__c>();
+        Map<String, T_Performance_Target_Product_by_Team__c> mapTargetToUpsert = new Map<String, T_Performance_Target_Product_by_Team__c>();
         if( this.currentLevel == 'branch' || this.currentLevel == 'zone' || this.currentLevel == 'region' || this.currentLevel == 'channel'){
             for(T_Performance_Target_Product_by_Team__c eachTarget : scope){
-                // T_Performance_Target_Product_by_Team__c upsertTarget = new T_Performance_Target_Product_by_Team__c(); 
                 Decimal newValue = 0;
                 // List<String> splitKey = String.valueOf(eachTarget.get('')).split(';');
                 String mapProductKey;
                 String targetMainKey;
                 if(this.currentLevel == 'branch') {
-                    // actualKey = product.Year__c+product.Month__c+product.Channel_Name__c+product.Region_Code__c+product.Zone_Code__c+product.Branch_Team_Code__c;
-                    // targetMainKey = product.Year__c+product.Month__c+product.Group_Channel__c+product.Channel_Name__c+product.Region_Code__c+product.Zone_Code__c+product.Branch_Team_Code__c;
-                    // targetMainKey = String.valueOf(eachTarget.get('Year__c')) + String.valueOf(eachTarget.get('Month__c')) + String.valueOf(eachTarget.get('Group_Channel__c')) + String.valueOf(eachTarget.get('Channel_Name__c')) + String.valueOf(eachTarget.get('Region_Code__c')) + String.valueOf(eachTarget.get('Zone_Code__c')) + String.valueOf(eachTarget.get('Branch_Team_Code__c')) + String.valueOf(eachTarget.get('Product_Group_Code__c'));
                     mapProductKey = String.valueOf(eachTarget.get('Year__c')) + String.valueOf(eachTarget.get('Month__c')) + String.valueOf(eachTarget.get('Channel_Name__c')) + String.valueOf(eachTarget.get('Region_Code__c')) + String.valueOf(eachTarget.get('Zone_Code__c')) + String.valueOf(eachTarget.get('Branch_Team_Code__c'));
                 } else if(this.currentLevel == 'zone') {
                     // targetMainKey = String.valueOf(eachTarget.get('Year__c')) + String.valueOf(eachTarget.get('Month__c')) + String.valueOf(eachTarget.get('Group_Channel__c')) + String.valueOf(eachTarget.get('Channel_Name__c')) + String.valueOf(eachTarget.get('Region_Code__c')) + String.valueOf(eachTarget.get('Zone_Code__c')) + String.valueOf(eachTarget.get('Product_Group_Code__c'));
@@ -151,7 +138,8 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                 }
                 System.debug('Debug new value '+newValue);
                 eachTarget.Actual_Amount__c = newValue; // actual amount without cap max
-                this.targetToUpsertList.add(eachTarget);
+                // this.targetToUpsertList.add(eachTarget);
+                listTargetToUpsert.add(eachTarget);
             }
 
         } else if(this.currentLevel == 'group of channel'){ // sum up
@@ -161,30 +149,26 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
             for(T_Performance_Target_Product_by_Team__c each : scope){
                 String mainKey = String.valueOf(each.get('Year__c')) + String.valueOf(each.get('Month__c')) + String.valueOf(each.get('Group_Channel__c')) + String.valueOf(each.get('Product_Group_Code__c'));
 
-                if(targetToUpsertMap.containsKey(mainKey)) {
-                    this.targetToUpsertMap.get(mainKey).Actual_Amount__c += each.Actual_Amount__c;
+                if(mapTargetToUpsert.containsKey(mainKey)) {
+                    mapTargetToUpsert.get(mainKey).Actual_Amount__c += each.Actual_Amount__c;
                 } else {
                     T_Performance_Target_Product_by_Team__c upsertTarget = new T_Performance_Target_Product_by_Team__c(); 
                     upsertTarget.Actual_Amount__c = each.Actual_Amount__c == null ? 0 : each.Actual_Amount__c;
                     upsertTarget.Unique_External_Key__c = mainKey;
-                    this.targetToUpsertMap.put(mainKey,upsertTarget);
+                    mapTargetToUpsert.put(mainKey,upsertTarget);
                 }
             }
         }
-    }
 
-    public void finish(Database.BatchableContext bc){
-        System.debug('last execute '+this.targetToUpsertList.size()+' : '+this.targetToUpsertMap.size());
-        if(this.targetToUpsertList.size() > 0){
+
+        if(listTargetToUpsert.size() > 0){
             System.debug('::::::::: Finish T-Performance Summarize Target ::::::::::::::::');
-            // System.debug('New Target '+ this.targetToUpsertList.size());
-            for(T_Performance_Target_Product_by_Team__c record : this.targetToUpsertList) {
+            this.targetUpsertSize = this.targetUpsertSize + listTargetToUpsert.size();
+            for(T_Performance_Target_Product_by_Team__c record : listTargetToUpsert) {
                 record.Actual_Amount__c = record.Actual_Amount__c;
                 // .setscale(2,RoundingMode.HALF_UP);
             }
-            // Schema.SObjectField fToken = T_Performance_Target_Product_by_Team__c.Fields.Unique_External_Key__c;
-            // Database.SaveResult[] logUpsertResult = Database.upsert(this.targetToUpsertList, fToken, false);
-            Database.SaveResult[] logUpsertResult = Database.update(new List<T_Performance_Target_Product_by_Team__c>(this.targetToUpsertList), false);
+            Database.SaveResult[] logUpsertResult = Database.update(new List<T_Performance_Target_Product_by_Team__c>(listTargetToUpsert), false);
             for (Database.SaveResult logUpsert : logUpsertResult) {
                 if (logUpsert.isSuccess()) {
                     this.recordUpsertSuccessful++;
@@ -194,16 +178,17 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                     System.debug(theError);
                 }
             } 
-        } else if(this.targetToUpsertMap.size() > 0){
+        } else if(mapTargetToUpsert.size() > 0){
             System.debug(this.currentLevel);
             System.debug('::::::::: Finish T-Performance Summarize Target ::::::::::::::::');
+            this.targetUpsertSize = this.targetUpsertSize + mapTargetToUpsert.size();
             // System.debug('New Target '+ this.targetToUpsertMap.values());
-            for(T_Performance_Target_Product_by_Team__c record : this.targetToUpsertMap.values()) {
+            for(T_Performance_Target_Product_by_Team__c record : mapTargetToUpsert.values()) {
                 record.Actual_Amount__c = record.Actual_Amount__c;
                 // .setscale(2,RoundingMode.HALF_UP);
             }
             Schema.SObjectField fToken = T_Performance_Target_Product_by_Team__c.Fields.Unique_External_Key__c;
-            Database.UpsertResult[] logUpsertResult = Database.upsert(this.targetToUpsertMap.values(), fToken, false);
+            Database.UpsertResult[] logUpsertResult = Database.upsert(mapTargetToUpsert.values(), fToken, false);
             for (Database.UpsertResult logUpsert : logUpsertResult) {
                 if (logUpsert.isSuccess()) {
                     this.recordUpsertSuccessful++;
@@ -214,11 +199,13 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                 }
             } 
         }
-        if(targetToUpsertList.size() > 0) {
-            this.recordUpsertFailed = this.targetToUpsertList.size() - this.recordUpsertSuccessful;
-        } else if(targetToUpsertMap.size() > 0) {
-            this.recordUpsertFailed = this.targetToUpsertMap.size() - this.recordUpsertSuccessful;
+    }
+
+    public void finish(Database.BatchableContext bc){ 
+        if(this.targetUpsertSize > 0) {
+            this.recordUpsertFailed = this.targetUpsertSize - this.recordUpsertSuccessful;
         }
+
         batchEndTime = datetime.now();
 
         String filename = 'T-Performance Summarize Data '+this.month+'/'+this.year+' ('+this.currentLevel+')';
@@ -229,12 +216,7 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
 
         String csvHeaderStr = '';
         String CSV_BODY = '';
-        // if(this.currentLevel == 'branch'){
-        //     System.debug('success '+ this.recordUpsertSuccessful + ' target ' + this.targetToUpsertList.size());
-        // }
-        // else{
-        //     System.debug('success '+ this.recordUpsertSuccessful + ' target ' + this.targetToUpsertMap.size());
-        // }
+
         System.debug('check send mail '+this.recordUpsertFailed + ' + ' + this.recordUpsertSuccessful);
         if(this.recordUpsertFailed + this.recordUpsertSuccessful > 0){
             System.debug('Send email '+this.currentLevel);
@@ -250,7 +232,7 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
                                                         , CSV_BODY);
         }
         String nextLevel = null;
-        if((this.recordUpsertSuccessful == this.targetToUpsertMap.size() && this.targetToUpsertMap.size() != 0) || (this.recordUpsertSuccessful == this.targetToUpsertList.size() && this.targetToUpsertList.size() != 0)){
+        if(this.recordUpsertSuccessful == this.targetUpsertSize && this.targetUpsertSize != 0){
             if(this.currentLevel == 'branch') {
                 nextLevel = 'zone';
             }
@@ -263,9 +245,6 @@ public class T_PerformanceSummarizeActualAmoutBatch implements Database.Batchabl
             else if(this.currentLevel == 'channel'){
                 nextLevel = 'group of channel';
             }
-            // else if(this.currentLevel == 'group of channel'){
-            //     nextLevel = 'retail';
-            // }
         }
 
         if(nextLevel != null) {

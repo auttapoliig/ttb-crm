@@ -731,6 +731,10 @@
                 }
             } else {
                 if(selectedYear == currentYear) {
+                    if(Number(saleData.salePerfLastMonth) < currentMonth-1) {
+                        sumTarget += targetLastMonth;
+                    }
+
                     if (currentDate > 2) {
                         sumTarget += ((targetLastMonth / DaysInMonth) * (currentDate - 2));
                     }

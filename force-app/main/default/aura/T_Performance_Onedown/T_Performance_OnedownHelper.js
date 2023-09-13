@@ -40,14 +40,11 @@
                 "period": period,
                 "summaryGroupType": summaryGroupType,
                 "summaryGroupValue": summaryGroupValue, // ytd / mtd
-                // "summaryGroupValue": summaryGroupValue // ytd / mtd
             });
             action.setCallback(this, function (response) {
                 var state = response.getState();
                 if (state === "SUCCESS") {
                     var result = response.getReturnValue();
-                    // var Channel = result.metaDataPerf1.Channel__c;
-                    // var summaryPage = result.summaryPage;
                     component.set('v.teamList', result.teamList);
                         var teamdata = result.teamList;
                         component.set('v.teamLabelList', teamdata);
@@ -128,7 +125,7 @@
                 return 'kpiLv1';
             }else if (pct < 90) {
                 return 'kpiLv2';
-            }else if (pct < 109) {
+            }else if (pct < 110) {
                 return 'kpiLv3';
             }else if (pct < 140) {
                 return 'kpiLv4';
@@ -140,7 +137,6 @@
     },
 
     makeData: function (component, event, helper) {
-    // makeData: function (component, event, helper, teamdata, productList, selectedYear, summaryPage) {
         helper.getProductTarget2(component,event,helper).then((productTargetData) =>{
             var productList = productTargetData.productList;
             var selectedYear = component.get('v.selectedYear');
@@ -205,11 +201,9 @@
                         mapSelectedTarget.set(product.Product_Group_Name__c+product[useField],product);
                     }
                 }
-                // var actualProrate = 0;
                 if (product.Month__c == dateMonth && product.Year__c == dateYear) {
                     if (dateDay - 2 >0 && product.Target_Unit_Month__c) {
                         targetProrate = helper.calDecimal(helper,'multiply',(product.Target_Unit_Month__c/daysInMonth),(dateDay-2));
-                        // targetProrate = (product.Target_Unit_Month__c/daysInMonth)*(dateDay-2);
                     }
                 } else {
                     targetProrate = product.Target_Unit_Month__c;
@@ -232,7 +226,6 @@
 
                         }
                         var kpiTeam = {
-                            // Channel_Name: team.channel,
                             label: team.label,
                             tgCurrYearValue: defaultTgCurrYearValue,
                             tgYTDValue: defaultTgYTDValue,
@@ -243,7 +236,6 @@
                         defaultTeamList.push(kpiTeam)
                     });
                     var defaultProductObj = {
-                        // indicator_code: product.Product_List__c.replace(/;\s*$/, "").split(';'),
                         label: product.Product_Group_Name__c,
                         total: {
                             tgCurrYearValue: tgYear,
@@ -262,7 +254,6 @@
                         var idxProductObj = currKPIObj.productList.findIndex(el => el.label == product.Product_Group_Name__c);
                         if (idxProductObj >= 0) {
                             var KPITeamlist = kpiObjList[idxKpiObj].productList[idxProductObj];
-                            // var idxTeamlist = KPITeamlist.kpiTeamList.findIndex(el => el.label == product[useField]);
                             var idxTeamlist = KPITeamlist.kpiTeamList.findIndex(el => el.label == product[useField]);
                             if (idxTeamlist >= 0) {
                                 var tgCurrYearValue = kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgCurrYearValue;
@@ -270,21 +261,18 @@
                                     kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgCurrYearValue = tgYear;
                                 } else if (product.Target_Unit_Year__c) {
                                     if(tgYear != null && tgYear != undefined) {
-                                        // kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgCurrYearValue += tgYear;
                                         kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgCurrYearValue = helper.calDecimal(helper,'plus',kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgCurrYearValue,tgYear);
                                     }
                                 }
                                 if (kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgYTDValue == null) {
                                     kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgYTDValue = targetProrate;
                                 } else if (targetProrate) {
-                                    // kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgYTDValue += targetProrate;
                                     kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgYTDValue = helper.calDecimal(helper,'plus',kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].tgYTDValue,targetProrate)
                                 }
 
                                 if (kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].actualYTD == null) {
                                     kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].actualYTD = actualValue;
                                 } else if(actualValue) {
-                                    // kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].actualYTD += actualValue;
                                     kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].actualYTD = helper.calDecimal(helper,'plus',kpiObjList[idxKpiObj].productList[idxProductObj].kpiTeamList[idxTeamlist].actualYTD,actualValue);
                                 }
 
@@ -305,12 +293,10 @@
                         lv1.push(product.Indicator_Level1__c);
                         var kpiObj = {
                             quadrant: product.Indicator_Level1__c,
-                            // indicator_code:defaultProductObj.indicator_code,
                             productList: [defaultProductObj]
                         }
                         kpiObjList.push(kpiObj);
                     }
-                // component.set('v.kpiObjList', kpiObjList);
             });
             helper.calVolumn(helper, kpiObjList, mapSelectedTarget);
 
@@ -328,7 +314,6 @@
                 eachProduct.total.tgCurrYearValue = null;
 
                 eachProduct.kpiTeamList.forEach((eachTeam) => {
-                    // if(eachTeam.volumn) {
                     var targetObj = mapSelectedTarget.get(eachProduct.label+eachTeam.label);
                     if(targetObj && targetObj.Volumn__c) {
                         eachTeam.actualYTD = helper.calDecimal(helper,'round',eachTeam.actualYTD,null)/targetObj.Volumn__c;
@@ -338,8 +323,8 @@
                     if(!eachTeam.actualYTD) {
                         eachTeam.actualYTD = 0;
                     }
-                    eachTeam.tgYTDValue = helper.calDecimal(helper,'round',eachTeam.tgYTDValue,null);
-                    eachTeam.tgCurrYearValue = helper.calDecimal(helper,'round',eachTeam.tgCurrYearValue,null);
+                    eachTeam.tgYTDValue = eachTeam.tgYTDValue ? helper.calDecimal(helper,'round',eachTeam.tgYTDValue,null) : null; // if 0 or blank => blank
+                    eachTeam.tgCurrYearValue = helper.calDecimal(helper,'round',eachTeam.tgCurrYearValue,null); // show as actual data
 
                     if(eachTeam.actualYTD != null && eachTeam.actualYTD != undefined) {
                         if(eachProduct.total.actualYTD == null || eachProduct.total.actualYTD == undefined) {
@@ -377,7 +362,6 @@
                     eachProduct.total.percent = (helper.calDecimal(helper,'round',eachProduct.total.actualYTD,null)/helper.calDecimal(helper,'round',eachProduct.total.tgYTDValue,null))*100;
                 }
                 eachProduct.total.percentCssColor = helper.checkPctCssClass(eachProduct.total.percent);
-                // eachProduct.total.actualYTD = 99;
             })
         });
     },
@@ -392,11 +376,6 @@
 
     calDecimal : function (helper,operator,val1,val2) {
         // *** This function was created to fix math decimal issues in javascript
-
-        // Number.prototype.countDecimals = function () {
-        //     if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
-        //     return this.toString().split(".")[1].length || 0; 
-        // }
         var val1_dec = helper.countDecimals(val1);
         var val2_dec = helper.countDecimals(val2);
     
@@ -420,64 +399,13 @@
             var dev = Math.pow(10,(val1_dec+val2_dec));
             return (mul/dev);
         } else if(operator == 'round') {
-            if(val1) {
+            if(val1 != undefined && val1 != null) {
                 var round = Math.round((val1*1000)/10)/100;
                 return round;
             }
-            // var dev = val1_engine;
         }
 
         return null;
-    
-        // var mul = (val1*val1_engine)*(val2*val2_engine)
-        // var dev = Math.pow(10,(val1_dec+val2_dec));
-        // return (mul/dev);
     },
-
-    checkHasSelectedTarget : function(component, helper) {
-        return new Promise(function (resolve, reject) {
-            var selectedYear = component.get('v.selectedYear');
-            var selectedMonth = component.get('v.selectedMonth');
-            var monthList = component.get('v.monthList');
-            var selectedMonthNumber = (monthList.indexOf(selectedMonth) + 1).toString().padStart(2, '0');
-            var summaryGroupType = component.get('v.summaryGroupType');
-            var summaryGroupValue = component.get('v.summaryGroupValue');
-            var action = component.get('c.getProductTargetTeam2');// get function at apex
-            action.setParams({
-                "selectedYear": selectedYear,
-                "selectedMonth": selectedMonthNumber,
-                "period": 'MTD',
-                "summaryGroupType": summaryGroupType,
-                "summaryGroupValue": summaryGroupValue, // ytd / mtd
-                // "summaryGroupValue": summaryGroupValue // ytd / mtd
-            });
-            action.setCallback(this, function (response) {
-                var state = response.getState();
-                if (state === "SUCCESS") {
-                    var result = response.getReturnValue();
-                    // var Channel = result.metaDataPerf1.Channel__c;
-                    // var summaryPage = result.summaryPage;
-                    if(result.productList.length > 0) {
-                        resolve(true)
-                    } else {
-                        resolve(false)
-                    }
-                } else {
-                    var errors = response.getError();
-                    var message = 'Unknown error'; // Default error message
-                    // Retrieve the error message sent by the server    
-                    component.set("v.loading", false);
-                    if (errors && Array.isArray(errors) && errors.length > 0) {
-                        message = errors[0].message;
-                    }
-                    // Display the message
-                    helper.showToastError('Error : ' + message);
-                    reject(message);
-                }
-            
-            });
-            $A.enqueueAction(action);
-        });
-    }
    
 })
