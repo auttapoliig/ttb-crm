@@ -3,7 +3,7 @@
         component.set('v.columns', [
             { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },           
             { label: 'Suitability Risk Expiry Date', fieldName: 'RMC_Suitability_Risk_Expiry_Date__c', type: 'date',cellAttributes:{    class: { fieldName: 'textColor' }}},
-            { label: 'Risk Suitability Risk Level', fieldName: 'RMC_Suitability_Risk_Level__c', type: 'text' },
+            { label: 'Suitability Risk Level', fieldName: 'RMC_Suitability_Risk_Level__c', type: 'text' },
 
         ]);
         var action = component.get('c.getAccountList');

@@ -25,7 +25,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Account.RTL_MF_AUM__c</field>
+        <field>Account.RMC_Sum_of_MF_Current_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
