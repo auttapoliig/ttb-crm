@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexClass>UploadInvestmentModelEmail</apexClass>
+    <attachmentOption>BinaryOnly</attachmentOption>
+    <authenticationFailureAction>Bounce</authenticationFailureAction>
+    <authorizationFailureAction>Bounce</authorizationFailureAction>
+    <authorizedSenders>panuvat.par@tmbbank.com,noppadon.thi@tmbbank.com</authorizedSenders>
+    <functionInactiveAction>Bounce</functionInactiveAction>
+    <functionName>UploadInvestmentModel</functionName>
+    <isActive>false</isActive>
+    <isAuthenticationRequired>false</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Bounce</overLimitAction>
+</EmailServicesFunction>

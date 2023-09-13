@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexClass>UpdateCaseForCCEmailService</apexClass>
+    <attachmentOption>BinaryOnly</attachmentOption>
+    <authenticationFailureAction>Bounce</authenticationFailureAction>
+    <authorizationFailureAction>Bounce</authorizationFailureAction>
+    <authorizedSenders>chantira.too@ttbbank.com,customercare@ttbbank.com,thammawat.pap@ttbbank.com,saowanee.san@ttbbank.com,lawan.sri@ttbbank.com,pathitta.mon@ttbbank.com,pathitta.mon@ttbbank.com,thanawan.wie@ttbbank.com,anchalee.gom@ttbbank.com,wanwisa.pho@ttbbank.com,mitchai.sop@ttbbank.com,nichamon.sir@ttbbank.com,suthep.yam@ttbbank.com,nipa.tha@ttbbank.com,ploypisut.ati@ttbbank.com,jutharat.tit@ttbbank.com,danudath.lee@ttbbank.com,sunee.khi@ttbbank.com,nattakarn.jua@ttbbank.com,nunthaluck.chu@ttbbank.com,patcharee.wim@ttbbank.com,pissamai.rat2@ttbbank.com,surachete.pao@ttbbank.com,sopida.sae@ttbbank.com,kietchai.boo@ttbbank.com,prayad.tup@ttbbank.com,arun.sir@ttbbank.com,unna.ink@ttbbank.com,rinda.tac@ttbbank.com,aut.hem@ttbbank.com,nonthakorn.noo@ttbbank.com,orawan.pans@ttbbank.com,raviwan.boo@ttbbank.com,waraluk.wat@ttbbank.com,charernchai.kha@ttbbank.com,wanna.kuh@ttbbank.com,rungkarn.chu@ttbbank.com,boonmak.chi@ttbbank.com,soonthorn.mua@ttbbank.com,supamit.tho@ttbbank.com,luckana.fah@ttbbank.com,vachira.jun@ttbbank.com,parichat.kha@ttbbank.com,pimon.rat@ttbbank.com,thanida.was@ttbbank.com,laltharima.cha@ttbbank.com,panravee.vij@ttbbank.com,sasimon.kae@ttbbank.com,surachai.jir@ttbbank.com ,ariya.jan@ttbbank.com ,supakit.wat@ttbbank.com,teerapat.sae@ttbbank.com</authorizedSenders>
+    <functionInactiveAction>Bounce</functionInactiveAction>
+    <functionName>Update_Case_By_Contact_Center</functionName>
+    <isActive>true</isActive>
+    <isAuthenticationRequired>true</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Bounce</overLimitAction>
+</EmailServicesFunction>

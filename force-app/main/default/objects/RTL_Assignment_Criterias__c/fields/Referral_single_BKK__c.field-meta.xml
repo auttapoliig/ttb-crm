@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_single_BKK__c</fullName>
+    <description>Auto assignment destination for Referral single product  // CR GBH Referral droplead</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Using RTL_Product_Name__c to get the result from Referral_single_BKK_c</inlineHelpText>
+    <label>Referral Single (Cover)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+                <label>Outbound</label>
+            </value>
+            <value>
+                <fullName>Branch</fullName>
+                <default>false</default>
+                <label>Branch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

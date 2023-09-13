@@ -215,6 +215,7 @@
             productList: [
               {
                 Label: KPI[i].Product_Group_Name__c,
+                ProductCode: KPI[i].Product_Group_Code__c,
                 UNIT: {
                   volume: volume,
                   tgCurrYearValue: TG,
@@ -246,7 +247,7 @@
         } else {
           var checkproduct = false;
           map.get(KPI[i].Indicator_Level1__c).productList.forEach((result) => {
-            if (result.Label == KPI[i].Product_Group_Name__c) {
+            if (result.ProductCode == KPI[i].Product_Group_Code__c) {
               checkproduct = true;
             }
           });
@@ -262,6 +263,7 @@
           } else {
             var arr = {
               Label: KPI[i].Product_Group_Name__c,
+              ProductCode: KPI[i].Product_Group_Code__c,
               UNIT: {
                 volume: volume,
                 tgCurrYearValue: TG,

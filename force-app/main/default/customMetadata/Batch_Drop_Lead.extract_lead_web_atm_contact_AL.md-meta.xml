@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>extract lead web atm contact AL</label>
+    <protected>false</protected>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">((CreatedDate &gt;= [yyyy]-[MM]-[dd-1]T00:00:00+07:00
+AND CreatedDate &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00)
+or (WS_Stamp_Date__c &gt;= [yyyy]-[MM]-[dd-1]T00:00:00+07:00 AND WS_Stamp_Date__c &lt;= [yyyy]-[MM]-[dd-1]T23:59:59+07:00))
+AND RTL_Contact_Method__c in (&apos;Normal Request&apos;)
+AND RTL_Contact_Method__c &lt;&gt; null
+AND RecordType.DeveloperName IN (&apos;Retail_Campaign_Member&apos;)
+AND RTL_Batch_Product_Name__c IN (&apos;NEW&apos;,&apos;USED&apos;,&apos;CYC&apos;,&apos;CYB&apos;,&apos;CYB Revolving&apos;)
+AND Contact.Id != NULL
+AND (RTL_Assigned_Channel__c = &apos;Outbound&apos; or (RTL_Channel_Outbound__c = true and RTL_Channel_Branch__c = false))</value>
+    </values>
+    <values>
+        <field>Field_Set__c</field>
+        <value xsi:type="xsd:string">RTL_Web_Unique_ID__c
+,FirstName
+,LastName
+,RTL_CampHis_Phone__c
+,Contact.Account.C_Home_phone_PE__c
+,Contact.Account.RTL_Office_Phone_Number__c
+,Contact.TMB_Customer_ID__c
+,RTL_Assigned_Channel__c
+,Campaign_Member_URL__c
+,Campaign.EndDate
+,Id
+,RTL_Remark__c
+,CreatedDate
+,RTL_Batch_Product_Name__c
+,Campaign.RTL_Campaign_Code_10_digits__c
+,RTL_Lead_Group__c
+,RTL_AL_Income__c</value>
+    </values>
+    <values>
+        <field>sObject__c</field>
+        <value xsi:type="xsd:string">CampaignMember</value>
+    </values>
+</CustomMetadata>

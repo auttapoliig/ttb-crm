@@ -101,6 +101,14 @@ public class LeadAssignmentUtil {
             return assignmentService;
         }set;
     }
+    public static RTL_ReferAssignmentService referAssignmentService{
+        get{
+            if(referAssignmentService == null){
+                referAssignmentService = new RTL_ReferAssignmentService();
+            }
+            return ReferAssignmentService;
+        }set;
+    }
 
     public static Map<String, Schema.RecordTypeInfo> mapIdReordtypeLead{
         get{
@@ -138,14 +146,17 @@ public class LeadAssignmentUtil {
                         String queueName = assignmentService.assignmentCriteria(leadObj.RTL_TMB_Campaign_Source__c, leadObj.RTL_BranchW2L_Area__c, leadObj.RTL_Product_Name__c, isMultipleProducts, leadObj.RTL_Branch_Name__c);
                         leadObj.ownerId = mapBranchCodeQueueName.containsKey(queueName) ? mapBranchCodeQueueName.get(queueName).Id : tmbAdmin.id;
                     }
+                    else if (LeadMatchAssignmentRule.RTL_Assigned_Apex__c == 'RTL_ReferAssignmentService') {
+                        Boolean isMultipleProducts = leadObj.RTL_Multiple_Interested_Product_s__c == null ? false : leadObj.RTL_Multiple_Interested_Product_s__c;
+                        String queueName = ReferAssignmentService.referAssignmentCriteria(leadObj.RTL_TMB_Campaign_Source__c, leadObj.RTL_BranchW2L_Area__c, leadObj.RTL_Product_Name__c, isMultipleProducts, leadObj.RTL_Branch_Name__c,leadObj.RTL_Priority_Product__c);
+                        leadObj.ownerId = mapBranchCodeQueueName.containsKey(queueName) ? mapBranchCodeQueueName.get(queueName).Id : tmbAdmin.id;
+                    }
                     //****** ADD APEX FUNCTION HERE (as else if) ****** 
                 }else{
-
                     if(LeadMatchAssignmentRule.RTL_Integration_Type__c != null){
                         leadObj.RTL_Lead_Campaign_Outbound__c = mapProductOutboundDetail.containsKey(leadObj.RTL_Product_Name__c + leadObj.RTL_Contact_Method__c) ? mapProductOutboundDetail.get(leadObj.RTL_Product_Name__c + leadObj.RTL_Contact_Method__c).RTL_Lead_Campaign_Outbound__c : null;
                         leadObj.RTL_Lead_Channel_Outbound__c = mapProductOutboundDetail.containsKey(leadObj.RTL_Product_Name__c + leadObj.RTL_Contact_Method__c) ? mapProductOutboundDetail.get(leadObj.RTL_Product_Name__c + leadObj.RTL_Contact_Method__c).RTL_Lead_Channel_Outbound__c : null;
                     }
-
                     assignLeadOwnerByRule(leadObj, LeadMatchAssignmentRule);
                 }
             }
