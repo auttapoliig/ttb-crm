@@ -1,0 +1,138 @@
+<aura:component controller="CommercialEditCrossSellProductController" implements="flexipage:availableForAllPageTypes,force:appHostable">
+	<aura:attribute name="productId" type="String" />
+	<aura:attribute name="leadId" type="String" />
+	<aura:attribute name="isEdit" type="Boolean" />
+    <aura:attribute name="activeSectionName" type="List" default="['A','B']" />
+	<aura:attribute name="activeSpinner" type="Boolean" />
+	<aura:attribute name="isError" type="Boolean" />
+	<aura:attribute name="error" type="String" />
+    <aura:attribute name="isDelete" type="Boolean" default="false"/>
+    <!-- <aura:attribute name="errorList" type="List" />
+    <aura:attribute name="isAllowedToConvert" type="Boolean"/>
+    <aura:attribute name="productSize" type="Integer"/>
+    <aura:attribute name="isParentError" type="Boolean" /> -->
+
+    
+    <aura:registerEvent name="saveEvent" type="c:CommercialEditCrossSellProductEvent"/>
+    <aura:registerEvent name="saveAndNewEvent" type="c:CommercialEditCrossSellProductEvent"/>
+    <aura:registerEvent name="closeEvent" type="c:CommercialEditCrossSellProductEvent"/>
+
+    <div class="{! 'slds-modal__container' + ($Browser.formFactor=='DESKTOP'? '':' disable_padding')}">
+        <div class="slds-modal__header slds-p-around_medium slds-text-align_left">
+            <aura:if isTrue="{!v.isEdit}">
+                <h3 class="slds-text-heading_medium slds-hyphenate"><b>Edit Cross-Sell Product</b></h3>
+                <aura:set attribute="else">
+                    <h3 class="slds-text-heading_medium slds-hyphenate"><b>New Cross-Sell Product</b></h3>
+                </aura:set>
+            </aura:if>
+        </div>
+        <div class="slds-modal__content">
+            <aura:if isTrue="{!v.activeSpinner}">
+                <lightning:spinner aura:id="spinner" alternativeText="loading" class="{! $Browser.formFactor=='DESKTOP'? 'loading_margin':''}" style="z-index: 9009"/>
+            </aura:if>
+            <div class="{! !v.isError ? 'slds-hide' : 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error' }" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                    title="Description of icon when needed">
+                    <lightning:icon iconName="utility:error" variant="inverse" size="x-small" />
+                </span>
+                <h2>{!v.error}</h2>
+            </div>
+            <lightning:recordEditForm recordId="{!v.productId}" objectApiName="Product_Interest__c">
+                <lightning:accordion allowMultipleSectionsOpen="true" aura:id="accordion" activeSectionName="{!v.activeSectionName}" onsectiontoggle="{!c.handleToggle}">
+                    <lightning:accordionSection name="A" label="Information">
+                        <div class="slds-grid slds-wrap slds-form_horizontal">
+                            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning:inputField aura:id="Name" fieldName="Name" />
+                                <lightning:inputField aura:id="Opportunity_Type__c" fieldName="Opportunity_Type__c" required="true"/>
+                                <lightning:inputField aura:id="Product__c" fieldName="Product__c" required="true"/>
+                                <lightning:inputField aura:id="Amount__c" fieldName="Amount__c" />
+                                <lightning:inputField aura:id="Lead__c" fieldName="Lead__c" required="true" value="{!v.leadId}" disabled="true"/>
+                                <lightning:inputField aura:id="Opportunity__c" fieldName="Opportunity__c" />
+                            </div>
+                            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning:inputField  fieldName="OwnerId" />
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="form-element-01">Cross-Sell</label>
+                                    <div class="slds-form-element__control">
+                                        Yes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="B" label="Digital Product Information">
+                        <div class="slds-grid slds-wrap slds-form_horizontal">
+                            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning:inputField aura:id="Project_Code__c" fieldName="Project_Code__c" />
+                                <lightning:inputField aura:id="Max_Offer_Amount__c" fieldName="Max_Offer_Amount__c" />
+                                <lightning:inputField aura:id="Max_Tenor__c" fieldName="Max_Tenor__c" />
+                                <lightning:inputField aura:id="Max_Tenor_Unit__c" fieldName="Max_Tenor_Unit__c" />
+                                <lightning:inputField aura:id="Max_Installment__c" fieldName="Max_Installment__c" />
+                                <lightning:inputField aura:id="Rate__c" fieldName="Rate__c" />
+                                <lightning:inputField aura:id="Fee__c" fieldName="Fee__c" />
+                                <lightning:inputField aura:id="Offer_start_date__c" fieldName="Offer_start_date__c " />
+                                <lightning:inputField aura:id="Offer_end_date__c" fieldName="Offer_end_date__c" />
+                                <lightning:inputField aura:id="Offer_Last_update_date__c" fieldName="Offer_Last_update_date__c" />
+                                <lightning:inputField aura:id="Merchant_Unique_ID__c" fieldName="Merchant_Unique_ID__c " />
+                                <lightning:inputField aura:id="Remark__c" fieldName="Remark__c " />
+                            </div>
+                            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning:inputField aura:id="Status__c" fieldName="Status__c" />
+                                <lightning:inputField aura:id="Request_Amount__c" fieldName="Request_Amount__c" />
+                                <lightning:inputField aura:id="Request_Fee_Baht__c" fieldName="Request_Fee_Baht__c" />
+                                <lightning:inputField aura:id="Request_Tenor__c" fieldName="Request_Tenor__c" />
+                                <lightning:inputField aura:id="Request_Tenor_Unit__c" fieldName="Request_Tenor_Unit__c" />
+                                <lightning:inputField aura:id="Request_Installment__c" fieldName="Request_Installment__c" />
+                                <lightning:inputField aura:id="Request_Date__c" fieldName="Request_Date__c" />
+                                <lightning:inputField aura:id="Request_Last_update_date__c" fieldName="c" />
+                            </div>
+                        </div>
+                    </lightning:accordionSection>
+                </lightning:accordion>
+            </lightning:recordEditForm>
+        </div>
+        <footer class="slds-modal__footer">
+            <lightning:button variant="Neutral" label="Cancel" title="Cancel" onclick="{! c.cancel }"/>
+            <aura:if isTrue="{!v.isEdit}">
+                <lightning:button variant="Neutral" label="Delete" title="Delete" onclick="{! c.confirmDelete }" class="font-color-back"/>
+                <aura:set attribute="else">
+                    <lightning:button variant="Neutral" label="Save &amp; New" title="Save &amp; New" onclick="{! c.saveAndNew }"/>
+                </aura:set>
+            </aura:if>
+            <lightning:button variant="Brand" label="Save" title="Save" onclick="{! c.save }"/>
+        </footer>
+    </div>
+
+    <div class="slds-m-around_xx-large">     
+        <aura:if isTrue="{!v.isDelete}">                    
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container" style="width: 40%;">                    
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Confirm to Delete</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <span>Click OK to Delete, or Cancel to Discard delete</span>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" 
+                                            label="OK"
+                                            title="OK"
+                                            onclick="{! c.delete }"/>
+                        <lightning:button variant="neutral" 
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{! c.closeModel }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            
+        </aura:if>
+    </div>
+</aura:component>

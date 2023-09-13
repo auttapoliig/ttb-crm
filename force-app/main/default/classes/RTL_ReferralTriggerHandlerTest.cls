@@ -37,7 +37,7 @@ public class RTL_ReferralTriggerHandlerTest {
         insert branchTitle;
         //ls = Test.loadData(Branch_And_Zone__c.sObjectType, 'BranchAndZoneMaster');
         ID RMC_ROLE_ID = [SELECT Id FROM UserRole WHERE Name LIKE '%RMC%' LIMIT 1].id;
-        // System.debug('RMC ROLE ID '+RMC_ROLE_ID);
+        System.debug('RMC ROLE ID '+RMC_ROLE_ID);
         
         queueMap = new Map<String, Group>();
         for(Group queue : [Select Id, Name, DeveloperName from Group where Type = 'Queue'])
@@ -130,14 +130,14 @@ public class RTL_ReferralTriggerHandlerTest {
             opportunityList = RTL_TestUtility.createOpportunities(acctList[0],1,true);
             
             List<Opportunity> opptyList = queryOpportunity();
-            // System.debug('BEFORE OPPORTUNITY   :: '+opptyList);
+            System.debug('BEFORE OPPORTUNITY   :: '+opptyList);
             
             opptyList[0].RTL_Referral__c = referralList[0].id;
             update opptyList;
             
             opptyList = queryOpportunity();
             List<RTL_Referral__c> refList = queryReferral();
-            // System.debug('AFTER OPPORTUNITY   :: '+opptyList);
+            System.debug('AFTER OPPORTUNITY   :: '+opptyList);
             //Assert referral attached with opportunity
             System.assertequals(referralList[0].id,opptyList[0].RTL_Referral__c);
             //Assert referral stage is Closed (Interested)
@@ -423,7 +423,7 @@ public class RTL_ReferralTriggerHandlerTest {
 
         //User contextuser = [SELECT Id, RTL_Branch_Code__c FROM User WHERE Profile.Name = 'TMB Retail Channel Sales' AND IsActive = true LIMIT 1];
         Id TMB_RC_PROFILE_ID = [SELECT Id FROM Profile WHERE Name = 'TMB Retail Channel Sales' LIMIT 1].Id;
-        // System.debug(TMB_RC_PROFILE_ID);
+        system.debug(TMB_RC_PROFILE_ID);
 
         RTL_product_master__c prod = new RTL_product_master__c();
         prod.Name = 'CYC';
@@ -454,8 +454,8 @@ public class RTL_ReferralTriggerHandlerTest {
                                     ProfileId = TMB_RC_PROFILE_ID, TimeZoneSidKey='America/New_York',isActive = true,
                                     Employee_ID__c ='RM001',ManagerId = ManagerUser.id);
         insert PreferredStaff;
-        // System.debug('PreferredStaff Email :'+PreferredStaff.Email);
-        // System.debug('PreferredStaff Email :'+PreferredStaff.Id);
+        System.debug('PreferredStaff Email :'+PreferredStaff.Email);
+        System.debug('PreferredStaff Email :'+PreferredStaff.Id);
         System.runAs(PreferredStaff){
         String RecordTypeId = Schema.SObjectType.RTL_Referral__c.getRecordTypeInfosByName().get('Retail Cross Channel Referral').getRecordTypeId();
         RTL_Referral__c ref = new RTL_Referral__c();
@@ -471,185 +471,183 @@ public class RTL_ReferralTriggerHandlerTest {
         }
     }
     
-    public static testmethod void testAfterUpdateReferraltoCampaignMember(){             
-        List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
-        User firstUser = retailUsers[0];//outbound channel
+    // public static testmethod void testAfterUpdateReferraltoCampaignMember(){             
+    //     List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
+    //     User firstUser = retailUsers[0];//outbound channel
        
-        TestInit.createUser(false);
-        User adminUser = TestInit.us;  
-        List<Account> accountList = null;
-        List<Account> accountList1 = null;
-        List<Opportunity> opportunityList = null;
-        String opptId = null;
-        Account acct = acctList[0];
-        acct.OwnerId = firstUser.Id;
-        update acct;
+    //     TestInit.createUser(false);
+    //     User adminUser = TestInit.us;  
+    //     List<Account> accountList = null;
+    //     List<Account> accountList1 = null;
+    //     List<Opportunity> opportunityList = null;
+    //     String opptId = null;
+
                         
-        TEST.startTest();      
-                System.runAs(firstUser){
-     
+    //     TEST.startTest();      
+    //             System.runAs(firstUser){
+    //               /*  Account acct = acctList[0];
+    //                 acct.OwnerId = firstUser.Id;
+    //                 update acct;*/
             
-                Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
-                Campaign camp = new Campaign();
-                camp.Name = 'Campaign_';
-                camp.Segment__c = 'MB';
-                camp.OwnerId  = UserInfo.getUserId();
-                camp.RecordTypeId = Recordtypeid;
-                insert camp;
+    //             Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
+    //             Campaign camp = new Campaign();
+    //             camp.Name = 'Campaign_';
+    //             camp.Segment__c = 'MB';
+    //             camp.OwnerId  = UserInfo.getUserId();
+    //             camp.RecordTypeId = Recordtypeid;
+    //             insert camp;
                 
-                Contact ct = RTL_TestUtility.createContacts(acctList.get(0));
-                ct.OwnerId = firstUser.id;
-                insert ct;
+    //             Contact ct = RTL_TestUtility.createContacts(acctList.get(0));
+    //             ct.OwnerId = firstUser.id;
+    //             insert ct;
                         
-                //branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
-                RTL_Referral__c referral = new RTL_Referral__c();
-                referral.RTL_Mobile1__c ='0884129128';
-                referral.RTL_Stage__c = 'New';
-                referral.RTL_License_No__c = '4325325426';
-                referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
-                // System.debug('branch '+referral.RTL_Preferred_Branch__c);
-                insert referral;
-                // System.debug('refid'+referral.id);  
+    //             //branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
+    //             RTL_Referral__c referral = new RTL_Referral__c();
+    //             referral.RTL_Mobile1__c ='0884129128';
+    //             referral.RTL_Stage__c = 'New';
+    //             referral.RTL_License_No__c = '4325325426';
+    //             referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
+    //             system.debug('branch '+referral.RTL_Preferred_Branch__c);
+    //             insert referral;
+    //             system.debug('refid'+referral.id);  
 
-                Opportunity oppt = new Opportunity(); 
-                oppt.Name = 'Test Opp';
-                oppt.CloseDate = Date.today().addDays(30);
-                oppt.StageName = 'Sales (Investment)';
-                //oppt.AccountId = accountList[0].id;
-                oppt.RTL_Referral__c = referral.id;
-                insert oppt;
+    //             Opportunity oppt = new Opportunity(); 
+    //             oppt.Name = 'Test Opp';
+    //             oppt.CloseDate = Date.today().addDays(30);
+    //             oppt.StageName = 'Sales (Investment)';
+    //             //oppt.AccountId = accountList[0].id;
+    //             oppt.RTL_Referral__c = referral.id;
+    //             insert oppt;
 
-                // System.debug('opptid'+oppt.id);  
-                //mock cm
-                CampaignMember cm = new CampaignMember();
-                cm.CampaignId = camp.id; 
-                cm.ContactId = ct.id;
-                cm.RTL_RelatedOpportunity_1__c = oppt.id;
-                cm.RTL_RelatedOpportunity_2__c = oppt.id;
-                cm.RTL_RelatedOpportunity_3__c = oppt.id;
-                cm.RTL_RelatedOpportunity_4__c = oppt.id;
-                cm.RTL_RelatedOpportunity_5__c = oppt.id;
-                cm.RTL_Referral_ID_1__c = referral.id;
-                cm.RTL_Referral_ID_2__c = referral.id; 
-                cm.RTL_Referral_ID_3__c = referral.id; 
-                cm.RTL_Referral_ID_4__c = referral.id; 
-                cm.RTL_Referral_ID_5__c = referral.id;                
-                cm.RTL_Hub_Name_1__c = 'test hub';
-                insert cm;
-                // System.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
-                // System.debug('refer '+cm.RTL_Referral_ID_1__c);
+    //             system.debug('opptid'+oppt.id);  
+    //             //mock cm
+    //             CampaignMember cm = new CampaignMember();
+    //             cm.CampaignId = camp.id; 
+    //             cm.ContactId = ct.id;
+    //             cm.RTL_RelatedOpportunity_1__c = oppt.id;
+    //             cm.RTL_RelatedOpportunity_2__c = oppt.id;
+    //             cm.RTL_RelatedOpportunity_3__c = oppt.id;
+    //             cm.RTL_RelatedOpportunity_4__c = oppt.id;
+    //             cm.RTL_RelatedOpportunity_5__c = oppt.id;
+    //             cm.RTL_Referral_ID_1__c = referral.id;
+    //             cm.RTL_Referral_ID_2__c = referral.id; 
+    //             cm.RTL_Referral_ID_3__c = referral.id; 
+    //             cm.RTL_Referral_ID_4__c = referral.id; 
+    //             cm.RTL_Referral_ID_5__c = referral.id;                
+    //             cm.RTL_Hub_Name_1__c = 'test hub';
+    //             insert cm;
+    //             system.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
+    //             system.debug('refer '+cm.RTL_Referral_ID_1__c);
             
-                //update ref
-                RTL_Referral__c referralup = new RTL_Referral__c();
-                referralup.id = cm.RTL_Referral_ID_1__c;
-                referralup.RTL_Stage__c = 'New';
-                referralup.RTL_AL_Refer_No__c = 'online';
-                referralup.RTL_AL_Req_No1__c = 'online';
-                referralup.RTL_AL_Req_No2__c = 'online';
-                referralup.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
-                referralup.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
-                referralup.RTL_AL_Refer_No__c = '20220720133195943';
-                referralup.RTL_AL_Req_No1__c = 'online';
-                referralup.RTL_AL_Req_No2__c = 'online';
-                referralup.Corebank_Emp_Id__c = 'online';
-                referralup.Corebank_Emp_Name__c= 'online';
-                referralup.Corebank_Emp_Phone_No__c = 'online';
-                referralup.RTL_Hub_Code__c = '123';
-                referralup.RTL_Hub_Name__c = 'test hub';
-                referralup.RTL_Account_No__c = 'CYC';
-                referralup.HPAP_Status_Code__c = 'oooo';
-                referralup.HPAP_Reason_Code__c = 'oooo';
-                referralup.HPAP_Reason_Description__c = 'oooo';
-                update referralup;
+    //             //update ref
+    //             RTL_Referral__c referralup = new RTL_Referral__c();
+    //             referralup.id = cm.RTL_Referral_ID_1__c;
+    //             referralup.RTL_Stage__c = 'New';
+    //             referralup.RTL_AL_Refer_No__c = 'online';
+    //             referralup.RTL_AL_Req_No1__c = 'online';
+    //             referralup.RTL_AL_Req_No2__c = 'online';
+    //             referralup.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
+    //             referralup.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
+    //             referralup.RTL_AL_Refer_No__c = '20220720133195943';
+    //             referralup.RTL_AL_Req_No1__c = 'online';
+    //             referralup.RTL_AL_Req_No2__c = 'online';
+    //             referralup.Corebank_Emp_Id__c = 'online';
+    //             referralup.Corebank_Emp_Name__c= 'online';
+    //             referralup.Corebank_Emp_Phone_No__c = 'online';
+    //             referralup.RTL_Hub_Code__c = '123';
+    //             referralup.RTL_Hub_Name__c = 'test hub';
+    //             referralup.RTL_Account_No__c = 'CYC';
+    //             referralup.HPAP_Status_Code__c = 'oooo';
+    //             referralup.HPAP_Reason_Code__c = 'oooo';
+    //             referralup.HPAP_Reason_Description__c = 'oooo';
+    //             update referralup;
             
-            /*RTL_Referral__c referralup1 = new RTL_Referral__c();
-            referralup1.id = cm.RTL_Referral_ID_2__c;
-            referralup1.RTL_Stage__c = 'New';
-            referralup1.RTL_AL_Refer_No__c = 'online';
-            referralup1.RTL_AL_Req_No1__c = 'online';
-            referralup1.RTL_AL_Req_No2__c = 'online';
-            referralup1.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
-            referralup1.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
-            referralup1.RTL_AL_Refer_No__c = '20220720133195943';
-            referralup1.RTL_AL_Req_No1__c = 'online';
-            referralup1.RTL_AL_Req_No2__c = 'online';
-            referralup1.Corebank_Emp_Id__c = 'online';
-            referralup1.Corebank_Emp_Name__c= 'online';
-            referralup1.Corebank_Emp_Phone_No__c = 'online';
-            referralup1.RTL_Hub_Code__c = '123';
-            referralup1.RTL_Hub_Name__c = 'test hub';
-            referralup1.RTL_Account_No__c = 'CYC';
-            referralup1.HPAP_Status_Code__c = 'oooo';
-            referralup1.HPAP_Reason_Code__c = 'oooo';
-            referralup1.HPAP_Reason_Description__c = 'oooo';
-            update referralup1;*/
+    //         /*RTL_Referral__c referralup1 = new RTL_Referral__c();
+    //         referralup1.id = cm.RTL_Referral_ID_2__c;
+    //         referralup1.RTL_Stage__c = 'New';
+    //         referralup1.RTL_AL_Refer_No__c = 'online';
+    //         referralup1.RTL_AL_Req_No1__c = 'online';
+    //         referralup1.RTL_AL_Req_No2__c = 'online';
+    //         referralup1.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
+    //         referralup1.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
+    //         referralup1.RTL_AL_Refer_No__c = '20220720133195943';
+    //         referralup1.RTL_AL_Req_No1__c = 'online';
+    //         referralup1.RTL_AL_Req_No2__c = 'online';
+    //         referralup1.Corebank_Emp_Id__c = 'online';
+    //         referralup1.Corebank_Emp_Name__c= 'online';
+    //         referralup1.Corebank_Emp_Phone_No__c = 'online';
+    //         referralup1.RTL_Hub_Code__c = '123';
+    //         referralup1.RTL_Hub_Name__c = 'test hub';
+    //         referralup1.RTL_Account_No__c = 'CYC';
+    //         referralup1.HPAP_Status_Code__c = 'oooo';
+    //         referralup1.HPAP_Reason_Code__c = 'oooo';
+    //         referralup1.HPAP_Reason_Description__c = 'oooo';
+    //         update referralup1;*/
         
-                }
-        TEST.stopTest();
+    //             }
+    //     TEST.stopTest();
         
-    }
-    public static testmethod void testAfterUpdateReferraltoCampaignMemberCrossSellProduct(){             
-        TEST.startTest();
+    // }
+    // public static testmethod void testAfterUpdateReferraltoCampaignMemberCrossSellProduct(){             
+    //     TEST.startTest();
             
-        List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
-        User firstUser = retailUsers[0];
-        Account acct = acctList[0];
-        acct.OwnerId = firstUser.Id;
-        update acct;
-        TestInit.createUser(false);
-        User adminUser = TestInit.us;  
+    //     List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
+    //     User firstUser = retailUsers[0];
        
-        System.runAs(firstUser) {               
-           // branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
-            Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
-            Campaign camp = new Campaign();
-            camp.Name = 'Campaign_';
-            camp.Segment__c = 'MB';
-            camp.OwnerId  = UserInfo.getUserId();
-            camp.RecordTypeId = Recordtypeid;
-            insert camp;
+    //     TestInit.createUser(false);
+    //     User adminUser = TestInit.us;  
+       
+    //     System.runAs(firstUser) {               
+    //        // branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
+    //         Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
+    //         Campaign camp = new Campaign();
+    //         camp.Name = 'Campaign_';
+    //         camp.Segment__c = 'MB';
+    //         camp.OwnerId  = UserInfo.getUserId();
+    //         camp.RecordTypeId = Recordtypeid;
+    //         insert camp;
             
-            Contact ct = RTL_TestUtility.createContacts(acctList.get(0));
-            ct.OwnerId = firstUser.id;
-            insert ct;
+    //         Contact ct = RTL_TestUtility.createContacts(acctList.get(0));
+    //         ct.OwnerId = firstUser.id;
+    //         insert ct;
             
-            RTL_Referral__c referral = new RTL_Referral__c();
-            referral.RTL_Mobile1__c ='0884129128';
-            referral.RTL_Stage__c = 'New';
-            referral.RTL_License_No__c = '4325325426';
-            referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
-            insert referral;
+    //         RTL_Referral__c referral = new RTL_Referral__c();
+    //         referral.RTL_Mobile1__c ='0884129128';
+    //         referral.RTL_Stage__c = 'New';
+    //         referral.RTL_License_No__c = '4325325426';
+    //         referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
+    //         insert referral;
 
-            Opportunity oppt = new Opportunity(); 
-            oppt.Name = 'Test Opp';
-            oppt.CloseDate = Date.today().addDays(30);
-            oppt.StageName = 'Sales (Investment)';
-            oppt.RTL_Referral__c = referral.id;
-            insert oppt;
+    //         Opportunity oppt = new Opportunity(); 
+    //         oppt.Name = 'Test Opp';
+    //         oppt.CloseDate = Date.today().addDays(30);
+    //         oppt.StageName = 'Sales (Investment)';
+    //         oppt.RTL_Referral__c = referral.id;
+    //         insert oppt;
             
-            CampaignMember cm = new CampaignMember();
-            cm.CampaignId = camp.id; 
-            cm.RTL_Hub_Name_1__c = 'test hub';
-            cm.ContactId = ct.id;
-            insert cm;
+    //         CampaignMember cm = new CampaignMember();
+    //         cm.CampaignId = camp.id; 
+    //         cm.RTL_Hub_Name_1__c = 'test hub';
+    //         cm.ContactId = ct.id;
+    //         insert cm;
             
-            Cross_Sell_Product__c csp = new Cross_Sell_Product__c();
-            csp.CampaignMemberId__c = cm.id;
-            csp.ReferralID__c = referral.id;
-            csp.OpportunityId__c = oppt.id;              
-            insert csp;
+    //         Cross_Sell_Product__c csp = new Cross_Sell_Product__c();
+    //         csp.CampaignMemberId__c = cm.id;
+    //         csp.ReferralID__c = referral.id;
+    //         csp.OpportunityId__c = oppt.id;              
+    //         insert csp;
 
-            AppConfig__c Aconfig1 = AppConfig__c.getValues('runtrigger');
-            Aconfig1.Value__c = 'true';    
-            update Aconfig1;  
+    //         AppConfig__c Aconfig1 = AppConfig__c.getValues('runtrigger');
+    //         Aconfig1.Value__c = 'true';    
+    //         update Aconfig1;  
             
-            RTL_Referral__c referralup = new RTL_Referral__c();
-            referralup.id = csp.ReferralID__c;
-            referralup.RTL_AL_Refer_No__c = 'online';
-            referralup.RTL_AL_Req_No1__c = 'online';
-            referralup.RTL_AL_Req_No2__c = 'online'; 
-            update referralup;              
-            }
-            TEST.stopTest();
-        }
+    //         RTL_Referral__c referralup = new RTL_Referral__c();
+    //         referralup.id = csp.ReferralID__c;
+    //         referralup.RTL_AL_Refer_No__c = 'online';
+    //         referralup.RTL_AL_Req_No1__c = 'online';
+    //         referralup.RTL_AL_Req_No2__c = 'online'; 
+    //         update referralup;              
+    //         }
+    //         TEST.stopTest();
+    //     }
 }

@@ -448,7 +448,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -520,7 +520,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -592,7 +592,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         CampaignMember campaignsTest = [SELECT Id, RTL_Marketing_Code__c FROM CampaignMember LIMIT 1];
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         System.runAs(sfextapi){
             RestRequest request = new RestRequest();
             request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/getByMarketingCode/';
@@ -640,7 +640,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -710,7 +710,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             

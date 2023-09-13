@@ -1,0 +1,1341 @@
+<aura:component controller="CCOutbound_CSVController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="fields" type="List" />
+    <aura:attribute name="customColorField" type="Map"/>
+
+    <aura:attribute name="dataFields" type="Map" default="{}"/>
+
+    <aura:attribute name="numberOfRetry" type="Integer" />
+    <aura:attribute name="retrySetTimeOut" type="Integer" />
+    <aura:attribute name="round" type="Integer" />
+    <aura:attribute name="subDebtAddOn" type="String" />
+
+    <aura:attribute name="allField" type="List" />
+    <aura:attribute name="touchAddOn" type="String" />
+    <aura:attribute name="pdpaAddOn" type="String" />
+    <aura:attribute name="marketConductAddOn" type="String" />
+
+    <aura:attribute name="account" type="Object" />
+    <aura:attribute name="isError" type="Boolean" default="false" />
+    <aura:attribute name="isRerender" type="Boolean" default="false" />
+    <aura:attribute name="isOSCLoading" type="Boolean" default="true" />
+    <aura:attribute name="isPDPALoading" type="Boolean" default="true" />
+
+    <aura:if isTrue="{! or(v.isRerender,v.isOSCLoading,v.isPDPALoading)}">
+        <lightning:spinner alternativeText="Loading" size="medium" variant="brand" />
+    </aura:if>
+    <!-- Water Mark -->
+    <aura:attribute name="waterMarkImage" type="String" />
+    <!-- <aura:handler event="force:refreshView" action="{!c.isRefreshed}" /> -->
+    <aura:handler event="c:RetailCSV_Event" action="{!c.handleRefreshfield}" />
+
+    <!-- Water Mark -->
+    <div class="slds-no-print" style="{! 'background-image: ' + v.waterMarkImage + ';width:100%;height:100%;'}">
+        <lightning:layout verticalAlign="stretch" multipleRows="true">
+
+            <!-- RTL_Customer_Name_TH__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !(or(v.isRerender,v.isOSCLoading,v.isPDPALoading)) }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Customer_Name_TH__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Customer_Name_TH__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Customer_Name_TH__c.label}
+                                <aura:if isTrue="{!v.dataFields.RTL_Customer_Name_TH__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Customer_Name_TH__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Customer_Name_TH__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Customer_Name_TH__c.type}" value="{!v.dataFields.RTL_Customer_Name_TH__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Customer_Name_TH__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Customer_Name_TH__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Customer_Name_TH__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Customer_Name_TH__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+            
+            <!-- Customer_Name_PE_Eng__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Customer_Name_PE_Eng__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Customer_Name_PE_Eng__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Customer_Name_PE_Eng__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Customer_Name_PE_Eng__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Customer_Name_PE_Eng__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Customer_Name_PE_Eng__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Customer_Name_PE_Eng__c.type}" value="{!v.dataFields.Customer_Name_PE_Eng__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Customer_Name_PE_Eng__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Customer_Name_PE_Eng__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Customer_Name_PE_Eng__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Customer_Name_PE_Eng__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Gender_View__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Gender_View__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Gender_View__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Gender_View__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Gender_View__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Gender_View__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Gender_View__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Gender_View__c.type}" value="{!v.dataFields.RTL_Gender_View__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Gender_View__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Gender_View__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Gender_View__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Gender_View__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- ID_Type_PE__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.ID_Type_PE__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.ID_Type_PE__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.ID_Type_PE__c.label} 
+                                <aura:if isTrue="{!v.dataFields.ID_Type_PE__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.ID_Type_PE__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.ID_Type_PE__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.ID_Type_PE__c.type}" value="{!v.dataFields.ID_Type_PE__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.ID_Type_PE__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.ID_Type_PE__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.ID_Type_PE__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.ID_Type_PE__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- NID__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.NID__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.NID__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.NID__c.label} 
+                                <aura:if isTrue="{!v.dataFields.NID__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.NID__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.NID__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.NID__c.type}" value="{!v.dataFields.NID__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.NID__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.NID__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.NID__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.NID__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_CitizenID_Expiration_Date__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_CitizenID_Expiration_Date__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_CitizenID_Expiration_Date__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.type}" value="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_CitizenID_Expiration_Date__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_CitizenID_Expiration_Date__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Date_Of_Birth__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Date_Of_Birth__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Date_Of_Birth__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Date_Of_Birth__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Date_Of_Birth__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Date_Of_Birth__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <aura:if isTrue="{!v.dataFields.RTL_Date_Of_Birth__c.isAccessible}">
+                                    <div aura:id="{!v.dataFields.RTL_Date_Of_Birth__c.id}" class="slds-form-element__static">
+                                        <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Date_Of_Birth__c.type}" value="{!v.dataFields.RTL_Date_Of_Birth__c.value}" />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-form-element__static">
+                                            <lightning:formattedText value="&nbsp;" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Date_Of_Birth__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Date_Of_Birth__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Date_Of_Birth__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Date_Of_Birth__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Birthday__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Birthday__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Birthday__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Birthday__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Birthday__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Birthday__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Birthday__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Birthday__c.type}" value="{!v.dataFields.RTL_Birthday__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Birthday__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Birthday__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Birthday__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Birthday__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Zodiac__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                        <aura:if isTrue="{!v.dataFields.RTL_Zodiac__c.isAccessible}">
+                            <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Zodiac__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Zodiac__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Zodiac__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Zodiac__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <aura:if isTrue="{!v.dataFields.RTL_Zodiac__c.isAccessible}">
+                                    <div aura:id="{!v.dataFields.RTL_Zodiac__c.id}" class="slds-form-element__static">
+                                        <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Zodiac__c.type}" value="{!v.dataFields.RTL_Zodiac__c.value}" />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-form-element__static">
+                                            <lightning:formattedText value="&nbsp;" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Zodiac__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Zodiac__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Zodiac__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Zodiac__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Mobile_Number_PE__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Mobile_Number_PE__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Mobile_Number_PE__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Mobile_Number_PE__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Mobile_Number_PE__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Mobile_Number_PE__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <aura:if isTrue="{!v.dataFields.Mobile_Number_PE__c.isAccessible}">
+                                    <div aura:id="{!v.dataFields.Mobile_Number_PE__c.id}" class="slds-form-element__static">
+                                        <c:CallCenterCSV_PillOutput type="{!v.dataFields.Mobile_Number_PE__c.type}" value="{!v.dataFields.Mobile_Number_PE__c.value}" />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-form-element__static">
+                                            <lightning:formattedText value="&nbsp;" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Mobile_Number_PE__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Mobile_Number_PE__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Mobile_Number_PE__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Mobile_Number_PE__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Email_Address_PE__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Email_Address_PE__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Email_Address_PE__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Email_Address_PE__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Email_Address_PE__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Email_Address_PE__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Email_Address_PE__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Email_Address_PE__c.type}" value="{!v.dataFields.Email_Address_PE__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Email_Address_PE__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Email_Address_PE__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Email_Address_PE__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Email_Address_PE__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- FATCA__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.FATCA__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.FATCA__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.FATCA__c.label} 
+                                <aura:if isTrue="{!v.dataFields.FATCA__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.FATCA__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <aura:if isTrue="{!v.dataFields.FATCA__c.isAccessible}">
+                                    <div aura:id="{!v.dataFields.FATCA__c.id}" class="slds-form-element__static">
+                                        <c:CallCenterCSV_PillOutput type="{!v.dataFields.FATCA__c.type}" value="{!v.dataFields.FATCA__c.value}" />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-form-element__static">
+                                            <lightning:formattedText value="&nbsp;" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.FATCA__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.FATCA__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.FATCA__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.FATCA__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Account_Type__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Account_Type__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Account_Type__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Account_Type__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Account_Type__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Account_Type__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Account_Type__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Account_Type__c.type}" value="{!v.dataFields.Account_Type__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Account_Type__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Account_Type__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Account_Type__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Account_Type__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Core_Banking_Suggested_Segment__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Core_Banking_Suggested_Segment__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Core_Banking_Suggested_Segment__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Core_Banking_Suggested_Segment__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Core_Banking_Suggested_Segment__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Core_Banking_Suggested_Segment__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Core_Banking_Suggested_Segment__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Core_Banking_Suggested_Segment__c.type}" value="{!v.dataFields.Core_Banking_Suggested_Segment__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Core_Banking_Suggested_Segment__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Core_Banking_Suggested_Segment__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Core_Banking_Suggested_Segment__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Core_Banking_Suggested_Segment__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Market_Consent__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Market_Consent__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Market_Consent__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Market_Consent__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Market_Consent__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Market_Consent__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Market_Consent__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Market_Consent__c.type}" value="{!v.dataFields.Market_Consent__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Market_Consent__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Market_Consent__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Market_Consent__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Market_Consent__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Average_AUM__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Average_AUM__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Average_AUM__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Average_AUM__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Average_AUM__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Average_AUM__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Average_AUM__c.id}" class="{!'slds-form-element__static ' + v.dataFields.RTL_Average_AUM__c.class}">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Average_AUM__c.type}" value="{!v.dataFields.RTL_Average_AUM__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Average_AUM__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Average_AUM__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Average_AUM__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Average_AUM__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_SBO_FLAG__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_SBO_FLAG__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_SBO_FLAG__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_SBO_FLAG__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_SBO_FLAG__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_SBO_FLAG__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_SBO_FLAG__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_SBO_FLAG__c.type}" value="{!v.dataFields.RTL_SBO_FLAG__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_SBO_FLAG__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_SBO_FLAG__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_SBO_FLAG__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_SBO_FLAG__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- VIP_Status__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.VIP_Status__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.VIP_Status__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.VIP_Status__c.label} 
+                                <aura:if isTrue="{!v.dataFields.VIP_Status__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.VIP_Status__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.VIP_Status__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.VIP_Status__c.type}" value="{!v.dataFields.VIP_Status__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.VIP_Status__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.VIP_Status__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.VIP_Status__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.VIP_Status__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Wealth_RM__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Wealth_RM__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Wealth_RM__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Wealth_RM__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Wealth_RM__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Wealth_RM__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Wealth_RM__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Wealth_RM__c.type}" value="{!v.dataFields.RTL_Wealth_RM__c.value}" value_addon="{!v.dataFields.RTL_Wealth_RM__c.value_addon}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Wealth_RM__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Wealth_RM__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Wealth_RM__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Wealth_RM__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- TMB_Customer_ID_PE__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.TMB_Customer_ID_PE__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.TMB_Customer_ID_PE__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.TMB_Customer_ID_PE__c.label} 
+                                <aura:if isTrue="{!v.dataFields.TMB_Customer_ID_PE__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.TMB_Customer_ID_PE__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.TMB_Customer_ID_PE__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.TMB_Customer_ID_PE__c.type}" value="{!v.dataFields.TMB_Customer_ID_PE__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.TMB_Customer_ID_PE__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.TMB_Customer_ID_PE__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.TMB_Customer_ID_PE__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.TMB_Customer_ID_PE__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+             <!-- RTL_AUM__c -->
+             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+             class="slds-p-bottom_small ">
+                 <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_AUM__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_AUM__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_AUM__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_AUM__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_AUM__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="rtl_AUM" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_AUM__c.type}" value="{!v.dataFields.RTL_AUM__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_AUM__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_AUM__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_AUM__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_AUM__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                 </aura:if>
+             </lightning:layoutItem>
+
+             <!-- RTL_Privilege1__c -->
+             <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Privilege1_Display.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Privilege1_Display.label}
+                                <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="testprivid" class="{!'slds-form-element__static ' + v.dataFields.RTL_Privilege1_Display.class}">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Privilege1_Display.type}" value="{!v.dataFields.RTL_Privilege1_Display.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Privilege1_Display.label}
+                                    <aura:if isTrue="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Privilege1_Display.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div>
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Privilege1_Display.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Payroll__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.Payroll__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Payroll__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.Payroll__c.label} 
+                                <aura:if isTrue="{!v.dataFields.Payroll__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.Payroll__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.Payroll__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.Payroll__c.type}" value="{!v.dataFields.Payroll__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.Payroll__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.Payroll__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.Payroll__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.Payroll__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Customer_Reference_Id__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Customer_Reference_Id__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Customer_Reference_Id__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Customer_Reference_Id__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Customer_Reference_Id__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Customer_Reference_Id__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Customer_Reference_Id__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Customer_Reference_Id__c.type}" value="{!v.dataFields.RTL_Customer_Reference_Id__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Customer_Reference_Id__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Customer_Reference_Id__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Customer_Reference_Id__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Customer_Reference_Id__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Do_Not_Contact__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RTL_Do_Not_Contact__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.RTL_Do_Not_Contact__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RTL_Do_Not_Contact__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RTL_Do_Not_Contact__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Do_Not_Contact__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RTL_Do_Not_Contact__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Do_Not_Contact__c.type}" value="{!v.dataFields.RTL_Do_Not_Contact__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RTL_Do_Not_Contact__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RTL_Do_Not_Contact__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Do_Not_Contact__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Do_Not_Contact__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RMC_Payroll_Company__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.RMC_Payroll_Company__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Payroll__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.RMC_Payroll_Company__c.label} 
+                                <aura:if isTrue="{!v.dataFields.RMC_Payroll_Company__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.RMC_Payroll_Company__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.RMC_Payroll_Company__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RMC_Payroll_Company__c.type}" value="{!v.dataFields.RMC_Payroll_Company__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.RMC_Payroll_Company__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.RMC_Payroll_Company__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.RMC_Payroll_Company__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RMC_Payroll_Company__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- KYC_Update__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.KYC_Update__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.KYC_Update__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.KYC_Update__c.label} 
+                                <aura:if isTrue="{!v.dataFields.KYC_Update__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.KYC_Update__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.KYC_Update__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.KYC_Update__c.type}" value="{!v.dataFields.KYC_Update__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.KYC_Update__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.KYC_Update__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.KYC_Update__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.KYC_Update__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- IAL__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{!v.dataFields.IAL__c.isAccessible}">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly '+ v.dataFields.IAL__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.IAL__c.label} 
+                            <aura:if isTrue="{! v.dataFields.IAL__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.dataFields.IAL__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <div aura:id="{!v.dataFields.IAL__c.id}" class="slds-form-element__static">
+                                <aura:unescapedHtml value="{!v.dataFields.IAL__c.value}">
+                                    <lightning:formattedText value="{!v.dataFields.IAL__c.value}" />
+                                </aura:unescapedHtml>
+                            </div>
+                        </div>
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.IAL__c.label} 
+                                <aura:if isTrue="{! v.dataFields.IAL__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{! v.dataFields.IAL__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedText value="{!v.dataFields.IAL__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- ttb touch -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.TTB_Touch_Flag.label}
+                        </span>
+                        <aura:if isTrue="{!v.dataFields.TTB_Touch_Flag.isAccessible}">
+                            <div class="{!v.dataFields.TTB_Touch_Flag.class}" style="max-width: 60%;">
+                                <div aura:id="touch_id" class="{!'slds-form-element__static ' + v.dataFields.TTB_Touch_Flag.class}">
+                                    <c:CallCenterCSV_PillOutput type="STRING" value="{!v.dataFields.TTB_Touch_Flag.value}" value_addon="{!v.touchAddOn}" />
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.TTB_Touch_Flag.value}" />
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- KYC_flag__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.KYC_flag__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.KYC_flag__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.KYC_flag__c.label} 
+                                <aura:if isTrue="{!v.dataFields.KYC_flag__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.KYC_flag__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.KYC_flag__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.KYC_flag__c.type}" value="{!v.dataFields.KYC_flag__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.KYC_flag__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.KYC_flag__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.KYC_flag__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.KYC_flag__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- E_KYC__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <aura:if isTrue="{!v.dataFields.E_KYC__c.isAccessible}">
+                        <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.E_KYC__c.class }">
+                            <span class="slds-form-element__label">
+                                {!v.dataFields.E_KYC__c.label} 
+                                <aura:if isTrue="{!v.dataFields.E_KYC__c.inlineHelpText }">
+                                    <lightning:helptext class="helptext" content="{!v.dataFields.E_KYC__c.inlineHelpText }" />
+                                </aura:if>
+                            </span>
+                            <div class="slds-form-element__control customField">
+                                <div aura:id="{!v.dataFields.E_KYC__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.E_KYC__c.type}" value="{!v.dataFields.E_KYC__c.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                <span class="slds-form-element__label">
+                                    {!v.dataFields.E_KYC__c.label} 
+                                    <aura:if isTrue="{!v.dataFields.E_KYC__c.inlineHelpText }">
+                                        <lightning:helptext class="helptext" content="{!v.dataFields.E_KYC__c.inlineHelpText }" />
+                                    </aura:if>
+                                </span>
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.E_KYC__c.value}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- PDPA -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.pdpaDetail.label} 
+                        </span>
+                        <aura:if isTrue="{!v.dataFields.pdpaDetail.isAccessible}">
+                            <div class="{!v.dataFields.pdpaDetail.class}" style="max-width: 60%;">
+                                <div aura:id="pdpa_id" class="{!'slds-form-element__static ' + v.dataFields.pdpaDetail.class}">
+                                    <c:CallCenterCSV_PillOutput type="STRING" value="{!v.dataFields.pdpaDetail.value}" value_addon="{!v.pdpaAddOn}" />
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.pdpaDetail.value}" />
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Market Conduct -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.marketDetail.label}
+                        </span>
+                        <aura:if isTrue="{!v.dataFields.marketDetail.isAccessible}">
+                            <div class="{!v.dataFields.marketDetail.class}" style="max-width: 60%;">
+                                <div aura:id="market_conduct" class="{!'slds-form-element__static ' + v.dataFields.marketDetail.class}">
+                                    <c:CallCenterCSV_PillOutput type="STRING" value="{!v.dataFields.marketDetail.value}" value_addon="{!v.marketConductAddOn}" />
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.marketDetail.value}" />
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+            
+            <!-- Action_box__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <div class="slds-form-element slds-form-element_horizontal slds-form-element__static" style="padding-top: 2%;color: red;">
+                    <aura:if isTrue="{!v.dataFields.Action_Box__c.isAccessible}">
+                        <aura:unescapedHtml value="{!v.dataFields.Action_Box__c.value}">
+                            <lightning:formattedText value="{!v.dataFields.Action_Box__c.value}" />
+                        </aura:unescapedHtml>
+                        <aura:set attribute="else">
+                            <div class="slds-form-element__static">
+                                <lightning:formattedText value="" />
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+
+            <!-- Blank -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small hideMinWidth">
+                <div class="slds-form-element slds-form-element_horizontal slds-form-element__static">
+                </div>
+            </lightning:layoutItem>
+
+            <!-- Blank -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small hideMinWidth">
+                <div class="slds-form-element slds-form-element_horizontal slds-form-element__static">
+                </div>
+            </lightning:layoutItem>
+            
+
+            <!-- Sub Debt -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.subDebtTran.label}
+                        </span>
+                        <aura:if isTrue="{!v.dataFields.subDebtTran.isAccessible}">
+                            <div class="{!v.dataFields.subDebtTran.class}" style="max-width: 60%;">
+                                <div aura:id="subDebt_id" class="{!'slds-form-element__static ' + v.dataFields.subDebtTran.class}">
+                                    <c:CallCenterCSV_PillOutput type="STRING" value="{!v.dataFields.subDebtTran.value}" value_addon="{!v.subDebtAddOn}" />
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-form-element__control customField">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.subDebtTran.value}" />
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Main Bank -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+            class="slds-p-bottom_small ">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.dataFields.Payroll__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.label} 
+                            <aura:if isTrue="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.isAccessible}">
+                                <div aura:id="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.id}" class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.type}" value="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.value}" /> 
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="{!v.dataFields.RTL_Primary_Banking_All_Free_Benefit__c.value}" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+        </lightning:layout>
+    </div>
+
+</aura:component>

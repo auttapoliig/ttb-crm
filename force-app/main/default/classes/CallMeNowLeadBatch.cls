@@ -25,7 +25,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
                     mapNamedCredentiallURL.put(namedCre.DeveloperName, namedCre);
                 }
             }
-            // System.debug('mapNamedCredentiallURL : ' + mapNamedCredentiallURL);
+            System.debug('mapNamedCredentiallURL : ' + mapNamedCredentiallURL);
             return mapNamedCredentiallURL;
         }
         set;
@@ -39,7 +39,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
                     mapLeadAssignmentRules.put(rule.Id, rule);
                 }
             }
-            // System.debug('mapLeadAssignmentRules : ' + mapLeadAssignmentRules);
+            System.debug('mapLeadAssignmentRules : ' + mapLeadAssignmentRules);
             return mapLeadAssignmentRules;
         }
         set;
@@ -86,7 +86,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
         queryLeadIdlst = leadIdlst;
         
 		//query = 'SELECT Id, Name, FirstName, LastName, RTL_Product_Name__c, RTL_Mobile_Number__c, RTL_Lead_Campaign_Outbound__c, RTL_Lead_Channel_Outbound__c, RTL_Call_Back_Date_time__c, RTL_Lead_Assigned_By_Rule__c, RTL_Lead_Assigned_By_Rule__r.RTL_Integration_Type__c, RTL_Web_Unique_ID_c__c, RTL_Call_Me_Now_Status__c, RTL_Call_Me_Now_Retry_Count__c, RTL_Contact_Method__c FROM Lead WHERE Id IN :queryLeadIdlst';
-        query = 'SELECT Id, LeadId, Lead.Name, Lead.FirstName, Lead.RTL_Remark__c, Lead.RTL_AL_ContactProvince__c, Lead.LastName, Lead.RTL_Product_Name__c, Lead.RTL_Mobile_Number__c, Lead.RTL_Lead_Campaign_Outbound__c, Lead.RTL_Lead_Channel_Outbound__c, Lead.RTL_Call_Back_Date_time__c, Lead.RTL_Lead_Assigned_By_Rule__c, Lead.RTL_Web_Unique_ID_c__c, Lead.RTL_Call_Me_Now_Status__c, Lead.RTL_Call_Me_Now_Retry_Count__c, Lead.RTL_Contact_Method__c,Lead.RTL_TMB_Campaign_Reference__c,Lead.RTL_W2L_Campaign_Name__c,Lead.RTL_AL_Car_Status__c,Lead.RTL_AL_Leasing_Condition__c,Lead.RTL_Customer_Segment__c FROM CampaignMember WHERE LeadId IN :queryLeadIdlst';
+        query = 'SELECT Id, LeadId, Lead.Name, Lead.FirstName, Lead.RTL_Remark__c, Lead.RTL_AL_ContactProvince__c, Lead.LastName, Lead.RTL_Product_Name__c, Lead.RTL_Mobile_Number__c, Lead.RTL_Lead_Campaign_Outbound__c, Lead.RTL_Lead_Channel_Outbound__c, Lead.RTL_Call_Back_Date_time__c, Lead.RTL_Lead_Assigned_By_Rule__c, Lead.RTL_Web_Unique_ID_c__c, Lead.RTL_Call_Me_Now_Status__c, Lead.RTL_Call_Me_Now_Retry_Count__c, Lead.RTL_Contact_Method__c,Lead.RTL_TMB_Campaign_Reference__c,Lead.RTL_W2L_Campaign_Name__c,Lead.RTL_AL_Car_Status__c,Lead.RTL_AL_Leasing_Condition__c FROM CampaignMember WHERE LeadId IN :queryLeadIdlst';
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
@@ -110,7 +110,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
             }
             String strvar5 = '';
             if(cm.lead.RTL_AL_Car_Status__c != null && cm.lead.RTL_AL_Leasing_Condition__c != null){
-                strvar5 = cm.lead.RTL_AL_Leasing_Condition__c + '_' + cm.lead.RTL_AL_Car_Status__c;
+                strvar5 = cm.lead.RTL_AL_Car_Status__c + '_' + cm.lead.RTL_AL_Leasing_Condition__c;
             }else if (cm.lead.RTL_AL_Car_Status__c != null && cm.lead.RTL_AL_Leasing_Condition__c == null){
                 strvar5 = cm.lead.RTL_AL_Car_Status__c;
             }else if (cm.lead.RTL_AL_Car_Status__c == null && cm.lead.RTL_AL_Leasing_Condition__c != null){
@@ -128,7 +128,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
             
             callMeNowObj.request.setVar1(cm.Id);
             callMeNowObj.request.setVar2(subRemark);
-            callMeNowObj.request.setVar3(cm.lead.RTL_Customer_Segment__c);
+            callMeNowObj.request.setVar3(cm.lead.RTL_AL_ContactProvince__c);
             callMeNowObj.request.setVar4(cm.lead.RTL_W2L_Campaign_Name__c);
             callMeNowObj.request.setVar5(strvar5);
             callMeNowObj.request.setVar6(cm.lead.RTL_TMB_Campaign_Reference__c);
@@ -142,22 +142,22 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
             callMeNowObj.request.setChannel(cm.lead.RTL_Lead_Channel_Outbound__c);
             callMeNowObj.request.setRequiredWrapUp('true');
 
-            // System.debug('callMeNowObj : ' + callMeNowObj);
+            System.debug('callMeNowObj : ' + callMeNowObj);
 
             RTL_Lead_Assignment_Rule__c leadAssignmentRule = mapLeadAssignmentRules.get(cm.lead.RTL_Lead_Assigned_By_Rule__c);
             OnlineServiceLog oslogDetail = CallMeNowService.callOutCMNLead(callMeNowObj, leadAssignmentRule.RTL_Integration_Type__c);
 
-            // System.debug('callMeNowObj : ' + callMeNowObj);
+            System.debug('callMeNowObj : ' + callMeNowObj);
 
             // AL Enhancement
             obj = new Lead();
             obj.Id = cm.leadId;
             obj.RTL_Call_Me_Now_Status__c = 'success';
-            // System.debug(obj.RTL_Call_Me_Now_Status__c);
+            System.debug(obj.RTL_Call_Me_Now_Status__c);
             
             if(callMeNowObj.response.message != 'success'){
                 obj.RTL_Call_Me_Now_Status__c = '';
-                // System.debug('Call Me Now Retry Count -->' + obj.RTL_Call_Me_Now_Retry_Count__c);
+                System.debug('Call Me Now Retry Count -->' + obj.RTL_Call_Me_Now_Retry_Count__c);
                 if (obj.RTL_Call_Me_Now_Retry_Count__c == null) {
                     obj.RTL_Call_Me_Now_Retry_Count__c = 0; 
                 }
@@ -192,7 +192,7 @@ global class CallMeNowLeadBatch implements Database.Batchable<sObject>,Database.
         if(mapWebUnioslog.size() > 0){
             RTL_CampaignUtil.insertOnlineServiceLogMultiWithAttach(mapWebUnioslog, mapWebUnioslogDetail);
         }
-        // System.debug('updateleadlst : ' + updateleadlst);
+        System.debug('updateleadlst : ' + updateleadlst);
 		if(updateleadlst.size() > 0){
 			update updateleadlst;
 		}

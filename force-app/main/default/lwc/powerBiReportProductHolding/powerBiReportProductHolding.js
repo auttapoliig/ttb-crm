@@ -24,6 +24,7 @@ export default class PowerBiReportProductHolding extends NavigationMixin(
   URL_Report //URL Power Bi Report 
   _title = 'MF Dashboard' //Button label
 
+
   _account
   @wire(getRecord, {
     recordId: '$recordId', fields: [
@@ -40,6 +41,7 @@ export default class PowerBiReportProductHolding extends NavigationMixin(
       this._tmb_cust_id = this._account.TMB_Customer_ID_PE__c;
       console.log('accountId >>>> ' + this._account.Id);
       this.getAccessPermission();
+      this.getEncryptParam(this._account.TMB_Customer_ID_PE__c);
     }
   }
   reportId //report Id  from Metadata 
@@ -49,14 +51,18 @@ export default class PowerBiReportProductHolding extends NavigationMixin(
     if (data) {
       this.reportId = data.Id
       // console.log("callbackGetReportMetadata 222 " + data.Id);
-      this.getEncryptParam(this._tmb_cust_id);
+      // this.getEncryptParam(this._tmb_cust_id);
     }
   }
 
   handlerOpenPowerBi() {
     // await this.calloutInit();
+    // console.log("handlerOpenPowerBi 111111 ["+this._tmb_cust_id+"] encrypt ["+this.encryptedString+"]");
     try {
-      this.getEncryptParam(this._tmb_cust_id);
+      if(this.encryptedString == 'error'){
+          this.getEncryptParam(this._tmb_cust_id);
+          // console.log("handlerOpenPowerBi 222222 ["+this._tmb_cust_id+"] encrypt ["+this.encryptedString+"]");
+      }
       this.URL_Report = "/apex/PowerBiReportPage?ReportId=" + this.reportId + "&param_1=" + this.encryptedString
       this[NavigationMixin.Navigate]({
         type: "standard__webPage",

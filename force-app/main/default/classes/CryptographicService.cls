@@ -14,6 +14,9 @@
 
 @RestResource(urlMapping='/data/V1.0/cryptographic/*')
 global class CryptographicService extends WebserviceAbstract {
+
+    class EncryptionException extends Exception {}
+    
     /* get service timeout */
 	public static Integer SERVICE_TIMEOUT_MILISEC{
         get{
@@ -52,11 +55,7 @@ global class CryptographicService extends WebserviceAbstract {
         DateTime endTime;
         
         Account accForLog = new Account();
-        
         Boolean isSuccess = true;
-        
-        String endpoint = '';
-
         String processType;
         /* end cast */
         
@@ -70,8 +69,7 @@ global class CryptographicService extends WebserviceAbstract {
         }
         //String encryptKey = (String)SCSMessageAPIUtil.getEncryptKey(SCSMessageAPIUtil.fetchUserSessionId(), SCSMessageAPIUtil.INTEGRATE_SYSTEM.OneApp);
         
-        try{
-            
+        try{          
             /* get req id */
             System.debug('get header');
             Map<String, String> headerKeys = RestContext.request.headers;
@@ -81,120 +79,29 @@ global class CryptographicService extends WebserviceAbstract {
             Map<String, Object> requestRawBodyMap = (Map<String, Object>)JSON.deserializeUntyped(RestContext.request.requestBody.toString());
             requestBodyDecrypt = (String)SCSMessageAPIUtil.decryptMessageWithKey(RestContext.request.requestBody.toString(), encryptKey);
             
-            /* deserialize */
-            /*
-            System.debug('deserialize-->' + requestBodyDecrypt);
-            Map<String, Object> requestBodyMap = (Map<String, Object>)JSON.deserializeUntyped(requestBodyDecrypt);
-            String objectName = (String)requestBodyMap.get('object_name');
-            String recordId = (String)requestBodyMap.get('record_id');
-            String extIdField = (String)requestBodyMap.get('extId_field');
-            String uri = (String)requestBodyMap.get('uri');
-            Object body = (Object)requestBodyMap.get('body');
-            map<String,Object> bodyMap = (map<String,Object>) body;
-            System.debug('bodymap:'+bodyMap);
-            
-            if(uri != null)
-            {
-               endpoint = uri;
+            if (requestBodyDecrypt == null) {
+                throw new EncryptionException('Cannot decrypt message');
             }
-            else 
-            {  
-                if(recordId != '' && recordId != null)
-                {                          
-                    if(extIdField != '' && extIdField != null)
-                    {
-                        endpoint += objectName+'/'+extIdField+'/'+recordId+'?_HttpMethod=PATCH';                 
-                    }
-                    else
-                    {
-                        endpoint += objectName+'/'+recordId+'?_HttpMethod=PATCH';
-                    
-                    }
-                    processType = 'Update';
-                    
-                }
-                else
-                {
-                    endpoint += objectName+'/';
-                    processType = 'Insert';
-                }
-            }
-            System.debug('endpoint:'+endpoint);
-            System.debug('body:'+body);
-            Map<String,String> requestHeader = RestContext.request.headers;
-            
-            //set request inbound call
-            Http h = new Http();
-            HttpRequest req = new HttpRequest();
-            req.setEndpoint(URL.getSalesforceBaseUrl().toExternalForm() + '/services/data/v48.0/'+endpoint);
-            req.setBody(JSON.serialize(body));
-            req.setHeader('Authorization', 'OAuth ' + UserInfo.getSessionId());
-            System.debug('SERVICE_TIMEOUT_MILISEC:'+SERVICE_TIMEOUT_MILISEC);
-            req.setTimeout(SERVICE_TIMEOUT_MILISEC);
-            if(requestHeader.containsKey('Content-Type'))
-            {
-                req.setHeader('Content-Type', requestHeader.get('Content-Type'));  
-            }
-            if(requestHeader.containsKey('Sforce-Auto-Assign'))
-            {
-                req.setHeader('Sforce-Auto-Assign', requestHeader.get('Sforce-Auto-Assign'));  
-            }
-            req.setMethod('POST');
-            System.debug('endpoint:'+req.getEndpoint());
-            
-            HttpResponse res;
-            
-            System.debug('Send request!');
-            //get inbound response
-            if (!Test.isRunningTest()) {
-                res = h.send(req); 
-            }
-            else
-            {
-                res = new HttpResponse();
-                res.setHeader('Content-Type', 'application/json');
-                res.setHeader('Sforce-Auto-Assign', 'false');
-                //encrypt response body
-                res.setBody(JSON.serialize(body));
-                res.setStatusCode(200);
-            }
-            System.debug('Response:'+ res.getBody());
-            String resBodyEncrypt = (String)SCSMessageAPIUtil.encryptMessageWithKey(res.getBody(), encryptKey);
-
-            RestContext.response.addHeader('Content-Type', 'application/json');
-            //Return reference key request id
-            RestContext.response.addHeader('ReqId', reqId);
-            RestContext.response.statusCode = res.getStatusCode();
-            RestContext.response.responseBody = Blob.valueOf(resBodyEncrypt);
-            isSuccess = true;
-            
-            if(res.getStatusCode() == 400)
-            {
-                isSuccess = false;
-                errorMessage = res.getBody();
-            }
-            else if(res.getStatusCode() == 404)
-            {
-                isSuccess = false;
-                errorMessage = res.getBody();
-            }         	
-            */
-            
+            /* Call API from WebserviceAbstract */
             Map<String, Object> result = callStandardAPI(requestBodyDecrypt, headerKeys, encryptKey);
 
+
+            /* Get back result from service */
             isSuccess = (Boolean) result.get('isSuccess');
             errorMessage = (String) result.get('errorMessage');
-
             endTime = DateTime.Now();
-            
             requestBody = headerKeys.toString() + '\n\n' + requestBodyDecrypt;
             responseBody = (String) result.get('responseBody');
-            endpoint = (String) result.get('endpoint');
+            String endpoint = (String) result.get('endpoint');
             serviceName = '/services/apexrest/data/V1.0/cryptographic'+ '  (' + endpoint + ')';
 
-            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
+            /* Save to online log */
+            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
+            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
+            //                                      startTime ,  endTime,  null );
+            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
                                                   rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime,  null );
+                                                  startTime ,  endTime);                                     
                                                      
         }
         catch(exception e)
@@ -214,13 +121,24 @@ global class CryptographicService extends WebserviceAbstract {
             /* return error response */
             RestContext.response.addHeader('Content-Type', 'application/json');
             RestContext.response.statusCode = 500;
-            RestContext.response.responseBody = Blob.valueOf(reponseString);  
+            // if (String.isNotEmpty(reponseString)) {
+            //     RestContext.response.responseBody = Blob.valueOf(reponseString); 
+            // }
+             
             System.debug('res-->' + errorMessage + ' ' + encryptKey);
-            RestContext.response.responseBody = Blob.valueOf(SCSMessageAPIUtil.encryptMessageWithKey(reponseString, encryptKey));
+            try {
+                RestContext.response.responseBody = Blob.valueOf(SCSMessageAPIUtil.encryptMessageWithKey(reponseString, encryptKey));
+            } catch (Exception ein) {
+                System.debug('err-->' + ein.getMessage());
+            }
+            
 			/* save error to online log */
-            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
-                                                  rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime,  null );
+            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
+            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
+            //                                      startTime ,  endTime,  null );
+            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName, 
+                                            rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
+                                            startTime ,  endTime );
         }
         
 	}

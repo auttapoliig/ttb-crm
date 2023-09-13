@@ -1,0 +1,768 @@
+<aura:component controller="RetailCSVLightningUtil" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="fields" type="Map" default="{}" />
+    <aura:attribute name="eStatement" type="Map" default="{}" />
+    <aura:attribute name="payStatus" type="Map" default="{}" />
+    <aura:attribute name="instantLendingDetail" type="String" default="" />
+    <aura:attribute name="messengerCoverArea" type="String" default="" />
+    <aura:attribute name="isSalseSupportSectionVisible" type="Boolean" default="false" />
+    <aura:attribute name="isMIBenefitSectionVisible" type="Boolean" default="false" />
+    <aura:attribute name="profileName" type="String" />
+    <aura:attribute name="userId" type="Id" default="{! $SObjectType.CurrentUser.Id }" />
+
+    <aura:attribute name="CYCCampaignMappingInq" type="Object"/>
+    <aura:attribute name="CYCCampaignMappingInqStatus" type="Object"/>
+
+    <aura:attribute name="numberOfRetry" type="Integer" default="{!$Label.c.Number_Of_Retry_Times}"/>
+    <aura:attribute name="retrySetTimeOut" type="Integer" default="{!$Label.c.Retry_SetTimeOut}"/>
+
+    <!-- Water Mark -->
+    <aura:attribute name="waterMarkImage" type="String" />
+
+    <!-- spinner -->
+    <aura:attribute name="is07Success" type="Boolean" default="false" />
+    <aura:attribute name="isCYCSuccess" type="Boolean" default="false" />
+
+    <aura:attribute name="isRerender" type="Boolean" default="false" />
+    <aura:handler event="c:RetailCSV_Event" action="{!c.handleRefreshfield}" />
+    <aura:if isTrue="{! v.isRerender }">
+        <lightning:spinner alternativeText="Loading" size="medium" variant="brand" />
+    </aura:if>
+    <!-- ============================================================================================= -->
+
+    <!-- Water Mark -->
+    <div class="slds-no-print" style="{! 'background-image: ' + v.waterMarkImage + ';width:100%;height:100%;'}">
+        <lightning:layout verticalAlign="stretch" multipleRows="true">
+            <!-- Fna_Avatar_Name__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.Fna_Avatar_Name__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.Fna_Avatar_Name__c.label}
+                            <aura:if isTrue="{! v.fields.Fna_Avatar_Name__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.Fna_Avatar_Name__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.Fna_Avatar_Name__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.Fna_Avatar_Name__c.value}">
+                                        <lightning:formattedText value="{!v.fields.Fna_Avatar_Name__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Fna_Product_Interested__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.Fna_Product_Interested__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.Fna_Product_Interested__c.label}
+                            <aura:if isTrue="{! v.fields.Fna_Product_Interested__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.Fna_Product_Interested__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.Fna_Product_Interested__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.Fna_Product_Interested__c.value}">
+                                        <lightning:formattedText value="{!v.fields.Fna_Product_Interested__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Fna_Product_Holding__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.Fna_Product_Holding__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.Fna_Product_Holding__c.label}
+                            <aura:if isTrue="{! v.fields.Fna_Product_Holding__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.Fna_Product_Holding__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.Fna_Product_Holding__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.Fna_Product_Holding__c.value}">
+                                        <lightning:formattedText value="{!v.fields.Fna_Product_Holding__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Occupation_Details__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Occupation_Details__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Occupation_Details__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Occupation_Details__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Occupation_Details__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Occupation_Details__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Occupation_Details__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Occupation_Details__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Income_Conditional__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Income_Conditional__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Income_Conditional__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Income_Conditional__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Income_Conditional__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Income_Conditional__c.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:formattedNumber value="{!v.fields.RTL_Income_Conditional__c.value}"/>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <aura:unescapedHtml value="{!v.fields.RTL_Income_Conditional__c.value}">
+                                            <lightning:formattedText value="{!v.fields.RTL_Income_Conditional__c.value}" />
+                                        </aura:unescapedHtml>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- message area -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.messengerCoverArea.class }">
+                        <span class="slds-form-element__label">{!$Label.c.RTL_Messenger_Area}</span>
+                        <div class="slds-form-element__control customField">
+                            <div class="slds-form-element__static">
+                                <aura:unescapedHtml value="{!v.messengerCoverArea.value}">
+                                    <lightning:formattedText value="{!v.messengerCoverArea.value}" />
+                                </aura:unescapedHtml>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- Nationality__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.Nationality__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.Nationality__c.label}
+                            <aura:if isTrue="{! v.fields.Nationality__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.Nationality__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.Nationality__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.Nationality__c.value}">
+                                        <lightning:formattedText value="{!v.fields.Nationality__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Age__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Age__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Age__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Age__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Age__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Age__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Age__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Age__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Is_Employee__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Is_Employee__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Is_Employee__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Is_Employee__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Is_Employee__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Is_Employee__c.isAccessible == true}">
+                                <div class="slds-form-element__static">
+                                    <lightning:input type="checkbox" checked="{!v.fields.RTL_Is_Employee__c.value}" disabled="true" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        {!v.fields.RTL_Is_Employee__c.value}
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Primary_Banking_All_Free_Benefit__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Primary_Banking_All_Free_Benefit__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Primary_Banking_All_Free_Benefit__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Primary_Banking_All_Free_Benefit__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Primary_Banking_All_Free_Benefit__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Primary_Banking_All_Free_Benefit__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Primary_Banking_All_Free_Benefit__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Primary_Banking_All_Free_Benefit__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Most_Visited_Branch__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Most_Visited_Branch__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Most_Visited_Branch__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Most_Visited_Branch__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Most_Visited_Branch__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Most_Visited_Branch__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <c:CallCenterCSV_PillOutput type="{!v.fields.RTL_Most_Visited_Branch__c.type}" value="{!v.fields.RTL_Most_Visited_Branch__c.value}" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Fund_Risk_Mismatch__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Fund_Risk_Mismatch__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Fund_Risk_Mismatch__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Fund_Risk_Mismatch__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Fund_Risk_Mismatch__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Fund_Risk_Mismatch__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Fund_Risk_Mismatch__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Fund_Risk_Mismatch__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Risk_Level_Details__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Risk_Level_Details__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Risk_Level_Details__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Risk_Level_Details__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Risk_Level_Details__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Risk_Level_Details__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Risk_Level_Details__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Risk_Level_Details__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Suitability__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Suitability__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Suitability__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Suitability__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Suitability__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Suitability__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Suitability__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Suitability__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Fund_High_Concentration_Risk__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="6" mediumDeviceSize="6" largeDeviceSize="4" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Fund_High_Concentration_Risk__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Fund_High_Concentration_Risk__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Fund_High_Concentration_Risk__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Fund_High_Concentration_Risk__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Fund_High_Concentration_Risk__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Fund_High_Concentration_Risk__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Fund_High_Concentration_Risk__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- table payStatus / eStatement -->
+            <lightning:layoutItem size="12">
+                <lightning:layout verticalAlign="stretch" multipleRows="true">
+                    <aura:if isTrue="{! !v.isRerender }">
+
+                        <!-- payStatus -->
+                        <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                            class="slds-p-bottom_x-small">
+                            <aura:if isTrue="{!v.fields.Fna_Avatar_Name__c.isAccessible == true}">
+                                <div class="custom-box">
+                                    <span class="slds-form-element__label">{!$Label.c.Touch_IB_Prom}</span>
+                                    <lightning:datatable class="tbodyHeight" editable="false" keyField="id" data="{! v.payStatus.data }"
+                                        columns="{! v.payStatus.columns }" hideCheckboxColumn="true" resizeColumnDisabled="true" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                        <span class="slds-form-element__label">{!$Label.c.Touch_IB_Prom}</span>
+                                        <div class="slds-form-element__control customField">
+                                            <div class="slds-form-element__static">
+                                                {!$Label.c.Data_Condition_Hidden_Text}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </lightning:layoutItem>
+                        <!-- eStatement -->
+                        <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                            class="slds-p-bottom_x-small">
+                            <aura:if isTrue="{!v.fields.Consolidate_Status__c.isAccessible == true}">
+                                <div class="custom-box">
+                                    <span class="slds-form-element__label">{!$Label.c.E_Statement}</span>
+                                    <lightning:datatable class="tbodyHeight" editable="false" keyField="id" data="{! v.eStatement.data }"
+                                        columns="{! v.eStatement.columns }" hideCheckboxColumn="true" resizeColumnDisabled="true" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                                        <span class="slds-form-element__label">{!$Label.c.E_Statement}</span>
+                                        <div class="slds-form-element__control customField">
+                                            <div class="slds-form-element__static">
+                                                {!$Label.c.Data_Condition_Hidden_Text}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </lightning:layoutItem>
+                    </aura:if>
+                </lightning:layout>
+            </lightning:layoutItem>
+
+            <!-- RTL_Credit_Card_History__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Credit_Card_History__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Credit_Card_History__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Credit_Card_History__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Credit_Card_History__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Credit_Card_History__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Credit_Card_History__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Credit_Card_History__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Personal_Loan_History__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Personal_Loan_History__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Personal_Loan_History__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Personal_Loan_History__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Personal_Loan_History__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Personal_Loan_History__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Personal_Loan_History__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Personal_Loan_History__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Entitled_Privilege2__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Entitled_Privilege2__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Entitled_Privilege2__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Entitled_Privilege2__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Entitled_Privilege2__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Entitled_Privilege2__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Entitled_Privilege2__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Entitled_Privilege2__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- instantLendingField -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">{!$Label.c.Instant_Lending}</span>
+                        <div class="slds-form-element__control customField">
+                            <div class="slds-form-element__static">
+                                <aura:unescapedHtml value="{!v.instantLendingDetail}">
+                                    <lightning:formattedText value="{!v.instantLendingDetail}" />
+                                </aura:unescapedHtml>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_4THANA_Info__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_4THANA_Info__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_4THANA_Info__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_4THANA_Info__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_4THANA_Info__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_4THANA_Info__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_4THANA_Info__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_4THANA_Info__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- CYCCampaignMappingInqStatus -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div
+                        class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label">
+                            {!$Label.c.cyc_promo_cond}   
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <div aura:id="id_cyc_promo_cond" class="slds-form-element__static">
+                                <aura:if isTrue="{!v.isMIBenefitSectionVisible == true}">
+                                    <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
+                                        {!v.CYCCampaignMappingInq.promotion_condition}
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
+                                                -
+                                                <aura:set attribute="else">
+                                                    <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'LOAD'}">
+                                                            <lightning:spinner alternativeText="Loading" size="small" />                                                         
+                                                        <aura:set attribute="else">
+                                                            <span style="color :red;font-weight: bold;">
+                                                                {!$Label.c.cyc_promo_apifail}                                           
+                                                            </span>
+                                                            <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+
+                                    <aura:set attribute="else">
+                                        {!$Label.c.Data_Condition_Hidden_Text}
+                                    </aura:set>
+                                    
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- blank -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label"></span>
+                        <div class="slds-form-element__control customField">
+                            <div class="slds-form-element__static"></div>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_Privilege2__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_Privilege2__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_Privilege2__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_Privilege2__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_Privilege2__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_Privilege2__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_Privilege2__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_Privilege2__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+            
+            <!-- blank -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                        <span class="slds-form-element__label"></span>
+                        <div class="slds-form-element__control customField">
+                            <div class="slds-form-element__static"></div>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+
+            <!-- RTL_OnSite_Service__c -->
+            <lightning:layoutItem flexibility="auto" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small"
+                class="slds-p-bottom_small">
+                <aura:if isTrue="{! !v.isRerender }">
+                    <div class="{!'slds-form-element slds-form-element_horizontal slds-form-element_readonly ' + v.fields.RTL_OnSite_Service__c.class }">
+                        <span class="slds-form-element__label">
+                            {!v.fields.RTL_OnSite_Service__c.label}
+                            <aura:if isTrue="{! v.fields.RTL_OnSite_Service__c.inlineHelpText }">
+                                <lightning:helptext class="helptext" content="{! v.fields.RTL_OnSite_Service__c.inlineHelpText }" />
+                            </aura:if>
+                        </span>
+                        <div class="slds-form-element__control customField">
+                            <aura:if isTrue="{!v.fields.RTL_OnSite_Service__c.isAccessible != ''}">
+                                <div class="slds-form-element__static">
+                                    <aura:unescapedHtml value="{!v.fields.RTL_OnSite_Service__c.value}">
+                                        <lightning:formattedText value="{!v.fields.RTL_OnSite_Service__c.value}" />
+                                    </aura:unescapedHtml>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form-element__static">
+                                        <lightning:formattedText value="&nbsp;" />
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

@@ -99,18 +99,25 @@
             <div class="slds-size_1-of-6">
                 <div class="slds-grid slds-wrap">
                     <div class="slds-size_1-of-3 center  slds-icon-text-warning">
-                        <a onclick={navigateToNPS} data-url={nps.url}>
-                            <lightning-icon class={nps.class} icon-name={nps.icon} alternative-text={nps} title="NPS">
-                            </lightning-icon>
-                        </a>
+                        <template if:false={isNosurvey}>
+                            <a onclick={navigateToNPS} data-url={nps.url}>
+                                <lightning-icon class={nps.class} icon-name={nps.icon} alternative-text={nps} title="NPS">
+                                </lightning-icon>
+                            </a>
+                        </template>
                     </div>
                     <div class="slds-size_2-of-3">
-                        <a onclick={navigateToNPS} data-url={nps.url}>
+                        <template if:false={isNosurvey}>
+                            <a onclick={navigateToNPS} data-url={nps.url}>
+                                <div class="slds-text-title slds-truncate" title="NPS">NPS</div>
+                                <div class="slds-truncate" title="">
+                                    {nps.score}
+                                </div>
+                            </a>
+                        </template>
+                        <template if:true={isNosurvey}>
                             <div class="slds-text-title slds-truncate" title="NPS">NPS</div>
-                            <div class="slds-truncate" title="">
-                                {nps.score}
-                            </div>
-                        </a>
+                        </template>
                     </div>
                 </div>
             </div>

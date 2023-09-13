@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global">
+    <!-- Filter -->
+    <aura:attribute name="valueFilter" type="Object[]"/>
+    <aura:attribute name="openFilter" type="Boolean"/>
+
+    <aura:method name="AfterCreateTask" action="{!c.clearFilter}" access="public">
+	    <aura:attribute name="createTaskSuccess" type="Boolean" default="false"/> 
+    </aura:method>
+    <!-- ================================================================================= -->
+
+    <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+        <div>
+            <div class="parentComponent">
+                <c:MyCustomer_Filter aura:id="cComp" parent="{!this}" selectedFilter="{!v.valueFilter}" openFilter="{!v.openFilter}"/>
+                <c:MyCustomer_Desktop parent="{!this}" valueFilter="{!v.valueFilter}" openFilter="{!v.openFilter}"/>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <lightning:card>
+                <div class="parentComponentTablet">
+                    <c:MyCustomer_Filter aura:id="cComp" parent="{!this}" selectedFilter="{!v.valueFilter}" openFilter="{!v.openFilter}"/>
+                    <c:MyCustomer_Desktop parent="{!this}" valueFilter="{!v.valueFilter}" openFilter="{!v.openFilter}"/>
+                </div>
+            </lightning:card>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

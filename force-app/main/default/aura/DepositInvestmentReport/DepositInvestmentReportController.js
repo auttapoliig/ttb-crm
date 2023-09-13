@@ -1,42 +1,59 @@
 ({
     init: function (component, event, helper) {
         component.set('v.columns', [
-            { label: 'Customer Name',           fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
-            { label: 'Deposit Product Name',    fieldName: 'Product_Name__c', type: 'text', wrapText: true },
-            { label: 'Deposit Maturity Date',   fieldName: 'Maturity_Date__c', type: 'date' },
-            { label: 'Deposit Amount',          fieldName: 'Amount__c', type: 'currency' },
+            { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
+            { label: 'Account Number', fieldName: 'Account_Number', type: 'text', wrapText: true },
+            { label: 'Due Date', fieldName: 'Maturity_Date', type: 'date' },
+            { label: 'Deposit Amount', fieldName: 'Amount', type: 'text' },
            
         ]);
        
         var action = component.get('c.getDeposit');
+        action.setParams({
+            "queryLimit" : component.get('v.queryLimit') ? component.get('v.queryLimit') : 5
+        })
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();
+                console.log(resp);
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {
-                    var url = element.Id;
-                    element.Id = '/' + element.Customer__c;
-                    element.Name = element.Customer__r.Name;
-                   
+                    element.Id = '/' + element.Id;
                     finalData.push(element);
 
                 });
-                component.set('v.data', finalData);
                 component.set('v.reportId', resp.reportId);
+                component.set("v.data", finalData);
             } else {
             }
             component.set('v.isLoading', false);
-
-        })
+        });
         $A.enqueueAction(action);
+    },
+
+    handleSort: function(component,event,helper){
+        var sortField = event.getParam("fieldName");
+        var sortDirection = event.getParam("sortDirection");
+        let columns = component.get('v.columns');
+        let sortBy;
+        columns.forEach((e) => {
+            if(e.fieldName == sortField){
+                sortBy = e.sortBy;
+            }
+        })
+   
+        component.set("v.sortBy",sortField);
+        component.set("v.sortDirection",sortDirection);
+         
+        helper.sortData(component,sortBy,sortDirection, null);
     },
 
     openTab: function (component, event, helper) {
         var device = $A.get("$Browser.formFactor");
         var reportId = component.get('v.reportId');
         if(device == 'DESKTOP'){
-            var workspaceAPI = component.find("riskReportCmp");
+            var workspaceAPI = component.find("depositInvestmentReport");
             workspaceAPI.openTab({
                 recordId: component.get('v.reportId'),
                 focus: true

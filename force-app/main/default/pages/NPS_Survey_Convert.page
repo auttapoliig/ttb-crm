@@ -259,7 +259,10 @@
                                     </apex:pageblockSection>
 
                                     <apex:pageblocksection columns="1" id="convertsection" rendered="{! !isRequiredOpp && IsAllowToConvert && !isCompleteSurvey  }">
-                                        <apex:pageBlockSectionItem >
+                                        <script>
+                                        navigateToconvertPage();
+                                        </script>
+                                    <!-- <apex:pageBlockSectionItem >
                                             <apex:outputLabel styleClass="labelCustom">Convert to Opportunity</apex:outputLabel>
                                             <apex:inputfield value="{!leadobj.Interest_result__c}" style="width:120px;" required="true" onchange="InterestResultChange(this)"
                                             />
@@ -282,7 +285,8 @@
                                             <apex:outputLabel styleClass="labelCustom" style="display:none;" id="UninterestedAction1">Uninterested Action</apex:outputLabel>
                                             <apex:inputfield value="{!leadobj.Unqualified_Action__c}" styleClass="form-control" style="display:none;" id="UninterestedAction2"
                                             />
-                                        </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSectionItem> -->
+                                        
                                     </apex:pageblocksection>
 
 
@@ -397,9 +401,24 @@
 
 
                 });
+                function navigateToconvertPage(){
+                    console.log('RecordId Vf '  + "{!leadobj.Id}");
+                    console.log('SurveyId Vf '  + "{!surveyobj.Id}");
 
+                    sforce.one.navigateToURL('/one/one.app#' + btoa(JSON.stringify({
+                        "componentDef": "c:LeadConvertComercialContainer",
+                        "attributes": {
+                            recordId: "{!leadobj.Id}",
+                            surveyId: "{!surveyobj.Id}",
+                            // uuid: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                            //     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                            //     return v.toString(16);
+                            // }),
+                        }
+                     })), true);     
+                }
                 function disablingPage() {
-                    // console.log('disablin');
+                    // console.log('disablin');     
                     var obj = document.getElementById('appearOnDesktop');
                     obj.classList.add("disabling");
                 }
@@ -576,5 +595,4 @@
             </script>
         </apex:outPutPanel>
     </apex:form>
-
 </apex:page>

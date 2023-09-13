@@ -153,12 +153,7 @@
                 component.set('v.isTimeout', result.isTimeout ? result.isTimeout : false);
                 component.set('v.hasLeasing',
                     component.get('v.result.customer.product_holdings.leasing_accounts') ?
-                    component.get('v.result.customer.product_holdings.leasing_accounts').length > 0 : false);
-                
-                /* By pass when response is more than 1 MB*/
-                if (component.get('v.result.StatusCode') == '2004') {
-                    component.set('v.hasLeasing', true);
-                }
+                    component.get('v.result.customer.product_holdings.leasing_accounts').length > 0 : false)
                 if (component.get('v.hasLeasing')) {
                     $A.enqueueAction(calloutAction);
                 } else {

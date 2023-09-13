@@ -791,7 +791,7 @@
             } else {
                 sumPerfIdvCond = ' WHERE Channel__c = \'' + channel + '\' AND Sale_Branch_Code__c = \'' + branchCode + '\' ' + availIdvPerfObj.perfDateTimeCondition; //
             }
-
+            console.log('Debug p3 graph ',branchCode, saleType, channel, availIdvPerfObj, availBankPerfObj, initWrapper, selectedYear)
             helper.getSumPerfAgg(component, sumPerfIdvCond).then((sumPerfIdvObj) => {
                 var avgIndividual;
                 var avgBankWide;

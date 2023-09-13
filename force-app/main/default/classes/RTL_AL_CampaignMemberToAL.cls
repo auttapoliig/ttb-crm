@@ -1,4 +1,23 @@
 public with sharing class RTL_AL_CampaignMemberToAL {
+  public static Integer CALLOUTLIMIT{
+    get{
+        Integer DEFAULT_LIMIT = 99;
+        if(CALLOUTLIMIT == null){
+            try{
+                CALLOUTLIMIT = DEFAULT_LIMIT;
+                List<App_Config__mdt> alcalloutlimit = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'AL Batch Callout Limit'];           
+                    if (alcalloutlimit != null && alcalloutlimit.size() > 0) {
+                        CALLOUTLIMIT = Integer.valueOf(alcalloutlimit.get(0).Value__c);
+                    }           
+                    
+                }catch( Exception e ){
+                    CALLOUTLIMIT = DEFAULT_LIMIT;
+                }
+        }
+        return CALLOUTLIMIT;
+        
+    }set;
+}
     public static void sendCampaignMemberToAL(List<CampaignMember> cmList)
   {
     try 
@@ -11,11 +30,11 @@ public with sharing class RTL_AL_CampaignMemberToAL {
             campagignID.add(cm.Id);
           }
       }
-      // System.debug('campagignID-->' + campagignID.size());
+      System.debug('campagignID-->' + campagignID.size());
 
       if (!campagignID.isEmpty()) 
       {
-        // System.debug('campagignID-->' + campagignID);
+        System.debug('campagignID-->' + campagignID);
         String idString = '(\''+String.join(new List<String>(campagignID), '\',\'')+'\')';
 
         String query = 'SELECT Id,RTL_Campaign_Product_1__c,RTL_Campaign_Product_1__r.Name,RTL_AL_oa_ref_code__c, CampaignId, Campaign.Name,RTL_Marketing_Code__c,RTL_Web_Unique_ID__c, LeadSource, RTL_Product_Name__c, RTL_AL_car_type__c, RTL_AL_car_brand__c, RTL_AL_car_group__c'+
@@ -30,16 +49,49 @@ public with sharing class RTL_AL_CampaignMemberToAL {
         'FROM Campaignmember ' +  
         'WHERE Id IN ' + idString ;
 
-        // System.debug('query-->' + query);
+        System.debug('query-->' + query);
 
         List<CampaignMember> listCmb = Database.query(query);
 
-        // System.debug('ALL size ' + listCmb.size());
+        System.debug('ALL size ' + listCmb.size());
         CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(listCmb,true,null,null,DateTime.now());
         Database.executeBatch(cmal);
+        // Decimal roundPerSize = listCmb.size() < CALLOUTLIMIT ? 1 : Decimal.valueOf(listCmb.size()).divide(CALLOUTLIMIT, 2);
+        // Integer num = Integer.valueOf(roundPerSize);
+        // if(roundPerSize/num != 1){
+        //   num++;
+        // }
+        // system.debug('roundPerSize = '+ roundPerSize);
+        // system.debug('Round = ' + num);
+
+        // for(Integer i = 0 ; i<num ; i++)
+        // {
+        //   List<CampaignMember> inputlist = new List<CampaignMember>();
+
+        //   Integer limitSize = CALLOUTLIMIT;
+        //   if(listCmb.size() < CALLOUTLIMIT)
+        //   {
+        //     limitSize = listCmb.size();
+        //   }
+        //   System.debug('listCmb size :' + limitSize);
+        //   for(Integer j = 0 ; j < limitSize ; j++)
+        //   {
+        //     System.debug(j + 'listcase ' + listCmb[j]);
+        //     inputlist.add(listCmb[j]);
+        //   }
+        //   System.debug('end');
+
+        //   for(Integer j = limitSize-1 ; j >= 0 ; j--)
+        //   {
+        //     System.debug(j + 'listCmb ');
+        //     listCmb.remove(j);
+        //   }
+        //   CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(inputlist,true);
+        //   Database.executeBatch(cmal);
+        // }
       }
     } catch (Exception e) {
-        System.debug(e);
+        system.debug(e);
     }   
   }
 

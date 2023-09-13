@@ -69,25 +69,25 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 RefDetail.isAccess = false;
             }
         }
-        // System.debug('Is Send ? ' + ref.RTL_Is_Send_To_HPAP__c);
+        System.debug('Is Send ? ' + ref.RTL_Is_Send_To_HPAP__c);
         return RefDetail;
     }
 
     @AuraEnabled
     public static HPAP_Response_Detail submitALALPP(Id rec){
         HPAP_Response_Detail ReturnValue = new HPAP_Response_Detail();
-        // System.debug('RecordId ' + rec);
+        System.debug('RecordId ' + rec);
         List<RTL_Referral__c> referral = Database.query(String.format('SELECT {0} FROM RTL_Referral__c WHERE Id =: rec LIMIT 1', 
             new List<String>{
                 String.join(refFields, ',')
             }
         ));
-        // System.debug('Size' + referral.size());
+        System.debug('Size' + referral.size());
 
         String Status = null;
 
         if(referral.size() > 0){
-            // System.debug(referral);
+            System.debug(referral);
             RTL_Referral__c eachRef = referral[0];
             Id accId = eachRef.RTL_Account_Name__c;
             String RefName = eachRef.Name;
@@ -97,7 +97,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                     RefstartDate = Datetime.now();
                     callhttpReferral(eachRef);
                 }catch(Exception e){
-                    // System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e);
+                    System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e);
                     Datetime ErrDateTime = Datetime.now();
                     //String ErrMsg = null;
                     if(e.getMessage().contains('Failed Cache.Org.put()') || e.getMessage().contains('Read timed out')){
@@ -108,13 +108,13 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
 
                     // if((retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')){
                     //     while ((COUNT_RETRY < 2) && (retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')) { // 0
-                    //         // System.debug('Retry : ' + COUNT_RETRY );
+                    //         System.debug('Retry : ' + COUNT_RETRY );
                     //         COUNT_RETRY++; //1 2 3
                     //         Datetime startDate = Datetime.now();
                     //         try{
                     //             callhttpReferral(eachRef); // 1 2 3
                     //         }catch(Exception err){
-                    //             // System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  err);
+                    //             System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  err);
                     //             // if(resCode == false){
                     //             //     OnlineServiceLog createlogRetry = new OnlineServiceLog(false,err.getMessage(),'','');
                     //             //     lstLogDetail.add(createlogRetry);
@@ -136,11 +136,11 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 }
                  //List SeviceLog, customername, Err, msLogId, userName, refId, serviceName, acc, startTime, endTime
                 if(ThisRefNo == null && Status != null){
-                    // System.debug('Update Field!');
+                    System.debug('Update Field!');
                     updateField(eachRef,false,null);
                 }
             }else{
-                // System.debug('No record Found');
+                System.debug('No record Found');
                 // CalloutException e = new CalloutException();
                 // e.setMessage('No record Found');
                 Status = 'No record Found';
@@ -153,7 +153,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
         }
 
         public static void callhttpReferral(RTL_Referral__c eachRef){
-            // System.debug('START callAPIcreateReferral !!!');
+            System.debug('START callAPIcreateReferral !!!');
             Datetime startDate = Datetime.now();
             Uuid uuidGenerateor = new Uuid();
             String uuid = uuidGenerateor.getValue();
@@ -167,7 +167,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                         String privateKey = (String)SCSMessageAPIUtil.getEncryptKey(SCSMessageAPIUtil.fetchUserSessionId(), SCSMessageAPIUtil.INTEGRATE_SYSTEM.HPAPAPI);
                         String bodyRequestRaw = JSON.serializePretty(RefbodyRequest(eachRef));
                         String bodyRequestEncrypt = SCSMessageAPIUtil.encryptMessageWithKey(bodyRequestRaw, privateKey);
-                        // System.debug('Request body : ' + bodyRequestRaw);
+                        System.debug('Request body : ' + bodyRequestRaw);
 
                         Http http = new Http();
                         HttpRequest req = new HttpRequest();
@@ -182,38 +182,38 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                         req.setTimeout(timeout);
                         HttpResponse response = http.send(req);
                         if (response.getStatusCode() == 200) {
-                            // System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
+                            System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
                         }else{
                             OnlineServiceLog createlog = new OnlineServiceLog(false,String.valueOf(response.getStatusCode()),bodyRequestRaw,null);
                             lstLogDetail.add(createlog);
-                            // System.debug(response.getStatusCode());
+                            System.debug(response.getStatusCode());
                             CalloutException e = new CalloutException();
                             e.setMessage(String.valueOf(response.getStatusCode()));
                             throw e;                                        
                         }
                         String bodyResonseDecrypt = (String)SCSMessageAPIUtil.decryptMessageWithKey(response.getBody(), privateKey);
-                        // System.debug('Response : ' + bodyResonseDecrypt);
+                        System.debug('Response : ' + bodyResonseDecrypt);
                         Map<String, Object> result = bodyResonseDecrypt != null ? (Map<String, Object>)JSON.deserializeUntyped(bodyResonseDecrypt) : new Map<String, Object>();
                         String statusCode = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseCode', result) : '999');
                         String errorMsg = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseDetail', result) : AbstractCoreClass.getValuesWithRegex(response.getBody(), new List<String>{'errordesc'}));
                         Boolean isSuccess = statusCode == '000';
                         if((isSuccess && response.getStatusCode() == 200)){
                             String ResponseDetail = (String)result.get('ResponseDetail');
-                            // System.debug('Response Detail :' + ResponseDetail);
+                            System.debug('Response Detail :' + ResponseDetail);
                             eachRef.WS_Response_Detail__c = ResponseDetail;
                             eachRef.HPAP_Status_Code__c = (String)result.get('HPAPStatus');
                             OnlineServiceLog createlog = new OnlineServiceLog(true,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                             lstLogDetail.add(createlog);
-                            // System.debug('Success!');
+                            System.debug('Success!');
                             ThisRefNo = (String)result.get('RefCode3');
                             updateField(eachRef,true,(String)result.get('RefCode3'));
                         }else{
-                            // System.debug('WS_Response_Detail__c' + errorMsg.length());
+                            System.debug('WS_Response_Detail__c' + errorMsg.length());
                             if(errorMsg.length() > 255){
                                 errorMsg = errorMsg.left(255);
                             }
                             eachRef.WS_Response_Detail__c = errorMsg;
-                            // System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + COUNT_RETRY + statusCode );
+                            System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + COUNT_RETRY + statusCode );
                             OnlineServiceLog createlog = new OnlineServiceLog(false,errorMsg,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                             lstLogDetail.add(createlog);
                             CalloutException e = new CalloutException();
@@ -221,24 +221,24 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                             throw e;
                         }
                     }else{
-                        // System.debug('Error field not valid!');
+                        System.debug('Error field not valid!');
                         CalloutException e = new CalloutException();
                         e.setMessage('Error field not valid!');
                         throw e;
                     }
                 }else{
-                    // System.debug('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
+                    System.debug('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
                     CalloutException e = new CalloutException();
                     e.setMessage('ประเภทการ Refer ไม่เท่ากับ Sell (เพื่อนำเสนอขาย)');
                     throw e;
                 }
             }else{
-                // System.debug('ขื่อผลิตภัณฑ์ (CYC, CYB, NEW, USED) หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง');
+                System.debug('ขื่อผลิตภัณฑ์ (CYC, CYB, NEW, USED) หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง');
                 CalloutException e = new CalloutException();
                 e.setMessage('ขื่อผลิตภัณฑ์ (CYC, CYB, NEW, USED) หรือสาขาที่ลูกค้าอยากใช้บริการ (AL Marketing เท่านั้น)ไม่ถูกต้อง');
                 throw e;
             }
-            // System.debug('STOP callAPIcreateReferral !!!');
+            System.debug('STOP callAPIcreateReferral !!!');
         }
     public static Map<String, Object> RefbodyRequest(RTL_Referral__c ref) {
         String IdcardNo = null;
@@ -270,8 +270,8 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             'RefCode'=> ref.RTL_AL_oa_ref_code__c != null ? ref.RTL_AL_oa_ref_code__c : '',
             'RefCode2'=> ref.Id != null ? ref.Id : '',
             'ObjectType'=>'Referral',
-            'Channel'=> 'AL Advisory Line',
-            // 'Channel'=> 'Referral from Salesforce',
+            // 'Channel'=> 'AL Advisory Line',
+            'Channel'=> 'Referral from Salesforce',
             'System'=> 'SALESFORCE',
             'Product'=> ref.RTL_Product_Name_Str__c != null ? ref.RTL_Product_Name_Str__c : '',
             'CarTypeDesc'=> ref.RTL_AL_car_type__c != null ? ref.RTL_AL_car_type__c : '',

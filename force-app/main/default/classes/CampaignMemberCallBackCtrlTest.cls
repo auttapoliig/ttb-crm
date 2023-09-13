@@ -54,7 +54,53 @@ public class CampaignMemberCallBackCtrlTest {
         masterC.RTL_Call_End_Date__c = Date.today().addDays(7);
         masterC.startDate = Date.today();
         masterC.endDate = Date.today().addDays(7);
-        insert masterC;       
+        insert masterC;   
+        
+        //Commercial Lead
+        RecordType recordType = [select Id from RecordType where developername='Commercial_Lead' and IsActive = true limit 1];   
+        Lead comLead = new Lead();
+        comLead.Title = 'TH';
+        comLead.Company = 'X';
+        comLead.FirstName = 'Test';
+        comLead.LastName = 'TestcomLead';
+        comLead.Email = 'test1@salesforce.com';
+        comLead.RTL_Mobile_Number__c = '1111111111';
+        comLead.RTL_Phone_Number__c = '222222222';
+        comLead.RTL_Office_Number__c = '333333333';
+        comLead.Status = 'New';
+        comLead.Street = 'aaa';
+        comLead.City = 'bbb';
+        comLead.State = 'CC';
+        comLead.PostalCode = '1111111';
+        comLead.Country = 'DD';
+        comLead.RecordTypeId = recordType.id;
+        comLead.RTL_ID_Type__c = 'Passport ID';
+        comLead.RTL_Citizen_Id__c = 'aaaaaa';
+        comLead.RTL_Web_Unique_ID_c__c = 'Test';
+        comLead.Avaya_Integration_Lead__c = true;
+        insert comLead;
+
+        //Call Log Record Type
+        Task newTask = new Task();
+        newTask.TaskSubtype = 'Call';
+        newTask.Type = 'Call';
+        newTask.Subject = 'Call';
+        newTask.RecordTypeId = Schema.SObjectType.Task.getRecordTypeInfosByName().get('Call Log Record Type').getRecordTypeId();
+        newTask.Call_Log_ID__c = '000000';
+        newTask.Marketing_Code__c = '12345';
+        newTask.Call_Start_Datetime__c = Date.today();
+        newTask.Related_Object__c = comLead.Id ;
+        newTask.Agent_Extension_Number__c = '7841';
+        newTask.RTL_Channel__c = 'Outbound Call';
+        insert newTask;
+
+        Task_Extension__c newTaskExtension = new Task_Extension__c();
+        newTaskExtension.Task_Id__c = newTask.Id;
+        newTaskExtension.AVY_Agent_id__c = '1251789';
+        newTaskExtension.AVY_Contact_List_Name__c = 'RestContactList' ;
+        newTaskExtension.AVY_Campaign_Name__c = 'hrCamp';
+        insert newTaskExtension;
+           
     }
     
     
@@ -158,4 +204,280 @@ public class CampaignMemberCallBackCtrlTest {
         CampaignMemberCallBackCtrl.searchExistingCallback(newTask.Id);
         Test.StopTest();
     }
+
+    @isTest static void scheduleCallbackSuccess() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,
+                                                 'OK',
+                                                 '{'+ '"callbackID": 83'+'}',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        System.assertEquals('83', String.valueOf(result.get('callbackID')));
+        Test.StopTest();
+    }
+
+    @isTest static void scheduleCallbackFail1() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(500,
+                                                 'OK',
+                                                 '{'+
+                                                    '"displayMessage": "null",'+
+                                                    '"errorCode": "3307",'+
+                                                    '"errorMessage": "Agent not found",'+
+                                                    '"detailedCode": 0'+
+                                                '}',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        System.assertEquals('3307', String.valueOf(result.get('errorCode')));
+        Test.StopTest();
+    }
+
+    @isTest static void scheduleCallbackFail2() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(500,
+                                                 'OK',
+                                                 'null',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        Test.StopTest();
+    }
+
+    @isTest static void scheduleCallbackFail3() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(404,
+                                                 'OK',
+                                                 '{'+
+                                                    '"displayMessage": "null",'+
+                                                    '"errorCode": "3307",'+
+                                                    '"errorMessage": "Agent not found",'+
+                                                    '"detailedCode": 0'+
+                                                '}',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        Test.StopTest();
+    }
+
+    @isTest static void scheduleCallbackFail4() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(400,
+                                                 'OK',
+                                                 '{'+
+                                                    '"displayMessage": "null",'+
+                                                    '"errorCode": "3307",'+
+                                                    '"errorMessage": "Agent not found",'+
+                                                    '"detailedCode": 0'+
+                                                '}',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        Test.StopTest();
+    }
+
+    @isTest static void scheduleCallbackFail5() 
+    {
+        Test.StartTest(); 
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id,AVY_Agent_id__c ,AVY_Campaign_Name__c,AVY_Contact_List_Name__c FROM Task_Extension__c LIMIT 1];
+        Map<String, Object> valueMap = new	Map<String, Object>();
+        valueMap.put('task_id',task.Id);
+        valueMap.put('datetime','1614826800000');
+        valueMap.put('number','0987654321');
+        valueMap.put('note','Test');
+        valueMap.put('mode','Strict Agent');
+        valueMap.put('agentId', taskExtension.AVY_Agent_id__c);
+        valueMap.put('contactListName',taskExtension.AVY_Contact_List_Name__c);
+        valueMap.put('campaignName',taskExtension.AVY_Campaign_Name__c);
+        valueMap.put('sfId',lead.Id);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(000,
+                                                 'OK',
+                                                 '{'+
+                                                    '"displayMessage": "null",'+
+                                                    '"errorCode": "3307",'+
+                                                    '"errorMessage": "Agent not found",'+
+                                                    '"detailedCode": 0'+
+                                                '}',
+                                                 null);
+		Test.setMock(HttpCalloutMock.class, fakeResponse);
+        Map<String, Object> result = CampaignMemberCallBackCtrl.scheduleCallback(valueMap);
+        Test.StopTest();
+    }
+
+
+    @isTest static void getAvayaIntegrationLeadTest() 
+    {
+        Test.StartTest();
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Boolean result = CampaignMemberCallBackCtrl.getAvayaIntegrationLead(lead.Id);
+        System.assertEquals(result, true);
+        Test.StopTest();
+    }
+
+    @isTest static void searchExistingLogCallTest() 
+    {
+        Test.startTest();
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        Task result = CampaignMemberCallBackCtrl.searchExistingLogCall(lead.Id, '12345' );
+        System.assertEquals(result.Id,task.Id);
+        Test.StopTest();
+    }
+
+    @isTest static void CheckCallBackPermissionTest() 
+    {
+        Test.startTest();
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+        CampaignMemberCallBackCtrl.CheckCallBackPermission(lead.Id);
+        Test.StopTest();
+    }
+
+    @isTest static void getTaskExtensionTest() 
+    {
+        Test.startTest();
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        Task_Extension__c taskExtension = [SELECT Id FROM Task_Extension__c LIMIT 1];
+        Task_Extension__c result = CampaignMemberCallBackCtrl.getTaskExtension(task.Id);
+        System.assertEquals(result.Id,taskExtension.Id);
+        Test.StopTest();
+    }
+
+    @isTest static void getCurrentUser()
+    {
+        Test.startTest();
+        CampaignMemberCallBackCtrl.getCurrentUser();       
+        Test.stopTest();       
+    }
+
+    @isTest static void getSalesforceIdCaseCampaignMember() 
+    {
+        Test.startTest();
+        Contact ct = [SELECT Id FROM Contact LIMIT 1];
+        Campaign  masterC = [SELECT Id FROM Campaign LIMIT 1];
+        
+        CampaignMember cm = new CampaignMember();
+        cm.ContactId = ct.id;
+        cm.CampaignId = masterC.id;
+        cm.RTL_Last_Contact_Status__c = 'New';
+        cm.RTL_Contact_Status__c = 'Contact';
+        cm.RTL_Product_Group_1__c = 'Deposit';
+        cm.RTL_Marketing_code__c  = 'DEGGUOL11A1354363062';
+        insert cm;
+
+        String result = CampaignMemberCallBackCtrl.getSalesforceId(cm.Id);
+        System.assertEquals(result,cm.RTL_Marketing_code__c);
+        Test.StopTest();
+    }
+
+    @isTest static void getSalesforceIdCaseLeadOrReferral() 
+    {
+        Test.startTest();
+        Lead lead = [SELECT Id FROM Lead WHERE RecordType.Name = 'Commercial Lead' LIMIT 1];
+
+        String result = CampaignMemberCallBackCtrl.getSalesforceId(lead.Id);
+        System.assertEquals(result,lead.Id);
+        Test.StopTest();
+    }
+
+    @isTest static void isCampaignMemberTest() 
+    {
+        Test.startTest();
+        Contact ct = [SELECT Id FROM Contact LIMIT 1];
+        Campaign  masterC = [SELECT Id FROM Campaign LIMIT 1];
+        
+        CampaignMember cm = new CampaignMember();
+        cm.ContactId = ct.id;
+        cm.CampaignId = masterC.id;
+        cm.RTL_Last_Contact_Status__c = 'New';
+        cm.RTL_Contact_Status__c = 'Contact';
+        cm.RTL_Product_Group_1__c = 'Deposit';
+        cm.RTL_Marketing_code__c  = 'DEGGUOL11A1354363062';
+        insert cm;
+
+        Boolean result = CampaignMemberCallBackCtrl.isCampaignMember(cm.Id);
+        System.assertEquals(result,true);
+        Test.StopTest();
+    }
+
+    @isTest static void cancelCallBackTest() 
+    {
+        Test.startTest();
+        Task task = [SELECT Id FROM Task WHERE RecordType.Name = 'Call Log Record Type' LIMIT 1];
+        CampaignMemberCallBackCtrl.cancelCallback(task.id);
+        Test.StopTest();
+    }
+
 }

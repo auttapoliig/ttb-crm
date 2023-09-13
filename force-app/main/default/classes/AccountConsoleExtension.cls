@@ -171,14 +171,14 @@ public class AccountConsoleExtension {
     public AccountConsoleExtension(ApexPages.StandardController std){
         
         acct = (Account)std.getRecord();
+        System.debug(acct.Id);
         //****** Get account detail and User's Profile detail *****
         //*** These data use for loggin button to Online service log ***
         acctDetail = new Account();
-        userProfile = new Profile();
-        
+        userProfile = new Profile();        
         try{
-            acctDetail = [SELECT id,recordType.name,RTL_RM_Name__c,OwnerId,Core_Banking_Suggested_Segment__c, TMB_Customer_ID_PE__c FROM Account WHERE id = :acct.id ];
-            userProfile = [SELECT Id, Name FROM Profile WHERE Id=:userinfo.getProfileId() LIMIT 1];
+            acctDetail = [SELECT id,recordType.name,RTL_RM_Name__c,OwnerId,Core_Banking_Suggested_Segment__c, TMB_Customer_ID_PE__c FROM Account WHERE id=:acct.Id ];
+            userProfile = [SELECT Id, Name FROM Profile WHERE Id=:Userinfo.getProfileId() LIMIT 1];
         }catch (Exception e){ 
             system.debug( e.getMessage() );
             //exception here

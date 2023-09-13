@@ -155,7 +155,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
                 thisCase.Category__c = skillListFacebook[0].Service_Level1__c;
                 thisCase.Sub_Category__c = skillListFacebook[0].Service_Level2__c;
                 // thisCase.Service_Type_Matrix_Code__c = skillListFacebook[0].Validate_Code__c;
-            } else if (socialType == 'OneApp') {
+            } else if (socialType == 'OneApp' || socialType == 'TOUCH') {
                 socialType = 'Chat - ttb touch';
                 if (skillMasterMapTouch.containsKey(thisCase.Subject)) {
                     thisCase.PTA_Segment__c = skillMasterMapTouch.get(thisCase.Subject).Segment__c;
