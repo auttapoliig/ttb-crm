@@ -312,6 +312,15 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
             opportunityHPAP.Corebank_Sales_Manager_Head_Id__c = requestBodyMap.containsKey('RTL_Group_Head_Emp_Id__c') ? (String)requestBodyMap.get('RTL_Group_Head_Emp_Id__c') : '';
             opportunityHPAP.Corebank_Sales_Manager_Head__c = requestBodyMap.containsKey('RTL_Group_Head_Name__c') ? (String)requestBodyMap.get('RTL_Group_Head_Name__c') : '';
             opportunityHPAP.LGS_Ao_Branch__c = requestBodyMap.containsKey('LGS_Ao_Branch') ? (String)requestBodyMap.get('LGS_Ao_Branch') : '';
+           
+            if(opportunityHPAP.RTL_Referral__c != null)
+            {
+                RTL_Referral__c ref = new RTL_Referral__c();
+                ref.Id = opportunityHPAP.RTL_Referral__c;
+                ref.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
+                ref.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
+                update ref;
+            }
 
             insert opportunityHPAP;
             //Check update campaign Member
@@ -342,14 +351,6 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
                 updateCampaignMember(CMToUpdate,requestBodyMap);
             }
 
-            if(opportunityHPAP.RTL_Referral__c != null)
-            {
-                RTL_Referral__c ref = new RTL_Referral__c();
-                ref.Id = opportunityHPAP.RTL_Referral__c;
-                ref.RTL_Status__c = 'เปิดใบคำขอเรียบร้อยแล้ว';
-                ref.Details_of_Status__c = 'กรุณาดู status ใบคำขอล่าสุดที่โอกาส';
-                update ref;
-            }
 
             // stampOpptyToCampaignMember(opportunityHPAP);
 
