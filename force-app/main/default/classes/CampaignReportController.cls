@@ -58,9 +58,9 @@ public with sharing class CampaignReportController {
                     eachData.put('Id', each.Customer__c);
                     eachData.put('Details', each.Instant_lending_detail__c == null ? '-' : each.Instant_lending_detail__c);
                     eachData.put('ExpiryDate', each.Expiry_Date__c);
-                    eachData.put('Cash_2_Go_Flag', each.Cash_2_go_flag__c == true ? 'Y' : 'N');
-                    eachData.put('Credit_Card_Flag', each.Credit_Card_flag__c == true ? 'Y' : 'N');
-                    eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Y' : 'N');
+                    eachData.put('Cash_2_Go_Flag', each.Cash_2_go_flag__c == true ? 'Yes' : 'No');
+                    eachData.put('Credit_Card_Flag', each.Credit_Card_flag__c == true ? 'Yes' : 'No');
+                    eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Yes' : 'No');
                     instantList.add(eachData);
             }
 

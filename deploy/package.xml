@@ -106,6 +106,7 @@
         <members>Account.RMC_Number_of_Selected__c</members>
         <members>Account.RMC_NFX_Rate__c</members>
         <members>Account.RMC_NFX_OS__c</members>
+        <members>Account.RMC_AUM__c</members>
         <members>Account.RMC_AUM_RANGE__c</members>
         <members>Account.RMC_AUM_LastPeriod__c</members>
         <members>Account.RMC_Allfree_OS__c</members>
