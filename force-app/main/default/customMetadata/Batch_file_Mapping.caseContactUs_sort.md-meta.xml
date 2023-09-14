@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>caseContactUs_sort</label>
+    <protected>false</protected>
+    <values>
+        <field>Batch_Name__c</field>
+        <value xsi:type="xsd:string">extract_case_contact_us</value>
+    </values>
+    <values>
+        <field>FileName__c</field>
+        <value xsi:type="xsd:string">case_sort.sdl</value>
+    </values>
+    <values>
+        <field>Mapping_Value__c</field>
+        <value xsi:type="xsd:string">PREFIX=PREFIX
+NAME_SURNAME=NAME_SURNAME
+MOBILE (PHONE1)=MOBILE (PHONE1)
+HOME (PHONE2)=HOME (PHONE2)
+OFFICE (PHONE3)=OFFICE (PHONE3)
+RM_CUSTID=RM_CUSTID
+ACCOUNT_NUMBER=ACCOUNT_NUMBER
+RM_BRANCH=RM_BRANCH
+MARKETING_CODE=MARKETING_CODE
+REMARK=REMARK
+START_DATE=START_DATE
+END_DATE=END_DATE
+RESULT_DETAIL=RESULT_DETAIL
+RESULT_BUSINESS=RESULT_BUSINESS
+RMDNC=RMDNC
+PRODUCT=PRODUCT
+CAMPAIGN_NAME=CAMPAIGN_NAME
+HTTPREF=HTTPREF
+USERDEFINE01=USERDEFINE01
+USERDEFINE02=USERDEFINE02
+USERDEFINE03=USERDEFINE03
+USERDEFINE04=USERDEFINE04
+USERDEFINE05=USERDEFINE05
+USERDEFINE06=USERDEFINE06
+USERDEFINE07=USERDEFINE07
+USERDEFINE08=USERDEFINE08
+USERDEFINE09=USERDEFINE09
+USERDEFINE10=USERDEFINE10</value>
+    </values>
+</CustomMetadata>

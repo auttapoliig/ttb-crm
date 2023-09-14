@@ -28,7 +28,7 @@
         helper.getFieldLabel(component, event, helper);
         helper.getOfferResultPickList(component, event, helper);
         helper.getContactStatusPickList(component, event, helper);
-        helper.getUncontactReasonPickList(component, event, helper);
+        //helper.getUncontactReasonPickList(component, event, helper);
         // helper.getExistingCallback(component, event, helper);
 
         // CrossSell value
@@ -97,17 +97,19 @@
         //     component.set('v.isConvert',false);
         // }
 
-        if (selectedOptionValue === 'Uncontact') {
+        if (selectedOptionValue === 'Uncontact' || selectedOptionValue === 'Cancel') {
             component.set('v.isChangeContact', true);
             component.set('v.requireReasonFlag', true);
             component.set('v.isReadonly', false);
-            component.set('v.isCallBack', false);
+            campaignMemObj.RTL_Reason__c = '';
+            // component.set('v.isCallBack', false);
             callbackCmp.callbackDeselected();
+            helper.getUncontactReasonPickList(component,event,helper);
         }
         else {
             component.set('v.requireReasonFlag', false);
             component.set('v.isReadonly', true);
-            component.set('v.isCallBack', false);
+            // component.set('v.isCallBack', false);
 
             campaignMemObj.RTL_Reason__c = '';
             callbackCmp.callbackDeselected();
@@ -115,6 +117,7 @@
         if (selectedOptionValue === 'Contact') {
             component.set('v.isChangeContact', true);
             component.set('v.isDisabled', false);
+            component.set('v.isCallBack', false);
         }
         else if (selectedOptionValue === 'Call Back') {
             component.set('v.isChangeContact', true);
@@ -125,12 +128,15 @@
         }
         else {
             component.set('v.isDisabled', true);
+            component.set('v.isCallBack', false);
+
             callbackCmp.clearValidate();
         }
 
         component.set('v.campaignMemObj', campaignMemObj);
     },
     handleSave: function (component, event, helper) {
+
         helper.validateSaveCampaign(component, event, helper);
         //component.set('v.loaded', false); 
     },
@@ -149,7 +155,7 @@
         // console.log('idType:',idType);
         // console.log('idNumber:',idNumber);
         
-        // if (isMerge) { BAU14118_INC0223998 fixed by support 
+        // if (isMerge) { BAU14118_INC0223998 fixed by support
             component.set('v.isMerge', isMerge);
             if (isMerge == true) {
                 if (accObj) {
@@ -222,7 +228,6 @@
 
         var index_Input;
         index_Input = (indexVar * 2) + 1;
-        // console.log('sub : ' + productList[indexVar].selectedproductsubgroup);
         productList[indexVar].productSubGroup =  productList[indexVar].selectedproductsubgroup;
         if(productList[indexVar].selectedproductsubgroup == null || productList[indexVar].selectedproductsubgroup == ''){
             // console.log('SELECT NONE');
@@ -556,6 +561,7 @@
         var workspaceAPI = component.find("workspace");
         var productList = component.get('v.productList');
         var indexVar = event.target.getAttribute('id');
+        console.log('indexVar' + indexVar);
         var productName = productList[indexVar].productName;
         var navigateTo;
         var AutoloanList = 'CYC, CYB, NEW, USED';
@@ -583,6 +589,7 @@
                                     'componentName': navigateTo,
                                 },
                                 'state': {
+                                    'uid' : 1,
                                     'c__campaignMemberId': component.get('v.recordId'),
                                     'c__productNumber' : parseInt(indexVar)+1
                                 }

@@ -1037,7 +1037,6 @@
             var navigateTo = '';
             let AutoloanList = ['CYC', 'CYB', 'NEW', 'USED'];
             let HomeloanList = ['Refinance Home', 'Loan Home Equity', 'Home Loan'];
-
             var tabName = '';
             var compDefinition;
 

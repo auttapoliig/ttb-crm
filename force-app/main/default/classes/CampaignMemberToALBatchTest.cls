@@ -181,7 +181,7 @@ public with sharing class CampaignMemberToALBatchTest {
 
 
         List<CampaignMember> listcm = Database.query(query);
-        // System.debug(listcm.size());
+        System.debug(listcm.size());
         Test.setMock(HttpCalloutMock.class, new MockHPAPHttpResponse());
         Test.startTest();
         Database.executeBatch(new CampaignMemberToALBatch(listcm,true,null,null,DateTime.now()));
@@ -203,7 +203,7 @@ public with sharing class CampaignMemberToALBatchTest {
 
 
         List<CampaignMember> listcm = Database.query(query);
-        // System.debug(listcm.size());
+        System.debug(listcm.size());
         Test.setMock(HttpCalloutMock.class, new MockHPAPHttpResponse(true));
         Test.startTest();
         Database.executeBatch(new CampaignMemberToALBatch(listcm,true,null,null,DateTime.now()));
@@ -214,7 +214,6 @@ public with sharing class CampaignMemberToALBatchTest {
     public static void testScheduled(){
         CampaignMember cm = [SELECT Id,RTL_Contact_Method__c,RTL_Is_Interface_Success__c,RTL_Is_Send_To_HPAP__c,LastModifiedDate FROM Campaignmember WHERE RTL_Contact_Method__c =: 'Normal Request'];
         cm.RTL_Contact_Method__c = 'AL Sales';
-        cm.createReferDate__c = Datetime.now().addDays(-1);
         update cm;
         Test.setMock(HttpCalloutMock.class, new MockHPAPHttpResponse());
 
@@ -227,7 +226,6 @@ public with sharing class CampaignMemberToALBatchTest {
     public static void testScheduledFail(){
         CampaignMember cm = [SELECT Id,RTL_Contact_Method__c,RTL_Is_Interface_Success__c,RTL_Is_Send_To_HPAP__c,LastModifiedDate FROM Campaignmember WHERE RTL_Contact_Method__c =: 'Normal Request'];
         cm.RTL_Contact_Method__c = 'AL Sales';
-        cm.createReferDate__c = Datetime.now().addDays(-1);
         update cm;
         Test.setMock(HttpCalloutMock.class, new MockHPAPHttpResponse(true));
         

@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable">
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }" />
+	<aura:attribute name="recordId" type="String" />
+    <aura:attribute name="surveyId" type="String" />
+
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onInit}" />
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+</aura:component>

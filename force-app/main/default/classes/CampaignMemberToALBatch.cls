@@ -78,6 +78,9 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         this.mapError = mapError;
         this.passRecords = passRecords;
         this.startDateTime = startDateTime;
+        System.debug('Pass : ' + mapError);
+        System.debug('Pass : ' + passRecords);
+
     }
 
     global List<CampaignMember> start(Database.BatchableContext bc){
@@ -91,8 +94,8 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
        mapCampaignIdwithErrorMsg = mapError;
        recordAll = passRecords;
        batchStartTime = startDateTime;
-    //    System.debug(mapCampaignIdwithErrorMsg);
-    //    System.debug(recordAll);
+       System.debug(mapCampaignIdwithErrorMsg);
+       System.debug(recordAll);
         if(mapCampaignIdwithErrorMsg == null){
             mapCampaignIdwithErrorMsg = new Map<Id,String>();
         }
@@ -102,8 +105,8 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
        List<String> retryliststatus = new List<String>{'401','500'};
     // Map<Id,CampaignMember> MapcmwithId = new Map<Id,CampaignMember>();
        String privateKey = (String)SCSMessageAPIUtil.getEncryptKey(SCSMessageAPIUtil.fetchUserSessionId(), SCSMessageAPIUtil.INTEGRATE_SYSTEM.HPAPAPI);
-    //    String RefName = null;
-    //    System.debug('Can Retry : ' + isRetry);
+       String RefName = null;
+       System.debug('Can Retry : ' + isRetry);
        index = -1;
        Integer COUNT_CALLOUT = 0;
        Integer callout_limit = campaignmemberlist.size() < CALLOUTLIMIT ? campaignmemberlist.size() : CALLOUTLIMIT;
@@ -111,11 +114,11 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         COUNT_CALLOUT++;
         index++;
 
-        // System.debug('COUNT_CALLOUT : ' + COUNT_CALLOUT);
-        // System.debug('Count CALLOUTLIMIT : ' + callout_limit);
+        System.debug('COUNT_CALLOUT : ' + COUNT_CALLOUT);
+        System.debug('Count CALLOUTLIMIT : ' + callout_limit);
 
            try{
-            //    System.debug('Count index : ' + index);
+               System.debug('Count index : ' + index);
                recordAll.add(campaignmemberlist[index].Id);
                COUNT_RETRY = 0;
                RefstartDate = Datetime.now();
@@ -126,20 +129,20 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                    callhttpCampaignMember(campaignmemberlist[index],privateKey,true); // Batch from Scheduler
                }
                }catch(Exception e){
-                        //    System.debug('FAIL : ' + campaignmemberlist[index].Id + ' || '+ COUNT_RETRY+' : '+  e );
-                        //    System.debug('Err Line: ' + e.getLineNumber());
+                           System.debug('FAIL : ' + campaignmemberlist[index].Id + ' || '+ COUNT_RETRY+' : '+  e );
+                           System.debug('Err Line: ' + e.getLineNumber());
 
                            if(isRetry){
                                if((retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')){
                                    while ((COUNT_RETRY < 2) && (retryliststatus.contains(e.getMessage()) || e.getMessage() == 'Read timed out')) {
-                                    //    System.debug('Retry : ' + COUNT_RETRY );
+                                       System.debug('Retry : ' + COUNT_RETRY );
                                        COUNT_RETRY++;
                                        try{
                                             // MapcmwithId.put(campaignmemberlist[index].Id,campaignmemberlist[index]);
                                             COUNT_CALLOUT++;
                                                callhttpCampaignMember(campaignmemberlist[index],privateKey,false);
                                        }catch(Exception err){
-                                        //    System.debug('FAIL : ' + campaignmemberlist[index].Id + ' || '+ COUNT_RETRY+' : '+  e);
+                                           System.debug('FAIL : ' + campaignmemberlist[index].Id + ' || '+ COUNT_RETRY+' : '+  e);
                                            continue;
                                        }
                                    }
@@ -152,46 +155,44 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
 
                }
 
-       RTL_CampaignUtil.saveToOnlineLog(lstLogDetail, null, null ,cmlogId, UserInfo.getName() ,true, getServiceName(SERVICENAME.CreateRefer), null, RefstartDate, DateTime.now());
-    //    System.debug('Mapsize ' + MapRefwithResult.size());
+       RTL_CampaignUtil.saveToOnlineLog(lstLogDetail, null, null ,cmlogId, UserInfo.getName() ,RefName, getServiceName(SERVICENAME.CreateRefer), null, RefstartDate, DateTime.now());
+       System.debug('Mapsize ' + MapRefwithResult.size());
        updateField(MapRefwithResult);
         for(CampaignMember each : campaignmemberlist){
             if(!recordAll.contains(each.Id)){
                 remain_listcm.add(each);
             }
         }
-    //    System.debug('remain_listcm Size : ' +remain_listcm.size());
+       System.debug('remain_listcm Size : ' +remain_listcm.size());
        mapError = mapCampaignIdwithErrorMsg;
        passRecords = recordAll;
        if(remain_listcm.size() == 0){
            // CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm);
            // Database.executeBatch(cmal);        
-           if(!isRetry){
-            sendemailnotification(mapCampaignIdwithErrorMsg);
-           }
+           sendemailnotification(mapCampaignIdwithErrorMsg);
+
        }
     }
 
     global void finish(Database.BatchableContext bc){
-        // System.debug('remain_listcm Size : ' + remain_listcm.size());
-        // System.debug('mapCampaignIdwithErrorMsg Size send : ' + mapError.size());
-        // System.debug('recordAll Size send : ' + passRecords.size());
+        System.debug('remain_listcm Size : ' + remain_listcm.size());
+        System.debug('mapCampaignIdwithErrorMsg Size send : ' + mapError.size());
+        System.debug('recordAll Size send : ' + passRecords.size());
 
         if(remain_listcm.size() > 0){
-            CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm,isRetry,mapError,passRecords,startDateTime);
-            Database.executeBatch(cmal);     
-            // if(isRetry){
-            //     CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm,true,mapError,passRecords,startDateTime);
-            //     Database.executeBatch(cmal);        
-            // }else{
-            //     CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm,false,mapError,passRecords,startDateTime);
-            //     Database.executeBatch(cmal);        
-            // }
+            if(isRetry){
+                CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm,true,mapError,passRecords,startDateTime);
+                Database.executeBatch(cmal);        
+            }else{
+                CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(remain_listcm,false,mapError,passRecords,startDateTime);
+                Database.executeBatch(cmal);        
+            }
             // sendemailnotification(mapCampaignIdwithErrorMsg,recordSuccess);
+
         }
     }
     private static void sendemailnotification(Map<Id,String> mapCampaignIdwithErrorMsg){
-        // System.debug('Size all records : ' + recordAll.size());
+        System.debug('Size all records : ' + recordAll.size());
         Integer recordSuccess = recordAll.size() - mapCampaignIdwithErrorMsg.size();
         // for(Id eachId : recordAll){
         //     if(!mapCampaignIdwithErrorMsg.containsKey(eachId)){
@@ -201,8 +202,8 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         
         batchEndTime = DateTime.now();
         Integer recordsFailed = mapCampaignIdwithErrorMsg.size();
-        // System.debug('Size recordsFailed : ' + recordsFailed);
-        // System.debug('mapCampaignIdwithErrorMsg size : ' + mapCampaignIdwithErrorMsg.size());
+        System.debug('Size recordsFailed : ' + recordsFailed);
+        System.debug('mapCampaignIdwithErrorMsg size : ' + mapCampaignIdwithErrorMsg.size());
         try {
 
             // if(mapCampaignIdwithErrorMsg.size() > 0)
@@ -216,7 +217,7 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                     
                     String errorMsg = mapCampaignIdwithErrorMsg.get(ID); 
                     
-                    // System.debug(errorMsg);           
+                    System.debug(errorMsg);           
 
                     CSV_BODY = CSV_BODY + 
                         ID + ',' +
@@ -247,7 +248,7 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         Uuid uuidGenerateor = new Uuid();
         String uuid = uuidGenerateor.getValue();
         cmlogId = uuid;
-        // List<String> valid_product = new List<String>{'CYC','CYB','NEW','USED'};
+        List<String> valid_product = new List<String>{'CYC','CYB','NEW','USED'};
                     
         String bodyRequestRaw = JSON.serializePretty(CmbbodyRequest(eachCampaign));
         String bodyRequestEncrypt = SCSMessageAPIUtil.encryptMessageWithKey(bodyRequestRaw, privateKey);
@@ -265,15 +266,10 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         req.setBody(bodyRequestEncrypt);
         req.setTimeout(timeout);
         String bodyResponse = null;
-        if(isFromScheduler){
-            eachCampaign.Batch_Retry_Date__c = Date.today();
-        }
-        eachCampaign.RTL_isBatchUpdateCampaignMember__c = true; 
-
         try{
             HttpResponse response = http.send(req);
             if (response.getStatusCode() == 200) {
-                // System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
+                System.debug('RTL_AL_SubmitHPAPCtrl | callAPIcreateReferral | response : ' +response.getBody());
                 resCode = true;
             }
             // else{
@@ -285,8 +281,12 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
             //     e.setMessage(String.valueOf(response.getStatusCode()));
             //     throw e;                                        
             // }
+            if(isFromScheduler){
+                System.debug('Stamp Batch Retry Date');
+                eachCampaign.Batch_Retry_Date__c = Date.today();
+            }
             String bodyResonseDecrypt = (String)SCSMessageAPIUtil.decryptMessageWithKey(response.getBody(), privateKey);
-            // System.debug('Response : ' + bodyResonseDecrypt);
+            System.debug('Response : ' + bodyResonseDecrypt);
             Map<String, Object> result = bodyResonseDecrypt != null ? (Map<String, Object>)JSON.deserializeUntyped(bodyResonseDecrypt) : new Map<String, Object>();
             String statusCode = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseCode', result) : '999');
             String errorMsg = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseDetail', result) : AbstractCoreClass.getValuesWithRegex(response.getBody(), new List<String>{'errordesc'}));
@@ -301,9 +301,9 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 eachCampaign.RTL_AL_Refer_No_1__c = (String)result.get('RefCode3');
                 eachCampaign.RTL_Contact_Status__c = 'Contact';
                 eachCampaign.RTL_OfferResult_Product_1__c = 'Referred';
-                OnlineServiceLog createlog = new OnlineServiceLog(true,null,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt),eachCampaign.RTL_Marketing_Code__c);
+                OnlineServiceLog createlog = new OnlineServiceLog(true,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                 lstLogDetail.add(createlog);
-                // System.debug('Success!');
+                System.debug('Success!');
                 ThisCampaignNo = (String)result.get('RefCode3');
                 MapRefwithResult.put(eachCampaign.Id,eachCampaign);
                 recordSuccess.add(eachCampaign.Id);
@@ -324,7 +324,7 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 eachCampaign.WS_Response_Detail__c = errorMsg;
                 MapRefwithResult.put(eachCampaign.Id,eachCampaign);
                 mapCampaignIdwithErrorMsg.put(eachCampaign.Id,errorMsg);
-                // System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + statusCode );
+                System.debug('Status 200 but ' + isSuccess + response.getStatusCode() + statusCode );
                 // OnlineServiceLog createlog = new OnlineServiceLog(false,errorMsg,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                 // lstLogDetail.add(createlog);
                 CalloutException e = new CalloutException();
@@ -334,11 +334,11 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         }catch(Exception e){
             System.debug('Error send Http : ' + e);
             resCode = false;
-            OnlineServiceLog createlog = new OnlineServiceLog(false,e.getMessage(),bodyRequestRaw, bodyResponse,eachCampaign.RTL_Marketing_Code__c);
+            OnlineServiceLog createlog = new OnlineServiceLog(false,e.getMessage(),bodyRequestRaw, bodyResponse);
             lstLogDetail.add(createlog);
             System.debug('callAPIcreateReferral | getMessage : ' + e.getMessage());
             System.debug('callAPIcreateReferral | getLineNumber : ' + e.getLineNumber());
-            MapRefwithResult.put(eachCampaign.Id,eachCampaign);
+
             mapCampaignIdwithErrorMsg.put(eachCampaign.Id,e.getMessage());
             throw e;    
         }

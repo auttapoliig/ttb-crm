@@ -14,6 +14,7 @@ global without sharing class SLOSServiceBroker {
 			slosresp.ErrorCode = 'SF001';
 			slosresp.Status = false;
 			slosresp.AppRefNo = '';
+			system.debug('Error Request SLOS Service : ' + ex);
 			slosresp.Message = ex.getMessage();
 		}
 		return slosresp;

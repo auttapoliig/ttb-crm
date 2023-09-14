@@ -26,8 +26,6 @@ public class CallMeNowLeadBatchTest {
         leadList.get(0).RTL_Call_Back_Date_time__c = Datetime.now();
         leadList.get(0).RTL_TMB_Campaign_Source__c = 'Web';
         leadList.get(0).RTL_Contact_Method__c = 'Call Me Later';
-        leadList.get(0).RTL_AL_Leasing_Condition__c = 'LeasingTest';
-        leadList.get(0).RTL_AL_Car_Status__c = 'TestCarStatus';
         
         Test.startTest();
         insert leadList;

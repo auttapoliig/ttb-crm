@@ -162,9 +162,9 @@ public with sharing class RTL_AL_WsOpportunityTest {
         ref.RTL_LastName__c = 'Lname001';
         ref.RTL_Mobile1__c = '0951234560';
         ref.RTL_Product_Name__c = prod.Id;
-        ref.RTL_Contact_Address__c = adds.Id;
+        ref.RTL_Contact_Address__c = [SELECT Id,Name FROM  RTL_Contact_Address__c WHERE IsActive__c = TRUE LIMIT 1].Id;
         ref.RTL_Stage__c = 'New';
-        ref.RTL_Preferred_Branch__c = branch.Id;
+        ref.RTL_Preferred_Branch__c = [SELECT Id,Name FROM  Branch_and_Zone__c WHERE Name = 'AL Marketing' LIMIT 1].Id;
         ref.RTL_AL_contact_channel__c = 'DS';
         ref.RTL_Campaign_Member__c = cm.id;
         ref.RecordTypeId = RTL_Referral__c.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Cross_Channel_Referral').getRecordTypeId();

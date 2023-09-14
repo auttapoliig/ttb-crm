@@ -1,6 +1,6 @@
 ({
     initTimeline : function(component, event, helper, isViewMore) {
-
+        component.set("v.showSpinner", true);
         var action = component.get("c.getCallBackIncoming");
         action.setParams({
             recordId: component.get('v.recordId'),
@@ -35,16 +35,16 @@
                         console.log('result:',result);
 
                     }
-                });
-
+                });                
                 console.log('resultList:',resultList);         
                 component.set("v.display" , resultList); 
                 // component.set('v.marketingCode', response.getReturnValue().marketing_code)
                 component.set('v.isViewMore', isViewMore);
 
-                var spinner = component.find("apexSpinner");
+                var spinner = component.find("obLogacallHistSpinner");
+                console.log('Callback Incoming-->' + spinner);
                 $A.util.toggleClass(spinner, "slds-hide");
-               
+                component.set("v.showSpinner", false);
             }
             else if (state === "INCOMPLETE") {
                 console.log("INCOMPLETE RESPONSE");
@@ -62,5 +62,6 @@
                 }
         });
         $A.enqueueAction(action);
+        console.log('Call Back Incoming.')
     }
 })

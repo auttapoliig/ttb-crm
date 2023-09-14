@@ -1365,6 +1365,9 @@ System.debug(':::: mapWalletDomain ::::'+mapWalletDomain.size());
             if(acct.RTL_RecordType_DevName__c == 'Existing_Customer'){
                 String ownerZoneCode = AccountUtility.userMap.get(acct.OwnerId)?.Zone_Code__c;
                 String prefixSubseg = acct.Change_to_be_segment__c == null ? acct.Segment_crm__c : acct.Change_to_be_segment__c == 'MB' ? '1' : acct.Change_to_be_segment__c == 'CB' ? '2' : acct.Change_to_be_segment__c == 'BB' ? '3' : acct.Change_to_be_segment__c == 'SE' ? '4' : acct.Segment_crm__c;
+                system.debug('calculateSubSegment');
+				system.debug(mapsubSegmentMapping);
+                system.debug(ownerZoneCode);
                 if(mapsubSegmentMapping.containsKey(ownerZoneCode)){
                     acct.To_Be_Sub_Segment__c = prefixSubseg + mapsubSegmentMapping.get(ownerZoneCode).Sub_Segment_Code__c;
                 }else{
@@ -1380,7 +1383,9 @@ System.debug(':::: mapWalletDomain ::::'+mapWalletDomain.size());
             if(acct.RTL_RecordType_DevName__c == 'Existing_Customer'){
                 String ownerZoneCode = AccountUtility.userMap.get(acct.OwnerId)?.Zone_Code__c;
                 String prefixSubseg = acct.Segment_crm__c;
-
+                system.debug('reCalculateSubSegmentset');
+				system.debug(mapsubSegmentMapping);
+                system.debug(ownerZoneCode);
                 if(mapsubSegmentMapping.containsKey(ownerZoneCode)){
                     acct.Sub_segment__c = prefixSubseg + mapsubSegmentMapping.get(ownerZoneCode).Sub_Segment_Code__c;
                 }else{

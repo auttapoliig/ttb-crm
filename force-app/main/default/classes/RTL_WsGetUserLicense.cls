@@ -29,6 +29,8 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
 
     @HttpPost
     global static void getPWAInfo() {
+        System.debug('Start service getPWAInfo [' + Datetime.now() + ']');
+
         RestRequest request = RestContext.request;
         WebserviceAbstract.Response response = new WebserviceAbstract.Response();
         String req = request.requestBody.toString();
@@ -61,11 +63,12 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
         {
  
             try {
+                System.debug('Before encrypt [' + Datetime.now() + ']');
                 
                 /* Validate header for get encrypt key */
                 encryptKey = getKeyFromSystem(request);
                 /* Decrypt body message */
-                
+                System.debug('End encrypt [' + Datetime.now() + ']');
             } catch (WebserviceAbstract.MissingHeaderException e) {
                 response.status = 'FAIL';
                 response.status_code = '90';
@@ -88,6 +91,7 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
             System.debug('RMID->' + jsonMap.get('RMID'));
 
             // Find RTL_RM_Name__c in account
+            System.debug('Before query [' + Datetime.now() + ']');
             RMID = String.valueOf(jsonMap.get('RMID'));
             PWAUserDetail pwaUserDetail = new PWAUserDetail();
             List<Account> accList = [SELECT Id, TMB_Customer_ID_PE__c, RTL_RM_Name__c, RTL_Wealth_RM__c, Core_Banking_Suggested_Segment__c FROM Account WHERE TMB_Customer_ID_PE__c =: RMID LIMIT 1];
@@ -114,7 +118,7 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
                                                 RTL_License_No_Paper_1__c, RTL_Expiry_Date_Paper_1__c, RTL_License_No_Paper_4__c, RTL_Expiry_Date_Paper_4__c, RTL_License_No_Paper_5__c, RTL_Expiry_Date_Paper_5__c, 
                                                 RTL_License_No_ICP_1__c, RTL_License_No_Complex_P2__c, RTL_Expiry_Date_Complex_P2__c, RTL_License_No_ICP_3__c, RTL_License_No_IP__c, RTL_License_No_ICT__c, 
                                                 RTL_License_No_Wealthy_Link__c, RTL_License_No_Unit_Link__c FROM User WHERE Id =: userId];
-
+                                                System.debug('End query [' + Datetime.now() + ']');
                         if (checkCode != '00' && userList[0].IsActive == true) {
                             pwaUserDetail.employee_id = ConvertToString(CheckNullValue(userList[0].Employee_ID__c));
                             pwaUserDetail.mobile_no = ConvertToString(CheckNullValue(userList[0].Mobile_No__c));
@@ -146,6 +150,7 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
                             //pwaUserDetail.profile_image_url = ph.fullEmailPhotoUrl == null ? '' : ph.fullEmailPhotoUrl;
 
                             /* Start Test Code */
+                            System.debug('Before public link [' + Datetime.now() + ']');
                             String publicLink = '';
                             String profileName = userList[0].Profile.Name;
                             String employeeId = userList[0].Employee_ID__c;
@@ -208,7 +213,7 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
                                     System.debug('publicLink' + publicLink);
                                 }
                             }
-
+                            System.debug('End public link [' + Datetime.now() + ']');
                             pwaUserDetail.profile_image_url = publicLink;
                             
                             /* End Test Code */
@@ -254,7 +259,7 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
             // response.status_code = '0';
             // response.message = '';
             // response.data = pwaUserDetail;
-
+            
             System.debug('Response: ' + response);
             RestContext.response.addHeader('Content-Type', 'application/json');
             RestContext.response.statusCode = 200;
@@ -265,12 +270,12 @@ global without sharing class RTL_WsGetUserLicense extends WebserviceAbstract {
 
             // accForLog = accList[0];
             endTime = DateTime.Now();
-
+            System.debug('Before Log [' + Datetime.now() + ']');
             // OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName,
             // RMID ,  serviceName , requestBody , responseBody ,  accForLog , startTime ,  endTime,  null );
             OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName,
             RMID ,  serviceName , requestBody , JSON.serializePretty(response) ,  accForLog , startTime ,  endTime,  null );
-
+            System.debug('After Log [' + Datetime.now() + ']');
         } catch (Exception e) {
             response.status_code = '99';
             response.status = 'FAIL';
@@ -290,9 +295,10 @@ System.debug(e.getMessage());
             endTime = DateTime.Now();
 
             requestBody = request.headers.toString() + '\n\n' + JSON.serializePretty(JSON.deserializeUntyped(JSON.serializePretty(JSON.deserializeUntyped(requestBodyDecrypt))));
-
+            System.debug('Before Log fail [' + Datetime.now() + ']');
             OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  reqId ,  userName,
             RMID ,  serviceName , requestBody , JSON.serializePretty(response) ,  accForLog , startTime ,  endTime,  null );
+            System.debug('After Log fail [' + Datetime.now() + ']');
         }
 
         RestContext.response.addHeader('Content-Type', 'application/json');

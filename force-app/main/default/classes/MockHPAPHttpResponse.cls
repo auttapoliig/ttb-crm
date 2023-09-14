@@ -15,8 +15,8 @@ public class MockHPAPHttpResponse implements HttpCalloutMock {
         }
     }
     public HttpResponse respond( HttpRequest req ) {
-        // System.debug('Request : ' + req);
-        // System.debug('GetEndpoint : ' + req.getEndpoint());
+        System.debug('Request : ' + req);
+        System.debug('GetEndpoint : ' + req.getEndpoint());
 
         String endpoint = req.getEndpoint();
         

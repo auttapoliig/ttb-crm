@@ -1,65 +1,76 @@
 ({
-    displayToast: function (component, helper, title, type, message) {
-        var toastEvent = $A.get('e.force:showToast');
-        toastEvent.setParams({
+    displayToast : function(component ,helper, title, type, message) {
+	    var toastEvent = $A.get('e.force:showToast');
+	    toastEvent.setParams({
             title: title,
-            type: type,
-            message: message
-        });
-        toastEvent.fire();
+	        type: type,
+	        message: message
+	    });
+	    toastEvent.fire();
     },
 
-    getTask: function (component, event, helper) {
-        component.set('v.loaded', true);
+    getTask : function(component, event, helper) {
+        component.set('v.loaded',true); 
+        console.log('recordId',component.get('v.recordId'));
         var currentUser = component.get('v.currentUser');
         var action = component.get('c.searchExistingCallback');
-        action.setParams({
-            recordId: component.get('v.recordId')
-        });
+            action.setParams({
+                recordId: component.get('v.recordId')
+            });
 
-        action.setCallback(this, function (response) {
-            var state = response.getState();
-            if (state === 'SUCCESS') {
-                if (response.getReturnValue().Call_Log_ID__c) {
+            action.setCallback(this, function(response){
+                var state = response.getState();
+                if(state === 'SUCCESS'){
+                    console.log('result:',response.getReturnValue());
+                    if(response.getReturnValue().Call_Log_ID__c){
 
-                    var task = response.getReturnValue();
-                    var user_language;
-                    // console.log('currentUser:',currentUser);
-                    if (currentUser != null) {
-                        user_language = currentUser.LanguageLocaleKey;
-                        // console.log('user_language:',user_language);
-                        component.set('v.original_task', task);
-                        component.set('v.task', task);
+                        var task = response.getReturnValue();                  
+                        var user_language;
+                        // console.log('currentUser:',currentUser);
+                        if(currentUser != null)
+                        {
+                            user_language = currentUser.LanguageLocaleKey;
+                            // console.log('user_language:',user_language);
+                            component.set('v.original_task', task);
+                            component.set('v.task', task);
 
-                        component.set('v.reschedule', true);
-                        component.set('v.isExpanded', true);
-                        // console.log('task:',task);
+                            component.set('v.reschedule', true);
+                            component.set('v.isExpanded',true);       
+                            console.log('task:',task);
+                            
+                            helper.setDateTime(component, event, helper, task , user_language);
 
-                        helper.setDateTime(component, event, helper, task, user_language);
+                            component.set('v.callback_number',task.Call_Number__c);
+                            component.set('v.callback_description',task.Description);
+                            component.set('v.callback_mode',task.Call_Back_Mode__c);
 
-                        component.set('v.callback_number', task.Call_Number__c);
-                        component.set('v.callback_description', task.Description);
-                        component.set('v.callback_mode', task.Call_Back_Mode__c);
+                            // console.log('callback_time_label:',component.get('v.callback_time_label'));
+                            // console.log('callback_date_label:',component.get('v.callback_date_label'));
 
-                        // console.log('callback_time_label:',component.get('v.callback_time_label'));
-                        // console.log('callback_date_label:',component.get('v.callback_date_label'));
-
-                        component.set('v.loaded', false);
+                            component.set('v.loaded',false);
+                        }  
+                       
+                    }
+                    else{
+                        helper.checkExistingLogCall(component, event, helper)
+                        component.set('v.reschedule', false);
+                        component.set('v.loaded',false);
+                    }
+                    console.log('Mode',component.get('v.Mode'));
+                    helper.setTaskLogId(component, event, helper);
+                    var task = component.get('v.task');
+                    console.log('Task',task);
+                    if(task == null){
+                        component.set('v.isNull',true);
                     }
 
                 }
-                else {
-                    component.set('v.reschedule', false);
-                    component.set('v.loaded', false);
-                }
-
-            }
-
-        })
-        $A.enqueueAction(action);
+            
+            })
+            $A.enqueueAction(action);
     },
 
-    setDateTime: function (component, event, helper, task, user_language) {
+    setDateTime : function(component, event, helper, task, user_language) {
         var datetime = new Date(task.Call_Start_Datetime__c);
 
         var optionsDate = {
@@ -67,56 +78,63 @@
         };
         var optionsTime = { hour: '2-digit', minute: '2-digit' };
 
-        if (user_language == 'th') {
-            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));
-            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));
+        if(user_language == 'th')
+        {
+            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));               
+            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));     
 
-            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH', optionsTime) + ' น.');
+            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH',optionsTime)+' น.');                                     
             component.set('v.callback_date_label', datetime.toLocaleString('th-TH', optionsDate));
         }
-        else if (user_language == 'en_US') {
-            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));
+        else if(user_language == 'en_US')
+        {
+            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));               
             // component.set('v.callback_time', datetime.toLocaleTimeString('en-US'));     
 
             // component.set('v.callback_time_label', datetime.toLocaleTimeString('en-US',optionsTime));                                     
             // component.set('v.callback_date_label', datetime.toLocaleString('en-US', optionsDate));
-            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));
+            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));     
 
-            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH', optionsTime));
+            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH',optionsTime));                                     
             component.set('v.callback_date_label', datetime.toLocaleString('en-US', optionsDate));
         }
-        else if (user_language == 'en_GB') {
-            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));
+        else if(user_language == 'en_GB')
+        {
+            component.set('v.callback_date', helper.transformDateToInput2(datetime.toLocaleDateString()));               
             // component.set('v.callback_time', datetime.toLocaleTimeString('en-GB'));     
 
             // component.set('v.callback_time_label', datetime.toLocaleTimeString('en-GB',optionsTime));                                     
             // component.set('v.callback_date_label', datetime.toLocaleString('en-GB', optionsDate));
-            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));
+            component.set('v.callback_time', datetime.toLocaleTimeString('th-TH'));     
 
-            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH', optionsTime));
+            component.set('v.callback_time_label', datetime.toLocaleTimeString('th-TH',optionsTime));                                     
             component.set('v.callback_date_label', datetime.toLocaleString('en-GB', optionsDate));
         }
     },
-
-    scheduleCallback: function (component, event, helper) {
-
+    
+    scheduleCallback : function(component, event, helper, callback) {
+        console.log('scheduleCallback');
         var onQuickAction = component.get('v.onQuickAction');
         var allValid;
-        if (onQuickAction) {
-            allValid = component.find('callbackForm').reduce(function (validSoFar, inputCmp) {
+        //var isSuccess = false;
+        if(onQuickAction)
+        {
+            allValid = component.find('callbackForm').reduce(function(validSoFar, inputCmp){
                 inputCmp.reportValidity();
                 return validSoFar && inputCmp.checkValidity();
             }, true);
-            if (allValid) {
+            if(allValid)
+            {
                 allValid = helper.validateDateTime(component, event, helper);
             }
         }
-        else {
+        else
+        {
             allValid = true;
         }
-
+      
         // console.log('Sc allValid:',allValid);
-        if (allValid) {
+        if(allValid){
             let callback_datetime = helper.transformDatetimeUnix(
                 component.get('v.callback_date'),
                 component.get('v.callback_time')
@@ -124,85 +142,149 @@
             let action = component.get('c.insertTask');
             action.setParams({
                 "recordId": component.get('v.recordId'),
-                "values": {
+                "values":{
                     "datetime": callback_datetime,
-                    "date": component.get('v.callback_date'),
+                    "date" : component.get('v.callback_date'),
                     "number": component.get('v.callback_number'),
                     "note": component.get('v.callback_description'),
                     "mode": component.get('v.callback_mode'),
+                    "callLogID":component.get('v.callLogID'),
+                    "agentId": component.get('v.agentId'),
+                    "contactListName":component.get('v.contactListName'),
+                    "campaignName":component.get('v.campaignName'),
+                     //"sfId" : component.get('v.recordId')
+                    "sfId":component.get('v.uniqueKey')
                 },
-                "marketingCode": component.get('v.marketingCode'),
-                "businessName": 'CMOB Call Back Hours'
+                "marketingCode" :  component.get('v.marketingCode'),
+                "businessName": 'Call Back Hours'
             });
-            action.setCallback(this, function (response) {
+            action.setCallback(this, function(response){
 
                 let state = response.getState();
-                if (state === 'SUCCESS') {
-                    // console.log(response.getReturnValue());
-                    let task_id = response.getReturnValue();
-                    helper.displayToast(component, helper, 'Success', 'success', 'Save Call Back Success');
-                    // helper.calloutCallback(component, event, helper, callback_datetime, task_id);
-                    $A.get('e.force:refreshView').fire();
+                if(state === 'SUCCESS'){
+                    console.log('result',response.getReturnValue());
+                    //let task_id = response.getReturnValue();
+                    var returnValue = response.getReturnValue();
+                  
+                    //console.log('task_id',task_id);
+                    // isSuccess = true;               
+                    //isSuccess = helper.calloutCallback(component, event, helper, callback_datetime, task_id);
+                    // $A.get('e.force:refreshView').fire();
+                    if (callback)
+                    {
+                        callback(true);
+                    }           
+                    if(returnValue != null){
+                        if(returnValue.errorMsg != null && returnValue.errorMsg != '')
+                        {
+                            component.set('v.loaded',false);
+                            helper.displayToast(component ,helper, 'Error', 'error', returnValue.errorMsg);
+                        }
+                        else
+                        {
+                            if(!component.get('v.isCampaignMember') )  { 
+                                component.set('v.loaded',false);
+                                helper.displayToast(component ,helper, 'Success', 'success', 'Save Call Back Success');
+                                $A.get('e.force:refreshView').fire();
+                            }
+                        }
+                    }       
                     helper.closeQuickActionWindow(component, event, helper);
                 }
                 else {
+                    // isSuccess = false;
+                    if (callback)
+                    {
+                        callback(false);
+                    }    
                     let error = response.getError();
+                    console.log(error);
                     helper.handleErrors(error);
+                    component.set('v.loaded',false);
                 }
             });
 
             $A.enqueueAction(action);
+        }else{
+            component.set('v.loaded',false);
         }
+        // return isSuccess;
     },
-    transformDatetimeUnix: function (date, time) {
+    transformDatetimeUnix : function (date, time){
         return Date.parse(date + ' ' + time);
     },
-    transformDateToInput: function (date) {
+    transformDateToInput: function(date){
         var date_comp = date.split('/');
         date_comp = date_comp.reverse();
         return date_comp.join('/');
     },
 
-    transformDateToInput2: function (date) {
+    transformDateToInput2: function(date){
         var d = new Date(date),
             month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
             year = d.getFullYear();
-
-        if (month.length < 2)
+    
+        if (month.length < 2) 
             month = '0' + month;
-        if (day.length < 2)
+        if (day.length < 2) 
             day = '0' + day;
-
+    
         return [year, month, day].join('-');
     },
 
-    calloutCallback: function (component, event, helper, dt, task_id) {
+    // calloutCallback : function(component, event, helper, dt, task_id){
+    //     console.log('calloutCallback');
+    //     let action = component.get('c.scheduleCallback');
+    //     var isSuccess = false;
+    //     action.setParams({
+    //         "values":{
+    //             "datetime": dt,
+    //             "number": component.get('v.callback_number'),
+    //             "note": component.get('v.callback_description'),
+    //             "mode": component.get('v.callback_mode'),
+    //             "task_id": task_id,
+    //             "agentId": component.get('v.agentId'),
+    //             "contactListName":component.get('v.contactListName'),
+    //             "campaignName":component.get('v.campaignName'),
+    //             "sfId":component.get('v.recordId')
+    //         }
+    //     })
+    //     action.setCallback(this, function(response){
+    //         let state = response.getState();
+    //         if(state === 'SUCCESS'){
+    //             var result = response.getReturnValue();
+    //             console.log('schedule success');
+    //             console.log('result:',result);
+  
+    //             if(result.errorMessage == '')
+    //             {
+    //                 isSuccess = true;
+    //             }
+    //             else
+    //             { 
+    //                 isSuccess = false;
+    //                 let error = result.errorMessage;
+    //                 helper.displayToast(component ,helper, 'Error', 'error', error);
+    //             }
+               
+    //             component.set('v.loaded',false);
+    //         }
+    //         else{
+    //             console.log('schedule failed');
+    //             isSuccess = false;
+    //             let error = response.getError();
+    //             console.log(error);
+    //             helper.handleErrors(error);
+    //             component.set('v.loaded',false);
+    //         }
 
-        let action = component.get('c.scheduleCallback');
-        action.setParams({
-            "values": {
-                "datetime": dt,
-                "number": component.get('v.callback_number'),
-                "note": component.get('v.callback_description'),
-                "mode": component.get('v.callback_mode'),
-                "task_id": task_id,
-            }
-        })
-        action.setCallback(this, function (response) {
-            let state = response.getState();
-            if (state === 'SUCCESS') {
-                console.log('schedule success');
-            }
-            else {
-                console.log('schedule failed');
-            }
+    //     })
 
-        })
-
-        $A.enqueueAction(action);
-    },
-    handleErrors: function (errors) {
+    //     $A.enqueueAction(action);
+    //     return isSuccess;
+    // },
+    handleErrors : function(errors) {
         // Configure error toast
         let toastParams = {
             title: "Error",
@@ -218,81 +300,150 @@
         toastEvent.setParams(toastParams);
         toastEvent.fire();
     },
-    rescheduleCallback: function (component, event, helper) {
+    cancelCallback : function(component, event, helper){
+        console.log('cancelCallback');
+        console.log('Call back Id ' + component.get('v.original_task').Id);
+        var action = component.get('c.cancelCallback');
+        action.setParams({
+            task_id : component.get('v.original_task').Id
+        })
+        action.setCallback(this, function(response){
+            console.log(response);
+            var state = response.getState();
+            if(state === 'SUCCESS'){
+                if(!component.get('v.isCampaignMember') )  { 
+                    component.set('v.loaded',false);
+                    helper.displayToast(component ,helper, 'Success', 'success', 'Save Call Back Success');
+                    $A.get('e.force:refreshView').fire();
+                }
+                helper.closeQuickActionWindow(component, event, helper);
+            }
+            else {
+                let error = response.getError();
+                console.log(error);
+                helper.handleErrors(error);
+                component.set('v.loaded',false);
+            }
+
+        })
+     
+        $A.enqueueAction(action)
+    },
+    rescheduleCallback : function(component, event, helper, callback){
+        console.log('rescheduleCallback');
         var onQuickAction = component.get('v.onQuickAction');
         var allValid;
-        if (onQuickAction) {
-            allValid = component.find('callbackForm').reduce(function (validSoFar, inputCmp) {
+        // var isSuccess = false;
+        if(onQuickAction)
+        {
+            allValid = component.find('callbackForm').reduce(function(validSoFar, inputCmp){
                 inputCmp.reportValidity();
                 return validSoFar && inputCmp.checkValidity();
             }, true);
-            if (allValid) {
+            if(allValid)
+            {
                 allValid = helper.validateDateTime(component, event, helper);
             }
         }
-        else {
+        else
+        {
             allValid = true;
         }
-        if (allValid) {
+        if(allValid){
             let callback_datetime = helper.transformDatetimeUnix(
                 helper.transformDateToInput(component.get('v.callback_date')),
                 component.get('v.callback_time')
             );
-            // console.log('original_task:',component.get('v.original_task'));
+            console.log('Note:',component.get('v.callback_description'));
             var action = component.get('c.rescheduleCallback');
             action.setParams({
-                "values": {
+                "values":{
                     "task_id": component.get('v.original_task').Id,
                     "callback_id": component.get('v.original_task').Call_Log_ID__c,
-                    "recordId": component.get('v.recordId'),
+                    // "recordId": component.get('v.recordId'),
                     "datetime": callback_datetime,
                     "number": component.get('v.callback_number'),
                     "note": component.get('v.callback_description'),
                     "mode": component.get('v.callback_mode'),
+                    //"sfId" : component.get('v.recordId'),
+                    "sfId":component.get('v.uniqueKey'),
+                    "contactListName" : component.get('v.contactListName'),
+                    "campaignName" : component.get('v.campaignName'),
+                    "agentId"  :component.get('v.agentId')
                 },
-                "businessName": 'CMOB Call Back Hours'
+                "businessName": 'Call Back Hours'
             })
-            action.setCallback(this, function (response) {
+            action.setCallback(this, function(response){
+                console.log(response);
                 var state = response.getState();
-                if (state === 'SUCCESS') {
-                    // console.log(response.getReturnValue());
-                    let task_id = response.getReturnValue();
-                    helper.displayToast(component, helper, 'Success', 'success', 'Save Call Back Success');
-                    // helper.calloutCallback(component, event, helper, callback_datetime, task_id);
-                    $A.get('e.force:refreshView').fire();
+                if(state === 'SUCCESS'){
+                    //console.log(response.getReturnValue());
+                    //let task_id = component.get('v.original_task').Id;
+                    // isSuccess = true;
+                    var returnValue = response.getReturnValue();
+                    //isSuccess = helper.calloutCallback(component, event, helper, callback_datetime, task_id);
+                    // $A.get('e.force:refreshView').fire();
+                    if (callback)
+                    {
+                        callback(true);
+                    }           
+                    if(returnValue != null){
+                        if(returnValue.errorMsg != null && returnValue.errorMsg != '')
+                        {
+                            component.set('v.loaded',false);
+                            helper.displayToast(component ,helper, 'Error', 'error', returnValue.errorMsg);
+                        }
+                        else
+                        {
+                            if(!component.get('v.isCampaignMember') )  { 
+                                component.set('v.loaded',false);
+                                helper.displayToast(component ,helper, 'Success', 'success', 'Save Call Back Success');
+                                $A.get('e.force:refreshView').fire();
+                            }
+                        }
+                    }    
                     helper.closeQuickActionWindow(component, event, helper);
                 }
                 else {
+                    // isSuccess = false;
+                    if (callback)
+                    {
+                        callback(false);
+                    }    
                     let error = response.getError();
+                    console.log(error);
                     helper.handleErrors(error);
+                    component.set('v.loaded',false);
                 }
 
             })
-
-
+         
             $A.enqueueAction(action)
-
+            
+        }else{
+            component.set('v.loaded',false);
         }
-
+        // return isSuccess;
     },
-    closeQuickActionWindow: function (component, event, helper) {
+    closeQuickActionWindow : function(component, event, helper){
         var dismissActionPanel = $A.get("e.force:closeQuickAction");
         dismissActionPanel.fire();
     },
 
-    validateDateTime: function (component, event, helper) {
+    validateDateTime: function(component, event, helper)
+    {
         var onQuickAction = component.get('v.onQuickAction');
         var allValid = true;
-        var today = new Date();
+        var today = new Date();        
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
         var yyyy = today.getFullYear();
         // if date is less then 10, then append 0 before date   
-        if (dd < 10) {
+        if(dd < 10){
             dd = '0' + dd;
-        }
+        } 
         // if month is less then 10, then append 0 before date    
-        if (mm < 10) {
+        if(mm < 10){
             mm = '0' + mm;
         }
 
@@ -300,9 +451,9 @@
         // console.log('Date:',component.find('callbackForm')[1].get('v.label'));
         // console.log('Time:',component.find('callbackForm')[2].get('v.label'));
         // console.log('Date:',component.find('callbackForm')[3].get('v.label'));
-
-        var todayFormattedDate = yyyy + '-' + mm + '-' + dd;
-        var nowTime = today.getHours() * 60 + today.getMinutes();
+        
+        var todayFormattedDate = yyyy+'-'+mm+'-'+dd;
+        var nowTime = today.getHours()*60+today.getMinutes();
 
         var selectedYear;
         var selectedMonth;
@@ -312,63 +463,259 @@
         var selectedDateTime;
         var selectedTime;
 
-        if (onQuickAction) {
+        if(onQuickAction)
+        {
             selectedYear = component.find('callbackForm')[0].get('v.value').split('-')[0];
             selectedMonth = component.find('callbackForm')[0].get('v.value').split('-')[1];
             selectedDay = component.find('callbackForm')[0].get('v.value').split('-')[2];
             selectedHour = component.find('callbackForm')[1].get('v.value').split(':')[0];
             selectedMinute = component.find('callbackForm')[1].get('v.value').split(':')[1];
             selectedDateTime = new Date(selectedYear, selectedMonth, selectedDay, selectedHour, selectedMinute);
-            selectedTime = selectedDateTime.getHours() * 60 + selectedDateTime.getMinutes();
+            selectedTime = selectedDateTime.getHours()*60+selectedDateTime.getMinutes();
 
-            if (component.find('callbackForm')[0].get('v.value') != '') {
-                if (component.find('callbackForm')[0].get('v.value') < todayFormattedDate) {
+            if(component.find('callbackForm')[0].get('v.value') != '')
+            {
+                if(component.find('callbackForm')[0].get('v.value') < todayFormattedDate)
+                {
                     allValid = false;
                     $A.util.addClass(component.find('callbackForm')[0], "slds-has-error");
-                    helper.displayToast(component, helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
+                    component.set('v.loaded',false);
+                    helper.displayToast(component ,helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
                 }
 
-                if (component.find('callbackForm')[0].get('v.value') <= todayFormattedDate && component.find('callbackForm')[1].get('v.value') != ''
-                    && selectedTime <= nowTime) {
-                    helper.displayToast(component, helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
+                if(component.find('callbackForm')[0].get('v.value') <= todayFormattedDate && component.find('callbackForm')[1].get('v.value') != ''
+                    && selectedTime <= nowTime)
+                {
+                    component.set('v.loaded',false);
+                    helper.displayToast(component ,helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
                     allValid = false;
                     $A.util.addClass(component.find('callbackForm')[0], "slds-has-error");
                     $A.util.addClass(component.find('callbackForm')[1], "slds-has-error");
                 }
-
-            }
+                
+            }  
         }
-        else {
+        else
+        {
             selectedYear = component.find('callbackForm')[0].get('v.value').split('-')[0];
             selectedMonth = component.find('callbackForm')[0].get('v.value').split('-')[1];
             selectedDay = component.find('callbackForm')[0].get('v.value').split('-')[2];
             selectedHour = component.find('callbackForm')[2].get('v.value').split(':')[0];
             selectedMinute = component.find('callbackForm')[2].get('v.value').split(':')[1];
             selectedDateTime = new Date(selectedYear, selectedMonth, selectedDay, selectedHour, selectedMinute);
-            selectedTime = selectedDateTime.getHours() * 60 + selectedDateTime.getMinutes();
+            selectedTime = selectedDateTime.getHours()*60+selectedDateTime.getMinutes();            
             // console.log('currentDate:',todayFormattedDate);
             // console.log('currentTime:',nowTime);
             // console.log('selectedDateTime:',selectedDateTime.getHours()*60+selectedDateTime.getMinutes());
             // console.log('Date:',component.find('callbackForm')[0].get('v.value'));
             // console.log('Time:',component.find('callbackForm')[2].get('v.value'));
 
-            if (component.find('callbackForm')[0].get('v.value') != '') {
-                if (component.find('callbackForm')[0].get('v.value') < todayFormattedDate) {
+            if(component.find('callbackForm')[0].get('v.value') != '')
+            {
+                if(component.find('callbackForm')[0].get('v.value') < todayFormattedDate)
+                {
                     allValid = false;
                     $A.util.addClass(component.find('callbackForm')[0], "slds-has-error");
-                    helper.displayToast(component, helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
+                    component.set('v.loaded',false);
+                    helper.displayToast(component ,helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
                 }
 
-                if (component.find('callbackForm')[0].get('v.value') <= todayFormattedDate && component.find('callbackForm')[2].get('v.value') != ''
-                    && selectedTime <= nowTime) {
-                    helper.displayToast(component, helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
+                if(component.find('callbackForm')[0].get('v.value') <= todayFormattedDate && component.find('callbackForm')[2].get('v.value') != ''
+                    && selectedTime <= nowTime)
+                {
+                    component.set('v.loaded',false);
+                    helper.displayToast(component ,helper, 'Error', 'error', $A.get("$Label.c.CallBack_BusinessHours_ErrorMsg"));
                     allValid = false;
                     $A.util.addClass(component.find('callbackForm')[0], "slds-has-error");
                     $A.util.addClass(component.find('callbackForm')[2], "slds-has-error");
                 }
+                
+            }  
+        }  
+        return allValid;  
+    },
 
-            }
-        }
-        return allValid;
+    getCurrentUser: function(component,event,helper){
+        console.log('getCurrentUser');
+        var action = component.get('c.getCurrentUser');
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {               
+                var result =  response.getReturnValue();   
+                //console.log('currentUser:',result); 
+                component.set('v.currentUser',result);  
+                helper.getTask(component, event, helper);             
+            }         
+        });
+        
+        $A.enqueueAction(action);
+    },
+    
+    //check start call and end call
+    checkExistingLogCall : function(component, event, helper) {
+        console.log('checkExistingLogCall')
+        //component.set('v.loaded',true);
+        var action = component.get('c.searchExistingLogCall');
+            action.setParams({
+                recordId: component.get('v.recordId'),
+                marketingCode: component.get('v.marketingCode')
+            });
+
+            action.setCallback(this, function(response){
+                if(response.getState() === 'SUCCESS'){
+                    var result = response.getReturnValue();
+                    console.log('ExistingLogCall',result);
+                           
+                    if(result.Call_Start_Datetime__c != null && result.Call_Start_Datetime__c != ''){
+                        if(result.Call_End_Time__c != null && result.Call_End_Time__c != '' ){
+                            if(component.get('v.isCampaignMember')){
+                                console.log('isCampaignMember');
+                                component.set('v.loaded',false);
+                                component.set('v.isDisabled',true);
+                            }
+                            // else{
+                            //     component.set('v.loaded',false);
+                            //     this.displayToast(component ,helper,'Error','error', 'Cannot create callback');
+                            //     this.closeQuickActionWindow(component, event, helper);
+                            // }
+                        }
+                        component.set('v.callLogID',result.Call_Log_ID__c)
+                    }else{
+                        if(component.get('v.isCampaignMember')){
+                            component.set('v.loaded',false);
+                            component.set('v.isDisabled',true);
+                        }else{
+                            component.set('v.loaded',false);
+                            this.displayToast(component ,helper,'Error','error', 'Cannot create callback');
+                            this.closeQuickActionWindow(component, event, helper);
+                        }
+                        
+                    }
+                }else {
+                    let error = response.getError();
+                    this.handleErrors(error);
+                }
+            
+            })
+            $A.enqueueAction(action);
+    },
+
+    setTaskLogId : function(component, event, helper) {
+        console.log('setTaskLogId')
+        var action = component.get('c.searchExistingLogCall');
+            action.setParams({
+                recordId: component.get('v.recordId'),
+                marketingCode: component.get('v.marketingCode')
+            });
+
+            action.setCallback(this, function(response){
+                if(response.getState() === 'SUCCESS'){
+                    var result = response.getReturnValue();
+                    console.log('taskLogId', result.Id);
+                    console.log('uniqueKey', result.Related_Object__c);
+                    component.set('v.taskLogId',result.Id);  
+                    component.set('v.uniqueKey',result.Related_Object__c);           
+                    helper.setTaskExtension(component, event, helper);
+                    helper.setSalesforceId(component, event, helper);
+                }else {
+                    let error = response.getError();
+                    this.handleErrors(error);
+                }
+            
+            })
+            $A.enqueueAction(action);
+    },
+
+
+    setTaskExtension : function(component, event, helper) {
+        console.log('setTaskExtension');
+        // component.set('v.loaded',true);
+        var action = component.get('c.getTaskExtension');
+            action.setParams({
+                taskId: component.get('v.taskLogId')    
+            });
+
+            action.setCallback(this, function(response){
+                var state = response.getState();
+                if(state === 'SUCCESS'){
+                    var res =response.getReturnValue();
+                    console.log('TaskExtension ',res);
+                    component.set('v.agentId', res.AVY_Agent_id__c);
+                    component.set('v.contactListName', res.AVY_Contact_List_Name__c);
+                    component.set('v.campaignName', res.AVY_Campaign_Name__c);
+                    component.set('v.loaded',false);
+
+                }else {
+                    let error = response.getError();
+                    this.handleErrors(error);
+                    component.set('v.loaded',false);
+                }
+            
+            })
+            $A.enqueueAction(action);
+            
+    },
+
+    setSalesforceId : function(component, event, helper) {
+        console.log('setSalesforceId');
+        // component.set('v.loaded',true);
+        var action = component.get('c.getSalesforceId');
+            action.setParams({
+                recordId: component.get('v.recordId')   
+            });
+
+            action.setCallback(this, function(response){
+                var state = response.getState();
+                if(state === 'SUCCESS'){
+                    var res =response.getReturnValue();
+                    console.log('SalesforceId',res);
+                    component.set('v.salesForceId', res);
+                }else {
+                    let error = response.getError();
+                    this.handleErrors(error);
+                    component.set('v.loaded',false);
+                }
+            
+            })
+            $A.enqueueAction(action);
+            
+    },
+
+    checkIsCampaignMember: function(component,event,helper){
+        var action = component.get('c.isCampaignMember');
+        action.setParams({
+            recordId: component.get('v.recordId')   
+        });
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {               
+                var result =  response.getReturnValue();   
+                component.set('v.isCampaignMember',result); 
+            }         
+        });
+        
+        $A.enqueueAction(action);
+    },
+
+    checkCallBackPermission: function(component,event,helper){
+        var action = component.get('c.CheckCallBackPermission');
+        action.setParams({
+            recordId: component.get('v.recordId')   
+        });
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {               
+                var result =  response.getReturnValue();   
+                component.set('v.callback_permission',result); 
+
+                if(result == false)
+                {
+                    this.displayToast(component ,helper,'Error','error', 'ไม่สามารถใช้ Call back Schedule ได้เนื่องจากไม่ได้ต่อกับระบบ AVAYA');
+                    this.closeQuickActionWindow(component, event, helper);
+                }
+            }         
+        });
+        
+        $A.enqueueAction(action);
     },
 })

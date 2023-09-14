@@ -163,7 +163,7 @@ public with sharing class RTL_AL_SubmitHPAPCtrl extends RTL_AL_WebserviceAbstrac
             String privateKey = (String)SCSMessageAPIUtil.getEncryptKey(SCSMessageAPIUtil.fetchUserSessionId(), SCSMessageAPIUtil.INTEGRATE_SYSTEM.HPAPAPI);
             String bodyRequestRaw = JSON.serializePretty(bodyRequest(opportunityObj, accountObj));
             String bodyRequestEncrypt = SCSMessageAPIUtil.encryptMessageWithKey(bodyRequestRaw, privateKey);
-            // System.debug('bodyRequestRaw-->' + bodyRequestRaw);
+            System.debug('bodyRequestRaw-->' + bodyRequestRaw);
             Uuid uuidGenerateor = new Uuid();
             String uuid = uuidGenerateor.getValue();
             
@@ -209,11 +209,11 @@ public with sharing class RTL_AL_SubmitHPAPCtrl extends RTL_AL_WebserviceAbstrac
         Opportunity opportunityObj = ((List<Opportunity>)getAppHPAPStatus(recordId)).get(0);
         HttpResponse res = Continuation.getResponse((String)labels.get(0));
         // res.setBody(SCSMessageAPIUtil.encryptMessageWithKey('{"ResponseCode":"000","ResponseDetail":"OK","RefCode":"WEB","RefCode2":"OP1234","RefCode3":"20190613161923673"}', privateKey));
-// System.debug('Status ' + res.getStatusCode() + ' : ' + res.getStatus());
+System.debug('Status ' + res.getStatusCode() + ' : ' + res.getStatus());
         String bodyResonseDecrypt = (String)SCSMessageAPIUtil.decryptMessageWithKey(res.getBody(), privateKey);
         Map<String, Object> result = bodyResonseDecrypt != null ? (Map<String, Object>)JSON.deserializeUntyped(bodyResonseDecrypt) : new Map<String, Object>();
-// System.debug('Body bofore decrypt-->' + res.getBody());
-// System.debug('Body after decrypt-->' + bodyResonseDecrypt);
+System.debug('Body bofore decrypt-->' + res.getBody());
+System.debug('Body after decrypt-->' + bodyResonseDecrypt);
         String statusCode = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseCode', result) : '999');
         String errorMsg = String.valueOf(!result.isEmpty() ? AbstractCoreClass.getResult('ResponseDetail', result) : AbstractCoreClass.getValuesWithRegex(res.getBody(), new List<String>{'errordesc'}));
         Boolean isSuccess = statusCode == '000';

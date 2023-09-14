@@ -6,9 +6,6 @@
         <roleAndSubordinates>
             <roleAndSubordinate>Team_Head_UW_SB_RCU</roleAndSubordinate>
         </roleAndSubordinates>
-        <roles>
-            <role>UW_SB</role>
-        </roles>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
