@@ -7,6 +7,9 @@
         <field>Account.Product_Maturities__r$Account_Number__c</field>
     </columns>
     <columns>
+        <field>Account.Product_Maturities__r$Product_Name__c</field>
+    </columns>
+    <columns>
         <field>Account.Product_Maturities__r$Dormant_Date__c</field>
     </columns>
     <columns>

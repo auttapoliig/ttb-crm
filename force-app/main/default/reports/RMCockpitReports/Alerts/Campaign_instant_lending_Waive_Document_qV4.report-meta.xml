@@ -16,7 +16,7 @@
         <field>Account.Retail_Instant_Lendings__r$Cash_2_go_flag__c</field>
     </columns>
     <columns>
-        <field>Account.Retail_Instant_Lendings__r$Instant_lending_detail__c</field>
+        <field>Account.Retail_Instant_Lendings__r$Name</field>
     </columns>
     <filter>
         <criteriaItems>
