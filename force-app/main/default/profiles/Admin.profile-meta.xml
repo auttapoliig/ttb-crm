@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <viewAllRecords>true</viewAllRecords>
+        <object>Retail_Instant_lending_Manual__c</object>
+    </objectPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Retail_Instant_lending_Manual__c.Lending_Privileges_Detail__c</field>
