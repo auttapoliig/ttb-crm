@@ -109,7 +109,10 @@
         // helper.getDescribeFieldResult(component, event, helper);
         helper.getDescribeFieldResults(component, event, helper);
         helper.CYCPrepareDataCustomer(component,event,helper);
+        helper.getInstantLendingManual(component,event,helper, 'pro_con');
         helper.getInstantLendingDetail(component,event,helper);
+        helper.getInstantLendingManual(component, event, helper, 'lend_priv');
+        
         // fire event get CVSAnalyticsData
         // $A.get("e.c:CVSAnalyticsData_Event").setParams({
         //     "isRequest": true

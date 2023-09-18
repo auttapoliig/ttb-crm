@@ -58,9 +58,11 @@ public with sharing class CampaignReportController {
                     eachData.put('Id', each.Customer__c);
                     eachData.put('Details', each.Instant_lending_detail__c == null ? '-' : each.Instant_lending_detail__c);
                     eachData.put('ExpiryDate', each.Expiry_Date__c);
-                    eachData.put('Cash_2_Go_Flag', each.Cash_2_go_flag__c == true ? 'Y' : 'N');
-                    eachData.put('Credit_Card_Flag', each.Credit_Card_flag__c == true ? 'Y' : 'N');
-                    eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Y' : 'N');
+                    eachData.put('Cash_2_Go_Flag', each.Cash_2_go_flag__c == true ? 'Yes' : 'No');
+                    eachData.put('Credit_Card_Flag', each.Credit_Card_flag__c == true ? 'Yes' : 'No');
+                    eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Yes' : 'No');
+                    eachData.put('instant_rec_url', '/one/one.app?#/sObject/' + each.id + '/view');
+                    eachData.put('instant_rec_name', each.Name == null ? 'More Detail' : each.Name);
                     instantList.add(eachData);
             }
 
@@ -91,7 +93,7 @@ public with sharing class CampaignReportController {
 
     public static List<Retail_Instant_Lending__c> getInstantLendingData(Integer queryLimit){
         try{
-            String query = 'SELECT Id, Customer__c, Customer__r.Name, Expiry_Date__c, Instant_lending_detail__c, Cash_2_go_flag__c, Cash_2_go_limit__c, Credit_Card_flag__c, Credit_Card_limit__c, Flash_Card_flag__c, Flash_Card_limit__c FROM Retail_Instant_Lending__c ';
+            String query = 'SELECT Id, Name, Customer__c, Customer__r.Name, Expiry_Date__c, Instant_lending_detail__c, Cash_2_go_flag__c, Cash_2_go_limit__c, Credit_Card_flag__c, Credit_Card_limit__c, Flash_Card_flag__c, Flash_Card_limit__c FROM Retail_Instant_Lending__c ';
             String whereCon = 'WHERE Customer__r.OwnerId = \'' + currentUserId + '\' AND Expiry_Date__c >= TODAY ORDER BY Expiry_Date__c ';
             query += whereCon;
             if(queryLimit > 0){

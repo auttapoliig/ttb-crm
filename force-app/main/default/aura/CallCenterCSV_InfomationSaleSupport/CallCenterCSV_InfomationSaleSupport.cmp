@@ -35,6 +35,10 @@
     <aura:attribute name="CYCCampaignMappingInq" type="Object"/>
     <aura:attribute name="CYCCampaignMappingInqStatus" type="Object"/>
 
+    <!-- Retail Instant Lending Manual -->
+    <aura:attribute name="pro_con" type="String" default=""/>
+    <aura:attribute name="lend_priv" type="String" default=""/>
+
     <aura:attribute name="account" type="Object" />
     <aura:attribute name="dataFields" type="List"
         default="RTL_Occupation_Details__r.RTL_Occupation_Desc__c, Consolidate_Status__c, RTL_CC_STMT_status__c, RTL_RDC_STMT_status__c, RTL_C2G_STMT_status__c
@@ -528,6 +532,7 @@
                         <div class="slds-form-element__control customField">
                             <!-- <aura:if isTrue="{!field.isAccessible}"> -->
                                 <div aura:id="instant_lending" class="slds-form-element__static">
+                                    <lightning:formattedRichText value="{!v.lend_priv}"/>
                                     <c:CallCenterCSV_PillOutput type="TEXTAREA" value="{!v.instantLendingDetail}" />
                                 </div>
                                 <aura:set attribute="else">
@@ -572,6 +577,9 @@
                         </span>
                         <div class="slds-form-element__control customField">
                             <div aura:id="id_cyc_promo_cond" class="slds-form-element__static">
+                                <aura:if isTrue="{!v.pro_con != ''}">
+                                    <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}" /><br/>
+                                </aura:if>
                                 <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                     <c:CallCenterCSV_PillOutput aura:id="promo_cyc" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
                                     <aura:set attribute="else">

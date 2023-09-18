@@ -5,7 +5,8 @@
             { label: 'Flash Card', fieldName: 'Flash_Card_Flag', type: 'text' },
             { label: 'Credit Card', fieldName: 'Credit_Card_Flag', type: 'text' },
             { label: 'C2G', fieldName: 'Cash_2_Go_Flag', type: 'text' },
-            { label: 'Detail', fieldName: 'Details', type: 'text' },
+            // { label: 'Detail', fieldName: 'Details', type: 'text' },
+            { label: 'Retail Instant Lending Name', fieldName: 'instant_rec_url', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'instant_rec_name' } } },
 
         ]);
         var action = component.get('c.getInstantLending');

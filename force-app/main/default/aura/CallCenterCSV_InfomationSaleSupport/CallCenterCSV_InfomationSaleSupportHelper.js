@@ -62,6 +62,30 @@
         });
         $A.enqueueAction(action);
     },
+    getInstantLendingManual: function (component, event, helper, field){
+        var action = component.get('c.getRILendingManualData');
+        action.setParams({
+            'recordId' : component.get('v.recordId'),
+            'field' : field
+        })
+        action.setCallback(this, function(response) {
+            const state = response.getState();
+            if(state == 'SUCCESS'){
+                const result = response.getReturnValue();
+                if(field == 'pro_con'){
+                    component.set('v.pro_con', result['Promotion_Condition_Detail__c'] ? String(result['Promotion_Condition_Detail__c']) : '');
+                }
+                else if(field == 'lend_priv'){
+                    component.set('v.lend_priv', result['Lending_Privileges_Detail__c'] ? String(result['Lending_Privileges_Detail__c']) : '');
+                }
+            }else if(state === 'ERROR') {
+                console.log('getVerifyByField ERROR');
+            } else {
+                console.log('Unknown problem, state.');
+            }
+        });
+        $A.enqueueAction(action);
+    },
 
     getInstantLendingDetail: function (component, event, helper) {
         var action = component.get('c.getInstantLendingDetail');
@@ -79,7 +103,6 @@
             } else {
                 console.log('Unknown problem, state.');
             }
-            // this.stopRetrySpinner(component,event,helper);
         });
         $A.enqueueAction(action);
     },

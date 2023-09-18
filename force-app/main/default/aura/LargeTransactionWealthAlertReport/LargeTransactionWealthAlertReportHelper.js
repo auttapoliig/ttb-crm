@@ -10,7 +10,7 @@
         }
         var key = function(a) { return a[fieldName]; }
         var key2 = function(a) { return a['CusName']; }
-        var reverse = sortDirection == 'asc' ? 1: -1;
+        var reverse = sortDirection == 'asc' ? -1: 1;
 
         data.sort(function(a,b){
             if(key(a) < key(b)) {return reverse * 1}
