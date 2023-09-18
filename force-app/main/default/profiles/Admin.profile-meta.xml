@@ -339,6 +339,11 @@
             <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTL_Referral__c.RTL_Ws_Stage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
             <editable>true</editable>
             <field>Opportunity.RTL_Status_Approve__c</field>
             <readable>true</readable>
