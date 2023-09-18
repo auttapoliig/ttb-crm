@@ -23,14 +23,8 @@
                 <label>Avaya</label>
             </value>
             <value>
-                <fullName>HPAP</fullName>
-                <default>false</default>
-                <label>HPAP</label>
-            </value>
-            <value>
                 <fullName>LGS_AL_Sales</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>LGS_AL_Sales</label>
             </value>
         </valueSetDefinition>
