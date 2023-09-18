@@ -31,6 +31,7 @@
         <members>LeadAssignmentUtilTest</members>
         <members>RTL_ReferAssignmentService</members>
         <members>RTL_TestUtility</members>
+        <members>RTL_AL_WsCampaignMemberInfo</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -169,6 +170,13 @@
     <types>
         <members>Distribute_Mapping__mdt</members>
         <name>CustomObject</name>    
+    </types>
+    <types>
+        <members>Opportunity-th</members>
+        <members>RTL_Referral__c-th</members>
+        <members>Lead-th</members>
+        <members>CampaignMember-th</members>
+        <name>CustomObjectTranslation</name>
     </types>
     <types>
         <members>AL_Marketing_Queue</members>
