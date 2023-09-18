@@ -54,6 +54,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Account.Product_Maturities__r$CreatedDate</dateColumn>
-        <interval>INTERVAL_LAST30</interval>
+        <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
