@@ -165,6 +165,7 @@
         <members>RTL_Assignment_Criterias__c.Referral_single_UPC__c</members>
         <members>RTL_Assignment_Criterias__c.Referral_multiple_BKK__c</members>
         <members>RTL_Assignment_Criterias__c.Referral_multiple_UPC__c</members>
+        <members>iigproduct_2__ChatSession__c.SLA_Status__c</members>
         <name>CustomField</name>
     </types>
     <types>
