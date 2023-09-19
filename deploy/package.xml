@@ -206,6 +206,12 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>ChatSession_with_Case</members>
+        <members>Chat_session_with_post_survey</members>
+        <members>Chat_session_with_transfer_log</members>
+        <name>ReportType</name>
+    </types>
+    <types>
         <members>Admin</members>
         <members>App External API</members>
         <members>Retail Integration API Only</members>
