@@ -5,25 +5,18 @@ public with sharing class CampaignMemberToALSchedule implements Schedulable {
 
     public void execute(SchedulableContext SC){
 
-        
-        System.debug('Datetime.now() --> ' + Datetime.now());
-
         List<Campaignmember> listCampaign = [SELECT Id FROM Campaignmember WHERE RTL_Contact_Method__c =: 'AL Sales' AND RTL_Is_Interface_Success__c =: false 
                                             AND RTL_Is_Send_To_HPAP__c  =: false AND createReferDate__c != null AND createReferDate__c >= :Datetime.now().addDays(-7)];
 
         List<String> campaignId = new List<String>();
         if(listCampaign.size() > 0){
             for(Campaignmember cm : listCampaign){
-                
                 campaignId.add(cm.Id);
             }
         }
-        System.debug('campaignId-->' + campaignId.size());
 
         if (!campaignId.isEmpty()) {
-            System.debug('campaignId-->' + campaignId);
             String idString = '(\''+String.join(new List<String>(campaignId), '\',\'')+'\')';
-            
             String query = 'SELECT Id,RTL_Campaign_Product_1__c,RTL_Campaign_Product_1__r.Name,RTL_AL_oa_ref_code__c, CampaignId, Campaign.Name,RTL_Marketing_Code__c,RTL_Web_Unique_ID__c, LeadSource, RTL_Product_Name__c, RTL_AL_car_type__c, RTL_AL_car_brand__c, RTL_AL_car_group__c'+
                 ',RTL_AL_car_subtype__c, RTL_AL_car_gear__c, RTL_AL_car_year__c, RTL_AL_wanted_amount__c, RTL_AL_max_set_up_amount__c,RTL_AL_normal_price__c '+
                 ', RTL_AL_installment_periods__c, RTL_AL_PayPerMonth__c, RTL_AL_DownPercent__c, RTL_AL_DownAmt__c, RTL_AL_installment_amount__c, RTL_AL_available_time__c'+
@@ -37,17 +30,9 @@ public with sharing class CampaignMemberToALSchedule implements Schedulable {
                 ', LGS_Campaign_Start_Date__c ,LGS_Campaign_End_Date__c ' +
                 ' FROM Campaignmember ' +  
                 'WHERE Id IN ' + idString ;
-                            
-            System.debug('query-->' + query);
-    
-            // TagCaseBatch tcb = new TagCaseBatch(query);
-            // Database.executeBatch(tcb);
             List<CampaignMember> listCmb = Database.query(query);
-            //List<Case> inputlist = new List<Case>();
-            System.debug('ALL size ' + listCmb.size());
             CampaignMemberToALBatch cmal = new CampaignMemberToALBatch(listCmb,false,null,null,DateTime.now());
             Database.executeBatch(cmal);
-
         }
     }
 }
