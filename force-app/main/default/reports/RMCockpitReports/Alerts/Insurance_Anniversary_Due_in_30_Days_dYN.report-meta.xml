@@ -47,7 +47,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Account$As_of_Date_Account_Plan__c</dateColumn>
+        <dateColumn>Account.Product_Maturities__r$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
