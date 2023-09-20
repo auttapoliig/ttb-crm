@@ -97,6 +97,8 @@
         <members>CampaignMember.RTL_Status_Approve_1__c</members>
         <members>CampaignMember.RTL_Submit_Date_1__c</members>
         <members>CampaignMember.Scoring_Condition_ID__c</members>
+        <members>CampaignMember.RTL_AL_Showroom__c</members>
+        <members>CampaignMember.RTL_AL_TentName__c</members>
         <members>Cross_Sell_Product__c.Corebank_Branch_Code__c</members>
         <members>Cross_Sell_Product__c.Corebank_Branch_Name__c</members>
         <members>Cross_Sell_Product__c.Corebank_Sales_Manager_Head__c</members>
