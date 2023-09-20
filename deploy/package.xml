@@ -120,6 +120,7 @@
         <members>Account.Relationship_Level_by_Team_Last_Year__c</members>
         <members>Account.RMC_Relationship_Level_by_RM__c</members>
         <members>Account.Relationship_Level_by_RM_Last_Year__c</members>
+        <members>Account.MainBank_MoreDetail__c</members>
         <members>My_Customer_Filter_Option__c.My_Customer_Filter__c</members>
         <members>Activity.RTL_Task_Subject__c</members>
         <name>CustomField</name>
