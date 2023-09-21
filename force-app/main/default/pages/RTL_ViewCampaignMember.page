@@ -722,6 +722,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                              <apex:variable var="index" value="{!1}" />
                               <apex:repeat value="{!CampaignProduct}" var="each">
                                   <tr class="dataRow">
                                       <td data-label="{!$Label.RTL_CampaignMemberEdit_ColNo}"> 
@@ -746,9 +747,11 @@
                                          <apex:outputField value="{!currentObject[each.apiOpportunity]}"/>
                                       </td>
                                       <td data-label="More Detail"> 
-                                         <apex:commandLink rendered="{!(currentObject[each.apiProductName] == 'Home Loan' || currentObject[each.apiProductName] == 'Refinance Home Loan' || currentObject[each.apiProductName] == 'Home Equity') && !ISNULL(objLead.RTL_W2L_Source_Collateral_Type__c)}" onclick="openMoreDetailSubTab();return false;">More Detail</apex:commandLink>
+                                        <apex:commandLink rendered="{!((each.isMoreDetailProduct == true && each.isALProd == false && !ISNULL(objLead.RTL_W2L_Source_Collateral_Type__c)) || (each.isMoreDetailProduct == true && each.isALProd == true))}"
+                                        onclick="openMoreDetailSubTab('{!currentObject[each.apiProductName]}','{!index}');return false;">More Detail</apex:commandLink>
                                       </td>
                                   </tr>
+                                  <apex:variable var="index" value="{!index + 1}" />
                               </apex:repeat>
                             
                             </tbody>
@@ -1005,30 +1008,54 @@
         
     });
 
-    function openMoreDetailSubTab(){
-        var recId = '{!currentObject.Id}';
-        var compDefinition = {
-            "componentDef": "c:CampaignMember_HomeLoanCalInfo",
-            "state":{
-                "c__campaignMemberId": recId,
+    function openMoreDetailSubTab(prdName,index) {
+            var recId = '{!currentObject.Id}';
+            var navigateTo = '';
+            // let AutoloanList = ['CYC', 'CYB', 'NEW', 'USED', 'CYC Revolving'];
+            // let HomeloanList = ['Refinance Home', 'Loan Home Equity', 'Home Loan'];
+            var tabName = '';
+            var compDefinition;
+            let AutoloanList = '{!ALPrdNameSet}';
+            let HomeloanList = '{!HCALPrdNameSet}';
+            
+            if (AutoloanList.includes(prdName)) {
+                navigateTo = 'c:CampaignMember_AutoLoanCalInfo';
+                tabName = 'Auto Loan Information';
+                compDefinition = {
+                    "componentDef": navigateTo,
+                    "state": {
+                        "c__campaignMemberId": recId,
+                        'c__productNumber' : index
+                    }
+                };
             }
-        };
+            else if (HomeloanList.includes(prdName)) {
+                navigateTo = 'c:CampaignMember_HomeLoanCalInfo';
+                tabName = 'Home Loan Information';
+                compDefinition = {
+                    "componentDef": navigateTo,
+                    "state": {
+                        "c__campaignMemberId": recId,
+                    }
+                };
+            }
 
-        // Base64 encode the compDefinition JS object
-        var encodedCompDef = btoa(JSON.stringify(compDefinition));
-        var url = "/one/one.app#"+encodedCompDef;
 
-        var theme = '{!$User.UIThemeDisplayed}';
+            // Base64 encode the compDefinition JS object
+            var encodedCompDef = btoa(JSON.stringify(compDefinition));
+            var url = "/one/one.app#" + encodedCompDef;
 
-        if (theme == 'Theme4t') {
-            sforce.one.navigateToURL(url);
-        } else {
-            sforce.console.getEnclosingPrimaryTabId(function openSub(result){
-                var primaryTab = result.id;
-                sforce.console.openSubtab(primaryTab , url, true, 'Home Loan Information', null, null);
-            });
+            var theme = '{!$User.UIThemeDisplayed}';
+
+            if (theme == 'Theme4t') {
+                sforce.one.navigateToURL(url);
+            } else {
+                sforce.console.getEnclosingPrimaryTabId(function openSub(result) {
+                    var primaryTab = result.id;
+                    sforce.console.openSubtab(primaryTab, url, true, tabName, null, null);
+                });
+            }
         }
-    }
 
     function openSubTab(url,label,name,openimmediately) {
       // try {

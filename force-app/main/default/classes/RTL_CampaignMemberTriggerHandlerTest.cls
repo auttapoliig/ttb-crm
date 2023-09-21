@@ -42,7 +42,7 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
         List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
         User firstUser = retailUsers[0];//outbound channel
         
-        List<Account> accList = RTL_TestUtility.createAccounts(1,true);
+        List<Account> accList = RTL_TestUtility.createAccounts(2,true);
         List<Opportunity> oppList = new List<Opportunity>();
         
         User retailUser = RTL_TestUtility.createRetailTestUser(true);
@@ -70,6 +70,9 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
         Lead l = new Lead(Company = 'JohnMiller', LastName = 'Mike', Status = 'Open');
         l.RTL_Branch_Code_Rpt__c = '611';
         insert l;
+        Lead l1 = new Lead(Company = 'JohnMiller1', LastName = 'Mike1', Status = 'Open');
+        l.RTL_Branch_Code_Rpt__c = '611';
+        insert l1;
         
         Campaign camp = new Campaign();
         camp.Name = 'Campaign_';
@@ -88,10 +91,21 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
         cm1.RTL_Lead_Group__c =  'group';
         cm1.RTL_OfferResult_Product_1__c = 'N/A';
         cmList.add(cm1);
+
+        CampaignMember cm4 = new CampaignMember();
+        cm4.LeadId = l1.id;
+        cm4.CampaignId = camp.id;
+        cm4.RTL_TMB_Campaign_Source__c = 'Web';     
+        cm4.RTL_Product_Name__c = 'product';
+        cm4.RTL_Lead_Group__c =  'O2O Web';
+        cm4.RTL_OfferResult_Product_1__c = 'Interested';
+        cmList.add(cm4);
         
         Contact ct = RTL_TestUtility.createContacts(accList.get(0));
         ct.OwnerId = firstUser.id;
         insert ct;
+
+
 
         CampaignMember cm2 = new CampaignMember();
         cm2.ContactId = ct.id;
@@ -102,6 +116,24 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
         cm2.RTL_OfferResult_Product_1__c = 'N/A';
         cmList.add(cm2);
 
+
+        Contact ct1 = RTL_TestUtility.createContacts(accList.get(1));
+        ct1.OwnerId = firstUser.id;
+        insert ct1;
+
+        CampaignMember cm3 = new CampaignMember();
+        cm3.ContactId = ct1.id;
+        cm3.CampaignId = camp.id;
+        cm3.RTL_TMB_Campaign_Source__c = 'Web';     
+        cm3.RTL_Product_Name__c = 'product';
+        // cm3.LeadSource = 'Others';
+        // cm3.RTL_Contact_Method__c ='Normal Request';
+        cm3.RTL_Lead_Group__c =  'O2O Web';
+        cm3.RTL_OfferResult_Product_1__c = 'N/A';
+        cm3.RTL_Lead_Remark__c = 'Test';
+        cm3.RTL_Product_Feature__c ='CC CUST ID = 1011559900089654 Sub-Segment=SINGLE_SALARYMAN';
+        cmList.add(cm3);
+        
         insert cmList;
 
         for( CampaignMember cm : cmList )
@@ -121,6 +153,19 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
         obj.RTL_End_Date__c = System.today()+10;
         obj.RTL_Active__c = true;
         insert obj;
+
+        RTL_Lead_Assignment_Rule__c obj1 = new RTL_Lead_Assignment_Rule__c();
+        obj1.RTL_Active_Flag__c = true;
+        obj1.RTL_Priority__c = 1;
+        obj1.RTL_IsAssign_Campaign__c = true;
+        obj1.RTL_Lead_Field_Criteria_1__c = 'RTL_TMB_Campaign_Source__c';
+        obj1.RTL_Lead_Field_Value_1__c = 'Kiosk';
+        obj1.RTL_Lead_Field_Criteria_2__c = 'LeadSource';
+        obj1.RTL_Lead_Field_Value_2__c = 'Others';
+        obj1.RTL_Lead_Field_Criteria_3__c = 'RTL_Contact_Method__c';
+        obj1.RTL_Lead_Field_Value_3__c = 'Normal Request';
+        obj1.RTL_Lead_Record_Type__c = 'Retail Banking';
+        insert obj1;
 
     }
     
@@ -305,6 +350,14 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
             l.OwnerId = firstUser.id;
             insert l;
 
+            // Lead l1 = new Lead(Company = 'JohnMiller2', LastName = 'Mike2', Status = 'Open');
+            // l1.RTL_Branch_Code_Rpt__c = '611';
+            // l1.RTL_TMB_Campaign_Source__c = 'Kiosk';
+            // l1.LeadSource = 'Others';
+            // l1.RTL_Contact_Method__c = 'Normal Request';
+            // l1.OwnerId = firstUser.id;
+            // insert l1;
+
             CampaignMember cm2 = new CampaignMember();
             cm2.LeadId = l.id;
             cm2.CampaignId = camp.id;
@@ -317,5 +370,34 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
                     
         Test.stopTest();
     }
+
+    // public static testMethod void afterInsertDroplead1() {   
+        
+
+    //     Test.startTest();
+        
+    //     Campaign camp = [SELECT id FROM Campaign WHERE name = 'Campaign_'];
+    //     User firstUser = [SELECT id FROM User WHERE Email='standarduser-ii@tmbbank.com' ];
+
+    //         Lead l = new Lead(Company = 'JohnMiller2', LastName = 'Mike2', Status = 'Open');
+    //         l.RTL_Branch_Code_Rpt__c = '611';
+    //         l.RTL_TMB_Campaign_Source__c = 'web';
+    //         l.OwnerId = firstUser.id;
+    //         // l.RTL_Customer_Segment__c  = 'O2O Web';
+    //         insert l;
+
+    //         CampaignMember cm3 = new CampaignMember();
+    //         cm3.LeadId = l.id;
+    //         cm3.CampaignId = camp.id;
+    //         cm3.RTL_TMB_Campaign_Source__c = 'Web';     
+    //         cm3.RTL_Product_Name__c = 'product';
+    //         cm3.RTL_Lead_Group__c =  'group';
+    //         // cm3.RTL_Lead_Group__c =  'O2O Web';
+    //         cm3.RTL_Product_Name__c = '1:MM';
+    //         insert cm3;
+        
+                    
+    //     Test.stopTest();
+    // }
  
 }

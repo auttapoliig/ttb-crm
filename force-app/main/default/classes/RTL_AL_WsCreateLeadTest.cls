@@ -76,6 +76,17 @@ public with sharing class RTL_AL_WsCreateLeadTest {
                 RTL_Lead_Field_Value_3__c = 'Branch',
                 RTL_Assigned_User_field__c = '',
                 RTL_Branch_and_Zone_Queue_User_field__c = 'Branch_Queue_Name__c'
+            ),
+            new RTL_Lead_Assignment_Rule__c(
+                RTL_Active_Flag__c = true,
+                RTL_Priority__c = 90,
+                RTL_Integration_Type__c='HPAP',
+                RTL_Lead_Record_Type__c = 'Retail Banking',
+                RTL_IsAssign_Campaign__c = true,
+                RTL_IsInsertProduct__c = true,
+                RTL_Lead_Field_Criteria_1__c = 'RTL_Contact_Method__c',
+                RTL_Lead_Field_Value_1__c = 'AL Sales',
+                RTL_Assigned_Queue_Name__c = 'AL_Marketing_Queue'
             )
         };
         
@@ -419,6 +430,68 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.stopTest();
     }
 
+    @IsTest
+    static void testDropLeadSuccessALSales(){
+        Test.startTest();
+        User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
+        System.runAs(sfextapi){
+            RTL_AL_WsCreateLead webserviceClass = new RTL_AL_WsCreateLead();
+            RestRequest request = new RestRequest();
+            request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/Lead/';
+            request.httpMethod = 'POST';
+            request.requestBody = Blob.valueOf((String)SCSMessageAPIUtil.encryptMessageWithKey(JSON.serialize(
+                new Map<String, Object>{
+                    'RTL_Address_Line1__c' => 'Unknown',
+                    'RTL_Address_Line2__c' => 'Unknown',
+                    'RTL_Address_Line3__c' => 'Unknown',
+                    'RTL_Address_Line5__c' => 'Unknown',
+                    'RTL_Address_Line4__c' => 'Unknown',
+                    'RTL_AL_available_time__c' => '',
+                    'RTL_Branch_Name__c' => '',
+                    'RTL_AL_car_bought_from__c' => '',
+                    'RTL_AL_car_brand__c' => 'Toyota',
+                    'RTL_AL_car_gear__c' => 'Manual',
+                    'RTL_AL_car_group__c' => 'Fortuner',
+                    'RTL_AL_car_subtype__c' => '2.4 G (MY15) (MNC)',
+                    'RTL_AL_car_type__c' => '',
+                    'RTL_AL_car_year__c' => '',
+                    'RTL_AL_comment__c' => '',
+                    'RTL_AL_contact_channel__c' => 'BR',
+                    'RTL_Email_Address__c' => 'admin@ttbank.com',
+                    'FirstName' => 'T.',
+                    'LastName' => 'TTB-Test-3',
+                    'RTL_ID_Type__c' => 'Other',
+                    'RTL_Citizen_Id__c' => '1234123412340',
+                    'RTL_Mobile_Number__c' => '0812341234',
+                    'RTL_AL_installment_amount__c' => 20000,
+                    'RTL_AL_installment_periods__c' => 60,
+                    'RTL_AL_max_set_up_amount__c' => 1287554,
+                    'RTL_AL_normal_price__c' => 1239000,
+                    'RTL_AL_wanted_amount__c' => 1030043,
+                    'RTL_Product_Name__c' => 'test',
+                    'LeadSource' => 'Website',
+                    'RTL_TMB_Campaign_Source__c' => 'Touch',
+                    'RTL_AL_oa_ref_code__c' => '',
+                    'RTL_Contact_Method__c' => 'AL Sales',
+                    'RTL_Customer_Segment__c' => 'O2O Web',
+                    'RTL_Web_Unique_ID_c__c' => '',
+                    'RTL_TMB_Campaign_Reference__c' => '',
+                    'RecordTypeId' => Lead.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Banking').getRecordTypeId(),
+                    'RTL_Marketing_Code__c' => 'xx11',
+                    'RTL_Employee_ID__c' => '',
+                    'RTL_AL_car_plate_no__c' => '1กก 1234',
+                    'RTL_AL_response__c' => '',
+                    'RTL_AL_Interested_Rate__c' => ''
+                }
+            ), encryptKey));
+            RestContext.request = request;
+
+            Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
+            RTL_AL_WebserviceAbstract.SCSReqRes response = RTL_AL_WsCreateLead.httpPostWebservice();
+            
+        }
+        Test.stopTest();
+    }
 
     @IsTest
     static void testDropLeadFail(){
@@ -448,7 +521,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -515,12 +588,85 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         }
         Test.stopTest();
     }
+
+    // @IsTest
+    // static void testDropLeadTouchAlsales(){
+    //     Test.startTest();
+    //     List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
+    //     CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
+    //     system.debug(campaignsTest);
+    //     User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
+    //     System.runAs(sfextapi){
+            
+    //         RestRequest request = new RestRequest();
+    //         request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/Lead/';
+    //         request.httpMethod = 'POST';
+    //         request.requestBody = Blob.valueOf((String)SCSMessageAPIUtil.encryptMessageWithKey(JSON.serialize(
+    //             new Map<String, Object>{
+    //                 'RTL_AL_Interested_Rate__c' => null,
+    //                 'RTL_AL_response__c' => true,
+    //                 'RTL_AL_car_plate_no__c' => null,
+    //                 'RTL_Employee_ID__c' => null,
+    //                 'RTL_Marketing_Code__c' => campaignTest?.RTL_Marketing_Code__c,
+    //                 'RTL_AL_oa_ref_code__c' => 'MK2021062100002',
+    //                 'RTL_Web_Unique_ID__c' => '',
+    //                 'RecordTypeId' => '01290000000iZYKAA2',
+    //                 'RTL_TMB_Campaign_Reference__c' => '',
+    //                 'RTL_Web_Unique_ID_c__c' => '',
+    //                 'RTL_Contact_Method__c' => 'AL Sales',
+    //                 'RTL_Customer_Segment__c' => 'MIS',
+    //                 'RTL_TMB_Campaign_Source__c' => 'Touch',
+    //                 'LeadSource' => 'Website',
+    //                 'RTL_Product_Name__c' => 'CYC',
+    //                 'RTL_AL_wanted_amount__c' => 189000.0,
+    //                 'RTL_AL_normal_price__c' => 210000.0,
+    //                 'RTL_AL_max_set_up_amount__c' => null,
+    //                 'RTL_AL_installment_periods__c' => 48,
+    //                 'RTL_AL_installment_amount__c' => 4972.0,
+    //                 'RTL_Mobile_Number__c' => '0824200021',
+    //                 'RTL_Citizen_Id__c' => null,
+    //                 'RTL_ID_Type__c' => null,
+    //                 'LastName' => 'TTB-Test-3',
+    //                 'FirstName' => 'T.',
+    //                 'RTL_Email_Address__c' => 'admin@ttbank.com',
+    //                 'RTL_AL_contact_channel__c' => 'BR',
+    //                 'RTL_AL_comment__c' => null,
+    //                 'RTL_AL_car_year__c' => '2009',
+    //                 'RTL_AL_car_type__c' => 'รถกระบะ',
+    //                 'RTL_AL_car_subtype__c' => 'BT-50 2.5 S (CD) (Single Cab) (MNC) (MY09)',
+    //                 'RTL_AL_car_group__c' => 'BT-50',
+    //                 'RTL_AL_car_gear__c' => 'Manual',
+    //                 'RTL_AL_car_brand__c' => 'MAZDA',
+    //                 'RTL_AL_car_bought_from__c' => '',
+    //                 'RTL_Branch_Name__c' => '001',
+    //                 'RTL_AL_available_time__c' => 'ตลอดเวลาทำการ',
+    //                 'RTL_AL_ContactProvince__c' => '',
+    //                 'RTL_AL_ContactZipcode__c' => '',
+    //                 'RTL_AL_ContactSubDistrict__c' => '',
+    //                 'RTL_AL_ContactDistrict__c' => '',
+    //                 'RTL_Address_Line1__c' => null,
+    //                 'RTL_AL_ILA_AMT__c' => 2000,
+    //                 'RTL_AL_REMN_MTH__c' => 3000,
+    //                 'RTL_AL_OFFR_ILA_AMT__c' => 5000,
+    //                 'RTL_AL_OFFR_ILA_MTH__c' => 4000,
+    //                 'RTL_AL_promotion_detail__c' => 'RTL_AL_promotion_detail__c',
+    //                 'RTL_AL_CAMP_EXP_DTE__c' => null,
+    //                 'RTL_Owner_Type__c' => 'Employee'
+    //             }
+    //         ), encryptKey));
+    //         RestContext.request = request;
+    //         Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
+    //         RTL_AL_WebserviceAbstract.SCSReqRes response = RTL_AL_WsCreateLead.httpPostWebservice();
+
+    //     }
+    //     Test.stopTest();
+    // }
     @IsTest
     static void testDropLeadTouchEmpty(){
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -592,7 +738,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         CampaignMember campaignsTest = [SELECT Id, RTL_Marketing_Code__c FROM CampaignMember LIMIT 1];
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         System.runAs(sfextapi){
             RestRequest request = new RestRequest();
             request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/getByMarketingCode/';
@@ -640,7 +786,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
@@ -710,7 +856,7 @@ public with sharing class RTL_AL_WsCreateLeadTest {
         Test.startTest();
         List<CampaignMember> campaignsTest = [SELECT RTL_Marketing_Code__c FROM CampaignMember ];
         CampaignMember campaignTest = campaignsTest.size() > 0 ? campaignsTest.get(0) : null;
-        // System.debug(campaignsTest);
+        system.debug(campaignsTest);
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         System.runAs(sfextapi){
             
