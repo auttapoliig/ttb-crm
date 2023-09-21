@@ -286,5 +286,15 @@
         <members>RMCockpitReports/Alerts/Campaign_ttb_reserve_fE3</members>
         <name>Report</name>
     </types>
+
+    <types>
+        <members>Admin</members>
+        <members>App External API</members>
+        <members>Retail Integration API Only</members>
+        <members>TMB CRM Admin Profile</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>TMB System Administrator</members>
+        <name>Profile</name>
+    </types>
     <version>58.0</version>
 </Package>
