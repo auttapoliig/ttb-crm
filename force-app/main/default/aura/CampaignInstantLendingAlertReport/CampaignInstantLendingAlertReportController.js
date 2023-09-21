@@ -6,7 +6,7 @@
             { label: 'Credit Card', fieldName: 'Credit_Card_Flag', type: 'text' },
             { label: 'C2G', fieldName: 'Cash_2_Go_Flag', type: 'text' },
             // { label: 'Detail', fieldName: 'Details', type: 'text' },
-            { label: 'Retail Instant Lending Name', fieldName: 'instant_rec_url', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'instant_rec_name' } } },
+            { label: 'Retail Instant Lending Name', fieldName: 'instant_rec_id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'instant_rec_name' } } },
 
         ]);
         var action = component.get('c.getInstantLending');
@@ -20,7 +20,9 @@
                 var data = resp.data;
                 data.forEach(element => {
                     var url = element.Id;
+                    var lendingUrl = element.instant_rec_id;
                     element.Id = '/'+ url;
+                    element.instant_rec_id = '/'+lendingUrl
                     finalData.push(element);
 
                 });

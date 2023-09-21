@@ -63,6 +63,7 @@ public with sharing class CampaignReportController {
                     eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Yes' : 'No');
                     eachData.put('instant_rec_url', '/one/one.app?#/sObject/' + each.id + '/view');
                     eachData.put('instant_rec_name', each.Name == null ? 'More Detail' : each.Name);
+                    eachData.put('instant_rec_id', each.id);
                     instantList.add(eachData);
             }
 
