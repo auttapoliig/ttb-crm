@@ -33,6 +33,7 @@
         <members>RTL_TestUtility</members>
         <members>RTL_AL_WsCampaignMemberInfo</members>
         <members>TestForUtility</members>
+        <members>MockHttpResponseCampaignMemberExtension</members>
         <name>ApexClass</name>
     </types>
     <types>
