@@ -37,8 +37,6 @@
             helper.setFocusedTabLabel(component, event, helper);
             helper.getBranchSectionA(component, event, helper);
             helper.getBranchInfo(component, event, helper);
-            // helper.getMonthGap(component, event, helper);
-            // helper.prepareDataForSectionC(component, event, helper);
             helper.checkLastPerf(component,event,helper).then(() => {
                 helper.getCurrentMonthKPI(component, event, helper).then(() => {
                     helper.prepareDataForSectionD(component, event, helper);
@@ -50,9 +48,6 @@
             helper.setFocusedTabLabel(component, event, helper);
             helper.getBranchSectionA(component, event, helper);
             helper.getBranchInfo(component, event, helper);
-            // helper.getMonthGap(component, event, helper);
-            // helper.prepareDataForSectionC(component, event, helper);
-            // helper.prepareDataForSectionD(component, event, helper);
             helper.checkLastPerf(component,event,helper).then(() => {
                 helper.prepareDataForSectionD(component, event, helper).then(() => {
                     helper.getCurrentMonthKPI(component, event, helper);
@@ -66,7 +61,6 @@
 
     handleChangeYear: function (component, event, helper) {
         var value = event.getSource().get("v.value");
-        // helper.getMonthGap(component, event, helper);
         component.set('v.selectedYear', value),
         component.set('v.offset', 0);
         component.set('v.offsetTime', 0);
@@ -74,8 +68,6 @@
         component.set('v.targetLastMonth', 0);
         helper.getCurrentMonthKPI(component, event, helper);
         helper.getBranchSectionA(component, event, helper);
-        // helper.getMonthGap(component, event, helper);
-        // helper.prepareDataForSectionC(component, event, helper);
         helper.prepareDataForSectionD(component, event, helper);
 
         helper.newPrepareDataForSectionC(component, helper, component.get('v.selectedYear'))
@@ -125,13 +117,11 @@
     },
 
     onClickHelp : function(component, event, helper) {
-        // helper.getSharePointLink(component,'Help');
         var link = component.get('v.helpLink');
         window.open(link);
     },
 
     onClickSummary : function(component, event, helper) {
-        // helper.getSharePointLink(component,'Branch Summary');
         var link = component.get('v.summaryLink');
         window.open(link);
     }

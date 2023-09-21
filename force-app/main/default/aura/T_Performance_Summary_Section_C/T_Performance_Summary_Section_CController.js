@@ -106,7 +106,11 @@
         var volume = 1;
         var Capmax = "";
         if (month == parseInt(KPI[i].Month__c) && year == parseInt(KPI[i].Year__c)){
-          TotaltgYTDValue = helper.calDecimal(helper, "multiply", (day) ,parseFloat(KPI[i].Target_Unit_Month__c/curDoM));
+          if(day > 0) {
+            TotaltgYTDValue = helper.calDecimal(helper, "multiply", (day) ,parseFloat(KPI[i].Target_Unit_Month__c/curDoM));
+          } else {
+            TotaltgYTDValue = 0;
+          }
         } else {
           TotaltgYTDValue =  parseFloat(KPI[i].Target_Unit_Month__c);
         }
