@@ -68,6 +68,15 @@
     width: 12px;
     fill:rgb(1, 118, 211);
 }
+.THIS .widthColumns-small{
+    min-width: 80px;
+}
+.THIS .widthColumns-medium{
+    min-width: 100px;
+}
+.THIS .widthColumns-large{
+    min-width: 120px;
+}
 /* modal */
 .THIS .slds-modal__content{
     overflow-y: hidden;

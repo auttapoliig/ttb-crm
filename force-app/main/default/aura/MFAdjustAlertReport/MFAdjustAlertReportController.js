@@ -16,7 +16,6 @@
                 var resp = response.getReturnValue();
                 var finalData = [];
                 var data = resp.data;
-                console.log(data);
                 data.forEach(element => {
                     var url = element.Id;
                     element.Id = '/'+ url;

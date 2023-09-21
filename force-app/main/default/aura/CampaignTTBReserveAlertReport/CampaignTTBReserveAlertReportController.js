@@ -4,6 +4,7 @@
             { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
             { label: 'Product Group', fieldName: 'Product_Group', type: 'text' },
             { label: 'Detail', fieldName: 'Details', type: 'text' },
+            { label: 'More Detail', fieldName: 'More_Detail_URL', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'More_Detail' } } },
 
         ]);
         var action = component.get('c.getTTBReseveInvitation');
@@ -13,7 +14,6 @@
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();
-                console.log(resp);
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {

@@ -14,7 +14,6 @@
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();
-                console.log(resp);
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {

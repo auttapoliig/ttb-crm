@@ -117,6 +117,8 @@ public with sharing class CampaignReportController {
                 eachData.put('Product_Group', 'ttb Reserve');
                 eachData.put('Details', each.Main_Bank_Group2_Value__c);
                 eachData.put('Period', each.Mainbank_Campaign_Period__c);
+                eachData.put('More_Detail_URL', '/one/one.app?#/sObject/' + each.id + '/view');
+                eachData.put('More_Detail', each.Main_Bank_Group2_Value__c == null ? '' : 'More Detail');
                 dataList.add(eachData);
             }
 

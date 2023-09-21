@@ -78,7 +78,6 @@
             selectedFilterList[selectedFilterIdx].max = selectedOption.Filter_Max__c;
             // console.log("Change", selectedFilterList[selectedFilterIdx].fieldApi, selectedFilterList[selectedFilterIdx].selectedLabel, selectedFilterList[selectedFilterIdx].value);
         }
-        console.log(selectedFilterList);
         component.set("v.selectedFilter", selectedFilterList);
         // console.log(selectedFilterList);
 	},

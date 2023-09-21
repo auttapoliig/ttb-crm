@@ -750,207 +750,207 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.relationship}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.moment_trigger}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.regulartion_trigger}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.product_trigger}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.portfolio_trigger}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.campaign_trigger}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.aum_is}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.dp_op}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-small">
                                             {!row.mf_os}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.last_selected_date}
                                         </div>
                                     </td>  
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.age}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.age_range}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.cust_sub_segment}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.suit_score}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.wealth_flag}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.shareholder_flag}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.mou_payroll_flag}
                                         </div>
                                     </td>  
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.debenture_flag}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.last_activity}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.last_activity_dateTime}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                             {!row.aum_range}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.allFree_os}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.nfx_os}
                                         </div>
                                     </td>   
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.td_os}
                                         </div>
                                     </td>  
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.other_deposit_os}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.mfGainLoss}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.nfx_rate}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.all_matur_this_month}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.deposit_matur_this_month}
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.mf_matur_this_month}
                                         </div>
                                     </td>   
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.insurnace_anni_this_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.deb_matur_this_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.all_matur_next_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.deposit_matur_next_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.mf_matur_next_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.insurnace_anni_next_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.deb_matur_next_month}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.cc_reserve_eligible}
                                         </div>
                                     </td>  
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.cc_reserve_point}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.cc_reserve_annual_point}
                                         </div>
                                     </td> 
                                     <td>
-                                        <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                        <div class="slds-truncate slds-text-align_right widthColumns-large">
                                             {!row.cc_other_point_balance}
                                         </div>
                                     </td>   
@@ -1407,207 +1407,207 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.relationship}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.moment_trigger}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.regulartion_trigger}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.product_trigger}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.portfolio_trigger}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.campaign_trigger}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.aum_is}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.dp_op}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-small">
                                                     {!row.mf_os}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.last_selected_date}
                                                 </div>
                                             </td>  
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.age}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.age_range}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.cust_sub_segment}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.suit_score}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.wealth_flag}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.shareholder_flag}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 100px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.mou_payroll_flag}
                                                 </div>
                                             </td>  
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 80px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.debenture_flag}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.last_activity}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.last_activity_dateTime}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-medium">
                                                     {!row.aum_range}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.allFree_os}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.nfx_os}
                                                 </div>
                                             </td>   
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.td_os}
                                                 </div>
                                             </td>  
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.other_deposit_os}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.mfGainLoss}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.nfx_rate}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.all_matur_this_month}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.deposit_matur_this_month}
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.mf_matur_this_month}
                                                 </div>
                                             </td>   
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.insurnace_anni_this_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.deb_matur_this_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.all_matur_next_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.deposit_matur_next_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.mf_matur_next_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.insurnace_anni_next_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.deb_matur_next_month}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.cc_reserve_eligible}
                                                 </div>
                                             </td>  
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.cc_reserve_point}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.cc_reserve_annual_point}
                                                 </div>
                                             </td> 
                                             <td>
-                                                <div class="slds-truncate slds-text-align_right" style="width: 120px;">
+                                                <div class="slds-truncate slds-text-align_right widthColumns-large">
                                                     {!row.cc_other_point_balance}
                                                 </div>
                                             </td>   

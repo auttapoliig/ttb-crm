@@ -3216,6 +3216,11 @@
             <field>Relationship_Level_by_RM_Last_Year__c</field>
             <table>Account</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MainBank_MoreDetail__c</field>
+            <table>Account</table>
+        </columns>
         <masterLabel>Customers</masterLabel>
     </sections>
 </ReportType>
