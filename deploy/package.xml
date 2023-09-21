@@ -2,11 +2,13 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>T_Performance_SummaryController</members>
+        <members>T_Performance_P1Controller</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>T_Performance_Onedown</members>
         <members>T_Performance_Summary_Section_C</members>
+        <members>T_Performance_P3</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <version>57.0</version>
