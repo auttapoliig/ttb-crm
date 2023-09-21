@@ -341,6 +341,7 @@
     
                 </table>
             </div>
+            <p style="color: red;">*หมายเหตุ : ระบบจะทำการอัพเดตข้อมูลรายวัน โดยจะแสดงข้อมูลย้อนหลัง 2 วัน</p>
 
             <aura:set attribute="else">
                 <div class="tableViewMore slds-scrollable slds-m-top_small">
@@ -348,7 +349,7 @@
                         <thead class="fixed-allCol">
                             <tr class="slds-line-height_reset">
                                 <th class="sticky-col" scope="col">
-                                    <div title="{!$Label.c.Select_customer}" style="width: 35px;" class="slds-text-align_center">
+                                    <div title="{!$Label.c.Select_customer}" style="width: 20px;" class="slds-text-align_center">
                                         <p>{!$Label.c.Select_customer}</p> 
                                     </div>
                                 </th>
@@ -959,6 +960,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p style="color: red;">*หมายเหตุ : ระบบจะทำการอัพเดตข้อมูลรายวัน โดยจะแสดงข้อมูลย้อนหลัง 2 วัน</p>
 
 
             </aura:set>
@@ -1616,6 +1618,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <p style="color: red;">*หมายเหตุ : ระบบจะทำการอัพเดตข้อมูลรายวัน โดยจะแสดงข้อมูลย้อนหลัง 2 วัน</p>
                         
                     </div>
                     <footer class="slds-modal__footer footerViewMore">

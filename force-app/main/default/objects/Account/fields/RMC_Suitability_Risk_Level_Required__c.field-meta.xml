@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RMC_Suitability_Risk_Level_Required__c</fullName>
     <externalId>false</externalId>
-    <label>RMC Suitability Risk Level Required</label>
+    <label>Average Risk Level</label>
     <precision>10</precision>
     <required>false</required>
     <scale>0</scale>
