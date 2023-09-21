@@ -33,7 +33,6 @@
         <members>RTL_TestUtility</members>
         <members>RTL_AL_WsCampaignMemberInfo</members>
         <members>TestForUtility</members>
-        <members>RTL_SchedulerEmailErrorLogTest</members>
         <name>ApexClass</name>
     </types>
     <types>

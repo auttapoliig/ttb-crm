@@ -580,7 +580,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
 
-    private static Map<ID, String> userNameMap {get{
+    @TestVisible private static Map<ID, String> userNameMap {get{
         if (userNameMap == null) {
             userNameMap = new Map<ID, String>();
         }
@@ -588,7 +588,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> branchNameMap {get{
+    @TestVisible private static Map<ID, String> branchNameMap {get{
         if (branchNameMap == null) {
             branchNameMap = new Map<ID, String>();
         }
@@ -596,7 +596,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> contactNameMap {get{
+    @TestVisible private static Map<ID, String> contactNameMap {get{
         if (contactNameMap == null) {
             contactNameMap = new Map<ID, String>();
         }
@@ -611,14 +611,14 @@ public without sharing class RTL_CampaignMemberExtension {
     //    system.debug('xxx productoffer.RTL_Products_Offer_String__c: '+ productoffer.RTL_Products_Offer_String__c);
     //}
     //Update product offer string later , after insert to avoid trigger
-    private void updateProductOfferString(CampaignMember camMem,String storeData){
+    @TestVisible private void updateProductOfferString(CampaignMember camMem,String storeData){
         if(storeData!=null){
             camMem.RTL_Products_Offer_String__c = storeData;
             update camMem;
         }
     }
     //save log to RTL_Campaign_Member_History__c.
-    private void saveLogCampaignmember(CampaignMember camMem){
+    @TestVisible private void saveLogCampaignmember(CampaignMember camMem){
         
         for (String fieldName : RTL_CampaignMemberTriggerHandler.getFieldTracking()) {
             if(camMem.get(fieldName) != null) {
@@ -1811,20 +1811,19 @@ public without sharing class RTL_CampaignMemberExtension {
         String errorCodeText = '';
         String errorDescText = '';
 
-      Account accountObj = new Account();
-      String rmId = currentObject.RTL_Marketing_Code__c;
+        Account accountObj = new Account();
+        String rmId = currentObject.RTL_Marketing_Code__c;
     //   String customerName;
-      if(currentObject.Contact.Account != null)
-      {
-          accountObj =  currentObject.Contact.Account;
+        if(currentObject.Contact.Account != null)
+        {
+            accountObj =  currentObject.Contact.Account;
         //   customerName = accountObj.Name;
-      }
+        }
 
-      try
-      {
-          
+        try
+        {
         // Get the response by using the unique label
-        HttpResponse response = Continuation.getResponse(this.requestLabel);
+            HttpResponse response = Continuation.getResponse(this.requestLabel);
 
         if( response == null ) 
         { 
@@ -1955,7 +1954,6 @@ public without sharing class RTL_CampaignMemberExtension {
                         if(campaignMemberResponse.personalizedMessage !=null){
                             currentObject.RTL_Personalized_Message__c = campaignMemberResponse.personalizedMessage;
                         }
-
                         if(currentObject.id == null)
                         {
                             currentObject.RTL_CampHis_Phone__c = campaignMemberResponse.mobilenumber;
@@ -2393,7 +2391,7 @@ public without sharing class RTL_CampaignMemberExtension {
 
     public static CampaignMemberResponseObject  campaignMemberResponse {get;set;}
 
-    private String requestLabel;
+    @TestVisible private String requestLabel;
 
     public Boolean exclusiveCalloutSuccess{
         get{
