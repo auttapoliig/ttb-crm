@@ -416,7 +416,7 @@
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset1</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.UserRoleName__c}</leftValue>
                         <operator>CONTAINS</operator>
@@ -437,6 +437,11 @@
                         <operator>EQUAL</operator>
                         <rightValue>TMB System Administrator</rightValue>
                     </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>TMB CRM Admin Profile</rightValue>
+                    </criteria>
                 </visibilityRule>
             </componentInstance>
         </itemInstances>
@@ -449,7 +454,7 @@
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset7</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.UserRoleName__c}</leftValue>
                         <operator>CONTAINS</operator>
@@ -464,6 +469,11 @@
                         <leftValue>{!$User.Profile.Name}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>TMB System Administrator</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>TMB CRM Admin Profile</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
