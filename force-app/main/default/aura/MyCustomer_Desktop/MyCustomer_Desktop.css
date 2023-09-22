@@ -23,12 +23,12 @@
 .THIS .slds-table_cell-buffer tr>td:first-child, .THIS .slds-table_cell-buffer tr>th:first-child{
     padding-left: 10px;
 }
-.THIS .sticky-col,.THIS .sticky-col-viewmore{
+.THIS .sticky-col,.THIS .sticky-col-tablet{
     position: sticky;
     z-index: 3;
     background-color: rgb(243, 243, 243);
 }
-.THIS .sticky-row ,.THIS .sticky-row-viewmore{
+.THIS .sticky-row ,.THIS .sticky-row-tablet{
     position: sticky;
     z-index: 3;
     background-color: rgb(251, 248, 248);
@@ -40,10 +40,16 @@
     left: 38px;
 }
 .THIS .sticky-col:nth-child(3),.THIS .sticky-row:nth-child(3){
-    left: 328.03px;
-}
-.THIS .sticky-col-viewmore,.THIS .sticky-row-viewmore{
     left: 308.03px;
+}
+.THIS .sticky-col-tablet:nth-child(1),.THIS .sticky-row-tablet:nth-child(1){
+    left: 0px;
+}
+.THIS .sticky-col-tablet:nth-child(2),.THIS .sticky-row-tablet:nth-child(2){
+    left: 53px;
+}
+.THIS .sticky-col-tablet:nth-child(3),.THIS .sticky-row-tablet:nth-child(3){
+    left: 343.03px;
 }
 .THIS .fixed-allCol{
     position: sticky;

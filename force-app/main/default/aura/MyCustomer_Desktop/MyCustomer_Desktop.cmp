@@ -348,17 +348,17 @@
                     <table class="slds-table slds-table_cell-buffer slds-table_bordered">
                         <thead class="fixed-allCol">
                             <tr class="slds-line-height_reset">
-                                <th class="sticky-col" scope="col">
-                                    <div title="{!$Label.c.Select_customer}" style="width: 20px;" class="slds-text-align_center">
+                                <th class="sticky-col-tablet" scope="col">
+                                    <div title="{!$Label.c.Select_customer}" style="width: 35px;" class="slds-text-align_center">
                                         <p>{!$Label.c.Select_customer}</p> 
                                     </div>
                                 </th>
-                                <th class="sticky-col" scope="col">
+                                <th class="sticky-col-tablet" scope="col">
                                     <div title="{!$Label.c.tmb_cust_id}" style="width: 274.03px;" class="slds-text-align_center">
                                         <p>{!$Label.c.tmb_cust_id}</p> 
                                     </div>
                                 </th>
-                                <th class="sticky-col" scope="col">
+                                <th class="sticky-col-tablet" scope="col">
                                     <aura:if isTrue="{!(v.arrowAt == 'iconsNameSort')}">
                                         <a class="sortcolumnHover" aura:id="defaultSort" data-sort="name" onclick="{!c.sortingData}">
                                             <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
@@ -729,21 +729,21 @@
                         <tbody>
                             <aura:iteration items="{!v.dataRow}" var="row">
                                 <tr class="slds-hint-parent">
-                                    <td class="sticky-row">
+                                    <td class="sticky-row-tablet">
                                         <lightning:input aura:id="customerSelection" 
                                             type="checkbox" 
                                             value="{!row.id}" 
                                             checked="{!row.candidate}"
                                             onchange="{!c.onUpdateDataFromViewMore}"
-                                            style="width: 20px;"
+                                            style="width: 35px;"
                                             />
                                     </td>
-                                    <td class="sticky-row">
+                                    <td class="sticky-row-tablet">
                                         <div class="slds-truncate" style="width: 274.03px;font-size:15px;">
                                             {!row.tmb_cust_id}
                                         </div>
                                     </td>
-                                    <td class="sticky-row">
+                                    <td class="sticky-row-tablet">
                                         <a data-id="{!row.id}" onclick="{!c.navigateTab}">
                                             <div class="slds-truncate">
                                                 {!row.name}
@@ -960,7 +960,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p style="color: red;">*หมายเหตุ : ระบบจะทำการอัพเดตข้อมูลรายวัน โดยจะแสดงข้อมูลย้อนหลัง 2 วัน</p>
+                <p style="color:red;">*หมายเหตุ : ระบบจะทำการอัพเดตข้อมูลรายวัน โดยจะแสดงข้อมูลย้อนหลัง 2 วัน</p>
 
 
             </aura:set>
@@ -1020,7 +1020,7 @@
                                                 <p>{!$Label.c.tmb_cust_id}</p> 
                                             </div>
                                         </th>
-                                        <th class="sticky-col-viewmore" scope="col">
+                                        <th class="sticky-col" scope="col">
                                             <aura:if isTrue="{!(v.arrowAt == 'iconsNameSort')}">
                                                 <a class="sortcolumnHover" data-sort="name" onclick="{!c.sortingData}">
                                                     <div title="{!$Label.c.Name_My_Customer}" class="sortData slds-text-align_center">
@@ -1403,7 +1403,7 @@
                                             <td class="sticky-row">
                                                 <div class="slds-truncate" style="width: 254.03px">{!row.tmb_cust_id}</div>
                                             </td>
-                                            <td class="sticky-row-viewmore">
+                                            <td class="sticky-row">
                                                 <a data-id="{!row.id}" onclick="{!c.navigateTab}">
                                                     <div class="slds-truncate">{!row.name}</div>
                                                 </a>
