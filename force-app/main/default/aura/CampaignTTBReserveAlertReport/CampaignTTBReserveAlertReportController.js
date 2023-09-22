@@ -4,7 +4,7 @@
             { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
             { label: 'Product Group', fieldName: 'Product_Group', type: 'text' },
             // { label: 'Detail', fieldName: 'Details', type: 'text' },
-            { label: 'TTB Reserve', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'More_Detail' } } },
+            { label: 'ttb reserve', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'More_Detail' } } },
 
         ]);
         var action = component.get('c.getTTBReseveInvitation');
