@@ -3,7 +3,7 @@
     <fullName>Insurance_Fully_Paid_Flag__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Insurance Fully Paid Flag</label>
+    <label>Fully Paid Flag</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

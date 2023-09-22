@@ -174,7 +174,7 @@
                                 </div>
                             </th>
                             <th scope="col">
-                                <div title="{!$Label.c.Regulation_Trigger}" class="slds-text-align_center" style="width: 47px;">
+                                <div title="{!$Label.c.Regulation_Trigger}" class="slds-text-align_center">
                                     {!$Label.c.Regulation_Trigger}
                                 </div>
                             </th>
