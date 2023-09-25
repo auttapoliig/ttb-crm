@@ -3,7 +3,7 @@
         component.set('v.columns', [
             { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
             { label: 'Current Risk Level', fieldName: 'RMC_Suitability_Risk_Level', type: 'text' },
-            { label: 'Required Risk Level', fieldName: 'RMC_Suitability_Risk_Level_Required', type: 'text' },
+            { label: 'Average Risk Level', fieldName: 'RMC_Suitability_Risk_Level_Required', type: 'text' },
 
         ]);
         var action = component.get('c.getRiskMisMatch');
@@ -13,7 +13,6 @@
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();
-                console.log(resp);
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {

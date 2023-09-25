@@ -4,10 +4,10 @@
     <protected>false</protected>
     <values>
         <field>Description__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Maximum value is 5</value>
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">3</value>
+        <value xsi:type="xsd:string">4</value>
     </values>
 </CustomMetadata>

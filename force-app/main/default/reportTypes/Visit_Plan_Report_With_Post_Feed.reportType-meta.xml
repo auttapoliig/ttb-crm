@@ -315,6 +315,11 @@
             <field>Meeting_Place__c</field>
             <table>Call_Report__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>Call_Report__c</table>
+        </columns>
         <masterLabel>Visit Plan / Reports</masterLabel>
     </sections>
     <sections>

@@ -4,7 +4,7 @@
     },
 
     clearFilter : function(component, event, helper){
-        console.log('clear Filter');
+        //console.log('clear Filter');
         var childCmp = component.find("cComp")
         childCmp.clearFilterMethod();
     }

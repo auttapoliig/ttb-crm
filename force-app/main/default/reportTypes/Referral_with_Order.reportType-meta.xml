@@ -750,6 +750,11 @@
             <field>RTL_HelpText__c</field>
             <table>RTL_Referral__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
         <masterLabel>Referrals</masterLabel>
     </sections>
     <sections>

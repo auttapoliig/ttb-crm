@@ -1303,6 +1303,21 @@
             <field>RTL_Zone_Short_Name__c</field>
             <table>Product_Campaign_Recommend__c.Opportunities__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>Product_Campaign_Recommend__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>Product_Campaign_Recommend__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
+            <table>Product_Campaign_Recommend__c.Opportunities__r</table>
+        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
 </ReportType>

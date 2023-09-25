@@ -720,7 +720,22 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AccountId__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Age__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Aging__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_BlueBook__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -755,12 +770,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Branch_Team_Name_Code_Rpt__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Assigned_Campaign_By_Rule__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_Assigned_Channel__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Channel__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -810,12 +835,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_available_time__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Branch_Code__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_Called__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_CAMP_EXP_DTE__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -900,6 +935,51 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_bought_from__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_brand__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_gear__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_group__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_plate_no__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_subtype__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_type__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_year__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_comment__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Company_Account__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -955,6 +1035,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_contact_channel__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Contact_Channel__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -970,7 +1055,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactDistrict__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Contacted__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Contact_Method__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactProvince__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1000,6 +1100,16 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactSubDistrict__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactZipcode__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Contact_Zone_Group__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1011,6 +1121,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Customer_Segment__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1105,7 +1225,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_response__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_ID_NUMBER__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_ID_Type__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ILA_AMT__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Income__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1115,7 +1255,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_installment_amount__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_installment_periods__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Interested__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Interested_Rate__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1190,6 +1345,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_max_set_up_amount__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>MemberCreatedDate</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1220,12 +1380,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Modified_Date_Time__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_No_Contact_Aging__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>No_of_Attempts__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_normal_price__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1285,6 +1455,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Occupation__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Offer_Result__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1330,7 +1505,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_AMT__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_MTH__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Oldest_Closed_Date_Opportunity__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_oa_ref_code__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1480,6 +1670,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Group__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Product_Group_1__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1505,7 +1700,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Name__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Products_Offer_String__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Promotion__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_promotion_detail__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Reason__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1550,6 +1765,16 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Region_Short_Name__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Register_Date__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1580,7 +1805,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Remark__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Remark_2__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_REMN_MTH__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1636,6 +1871,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_Running_Number__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Segment__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1700,6 +1940,21 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Campaign_Reference__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Campaign_Source__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Cust_ID__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Uncontacted__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
@@ -1710,12 +1965,37 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_User_Branch_Matched__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_User_ID_Matched__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_User_RegionGroup_Matched__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_User_ZoneTeam_Matched__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_wanted_amount__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Web_Unique_ID__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Zone_Short_Name__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1740,1007 +2020,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AccountId__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Age__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_BlueBook__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Branch_Team_Name_Code_Rpt__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Channel__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_available_time__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Channel_Subsidiary__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_CAMP_EXP_DTE__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_bought_from__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_brand__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_gear__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_group__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_plate_no__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_subtype__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_type__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_year__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_comment__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_contact_channel__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactDistrict__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Contact_Method__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactProvince__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactSubDistrict__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactZipcode__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Cus_Refer_Code__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Customer_Segment__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_response__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_ID_Type__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ILA_AMT__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Income__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_installment_amount__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_installment_periods__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Interested_Rate__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_max_set_up_amount__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Modified_Date_Time__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_normal_price__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Occupation__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_AMT__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_MTH__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_oa_ref_code__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Group__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Name__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Promotion__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_promotion_detail__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Reason__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Region_Short_Name__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Register_Date__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Remark__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_REMN_MTH__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Segment__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Campaign_Reference__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Campaign_Source__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Cust_ID__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_User_Branch_Matched__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_User_RegionGroup_Matched__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_User_ZoneTeam_Matched__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_wanted_amount__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Zone_Short_Name__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Customer__c.RTL_AUM__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Response_Flage__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Batch_Product_Name__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Batch_Retry_Date__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Batch_Unique_Key__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Campaign_Member_Link2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Campaign_Name__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_IsCarBooked__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Car_Status__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Consent__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Contact_Address__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Content__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>createReferDate__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Data_as_of_Date__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownAmt__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownPercent__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Name_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Name_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Name_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Name_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Name_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Phone_No_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Phone_No_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Phone_No_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Phone_No_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Phone_No_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Export_Type__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Code_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Code_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Status_Code_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Status_Code_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Status_Code_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Description_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Description_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Code_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Code_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Code_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Status_Code_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Status_Code_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Description_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Description_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HPAP_Reason_Description_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Code_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Code_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Code_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Name_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Name_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Income__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Name_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Name_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Code_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Code_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Hub_Name_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Interface_Status__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Interface_Success__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Send_To_HPAP__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Leasing_Condition__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_002__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_004__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_006__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_008__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_001__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_003__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_005__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_007__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_009__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_010__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_012__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_014__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_016__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_018__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_020__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_Car_Brand_Showroom_ID__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_Lead_Received_Time__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_011__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_013__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_015__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_017__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_019__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_Assign_Rule__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_Dealer_Showroom_ID__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LGS_Partner__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Market_Conduct__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Media_Source__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Partner_Branch__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Partner_Employee__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_PayPerMonth__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_PDPA__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Province_Car_Plate_No__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Reason_Lost__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_ID_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_ID_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_ID_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_ID_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_ID_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Stage_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Showroom__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Medium__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Stage_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Stage_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Stage_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status_1__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status_3__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status_5__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status_2__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Stage_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status_4__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TC__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_TentName__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Term__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WS_Failed_Day__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WS_Response_Detail__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WS_Stamp_Date__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <masterLabel>Campaign Members</masterLabel>

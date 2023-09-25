@@ -122,3 +122,14 @@
     font-weight: 600;
     color: #666666;
 }
+
+.THIS .slds-table_bordered thead>tr+tr>th{
+    /* border-top: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(229, 229, 229)) !important; */
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
+}
+.THIS .slds-table_col-bordered th+th {
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
+}
+.THIS .slds-table_bordered tbody td {
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
+}

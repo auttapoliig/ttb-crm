@@ -845,4 +845,12 @@
         </columns>
         <masterLabel>Activities (Assigned To) Fields</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>User.Activity$OwnerId</table>
+        </columns>
+        <masterLabel>Activities</masterLabel>
+    </sections>
 </ReportType>

@@ -4088,6 +4088,16 @@
             <field>Campaign.Parent.RTL_Campaign_Type__c</field>
             <table>Account.Campaign_Members__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RMC_Is_Same_Team_Lead__c</field>
+            <table>Account.Campaign_Members__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RMC_Is_Same_Team_Head__c</field>
+            <table>Account.Campaign_Members__r</table>
+        </columns>
         <masterLabel>Campaign Members</masterLabel>
     </sections>
     <sections>

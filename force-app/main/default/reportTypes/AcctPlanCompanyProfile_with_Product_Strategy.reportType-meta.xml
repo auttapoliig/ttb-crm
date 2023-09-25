@@ -510,6 +510,11 @@
             <field>TMB_Business__c</field>
             <table>AcctPlanCompanyProfile__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>AcctPlanCompanyProfile__c</table>
+        </columns>
         <masterLabel>Account Plan Company Profile</masterLabel>
     </sections>
     <sections>

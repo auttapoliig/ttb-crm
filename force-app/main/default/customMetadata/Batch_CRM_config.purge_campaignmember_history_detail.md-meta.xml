@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Condition__c</field>
-        <value xsi:type="xsd:string">(LastModifiedDate &gt; 2023-03-15T17:00:00Z) and (LastModifiedDate &lt;= 2023-03-31T17:00:00Z)</value>
+        <value xsi:type="xsd:string">(LastModifiedDate &gt;= 2018-07-01T00:00:00Z) AND (LastModifiedDate &lt;= 2018-07-03T23:59:59Z)</value>
     </values>
     <values>
         <field>Field_Set__c</field>

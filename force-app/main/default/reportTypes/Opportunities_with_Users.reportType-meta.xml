@@ -1280,4 +1280,22 @@
         </columns>
         <masterLabel>Opportunities (Created By)</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>User.Opportunity$CreatedById</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>User.Opportunity$CreatedById</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
+            <table>User.Opportunity$CreatedById</table>
+        </columns>
+        <masterLabel>Opportunities</masterLabel>
+    </sections>
 </ReportType>

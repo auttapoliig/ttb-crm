@@ -1,26 +1,21 @@
 @isTest
 public class RTL_SchedulerEmailErrorLogTest {
-  
-    static {
+    @testSetup static void setupmethod() {
         TestUtils.createAppConfig();
         RTL_TestUtility.createEmailConfig();
-  }     
-    
+    }
     //use createddate to test since it's not able to change lastmodifieddate
-    
     public static testMethod void scheduleEmailErrorLogTest(){
         //create retail online service log
-        Test.startTest();
-
-        RTL_TestUtility.createOnlineServiceLog(100,true);  
+        RTL_TestUtility.createOnlineServiceLog(100,true);
         List<Account> accList = RTL_TestUtility.createAccountDataQualityNA(true);
         List<Opportunity> oppListUpdate = TestForUtility.createOpportunities(accList.get(0),1,true);
         List<Campaign> commCampList = TestForUtility.createCampaign(1,'SE',true);
         TestForUtility.createCommLead(1, true,commCampList.get(0).Id);
         
         for (Opportunity opp:oppListUpdate) {
-          opp.RTL_IsLock__c = false;
-          opp.StageName = 'Closed Won (Deposit)';
+            opp.RTL_IsLock__c = false;
+            opp.StageName = 'Closed Won (Deposit)';
         }
 
         update oppListUpdate;
@@ -110,9 +105,6 @@ public class RTL_SchedulerEmailErrorLogTest {
         migtLst.add(mig3);
 
         insert migtLst;
-
-        Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
-
         List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
         User firstUser = retailUsers[0];//outbound channel
 
@@ -124,7 +116,7 @@ public class RTL_SchedulerEmailErrorLogTest {
         camp.Name = 'Campaign_';
         camp.Segment__c = 'MB';
         camp.OwnerId  = UserInfo.getUserId();
-        camp.RecordTypeId = Recordtypeid;
+        camp.RecordTypeId = Schema.SObjectType.Campaign.getRecordTypeInfosByDeveloperName().get('Dummy_Campaign').getRecordTypeId();
         insert camp;
             
     
@@ -154,8 +146,7 @@ public class RTL_SchedulerEmailErrorLogTest {
         insert cmList;
 
         List<Opportunity> opptList = new List<Opportunity>();
-        RecordType recordType = [select Id from RecordType where developername='Retail_Bancassurance' 
-                                    and SobjectType = 'Opportunity' and IsActive = true limit 1];
+        Id retailBancassuranceOpportunityRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Retail_Bancassurance').getRecordTypeId();
         for (Integer i = 0;i<10;i++) {
             Opportunity o = new Opportunity(Name='II-OPP-'+i,
                                 StageName = 'Analysis',
@@ -167,26 +158,21 @@ public class RTL_SchedulerEmailErrorLogTest {
                                 Post_Approval_Date__c = Date.today(),
                                 Complete_Date__c = Date.today(),
                                 Expected_submit_date__c = Date.today(),
-                                RecordTypeId=recordType.Id,
+                                RecordTypeId=retailBancassuranceOpportunityRecordTypeId,
                                 Created_Channel__c = 'Branch'
-                               );
+                            );
             opptList.add(o);
         }
         
         insert opptList;
-
+        Test.startTest();
         // Schedule the test job, but after Test.stopTest, the purge hasn't started.
-        String jobId = System.schedule('EmailErrorLogTest',
-                        RTL_TestUtility.CRON_EXP, 
-                        new RTL_SchedulerEmailErrorLog());
-                        
+        String jobId = System.schedule('EmailErrorLogTest', RTL_TestUtility.CRON_EXP, new RTL_SchedulerEmailErrorLog());
+        Test.stopTest();
         // Get the information from the CronTrigger API object
         CronTrigger ct = [SELECT Id, CronExpression, TimesTriggered, NextFireTime FROM CronTrigger WHERE id = :jobId];
-
         // Verify the expressions are the same
         System.assertEquals(RTL_TestUtility.CRON_EXP, ct.CronExpression);
-        
-        Test.stopTest();
     }
     
     public static testMethod void batchEmailErrorLogTest(){

@@ -2140,7 +2140,17 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>External_Ref_ID__c</field>
+            <field>IsScrambled__c</field>
+            <table>User.Case$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_web_service__c</field>
+            <table>User.Case$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Test_sensitive__c</field>
             <table>User.Case$OwnerId</table>
         </columns>
         <columns>
@@ -2149,5 +2159,13 @@
             <table>User.Case$OwnerId</table>
         </columns>
         <masterLabel>Cases</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Email_to_Case_Handle_time_Hour__c</field>
+            <table>User.Case$OwnerId.EmailMessages</table>
+        </columns>
+        <masterLabel>Email Messages</masterLabel>
     </sections>
 </ReportType>

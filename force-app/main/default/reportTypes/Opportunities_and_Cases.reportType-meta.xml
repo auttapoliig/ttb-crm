@@ -1250,6 +1250,21 @@
             <field>RTL_Zone_Short_Name__c</field>
             <table>Opportunity</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
+            <table>Opportunity</table>
+        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>
@@ -1940,7 +1955,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>External_Ref_ID__c</field>
+            <field>IsScrambled__c</field>
+            <table>Opportunity.Cases__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_web_service__c</field>
+            <table>Opportunity.Cases__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Test_sensitive__c</field>
             <table>Opportunity.Cases__r</table>
         </columns>
         <columns>

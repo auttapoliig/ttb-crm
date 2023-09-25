@@ -22,12 +22,7 @@
     },
     runInitialize: function (component, event, helper) {
         helper.getDescribeFieldResult(component, event, helper);
-        const getFirstLending = helper.getInstantLendingDetail(component, event, helper);
-        getFirstLending.then((data) => {
-            if(data != $A.get('$Label.c.Data_Condition_Hidden_Text')){
-                helper.getInstantLendingManual(component, event, helper, 'lend_priv');
-            }
-        })
+        helper.getInstantLendingDetail(component, event, helper);
 
     },
     getDescribeFieldResult: function (component, event, helper) {
@@ -71,9 +66,9 @@
                 helper.getOnSiteService(component, objectInfoField);
             }
             else if(state === 'ERROR') {
-                console.error('getVerifyByField ERROR');
+                console.log('getVerifyByField ERROR');
             } else {
-                console.error('Unknown problem, state.');
+                console.log('Unknown problem, state.');
             }
             this.stopRetrySpinner(component,event,helper);
         });
@@ -81,49 +76,24 @@
     },
 
     getInstantLendingDetail: function (component, event, helper) {
-        return new Promise((resolve, reject) => {
-            var action = component.get('c.getInstantLendingDetail');
-            action.setParams({
-                "accId": component.get('v.recordId'),
-            });
-            action.setCallback(this, function (response) {
-                var state = response.getState();
-                if (component.isValid() && state === 'SUCCESS') {
-                    var lendingDetail = response.getReturnValue();
-                    component.set('v.instantLendingDetail',lendingDetail);
-                    resolve(lendingDetail);
-                }
-                else if(state === 'ERROR') {
-                    console.error('getInstantLendingDetail ERROR');
-                } else {
-                    console.error('Unknown problem, state.');
-                }
-            });
-            $A.enqueueAction(action);
-        });
-    },
-
-    getInstantLendingManual: function (component, event, helper, field){
-        var action = component.get('c.getRILendingManualData');
+        var action = component.get('c.getInstantLendingDetail');
         action.setParams({
-            'recordId' : component.get('v.recordId'),
-            'field' : field
-        })
-        action.setCallback(this, function(response) {
-            const state = response.getState();
-            if(state == 'SUCCESS'){
-                const result = response.getReturnValue();
-                if(field == 'pro_con'){
-                    component.set('v.pro_con', result['Promotion_Condition_Detail__c'] ? String(result['Promotion_Condition_Detail__c']) : '');
-                }
-                else if(field == 'lend_priv'){
-                    component.set('v.lend_priv', result['Lending_Privileges_Detail__c'] ? String(result['Lending_Privileges_Detail__c']) : '');
-                }
-            }else if(state === 'ERROR') {
-                console.error('getVerifyByField ERROR');
-            } else {
-                console.error('Unknown problem, state.');
+            "accId": component.get('v.recordId'),
+        });
+        // action.setStorable();
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (component.isValid() && state === 'SUCCESS') {
+                var lendingDetail = response.getReturnValue();
+                //console.log('lendingDetail : '+lendingDetail);
+                component.set('v.instantLendingDetail',lendingDetail);
             }
+            else if(state === 'ERROR') {
+                console.log('getInstantLendingDetail ERROR');
+            } else {
+                console.log('Unknown problem, state.');
+            }
+            // this.stopRetrySpinner(component,event,helper);
         });
         $A.enqueueAction(action);
     },
@@ -151,8 +121,6 @@
                 else if(field == 'CYC_Campaign_PromoCond_api'){
                     component.set(`v.dataFields.CYC_Campaign_PromoCond_api.isAccessible`, result);
                     if( result == true ){
-                        /* helper.CallCYCCampaignMapingInq(component,event,helper,objectInfoField); */
-                        helper.getInstantLendingManual(component, event, helper, 'pro_con');
                         helper.CallCYCCampaignMapingInq(component,event,helper,objectInfoField);
                     }
                     else{
@@ -164,9 +132,9 @@
                 }
             }
             else if(state === 'ERROR') {
-                console.error('getVerifyByField ERROR');
+                console.log('getVerifyByField ERROR');
             } else {
-                console.error('Unknown problem, state.');
+                console.log('Unknown problem, state.');
             }
             this.stopRetrySpinner(component,event,helper);
         });
@@ -188,9 +156,9 @@
                 component.set('v.profileName', result);
             }
             else if(state === 'ERROR') {
-                console.error('getProfileName ERROR');
+                console.log('getProfileName ERROR');
             } else {
-                console.error('Unknown problem, state.');
+                console.log('Unknown problem, state.');
             }
         });
         $A.enqueueAction(action);
@@ -227,13 +195,8 @@
             }
             this.stopRetrySpinner(component,event,helper);
         });
-        if (component.get('v.dataFields.TMB_Customer_ID_PE__c.value')){
+        if (component.get('v.dataFields.TMB_Customer_ID_PE__c.value'))
             $A.enqueueAction(action);
-        }
-        else{
-            component.set("v.isCallAnalyticsFinish","true");
-            this.stopRetrySpinner(component,event,helper);
-        }
     },
     retryGetCVSAnalyticsData: function (component, event, helper, numOfRetryTime) {
         var retrySetTimeOut = parseInt($A.get('$Label.c.Retry_SetTimeOut'));
@@ -273,10 +236,6 @@
             });
             if (component.get('v.dataFields.TMB_Customer_ID_PE__c.value')){
                 $A.enqueueAction(action);
-            }
-            else{
-                component.set("v.isCallAnalyticsFinish","true");
-                this.stopRetrySpinner(component,event,helper);
             }
         }, retrySetTimeOut);
     },
@@ -339,9 +298,9 @@
                 component.set('v.waterMarkImage', bg);
             }
             else if(state === 'ERROR') {
-                console.error('STATE ERROR');
+                console.log('STATE ERROR');
             } else {
-                console.error('Unknown problem, state.');
+                console.log('Unknown problem, state.');
             }
 		});
 		$A.enqueueAction(action);

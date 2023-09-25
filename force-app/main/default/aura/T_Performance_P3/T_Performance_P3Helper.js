@@ -67,9 +67,6 @@
 
     getBranchSectionA: function (component, event, helper) {
         component.set('v.loading', true);
-        // var channel = component.get('v.channel');
-        // var region = component.get('v.region');
-        // var zone = component.get('v.zone');
         var branchId = component.get('v.branchCode');
         var action = component.get('c.getBranchSectionA');
         var year = component.get('v.selectedYear');
@@ -314,12 +311,7 @@
                         var currentMonthData;
 
                         currentMonthData = emp[monthKPI[dataLastMonth - 1]] == undefined && emp[monthKPI[dataLastMonth - 1]] == null ? null : emp[monthKPI[dataLastMonth - 1]];
-
-                        // emp.currentKPI = currentMonthData == undefined && currentMonthData == null ? null : parseFloat(currentMonthData).toFixed(2)*1;
-                        // emp.currentKPILabel = currentMonthData == undefined && currentMonthData == null ? '' : parseFloat(currentMonthData).toFixed(2);         
-                        // console.log('debug current month kpi ******',component.get('v.currentMonthKPI'))
                         var currentKPI = this.getEmpCurrMonthKPI(component, emp.saleInfo.Employee_ID__c);
-                        // console.log('debug kpi ******',emp.saleInfo.Id,currentKPI)
                         emp.currentKPI = currentKPI != null && currentKPI != undefined ? parseFloat(currentKPI).toFixed(2) * 1 : null;
                         emp.currentKPILabel = currentKPI != null && currentKPI != undefined ? parseFloat(currentKPI).toFixed(2) : '';
                         emp.yearKPI = this.calculateYearKPI(component, emp) == undefined && this.calculateYearKPI(component, emp) == null ? null : parseFloat(this.calculateYearKPI(component, emp)).toFixed(2) * 1;
@@ -344,7 +336,6 @@
 
                         branchData.push(emp);
                     });
-                    // console.log('branchData[6]:', branchData[6].saleTrans[2].Target_Point__c);
                     component.set('v.branchData', branchData);
 
 
@@ -460,15 +451,12 @@
         var year = component.get('v.selectedYear');
         let calStrPoint = year + numOfMonth.toString().padStart(2, '0');
         let lastSaleInfoInDB = component.get('v.lastSaleInfoInDB');
-        // console.log('calculate per month',calStrPoint)
         let dataLastMonth = component.get('v.dataLastMonth') ? component.get('v.dataLastMonth') : 0;
         let targetLastMonth = component.get('v.targetLastMonth') ? component.get('v.targetLastMonth') : 0;
         let perf;
         let sumActual = 0.00;
         let sumTarget = 0.00;
 
-        // console.log('numOfMonth:',numOfMonth);
-        // console.log('perfArr:',perfArr);
         let month = this.getMonthNumberFormat(numOfMonth);
         let dataSalePer;
         let dataSaleTrans;
@@ -480,19 +468,10 @@
         var currentDate = date.getDate();
         var DaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
 
-        // if(numOfMonth == 5) { // debugging
-        //     console.log('debug month may ',numOfMonth,perfArr)
-        // }
         if (perfArr.salePerf) {
             dataSalePer = perfArr.salePerf.filter((each, index) => {
 
                 if (each.Month__c == month) {
-                    // var lastMonth = month === '0' ? parseInt(month.substring(1)) : parseInt(month)
-                    // // console.log('Per month:',month);  
-                    // if(lastMonth > dataLastMonth)
-                    // {
-                    //     dataLastMonth = month === '0' ? parseInt(month.substring(1)) : parseInt(month);
-                    // }
                     targetLastMonth = each.Target_Point__c;
                     return each;
                 }
@@ -515,11 +494,6 @@
 
                     dataSaleTrans = perfArr.saleTrans.filter((each, index) => {
                         if (each.Month__c == month) {
-                            // console.log('Trans each.Month:',each.Month__c);
-                            // console.log('Trans month:',month);
-                            // console.log('Trans month of value:',parseInt(month));
-                            // console.log('Trans currMonth:',currMonth);
-                            // console.log('parseInt(month) == currMonth :',parseInt(month) == currMonth);
                                 each.Target_Point__c = perfArr.saleTransTarget;
                                 return each;
                             }
@@ -533,12 +507,9 @@
                                     // target / 31 * 29 - 2
                                     if (currentDate > 2) {
                                         perf.Target_Point__c = (perfArr.saleTransTarget / DaysInMonth) * (currentDate - 2);
-                                        // each.Target_Point__c = (perfArr.saleTransTarget / DaysInMonth) * (currentDate - 2);
-                                        // return each;
                                     } else {
                                         perf.Target_Point__c = 0;
                                     }
-                                    // console.log('each in currMonth:',each);
                                 }
                                 var transMonth = perf.Month__c === '0' ? parseInt(perf.Month__c.substring(1)) : parseInt(perf.Month__c);
                                 if (transMonth > dataLastMonth) {
@@ -554,8 +525,6 @@
         }
 
         result = perf != null && perf != undefined ? perf * 100 : result;
-        // console.log('result:',result);
-        // component.set('v.dataLastMonth',dataLastMonth);
         component.set('v.targetLastMonth', targetLastMonth);
         component.set('v.loading', false)
 
@@ -699,12 +668,6 @@
                     }
                 }
             }
-            // if (mm - dataLastMonth == 1) {
-            //     sumTarget += targetLastMonth;
-            // }
-            // else if (mm - dataLastMonth >= 2) {
-            //     sumTarget += (targetLastMonth * 2);
-            // }
             var date = new Date();
             var currentYear = date.getFullYear();
             var currentMonth = date.getMonth() + 1;
@@ -782,16 +745,12 @@
                 selectedYear = availBankPerfObj.availPerfYear;
             }
 
-            // var toDay = new Date();
-            // var currYear = toDay.getFullYear();
-            // var currMonth = String(toDay.getMonth()+1).padStart(2, '0');
             var sumPerfIdvCond = '';
             if (channel == 'Branch') {
                 sumPerfIdvCond = ' WHERE Sale_Type__c = \'' + saleType + '\' AND Channel__c = \'' + channel + '\' AND Sale_Branch_Code__c = \'' + branchCode + '\' ' + availIdvPerfObj.perfDateTimeCondition;
             } else {
                 sumPerfIdvCond = ' WHERE Channel__c = \'' + channel + '\' AND Sale_Branch_Code__c = \'' + branchCode + '\' ' + availIdvPerfObj.perfDateTimeCondition; //
             }
-            console.log('Debug p3 graph ',branchCode, saleType, channel, availIdvPerfObj, availBankPerfObj, initWrapper, selectedYear)
             helper.getSumPerfAgg(component, sumPerfIdvCond).then((sumPerfIdvObj) => {
                 var avgIndividual;
                 var avgBankWide;
@@ -800,14 +759,12 @@
                 var currentMonth = date.getMonth() + 1;
                 var currentDate = date.getDate();
                 var DaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-                // if(selectedYear == currYear) {
                 if (availIdvPerfObj && availIdvPerfObj.transDateTimeCondition != '') {
                     helper.getSumTrans(component, helper, initWrapper.idvTransWrapper).then((sumTransIdv) => {
                         var sumPerfIdv = sumPerfIdvObj != null && sumPerfIdvObj != undefined ? sumPerfIdvObj.Sum_Act_Point : null;
                         if (sumTransIdv != null || sumPerfIdv != null) {
                             var perfTarget = sumPerfIdvObj.Sum_Target_Point ? sumPerfIdvObj.Sum_Target_Point : 0; //
                             var transTarget = 0;
-                            // if(availIdvPerfObj && availIdvPerfObj.transDateTimeCondition != '') {
                             if(selectedYear == currentYear) {
                                 if (currentDate > 2) {
                                     transTarget = (availIdvPerfObj.availPerfObj.Target_Point__c / DaysInMonth) * (currentDate - 2);
@@ -818,8 +775,6 @@
                             if (availIdvPerfObj.targetMultipiler > 1) {
                                 transTarget += availIdvPerfObj.availPerfObj.Target_Point__c ? availIdvPerfObj.availPerfObj.Target_Point__c : 0;
                             }
-                            // transTarget = availIdvPerfObj.availPerfObj.Target_Point__c * availIdvPerfObj.targetMultipiler;
-                            // }
 
                             sumPerfIdv = sumPerfIdv ? sumPerfIdv : 0;
                             sumTransIdv = sumTransIdv ? sumTransIdv : 0;
@@ -830,16 +785,12 @@
                             } else {
                                 avgIndividual = (sumPoint / sumTarget) * 100;
                             }
-
-                            // avgIndividual = ((sumPerfIdv + sumTransIdv) / (transTarget + perfTarget)) * 100;
-                            // console.log('in then avg individual',avgIndividual);
                         }
                     })
                 } else {
                     avgIndividual = null;
                 }
 
-                // var avgIndividual = ((sumTransIdv+sumPerfIdv)/sumTargetIdv)*100;
                 if (availBankPerfObj && availBankPerfObj.transDateTimeCondition != '') {
                     helper.getSumTrans(component, helper, initWrapper.bankTransWrapper).then((sumTransBank) => {
                         helper.getSumPerf(component, helper, initWrapper.bankPerfWrapper).then((sumPerfBankObj) => {
@@ -847,7 +798,6 @@
                             if (sumTransBank != null || sumPerfBank != null) {
                                 var perfTarget = sumPerfBankObj.Target_Point__c ? sumPerfBankObj.Target_Point__c : 0;
                                 var transTarget = 0;
-                                // if(availBankPerfObj && avail) {
                                 if(selectedYear == currentYear) {
                                     if (currentDate > 2) {
                                         transTarget = (availBankPerfObj.availPerfObj.Target_Point__c / DaysInMonth) * (currentDate - 2);
@@ -857,8 +807,6 @@
                                 if (availBankPerfObj.targetMultipiler > 1) {
                                     transTarget += availBankPerfObj.availPerfObj.Target_Point__c ? availBankPerfObj.availPerfObj.Target_Point__c : 0;
                                 }
-                                // transTarget = availBankPerfObj.availPerfObj.Target_Point__c * availBankPerfObj.targetMultipiler;
-                                // }
                                 sumPerfBank = sumPerfBank ? sumPerfBank : 0;
                                 sumTransBank = sumTransBank ? sumTransBank : 0;
 								
@@ -869,8 +817,6 @@
                                 } else {
                                     avgBankWide = (sumPoint / sumTarget) * 100;
                                 }
-                                // avgBankWide = ((sumTransBank + sumPerfBank) / (transTarget + perfTarget)) * 100
-
                             }
                             responseGraphData.avgIndividual = avgIndividual;
                             responseGraphData.avgBankWide = avgBankWide;
@@ -892,7 +838,6 @@
         return new Promise(function (resolve, reject) {
             var action = component.get('c.checkPerfIsReceived');
             action.setParams({
-                // "branchCode" : branchCode
                 "month": month,
                 "year": year
             });
@@ -1024,11 +969,9 @@
             });
 
             $A.enqueueAction(action);
-            // public static lastMonthTargetWrapper getLastMonthTarget(List<String> months, String year, String channel, String saleType){
         })
     },
 
-    // getSumPerfAgg : function(component, whereCondition) {
     getSumPerfAgg: function (component, whereCondition) {
         return new Promise(function (reslove, reject) {
             // var whereCondition = ''
@@ -1039,7 +982,6 @@
             });
             action.setCallback(this, function (response) {
                 var state = response.getState();
-                // component.set('v.loading',false);
                 if (state === "SUCCESS") {
                     var result = response.getReturnValue();
                     reslove(result);
@@ -1054,7 +996,6 @@
                     component.set('v.loading', false);
                     reject(message);
                     // Display the message
-                    // component.set('v.loaded', false)
                 }
             });
             $A.enqueueAction(action);
@@ -1168,6 +1109,8 @@
                 if (state === "SUCCESS") {
                     var result = response.getReturnValue();
                     // component.set('v.isSumBankWideSuccess',result.isEndRecord);
+                    result.salePerfBank.Financial_Actual_Point__c = result.salePerfBank.Financial_Actual_Point__c ? parseFloat(result.salePerfBank.Financial_Actual_Point__c) : result.salePerfBank.Financial_Actual_Point__c;
+                    result.salePerfBank.Target_Point__c = result.salePerfBank.Target_Point__c ? parseFloat(result.salePerfBank.Target_Point__c) : result.salePerfBank.Target_Point__c;
                     if (result.isEndRecord) {
                         reslove(result.salePerfBank);
                     } else {
@@ -1203,10 +1146,6 @@
             var branchCode = component.get('v.branchCode');
 
             var action = component.get('c.getCurrentMonthKPI');
-            //  let years = [
-            //      new Date().getFullYear().toString(),
-            //      (new Date().getFullYear() - 1).toString()
-            //  ];
 
             action.setParams({
                 "branchCode": branchCode,
@@ -1253,14 +1192,8 @@
     getLastSaleInfo: function (component) {
         return new Promise(function (reslove, reject) {
             component.set('v.loading', true);
-            // var selectedYear = component.get('v.selectedYear');
             var branchCode = component.get('v.branchCode');
-
             var action = component.get('c.getLastSaleInfo');
-            //  let years = [
-            //      new Date().getFullYear().toString(),
-            //      (new Date().getFullYear() - 1).toString()
-            //  ];
 
             action.setParams({
                 "branchCode": branchCode,
@@ -1330,8 +1263,6 @@
     getSharePointLink: function (component) {
         var action = component.get('c.getSharePointLink');// get function at apex
         var branchCode = component.get('v.branchCode');
-        // action.setParams({
-        // });
         action.setCallback(this, function (response) {
             var state = response.getState();
             if (state === "SUCCESS") {
@@ -1345,7 +1276,6 @@
                         }
                     });
                 }
-                /* component.set('v.loaded', false); */
             }
             else {
                 var errors = response.getError();
@@ -1370,7 +1300,6 @@
             if (state === "SUCCESS") {
                 var result = response.getReturnValue();
                 component.set('v.lastSaleInfoInDB',result);
-                /* component.set('v.loaded', false); */
             }
             else {
                 var errors = response.getError();

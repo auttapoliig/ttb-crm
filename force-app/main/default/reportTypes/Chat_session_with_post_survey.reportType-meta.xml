@@ -265,7 +265,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Case Contact Person Name</displayNameOverride>
+            <displayNameOverride>Contact Person Name</displayNameOverride>
             <field>iigproduct_2__Case__c.Contact_Person_Name__c</field>
             <table>iigproduct_2__ChatSession__c</table>
         </columns>
@@ -273,6 +273,57 @@
             <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Case-Number</displayNameOverride>
             <field>iigproduct_2__Case__c.CaseNumber</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TMB Customer ID</displayNameOverride>
+            <field>iigproduct_2__Case__c.Customer_ID__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>iigproduct_2__Lead__c.TMB_Cust_ID__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>iigproduct_2__Lead__c.RTL_TMB_Cust_ID__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>First_Responded_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>First_Responded_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>End_Date_Date__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>End_Date_Time__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLA_Status__c</field>
             <table>iigproduct_2__ChatSession__c</table>
         </columns>
         <masterLabel>ChatSession</masterLabel>
@@ -320,11 +371,13 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NPS</displayNameOverride>
             <field>iigproduct_2__NPS_Score__c</field>
             <table>iigproduct_2__ChatSession__c.iigproduct_2__ScoreSurvey__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OSAT</displayNameOverride>
             <field>iigproduct_2__OSAT_Score__c</field>
             <table>iigproduct_2__ChatSession__c.iigproduct_2__ScoreSurvey__r</table>
         </columns>

@@ -63,6 +63,7 @@ public with sharing class CampaignReportController {
                     eachData.put('Flash_Card_Flag', each.Flash_Card_flag__c == true ? 'Yes' : 'No');
                     eachData.put('instant_rec_url', '/one/one.app?#/sObject/' + each.id + '/view');
                     eachData.put('instant_rec_name', each.Name == null ? 'More Detail' : each.Name);
+                    eachData.put('instant_rec_id', each.id);
                     instantList.add(eachData);
             }
 
@@ -117,6 +118,8 @@ public with sharing class CampaignReportController {
                 eachData.put('Product_Group', 'ttb Reserve');
                 eachData.put('Details', each.Main_Bank_Group2_Value__c);
                 eachData.put('Period', each.Mainbank_Campaign_Period__c);
+                eachData.put('More_Detail_URL', '/one/one.app?#/sObject/' + each.id + '/view');
+                eachData.put('More_Detail', each.Main_Bank_Group2_Value__c == null ? '' : 'More Detail');
                 dataList.add(eachData);
             }
 

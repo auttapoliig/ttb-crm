@@ -1116,6 +1116,36 @@
             <field>CC_ID__c</field>
             <table>User.Account$OwnerId</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DNC_Expired_Date__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsReorgWealthRM_Date__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsZoneManagerWealthAssigned_Date__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsBranchManagerWealthAssigned_Date__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>segment_color_img__c</field>
+            <table>User.Account$OwnerId</table>
+        </columns>
         <masterLabel>Customers</masterLabel>
     </sections>
 </ReportType>

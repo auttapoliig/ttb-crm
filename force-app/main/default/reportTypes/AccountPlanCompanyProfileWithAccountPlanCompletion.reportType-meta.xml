@@ -485,6 +485,11 @@
             <field>Account_Plan_Company_Profile__c</field>
             <table>AcctPlanCompanyProfile__c.Account_Plan_Completion__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>AcctPlanCompanyProfile__c</table>
+        </columns>
         <masterLabel>Account Plan Company Profile</masterLabel>
     </sections>
     <sections>

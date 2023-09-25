@@ -256,6 +256,11 @@
             <field>Deposit_Account__c</field>
             <table>Product_Information_Detail__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>Product_Information_Detail__c</table>
+        </columns>
         <masterLabel>Product: Account Information</masterLabel>
     </sections>
 </ReportType>

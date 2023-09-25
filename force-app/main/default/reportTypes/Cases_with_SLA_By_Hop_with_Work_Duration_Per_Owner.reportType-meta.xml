@@ -1406,7 +1406,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>External_Ref_ID__c</field>
+            <field>IsScrambled__c</field>
+            <table>Case</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_web_service__c</field>
+            <table>Case</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Test_sensitive__c</field>
             <table>Case</table>
         </columns>
         <columns>

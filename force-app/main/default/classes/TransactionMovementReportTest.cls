@@ -55,11 +55,13 @@ public class TransactionMovementReportTest {
         Large_Transaction_Movements__c ltm1 = new Large_Transaction_Movements__c();
         ltm1.Transaction_Date_Time__c = date.newinstance(today.year(), today.month(), today.day() - 1);
         ltm1.Amount__c = -5000000;
+        ltm1.Transaction_Serial_Number__c = '37247593496949';
         ltm1.Customer__c = [SELECT Id FROM Account WHERE RMC_Wealth_Flag__c = 'Yes' LIMIT 1].Id;
 
         Large_Transaction_Movements__c ltm2 = new Large_Transaction_Movements__c();
         ltm2.Transaction_Date_Time__c = date.newinstance(today.year(), today.month(), today.day() - 1);
         ltm2.Amount__c = 5000000;
+        ltm2.Transaction_Serial_Number__c = '37247593496948';
         ltm2.Customer__c = [SELECT Id FROM Account WHERE RMC_Wealth_Flag__c = 'No' LIMIT 1].Id;
 
         List<Large_Transaction_Movements__c> ltmList = new List<Large_Transaction_Movements__c>{ltm1, ltm2};

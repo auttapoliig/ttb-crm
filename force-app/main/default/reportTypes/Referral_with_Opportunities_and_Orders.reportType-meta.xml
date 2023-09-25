@@ -769,6 +769,11 @@
             <field>RTL_Product_Name_Str__c</field>
             <table>RTL_Referral__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
         <masterLabel>Referrals</masterLabel>
     </sections>
     <sections>
@@ -1980,6 +1985,21 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_Zone_Short_Name__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <masterLabel>Opportunities</masterLabel>

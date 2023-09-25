@@ -32,8 +32,6 @@ public with sharing class T_Performance_SummaryController{
                                                             WHERE SF_Profile__c = :currUser.Profile.Name AND SF_Profile__c != null AND SF_Role__c != null];
                 System.debug(TMDT.size());
                 for (T_Performance_Permission__mdt TperfPerm : TMDT){
-                    // System.debug('user:' + currUser.UserRoleName__c);
-                    // System.debug('1234' + TperfPerm);
                     if (currUser.UserRoleName__c.startsWith(TperfPerm.SF_Role__c)){
                         TperfMDT.add(TperfPerm);
                     }
@@ -106,9 +104,6 @@ public with sharing class T_Performance_SummaryController{
                 List<String> stringSpiltData = new List<String>();
                 stringSpiltData.add('\'' + summaryPageValue + '\'');
                 SPW.summaryPageValue = stringSpiltData;
-                // if(channelName == null){
-                //     SPW.channelValue = summaryPageValue;
-                // }
 
             } else if (summaryPage == 'Channel_Name__c'){
                 SPW.summaryPage = 'Channel';
@@ -313,9 +308,6 @@ public with sharing class T_Performance_SummaryController{
 
                 }
             }
-            // else if (currUser.Profile.Name.contains('System Admin')){
-            //     summaryLabel = 'Admin';
-            // }
             else{
                 throw new AuraHandledException('Meta data type does not match');
             }
@@ -332,9 +324,6 @@ public with sharing class T_Performance_SummaryController{
         String dataTimeCondition = '';
         String isDataQuery = '';
 
-        // String queryObject = 'T_Performance_Target_Product_by_Team__c';
-        // String fieldList = 'Year__c, Month__c, Group_Channel__c, Channel_Name__c, Region_Code__c, Zone_Code__c, Branch_Team_Code__c, Product_Group_Code__c, Product_Group_Name__c, Target_Unit_Year__c, Target_Unit_Month__c, Product_List__c, Rank__c, Branch_Point_Engine__c, Indicator_Level1__c,Cap_Max_Pct__c';
-        // String condition;
         List<T_Performance_Target_Product_by_Team__c> targetProdList;
         if (selectedYear != null && selectedMonth != null){
             dataTimeCondition = ' Year__c = \'' + selectedYear + '\' AND Month__c <=\'' + selectedMonth + '\' AND Month__c >= \'01\'';
@@ -359,18 +348,6 @@ public with sharing class T_Performance_SummaryController{
             } else{
                 throw new AuraHandledException('Invalid Parameter');
             }
-            // String query = 'SELECT ' + fieldList + ' FROM ' + queryObject + ' ' + condition + ' ORDER BY Rank__c ';
-            // List<T_Performance_Target_Product_by_Team__c> ProdList = Database.query(query);
-
-            // List<String> targetProdStr = new List<String>();
-            // for (T_Performance_Target_Product_by_Team__c TP : ProdList){
-            //     string newData = TP.Product_List__c.removeEnd(';');
-            //     List<string> splitData = newData.split(';');
-            //     for (string sd : splitData){
-            //         targetProdStr.add('\'' + sd + '\'');
-            //     }
-            // }
-            // TPW.prodList = targetProdStr;
             targetProdList = Database.query(isDataQuery);
             if(targetProdList.size() > 0 ){
                 TPW.isData = true;
@@ -383,44 +360,6 @@ public with sharing class T_Performance_SummaryController{
         return TPW;
     }
 
-    // @AuraEnabled
-    // public static T_Performance_Onedown_Controller.chunkQueryWrapper getSummaryTeamandProduct(List<String> prodList, String summaryPage, List<String> summaryPageValue, String selectedYear, String selectedMonth, String lastRecord){
-    //     String dataTimeCondition = '';
-    //     T_Performance_Onedown_Controller.chunkQueryWrapper chunkq = new T_Performance_Onedown_Controller.chunkQueryWrapper();
-    //     chunkq.queryObject = 'Summary_Team_and_Product__c';
-    //     chunkq.lastRecordId = lastRecord;
-    //     chunkq.fieldList = 'Name, Actual_Amount__c, Indicator_Code_Level1__c, Indicator_Code_Level2__c, Indicator_Code__c, Indicator_Level1__c, Indicator_Level2__c, Indicator_Name__c, Indicator_Rank__c, Month__c, Unique_External_Key__c, Year__c, Channel_Name__c, Region_Code__c, Zone_Code__c, Branch_Team_Code__c ';
-    //     String prodString;
-    //     if (prodList.size() > 0){
-    //         prodString = '(' + String.join(new List<String>(prodList), ',') + ')';
-    //     } else{
-    //         prodString = '(\'\')';
-    //     }
-    //     if (selectedYear != null && selectedMonth != null){
-    //         dataTimeCondition = ' Year__c = \'' + selectedYear + '\' AND Month__c <=\'' + selectedMonth + '\' AND Month__c >= \'01\'';
-    //         System.debug('summaryPageValue :' + summaryPageValue);
-    //         if (summaryPage != null && summaryPageValue != null){
-    //             if (summaryPage == 'Retail'){
-    //                 chunkq.condition = ' WHERE Channel_Name__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else if (summaryPage == 'Group of channel'){
-    //                 chunkq.condition = ' WHERE Channel_Name__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else if (summaryPage == 'Channel'){
-    //                 chunkq.condition = ' WHERE Channel_Name__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else if (summaryPage == 'Region'){
-    //                 chunkq.condition = ' WHERE Region_Code__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else if (summaryPage == 'Zone'){
-    //                 chunkq.condition = ' WHERE Zone_Code__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else if (summaryPage == 'Branch'){
-    //                 chunkq.condition = ' WHERE Branch_Team_Code__c IN ' + summaryPageValue + ' AND Indicator_Code__c IN ' + prodString + ' AND' + dataTimeCondition;
-    //             } else{
-    //                 throw new AuraHandledException('Invalid Parameter');
-    //             }
-    //         }
-    //     } else{
-    //         throw new AuraHandledException('Invalid Parameter');
-    //     }
-    //     return T_Performance_Onedown_Controller.chunkQuery(chunkq);
-    // }
     @AuraEnabled
     public static summaryPagebyTypeWrapper getSummaryPagebyType(String onedownValue, String summaryPage){
         summaryPagebyTypeWrapper SPTW = new summaryPagebyTypeWrapper();
@@ -512,20 +451,6 @@ public with sharing class T_Performance_SummaryController{
 
     @AuraEnabled
     public static Boolean isNextButton(String channelName, String currentLevel, String zoneValue, String selectedYear, String selectedMonth){
-        // System.debug('currentLevel: ' + currentLevel);
-        // System.debug('zoneValue: ' + zoneValue);
-        // System.debug('selectedYear: ' + selectedYear);
-        // System.debug('selectedMonth: ' + selectedMonth);
-
-        // if(currentLevel == 'Zone' || currentLevel == 'Zone_Code__c' && zoneValue != null){
-        //     List<T_Performance_Target_Product_by_Team__c > STPList1 = [SELECT Id, Name, Month__c, Year__c, Zone_Code__c, Branch_Team_Code__c FROM T_Performance_Target_Product_by_Team__c  WHERE Zone_code__c = :zoneValue AND Branch_Team_Code__c = :zoneValue LIMIT 2];
-        //     if(STPList1.size() > 0){
-        //         List<T_Performance_Target_Product_by_Team__c > STPList2 = [SELECT Id, Name, Month__c, Year__c, Zone_Code__c, Branch_Team_Code__c FROM T_Performance_Target_Product_by_Team__c  WHERE Zone_code__c = :zoneValue AND Branch_Team_Code__c != :zoneValue AND Branch_Team_Code__c != null LIMIT 1];
-        //         if(STPList2.size() == 0){
-        //             isNext = false;
-        //         }
-        //     }
-        // }
         Boolean isNext = true;
         List<T_Performance_Permission__mdt> checkPerfMeta = tperf_Permission;
         if (currentLevel == 'Zone' || currentLevel == 'Zone_Code__c' && zoneValue != null){
@@ -583,8 +508,6 @@ public with sharing class T_Performance_SummaryController{
 
 
                 query = 'SELECT ' + fieldList + ' FROM ' + queryObject + condition;
-                // System.debug(condition);
-                // System.debug(query);
                 TperfTBTList = Database.query(query);
 
             } else {
@@ -601,7 +524,6 @@ public with sharing class T_Performance_SummaryController{
         Map<String, Decimal> mapActualWithRunrate = new Map<string, Decimal>();
         for (T_Performance_Target_Product_by_Team__c tb1 : TperfTBTList){
             String groupKey = tb1.Group_Channel__c + tb1.Product_Group_Code__c;
-            // String groupKey = tb1.Group_Channel__c + tb1.Product_Group_Name__c;
             if (tb1.Month__c == selectedMonth && tb1.Year__c == selectedYear){
                 if (!mapProductWithVolume.containsKey(groupKey)){
                     mapProductWithVolume.put(groupKey, (tb1.volumn__c != null ? tb1.volumn__c : 1));
@@ -610,20 +532,12 @@ public with sharing class T_Performance_SummaryController{
         }
         for (T_Performance_Target_Product_by_Team__c tb : TperfTBTList){
             String key = tb.Product_Group_Code__c;
-            // String key = tb.Product_Group_Name__c;
-            // System.debug('key : '+ key);
             Decimal volume = 1;
-            // if (mapProductWithVolume.containsKey(tb.Group_Channel__c + tb.Product_Group_Name__c)){
-                // volume = mapProductWithVolume.get(tb.Group_Channel__c + tb.Product_Group_Name__c);
             if (mapProductWithVolume.containsKey(tb.Group_Channel__c + tb.Product_Group_Code__c)){
                 volume = mapProductWithVolume.get(tb.Group_Channel__c + tb.Product_Group_Code__c);
             }
             
             if (mapProductWithActual.containsKey(key)){
-                // System.debug('Map : '+ mapProductWithActual.get(key));
-                // System.debug('Actual Amount : '+ tb.Actual_Amount__c);
-                // System.debug('volume: '+ volume);
-                
                 Decimal newActual = mapProductWithActual.get(key) + ((tb.Actual_Amount__c != null ? tb.Actual_Amount__c : 0) / volume);
                 mapProductWithActual.put(key, newActual);
             } else{

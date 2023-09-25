@@ -5,7 +5,7 @@
             { label: 'Insurance Policy No.', fieldName: 'Account_Number', type: 'text', wrapText: true },
             { label: 'Anniversary Date', fieldName: 'Anniversary_Date', type: 'date', cellAttributes: { class: { fieldName: 'textColor' }}},
             { label: 'Insurance Premium', fieldName: 'Insurance_Premium', type: 'text', wrapText: true },
-            { label: 'Flag Fully Paid', fieldName: 'Insurance_Fully_Paid_Flag', type: 'text', wrapText: true }
+            { label: 'Fully Paid Flag', fieldName: 'Insurance_Fully_Paid_Flag', type: 'text', wrapText: true }
         ]);
 
         var action = component.get('c.getAnniversaryInsurance');

@@ -1085,6 +1085,21 @@
             <field>RTL_Referral__c.RTL_Count_Not_Contacted__c</field>
             <table>Opportunity</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
+            <table>Opportunity</table>
+        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>
@@ -1676,6 +1691,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_HelpText__c</field>
+            <table>Opportunity.Referrals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
             <table>Opportunity.Referrals__r</table>
         </columns>
         <masterLabel>Referrals</masterLabel>

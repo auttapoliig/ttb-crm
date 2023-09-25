@@ -102,7 +102,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_FirstName__c</field>
+            <field>RTL_Campaign_Reference__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Campaign_Reference_Source__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assigned_Pool__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Appointed_Date_Time__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_License_No__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_LeadSource__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -117,7 +142,107 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>wsUpdateFlag__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Referral_Key__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Referral_Assignment__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Group_PickList__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Referred_Date__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Sub_Product__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_W2L_Term__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Campaign_Reference__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Campaign_Source__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Transfer_from_Referral_Id__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Web_Unique_ID__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Remark_from_Online_Loan__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Related_to_Referral__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Send_To_Call_Me_Now_Flag__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_SLA__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Account_Name__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Media_Source__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Referred_By_Id__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Marketing_Code__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Lead_Group__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Medium__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -127,7 +252,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_W2L_Content__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Duplicate_Opportunity__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Name_Str__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Call_Me_Now_Request__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -137,7 +277,62 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Is_Customer_Owner_Admin__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_From_Call_Me_Now__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Refer_Age_Days_Closed__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Preferred_Branch_Type__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Preferred_Branch_Code__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Employee_First_Name__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_by_Chief__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Refer_Age_Contacted__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsScrambled__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Preferred_Branch_Name__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Send_Email__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Name_txt__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -147,7 +342,57 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Is_Accept_Button__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Transfer_Page__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_Employee_Last_Name__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_First_Contacted_Date2__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Zone__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Customer_Segment__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_CampaignID__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contact_FullName__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Call_Me_Now_Status__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Campaign__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Call_Me_Now_Request_Count__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -163,6 +408,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_First_Contacted_Branch_Team_NameCode__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Call_Me_Now_Response__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -203,6 +453,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RTL_Interested_Product__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_W2L_Campaign_Name__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -642,7 +897,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Appointed_Date_Time__c</field>
+            <field>RTL_Comment2__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Comment3__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Citizen_Id__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_ID_Type__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -652,62 +922,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Call_Me_Now_Request__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Call_Me_Now_Response__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Campaign__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Campaign_Member__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Assigned_Pool__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_BlueBook__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Call_Me_Now_Request_Count__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Call_Me_Now_Status__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_CampaignID__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Campaign_Name__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Campaign_Reference__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_CarBooked__c</field>
+            <field>RTL_AL_car_bought_from__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -717,7 +932,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_bought_from__c</field>
+            <field>RTL_AL_car_gear__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -732,42 +947,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_year__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Campaign_Reference_Source__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_gear__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_plate_no__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>RTL_AL_car_type__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CheckClickSubmit__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Comment2__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_contact_channel__c</field>
+            <field>RTL_AL_car_year__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -777,117 +962,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Comment3__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Contact_Address__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactDistrict__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactZipcode__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactSubDistrict__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>countsendHPAP__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Created_by_Chief__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details_of_Status__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactProvince__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact_FullName__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Content__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Customer_Segment__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer_Zone__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownAmt__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_First_Contacted_Date2__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownPercent__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Citizen_Id__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ILA_AMT__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_installment_periods__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Interested_Rate__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Accept_Button__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_From_Call_Me_Now__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_ID_Type__c</field>
+            <field>RTL_AL_contact_channel__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -897,77 +972,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Is_Customer_Owner_Admin__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Send_To_HPAP__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Transfer_Page__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Send_Email__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Send_to_HPAP_Done__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Update_Refer__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Lead_Group__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_License_No__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_max_set_up_amount__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Medium__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_AMT__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_oa_ref_code__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_LeadSource__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Marketing_Code__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Media_Source__c</field>
+            <field>RTL_AL_installment_periods__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -977,82 +982,52 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_MTH__c</field>
+            <field>RTL_AL_wanted_amount__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_PayPerMonth__c</field>
+            <field>RTL_AL_oa_ref_code__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Preferred_Branch_Name__c</field>
+            <field>RTL_AL_car_plate_no__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Preferred_Branch_Code__c</field>
+            <field>RTL_AL_Interested_Rate__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Preferred_Branch_Type__c</field>
+            <field>RTL_AL_ContactDistrict__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Group_PickList__c</field>
+            <field>RTL_AL_ContactSubDistrict__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Name_Str__c</field>
+            <field>RTL_AL_ContactZipcode__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Refer_Age_Days_Closed__c</field>
+            <field>RTL_AL_ContactProvince__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No__c</field>
+            <field>RTL_AL_max_set_up_amount__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Name_txt__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Refer_Age_Contacted__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referral_Assignment__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Referral_Key__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referred_By_Id__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Referred_Date__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Related_to_Referral__c</field>
+            <field>RTL_AL_ILA_AMT__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -1062,52 +1037,52 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_AMT__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_MTH__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Is_Send_To_HPAP__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Refer_No__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_BlueBook__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_PayPerMonth__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_DownPercent__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_DownAmt__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_CarBooked__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RTL_AL_Showroom__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Remark_from_Online_Loan__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Send_To_Call_Me_Now_Flag__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_SLA__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Status__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Sub_Product__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_W2L_Term__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Campaign_Reference__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_wanted_amount__c</field>
-            <table>RTL_Referral__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WS_Response_Detail__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
@@ -1117,22 +1092,47 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Campaign_Source__c</field>
+            <field>RTL_Contact_Address__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Transfer_from_Referral_Id__c</field>
+            <field>RTL_Status__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Web_Unique_ID__c</field>
+            <field>Details_of_Status__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>wsUpdateFlag__c</field>
+            <field>RTL_Campaign_Member__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>countsendHPAP__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WS_Response_Detail__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Update_Refer__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CheckClickSubmit__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Send_to_HPAP_Done__c</field>
             <table>RTL_Referral__c</table>
         </columns>
         <masterLabel>Referrals</masterLabel>
@@ -1561,6 +1561,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Host_Result__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead_Source__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
@@ -2130,6 +2135,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Refer_No__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Submitted_Segment__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
@@ -2250,22 +2260,487 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Masked_Account_No__c</field>
+            <field>RTL_Contact_Address__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Actual_Amount__c</field>
+            <field>RTL_External_Ref_ID__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_Booking_Date__c</field>
+            <field>RTL_AL_FinAmt__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Account_No__c</field>
+            <field>RTL_AL_ILA_AMT__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_REMN_MTH__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_AMT__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_OFFR_ILA_MTH__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_wanted_amount__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_oa_ref_code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Owner_Position__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>product_campaign_recommend__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_ID_Type__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_ID_Number__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OnSiteServiceApprovedDate__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_PayPerMonth__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Pipeline__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Primary_campaign__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Zone_Branch_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Channel__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_TMB_Advisory_Room__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_TentName__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Zone_Branch_Sale_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Showroom__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SmartBDM_QuickCA_ProcessStatus__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Reference_Customer__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Reference_Customer_ID__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Referral_Record_Type__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Req_No1__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Req_No2__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Opportunity_Stage_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Product_Grouping_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Sale_Employee_ID_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Region_Zone_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_installment_amount__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_installment_periods__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_Interested_Rate__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Allow_Edit__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Opp_Submit_App__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opp_Type_CRM_Report__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner_s_Role__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contact</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PushCount</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Prospect_Customer_Address__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Is_Create_From_Campaign_Member__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_max_set_up_amount__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Mobile__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_New_Investment_Amount__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Marketing_Code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_normal_price__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_To_Send_To_CXM__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Owner_active__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Is_Send_To_HPAP__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Loan_Calculation_Amount__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactDistrict__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactSubDistrict__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Copy_Created_Date_Time__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_CXM_MESSAGE_TYPE__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Debit_Account_No__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_DownPercent__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Email__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_DownAmt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Debit_Account_Type__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_CXM_Product_Group__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Creator_ID__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Creator_Zone_Code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Operating_Model__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CXM_Latest_Response__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CXM_Latest_Status__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Customer_Segment__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Customer_Prospect_Mobile__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Corebank_Emp_Id__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Create_Branch_Code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_comment__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Comm_Product_List__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Created_Zone_Short_Name__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Creator_Branch_Team_Code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Creator_Region_Code__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Created_Region_Short_Name__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_contact_channel__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactProvince__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_ContactZipcode__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_FirstName__c</field>
+            <table>RTL_Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_year__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_subtype__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_plate_no__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_gear__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_group__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_bought_from__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_type__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Closed_Won_Emp__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Closed_Won_Date__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Branch_Short_Name_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Branch_Sale_Rpt__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Campaign_Lead_Reference__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_Campaign_Lead_Source__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_car_brand__c</field>
+            <table>RTL_Referral__c.Opportunities__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTL_AL_CarBooked__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
@@ -2295,492 +2770,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Branch_Short_Name_Rpt__c</field>
+            <field>RTL_Account_Booking_Date__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Campaign_Lead_Reference__c</field>
+            <field>RTL_Account_No__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_CarBooked__c</field>
+            <field>RTL_Masked_Account_No__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Branch_Sale_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Campaign_Lead_Source__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_brand__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_type__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Closed_Won_Emp__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_bought_from__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_group__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_gear__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_plate_no__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_subtype__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_car_year__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Closed_Won_Date__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>product_campaign_recommend__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactDistrict__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactSubDistrict__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Copy_Created_Date_Time__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_comment__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Comm_Product_List__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Contact_Address__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_contact_channel__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactProvince__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ContactZipcode__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Corebank_Emp_Id__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Create_Branch_Code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Created_Region_Short_Name__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Created_Zone_Short_Name__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Creator_ID__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Creator_Zone_Code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Operating_Model__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CXM_Latest_Response__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Creator_Region_Code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Creator_Branch_Team_Code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Customer_Prospect_Mobile__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Customer_Segment__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CXM_Latest_Status__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_CXM_MESSAGE_TYPE__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Debit_Account_No__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownPercent__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_CXM_Product_Group__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Debit_Account_Type__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_DownAmt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Email__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_External_Ref_ID__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_wanted_amount__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_FinAmt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_ID_Number__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_ILA_AMT__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_installment_periods__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Interested_Rate__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Allow_Edit__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Create_From_Campaign_Member__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Is_Send_To_HPAP__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead_Source__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_installment_amount__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_ID_Type__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Loan_Calculation_Amount__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_Owner_active__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_To_Send_To_CXM__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Marketing_Code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_normal_price__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_max_set_up_amount__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Mobile__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_New_Investment_Amount__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_AMT__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_OFFR_ILA_MTH__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_oa_ref_code__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OnSiteServiceApprovedDate__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Opp_Submit_App__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Opp_Type_CRM_Report__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Owner_s_Role__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Owner_Position__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_PayPerMonth__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Pipeline__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Primary_campaign__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>PushCount</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Prospect_Customer_Address__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Refer_No__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Reference_Customer_ID__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Referral_Record_Type__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Region_Zone_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Reference_Customer__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No2__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Product_Grouping_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_REMN_MTH__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Req_No1__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Opportunity_Stage_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Sale_Employee_ID_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SmartBDM_QuickCA_ProcessStatus__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Service_Channel__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_Showroom__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_AL_TentName__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_TMB_Advisory_Room__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Zone_Branch_Sale_Rpt__c</field>
-            <table>RTL_Referral__c.Opportunities__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RTL_Zone_Branch_Rpt__c</field>
+            <field>RTL_Actual_Amount__c</field>
             <table>RTL_Referral__c.Opportunities__r</table>
         </columns>
         <masterLabel>Opportunities</masterLabel>
