@@ -513,31 +513,6 @@
                         </div>
                     </lightning:layoutItem>
 
-                    <!-- RTL_Lifetime_link__c -->
-                    <!-- SCR0595232 : Remove fields life Time deploy 21 Sep 2023
-                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
-                        size="{!v.deviceSize.size}">
-                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                            <label class="slds-form-element__label">{!v.dataFields.RTL_Lifetime_link__c.label}</label>
-                            <aura:if isTrue="{! v.dataFields.RTL_Lifetime_link__c.inlineHelpText }">
-                                <lightning:helptext content="{! v.dataFields.RTL_Lifetime_link__c.inlineHelpText }" />
-                            </aura:if>
-                            <div class="slds-form-element__control">
-                                <aura:if isTrue="{!v.dataFields.RTL_Lifetime_link__c.isAccessible}">
-                                    <div class="slds-form-element__static">
-                                        <c:CallCenterCSV_PillOutput aura:id="{!v.dataFields.RTL_Lifetime_link__c.name}"
-                                            type="{!v.dataFields.RTL_Lifetime_link__c.type}" value="{!v.dataFields.RTL_Lifetime_link__c.value}" />
-                                    </div>
-                                    <aura:set attribute="else">
-                                        <div class="slds-form-element__static">
-                                            <lightning:formattedText value="{!$Label.c.Data_Condition_Hidden_Text}" />
-                                        </div>
-                                    </aura:set>
-                                </aura:if>
-                            </div>
-                        </div>
-                    </lightning:layoutItem>
-                    -->
                     <!-- RTL_Credit_Card_History__c -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
