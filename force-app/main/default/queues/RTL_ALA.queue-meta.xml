@@ -16,6 +16,9 @@
         </roles>
     </queueMembers>
     <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
         <sobjectType>RTL_Referral__c</sobjectType>
     </queueSobject>
 </Queue>

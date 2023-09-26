@@ -1,6 +1,6 @@
 @IsTest
 public class TestForUtility{
-	 private static void createAppConfigList(){     
+    private static void createAppConfigList(){     
         //Create For After Refresh Sandbox
         List<For_After_Refresh_Sandbox__c> afterSBList = new List<For_After_Refresh_Sandbox__c>(); 
 
@@ -340,7 +340,7 @@ public class TestForUtility{
     }
 
     //Test class for Report Utility
-    @IsTest(SeeAllData=true) private static  void forexortReportUtility(){
+    @IsTest private static void forexortReportUtility(){
         String content  = Datetime.now().addDays(-1).format('YYYY_MM_dd');
         String filename = 'CXM_Task_Notification'+content;
         List<String> emailOpsList = new List<String>();
@@ -1118,60 +1118,26 @@ public class TestForUtility{
     
     //Test class for FX Order
     //Test class for AsyncReportController
-    @IsTest(SeeAllData=true) private static  void testcaseforAsyncReport(){
-        List<Report> reportList =  [Select Id, Name, DeveloperName
-                                     From Report
-                                     Where DeveloperName = 'Branch_Top_Bottom_for_BBG_LONG'];
+    @IsTest(SeeAllData=true) private static void testcaseforAsyncReport(){
+        List<Report> reportList =  [SELECT Id, Name, DeveloperName FROM Report WHERE DeveloperName = 'Branch_Top_Bottom_for_BBG_LONG'];
 
         AsyncReportController.runAsyncReport(reportList.get(0).Id,reportList.get(0).DeveloperName,false);
 
         Test.startTest();
-        Reports.ReportMetadata reportMetadata =
-                                 Reports.ReportManager.describeReport(reportList.get(0).Id).getReportMetadata();
-
-        Reports.ReportInstance instanceObj =
-                Reports.ReportManager.runAsyncReport(reportList.get(0).Id,reportMetadata,false);
-
+        Reports.ReportMetadata reportMetadata = Reports.ReportManager.describeReport(reportList.get(0).Id).getReportMetadata();
+        Reports.ReportInstance instanceObj = Reports.ReportManager.runAsyncReport(reportList.get(0).Id,reportMetadata,false);
         String instanceId = instanceObj.getId();
-
-        List<Report> reportList1 =  [Select Id, Name, DeveloperName
-                                     From Report
-                                     Where DeveloperName = 'Cmp_Util_by_Region_Campaign_Long'];
-
-        Reports.ReportMetadata reportMetadata1 =
-                                 Reports.ReportManager.describeReport(reportList1.get(0).Id).getReportMetadata();
-
-        Reports.ReportInstance instanceObj1 =
-                Reports.ReportManager.runAsyncReport(reportList1.get(0).Id,reportMetadata1,false);
-
+        List<Report> reportList1 =  [SELECT Id, Name, DeveloperName FROM Report WHERE DeveloperName = 'Cmp_Util_by_Region_Campaign_Long'];
+        Reports.ReportMetadata reportMetadata1 = Reports.ReportManager.describeReport(reportList1.get(0).Id).getReportMetadata();
+        Reports.ReportInstance instanceObj1 = Reports.ReportManager.runAsyncReport(reportList1.get(0).Id,reportMetadata1,false);
         String instanceId1 = instanceObj1.getId();
-        
         Test.stopTest();
 
-        AsyncReportController.getResultsByInstaceId(instanceId
-                                                    ,reportList.get(0).DeveloperName
-                                                    ,false);
-
+        AsyncReportController.getResultsByInstaceId(instanceId,reportList.get(0).DeveloperName,false);
         AsyncReportController.runCompletedAsyncReport(reportList.get(0).Id);
-
-        
-
-        
-
-        AsyncReportController.getResultsByInstaceId(instanceId1
-                                                    ,reportList1.get(0).DeveloperName
-                                                    ,false);
-
+        AsyncReportController.getResultsByInstaceId(instanceId1,reportList1.get(0).DeveloperName,false);
         AsyncReportController.runCompletedAsyncReport(reportList1.get(0).Id);
-
-        
-
-
-         String jobId = System.schedule('AsyncReportScheduler',
-                        RTL_TestUtility.CRON_EXP, 
-                        new AsyncReportScheduler(10));
-
-        
+        String jobId = System.schedule('AsyncReportScheduler',RTL_TestUtility.CRON_EXP, new AsyncReportScheduler(10));
     }
 
 

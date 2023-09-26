@@ -1368,7 +1368,7 @@ System.debug(':::: mapWalletDomain ::::'+mapWalletDomain.size());
                 if(mapsubSegmentMapping.containsKey(ownerZoneCode)){
                     acct.To_Be_Sub_Segment__c = prefixSubseg + mapsubSegmentMapping.get(ownerZoneCode).Sub_Segment_Code__c;
                 }else{
-                    acct.To_Be_Sub_Segment__c = prefixSubseg + '00';
+                    acct.addError(System.Label.ERROR_SEGMENT);
                 }
                 acct.Last_Calculated_Sub_Segment__c = Datetime.now();
             }
@@ -1384,7 +1384,7 @@ System.debug(':::: mapWalletDomain ::::'+mapWalletDomain.size());
                 if(mapsubSegmentMapping.containsKey(ownerZoneCode)){
                     acct.Sub_segment__c = prefixSubseg + mapsubSegmentMapping.get(ownerZoneCode).Sub_Segment_Code__c;
                 }else{
-                    acct.Sub_segment__c = prefixSubseg + '00';
+                    acct.addError(System.Label.ERROR_SEGMENT);
                 }
             }
         }

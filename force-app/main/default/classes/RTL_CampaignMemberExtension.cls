@@ -194,7 +194,34 @@ public without sharing class RTL_CampaignMemberExtension {
             
         }set;
     }
-    
+    public List<String> ALPrdNameSet {
+        get{
+            if(ALPrdNameSet == null){
+                ALPrdNameSet = new List<String>();
+                List<AL_screen_Product_Name__mdt> prdHLCALlst = AL_screen_Product_Name__mdt.getAll().values();
+
+                for (AL_screen_Product_Name__mdt prd : prdHLCALlst) {
+                    ALPrdNameSet.add(prd.Product_Name__c);
+                }
+            }
+            return ALPrdNameSet;
+        }
+        set;
+    }
+    public List<String> HCALPrdNameSet {
+        get{
+            if(HCALPrdNameSet == null){
+                HCALPrdNameSet = new List<String>();
+                List<Droplead_HLCAL_screen_Product_Name__mdt> prdHLCALlst = Droplead_HLCAL_screen_Product_Name__mdt.getAll().values();
+
+                for (Droplead_HLCAL_screen_Product_Name__mdt prd : prdHLCALlst) {
+                    HCALPrdNameSet.add(prd.Product_Name__c);
+                }
+            }
+            return HCALPrdNameSet;
+        }
+        set;
+    }
     public RTL_CampaignMemberExtension(ApexPages.StandardController stdController) {
         // -- Custom Lookup --
         doneLookup = false;
@@ -553,7 +580,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
 
-    private static Map<ID, String> userNameMap {get{
+    @TestVisible private static Map<ID, String> userNameMap {get{
         if (userNameMap == null) {
             userNameMap = new Map<ID, String>();
         }
@@ -561,7 +588,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> branchNameMap {get{
+    @TestVisible private static Map<ID, String> branchNameMap {get{
         if (branchNameMap == null) {
             branchNameMap = new Map<ID, String>();
         }
@@ -569,7 +596,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> contactNameMap {get{
+    @TestVisible private static Map<ID, String> contactNameMap {get{
         if (contactNameMap == null) {
             contactNameMap = new Map<ID, String>();
         }
@@ -584,14 +611,14 @@ public without sharing class RTL_CampaignMemberExtension {
     //    system.debug('xxx productoffer.RTL_Products_Offer_String__c: '+ productoffer.RTL_Products_Offer_String__c);
     //}
     //Update product offer string later , after insert to avoid trigger
-    private void updateProductOfferString(CampaignMember camMem,String storeData){
+    @TestVisible private void updateProductOfferString(CampaignMember camMem,String storeData){
         if(storeData!=null){
             camMem.RTL_Products_Offer_String__c = storeData;
             update camMem;
         }
     }
     //save log to RTL_Campaign_Member_History__c.
-    private void saveLogCampaignmember(CampaignMember camMem){
+    @TestVisible private void saveLogCampaignmember(CampaignMember camMem){
         
         for (String fieldName : RTL_CampaignMemberTriggerHandler.getFieldTracking()) {
             if(camMem.get(fieldName) != null) {
@@ -1256,6 +1283,31 @@ public without sharing class RTL_CampaignMemberExtension {
         Integer count = 1;
         for( Integer i = 1 ; i <= 5 ; i++ ){
             Boolean readOnly = (currentObject.get('RTL_RelatedOpportunity_'+i+'__c') == null) ? false : true;
+            String prodName;
+            if(i == 1)
+            {
+                prodName = String.valueOf(currentObject.RTL_Campaign_Product_1__r.Name);
+
+            }
+            else if(i == 2)
+            {
+                prodName = String.valueOf(currentObject.RTL_Campaign_Product_2__r.Name);
+            }
+            else if(i == 3)
+            {
+                prodName = String.valueOf(currentObject.RTL_Campaign_Product_3__r.Name);
+            }
+            else if(i == 4)
+            {
+                prodName = String.valueOf(currentObject.RTL_Campaign_Product_4__r.Name);
+            }
+            else if(i == 5)
+            {
+                prodName = String.valueOf(currentObject.RTL_Campaign_Product_5__r.Name);
+            }
+            Boolean isMoreDetail = (ALPrdNameSet.contains(prodName)) || (HCALPrdNameSet.contains(prodName)) ? true : false;
+            Boolean isALProd = (ALPrdNameSet.contains(prodName)) ? true : false;
+
             if( currentObject.get('RTL_Product_Group_'+i+'__c') != null
             || currentObject.get('RTL_Sub_Group_'+i+'__c') != null
             || currentObject.get('RTL_Campaign_Product_'+i+'__c') != null ){
@@ -1267,7 +1319,9 @@ public without sharing class RTL_CampaignMemberExtension {
                 'RTL_OfferResult_Product_'+i+'__c',
                 'RTL_Reason_'+i+'__c',
                 'RTL_RelatedOpportunity_'+i+'__c',
-                readOnly
+                readOnly,
+                isMoreDetail,
+                isALProd
                 ) );
             }
         }
@@ -1583,8 +1637,11 @@ public without sharing class RTL_CampaignMemberExtension {
         public String apiReason {get;set;}
         public String apiOpportunity {get;set;}
         public Boolean readOnly {get;set;}
+        public Boolean isMoreDetailProduct {get;set;}
+        public Boolean isALProd {get;set;}
+        
         public CampaignProductWrapper(Integer rowNum,String apiProductGroup,String apiProductSubGroup,String apiProductId,String apiProductName,
-            String apiOfferResult,String apiReason,String apiOpportunity,Boolean readOnly){
+            String apiOfferResult,String apiReason,String apiOpportunity,Boolean readOnly, Boolean isMoreDetailProduct, Boolean isALProd){
             this.rowNum = rowNum;
             this.apiProductGroup = apiProductGroup;
             this.apiProductSubGroup = apiProductSubGroup;
@@ -1595,6 +1652,8 @@ public without sharing class RTL_CampaignMemberExtension {
             this.apiOpportunity = apiOpportunity;
             // this.apiReason = apiReason;
             this.readOnly = readOnly;
+            this.isMoreDetailProduct = isMoreDetailProduct;
+            this.isALProd = isALProd;
         }
     }
 
@@ -1752,20 +1811,19 @@ public without sharing class RTL_CampaignMemberExtension {
         String errorCodeText = '';
         String errorDescText = '';
 
-      Account accountObj = new Account();
-      String rmId = currentObject.RTL_Marketing_Code__c;
+        Account accountObj = new Account();
+        String rmId = currentObject.RTL_Marketing_Code__c;
     //   String customerName;
-      if(currentObject.Contact.Account != null)
-      {
-          accountObj =  currentObject.Contact.Account;
+        if(currentObject.Contact.Account != null)
+        {
+            accountObj =  currentObject.Contact.Account;
         //   customerName = accountObj.Name;
-      }
+        }
 
-      try
-      {
-          
+        try
+        {
         // Get the response by using the unique label
-        HttpResponse response = Continuation.getResponse(this.requestLabel);
+            HttpResponse response = Continuation.getResponse(this.requestLabel);
 
         if( response == null ) 
         { 
@@ -1896,7 +1954,6 @@ public without sharing class RTL_CampaignMemberExtension {
                         if(campaignMemberResponse.personalizedMessage !=null){
                             currentObject.RTL_Personalized_Message__c = campaignMemberResponse.personalizedMessage;
                         }
-
                         if(currentObject.id == null)
                         {
                             currentObject.RTL_CampHis_Phone__c = campaignMemberResponse.mobilenumber;
@@ -2334,7 +2391,7 @@ public without sharing class RTL_CampaignMemberExtension {
 
     public static CampaignMemberResponseObject  campaignMemberResponse {get;set;}
 
-    private String requestLabel;
+    @TestVisible private String requestLabel;
 
     public Boolean exclusiveCalloutSuccess{
         get{
