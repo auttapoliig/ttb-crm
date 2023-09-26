@@ -223,7 +223,21 @@
         <members>th</members>
         <name>Translations</name>
     </types>
-
+    <types>
+        <members>RTL_Referral__c.Closed_Refer_from_Digital_Channel</members>
+        <members>RTL_Referral__c.Closed_Refer_to_Commercial</members>
+        <members>RTL_Referral__c.Closed_Refer_to_Retail</members>
+        <members>RTL_Referral__c.Closed_Refer_within_Commercial</members>
+        <members>RTL_Referral__c.Closed_Retail_Cross_Channel_Referral</members>
+        <members>RTL_Referral__c.Closed_Retail_Order_Transaction</members>
+        <members>RTL_Referral__c.Refer_from_Digital_Channel</members>
+        <members>RTL_Referral__c.Refer_to_Commercial</members>
+        <members>RTL_Referral__c.Refer_to_Retail</members>
+        <members>RTL_Referral__c.Refer_within_Commercial</members>
+        <members>RTL_Referral__c.Retail_Cross_Channel_Referral</members>
+        <members>RTL_Referral__c.Retail_Order_Transaction</members>
+        <name>RecordType</name>
+    </types>
     <types>
         <members>Account_with_Customer_Product_Alert</members>
         <members>Account_With_Fulfillment</members>
