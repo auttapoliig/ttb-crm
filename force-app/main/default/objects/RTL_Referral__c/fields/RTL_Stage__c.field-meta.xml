@@ -79,11 +79,6 @@
                 <label>Closed (Referral Ticket)</label>
             </value>
             <value>
-                <fullName>Call Back</fullName>
-                <default>false</default>
-                <label>Call Back</label>
-            </value>
-            <value>
                 <fullName>Closed (Unqualified  Customer)</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
@@ -207,19 +202,6 @@
             <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
             <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
             <valueName>Closed (Unqualified)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
-            <controllingFieldValue>For System Only</controllingFieldValue>
-            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
-            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
-            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
-            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
-            <controllingFieldValue>Collect Document</controllingFieldValue>
-            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
-            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
-            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
-            <valueName>Call Back</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>For System Only</controllingFieldValue>
