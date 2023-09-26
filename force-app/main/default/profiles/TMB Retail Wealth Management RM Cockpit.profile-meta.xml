@@ -18,7 +18,7 @@
         <field>Account.MainBank_MoreDetail__c</field>
         <readable>true</readable>
     </fieldPermissions>
-   <fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Sub_Segment_Key__c</field>
         <readable>true</readable>
@@ -153,6 +153,7 @@
         <field>Account.RMC_Wealth_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.RTL_Age_Range__c</field>
         <readable>true</readable>
