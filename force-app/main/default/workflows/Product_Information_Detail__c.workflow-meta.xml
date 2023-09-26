@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Product_Detail_record_type_Default</fullName>
+        <description>Update Product Information detail record type = Product Detail - Default</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Product_Detail_Default</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Product Detail record type = Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Detail_record_type_Foreign</fullName>
+        <description>Update Product Information record type to Product Detail – Foreign</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Product_Detail_Foreign</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Product Detail record type = Foreign</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Detail_record_type_Insurance</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Product_Detail_Insurance</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Product Detail record type = Insurance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_IsCredit_Field</fullName>
+        <field>IsCredit__c</field>
+        <literalValue>1</literalValue>
+        <name>Update IsCredit Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Deposit_Field</fullName>
+        <field>IsDeposit__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is Deposit Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Product Detail%3A Default</fullName>
+        <actions>
+            <name>Product_Detail_record_type_Default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update record type to default when product domain is 1,2,3 and 4 (product family is not Foreign currency, Interest rate, Life Insurance, Non-life Insurance)</description>
+        <formula>OR( CONTAINS( LOWER(Product_Information__r.Product_Domain__c)  ,&quot;transactional&quot;),      CONTAINS(LOWER(Product_Information__r.Product_Domain__c) ,&quot;deposit&quot;),      CONTAINS(LOWER(Product_Information__r.Product_Domain__c) ,&quot;funding&quot;), AND(CONTAINS(LOWER(Product_Information__r.Product_Domain__c) ,&quot;risk&quot;),      LOWER(Product_Family__c)  &lt;&gt; &quot;foreign currency&quot;,           LOWER(Product_Family__c) &lt;&gt; &quot;interest rate&quot;,           LOWER(Product_Family__c) &lt;&gt; &quot;non-life insurance&quot;,          LOWER(Product_Family__c) &lt;&gt; &quot;non life insurance&quot;,          LOWER(Product_Family__c) &lt;&gt; &quot;life insurance&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product Detail%3A Foreign</fullName>
+        <actions>
+            <name>Product_Detail_record_type_Foreign</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update record type to default when product domain is domain 4 and product family = Foreign currency, Interest rate</description>
+        <formula>AND( CONTAINS( LOWER(Product_Information__r.Product_Domain__c) ,&quot;risk&quot;),  OR( LOWER(Product_Family__c) = &quot;foreign currency&quot;,      LOWER(Product_Family__c) = &quot;interest rate&quot;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product Detail%3A Insurance</fullName>
+        <actions>
+            <name>Product_Detail_record_type_Insurance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update record type to default when product domain is domain 4 and product family = Life Insurance, Non-life Insurance.</description>
+        <formula>AND( CONTAINS( LOWER(Product_Information__r.Product_Domain__c) ,&quot;risk&quot;), OR( LOWER(Product_Family__c) = &quot;life insurance&quot;, LOWER(Product_Family__c) = &quot;non-life insurance&quot;,LOWER(Product_Family__c) = &quot;non life insurance&quot;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Is Credit Product</fullName>
+        <actions>
+            <name>Update_IsCredit_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>IF(OR(CONTAINS(Product_Information__r.Product_Domain__c, &quot;Transactional&quot;) , CONTAINS(Product_Information__r.Product_Domain__c, &quot;Funding&quot;), CONTAINS(Product_Information__r.Product_Domain__c,&quot;Risk&quot;)), True, False)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Is Deposit Product</fullName>
+        <actions>
+            <name>Update_Is_Deposit_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>IF(CONTAINS( Product_Information__r.Product_Domain__c , &quot;Deposit&quot;), True, False)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

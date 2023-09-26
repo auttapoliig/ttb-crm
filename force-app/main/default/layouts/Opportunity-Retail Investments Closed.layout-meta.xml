@@ -124,10 +124,6 @@
                 <behavior>Readonly</behavior>
                 <field>RTL_Others__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RTL_Others_2__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

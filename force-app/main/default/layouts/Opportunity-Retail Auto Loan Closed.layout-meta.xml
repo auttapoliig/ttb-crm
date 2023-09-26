@@ -152,7 +152,7 @@
                 <field>RTL_AL_car_plate_no__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>RTL_AL_province_car_plate_no__c</field>
             </layoutItems>
         </layoutColumns>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notification_Account_Plan_has_been_approved</fullName>
+        <description>Notification : Account Plan has been approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Plan_Email_Template/Account_Plan_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_Account_Plan_has_been_recalled</fullName>
+        <description>Notification : Account Plan has been recalled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Plan_Email_Template/Account_Plan_Recalled</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_Account_Plan_has_been_rejected</fullName>
+        <description>Notification : Account Plan has been rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Plan_Email_Template/Account_Plan_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_Approving_Account_Plan_Portfolio</fullName>
+        <description>Notification : Approved Account Plan Portfolio</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Plan_Email_Template/Portfolio_Approval_Approved</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Plan_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Account Plan : Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CompanyProfileLock</fullName>
+        <field>isPendingForApproval__c</field>
+        <literalValue>1</literalValue>
+        <name>CompanyProfileLock</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CompanyProfileUnlock</fullName>
+        <field>isPendingForApproval__c</field>
+        <literalValue>0</literalValue>
+        <name>CompanyProfileUnlock</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Manager_Email</fullName>
+        <field>Owner_Manager_Email__c</field>
+        <formula>Acct_plan_com_profile_email_formula__c</formula>
+        <name>Update Owner Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Status : Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_In_Progress</fullName>
+        <field>Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Update Status : In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Waiting_for_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting for Approval</literalValue>
+        <name>Update Status : Waiting for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

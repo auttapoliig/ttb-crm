@@ -418,11 +418,6 @@
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewOpportunity</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.RypplePost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
@@ -466,6 +461,11 @@
             <actionName>RTL_Retail_Campaign_SF1</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewOpportunity</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -533,15 +533,12 @@
         <excludeButtons>MailMerge</excludeButtons>
         <excludeButtons>RequestUpdate</excludeButtons>
         <fields>TASK.SUBJECT</fields>
-        <fields>TASK.STATUS</fields>
-        <fields>RTL_Event_Status__c</fields>
-        <fields>TASK.PRIORITY</fields>
-        <fields>ACTIVITY.TASK</fields>
+        <fields>EVENT.START_DATE_TIME</fields>
         <fields>TASK.DUE_DATE</fields>
+        <fields>TASK.PRIORITY</fields>
+        <fields>TASK.STATUS</fields>
+        <fields>ACTIVITY.TASK</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <fields>TASK.RECORDTYPE</fields>
-        <fields>RTL_NBO_History__c</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -569,7 +566,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h2j000000Mrvg</masterLabel>
+        <masterLabel>00hO00000015rAW</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>2</sizeY>
         <summaryLayoutItems>

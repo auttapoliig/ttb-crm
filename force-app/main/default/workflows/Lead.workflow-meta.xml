@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_alert_to_lead_owner</fullName>
+        <description>Email alert to lead owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_lead_owner_email_template/Change_lead_owner_template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Clear_Segment_Individual</fullName>
+        <field>Suggested_Segment__c</field>
+        <name>Clear Segment Individual</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Segment_Juristic</fullName>
+        <field>Suggested_Segment__c</field>
+        <name>Clear Segment Juristic</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Suggested_Segment</fullName>
+        <field>Suggested_Segment__c</field>
+        <name>Clear Suggested Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Suggested_Team</fullName>
+        <field>Suggested_Team__c</field>
+        <name>Clear Suggested Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_sugested_team_Juristic</fullName>
+        <field>Suggested_Team__c</field>
+        <name>Clear sugested team Juristic</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_suggested_team_individual</fullName>
+        <field>Suggested_Team__c</field>
+        <name>Clear suggested team individual</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_Band</fullName>
+        <field>RTL_AL_car_brand__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_brand__c</formula>
+        <name>Lead: Car Band</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_Gear</fullName>
+        <field>RTL_AL_car_gear__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_gear__c</formula>
+        <name>Lead: Car Gear</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_Group</fullName>
+        <field>RTL_AL_car_group__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_group__c</formula>
+        <name>Lead: Car Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_SubType</fullName>
+        <field>RTL_AL_car_subtype__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_subtype__c</formula>
+        <name>Lead: Car SubType</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_Type</fullName>
+        <field>RTL_AL_car_type__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_type__c</formula>
+        <name>Lead: Car Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Car_Year</fullName>
+        <field>RTL_AL_car_year__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_year__c</formula>
+        <name>Lead: Car Year</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Blank_Uncontact_Reason</fullName>
+        <field>RTL_Uncontact_reason__c</field>
+        <name>Blank Uncontact Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Set_Lead_Record_Type</fullName>
+        <description>Set lead record type to read only</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Closed_Lost</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Set Lead Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Last_Lead_Status</fullName>
+        <field>Last_Lead_Status__c</field>
+        <formula>TEXT( PRIORVALUE(Status) )</formula>
+        <name>Stamp Last Lead Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Lead_Team_Zone</fullName>
+        <field>Stamped_Team_Zone__c</field>
+        <formula>IF( NOT( ISBLANK( Owner:User.Employee_ID__c ) ) , Owner:User.Zone__c,  Stamped_Team_Zone__c  )</formula>
+        <name>Stamp Lead Team/Zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Original_Current_ID_from_user</fullName>
+        <field>Current_Owner_ID__c</field>
+        <formula>IF( NOT(ISBLANK(Owner:User.Employee_ID__c )) , Owner:User.Employee_ID__c , &quot;&quot;)</formula>
+        <name>Stamp Original Current ID from user</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Original_Current_OwnName_from_user</fullName>
+        <field>Current_Owner_Name__c</field>
+        <formula>IF( NOT(ISBLANK(Owner:User.Employee_ID__c )) , Owner:User.FirstName +&quot; &quot;+ Owner:User.LastName , &quot;&quot;)</formula>
+        <name>Stamp Original Current OwnName from user</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Region_Group</fullName>
+        <field>Stamped_Group_Region__c</field>
+        <formula>IF( NOT( ISBLANK( Owner:User.Employee_ID__c ) ) , Owner:User.Region__c,  Stamped_Group_Region__c  )</formula>
+        <name>Stamp Region / Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Reporting_Segment</fullName>
+        <field>Stamped_Reporting_Segment__c</field>
+        <formula>IF( NOT( ISBLANK( Owner:User.Employee_ID__c ) ) , Owner:User.Reporting_Segment__c,  Stamped_Reporting_Segment__c  )</formula>
+        <name>Stamp Reporting Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Segment_Industry</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>IF( Sales_amount_per_year__c &lt;= 100000000, &quot;SE&quot;, 
+
+IF(Sales_amount_per_year__c &gt; 100000000&amp;&amp; Sales_amount_per_year__c &lt;= 1000000000, &quot;BB&quot;,
+
+IF(Sales_amount_per_year__c &gt; 1000000000&amp;&amp; Sales_amount_per_year__c &lt;= 5000000000, &quot;CB&quot;, 
+
+IF(Sales_amount_per_year__c &gt; 5000000000, &quot;MB&quot;, &quot;&quot;) )))</formula>
+        <name>Update Segment (Industry</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Segment_Juristic</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>IF( Sales_amount_per_year__c &lt;= 100000000, &quot;SE&quot;, 
+
+
+IF(Sales_amount_per_year__c &gt; 100000000&amp;&amp; Sales_amount_per_year__c &lt;= 1000000000, &quot;BB&quot;,&quot;&quot;))</formula>
+        <name>Update Segment Juristic</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Segment_Special_Industry</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>&quot;MB&quot;</formula>
+        <name>Update Segment (Special Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Segment_Group</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>TEXT(Group__r.Group_Segment__c)</formula>
+        <name>Update Suggested Segment (Group)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Team</fullName>
+        <field>Suggested_Team__c</field>
+        <formula>IF( Suggested_Segment__c =&quot;SE&quot; , Preferred_Branch__r.Zone_SE__c , 
+
+IF(Suggested_Segment__c =&quot;BB&quot;, Preferred_Branch__r.Zone_BB__c , &quot;&quot;))</formula>
+        <name>Update Suggested Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Team_Group</fullName>
+        <field>Suggested_Team__c</field>
+        <formula>Group__r.Assigned_Team__c</formula>
+        <name>Update Suggested Team (Group)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Team_Industry</fullName>
+        <field>Suggested_Team__c</field>
+        <formula>IF(Suggested_Segment__c =&quot;SE&quot;, Preferred_Branch__r.Zone_SE__c , 
+IF(Suggested_Segment__c =&quot;BB&quot;, Preferred_Branch__r.Zone_BB__c ,
+
+
+IF(Suggested_Segment__c =&quot;CB&quot;, Industry__r.Team_CB__c , 
+
+IF(Suggested_Segment__c =&quot;MB&quot;, Industry__r.Team_MB__c , &quot;&quot;))))</formula>
+        <name>Update Suggested Team (Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Team_Juristic</fullName>
+        <field>Suggested_Team__c</field>
+        <formula>IF(Suggested_Segment__c =&quot;SE&quot;, Preferred_Branch__r.Zone_SE__c , 
+
+IF(Suggested_Segment__c =&quot;BB&quot;, Preferred_Branch__r.Zone_BB__c ,&quot;&quot;))</formula>
+        <name>Update Suggested Team Juristic</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Suggested_Team_Special_Industry</fullName>
+        <field>Suggested_Team__c</field>
+        <formula>Industry__r.Team_MB__c</formula>
+        <name>Update Suggested Team (Special Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_lead_ID_to_ID_REG_for_Commercial</fullName>
+        <field>ID_REGEX__c</field>
+        <formula>IF( LEN(ID_Number__c) &lt;= 5 , ID_Number__c, 
+ LEFT(ID_Number__c, 1)+ RIGHT(ID_Number__c, 4)  )</formula>
+        <name>Update lead ID to ID_REG for Commercial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Updated_Original_Referral_Staff_ID</fullName>
+        <field>Original_Referral_Staff_ID__c</field>
+        <formula>IF( ISBLANK( Original_Referral_Staff_ID__c ) ,  Referral_Staff_ID__c , Original_Referral_Staff_ID__c)</formula>
+        <name>Updated Original Referral Staff ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Updated_Original_Referral_Staff_Name</fullName>
+        <field>Original_Referral_Staff__c</field>
+        <formula>IF( ISBLANK( Original_Referral_Staff__c ) , Referral_Staff_Name__c , Original_Referral_Staff__c)</formula>
+        <name>Updated Original Referral Staff Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Updates_Suggested_Segment</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>IF( Sales_amount_per_year__c &lt;= 100000000, &quot;SE&quot;, &quot;BB&quot;)</formula>
+        <name>Updates Suggested Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Loan%3A When field RTL_AL_BlueBook%5F%5Fc is updated</fullName>
+        <actions>
+            <name>Lead_Car_Band</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Car_Gear</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Car_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Car_SubType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Car_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Car_Year</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When field RTL_AL_BlueBook__c is change then workflow get blue book data from AL Blue Book Object.</description>
+        <formula>OR( 				AND( 								NOT(ISNEW()), 								ISCHANGED(RTL_AL_BlueBook__c) 				), 				AND( 								ISNEW(), 								NOT(ISBLANK(RTL_AL_BlueBook__c)) 				) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>COMM%3A Stamp 5 digits of ID to ID_REGEX</fullName>
+        <actions>
+            <name>Update_lead_ID_to_ID_REG_for_Commercial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(OR(RecordType.Name = &apos;Commercial Lead&apos;, RecordType.Name = &apos;Commercial Account&apos;,RecordType.Name = &apos;Digital Channel&apos;),  OR(ISCHANGED( ID_Number__c ), ISNEW() ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Suggested Segment %26 Team %28Customer%29</fullName>
+        <actions>
+            <name>Clear_Suggested_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Suggested_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name  = &quot;Commercial Account&quot;,RecordType.Name  = &quot;Commercial Completed&quot;,RecordType.Name  = &quot;Commercial Lead&quot;) ,NOT( ISBLANK( Account__c ) ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Suggested Segment %26 Team %28Individual%29</fullName>
+        <actions>
+            <name>Clear_Segment_Individual</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_suggested_team_individual</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;) ,ISBLANK( Account__c ),   TEXT(Customer_Type__c) = &quot;Individual&quot;,  ISBLANK(Sales_amount_per_year__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Suggested Segment %26 Team %28Juristic%29</fullName>
+        <actions>
+            <name>Clear_Segment_Juristic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_sugested_team_Juristic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;)  ,ISBLANK( Account__c ),       TEXT(Customer_Type__c) = &quot;Juristic&quot;,               ISBLANK(Group__c),                      AND( Industry__r.Special__c = false ,             ISBLANK( Sales_amount_per_year__c ) )      )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Commercial Lead Closed Stamp</fullName>
+        <actions>
+            <name>Stamp_Last_Lead_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp Last Lead Status after lead is closed</description>
+        <formula>ISPICKVAL(Status, &apos;Expired&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Notification when change owner</fullName>
+        <actions>
+            <name>Email_alert_to_lead_owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(         OR(RecordType.Name = &quot;Commercial Account&quot;,          RecordType.Name = &quot;Commercial Completed&quot;,          RecordType.Name = &quot;Commercial Lead&quot;) , ISCHANGED( OwnerId ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Blank Out Uncontact reason</fullName>
+        <actions>
+            <name>RTL_Blank_Uncontact_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>notEqual</operation>
+            <value>Uncontacted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RTL_Uncontact_reason__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Banking</value>
+        </criteriaItems>
+        <description>Blank out uncontact Reason when Status is not equal to uncontact.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Set Lead Record type to Read Only</fullName>
+        <actions>
+            <name>RTL_Set_Lead_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Closed Lost,Duplicated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <description>WF rule is used to make all fields read only on leads upon Closed Lost status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp User Info from Queue to owner</fullName>
+        <actions>
+            <name>Stamp_Lead_Team_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Original_Current_ID_from_user</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Original_Current_OwnName_from_user</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISCHANGED( OwnerId ) ,  ISBLANK(PRIORVALUE( Current_Owner_ID__c ))  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Lead Owner Info</fullName>
+        <actions>
+            <name>Stamp_Lead_Team_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>- Update Owner Name when change owner</description>
+        <formula>ISCHANGED(   OwnerId   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Owner Info</fullName>
+        <actions>
+            <name>Stamp_Lead_Team_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>- Update Original Referral Staff ID &amp; Original Referral Staff Name from Owner Name when cretaed lead
+
+** PS. If contain refferal id, Stamp refferal id, name on Original Referral Staff ID &amp; Original Referral Staff Name field</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Suggested Segment %26 Team %28Individual%29</fullName>
+        <actions>
+            <name>Update_Suggested_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Updates_Suggested_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;) ,ISBLANK( Account__c ),   TEXT(Customer_Type__c) = &quot;Individual&quot;,   NOT( ISBLANK(Sales_amount_per_year__c) ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Suggested Segment %26 Team %28Juristic%29 - Industry</fullName>
+        <actions>
+            <name>Update_Segment_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Suggested_Team_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;) ,ISBLANK( Account__c ),        TEXT(Customer_Type__c) = &quot;Juristic&quot;,       NOT( ISBLANK(Sales_amount_per_year__c)),      ISBLANK( Group__r.Assigned_Team__c ),       NOT( Industry__r.Special__c = true        ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Suggested Segment %26 Team %28Juristic%29 - No Industry</fullName>
+        <actions>
+            <name>Update_Segment_Juristic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Suggested_Team_Juristic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;) ,ISBLANK( Account__c ),         TEXT(Customer_Type__c) = &quot;Juristic&quot;,        NOT( ISBLANK(Sales_amount_per_year__c)),       ISBLANK( Group__r.Assigned_Team__c ),   ISBLANK(Industry__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Suggested Segment %26 Team %28Juristic%29 - Special Industry</fullName>
+        <actions>
+            <name>Update_Segment_Special_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Suggested_Team_Special_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;) ,ISBLANK( Account__c ),   TEXT(Customer_Type__c) = &quot;Juristic&quot;,   ISBLANK( Group__r.Assigned_Team__c ),  Industry__r.Special__c = true)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Suggested Segment %26 Team %28Juristic%29 -Group</fullName>
+        <actions>
+            <name>Update_Suggested_Segment_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Suggested_Team_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(OR( RecordType.Name = &quot;Commercial Account&quot;,RecordType.Name = &quot;Commercial Completed&quot;,RecordType.Name = &quot;Commercial Lead&quot;)  ,ISBLANK( Account__c ),   TEXT(Customer_Type__c) = &quot;Juristic&quot;,    NOT( ISBLANK( Group__r.Assigned_Team__c )  )   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Updated Original Referral Staff</fullName>
+        <actions>
+            <name>Updated_Original_Referral_Staff_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Updated_Original_Referral_Staff_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Referral_Staff_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

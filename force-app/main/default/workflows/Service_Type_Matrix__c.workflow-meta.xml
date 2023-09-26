@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Unique_Text</fullName>
+        <field>UniqueText__c</field>
+        <formula>TEXT(Segment__c) + Service_Level1__c + Service_Level2__c + Service_Level3__c + Service_Level4__c</formula>
+        <name>Update Unique Text</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Service Type UniqueID</fullName>
+        <actions>
+            <name>Update_Unique_Text</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Unique ID and External ID</description>
+        <formula>OR( ISNEW(),ISCHANGED( Segment__c),  ISCHANGED( Service_Level1__c ) ,ISCHANGED( 	Service_Level2__c ),  ISCHANGED( Service_Level3__c),ISCHANGED( Service_Level4__c)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_to_submitter_when_campaign_approved</fullName>
+        <description>Alert to submitter when campaign approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Campaign_Template/RTL_Campaign_Approved_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_submitter_when_campaign_rejected</fullName>
+        <description>Alert to submitter when campaign rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Campaign_Template/RTL_Campaign_Reject_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_when_campaign_has_been_held</fullName>
+        <description>Alert when campaign has been held</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Hold_Un_hold_Campaign_Recipients</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Campaign_Template/RTL_Campaign_Hold_campaign_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_when_campaign_has_been_unheld</fullName>
+        <description>Alert when campaign has been unheld</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Hold_Un_hold_Campaign_Recipients</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Campaign_Template/RTL_Campaign_Unhold_campaign_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_when_new_child_campaign_has_been_created</fullName>
+        <description>Alert when new child campaign has been created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>New_Campaign_Recipients</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Campaign_Template/RTL_Campaign_Create_new_campaign</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>RTL_Update_Active_flag_to_false</fullName>
+        <field>IsActive</field>
+        <literalValue>0</literalValue>
+        <name>RTL: Update Active flag to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Active_flag_to_true</fullName>
+        <field>IsActive</field>
+        <literalValue>1</literalValue>
+        <name>RTL: Update Active flag to true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Active_flag_to_true_im</fullName>
+        <field>IsActive</field>
+        <literalValue>1</literalValue>
+        <name>RTL: Update Active flag to true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Approved_Flag</fullName>
+        <description>Update Approved flag to TRUE</description>
+        <field>Approvedflag__c</field>
+        <literalValue>1</literalValue>
+        <name>RTL: Update Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_ExclusiveActive</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Exclusive_Campaign_Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = ExclusiveActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_ExclusiveExpire</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Exclusive_Campaign_Expired</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = ExclusiveExpire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_LocalExExpire</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Local_Exclusive_Campaign_Expired</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = LocalExcExpire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_LocalExclActive</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Local_Exclusive_Campaign_Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = LocalExclActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_MassActive</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Mass_Campaign_Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = MassActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_MassExpire</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Mass_Campaign_Expired</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = MassExpire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_MasterActive</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Master_Campaign_Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = MasterActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_MasterExpire</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Master_Campaign_Expired</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = MasterExpire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_ResearchActive</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Research_Campaign_Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = ResearchActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_RecordType_ResearchExpire</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Research_Campaign_Expired</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update RecordType = ResearchExpire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Record_Type_Local_Exclusiv</fullName>
+        <description>Update Campaign Record Type = Local Exclusive</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Local_Exclusive_Campaign</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update Record Type = Local Exclusiv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Record_Type_Mass</fullName>
+        <description>Update Campaign Record Type = Mass Campaign</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Mass_Campaign</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update Record Type = Mass</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Record_Type_Research</fullName>
+        <description>Update Campaign Record Type = Research</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Research_Campaign</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update Record Type = Research</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Record_Type_to_Exclusive_Camp</fullName>
+        <description>Update Campaign Record Type = Exclusive Campaign</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Exclusive_Campaign</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL: Update Record Type = Exclusive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Stage_to_Executed</fullName>
+        <field>RTL_Campaign_Stage__c</field>
+        <literalValue>Executed</literalValue>
+        <name>RTL: Update Stage to Executed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Status_Planned</fullName>
+        <field>Status</field>
+        <literalValue>Planned</literalValue>
+        <name>RTL Update Status = Planned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Status_to_FINAL_Approved</fullName>
+        <description>Update campaign status to FINAL Approved</description>
+        <field>Status</field>
+        <literalValue>FINAL Approved</literalValue>
+        <name>RTL: Update Status to FINAL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Status_to_Open</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>RTL: Update Status to Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Status_to_Rejected</fullName>
+        <description>Update status to Rejected</description>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>RTL: Update Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Status_to_Submitted</fullName>
+        <field>Status</field>
+        <literalValue>Submitted</literalValue>
+        <name>RTL: Update Status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_stage_to_Closed</fullName>
+        <field>RTL_Campaign_Stage__c</field>
+        <literalValue>Closed</literalValue>
+        <name>RTL: Update stage to Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_stage_to_New</fullName>
+        <field>RTL_Campaign_Stage__c</field>
+        <literalValue>New</literalValue>
+        <name>RTL Update stage to New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_status_to_Expired</fullName>
+        <field>Status</field>
+        <literalValue>Expired</literalValue>
+        <name>RTL: Update status to Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_status_to_In_progress</fullName>
+        <field>Status</field>
+        <literalValue>In Progress</literalValue>
+        <name>RTL: Update status to In progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_status_to_plan</fullName>
+        <field>Status</field>
+        <literalValue>Planned</literalValue>
+        <name>RTL Update status to plan</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_1_Approved</fullName>
+        <field>Status</field>
+        <literalValue>1-Approved</literalValue>
+        <name>Update status to 1-Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTL Campaign - Create new campaign</fullName>
+        <actions>
+            <name>Alert_when_new_child_campaign_has_been_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to group of user when new campaign has been created under the approved campaign</description>
+        <formula>AND( Approvedflag__c = true ,  OR(RecordType.Name &lt;&gt; &apos;Commercial&apos;, RecordType.Name &lt;&gt; &apos; Master Campaign &apos;,RecordType.Name &lt;&gt; &apos;Dummy Campaign&apos; ))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Hold campaign Approval</fullName>
+        <actions>
+            <name>Alert_when_campaign_has_been_held</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>On Hold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exclusive Campaign (Active),Local Exclusive Campaign (Active),Mass Campaign (Active),Research Campaign (Active),Master Campaign (Active)</value>
+        </criteriaItems>
+        <description>Email alert to group of user when campaign has been held</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Unhold campaign</fullName>
+        <actions>
+            <name>Alert_when_campaign_has_been_unheld</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to group of user when campaign has been released</description>
+        <formula>AND(AND(ISPICKVAL(PRIORVALUE(Status),&quot;On hold&quot;) ,ISCHANGED( Status )),OR(RecordType.Name = &apos;Exclusive Campaign (Active)&apos;,OR(RecordType.Name = &apos; Master Campaign (Active)&apos; ,RecordType.Name = &apos;Mass Campaign (Active)&apos;,RecordType.Name = &apos;Local Exclusive Campaign (Active)&apos;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Update record type when campaign %3D cancelled %28Child - Exclusive campaign%29</fullName>
+        <actions>
+            <name>RTL_Update_RecordType_ExclusiveExpire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exclusive Campaign,Exclusive Campaign (Active)</value>
+        </criteriaItems>
+        <description>Scheduling set the Exclusive campaign to Expired when campaign cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Update record type when campaign %3D cancelled %28Child - Local exclusive campaign%29</fullName>
+        <actions>
+            <name>RTL_Update_RecordType_LocalExExpire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Local Exclusive Campaign,Local Exclusive Campaign (Active)</value>
+        </criteriaItems>
+        <description>Scheduling set the Local Exclusive campaign to Expired when campaign cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Update record type when campaign %3D cancelled %28Child - Mass campaign%29</fullName>
+        <actions>
+            <name>RTL_Update_RecordType_MassExpire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Mass Campaign,Mass Campaign (Active)</value>
+        </criteriaItems>
+        <description>Scheduling set the Mass campaign to Expired when campaign cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Update record type when campaign %3D cancelled %28Child - Research campaign%29</fullName>
+        <actions>
+            <name>RTL_Update_RecordType_ResearchExpire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Research Campaign,Research Campaign (Active)</value>
+        </criteriaItems>
+        <description>Scheduling set the Research campaign to Expired when campaign cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign - Update record type when campaign %3D cancelled %28Master campaign%29</fullName>
+        <actions>
+            <name>RTL_Update_RecordType_MasterExpire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Campaign,Master Campaign (Active)</value>
+        </criteriaItems>
+        <description>Scheduling set the Master campaign to Expired when campaign cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Schedule Expire Exclusive</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exclusive Campaign,Exclusive Campaign (Active)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RTL_Campaign_Stage__c</field>
+            <operation>equals</operation>
+            <value>Executed</value>
+        </criteriaItems>
+        <description>Scheduling set the Exclusive campaign to Expired when campaign end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_false</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_ExclusiveExpire</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_stage_to_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Schedule Expire Local</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Local Exclusive Campaign,Local Exclusive Campaign (Active)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RTL_Campaign_Stage__c</field>
+            <operation>equals</operation>
+            <value>Executed</value>
+        </criteriaItems>
+        <description>Scheduling set the Local campaign to Expired when campaign end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_false</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_LocalExExpire</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_stage_to_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Schedule Expire Mass</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Mass Campaign,Mass Campaign (Active)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RTL_Campaign_Stage__c</field>
+            <operation>equals</operation>
+            <value>Executed</value>
+        </criteriaItems>
+        <description>Scheduling set the Mass campaign to Expired when campaign end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_false</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_MassExpire</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_stage_to_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Schedule Expire Master</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Campaign (Active),Master Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RTL_Campaign_Stage__c</field>
+            <operation>equals</operation>
+            <value>Executed</value>
+        </criteriaItems>
+        <description>Scheduling set the Master campaign to Expired when campaign end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_false</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_MasterExpire</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_stage_to_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Schedule Expire Research</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Research Campaign,Research Campaign (Active)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.RTL_Campaign_Stage__c</field>
+            <operation>equals</operation>
+            <value>Executed</value>
+        </criteriaItems>
+        <description>Scheduling set the Research campaign to Expired when campaign end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_false</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_ResearchExpire</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_stage_to_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Set Stage%2FStatus%2FRecord Type for New Campaign - Exclusive</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Record_Type_to_Exclusive_Camp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_Planned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>For a new child campaign (Exclusive), set Status = Planned; Stage = New; Record Type = Exclusive Campaign; Active = False</description>
+        <formula>RTL_Campaign_Type_child__c = &apos;Exclusive&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Set Stage%2FStatus%2FRecord Type for New Campaign - Local Exclusive</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Record_Type_Local_Exclusiv</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_Planned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>For a new child campaign (Local Exclusive), set Status = Planned; Stage = New; Record Type = Local Exclusive; Active = False</description>
+        <formula>RTL_Campaign_Type_child__c = &apos;Local Exclusive&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Set Stage%2FStatus%2FRecord Type for New Campaign - Mass</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Record_Type_Mass</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_Planned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>For a new child campaign (Mass), set Status = Planned; Stage = New; Record Type = Mass; Active = False</description>
+        <formula>RTL_Campaign_Type_child__c = &apos;Mass&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Set Stage%2FStatus%2FRecord Type for New Campaign - Research</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Record_Type_Research</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_Planned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>For a new child campaign (Research), set Status = Planned; Stage = New; Record Type = Research; Active = False</description>
+        <formula>RTL_Campaign_Type_child__c = &apos;Research&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Exclusive %2F Immediate</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_RecordType_ExclusiveActive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Stage_to_Executed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_status_to_In_progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exclusive Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Immediately update the campaign stage, status in Child campaign (Exclusive) when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Exclusive %2F Schedule</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true_im</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_to_FINAL_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Exclusive Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Scheduling update the campaign stage, status in Exclusive campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_RecordType_ExclusiveActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Stage_to_Executed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_In_progress</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.StartDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Local %2F Immediate</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_RecordType_LocalExclActive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Stage_to_Executed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_status_to_In_progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Local Exclusive Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Immediately update the campaign stage, status in Child campaign (Local Exclusive) when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Local %2F Schedule</fullName>
+        <actions>
+            <name>RTL_Update_Status_to_FINAL_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Local Exclusive Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Scheduling update the campaign stage, status in local campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_true</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_LocalExclActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Stage_to_Executed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_In_progress</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.StartDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Mass %2F Immediate</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_RecordType_MassActive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Stage_to_Executed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_status_to_In_progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Mass Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Immediately update the campaign stage, status in Child campaign (Mass) when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Mass %2F Schedule</fullName>
+        <actions>
+            <name>RTL_Update_Status_to_FINAL_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Mass Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Scheduling update the campaign stage, status in Mass campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_true</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_MassActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Stage_to_Executed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_In_progress</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.StartDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Master %2F Immediate</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_RecordType_MasterActive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Stage_to_Executed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Status_to_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Immediately update the campaign stage, status in Master campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Master %2F Schedule</fullName>
+        <actions>
+            <name>RTL_Update_Status_to_FINAL_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Scheduling update the campaign stage, status in Master campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_true</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_MasterActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Stage_to_Executed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Status_to_Open</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.StartDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Research %2F Immediate</fullName>
+        <actions>
+            <name>RTL_Update_Active_flag_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_RecordType_ResearchActive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_Stage_to_Executed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_status_to_In_progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Research Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Immediately update the campaign stage, status in Child campaign (Research) when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Campaign%3A Update after approved - Research %2F Schedule</fullName>
+        <actions>
+            <name>RTL_Update_Status_to_FINAL_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RTL_Update_stage_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Research Campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.Approvedflag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Campaign.StartDate</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Scheduling update the campaign stage, status in Research campaign when it has approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RTL_Update_Active_flag_to_true</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_RecordType_ResearchActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_Stage_to_Executed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>RTL_Update_status_to_In_progress</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Campaign.StartDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

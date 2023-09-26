@@ -38,10 +38,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>EWM_Result__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>Reference_Job_Id__c</field>
             </layoutItems>
         </layoutColumns>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Sent_email_to_owner</fullName>
+        <description>Sent email to owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Task_Assignment_Email_Template/Task_Completed_and_Reject_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Task_Completed_Cancel_and_Reject_notification</fullName>
+        <description>Task Completed Cancel and Reject notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Task_Assignment_Email_Template/Task_Completed_and_Reject_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_Apply</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Apply&apos;</formula>
+        <name>Update Journey to Apply</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_Enquire</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Enquire&apos;</formula>
+        <name>Update Journey to Enquire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_Exit</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Exit&apos;</formula>
+        <name>Update Journey to Exit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_Use</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Use&apos;</formula>
+        <name>Update Journey to Use</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_Use_2</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Use&apos;</formula>
+        <name>Update Journey to Use (2)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Journey_to_monitor_Investigage</fullName>
+        <field>Journey__c</field>
+        <formula>&apos;Monitor/Investigage&apos;</formula>
+        <name>Update Journey to monitor/Investigage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Tast Completed Cancel Reject notification</fullName>
+        <actions>
+            <name>Task_Completed_Cancel_and_Reject_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Status</field>
+            <operation>equals</operation>
+            <value>Completed,Cancelled,Reject by RM/RA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Task Record type,WBG Task</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.CreatedById</field>
+            <operation>notContain</operation>
+            <value>Administrator,sfadm System Account,sfadmrtl System Account</value>
+        </criteriaItems>
+        <description>After update status send email to owner and creator.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Tast Completed Cancel Reject notification %28Not send to admin%29</fullName>
+        <actions>
+            <name>Sent_email_to_owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Status</field>
+            <operation>equals</operation>
+            <value>Completed,Cancelled,Reject by RM/RA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Task Record type,WBG Task</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.CreatedById</field>
+            <operation>contains</operation>
+            <value>Administrator,sfadm System Account,sfadmrtl System Account</value>
+        </criteriaItems>
+        <description>task create by system admin, after update task not send email to system admin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to Apply</fullName>
+        <actions>
+            <name>Update_Journey_to_Apply</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 Or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1201 Appraisal Request (10 day),1202 Appeal Appraisal Value (10 day),1203 BA Partner - Quotation/Payment  before Limit set up or new collateral (10 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1204 BA Non-Partner - Follow up after closed deal (10 day),1205 Draft Agreement - Not Set Up (Exclude BB) (5 Day),1206 Credit Limit - Set Up (10 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1207 One-off/Temp Allocate/F-Cash Limit - Set Up (10 Day),1209 Process on NPLP customer  (15 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1211 Extend Annual Review - MiniRM (1 day),&quot;1212 Intraday, Intraday/LMS (MB Only) (1 Day)&quot;,1213 ENC (กรณีเข้าระบบไม่ได้) (MB Only) (1 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1214 Data Form for EximBill/Murex (กรณีเข้าระบบไม่ได้) (1 Day),&quot;1215 Booking No. of CA, SA, TD (1 day)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1217 Float Charge / Payment Assignment/POA/Payment Instruction (10 Day),1218 Appraisal for Financial Collateral (10 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1219 Appraisal + Agreement + Setup (Setup within Month) (20 day),1220 Appraisal + Agreement (No Setup within Month) (10 day),1221 Set up - กองทุน (FI Only) (2 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1222 Quote ราคาค่าบริการในการประเมินราคา (2 day),1224  ตั้งวงเงิน LFS - ออกหนังสือรับรองเครดิตเพื่อประกอบยื่นซอง หรือ จัดชั้น (2 days)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>2202 First Package Prep and Onboard; (Exclude BB) (3 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1210 Annual Review - MiniRM (1 day)</value>
+        </criteriaItems>
+        <description>Journey field only for use in report, not display in page layout.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to Enquire</fullName>
+        <actions>
+            <name>Update_Journey_to_Enquire</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>Customer Referrals,1208 Forfaiting Set up / Allocate Limit</value>
+        </criteriaItems>
+        <description>Journey field only for use in report, not display in page layout.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to Exit</fullName>
+        <actions>
+            <name>Update_Journey_to_Exit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 Or 2</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1401 Cancel/Release - All Limit (including Re-finance to Other Bank) (10 day),1402 Cancel/Release -Partial Limit/no crosss collateral (10 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1403 Gradully Redemption - Limit/Collateral (10 day),&quot;1404 Credit - นิติกรรมขาออกอื่นๆ นอกเหนือจาก 1401,1402,1403 (7 day)&quot;</value>
+        </criteriaItems>
+        <description>Journey field only for use in report, not display in page layout.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to Use</fullName>
+        <actions>
+            <name>Update_Journey_to_Use</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 Or 2 Or  3 Or 4 Or 5 Or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 16</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1301 Appraisal for Drawdown (Progress/Investment Cost/Remaining value) (10 day),1302 Appraisal for Release (10 day),1303 Credit - Change Condition (5 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1304 Credit - Change Pricing (2 day),1305 Renew/Change Collateral (10 day),1306 Counter Guarantee - Bank Confirm (10 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1307 Credit - Change POA (2 day),&quot;1308 CCI4, CCI2 (เปลี่ยนแปลงข้อมูลลูกค้า) (1 day)&quot;,1309 Realign Limit (1 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1310 Maintenance Data - M1 (3 day),1311 Set Auto Debit (1 day),1312 Credit Repayment - H1  (1 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1313 Earmark/Excess - T0 (Approve by Mandate/CUC Only) (1 Day),1314 Cancel Earmark/Excess - T0 (Before due only) (1 day),1315 Cap/Uncap/Freeze/Unfreeze Limit - H1-1 (1 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1316 Decrease/Cancel/Cleansing - H1-1 (1 day),1317 Account - Hold (1 Day),1318 Account Hold - Withdraw Interest (1 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1319 Account Hold - Update Book (1 Day),1320 Refund Amercement Fee (คืนค่าสินไหม) (5 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1322 Credit - Assignment of Proceed (จัดสรรหนี้) (5 Day),1323 Setup - Temporary LG Limt for Replace LG (1 day),1324 Cancel - Temporary LG Limit for Replace LG (1 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1325 เบิกเอกสารที่เกี่ยวกับหลักประกันเป็นการชั่วคราว (L2 Form) (3 Day),1326 ปรับปรุงแก้ไขข้อมูลเครดิต (NCB Form) (2 day),1328 Credit - Receipt/Advice (Manual) (1 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1329 Audit Confirmation Request (3 day),1330 Comfirmation Letter - Prepare (1 day),1331 Agreement/Collateral - internal Borrow (Strong Room only)  (2 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1332 Notice/Prepare Transfer form to CR (NPL) (5 Day),1333 Share/Bond Pledge or Release of Pledge (10 day),1334 COMS update (2 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1335 Credit - Prepare Statement/Invoice/Liability (Manual 6 customers for MB Only) (1 Day),1336 Credit - Request Prepare Collection Letter (1 Day),1337 Credit - Add Buyer/Supplier List (After Approve) (2 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>&quot;1338 Credit - Co-ordinate - KYC ,CDD ผูกความสัมพันธ์ (1 day)&quot;,1339 Credit Disbursement (Power Sector Only) (3 Day),1340 Check status float charge (เสียค่าธรรมเนียม) (4 day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1341 Check status float charge (ไม่เสียค่าธรรมเนียม) (1 day),1342 LG/Aval Application (Fullfillment/Check/Inquiry) (Exclude BB) (1 Day),1343 LG Foreign currency form (Non-standard form) - Consult (1 Day),1344 LG claim (15 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>2308 Trade Application Fulfillment / Check / Inquiry; (Exclude BB) (2 Day),1321 Refund Interest  and Fee (Credit Only) (2 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>2312 Trade report request/ Trade Service issue /Trade consult /Trade receipt or advice; (Exclude BB) (2 Day),2317 Trade Investigate ; (Exclude BB) (3 Day)</value>
+        </criteriaItems>
+        <description>Journey field only for use in report, not display in page layout.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to Use %282%29</fullName>
+        <actions>
+            <name>Update_Journey_to_Use_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 or 2 or 3 or 4 or 5 or 6</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1. LT : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee/interest rate,2. PN/ODB/OD : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee/interest rate,3. TF : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee/interest rate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>4. LG : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee,5. Fleet card : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee/interest rate,6. Cash - DTB : แก้ไข/ปรับเปลี่ยน/ลดหย่อน fee/interest rate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>7.1  LT : Credit modification เพื่อให้เบิกใช้ได้ ตามที่ลูกค้า request เช่น ขยายระยะเวลาการเบิก,7.2  LT : Review condition / Credit modification เพื่อให้เบิกใช้ได้ (customerไม่สามารถปฎิบัติตามเงื่อนไขได้)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>7.3  LT : Review condition / Credit modification เพื่อให้เบิกใช้ได้ (เรื่องเกี่ยวกับประเมิน),7.4  LT : Review condition / Credit modification เพื่อให้เบิกใช้ได้ (อื่นๆ)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>8.1 TF-Import products  : Review condition / Credit modification เพื่อให้เบิกใช้ได้,8.2 TF-Export products  : Review condition / Credit modification เพื่อให้เบิกใช้ได้</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>9. PN : Review condition / Credit modification เพื่อให้เบิกใช้ได้,10. LG : Review condition / Credit modification เพื่อให้เบิกใช้ได้</value>
+        </criteriaItems>
+        <description>CR from WBG</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Journey to monitor%2FInvestigage</fullName>
+        <actions>
+            <name>Update_Journey_to_monitor_Investigage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 or  2 or 3</booleanFilter>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1501 Customer request - Credit Receipt/Advice (Mannual) (1 Day),1502 Customer request - Credit Issue (3 day),1503 Credit - Defect SLMR (Repayment) (1 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1504 Credit - Defect SLMR (Maintenance) (1 Day),1505 Credit - Defect LS.CO (1 Day),1506 Credit - Defect Audit Confirmation (1 Day)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Sub_Task__c</field>
+            <operation>equals</operation>
+            <value>1507 Credit - Defect CDM (1 Day),1508 Credit - Defect LAR (1 Day),1509 Credit - Defect Others Unit (1 Day)</value>
+        </criteriaItems>
+        <description>Journey field only for use in report, not display in page layout.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

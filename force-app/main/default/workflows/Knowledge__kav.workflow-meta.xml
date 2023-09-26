@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_knowledge_status_to_Final_Approve</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Final Approved</literalValue>
+        <name>Update knowledge status to Final Approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_knowledge_status_to_Pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending for Approval</literalValue>
+        <name>Update knowledge status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <knowledgePublishes>
+        <fullName>Publish_the_Article</fullName>
+        <action>Publish</action>
+        <label>Publish the Article</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </knowledgePublishes>
+</Workflow>

@@ -86,6 +86,26 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>Share_to_CALO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to CALO</label>
+        <sharedTo>
+            <roleAndSubordinates>CALO</roleAndSubordinates>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>Share_to_CRBO</fullName>
         <accessLevel>Read</accessLevel>
         <label>Share to CRBO</label>
@@ -137,6 +157,26 @@
             <field>RecordTypeId</field>
             <operation>equals</operation>
             <value>Retail Card and RDC,Retail Card and RDC Closed,Retail Others Closed,Retail Others,Retail Loans Closed,Retail Loans</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ttb_subsidiary</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ttb subsidiary</label>
+        <sharedTo>
+            <roleAndSubordinates>Subsidiary</roleAndSubordinates>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Deposit,Retail Loans,Retail Bancassurance,Retail Card and RDC,Retail Investment,Retail Others,Retail Retentions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC Closed,Retail Bancassurance Closed,Retail Deposit Closed,Retail Investment Closed,Retail Auto Loan Closed,Retail Others Closed,Retail Loans Closed</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -201,7 +241,7 @@
         <description>SCR0590879 : Add Wealth Support list to receive cases</description>
         <label>Wealth Support</label>
         <sharedTo>
-            <role>Pool_WA_SS</role>
+            <role>Pool_WA_TL</role>
         </sharedTo>
         <sharedFrom>
             <roleAndSubordinates>WM_TH</roleAndSubordinates>

@@ -1,0 +1,1839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_Email_to_Case_Agent</fullName>
+        <description>Alert Email to Case Agent</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Alert_to_case_supervisor</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_email_to_BRC_user</fullName>
+        <description>Alert email to BRC user</description>
+        <protected>false</protected>
+        <recipients>
+            <field>BRC_User_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notify_BRC_Staff</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notify_case_expired</fullName>
+        <description>Email Notify case expired</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notify_case_expired</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_notify_Case_owner</fullName>
+        <description>Email notify Case owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notify_Case_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_notify_before_case_expire_1_day</fullName>
+        <description>Email notify before case expire 1 day</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notify_before_case_expired_1_Day</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_approver_case_recalled</fullName>
+        <description>Notify approver KYC case has been recalled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Manager_of_Case_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>KYC_Review_Email_Template/KYC_Review_recalled</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_requester_case_approved</fullName>
+        <description>Notify requester KYC case has been approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sf_admin@tmbbank.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>KYC_Review_Email_Template/KYC_Review_approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_requester_case_rejected</fullName>
+        <description>Notify requester KYC case has been rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sf_admin@tmbbank.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>KYC_Review_Email_Template/KYC_Review_rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_notify_Zone</fullName>
+        <description>Send Email notify Zone</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Last_Zone_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notified_Change_Condition_UW_Approve</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_notify_to_customer_owner</fullName>
+        <description>Send Email notify to customer owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notified_Change_Condition_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_change_condition_cancel_to_Zone_and_Customer_Owner</fullName>
+        <description>Send email change condition cancel to Zone and Customer Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Last_Zone_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Email_Template/Email_Notified_Change_Condition_Cancel</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Update_Case_Subject</fullName>
+        <field>Subject</field>
+        <formula>if( Issue__c &lt;&gt; &apos;&apos;, Issue__c ,
+if(  Product_Category__c  &lt;&gt; &apos;&apos; , Product_Category__c,  Sub_Category__c ))</formula>
+        <name>Auto Update Case Subject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_All_Previous_Owner</fullName>
+        <field>All_Previous_Owner__c</field>
+        <formula>&apos;&apos;</formula>
+        <name>Clear All Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_CS_Completed_Date</fullName>
+        <field>CS_Completed_Date__c</field>
+        <name>Clear CS Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Closed_Case</fullName>
+        <field>Closed_by__c</field>
+        <name>Clear Closed Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Last_CS_Owner</fullName>
+        <field>Last_CS_Owner__c</field>
+        <formula>&apos;&apos;</formula>
+        <name>Clear Last CS Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Last_UW_Owner</fullName>
+        <field>Last_UW_Owner__c</field>
+        <name>Clear Last UW Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_One_Previous_Owner</fullName>
+        <field>One_Previous_Owner__c</field>
+        <formula>&apos;&apos;</formula>
+        <name>Clear One Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Resolution</fullName>
+        <field>Resolution__c</field>
+        <name>Clear Resolution</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Root_Cause</fullName>
+        <field>Root_Cause__c</field>
+        <name>Clear Root Cause</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Stop_to_blank</fullName>
+        <field>IsStopped</field>
+        <literalValue>0</literalValue>
+        <name>Clear Stop to blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>KYC_Close_Case</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_KYC_System</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>KYC Close Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_All_Previous_Owner</fullName>
+        <field>All_Previous_Owner__c</field>
+        <formula>if(ISNEW(), &apos;&apos;, 
+IF(CONTAINS(PRIORVALUE(All_Previous_Owner__c) , PRIORVALUE( OwnerId )), PRIORVALUE(All_Previous_Owner__c) ,PRIORVALUE(All_Previous_Owner__c ) + &apos;, &apos; + PRIORVALUE( OwnerId )) 
+)</formula>
+        <name>Stamp All Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Change_owner_datetime</fullName>
+        <field>Last_Change_Owner_Date_Time__c</field>
+        <formula>Now()</formula>
+        <name>Stamp Change owner datetime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Branch_Code</fullName>
+        <field>Closed_By_Branch_Code__c</field>
+        <formula>$User.RTL_Branch_Code__c</formula>
+        <name>Stamp Closed By Branch Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Branch_Name</fullName>
+        <field>Closed_By_Branch_Name__c</field>
+        <formula>$User.RTL_Branch__c</formula>
+        <name>Stamp Closed By Branch Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Region_Code</fullName>
+        <field>Closed_By_Region_Code__c</field>
+        <formula>$User.Region_Code__c</formula>
+        <name>Stamp Closed By Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Region_Group</fullName>
+        <field>Closed_By_Region_Group__c</field>
+        <formula>$User.Region__c</formula>
+        <name>Stamp Closed By Region / Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Zone_Code</fullName>
+        <field>Closed_By_Zone_Code__c</field>
+        <formula>$User.Zone_Code__c</formula>
+        <name>Stamp Closed By Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_By_Zone_Team</fullName>
+        <field>Closed_By_Zone_Team__c</field>
+        <formula>$User.Zone__c</formula>
+        <name>Stamp Closed By Zone/Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Closed_by</fullName>
+        <field>Closed_by__c</field>
+        <formula>$User.Employee_ID__c +&quot; &quot;+ $User.FirstName + &quot; &quot;+ $User.LastName</formula>
+        <name>Stamp Closed by</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_One_Previous_Owner</fullName>
+        <field>One_Previous_Owner__c</field>
+        <formula>PRIORVALUE( OwnerId )</formula>
+        <name>Stamp One Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Previous_Owner</fullName>
+        <field>Previous_Owner__c</field>
+        <formula>if(ISNEW(),&apos;&apos;,PRIORVALUE(Owner_Name__c))</formula>
+        <name>Stamp Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By</fullName>
+        <field>Resolved_By__c</field>
+        <formula>$User.Employee_ID__c +&quot; &quot;+ $User.FirstName + &quot; &quot;+ $User.LastName</formula>
+        <name>Stamp Resolved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Branch_Code</fullName>
+        <field>Resolved_By_Branch_Code__c</field>
+        <formula>$User.RTL_Branch_Code__c</formula>
+        <name>Stamp Resolved By Branch Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Branch_Name</fullName>
+        <field>Resolved_By_Branch_Name__c</field>
+        <formula>$User.RTL_Branch__c</formula>
+        <name>Stamp Resolved By Branch Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Region_Code</fullName>
+        <field>Resolved_By_Region_Code__c</field>
+        <formula>$User.Region_Code__c</formula>
+        <name>Stamp Resolved By Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Region_Group</fullName>
+        <field>Resolved_By_Region_Group__c</field>
+        <formula>$User.Region__c</formula>
+        <name>Stamp Resolved By Region / Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Zone_Code</fullName>
+        <field>Resolved_By_Zone_Code__c</field>
+        <formula>$User.Zone_Code__c</formula>
+        <name>Stamp Resolved By Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_By_Zone_Team</fullName>
+        <field>Resolved_By_Zone_Team__c</field>
+        <formula>$User.Zone__c</formula>
+        <name>Stamp Resolved By Zone/Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_Date_Time</fullName>
+        <field>Resolved_Date_Time__c</field>
+        <formula>Now()</formula>
+        <name>Stamp Resolved Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Resolved_by_Channel</fullName>
+        <field>Resolved_by_Channel__c</field>
+        <formula>TEXT($User.RTL_Channel__c)</formula>
+        <name>Stamp Resolved by Channel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_BRC_User_Email</fullName>
+        <field>BRC_User_Email__c</field>
+        <formula>Account.RTL_Assigned_BRC__r.Email</formula>
+        <name>Update BRC User Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CXM_Write_log_flag</fullName>
+        <field>CXM_write_log_flag__c</field>
+        <literalValue>0</literalValue>
+        <name>Update CXM Write log flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Owner_Type</fullName>
+        <field>Owner_Type__c</field>
+        <formula>IF(ISBLANK(Owner:Queue.DeveloperName),&apos;User&apos;,&apos;Queue&apos;)</formula>
+        <name>Update Case Owner Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Status_InProgress</fullName>
+        <field>Status</field>
+        <literalValue>In progress</literalValue>
+        <name>Update Case Status InProgress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Status_to_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Completed</literalValue>
+        <name>Update Case Status to Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Status_to_In_Progress</fullName>
+        <field>Status</field>
+        <literalValue>In progress</literalValue>
+        <name>Update Case Status to In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Owner</fullName>
+        <field>Customer_Owner_Name__c</field>
+        <formula>Account.Owner.FirstName +&apos; &apos;+Account.Owner.LastName</formula>
+        <name>Update Customer Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Owner_Email</fullName>
+        <field>Customer_Owner_Email__c</field>
+        <formula>Account.Owner.Email</formula>
+        <name>Update Customer Owner Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Escalated</fullName>
+        <field>IsEscalated</field>
+        <literalValue>1</literalValue>
+        <name>Update Escalated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_First_Owner_BU</fullName>
+        <field>First_Owner_BU__c</field>
+        <formula>if(  First_Owner_BU__c = &apos;&apos;,  Responsible_BU__c ,First_Owner_BU__c )</formula>
+        <name>Update First Owner BU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Approved</fullName>
+        <field>KYC_Approve_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update KYC Approval Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Inprogress</fullName>
+        <field>KYC_Approve_status__c</field>
+        <literalValue>In progress</literalValue>
+        <name>Update KYC Approval Status Inprogress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_New</fullName>
+        <field>KYC_Approve_status__c</field>
+        <literalValue>New</literalValue>
+        <name>Update KYC Approval Status New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Reject</fullName>
+        <field>KYC_Approve_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update KYC Approval Status Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Case_Status</fullName>
+        <field>Status</field>
+        <literalValue>Completed</literalValue>
+        <name>Update KYC Case Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Issue_Cause</fullName>
+        <field>Root_Cause_List__c</field>
+        <literalValue>TTB Require KYC Review</literalValue>
+        <name>Update KYC Issue Cause</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Resolution</fullName>
+        <field>Resolution_LIst__c</field>
+        <literalValue>ปรับปรุง/แก้ไขรายการให้ลูกค้า</literalValue>
+        <name>Update KYC Resolution</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_CS_Owner</fullName>
+        <field>Last_CS_Owner__c</field>
+        <formula>Owner:User.FirstName +&quot; &quot;+ Owner:User.LastName</formula>
+        <name>Update Last CS Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Change_UW_Owner_Date</fullName>
+        <field>Last_Change_UW_Owner_Date_Time__c</field>
+        <formula>Now()</formula>
+        <name>Update Last Change UW Owner Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_UW_Owner</fullName>
+        <field>Last_UW_Owner__c</field>
+        <formula>Owner:User.FirstName +&quot; &quot;+ Owner:User.LastName</formula>
+        <name>Update Last UW Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Zone_Email</fullName>
+        <field>Last_Zone_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>Update Last Zone Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Zone_Owner</fullName>
+        <field>Last_Zone_Owner__c</field>
+        <formula>$User.FirstName + &apos; &apos;+  $User.LastName</formula>
+        <name>Update Last Zone Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Macking_Card_No</fullName>
+        <field>Card_No__c</field>
+        <formula>Left(Card_No__c  , 4) + &quot;********&quot;+ RIGHT( Card_No__c  , 4)</formula>
+        <name>Update Macking Card No</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Masking_Card_No2</fullName>
+        <field>Card_No2__c</field>
+        <formula>Left(Card_No2__c  , 4) + &quot;********&quot;+ RIGHT( Card_No2__c  , 4)</formula>
+        <name>Update Masking Card No2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Manager_Email</fullName>
+        <field>Manager_of_Case_Owner_Email__c</field>
+        <formula>KYC_Approver__r.Email</formula>
+        <name>Update Owner Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_RM_ID</fullName>
+        <field>Customer_ID_OneApp__c</field>
+        <formula>Account.TMB_Customer_ID_PE__c</formula>
+        <name>Update RM ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_Operation</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Operation</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to Operation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_Retail_Service</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Service</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to Retail Service</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_SE_Call_Center</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>SE_Call_Center</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to SE Call Center</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_WBG_Service</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Service</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to WBG Service</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_close_case_Retail</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Retail_Service</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to close case(Retail)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_closed_case</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_SE_Call_Center</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to closed case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_closed_case_Oper</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Operation</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to closed case (Oper)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_type_to_closed_case_WBG</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_WBG_Service</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record type to closed case (WBG)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Send_to_Operation_Date</fullName>
+        <field>CS_Completed_Date__c</field>
+        <formula>Today()</formula>
+        <name>Update Send to Operation Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_Date</fullName>
+        <field>Status_Change_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Status Change Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_by</fullName>
+        <field>Status_Change_by__c</field>
+        <formula>$User.Employee_ID__c +&quot; &quot;+ $User.FirstName + &quot; &quot;+ $User.LastName</formula>
+        <name>Update Status Change by</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Update Status Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stop_Milestones</fullName>
+        <field>IsStopped</field>
+        <literalValue>1</literalValue>
+        <name>Update Stop Milestones</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UW_Changed_Owner_to_CS_Date</fullName>
+        <field>UW_Changed_Owner_to_CS_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update UW Changed Owner to CS Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_last_Change_CS_owner_Date</fullName>
+        <field>Last_Change_CS_Owner_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Update last Change CS owner Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Update Case Subject</fullName>
+        <actions>
+            <name>Auto_Update_Case_Subject</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Auto Subject</value>
+        </criteriaItems>
+        <description>After create case auto update Subject by last level of service type</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto email Change Condition_CS Case Cancelled</fullName>
+        <actions>
+            <name>Send_email_change_condition_cancel_to_Zone_and_Customer_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>Change Condition_CS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Cancel</value>
+        </criteriaItems>
+        <description>Category = Change Condition_CS, if Case status = Cancelled  Auto Email to Last Zone Owner and Customer Owner</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto email Change Condition_CS Case UW Approved</fullName>
+        <actions>
+            <name>Send_Email_notify_Zone</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>If Category = Change Condition_CS and UW Action = Approved send email to Zone</description>
+        <formula>if( AND(Category__c = &apos;Change Condition_CS&apos;, TEXT(UW_Action__c) = &apos;Approved&apos;, Last_Zone_Email__c &lt;&gt; &apos;&apos;, AND(OR(PRIORVALUE( Owner_Team__c ) = &apos;UW&apos;, PRIORVALUE(Owner_Team__c) = &apos;UW_SEC1&apos;, PRIORVALUE(Owner_Team__c) = &apos;UW SEC1&apos; ,PRIORVALUE(Owner_Team__c) = &apos;UW_SEC2&apos;, PRIORVALUE(Owner_Team__c) = &apos;UW SEC2&apos;), IsClosed = False, ISCHANGED(OwnerId))) , true, false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto email Change Condition_CS Case created</fullName>
+        <actions>
+            <name>Send_Email_notify_to_customer_owner</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Customer_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Customer_Owner_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>Change Condition_CS</value>
+        </criteriaItems>
+        <description>ตอน Create case &quot;Category = Change Condition_CS&quot;  ให้ Auto Email to Customer Owner</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Email SLA is over</fullName>
+        <active>true</active>
+        <formula>AND( TEXT(Email_Status__c) =   &apos;New&apos;,  BEGINS(OwnerId,&apos;005&apos;)  )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Alert_Email_to_Case_Agent</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Clear Clone Data</fullName>
+        <actions>
+            <name>Clear_All_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_CS_Completed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Closed_Case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Last_CS_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Last_UW_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_One_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Resolution</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Root_Cause</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Stop_to_blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2 OR 3 or 4 or 5 or 6 or 7 or 8 )AND 9</booleanFilter>
+        <criteriaItems>
+            <field>Case.One_Previous_Owner__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.All_Previous_Owner__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Last_CS_Owner__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Closed_by__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsStopped</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Last_UW_Owner__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Root_Cause__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Resolution__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Call Center</value>
+        </criteriaItems>
+        <description>Clear stamp data in old case for Clone record.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Notify Before case expire 1 day</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Commit_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.SLA_Day__c</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Is_Over_SLA__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Send email notify case owner before case expire 1 day</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_notify_before_case_expire_1_day</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Case.Commit_Date__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Email Notify case expired</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Commit_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.SLA_Day__c</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Owner_Manager_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Is_Over_SLA__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Send email notify case owner and manager when case expired</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_Notify_case_expired</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Case.Commit_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Email alert to BRC agent</fullName>
+        <actions>
+            <name>Alert_email_to_BRC_user</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_BRC_User_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When case complaint created send email alert to BRC agent</description>
+        <formula>if(AND(Category__c = &apos;Complaint&apos;, Account.RTL_Assigned_BRC__c &lt;&gt; null),true,false)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>FCR closed case</fullName>
+        <actions>
+            <name>Stamp_Resolved_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_by_Channel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Case_Status_to_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.FCR__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Closed case when tick FCR</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>KYC_Case_Complete</fullName>
+        <actions>
+            <name>KYC_Close_Case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Completed,Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>KYC System</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Case Change Status info</fullName>
+        <actions>
+            <name>Update_Status_Change_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_Change_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp user that change case status info and date time</description>
+        <formula>OR(ISCHANGED(Status ), FCR__c = true)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Case Owner Change</fullName>
+        <actions>
+            <name>Email_notify_Case_owner</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Stamp_All_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Change_owner_datetime</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_One_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Previous Owner information and send email to notify new owner</description>
+        <formula>AND(OR(AND(ISNEW(), Owner:User.Id &lt;&gt; CreatedBy.Id ), ISCHANGED( OwnerId )), IsClosed = False, FCR__c = False)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Case Owner Type</fullName>
+        <actions>
+            <name>Update_Case_Owner_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_First_Owner_BU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Check if owner is a user or a queue</description>
+        <formula>OR(ISNEW(),ISCHANGED(OwnerId))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Closed Case %28Operation%29</fullName>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Record_type_to_closed_case_Oper</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stop_Milestones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Operation</value>
+        </criteriaItems>
+        <description>Stamp user that closed case information, Stop SLA, Update record type to Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Closed Case %28Retail Service%29</fullName>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Record_type_to_close_case_Retail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stop_Milestones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Service</value>
+        </criteriaItems>
+        <description>Stamp user that closed case information, Stop SLA, Update record type to Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Closed Case %28WBG%29</fullName>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Record_type_to_closed_case_WBG</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stop_Milestones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Service</value>
+        </criteriaItems>
+        <description>Stamp user that closed case information, Stop SLA, Update record type to Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Closed Case Info</fullName>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Closed_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Record_type_to_closed_case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stop_Milestones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Call Center</value>
+        </criteriaItems>
+        <description>Stamp user that closed case information, Stop SLA, Update record type to Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp RM ID from customer</fullName>
+        <actions>
+            <name>Update_RM_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Customer_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>if case has customer workflow will stamp RMID to RM_ID__c field in case</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Resolved Case info</fullName>
+        <actions>
+            <name>Stamp_Resolved_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_by_Channel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Resolved</value>
+        </criteriaItems>
+        <description>Stamp user that resolved case info</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>UW Changed Owner to CS Date</fullName>
+        <actions>
+            <name>Update_UW_Changed_Owner_to_CS_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update UW Changed Owner to CS Date</description>
+        <formula>if(AND(OR(PRIORVALUE( Owner_Team__c  )  = &apos;UW&apos;,  PRIORVALUE(Owner_Team__c) = &apos;UW_SEC1&apos;, PRIORVALUE(Owner_Team__c) = &apos;UW SEC1&apos; ,PRIORVALUE(Owner_Team__c) = &apos;UW_SEC2&apos;, PRIORVALUE(Owner_Team__c) = &apos;UW SEC2&apos;), IsClosed = False, ISCHANGED(OwnerId)) , true, false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update CXM Write log flag</fullName>
+        <actions>
+            <name>Update_CXM_Write_log_flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.CXM_write_log_flag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>if CWM Write log flag is true, update back to false</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case Record Type Operation from Clone</fullName>
+        <actions>
+            <name>Update_Record_type_to_Operation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Closed Operation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update record type to Open case when Clone Case from Closed case.
+Update flag Clone case</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case Record Type Retail Service from Clone</fullName>
+        <actions>
+            <name>Update_Record_type_to_Retail_Service</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Closed Retail Service</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update record type to Open case when Clone Case from Closed case.
+Update flag Clone case</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case Record Type WBG Service from Clone</fullName>
+        <actions>
+            <name>Update_Record_type_to_WBG_Service</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Closed WBG Service</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update record type to Open case when Clone Case from Closed case.
+Update flag Clone case</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case RecordType from Clone</fullName>
+        <actions>
+            <name>Update_Record_type_to_SE_Call_Center</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Closed SE Call Center</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update record type to Open case when Clone Case from Closed case.
+Update flag Clone case</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case Status to In Progress</fullName>
+        <actions>
+            <name>Update_Case_Status_to_In_Progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2  and ( 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15 OR 16 OR 17 OR 18 or 19)</booleanFilter>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Call Center</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CS_Flow__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CS_Status__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CS_Act_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RGM_Approve__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Refinance__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Refinance_Bank__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Redeem_Reason__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.DOA_Waive_Fee__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Cancellation_Fee__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Prepayment_Fee__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Waive_Cancellation_Fee__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Waive_Prepayment_Fee__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Total_Limit__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Total_O_S__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Decrease_Limit__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Decrease_O_S__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CS_Comment__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>If update information in CS Process section will auto update Status to In progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last CS Assigned</fullName>
+        <actions>
+            <name>Update_Last_CS_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>when assigned to CS user. Stamp assigned, Date Assigned.</description>
+        <formula>if(OR(AND(CONTAINS(Owner:User.Profile.Name, &apos;Client Support Profile&apos;),  IsClosed = False,  ISCHANGED(OwnerId) ),AND(CONTAINS(Owner:User.Profile.Name, &apos;Client Support Profile&apos;),  IsClosed = False, ISNEW()) ), true,false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last UW Owner</fullName>
+        <actions>
+            <name>Update_Last_Change_UW_Owner_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Last_UW_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp last UW Owner</description>
+        <formula>if(AND(Owner:User.Profile.Name = &apos;TMB UW Profile&apos;, IsClosed = False, RecordType.Name = &apos;SE Call Center&apos;, ISCHANGED(OwnerId) ), true,false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last Zone Owner detail</fullName>
+        <actions>
+            <name>Update_Last_Zone_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Last_Zone_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update user that action in Zone section to Last Zone Owner , Last Zone Email</description>
+        <formula>OR(AND(PRIORVALUE(Zone_Action__c) = &apos;&apos;, TEXT(Zone_Action__c) &lt;&gt; &apos;&apos;) , AND(PRIORVALUE(Zone_Comment__c) = &apos;&apos; ,Zone_Comment__c &lt;&gt; &apos;&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Masking Card No</fullName>
+        <actions>
+            <name>Update_Macking_Card_No</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Card No. to masking 1234********1234</description>
+        <formula>if(Card_No__c &lt;&gt; null , if( OR(ISCHANGED(Card_No__c ),  AND(ISNEW())), true, false), false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Masking Card No2</fullName>
+        <actions>
+            <name>Update_Masking_Card_No2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Card No2. to masking 1234********1234</description>
+        <formula>if(Card_No2__c &lt;&gt; null , if( OR(ISCHANGED(Card_No2__c ),  AND(ISNEW())), true, false), false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Resolve by when closed case</fullName>
+        <actions>
+            <name>Stamp_Resolved_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Region_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_By_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Resolved_by_Channel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Resolved_By__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>If closed case and resolve by is null, update resolve by info</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Send to Operation Date</fullName>
+        <actions>
+            <name>Update_Send_to_Operation_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Call Center</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CS_Status__c</field>
+            <operation>equals</operation>
+            <value>06. Done Approve BU,07. Done Approve UW,08. Done Approve CS,09. Done Reject BU,10. Done Reject UW,11. Done Reject CS</value>
+        </criteriaItems>
+        <description>When CS Status is 06. Done Approve BU,07. Done Approve UW,08. Done Approve CS,09. Done Reject BU,10. Done Reject UW,11. Done Reject CS , Update field Send to Operation Date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Final_Approved_request_to_Active_SLL_Group</fullName>
+        <description>Final Approved request to Active SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Approved_request_to_Active_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approved_request_to_Edit_SLL_Group</fullName>
+        <description>Final Approved request to Edit SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Approved_request_to_Edit_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approved_request_to_Inactive_SLL_Group</fullName>
+        <description>Final Approved request to Inactive SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Approved_request_to_Inactive_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejected_request_to_Active_SLL_Group</fullName>
+        <description>Final Rejected request to Active SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Rejected_request_to_active_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejected_request_to_Edit_SLL_Group</fullName>
+        <description>Final Rejected request to Edit SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Rejected_request_to_Edit_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejected_request_to_Inactive_SLL_Group</fullName>
+        <description>Final Rejected request to Inactive SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Rejected_request_to_Inactive_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Recall_request_to_Active_SLL_Group</fullName>
+        <description>Recall request to Active SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Recalled_request_to_active_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Recall_request_to_Edit_SLL_Group</fullName>
+        <description>Recall request to Edit SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Recalled_request_to_Edit_SLL_Group</template>
+    </alerts>
+    <alerts>
+        <fullName>Recall_request_to_Inactive_SLL_Group</fullName>
+        <description>Recall request to Inactive SLL Group</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SLL_Group/Recalled_request_to_Inactive_SLL_Group</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_Approve_Inactive</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved - Inactive</literalValue>
+        <name>Update Approval Status Approve Inactive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_PAM1_Active</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>PAM Approver1 Approved - Active</literalValue>
+        <name>Update Approval Status PAM1 - Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_PAM1_Inactive</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>PAM Approver1 Approved - Inactive</literalValue>
+        <name>Update Approval Status PAM1 - Inactive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_PAM1_Update</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>PAM Approver1 Approved - Update</literalValue>
+        <name>Update Approval Status PAM1 - Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_Reject_Inactive</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Inactive</literalValue>
+        <name>Update Approval Status Reject Inactive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Approve_Active</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved - Active</literalValue>
+        <name>Update Approval Status to Approve Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Approve_Update</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved - Update</literalValue>
+        <name>Update Approval Status to Approve Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Recall_Inactiv</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Inactive</literalValue>
+        <name>Update Approval Status to Recall Inactiv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Recall_Update</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Update</literalValue>
+        <name>Update Approval Status to Recall Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Reject_Active</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Active</literalValue>
+        <name>Update Approval Status to Reject Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Reject_Update</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Update</literalValue>
+        <name>Update Approval Status to Reject Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_Approval_Status_Recall</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected - Active</literalValue>
+        <name>Update Field  Approval Status Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_IsActive_to_be_False</fullName>
+        <field>Is_Active__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Field IsActive to be False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_IsActive_to_be_True</fullName>
+        <field>Is_Active__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Field IsActive to be True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_Last_Approve_Date_Active</fullName>
+        <field>Last_Approve_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Field Last Approve Date - Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_Last_Approve_Date_Inactiv</fullName>
+        <field>Last_Approve_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Field Last Approve Date - Inactiv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_Last_Approve_Date_Update</fullName>
+        <field>Last_Approve_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Field Last Approve Date - Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Available</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Available</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Available</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>stamp primary customer ID</fullName>
+        <active>false</active>
+        <formula>ISCHANGED(Primary_Customer__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

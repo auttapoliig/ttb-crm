@@ -526,9 +526,29 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>NewOpportunity</actionName>
+            <actionName>Account.RTL_new_task</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
+            <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Product_Holding_S1</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>RTL_Fetch_NBO_S1</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SendEmail</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>RTL_Retail_Campaign_SF1</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Personalize_Timeline</actionName>
@@ -544,6 +564,11 @@
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewOpportunity</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
@@ -569,31 +594,6 @@
             <actionName>Account.RTL_new_event</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Account.RTL_new_task</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>9</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Product_Holding_S1</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>RTL_Fetch_NBO_S1</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>11</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>RTL_Retail_Campaign_SF1</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>13</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -705,15 +705,12 @@
         <excludeButtons>MailMerge</excludeButtons>
         <excludeButtons>RequestUpdate</excludeButtons>
         <fields>TASK.SUBJECT</fields>
-        <fields>TASK.STATUS</fields>
-        <fields>RTL_Event_Status__c</fields>
-        <fields>TASK.PRIORITY</fields>
-        <fields>ACTIVITY.TASK</fields>
+        <fields>EVENT.START_DATE_TIME</fields>
         <fields>TASK.DUE_DATE</fields>
+        <fields>TASK.PRIORITY</fields>
+        <fields>TASK.STATUS</fields>
+        <fields>ACTIVITY.TASK</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <fields>TASK.RECORDTYPE</fields>
-        <fields>RTL_NBO_History__c</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -768,21 +765,6 @@
         <relatedList>Call_Report__c.Customer_name__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>Activity_Type__c</fields>
-        <fields>Consent_Type__c</fields>
-        <fields>Consent_Formula__c</fields>
-        <fields>Version__c</fields>
-        <fields>Activity_Channel__c</fields>
-        <fields>Sign_Off_Date__c</fields>
-        <fields>Requested_Date__c</fields>
-        <fields>Create_Date__c</fields>
-        <fields>Agent_Email__c</fields>
-        <relatedList>PDPA_Activity_Log__c.Account_Id__c</relatedList>
-        <sortField>Create_Date__c</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
@@ -807,6 +789,23 @@
         <fields>CREATED_DATE</fields>
         <relatedList>SLL_Group_Member__c.Customer_Name__c</relatedList>
         <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Activity_Type__c</fields>
+        <fields>Consent_Type__c</fields>
+        <fields>Consent_Formula__c</fields>
+        <fields>Version__c</fields>
+        <fields>Activity_Channel__c</fields>
+        <fields>Sign_Off_Date__c</fields>
+        <fields>Requested_Date__c</fields>
+        <fields>Create_Date__c</fields>
+        <fields>Agent_Email__c</fields>
+        <relatedList>PDPA_Activity_Log__c.Account_Id__c</relatedList>
+        <sortField>Create_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

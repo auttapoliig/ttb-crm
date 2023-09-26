@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_to_Opportunity_Owner_when_owner_change</fullName>
+        <description>Alert to Opportunity Owner when owner change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Mobile_Email_Template/Opportunity_Email_notify_to_New_Opportunity_Owner_Mobile</template>
+    </alerts>
+    <alerts>
+        <fullName>Oppty_OLAP_Email_Noti</fullName>
+        <description>Oppty OLAP Email Noti</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Oppty_OLAP_Email_Noti</template>
+    </alerts>
+    <alerts>
+        <fullName>RTL_Email_notification_on_Retention_Oppty_Creation</fullName>
+        <description>RTL Email notification on Retention Oppty Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ap1crm@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RTL_Email_Notification_to_Retention_team/RTL_New_Loan_Retention_Opportunity_Alert</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Loan_Closed_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Auto_Loan_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Auto Loan Closed Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_Band</fullName>
+        <field>RTL_AL_car_brand__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_brand__c</formula>
+        <name>Opportunity: Car Band</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_Gear</fullName>
+        <field>RTL_AL_car_gear__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_gear__c</formula>
+        <name>Opportunity: Car Gear</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_Group</fullName>
+        <field>RTL_AL_car_group__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_group__c</formula>
+        <name>Opportunity: Car Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_SubType</fullName>
+        <field>RTL_AL_car_subtype__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_subtype__c</formula>
+        <name>Opportunity: Car SubType</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_Type</fullName>
+        <field>RTL_AL_car_type__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_type__c</formula>
+        <name>Opportunity: Car Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Car_Year</fullName>
+        <field>RTL_AL_car_year__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_year__c</formula>
+        <name>Opportunity: Car Year</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_District</fullName>
+        <field>RTL_AL_ContactDistrict__c</field>
+        <formula>RTL_Contact_Address__r.RTL_District__c</formula>
+        <name>Opportunity: District</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Postcode</fullName>
+        <field>RTL_AL_ContactZipcode__c</field>
+        <formula>RTL_Contact_Address__r.RTL_Zipcode__c</formula>
+        <name>Opportunity: Postcode</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Province</fullName>
+        <field>RTL_AL_ContactProvince__c</field>
+        <formula>RTL_Contact_Address__r.RTL_Province__c</formula>
+        <name>Opportunity: Province</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Sub_District</fullName>
+        <field>RTL_AL_ContactSubDistrict__c</field>
+        <formula>RTL_Contact_Address__r.RTL_Sub_District__c</formula>
+        <name>Opportunity: Sub District</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oppty_Post_Approval</fullName>
+        <field>StageName</field>
+        <literalValue>Post Approval</literalValue>
+        <name>Oppty - Post Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oppty_Reject</fullName>
+        <description>Update opportunity stage to Rejected</description>
+        <field>StageName</field>
+        <literalValue>Rejected</literalValue>
+        <name>Oppty - Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oppty_Stamp_ClosedateToOriginalComplete</fullName>
+        <field>Original_Complete_Date__c</field>
+        <formula>CloseDate</formula>
+        <name>Oppty_Stamp ClosedateToOriginalComplete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Bancassurance_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Bancassurance_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Bancassurance Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Card_and_RDC_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Card_and_RDC_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Card and RDC Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Deposit_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Deposit_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Deposit Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Investment_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Investment_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Investment Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Loans_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Loans_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Loans Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Lock_Other_Opp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Others_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RTL Lock Other Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Set_Opportunity_Quantity</fullName>
+        <field>TotalOpportunityQuantity</field>
+        <formula>1</formula>
+        <name>Retail Set Opportunity Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Set_Retention_Opportunity_Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>ap1crm@tmbbank.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>RTL Set Retention Opportunity Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Set_Status_to_Close</fullName>
+        <field>RTL_Status__c</field>
+        <literalValue>Close</literalValue>
+        <name>Set Status to Close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Branch_Team_Code</fullName>
+        <field>Created_Branch_Team_Code__c</field>
+        <formula>CreatedBy.RTL_Branch_Code__c</formula>
+        <name>Stamp Branch / Team Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Branch_Team_Name_Code</fullName>
+        <field>Created_Branch_Team_Name_Code__c</field>
+        <formula>CreatedBy.RTL_Branch__c</formula>
+        <name>Stamp Branch / Team Name (Code)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Chanel</fullName>
+        <field>Created_Channel__c</field>
+        <formula>TEXT(CreatedBy.RTL_Channel__c)</formula>
+        <name>Stamp Chanel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Create_Region_Code</fullName>
+        <field>Created_Region_Code__c</field>
+        <formula>CreatedBy.Region_Code__c</formula>
+        <name>Stamp Create Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Manager_ID</fullName>
+        <field>Created_Manager_ID__c</field>
+        <formula>CreatedBy.Manager.Employee_ID__c</formula>
+        <name>Stamp Created Manager ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Manager_Name</fullName>
+        <field>Created_Manager_Name__c</field>
+        <formula>CreatedBy.Manager.FirstName + &quot; &quot; + CreatedBy.Manager.LastName</formula>
+        <name>Stamp Created Manager Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Region</fullName>
+        <field>Created_Region__c</field>
+        <formula>CreatedBy.Region__c</formula>
+        <name>Stamp Created Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Reporting_Segment</fullName>
+        <field>Created_Reporting_Segment__c</field>
+        <formula>CreatedBy.Reporting_Segment__c</formula>
+        <name>Stamp Created Reporting Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Role</fullName>
+        <field>Created_Role__c</field>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <name>Stamp Created Role</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Segment</fullName>
+        <field>Created_Segment__c</field>
+        <formula>TEXT(CreatedBy.Segment__c)</formula>
+        <name>Stamp Created Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Zone</fullName>
+        <field>Created_Zone__c</field>
+        <formula>CreatedBy.Zone__c</formula>
+        <name>Stamp Created Zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Created_Zone_Code</fullName>
+        <field>Created_Zone_Code__c</field>
+        <formula>CreatedBy.Zone_Code__c</formula>
+        <name>Stamp Created Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Region</fullName>
+        <field>Submitted_Region__c</field>
+        <formula>Owner.Region__c</formula>
+        <name>Stamp Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Region_Code</fullName>
+        <field>Created_Region_Code__c</field>
+        <formula>CreatedBy.Region_Code__c</formula>
+        <name>Stamp Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Region_Name</fullName>
+        <field>Created_Region__c</field>
+        <formula>CreatedBy.Region__c</formula>
+        <name>Stamp Region Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Reporting_Segment</fullName>
+        <field>Submitted_Reporting_Segment__c</field>
+        <formula>Owner.Reporting_Segment__c</formula>
+        <name>Stamp Reporting Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Segment</fullName>
+        <field>Submitted_Segment__c</field>
+        <formula>TEXT(Owner.Segment__c)</formula>
+        <name>Stamp Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Zone</fullName>
+        <field>Submitted_Zone__c</field>
+        <formula>Owner.Zone__c</formula>
+        <name>Stamp Zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Zone_Code</fullName>
+        <field>Created_Zone_Code__c</field>
+        <formula>CreatedBy.Zone_Code__c</formula>
+        <name>Stamp Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Zone_Name</fullName>
+        <field>Created_Zone__c</field>
+        <formula>CreatedBy.Zone__c</formula>
+        <name>Stamp Zone Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateWhenOpptyStage_Submittec</fullName>
+        <description>Stamp date when stage =Submit to Credit Process, Submitted to Insurance,Submitted to TPT,Submitted to Branch</description>
+        <field>Submit_Date__c</field>
+        <formula>Today()</formula>
+        <name>UpdateWhenOpptyStage_Submittec</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Allow_Edit_Flag</fullName>
+        <description>This field is set to true from Account Trigger, set it to false after trigger done</description>
+        <field>Is_Allow_Edit__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Allow Edit Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Application_Status</fullName>
+        <field>Application_Status__c</field>
+        <literalValue>ZM Rejected</literalValue>
+        <name>Update Application Status to ZM Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Complete_Date</fullName>
+        <field>Complete_Date__c</field>
+        <formula>today()</formula>
+        <name>Update Complete Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_IsLock_Opportunity</fullName>
+        <field>RTL_IsLock__c</field>
+        <literalValue>1</literalValue>
+        <name>Update IsLock Opportunity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Non_Credit_Record_Type_3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Non_credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Non-Credit Record Type 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opp_App_status_to_none</fullName>
+        <field>Application_Status__c</field>
+        <name>Update Opp/App status to &apos;none&apos;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opp_Stage</fullName>
+        <field>RTL_Stage_Text__c</field>
+        <formula>IF(FIND(&apos;(&apos;,TEXT(StageName)) != 0,LEFT(TEXT(StageName), FIND(&apos;(&apos;,TEXT(StageName))-2 ),TEXT(StageName))</formula>
+        <name>Update Opp Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opportunity_Type</fullName>
+        <field>Opportunity_Type__c</field>
+        <formula>IF(CONTAINS( RecordType.Name, &quot;Non-credit&quot;) ,&quot;Non-Credit&quot;,&quot;Credit&quot;)</formula>
+        <name>Update Opportunity Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opty_Email_Noti_to_false</fullName>
+        <field>Send_Email_Notification_Opty__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Opty Email Noti to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Prev_Owner_Opt</fullName>
+        <field>PrevOwnerId__c</field>
+        <formula>CASESAFEID( Owner.Id )</formula>
+        <name>Update Prev Owner Opt</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Sub_Group</fullName>
+        <field>RTL_Prod_SubGrp__c</field>
+        <formula>IF( 
+ISBLANK(RTL_Related_NBO_History__c), 
+RTL_Product_Name__r.Product_Sub_group__c, 
+IF(ISBLANK(RTL_Product_Name__c), 
+RTL_Prod_SubGrp__c, 
+RTL_Product_Name__r.Product_Sub_group__c) 
+)</formula>
+        <name>Update Product Sub Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Recordtype_to_SE_Credit_Product3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>SE_Credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Recordtype to SE Credit Product3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Recordtype_to_WBG_Credit_Product3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Recordtype to WBG Credit Product3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SE_Credit_Record_Type_3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>SE_Credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update SE Credit Record Type 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage_to_close_lost</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Lost</literalValue>
+        <name>Update Stage to close lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Supply_Chain_Flag_to_Checked</fullName>
+        <field>Supply_Chain_Flag__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Supply Chain Flag to Checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_WBG_Credit_Record_Type_3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update WBG Credit Record Type 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_X_day_to_lock_Opp</fullName>
+        <description>Update next X day to lock opportunity
+change from Today()+ 7 to Today()+ 1 due to SCR 2018-0355 (MF By Phone CR)</description>
+        <field>RTL_Lock_Opp_Date__c</field>
+        <formula>Today()+ 1</formula>
+        <name>Update X day to lock Opp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_record_type_to_SE_Credit_Product3</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>SE_Credit_Product3</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update record type to SE Credit Product3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_record_type_to_WBG_Non_CR2</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Non_credit_Product2</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update record type to Non-CR2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>is_lock_record_to_cannot_edit</fullName>
+        <field>RTL_IsLock__c</field>
+        <literalValue>1</literalValue>
+        <name>is lock record to cannot edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Alert to the new opt owner when opt owner change via mobile</fullName>
+        <actions>
+            <name>Alert_to_Opportunity_Owner_when_owner_change</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Opty_Email_Noti_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(OR(CONTAINS( RecordType.Name ,&quot;Credit&quot;), CONTAINS(RecordType.Name ,&quot;Non-credit&quot;)),Send_Email_Notification_Opty__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Loan%3A When field RTL_AL_BlueBook%5F%5Fc is updated</fullName>
+        <actions>
+            <name>Opportunity_Car_Band</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Car_Gear</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Car_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Car_SubType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Car_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Car_Year</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When field RTL_AL_BlueBook__c is change then workflow get blue book data from AL Blue Book Object.</description>
+        <formula>OR( 				AND( 								NOT(ISNEW()), 								ISCHANGED(RTL_AL_BlueBook__c) 				), 				AND( 								ISNEW(), 								NOT(ISBLANK(RTL_AL_BlueBook__c)) 				) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Close Opportunity after 45 days</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Submitted to Branch</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Non-credit Product,Non-credit Product</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Stage_to_close_lost</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Created Opportunity Stamp Info Commercial</fullName>
+        <actions>
+            <name>Stamp_Create_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Manager_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Manager_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Role</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Created_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp the created information</description>
+        <formula>True</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Created Opportunity Stamp Info Retail</fullName>
+        <actions>
+            <name>Stamp_Branch_Team_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Branch_Team_Name_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Chanel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <description>Stamp the created information</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Non-Credit %3A Update Record type when Issued from Host</fullName>
+        <actions>
+            <name>Update_Non_Credit_Record_Type_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Non-credit Product2,Non-credit Product2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Issued by centralize,Issued by Insurance,Issued by Branch</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity %3A Stamp User info</fullName>
+        <actions>
+            <name>Stamp_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Opportunity: Stamp User, Zone, Region when new record or change owner</description>
+        <formula>AND( OR( CONTAINS( RecordType.Name ,&quot;Credit&quot;),CONTAINS( RecordType.Name ,&quot;Non-credit&quot;)), OR(ISCHANGED( OwnerId ), ISNEW()))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Update Contact Address</fullName>
+        <actions>
+            <name>Opportunity_District</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Postcode</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Province</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Sub_District</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(RTL_Contact_Address__r.IsActive__c=true,OR( AND( NOT(ISNEW()), ISCHANGED(RTL_Contact_Address__c) ), AND( ISNEW(), NOT(ISBLANK(RTL_Contact_Address__c)) ) ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity_OLAP_Email_Noti</fullName>
+        <actions>
+            <name>Oppty_OLAP_Email_Noti</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.LeadSource</field>
+            <operation>contains</operation>
+            <value>OLAP</value>
+        </criteriaItems>
+        <description>This workflow will send email noti to owner of opportunity when it create from Channel OLAP.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Change record type to Non-credit 2</fullName>
+        <actions>
+            <name>Update_record_type_to_WBG_Non_CR2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Submitted to Insurance,Submitted to TPT,Submitted to Branch</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Non-credit Product,Non-credit Product</value>
+        </criteriaItems>
+        <description>Change record type when stage = Submit to TPT, Branch, submitted insurance for All</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Change record type to SE Non-credit 2</fullName>
+        <actions>
+            <name>Update_record_type_to_WBG_Non_CR2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Submitted to Insurance,Submitted to TPT,Submitted to Branch</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Non-credit Product</value>
+        </criteriaItems>
+        <description>Change record type when stage = Submit to TPT, Branch for SE Non (Old Record)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Change record type to WBG Non-credit 2</fullName>
+        <actions>
+            <name>Update_record_type_to_WBG_Non_CR2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Submitted to Insurance,Submitted to TPT,Submitted to Branch,Submitted to Partner,Issued by Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Non-credit Product,Non-credit Product</value>
+        </criteriaItems>
+        <description>Change record type when stage = Submit to TPT, Branch, submitted insurance for WBG</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Post Approval</fullName>
+        <actions>
+            <name>Oppty_Post_Approval</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Application_Status__c</field>
+            <operation>equals</operation>
+            <value>OPC,Post Approval,SSO</value>
+        </criteriaItems>
+        <description>Opportunity: Change Stage to Post Approval when app. status = OPC,Post Approval,SSO</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Rejected</fullName>
+        <actions>
+            <name>Oppty_Reject</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Application_Status__c</field>
+            <operation>equals</operation>
+            <value>Close Lost</value>
+        </criteriaItems>
+        <description>Opportunity: Change opportunity stage when application status = Close Lost</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Update Opp%2FApp status when stage is close won</fullName>
+        <actions>
+            <name>Update_Opp_App_status_to_none</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Close Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Credit Product3</value>
+        </criteriaItems>
+        <description>change Opp/App status to blank when stage is close won
+**Pre-Approved CR**</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty - Update RecordType and Supply Chain Flag</fullName>
+        <actions>
+            <name>Update_Supply_Chain_Flag_to_Checked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_record_type_to_SE_Credit_Product3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Application_Status__c</field>
+            <operation>equals</operation>
+            <value>Submit to Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Credit Product</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Follow Up</value>
+        </criteriaItems>
+        <description>14092018
+When Opp/App Status chang to Submit to Case</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty StampDateToSubmitdate</fullName>
+        <actions>
+            <name>UpdateWhenOpptyStage_Submittec</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp date to field submit date when oppty stage change to Submitted...</description>
+        <formula>AND( 				ISBLANK( Submit_Date__c ),   				OR( 								ISPICKVAL(StageName, &quot;Submit to Credit Process&quot;), 	 								ISPICKVAL(StageName, &quot;Submitted to Insurance&quot;),  								ISPICKVAL(StageName, &quot;Submitted to TPT&quot;), 								ISPICKVAL(StageName, &quot;Submitted to Branch&quot;), 								ISPICKVAL(StageName, &quot;Submitted to e-onBoarding&quot;) 				) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oppty_Stamp Original Complete Date</fullName>
+        <actions>
+            <name>Oppty_Stamp_ClosedateToOriginalComplete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Opportunity : Stamp Original Complete Date = Expected complate date</description>
+        <formula>ISBLANK(Original_Complete_Date__c)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL AL%3A Lock record when closed won %28auto loan%29</fullName>
+        <actions>
+            <name>is_lock_record_to_cannot_edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won (Auto Loan)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan,Retail Auto Loan Closed</value>
+        </criteriaItems>
+        <description>For set field &apos;IsLock&apos; = true when opportunity&apos;s stage is &apos;Closed Won (Auto Loan)&apos;.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL AL%3A Update record type where submit app</fullName>
+        <actions>
+            <name>Auto_Loan_Closed_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Submit App</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Auto Loan</value>
+        </criteriaItems>
+        <description>For change Opportunity record type from Retail Auto Loan to Retail Auto Loan Closed when opportunity&apos;s stage is &apos;Submit App&apos;.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Bancassurance Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Bancassurance_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Bancassurance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Card and RDC Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Card_and_RDC_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Card and RDC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Deposit Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Deposit_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Deposit</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Investment Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Investment_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Investment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Loans Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Loans_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Loans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Lock Others Opp</fullName>
+        <actions>
+            <name>RTL_Lock_Other_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Others</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Populate product Sub Group</fullName>
+        <actions>
+            <name>Update_Product_Sub_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Retention Opportunity Assignment</fullName>
+        <actions>
+            <name>RTL_Email_notification_on_Retention_Oppty_Creation</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>RTL_Set_Retention_Opportunity_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>$RecordType.DeveloperName == &apos;Retail_Retentions&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Set Opportunity Quantity</fullName>
+        <actions>
+            <name>RTL_Set_Opportunity_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.TotalOpportunityQuantity</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.TotalOpportunityQuantity</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>This WF rule is used to set the opportunity quantity to 1 if it is blank or 0.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Update Next X Day to Lock Opp</fullName>
+        <actions>
+            <name>Update_X_day_to_lock_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 or 3 )AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Bancassurance,Retail Card and RDC,Retail Deposit,Retail Investment,Retail Loans,Retail Others</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won (Cards),Closed Won (Loans),Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won (Deposit),Closed Won (Others),Closed Lost,Closed Won (Retention)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Update next X day to lock opportunity after closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Update Next X Day to Lock Opp %28Not Used%29</fullName>
+        <actions>
+            <name>Update_X_day_to_lock_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 or 3 )AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Bancassurance,Retail Card and RDC,Retail Deposit,Retail Investment,Retail Loans,Retail Others</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won (Cards),Closed Won (Loans),Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won (Deposit),Closed Won (Others),Closed Lost,Closed Won (Retention)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RTL_IsLock__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Update next X day to lock opportunity after closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Opportunity.RTL_Lock_Opp_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTL_Update_Opportunity_Stage</fullName>
+        <actions>
+            <name>Update_Opp_Stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(OR( ISNEW(), ISCHANGED(StageName),ISBLANK(RTL_Stage_Text__c )),CONTAINS(RecordType.DeveloperName,&apos;Retail&apos;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Retail set status to Close when Stage is Closed Lost%2E</fullName>
+        <actions>
+            <name>RTL_Set_Status_to_Close</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Retail Auto Loan,Retail Auto Loan Closed</value>
+        </criteriaItems>
+        <description>Retail set status to Close when Stage is Closed Lost.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SE Credit %3A Update Record type when Issued from Host</fullName>
+        <actions>
+            <name>Update_SE_Credit_Record_Type_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Credit Product2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Set up</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Opportunity Complete Date</fullName>
+        <actions>
+            <name>Update_Complete_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Allow Edit Flag</fullName>
+        <actions>
+            <name>Update_Allow_Edit_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Is_Allow_Edit__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Clear Allow Edit Flag after process completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update PrevOwnerId when create opt</fullName>
+        <actions>
+            <name>Update_Prev_Owner_Opt</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(CONTAINS( RecordType.Name ,&quot;Credit&quot;), CONTAINS(RecordType.Name ,&quot;Non-credit&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update opportunity recordtype when opportunity is close - SE</fullName>
+        <actions>
+            <name>Update_Recordtype_to_SE_Credit_Product3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Credit Product</value>
+        </criteriaItems>
+        <description>SLS : only SE Credit Product</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update opportunity recordtype when opportunity is close - WBG</fullName>
+        <actions>
+            <name>Update_Recordtype_to_WBG_Credit_Product3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Credit Product</value>
+        </criteriaItems>
+        <description>SLS : only WBG Credit Product</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>WBG Credit %3A Update Record type when Issued from Host</fullName>
+        <actions>
+            <name>Update_WBG_Credit_Record_Type_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Credit Product2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Set up</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Host_System__c</field>
+            <operation>notEqual</operation>
+            <value>SLS</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

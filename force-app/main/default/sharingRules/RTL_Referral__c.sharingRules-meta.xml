@@ -26,7 +26,7 @@ To Role:Team Lead RMC</description>
         <criteriaItems>
             <field>RecordTypeId</field>
             <operation>equals</operation>
-            <value>Refer to Retail,Refer from Digital Channel,Retail Order Transaction,Closed Retail Cross Channel Referral,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel</value>
+            <value>Refer to Retail,Refer from Digital Channel,Retail Order Transaction,Closed Retail Cross Channel Referral,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -59,16 +59,16 @@ To Role:Team Lead RMC</description>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>sharing_subsidiary</fullName>
+        <fullName>Sharing_Referral_to_ttb_subsidiary</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>sharing subsidiary</label>
+        <label>Sharing Referral to ttb subsidiary</label>
         <sharedTo>
-            <roleAndSubordinates>ttb_broker</roleAndSubordinates>
+            <roleAndSubordinates>Subsidiary</roleAndSubordinates>
         </sharedTo>
         <criteriaItems>
             <field>RecordTypeId</field>
             <operation>equals</operation>
-            <value>Refer to Retail,Refer from Digital Channel,Retail Order Transaction,Closed Retail Cross Channel Referral,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
+            <value>Refer to Retail,Refer from Digital Channel,Closed Retail Cross Channel Referral,Retail Order Transaction,Closed Retail Order Transaction,Retail Cross Channel Referral,Closed Refer from Digital Channel,Closed Refer to Retail</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>

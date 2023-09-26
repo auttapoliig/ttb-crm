@@ -138,6 +138,10 @@
                 <field>Deduct_Flag__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Required</behavior>
+                <field>Sale_Info__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>T_Performance_Team__c</field>
             </layoutItems>

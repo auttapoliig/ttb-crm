@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Branch_Team_Name_Code</fullName>
+        <field>RTL_Branch_Team_Name_Code__c</field>
+        <formula>CreatedBy.RTL_Branch__c</formula>
+        <name>Update Branch Team/Name (Code)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Channel</fullName>
+        <field>RTL_Channel__c</field>
+        <formula>TEXT(CreatedBy.RTL_Channel__c)</formula>
+        <name>Update Channel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Employee_ID</fullName>
+        <field>RTL_Employee_ID__c</field>
+        <formula>CreatedBy.Employee_ID__c</formula>
+        <name>Update Employee ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_License</fullName>
+        <description>Update License</description>
+        <field>RTL_License_No__c</field>
+        <formula>Owner:User.RTL_License_No_Paper_1__c</formula>
+        <name>Update License</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Branch_Team_Name_Code</fullName>
+        <description>Stamp Branch Name if owner is user , set blank when owner is Queue</description>
+        <field>RTL_WSC_Branch_Team_Name_Code__c</field>
+        <formula>IF(Owner:Queue.QueueName=&apos;&apos;,Owner:User.RTL_Branch__c,&apos;&apos;)</formula>
+        <name>Update Owner Branch Team/Name (Code)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Employee_ID</fullName>
+        <description>Stamp Employee ID when owner is user , set blank when owner is Queue</description>
+        <field>RTL_WSC_Employee_ID__c</field>
+        <formula>IF(Owner:Queue.QueueName = &apos;&apos;,Owner:User.Employee_ID__c,&apos;&apos;)</formula>
+        <name>Update Owner Employee ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_License</fullName>
+        <field>RTL_WSC_License_No__c</field>
+        <formula>IF(AND(!ISBLANK(Owner:User.RTL_License_No_Complex_P2__c), Owner:User.RTL_Expiry_Date_Complex_P2__c &gt;= TODAY())  , Owner:User.RTL_License_No_Complex_P2__c , Owner:User.RTL_License_No_Paper_1__c)</formula>
+        <name>Update Owner License</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Region_Code</fullName>
+        <description>Stamp Region Code when owner is user , set blank when owner is Queue</description>
+        <field>RTL_WSC_Region_Code__c</field>
+        <formula>IF(Owner:Queue.QueueName = &apos;&apos;,Owner:User.Region_Code__c,&apos;&apos;)</formula>
+        <name>Update Owner Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Zone_Code</fullName>
+        <description>Stamp Zone Code when owner is user , set blank when owner is Queue</description>
+        <field>RTL_WSC_Zone_Code__c</field>
+        <formula>IF(Owner:Queue.QueueName = &apos;&apos;,Owner:User.Zone_Code__c,&apos;&apos;)</formula>
+        <name>Update Owner Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Investment_Closed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Retail_Investment_Order_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Investment Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Region_Code</fullName>
+        <field>RTL_Region_Code__c</field>
+        <formula>CreatedBy.Region_Code__c</formula>
+        <name>Update Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Zone_Code</fullName>
+        <field>RTL_Zone_Code__c</field>
+        <formula>CreatedBy.Zone_Code__c</formula>
+        <name>Update Zone Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Stamp WRM Information on Order</fullName>
+        <actions>
+            <name>Update_Branch_Team_Name_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Channel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Employee_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Order.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp WSC Information on Order</fullName>
+        <actions>
+            <name>Update_Owner_Branch_Team_Name_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_Employee_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_License</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_Zone_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp Owner information</description>
+        <formula>ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Investment Order Record Type</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Investment_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Order.Status</field>
+            <operation>equals</operation>
+            <value>Complete,Incomplete,Cancel/Reject</value>
+        </criteriaItems>
+        <description>Update Investment Order Record Type to Closed when status is Complete/Incomplete,Cancel or Reject</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

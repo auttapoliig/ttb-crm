@@ -141,6 +141,10 @@
                 <behavior>Edit</behavior>
                 <field>Yearly_Performance__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Sale_Info__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

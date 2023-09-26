@@ -39,6 +39,10 @@
                 <behavior>Edit</behavior>
                 <field>Segment__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Filter_Out_Do_Not_Contact__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

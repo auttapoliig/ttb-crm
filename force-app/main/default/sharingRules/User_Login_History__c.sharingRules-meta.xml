@@ -11,4 +11,15 @@
             <role>CRBO</role>
         </sharedFrom>
     </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>power_bi</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>power_bi</label>
+        <sharedTo>
+            <group>UserLoginHist_user</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CEO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>

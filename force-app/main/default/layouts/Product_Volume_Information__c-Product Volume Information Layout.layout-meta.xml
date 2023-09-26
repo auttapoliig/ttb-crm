@@ -47,6 +47,10 @@
                 <behavior>Edit</behavior>
                 <field>SABS_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Sum_Limit_and_AVG_and_Ending_Balnce__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

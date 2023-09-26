@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FXO_Update_Record_type_to_completed</fullName>
+        <description>Update Record Type to FX Order (Completed)</description>
+        <field>RecordTypeId</field>
+        <lookupValue>FX_Order_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>FXO Update Record type to completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_FXO_Owner_Role</fullName>
+        <field>Owner_s_Role_stamp__c</field>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <name>Stamp FXO Owner Role</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_FXO_Owner_Segment</fullName>
+        <field>Owner_s_Segment_stamp__c</field>
+        <formula>CreatedBy.Reporting_Segment__c</formula>
+        <name>Stamp FXO Owner Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_FXO_Owner_Zone</fullName>
+        <field>Owner_s_Zone_Stamp__c</field>
+        <formula>CreatedBy.Zone_Code__c</formula>
+        <name>Stamp FXO Owner Zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FXO Stamp Segment Role Zone From FXO Owner</fullName>
+        <actions>
+            <name>Stamp_FXO_Owner_Role</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_FXO_Owner_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_FXO_Owner_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>FX_Order__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Stamp Segment, Role, Zone from FX Order Owner</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>FXO Update FX Order Record Type</fullName>
+        <actions>
+            <name>FXO_Update_Record_type_to_completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>FX_Order__c.FXO_OrderStatus__c</field>
+            <operation>equals</operation>
+            <value>InProgress,Done,Acknowledge,Cancelled,Expired,Not Allocated</value>
+        </criteriaItems>
+        <description>Update Record Type when Status = InProgress,Done,Acknowledge,Cancelled, Expired, Not Allocated</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

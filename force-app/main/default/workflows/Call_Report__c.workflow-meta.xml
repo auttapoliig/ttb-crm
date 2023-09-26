@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Stamp_Lead_Customer_ID_Number</fullName>
+        <field>Stamp_Lead_Customer_ID_Number__c</field>
+        <formula>if( Customer_name__r.Id &lt;&gt; null, Customer_name__r.ID_Number_PE__c , Lead__r.ID_Number__c )</formula>
+        <name>Stamp Lead/Customer ID Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Lead_Customer_Name</fullName>
+        <description>Update Lead or Customer Name to Visit Plan Report</description>
+        <field>Stamp_Lead_Customer_Name__c</field>
+        <formula>if( Customer_name__r.Id &lt;&gt; null, Customer_name__r.Name , Lead__r.Company )</formula>
+        <name>Stamp Lead Customer Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Lead_or_Customer</fullName>
+        <field>Stamp_Lead_or_Customer__c</field>
+        <formula>if( Customer_name__r.Id &lt;&gt; null, &quot;Customer&quot;, &quot;Lead&quot;)</formula>
+        <name>Samp Lead or Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Complete_Date_Cancel_Date</fullName>
+        <field>Complete_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Complete Date / Cancel Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Visit_Lead</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Visit_for_Lead</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Closed Visit Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Visit_record_type_to_SE_Closed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Closed_Visit</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Visit record type to SE Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Visit_record_type_to_WBG_Closed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WBG_Closed_Visit</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Visit record type to Closed Visit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_visit_plan_Status_complete</fullName>
+        <field>Status__c</field>
+        <literalValue>2 - Completed</literalValue>
+        <name>Update visit plan Status complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_plan_update_status_cancelled</fullName>
+        <field>Status__c</field>
+        <literalValue>3 - Cancel</literalValue>
+        <name>Visit plan update status cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_stamp_region</fullName>
+        <field>Closed_Region__c</field>
+        <formula>Owner:User.Region__c</formula>
+        <name>Visit: stamp region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_stamp_reporting_segment</fullName>
+        <field>Closed_Reporting_Segment__c</field>
+        <formula>Owner:User.Reporting_Segment__c</formula>
+        <name>Visit: stamp reporting segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_stamp_segment</fullName>
+        <field>Closed_Segment__c</field>
+        <formula>TEXT(Owner:User.Segment__c)</formula>
+        <name>Visit: stamp segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_stamp_zone</fullName>
+        <field>Closed_Zone__c</field>
+        <formula>Owner:User.Zone__c</formula>
+        <name>Visit: stamp zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Change Visit record type</fullName>
+        <actions>
+            <name>Update_Visit_record_type_to_WBG_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Status__c</field>
+            <operation>equals</operation>
+            <value>2 - Completed,3 - Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Call_Report__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Visit Plan / Report</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Visit record type for Lead</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Visit_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Status__c</field>
+            <operation>equals</operation>
+            <value>2 - Completed,3 - Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Call_Report__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Visit Plan for Lead</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Visit record type for SE</fullName>
+        <actions>
+            <name>Update_Visit_record_type_to_SE_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Status__c</field>
+            <operation>equals</operation>
+            <value>2 - Completed,3 - Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Call_Report__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SE Visit Plan / Report</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Visit record type for WBG</fullName>
+        <actions>
+            <name>Update_Visit_record_type_to_WBG_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Status__c</field>
+            <operation>equals</operation>
+            <value>2 - Completed,3 - Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Call_Report__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>WBG Visit Plan / Report</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change the status equal cancelled</fullName>
+        <actions>
+            <name>Update_Complete_Date_Cancel_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Visit_plan_update_status_cancelled</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Outcome__c</field>
+            <operation>equals</operation>
+            <value>Cancelled,Postponed,Cancelled this visit,ไม่สำเร็จ</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change the status equal complete</fullName>
+        <actions>
+            <name>Update_visit_plan_Status_complete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>Call_Report__c.Outcome__c</field>
+            <operation>equals</operation>
+            <value>Win Deal,Lost Deal,Completed,Interested,Not interested,Very satisfied,Satisfied,Moderate,Dissatisfied,Incomplete,Win oppty,Lost oppty,Pending,Need follow up,In-Progress,Accept &amp;Sign-off Agreement,Customer Reject,To follow up,สำเร็จ</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Call_Report__c.Outcome__c</field>
+            <operation>equals</operation>
+            <value>Customer Accept &amp; will Sign-off Agreement,&quot;Float Charge_Not Receive Registration, Already had/Will sign-off Negative Pledge&quot;,&quot;Float Charge_Stay with Customer, No Negative Pledge&quot;,Float Chrage_Exit this Customer</value>
+        </criteriaItems>
+        <description>Visit Report: Update status = Completed</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Customer or Lead Info</fullName>
+        <actions>
+            <name>Stamp_Lead_Customer_ID_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Lead_Customer_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Lead_or_Customer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Keep Lead or Customer information in visit plan report object in case that deleted Lead or Customer</description>
+        <formula>true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Visit%3A Stamp user info%2E when visit is closed</fullName>
+        <actions>
+            <name>Visit_stamp_region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Visit_stamp_reporting_segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Visit_stamp_segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Visit_stamp_zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Report__c.Status__c</field>
+            <operation>equals</operation>
+            <value>2 - Completed,3 - Cancel</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

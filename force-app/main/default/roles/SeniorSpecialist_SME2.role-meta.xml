@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Senior Specialist - SME2</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>Team_Head_of_SABS_SME2</parentRole>
+    <parentRole>Professional_SME2</parentRole>
 </Role>

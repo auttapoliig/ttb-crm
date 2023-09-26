@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Populate_Product_Group</fullName>
+        <field>product_group__c</field>
+        <formula>Product_Name__r.Product_Group__c</formula>
+        <name>Populate Product Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Product_Sub_Group</fullName>
+        <field>Product_Sub_Group__c</field>
+        <formula>Product_Name__r.Product_Sub_group__c</formula>
+        <name>Populate Product Sub  Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Blank_out_Unqualified_Reason</fullName>
+        <field>Unqualified_Reason__c</field>
+        <name>Blank out Unqualified Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RTL_Update_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Read_Only</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Lead_Key</fullName>
+        <field>Product_Lead_Key__c</field>
+        <formula>Product_Name__r.Id &amp; Lead__r.Id</formula>
+        <name>Update Product Lead Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTL Blank Out Unqualified Reason</fullName>
+        <actions>
+            <name>RTL_Blank_out_Unqualified_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Interested_products_c__c.Unqualified__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Interested_products_c__c.Unqualified_Reason__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Change Record type</fullName>
+        <actions>
+            <name>RTL_Update_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>!ISBLANK(Customer__c)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Populate Product Group-Sub Group Info</fullName>
+        <actions>
+            <name>Populate_Product_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Populate_Product_Sub_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTL Populate Product Lead Key</fullName>
+        <actions>
+            <name>Update_Product_Lead_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_email_approved</fullName>
+        <description>Alert email approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_RM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_RM_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_email_approved_to_Sales_Owner</fullName>
+        <description>Alert email approved to Sales Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_Sales_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_Sales_Owner_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_email_rejected_to_Sales_Owner</fullName>
+        <description>Alert email rejected to Sales Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_Sales_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_Sales_Owner_Rejecting</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_email_rejecting_to_Sales_Owner</fullName>
+        <description>Alert email rejecting to Sales Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_Sales_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_Sales_Owner_Rejecting</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_email_to_submitter</fullName>
+        <description>Alert email to submitter</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_RM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_RM_Rejecting</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Alert_to_RM_Reverse_Form_A</fullName>
+        <description>CS Alert to RM Reverse Form A</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_RM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_to_RM_to_Review_Form_A</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Alert_to_Unfreeze_Limit_for_Client_Suitability</fullName>
+        <ccEmails>support@ii.co.th</ccEmails>
+        <description>CS Alert to Unfreeze Limit for Client Suitability</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Alert_when_New_Customer_has_completed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Update_Status_to_Pending_Sales</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Pending Sales</literalValue>
+        <name>Auto Update Status to Pending Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_stamp_approver</fullName>
+        <field>CS_RM_TH_Approved_Date_Tme__c</field>
+        <formula>&quot;System automatically approve, &quot; + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot;  &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>Auto stamp approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_stamp_approver_formB</fullName>
+        <field>CS_Sales_TH_Approved_Date_Time__c</field>
+        <formula>&quot;System automatically approved, &quot; + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot;  &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>Auto stamp approver formB</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_update_record_type_to_completed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Auto update record type to completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_update_record_type_to_pending_sales</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Pending_Sale</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Auto update record type to pending sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_update_status_to_Completed</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Auto update status to Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CS_Stamp_RM_TH</fullName>
+        <field>CS_RM_TH__c</field>
+        <formula>Select_RM_TH_Approver__r.FirstName + &apos; &apos; + Select_RM_TH_Approver__r.LastName</formula>
+        <name>CS Stamp RM TH</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CS_Stamp_RM_TH_Email</fullName>
+        <field>CS_Email_RM_Manager__c</field>
+        <formula>Select_RM_TH_Approver__r.Email</formula>
+        <name>CS Stamp RM TH Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CS_status_auto_to_Pending_RM_TH</fullName>
+        <description>Status to Pending RM TH after submit</description>
+        <field>CS_Status__c</field>
+        <literalValue>Pending RM TH</literalValue>
+        <name>CS status auto to Pending RM TH</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_CS_Status_to_RM_TH_Rejected</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>RM TH Rejected</literalValue>
+        <name>Change CS Status to RM TH Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_CS_Status_to_Sales_TH_Rejected</fullName>
+        <description>Change e-CS status to Sales TH Rejected after Sales TH rejected the submit</description>
+        <field>CS_Status__c</field>
+        <literalValue>Sales TH Rejected</literalValue>
+        <name>Change CS Status to Sales TH Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_CS_status_to_Pending_Sales</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Pending Sales</literalValue>
+        <name>Change CS status to Pending Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Record_Type_to_Reviewing</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Reviewing</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Change Record Type to Reviewing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Complete</fullName>
+        <description>after Sales TH approved the submit, status changes to Complete</description>
+        <field>CS_Status__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Change Status to Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Pending_Sales_TH</fullName>
+        <description>change status to pending sales th after submit an approval</description>
+        <field>CS_Status__c</field>
+        <literalValue>Pending Sales TH</literalValue>
+        <name>Change Status to Pending Sales TH</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_CS_Expiry_Date</fullName>
+        <field>CS_Expiry_Date_Next__c</field>
+        <name>Clear CS Expiry Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_CS_Score</fullName>
+        <field>CS_Score__c</field>
+        <name>Clear CS Score</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_CS_Sign_Date</fullName>
+        <field>CS_SIgn_Date__c</field>
+        <name>Clear CS Sign Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Customer_Accept_to_Complete</fullName>
+        <description>record type updated from customer accept to complete record type</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Customer Accept to Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_auto_Completed</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Initial auto Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_auto_Pending_Sales</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Pending Sales</literalValue>
+        <name>Initial auto Pending Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>P_Review_to_Review</fullName>
+        <description>update record type P review -&gt; Review</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Reviewing</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>P Review to Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pending_Customer_to_Completed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Pending Customer to Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RM_Stamp_Submit_By</fullName>
+        <field>RM_Submitted_By__c</field>
+        <formula>$User.FirstName +&quot; &quot;+ $User.LastName + &quot; , &quot; + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot;  &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>RM Stamp Submit By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RM_Stamp_Submit_Date</fullName>
+        <field>RM_Submit_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>RM Stamp Submit Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_Record_to_Reviewing</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Reviewing</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Recall Record to Reviewing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_Status_to_Reviewing</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Reviewing</literalValue>
+        <name>Recall Status to Reviewing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_record_to_Pending_Sale</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Pending_Sale</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Recall record to Pending Sale</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_to_Pending_Sales</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Pending Sales</literalValue>
+        <name>Recall to Pending Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_type_to_Reviewing</fullName>
+        <description>change record type to Reviewing Record Type</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Reviewing</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record type to Reviewing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_RM_TH_Approved_Date_Time</fullName>
+        <field>RM_TH_Approve_DT__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp RM TH Approved Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_RM_TH_name_to_field</fullName>
+        <field>CS_RM_TH_Approved_Date_Tme__c</field>
+        <formula>$User.FirstName +&quot; &quot;+  $User.LastName  + &quot;,  &quot;  + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot;  &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>Stamp RM TH name to field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Sale_Submit_Date_Time</fullName>
+        <field>Sale_Submit_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp Sale Submit Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Sale_TH_Approve_Date_Time</fullName>
+        <field>Sales_TH_Approved_DT__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp Sale TH Approve Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Sales_TH_Name</fullName>
+        <field>CS_Sales_TH__c</field>
+        <formula>CS_Sales_Owner__r.Manager.FirstName + &quot; &quot; +  CS_Sales_Owner__r.Manager.LastName</formula>
+        <name>Stamp Sales TH Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Summitter_Name</fullName>
+        <field>Sale_Submitted_By__c</field>
+        <formula>$User.FirstName +&quot; &quot;+ $User.LastName + &quot; , &quot; + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot; &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>Stamp Summitter Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_change_to_Reviewing</fullName>
+        <description>after rejecting status of CS is change to Reviewing</description>
+        <field>CS_Status__c</field>
+        <literalValue>Reviewing</literalValue>
+        <name>Status change to Reviewing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_Overdue</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Overdue</literalValue>
+        <name>Status to Overdue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_RM_TH_Rejected</fullName>
+        <description>status of CS change to RM TH Rejected after the submit is rejected</description>
+        <field>CS_Status__c</field>
+        <literalValue>RM TH Rejected</literalValue>
+        <name>Status to RM TH Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CS_Sign_Date</fullName>
+        <description>update CS Sign Date after CS is completed</description>
+        <field>CS_SIgn_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update CS Sign Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Expiry_Date</fullName>
+        <description>Update Expiry Date after CS is completed</description>
+        <field>CS_Expiry_Date_Next__c</field>
+        <formula>DATE(
+    YEAR( TODAY() ) + 1 ,
+    Month( TODAY()),
+    CASE( MONTH(TODAY()), 
+        1, 31, 
+        2, IF( MOD( YEAR(TODAY())+1 , 4) = 0, 29, 28), 
+        3, 31, 
+        4, 30, 
+        5, 31, 
+        6, 30, 
+        7, 31, 
+        8, 31, 
+        9, 30, 
+        10, 31, 
+        11, 30, 
+        12, 31, 
+        0 
+    )
+)</formula>
+        <name>Update Expiry Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Overdue</fullName>
+        <field>Is_Overdue__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is Overdue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Complete</fullName>
+        <description>change record type to complete after Sales TH approved the submit</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Pending_Sale</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Pending_Sale</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Pending Sale</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Suspended</fullName>
+        <description>update record type to completed</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CS_Completed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Suspended</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sales_TH_approver</fullName>
+        <description>stamp Sales TH name into the Sales TH approved date field</description>
+        <field>CS_Sales_TH_Approved_Date_Time__c</field>
+        <formula>$User.FirstName +&quot; &quot;+ $User.LastName + &quot;, &quot; + LPAD(TEXT(DAY(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+ 
+LPAD(TEXT(MONTH(TODAY())),2,&apos;0&apos;)+&quot;/&quot;+TEXT(YEAR(TODAY()))+&quot;, &quot;+MID(TEXT( ( NOW()) + (7/24) ),12,LEN(TEXT(NOW()))-15)</formula>
+        <name>Update Sales TH approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Suspended</fullName>
+        <description>change status of e-CS to Suspended</description>
+        <field>CS_Status__c</field>
+        <literalValue>Suspended</literalValue>
+        <name>Update Status to Suspended</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_Overdue</fullName>
+        <field>CS_Status__c</field>
+        <literalValue>Overdue</literalValue>
+        <name>Update status to Overdue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CS Alert Unfreeze Limit for Client Suitability</fullName>
+        <actions>
+            <name>CS_Alert_to_Unfreeze_Limit_for_Client_Suitability</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2 AND 3) OR (3 AND 4)</booleanFilter>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_New_Customer_flag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_Cancelled_By__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.Is_Overdue__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>New customer and status = completed and CS was overdue and complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS Auto Checkbox Overdue</fullName>
+        <actions>
+            <name>Update_Is_Overdue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>auto make checkbox to true if record&apos;s overdue</description>
+        <formula>IF( ( CS_Expiry_Date_Next__c &lt; TODAY() &amp;&amp; (NOT( ISPICKVAL( CS_Status__c , &quot;Completed&quot;)) || NOT( ISPICKVAL( CS_Status__c , &quot;Suspended&quot;)))),True,False )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS Email Alert Reverse Form A</fullName>
+        <actions>
+            <name>CS_Alert_to_RM_Reverse_Form_A</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(     ISCHANGED(CS_Status__c),     OR( ISPICKVAL(PRIORVALUE(CS_Status__c),&quot;Pending Sales&quot;), ISPICKVAL(PRIORVALUE(CS_Status__c),&quot;Sales TH Rejected&quot;)),     ISPICKVAL(CS_Status__c, &quot;Reviewing&quot;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS Stamp RM TH Info</fullName>
+        <actions>
+            <name>CS_Stamp_RM_TH</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CS_Stamp_RM_TH_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Select_RM_TH_Approver__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS Update status to Pending Sale</fullName>
+        <actions>
+            <name>Change_CS_status_to_Pending_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>(in case of BB,SE)</description>
+        <formula>ISPICKVAL( CS_Customer_Survey_A__r.Status__c , &quot;Ready for Review&quot;)  &amp;&amp; RecordType.DeveloperName = &quot;Reviewing&quot; &amp;&amp; (CS_Customer_Segment__c = &quot;BB&quot; || CS_Customer_Segment__c = &quot;SE&quot; )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS auto overdue</fullName>
+        <actions>
+            <name>Status_to_Overdue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>IF( ( CS_Expiry_Date_Next__c &lt; TODAY() &amp;&amp;  (NOT( ISPICKVAL( CS_Status__c , &quot;Completed&quot;)) || NOT( ISPICKVAL( CS_Status__c , &quot;Suspended&quot;)))),True,False )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS update Sales TH Name</fullName>
+        <actions>
+            <name>Stamp_Sales_TH_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update Sales TH info if Sales is changed</description>
+        <formula>ISCHANGED( CS_Sales_Owner__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cancel to Basic</fullName>
+        <actions>
+            <name>Clear_CS_Expiry_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_CS_Sign_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When CS is cancelled status to completed and level to Basic</description>
+        <formula>ISPICKVAL( CS_Status__c , &quot;Completed&quot;) &amp;&amp;  NOT( ISBLANK( CS_Cancelled_By__c ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Status to Suspended</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Suspended</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_to_Suspended</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_Suspend_flag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>check &apos;Is Suspend&apos; then change status of e-CS status to Suspended</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Completed Stamp CS SignDate and Expiry Date%28Next%29</fullName>
+        <actions>
+            <name>Update_CS_Sign_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Expiry_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>stamp CS sign Date &amp;&amp; Expiry Date (Next) after the CS is completed</description>
+        <formula>ISPICKVAL( CS_Status__c , &quot;Completed&quot;) &amp;&amp;   ISBLANK( CS_Cancelled_By__c ) &amp;&amp;  NOT(ISPICKVAL( CS_Level__c , &quot;Basic&quot;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>E-Client Suitability Schedule Expired</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Suspended</value>
+        </criteriaItems>
+        <description>Auto Expired when CS end</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_status_to_Overdue</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>E_Client_Suitability__c.CS_Expiry_Date_Next__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>P Review to Review</fullName>
+        <actions>
+            <name>P_Review_to_Review</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>E_Client_Suitability__c.CS_Status__c</field>
+            <operation>equals</operation>
+            <value>Reviewing</value>
+        </criteriaItems>
+        <description>update record type p review -&gt; review</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

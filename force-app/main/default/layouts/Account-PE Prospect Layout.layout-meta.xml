@@ -3,7 +3,8 @@
     <customButtons>Request_Change_Owner</customButtons>
     <customButtons>Request_Add_Account_Team</customButtons>
     <customButtons>EditExistingCust</customButtons>
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
     <excludeButtons>SendEmail</excludeButtons>
     <excludeButtons>Share</excludeButtons>

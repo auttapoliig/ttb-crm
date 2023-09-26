@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Referral_Assignment_Notification</fullName>
+        <description>Referral Assignment Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Change_Owner_Email_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_Change_Owner_Notification</fullName>
+        <description>Referral Change Owner Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Change_Owner_Email_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_Retail_Cross_Channel_Assignment_Notification</fullName>
+        <description>Referral Retail Cross Channel Assignment Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Refer_Retail_Cross_Channel_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Sending_Email_To_RPD_BB_And_Team_Head</fullName>
+        <description>Sending Email To RPD BB And Team Head</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>80784@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>80976@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Change_Owner_Email_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Sending_Email_To_RPD_MB_CB_And_Team_Head</fullName>
+        <description>Sending Email To RPD MB CB And Team Head</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>80976@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>80986@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Change_Owner_Email_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Sending_Email_To_RPD_SE_And_Team_Head</fullName>
+        <description>Sending Email To RPD SE And Team Head</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>80976@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>80980@tmbbank.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Email_Template/Change_Owner_Email_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Referral_Car_Brand</fullName>
+        <description>Stamp car brand to referral</description>
+        <field>RTL_AL_car_brand__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_brand__c</formula>
+        <name>Referral: Car Brand</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Car_Gear</fullName>
+        <description>Stamp car gear to referral</description>
+        <field>RTL_AL_car_gear__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_gear__c</formula>
+        <name>Referral: Car Gear</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Car_Group</fullName>
+        <description>Stamp car group to referral</description>
+        <field>RTL_AL_car_group__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_group__c</formula>
+        <name>Referral: Car Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Car_SubType</fullName>
+        <description>Stamp car subtype to referral</description>
+        <field>RTL_AL_car_subtype__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_subtype__c</formula>
+        <name>Referral: Car SubType</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Car_Type</fullName>
+        <description>Stamp car type to referral</description>
+        <field>RTL_AL_car_type__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_type__c</formula>
+        <name>Referral: Car Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Referral_Car_Year</fullName>
+        <description>Stamp car year to referral</description>
+        <field>RTL_AL_car_year__c</field>
+        <formula>RTL_AL_BlueBook__r.RTL_AL_car_year__c</formula>
+        <name>Referral: Car Year</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Branch_Name</fullName>
+        <field>RTL_Refer_Branch_Name__c</field>
+        <formula>CreatedBy.RTL_Branch__c</formula>
+        <name>Update Branch Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Channel_Segment</fullName>
+        <field>RTL_Channel_Segment__c</field>
+        <formula>IF(ISBLANK(RTL_Channel_Segment__c),IF(ISBLANK(TEXT(CreatedBy.RTL_Channel__c )), TEXT(CreatedBy.Segment__c ) , TEXT(CreatedBy.RTL_Channel__c )),RTL_Channel_Segment__c)</formula>
+        <name>Update Channel/Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Employee_ID</fullName>
+        <field>RTL_EmployeeID__c</field>
+        <formula>$User.Employee_ID__c</formula>
+        <name>Update Employee ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_License</fullName>
+        <field>RTL_License_No__c</field>
+        <formula>IF(AND(!ISBLANK(Owner:User.RTL_License_No_Complex_P2__c), Owner:User.RTL_Expiry_Date_Complex_P2__c &gt;= TODAY())  , Owner:User.RTL_License_No_Complex_P2__c , Owner:User.RTL_License_No_Paper_1__c)</formula>
+        <name>Update License</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Name</fullName>
+        <field>RTL_Employee_Name__c</field>
+        <formula>IF(RTL_Channel_Segment__c != &apos;Web&apos; &amp;&amp; RTL_Channel_Segment__c != &apos;Biztouch&apos;,CreatedBy.FirstName +&quot; &quot;+CreatedBy.LastName,&apos;&apos;)</formula>
+        <name>Update Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Office</fullName>
+        <field>RTL_Office_Number__c</field>
+        <formula>IF(ISBLANK($User.MobilePhone) , $User.Phone, IF(ISBLANK($User.Phone),$User.MobilePhone,$User.Phone+&quot;, &quot;+ $User.MobilePhone ))</formula>
+        <name>Update Office</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_RecordType_to_Closed_WithinCommer</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Refer_within_Commercial</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update RecordType to Closed WithinCommer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Commercial</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Refer_to_Commercial</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Closed Commercial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Cross_Chann</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Retail_Cross_Channel_Referral</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Closed Cross Chann</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Digital</fullName>
+        <description>Update record type to Closed Refer from Digital Channel</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Refer_from_Digital_Channel</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Closed Digital</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Refer_to_Or</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Retail_Order_Transaction</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update RecordType to Closed Refer to Ord</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type_to_Closed_Retail</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Refer_to_Retail</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type to Closed Retail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Region_Code</fullName>
+        <field>RTL_Region_Team_Code__c</field>
+        <formula>$User.Region_Code__c</formula>
+        <name>Update Region Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Region_Name</fullName>
+        <field>RTL_Region_Group__c</field>
+        <formula>$User.Region__c</formula>
+        <name>Update Region Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Reporting_Segment</fullName>
+        <field>RTL_Reporting_Segment__c</field>
+        <formula>$User.Reporting_Segment__c</formula>
+        <name>Update Reporting Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Send_email_to_False</fullName>
+        <field>Is_Send_Email__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Send email to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Zone_Team</fullName>
+        <field>RTL_Zone_Team__c</field>
+        <formula>$User.Zone__c</formula>
+        <name>Update Zone/Team Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Zone_Team_Code</fullName>
+        <field>RTL_Zone_Team_Code__c</field>
+        <formula>$User.Zone_Code__c</formula>
+        <name>Update Zone/Team Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_branch_code</fullName>
+        <field>RTL_Branch__c</field>
+        <formula>CreatedBy.RTL_Branch_Code__c</formula>
+        <name>Update branch code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>stamp_branch_code</fullName>
+        <field>RTL_Owner_Branch_Code__c</field>
+        <formula>CreatedBy.RTL_Branch_Code__c</formula>
+        <name>stamp branch code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Reassign owner notification</fullName>
+        <actions>
+            <name>Referral_Change_Owner_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Send_email_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If click Reassign button and owner had changed will send email to new Owner.</description>
+        <formula>AND(CONTAINS(RecordType.Name,&apos;Refer to Commercial&apos;), (Is_Send_Email__c = TRUE) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Assignment Notification</fullName>
+        <actions>
+            <name>Referral_Assignment_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>When created referral will auto assign and send email notification to the owner.</description>
+        <formula>if( CONTAINS(RecordType.Name,&apos;Refer to Commercial&apos;),true, AND(Owner:Queue.QueueName &lt;&gt; null, OR(Owner:Queue.QueueName &lt;&gt; &apos;RTL_ALA&apos;), Owner:Queue.QueueName &lt;&gt; &apos;Automotive Lending Solution Advisory&apos;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Retail Cross Channel Assignment Notification</fullName>
+        <actions>
+            <name>Referral_Retail_Cross_Channel_Assignment_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>When created retail cross channel referral will auto assign and send email notification to the owner.</description>
+        <formula>if( CONTAINS(RecordType.Name,&apos;Retail Cross Channel Referral&apos;),true,false)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Send Email to RPD BB</fullName>
+        <actions>
+            <name>Sending_Email_To_RPD_BB_And_Team_Head</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_RecordType_Name__c</field>
+            <operation>equals</operation>
+            <value>Refer to Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Type__c</field>
+            <operation>equals</operation>
+            <value>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Interested_Product__c</field>
+            <operation>equals</operation>
+            <value>TMB Payroll</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Sales_Amount_Per_Year__c</field>
+            <operation>equals</operation>
+            <value>&quot;BB : 100-1,000 MB&quot;</value>
+        </criteriaItems>
+        <description>SCR0378480 - sending email to RPD BB</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Send Email to RPD MB CB</fullName>
+        <actions>
+            <name>Sending_Email_To_RPD_MB_CB_And_Team_Head</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_RecordType_Name__c</field>
+            <operation>equals</operation>
+            <value>Refer to Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Type__c</field>
+            <operation>equals</operation>
+            <value>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Interested_Product__c</field>
+            <operation>equals</operation>
+            <value>TMB Payroll</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Sales_Amount_Per_Year__c</field>
+            <operation>equals</operation>
+            <value>&quot;CB : 1,001-5,000 MB&quot;,&quot;MB : &gt;5,000 MB&quot;</value>
+        </criteriaItems>
+        <description>SCR0378480 - sending email to RPD MB CB</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Send Email to RPD SE</fullName>
+        <actions>
+            <name>Sending_Email_To_RPD_SE_And_Team_Head</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_RecordType_Name__c</field>
+            <operation>equals</operation>
+            <value>Refer to Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Type__c</field>
+            <operation>equals</operation>
+            <value>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Interested_Product__c</field>
+            <operation>equals</operation>
+            <value>TMB Payroll</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Sales_Amount_Per_Year__c</field>
+            <operation>equals</operation>
+            <value>SE : &lt;100 MB</value>
+        </criteriaItems>
+        <description>SCR0378480 - sending email to RPD SE</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Stamp Employee Information</fullName>
+        <actions>
+            <name>Update_Branch_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Channel_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Employee_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Office</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Region_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Region_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Reporting_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Zone_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Zone_Team_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Preferred_Branch_Code__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update BlueBook</fullName>
+        <actions>
+            <name>Referral_Car_Brand</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Referral_Car_Gear</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Referral_Car_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Referral_Car_SubType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Referral_Car_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Referral_Car_Year</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( AND( NOT(ISNEW()), ISCHANGED(RTL_AL_BlueBook__c) ), AND( ISNEW(), NOT(ISBLANK(RTL_AL_BlueBook__c)) ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Retail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Invalid (Duplicate Opportunity),Closed (Service Completed),Cancel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Retail</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close Commercial</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Commercial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer to Commercial</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Invalid (Duplicate Opportunity),Closed (Service Completed),Cancel,Closed By AL System</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close Cross segment</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Cross_Chann</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Cross Channel Referral</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Invalid (Duplicate Opportunity),Closed (Service Completed),Cancel,Closed By AL System</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close Digital Channel</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Digital</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer from Digital Channel</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Invalid (Duplicate Opportunity)</value>
+        </criteriaItems>
+        <description>Update record type when stage is close (Refer from Digital Channel)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close Retail Refer to Order Transaction</fullName>
+        <actions>
+            <name>Update_Record_Type_to_Closed_Refer_to_Or</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail Order Transaction</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Closed (Service Completed),Invalid (Duplicate Opportunity),Cancel,Closed (Transferred)</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Referral Update stage Close refer within Commercial</fullName>
+        <actions>
+            <name>Update_RecordType_to_Closed_WithinCommer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Refer within Commercial</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed (Interested),Closed (Not Interested),Closed (Unable to contact),Closed (Unqualified),Closed (Service Completed),Invalid (Duplicate Opportunity),Cancel,Closed (Transferred),Closed By AL System,Closed (Referral Ticket)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Employee information2</fullName>
+        <actions>
+            <name>Update_License</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_branch_code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_Referral__c.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTL_Referral__c.RTL_Preferred_Branch_Code__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

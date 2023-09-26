@@ -125,10 +125,6 @@
                 <behavior>Edit</behavior>
                 <field>RTL_Camp_Others_1__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RTL_Others_2__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

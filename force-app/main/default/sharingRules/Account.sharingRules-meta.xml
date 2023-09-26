@@ -124,6 +124,7 @@
             <contactAccessLevel>Read</contactAccessLevel>
             <opportunityAccessLevel>None</opportunityAccessLevel>
         </accountSettings>
+        <description>Hide inactive record type</description>
         <label>Share Inactive Customer</label>
         <sharedTo>
             <roleAndSubordinates>CEO</roleAndSubordinates>

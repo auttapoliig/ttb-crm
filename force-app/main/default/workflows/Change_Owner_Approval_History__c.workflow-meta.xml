@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_to_notify_requester_the_request_is_recalled</fullName>
+        <description>Email Alert to notify requester, the request is recalled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Recall_owner_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approved_Segment_Change</fullName>
+        <description>Final Approved Segment Change</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Segment_Email_Templates/Final_Approved_Segment_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Requester_the_request_is_rejected</fullName>
+        <description>Email Alert to Notify Requester, the request is rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Reject_owner_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Requester_the_request_was_approved_from_all_approver</fullName>
+        <description>Notify Requester, the request was approved from all approver</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Final_Approved_Account_owner_change</template>
+    </alerts>
+    <alerts>
+        <fullName>Recall_Segment_Change_English</fullName>
+        <description>Recall Segment Change English</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Segment_Email_Templates/Recall_segment_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Reject_Segment_Change_English</fullName>
+        <description>Reject Segment Change English</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Segment_Email_Templates/Reject_segment_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Add_Account_Team_alert_to_requester_the_request_is_approved</fullName>
+        <description>&lt;Request Add Account Team&gt; alert to requester, the request is approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approver1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Request_Add_Account_Team/Request_Add_Account_Team_Request_is_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Add_Account_Team_alert_to_requester_the_request_is_recalled</fullName>
+        <description>&lt;Request Add Account Team&gt; alert to requester, the request is recalled.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Request_Add_Account_Team/Request_Add_Account_Team_Request_is_Recalled</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Add_Account_Team_alert_to_requester_the_request_is_rejected</fullName>
+        <description>&lt;Request Add Account Team&gt; alert to requester, the request is rejected.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Request_Add_Account_Team/Request_Add_Account_Team_Request_is_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Change_Owner_Qualified_Prospect_Alert_Request_the_request_is_recalled</fullName>
+        <description>&lt;Request Change Owner Qualified Prospect&gt; Alert Request, the request is recalled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Recall_owner_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Change_Owner_Qualified_Prospect_Alert_the_Requester_request_is_Rejected</fullName>
+        <description>&lt;Request Change Owner Qualified Prospect&gt; Alert the Requester, request is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Reject_owner_change_English</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Change_Owner_Qualified_Prospect_Alert_to_requester_the_request_is_approv</fullName>
+        <description>&lt;Request Change Owner Qualified Prospect&gt; Alert to requester, the request is approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Change_to_owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Final_Approved_Account_owner_change</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_Change_Owner_Cross_Segment_Flag</fullName>
+        <field>Change_Owner_Cross_Segment_Flag__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Change Owner Cross Segment Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Escalated_Flag</fullName>
+        <field>Escalated_Flag__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear Escalated Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Approval_Process_Start_Time</fullName>
+        <field>Approval_Start_Wait_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp Approval Process Start Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Change_Segment_Reason</fullName>
+        <field>Change_Segment_Reason__c</field>
+        <formula>Change_Owner_Remark__c</formula>
+        <name>Stamp Change Segment Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Next_Step_Start_Wait_Time</fullName>
+        <field>Approval_Step_Start_Wait_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp (Next)Step Start Wait Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_To_Be_New_Owner_Team</fullName>
+        <field>Change_to_be_owner_Team__c</field>
+        <formula>Change_to_owner__r.Zone__c</formula>
+        <name>Stamp To-Be New Owner Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_To_be_New_Owner_Name_Account</fullName>
+        <field>Change_to_be_owner_Name__c</field>
+        <formula>Change_to_owner__r.FirstName &amp;&quot; &quot;&amp; Change_to_owner__r.LastName</formula>
+        <name>Stamp To-be New Owner Name(Account)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_to_be_New_Owner_Id_Account</fullName>
+        <field>Change_to_be_owner_ID__c</field>
+        <formula>Change_to_owner__r.Employee_ID__c</formula>
+        <name>Stamp to-be New Owner Id(Account)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_to_be_New_Owner_Name</fullName>
+        <field>To_Be_New_Owner_Name__c</field>
+        <formula>Change_to_owner__r.FirstName &amp;&quot; &quot;&amp; Change_to_owner__r.LastName</formula>
+        <name>Stamp to-be New Owner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_to_be_New_Segment_Account</fullName>
+        <field>Change_to_be_segment__c</field>
+        <formula>To_Be_New_Segment__c</formula>
+        <name>Stamp to-be New Segment(Account)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_to_be_New_Segment_Approval_history</fullName>
+        <field>To_Be_New_Segment__c</field>
+        <formula>CASE(Change_to_owner__r.Segment__c, 
+&quot;MB&quot;, &quot;MB&quot;, 
+&quot;CB&quot;, &quot;CB&quot;, 
+&quot;BB&quot;,&quot;BB&quot;, 
+&quot;SE&quot;,&quot;SE&quot;,&quot; &quot;)</formula>
+        <name>Stamp to-be New Segment Approval history</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Appprover_1_Team</fullName>
+        <field>Pending_Approver_Team__c</field>
+        <formula>Approver1__r.Zone__c</formula>
+        <name>Update Current Appprover(1) Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_1_Emp_Id</fullName>
+        <field>Current_Approver_Emp_Id__c</field>
+        <formula>Approver1__r.Employee_ID__c</formula>
+        <name>Update Current Approver(1) Emp Id</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_1_Name</fullName>
+        <field>Current_Approver_Name__c</field>
+        <formula>If (BI_Flag__c = TRUE , &quot;BI Team&quot;,Approver1__r.FirstName&amp; &quot; &quot; &amp; Approver1__r.LastName)</formula>
+        <name>Update Current Approver(1) Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_2_Emp_Id</fullName>
+        <field>Current_Approver_Emp_Id__c</field>
+        <formula>Approver2__r.Employee_ID__c</formula>
+        <name>Update Current Approver(2) Emp Id</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_2_Name</fullName>
+        <field>Current_Approver_Name__c</field>
+        <formula>IF(BI_Flag__c = True,&quot;BI Team&quot;,Approver2__r.FirstName &amp; &quot; &quot; &amp; Approver2__r.LastName)</formula>
+        <name>Update Current Approver(2) Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_2_Team</fullName>
+        <field>Pending_Approver_Team__c</field>
+        <formula>Approver2__r.Zone__c</formula>
+        <name>Update Current Approver(2) Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_3_Emp_Id</fullName>
+        <field>Current_Approver_Emp_Id__c</field>
+        <formula>Approver3__r.Employee_ID__c</formula>
+        <name>Update Current Approver(3) Emp Id</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_3_Name</fullName>
+        <field>Current_Approver_Name__c</field>
+        <formula>Approver3__r.FirstName&amp;&quot; &quot;&amp; Approver3__r.LastName</formula>
+        <name>Update Current Approver(3) Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_3_Team</fullName>
+        <field>Pending_Approver_Team__c</field>
+        <formula>Approver3__r.Zone__c</formula>
+        <name>Update Current Approver(3) Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_4_Emp_Id</fullName>
+        <field>Current_Approver_Emp_Id__c</field>
+        <formula>Approver4__r.Employee_ID__c</formula>
+        <name>Update Current Approver(4) Emp Id</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_4_Name</fullName>
+        <field>Current_Approver_Name__c</field>
+        <formula>Approver4__r.FirstName &amp;&quot; &quot;&amp; Approver4__r.LastName</formula>
+        <name>Update Current Approver(4) Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_Approver_4_Team</fullName>
+        <field>Pending_Approver_Team__c</field>
+        <formula>Approver4__r.Zone__c</formula>
+        <name>Update Current Approver(4) Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_1st_Approver_Approved</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>1st Approver Approved</literalValue>
+        <name>Update Status to 1st Approver Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_2nd_Approver_Approved</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>2nd Approver Approved</literalValue>
+        <name>Update Status to 2nd Approver Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_3rd_Approver_Approved</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>3rd Approver Approved</literalValue>
+        <name>Update Status to 3rd Approver Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Final_Approved</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>Final Approved</literalValue>
+        <name>Update Status to Final Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Pending</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>Pending for Approval</literalValue>
+        <name>Update Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Recalled</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Update Status to Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Rejected</fullName>
+        <field>Change_Owner_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update to-be fields%28Change Owner Cross Segment%29</fullName>
+        <actions>
+            <name>Stamp_To_Be_New_Owner_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_To_be_New_Owner_Name_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_to_be_New_Owner_Id_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_to_be_New_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_to_be_New_Segment_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_to_be_New_Segment_Approval_history</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISPICKVAL(Change_Owner_Approval_Status__c, &quot;Final Approved&quot;) , Change_Owner_Cross_Segment_Flag__c = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update to-be fields%28Request Change Segment%29</fullName>
+        <actions>
+            <name>Stamp_Change_Segment_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_to_be_New_Segment_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Change_Owner_Approval_History__c.Change_Owner_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Final Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Change_Owner_Approval_History__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Change Segment</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

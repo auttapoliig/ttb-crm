@@ -59,20 +59,6 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
-    <sharingCriteriaRules>
-        <fullName>Shared_to_ttb_consumer_MD</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>Shared to ttb consumer MD</label>
-        <sharedTo>
-            <roleAndSubordinates>ttb_consumer_MD</roleAndSubordinates>
-        </sharedTo>
-        <criteriaItems>
-            <field>RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Retail Banking,Retail Closed Lost</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
     <sharingOwnerRules>
         <fullName>Share_Lead_From_CWBO_to_Product_Team</fullName>
         <accessLevel>Read</accessLevel>

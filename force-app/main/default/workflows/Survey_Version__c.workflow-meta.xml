@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CS_Survey_Version_Auto_Key</fullName>
+        <field>CS_Survey_Version_Key__c</field>
+        <formula>Survey_Manager__r.CS_Survey_Manager_Key__c  &amp; &apos;_&apos; &amp;  TEXT(version__c) &amp; &apos;_&apos; &amp; TEXT( YEAR( DATEVALUE( NOW() ) ) ) &amp;  TEXT( MONTH( DATEVALUE( NOW() ) ) ) &amp; TEXT( DAY( DATEVALUE( NOW() ) ) ) &amp; TEXT( HOUR( TIMEVALUE( NOW() ) ) ) &amp; TEXT( MINUTE( TIMEVALUE( NOW() ) ) ) &amp; TEXT( SECOND( TIMEVALUE( NOW() ) ) )</formula>
+        <name>Survey Version Auto Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CS Survey Version Auto Stamp key</fullName>
+        <actions>
+            <name>CS_Survey_Version_Auto_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

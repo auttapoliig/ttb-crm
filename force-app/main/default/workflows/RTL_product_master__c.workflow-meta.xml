@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Product_Group_Upper</fullName>
+        <field>RTL_Product_Group_Upper__c</field>
+        <formula>UPPER(Product_Group__c)</formula>
+        <name>Update Product Group Upper</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Sub_Group_Upper</fullName>
+        <field>RTL_Product_Sub_Group_Upper__c</field>
+        <formula>UPPER(Product_Sub_group__c)</formula>
+        <name>Update Product Sub Group Upper</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Stamp Upper Product Group%2FSub Group</fullName>
+        <actions>
+            <name>Update_Product_Group_Upper</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Product_Sub_Group_Upper</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTL_product_master__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Stamp Uppercase for Product Group/Sub group for using on Campaign Member Product filter</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

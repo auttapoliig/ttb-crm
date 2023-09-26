@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_email_to_account_owner_when_account_owner_changed</fullName>
+        <description>Alert email to account owner when account owner changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Alert_email_to_account_owner_when_account_owner_changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_Account_Owner_when_owner_change</fullName>
+        <description>Alert to Account Owner when owner change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Mobile_Email_Template/Account_Email_notify_to_New_Account_Owner_Mobile</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_Account_owner_for_the_rejection</fullName>
+        <description>Alert to Account owner for the rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Reject_owner_change</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Submitter</fullName>
+        <description>Email Alert  to Submitter</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Change_Account_Owner_Email_Template/Account_Final_Approved_Account_owner_change</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Clear_Acct_Approval_Status</fullName>
+        <field>Account_Approval_Status__c</field>
+        <name>Clear Acct Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Change_Owner_Reason</fullName>
+        <field>Change_Owner_Reason__c</field>
+        <name>Clear Change Owner Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Change_Segment_Reason</fullName>
+        <field>Change_Segment_Reason__c</field>
+        <name>Clear Change Segment Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Re_assigned_Segment</fullName>
+        <field>Suggested_Segment__c</field>
+        <name>Clear Re-assigned Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Re_assigned_Team</fullName>
+        <field>Suggested_Sub_Segment__c</field>
+        <name>Clear Re-assigned Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_to_be_Sub_Segement</fullName>
+        <field>To_Be_Sub_Segment__c</field>
+        <name>Clear to-be Sub-Segement</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_to_be_new_Owner_ID</fullName>
+        <field>Change_to_be_owner_ID__c</field>
+        <name>Clear to be new Owner ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_to_be_new_Owner_Name</fullName>
+        <field>Change_to_be_owner_Name__c</field>
+        <name>Clear to be new Owner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_to_be_new_Segment</fullName>
+        <field>Change_to_be_segment__c</field>
+        <name>Clear to be new Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approved</fullName>
+        <description>Change Owner Approval Status equal to Final Approved</description>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>Final Approved</literalValue>
+        <name>Final Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Individual_Update_First_name_EN_V2</fullName>
+        <field>First_Name_ENG_PE__c</field>
+        <formula>IF(FIND(&quot; &quot;, Customer_Name_PE_Eng__c ) = 0, MID(Customer_Name_PE_Eng__c,1,40), MID(LEFT(Customer_Name_PE_Eng__c, FIND(&quot; &quot;, Customer_Name_PE_Eng__c )),1,40))</formula>
+        <name>Individual Update First name EN V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Individual_Update_First_name_TH_V2</fullName>
+        <field>First_name_PE__c</field>
+        <formula>IF(FIND(&quot; &quot;, Name) = 0, MID(Name,1,40), 
+MID(LEFT(Name, FIND(&quot; &quot;, Name)),1,40))</formula>
+        <name>Individual Update First name TH V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Individual_Update_Last_name_EN_V2</fullName>
+        <field>Last_Name_PE_Eng__c</field>
+        <formula>IF(FIND(&quot; &quot;, Customer_Name_PE_Eng__c )=0, &quot;&quot;, 
+MID(RIGHT( Customer_Name_PE_Eng__c ,LEN( Customer_Name_PE_Eng__c ) - FIND(&quot; &quot;, Customer_Name_PE_Eng__c )),1,40))</formula>
+        <name>Individual Update Last name EN V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Individual_Update_Last_name_TH_V2</fullName>
+        <field>Last_name_PE__c</field>
+        <formula>IF(FIND(&quot; &quot;, Name) = 0, &quot;&quot;, 
+MID(RIGHT(Name, LEN(Name) - FIND(&quot; &quot;, Name)),1,40))</formula>
+        <name>Individual Update Last name TH V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Juristic_Update_First_name_EN_V2</fullName>
+        <field>First_Name_ENG_PE__c</field>
+        <formula>MID(Customer_Name_PE_Eng__c,1,40)</formula>
+        <name>Juristic Update First name EN V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Juristic_Update_First_name_TH_V2</fullName>
+        <field>First_name_PE__c</field>
+        <formula>MID(Name,1,40)</formula>
+        <name>Juristic Update First name TH V2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Juristic_Update_Last_name_EN</fullName>
+        <field>Last_Name_PE_Eng__c</field>
+        <name>Juristic Update Last name EN</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Juristic_Update_Last_name_TH</fullName>
+        <field>Last_name_PE__c</field>
+        <name>Juristic Update Last name TH</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Change_Owner_Date_time</fullName>
+        <field>Last_Change_Owner_Date_time__c</field>
+        <formula>NOW()</formula>
+        <name>Stamp Change Owner Date/time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_ID</fullName>
+        <field>Stamp_Owner_ID__c</field>
+        <formula>Owner.Employee_ID__c</formula>
+        <name>Stamp Owner ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Name</fullName>
+        <field>Stamp_Owner_Name__c</field>
+        <formula>Owner.FirstName &amp; &quot; &quot; &amp; Owner.LastName</formula>
+        <name>Stamp Owner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Region_Group_Code</fullName>
+        <field>Stamp_Owner_Region_Code_Group_Code__c</field>
+        <formula>Owner.Region_Code__c</formula>
+        <name>Stamp Owner Region/Group Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Region_Group_Name</fullName>
+        <field>Stamp_Owner_Region_Group__c</field>
+        <formula>Owner.Region__c</formula>
+        <name>Stamp Owner Region/Group Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Segment</fullName>
+        <field>Stamp_Owner_Segment__c</field>
+        <formula>CASE( Owner.Segment__c  , 
+&quot;MB&quot; , &quot;MB&quot;, 
+&quot;CB&quot;, &quot;CB&quot;, 
+&quot;BB&quot;,&quot;BB&quot;, 
+&quot;SE&quot;,&quot;SE&quot;, 
+&quot; &quot;)</formula>
+        <name>Stamp Owner Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Zone_Team_Code</fullName>
+        <field>Stamp_Owner_Zone_Code_Team_C__c</field>
+        <formula>Owner.Zone_Code__c</formula>
+        <name>Stamp Owner Zone/Team Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Owner_Zone_Team_Name</fullName>
+        <field>Stamp_Owner_Zone_Team__c</field>
+        <formula>Owner.Zone__c</formula>
+        <name>Stamp Owner Zone/Team Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Stamp_Segment_if_core_bank_change</fullName>
+        <field>Stamp_Owner_Segment__c</field>
+        <formula>Core_Banking_Suggested_Segment__c</formula>
+        <name>Stamp Stamp Segment if core bank change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Record_Type_Existing_cus</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Existing_Customer</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Account Record Type (Existing cus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_status</fullName>
+        <description>Change Owner Approval Status equal to Pending for Approval</description>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>Pending for Approval</literalValue>
+        <name>Update Account  status to pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Change_Owner_Approval_Status</fullName>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>Waiting Submit for Approval</literalValue>
+        <name>Update Change Owner Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Notification_flag_to_false</fullName>
+        <field>Send_Email_Notification_Prospect__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Email Notification flag to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Final_Approved_to_Blank</fullName>
+        <field>Account_Approval_Status__c</field>
+        <name>Update Final Approved to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_ID_Number_add_suffix</fullName>
+        <field>ID_Number_PE__c</field>
+        <formula>IF(LEN(ID_Number_PE__c) &gt; 15, MID(ID_Number_PE__c,1,15) &amp; &quot;Duplicated&quot;, ID_Number_PE__c &amp; &quot;Duplicated&quot;)</formula>
+        <name>Update ID Number add suffix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_NID_from_Commercial</fullName>
+        <field>RTL_NID__c</field>
+        <formula>IF( LEN(ID_Number_PE__c) &lt;= 5 , ID_Number_PE__c, 
+LEFT(ID_Number_PE__c, 1)+ RIGHT(ID_Number_PE__c, 4) )</formula>
+        <name>Update NID from Commercial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_Name</fullName>
+        <field>Owner_name_ID__c</field>
+        <formula>Owner.Employee_ID__c</formula>
+        <name>Update Owner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Previous_Owner</fullName>
+        <field>Previous_Owner_ID__c</field>
+        <formula>PRIORVALUE(  Current_Owner_ID__c  )</formula>
+        <name>Update Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Previous_Owner_Name</fullName>
+        <field>Previous_Owner_Name__c</field>
+        <formula>PRIORVALUE( Customer_Owner__c )</formula>
+        <name>Update Previous Owner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Segment</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>IF( Sales_amount_per_year__c &lt;= 100000000, &quot;SE&quot;, &quot;BB&quot;)</formula>
+        <name>Update Re-assigned Segment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Segment_Group</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>TEXT(Group__r.Group_Segment__c)</formula>
+        <name>Update Re-assigned Segment (Group)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Segment_Industry</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>IF(Sales_amount_per_year__c  &lt;= 100000000, &quot;SE&quot;, 
+
+IF(Sales_amount_per_year__c  &gt; 100000000&amp;&amp; Sales_amount_per_year__c  &lt;= 1000000000, &quot;BB&quot;, 
+
+IF(Sales_amount_per_year__c  &gt; 1000000000&amp;&amp; Sales_amount_per_year__c  &lt;= 5000000000, &quot;CB&quot;, 
+
+IF(Sales_amount_per_year__c  &gt; 5000000000, &quot;MB&quot;, &quot;&quot;) ) ))</formula>
+        <name>Update Re-assigned Segment (Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Segment_Spc_Industry</fullName>
+        <field>Suggested_Segment__c</field>
+        <formula>&quot;MB&quot;</formula>
+        <name>Update Re-assigned Segment(Spc Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Team</fullName>
+        <field>Suggested_Sub_Segment__c</field>
+        <formula>IF(Suggested_Segment__c  =&quot;SE&quot; , Branch_and_Zone__r.Zone_SE__c  , 
+
+
+IF(Suggested_Segment__c =&quot;BB&quot;,  Branch_and_Zone__r.Zone_BB__c , &quot;&quot;))</formula>
+        <name>Update Re-assigned Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Team_Group</fullName>
+        <field>Suggested_Sub_Segment__c</field>
+        <formula>Group__r.Assigned_Team__c</formula>
+        <name>Update Re-assigned Team (Group)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Team_Industry</fullName>
+        <field>Suggested_Sub_Segment__c</field>
+        <formula>IF(Suggested_Segment__c  =&quot;SE&quot;,Branch_and_Zone__r.Zone_SE__c , 
+
+IF(Suggested_Segment__c =&quot;BB&quot;, Branch_and_Zone__r.Zone_BB__c ,
+
+IF(Suggested_Segment__c =&quot;CB&quot;, Industry__r.Team_CB__c  , 
+
+IF(Suggested_Segment__c =&quot;MB&quot;, Industry__r.Team_MB__c , &quot;&quot;) ) ))</formula>
+        <name>Update Re-assigned Team (Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Re_assigned_Team_Spc_Industry</fullName>
+        <field>Suggested_Sub_Segment__c</field>
+        <formula>Industry__r.Team_MB__c</formula>
+        <name>Update Re-assigned Team (Spc Industry)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_TH_Approved</fullName>
+        <description>Update Change Owner Approval Status when Team head approved.</description>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>TH Approved</literalValue>
+        <name>Update Status to TH Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_account_type_to_disqualified</fullName>
+        <field>Account_Type__c</field>
+        <literalValue>Disqualified Prospect</literalValue>
+        <name>Update account type to disqualified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_owner_change_noti_to_false</fullName>
+        <field>Owner_change_notification__c</field>
+        <literalValue>0</literalValue>
+        <name>Update owner change noti to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_reassign_noti_to_false</fullName>
+        <field>Re_assign_Notification__c</field>
+        <literalValue>0</literalValue>
+        <name>Update reassign noti to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ZM_Approved</fullName>
+        <description>Change Owner Approval Status equal to ZM Approved</description>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>ZM Approved</literalValue>
+        <name>Update Status to ZM Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ZM_Rejected</fullName>
+        <description>Change status to Rejected</description>
+        <field>Account_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Account_onsite_service_date</fullName>
+        <field>RTL_OnSite_Service_Update_Date__c</field>
+        <formula>IF( ISCHANGED( RTL_OnSite_Service__c )
+ ,NOW() 
+ ,DATETIMEVALUE( PRIORVALUE( RTL_OnSite_Service__c ) )
+)</formula>
+        <name>update Account onsite service date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Account_onsite_service_user</fullName>
+        <field>RTL_OnSite_Service_User_Update__c</field>
+        <formula>$User.FirstName+&quot; &quot;+$User.LastName</formula>
+        <name>update Account onsite service user</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_flag_check_WF_update</fullName>
+        <field>IsWFUpdate__c</field>
+        <literalValue>1</literalValue>
+        <name>update flag check WF update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account%3A Update status when change owner</fullName>
+        <actions>
+            <name>Update_Change_Owner_Approval_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(  Change_to_owner__c  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert to the new owner when owner change via mobile</fullName>
+        <actions>
+            <name>Alert_to_Account_Owner_when_owner_change</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Email_Notification_flag_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Send_Email_Notification_Prospect__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>COMM%3A Stamp 5 digits of ID to NID</fullName>
+        <actions>
+            <name>Update_NID_from_Commercial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( OR(RecordType.Name = &apos;Existing Customer&apos;,RecordType.Name = &apos;Prospect&apos;), OR(ISCHANGED( ID_Number_PE__c ), ISNEW() ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Account Record Type %28Existing customer%29</fullName>
+        <actions>
+            <name>Update_Account_Record_Type_Existing_cus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Existing Customer</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change record type to disqualified</fullName>
+        <actions>
+            <name>Update_ID_Number_add_suffix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_account_type_to_disqualified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Disqualified prospect</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Acct%3A Approval Status</fullName>
+        <actions>
+            <name>Clear_Acct_Approval_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(OR(ISPICKVAL(Account_Approval_Status__c , &quot;Final Approved&quot;),ISPICKVAL(Account_Approval_Status__c , &quot;Rejected&quot;),ISPICKVAL(Account_Approval_Status__c , &quot;Recalled&quot;)) , NOT( ISBLANK(Change_to_be_owner_ID__c ))    )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Change Owner To be new Owner fields</fullName>
+        <actions>
+            <name>Clear_to_be_new_Owner_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_to_be_new_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_to_be_new_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ischanged( OwnerId ),  NOT( ISBLANK( Change_to_be_owner_Name__c ) )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Is User Updated Onsite Service</fullName>
+        <actions>
+            <name>update_Account_onsite_service_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_Account_onsite_service_user</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>only user not admin or integration update RTL_OnSite_Service__c</description>
+        <formula>AND( 	NOT( 		OR( 			CONTAINS(UPPER($Profile.Name),UPPER(&quot;Administrator&quot;)), 			CONTAINS(UPPER($Profile.Name),UPPER(&quot;integration&quot;)) 		) 	), 	ISCHANGED( RTL_OnSite_Service__c )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify new owner</fullName>
+        <actions>
+            <name>Alert_email_to_account_owner_when_account_owner_changed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Final_Approved_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Alert to new owner from owner reassignment or New customer auto-assignment</description>
+        <formula>ISCHANGED( OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Prospect Individual %3B Split name</fullName>
+        <actions>
+            <name>Individual_Update_First_name_EN_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Individual_Update_First_name_TH_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Individual_Update_Last_name_EN_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Individual_Update_Last_name_TH_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Split name into first name, last name for individual customer</description>
+        <formula>AND( TEXT(Customer_Type__c) = &quot;Individual&quot;,  TEXT(Account_Type__c)  &lt;&gt; &quot;Existing Customer&quot;, NOT(CONTAINS($RecordType.Name,&quot;Retail&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Prospect Juristic %3B Split name</fullName>
+        <actions>
+            <name>Juristic_Update_First_name_EN_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Juristic_Update_First_name_TH_V2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Juristic_Update_Last_name_EN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Juristic_Update_Last_name_TH</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Copy name to first name and set last name to blank</description>
+        <formula>AND( TEXT(Customer_Type__c) = &quot;Juristic&quot;,  TEXT( Account_Type__c )  &lt;&gt; &quot;Existing Customer&quot;, NOT(CONTAINS($RecordType.Name,&quot;Retail&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AClear Re-assigned Segment %26 Team %28Individual%29</fullName>
+        <actions>
+            <name>Clear_Re_assigned_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Re_assigned_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  RecordType.Name = &quot;Prospect&quot; , TEXT(Customer_Type__c) = &quot;Individual&quot;, ISBLANK(Sales_amount_per_year__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AClear Re-assigned Segment %26 Team %28Juristic%29</fullName>
+        <actions>
+            <name>Clear_Re_assigned_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Re_assigned_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( RecordType.Name = &quot;Prospect&quot;,  TEXT(Customer_Type__c) = &quot;Juristic&quot;,  ISBLANK( Group__r.Assigned_Team__c ),  OR(ISBLANK( Industry__c ),  AND( Industry__r.Special__c = false ,  ISBLANK( Sales_amount_per_year__c ) )  )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AUpdate Re-assigned Segment %26 Team %28Individual%29</fullName>
+        <actions>
+            <name>Update_Re_assigned_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Re_assigned_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  RecordType.Name  = &quot;Prospect&quot;, TEXT( Customer_Type__c ) = &quot;Individual&quot;, NOT( ISBLANK( Sales_amount_per_year__c ) ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AUpdate Re-assigned Segment %26 Team %28Juristic%29 - Group</fullName>
+        <actions>
+            <name>Update_Re_assigned_Segment_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Re_assigned_Team_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( RecordType.Name  = &quot;Prospect&quot;, TEXT(Customer_Type__c) = &quot;Juristic&quot;, NOT( ISBLANK( Group__r.Assigned_Team__c ) ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AUpdate Re-assigned Segment %26 Team %28Juristic%29 - Industry</fullName>
+        <actions>
+            <name>Update_Re_assigned_Segment_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Re_assigned_Team_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( RecordType.Name  = &quot;Prospect&quot;, TEXT(Customer_Type__c) = &quot;Juristic&quot;, NOT( ISBLANK(Sales_amount_per_year__c)), ISBLANK(  Group__r.Assigned_Team__c  ), NOT(  Industry__r.Special__c  = true ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8%3AUpdate Re-assigned Segment %26 Team %28Juristic%29 - Special Industry</fullName>
+        <actions>
+            <name>Update_Re_assigned_Segment_Spc_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Re_assigned_Team_Spc_Industry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( RecordType.Name  = &quot;Prospect&quot;, TEXT(Customer_Type__c) = &quot;Juristic&quot;, ISBLANK( Group__r.Assigned_Team__c ),  Industry__r.Special__c = true)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Account owner id%2Fname</fullName>
+        <actions>
+            <name>Stamp_Owner_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When OwnerId was changed.(ischanged( OwnerId ))
+Stamp Owner id/name</description>
+        <formula>ischanged( OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Stamp Segment</fullName>
+        <actions>
+            <name>Clear_Change_Segment_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_to_be_new_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Stamp_Segment_if_core_bank_change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stamp Stamp Segment After MIS update core bank segment</description>
+        <formula>ISCHANGED( Segment_crm__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Segment Is Updated</fullName>
+        <actions>
+            <name>Clear_Change_Owner_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Change_Segment_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_to_be_Sub_Segement</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>And(ISCHANGED(Sub_segment__c), PRIORVALUE(Sub_segment__c) &lt;&gt; Sub_segment__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Account owner and Previous owner</fullName>
+        <actions>
+            <name>Update_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_flag_check_WF_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ischanged( OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Account owner and Previous owner and stamp zone%2Fregion  name%2Fcode</fullName>
+        <actions>
+            <name>Stamp_Owner_Region_Group_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Owner_Region_Group_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Owner_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Owner_Zone_Team_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Owner_Zone_Team_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Previous_Owner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_flag_check_WF_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When OwnerId was changed.(ischanged( OwnerId ))</description>
+        <formula>ischanged( OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Change Owner Date time</fullName>
+        <actions>
+            <name>Stamp_Change_Owner_Date_time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Stamp Owner Segment</fullName>
+        <actions>
+            <name>Stamp_Owner_Segment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISCHANGED( OwnerId ), NOT(OR(ISBLANK(TEXT(Owner.Segment__c) ) ,TEXT(Owner.Segment__c) = &apos;&apos;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

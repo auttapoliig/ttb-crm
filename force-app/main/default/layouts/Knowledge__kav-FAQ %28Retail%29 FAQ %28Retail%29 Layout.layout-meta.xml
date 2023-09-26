@@ -18,6 +18,9 @@
             <layoutItems>
                 <field>UrlName</field>
             </layoutItems>
+            <layoutItems>
+                <field>Category__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

@@ -88,6 +88,14 @@
                 <behavior>Edit</behavior>
                 <field>Forecast_NIIc_NIId_Flag__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RTL_PRODUCT_CODE__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FLAG_RTL_Product__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

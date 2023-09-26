@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Mailing_City</fullName>
+        <field>MailingCity</field>
+        <formula>C_AddressLine5_PE__c</formula>
+        <name>Update Mailing City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Mailing_Country</fullName>
+        <field>MailingCountry</field>
+        <formula>IF(
+      AND(
+            ISBLANK(C_AddressLine1_PE__c),
+            ISBLANK(C_AddressLine3_PE__c),
+            ISBLANK(C_AddressLine2_PE__c),
+            ISBLANK(C_Province_PE__c),
+            ISBLANK(C_AddressLine5_PE__c),
+            ISBLANK(C_AddressLine4_PE__c),
+            ISBLANK(C_Zipcode_PE__c)
+
+          ) , &quot;&quot;, C_Country_PE__c)</formula>
+        <name>Update Mailing Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Mailing_State_Province</fullName>
+        <field>MailingState</field>
+        <formula>C_Province_PE__c</formula>
+        <name>Update Mailing State/Province</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Mailing_Street</fullName>
+        <field>MailingStreet</field>
+        <formula>C_AddressLine1_PE__c + &quot; &quot; + C_AddressLine3_PE__c + &quot; &quot;  +  C_AddressLine2_PE__c  +  &quot; &quot; + C_AddressLine4_PE__c</formula>
+        <name>Update Mailing Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Zip_Postal_Code</fullName>
+        <field>MailingPostalCode</field>
+        <formula>C_Zipcode_PE__c</formula>
+        <name>Update Zip/Postal Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update address contact</fullName>
+        <actions>
+            <name>Update_Mailing_City</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Mailing_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Mailing_State_Province</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Mailing_Street</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Zip_Postal_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.AccountName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update address from custom address fields to standard fields</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>
