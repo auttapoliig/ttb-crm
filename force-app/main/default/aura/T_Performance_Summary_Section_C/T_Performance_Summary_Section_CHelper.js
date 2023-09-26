@@ -6,29 +6,6 @@
     }, {});
   },
 
-  //   setFill: function (el, perc) {
-  //     var color;
-
-  //     if (perc < 20) {
-  //       color = "#F8D7CF";
-  //     } else if (perc < 40) {
-  //       color = "#FCE5D3";
-  //     } else if (perc < 60) {
-  //       color = "#F9EED6";
-  //     } else if (perc < 80) {
-  //       color = "#C4E4E0";
-  //     } else if (perc <= 100) {
-  //       color = "#C3CCD0";
-  //     }
-
-  //     $(el)
-  //       .css("background", +color)
-  //       .css("background", +color)
-  //       .css("background", +color)
-  //       .css("background", +color)
-  //       .css("background", +color);
-  //   },
-
   showToastError: function (msg) {
     var toastEvent = $A.get("e.force:showToast");
     toastEvent.setParams({
@@ -39,18 +16,6 @@
     toastEvent.fire();
   },
 
-  // calculatedSummary : function (component, quadrant, product) {
-  //   const KPI = component.get('v.targetProductData');
-  //   const STP = component.get('v.summaryTeamData');
-  //   KPI.filter
-  //   var sum = 0;
-  //   console.log(KPI[0])
-
-  //   for(var i = 0; i < 5;i++){
-  //     sum += KPI[i].Target_Unit_Year__c
-  //   }
-  //   console.log(sum);
-  // },
   sumProductvalues: function (
     component,
     data,
@@ -70,17 +35,12 @@
       var runrateDay = 1;
       var actualMonthTD = 0;
       var actualYearTD = 0;
-      // var actualYTDCapmax = 0;
-      // var actualMonthTDwithRV = 0;
-      // var actualMonthTDwithRVrunrate = 0;
       var runrate = 0;
       var BPE;
-      // var PointPercent = 0;
       var UnitPercent = 0;
       var percentMTD = 0;
       var volume = 1;
       var Capmax = "";
-      // console.log('Current day of month : ' + curDoM);
       if(day > 0){
         if (selectedMonth == month && selectedYear == year) {
           multiplyDayofMonth = day / curDoM;
@@ -88,8 +48,6 @@
         }
       }
       if (result.ProductCode == data.Product_Group_Code__c) {
-      // if (result.Label == data.Product_Group_Name__c) {
-        
           
           if (parseInt(data.Month__c) == selectedMonth && parseInt(data.Year__c) == selectedYear) {
             if(data.hasOwnProperty('Volumn__c')){
@@ -115,7 +73,6 @@
             result.POINTs.Capmax = "";
           }
               result.POINTs.RV = BPE;
-              //  console.log("Branch Point Engine : " + BPE)
         }
         if(parseInt(data.Month__c) != selectedMonth && parseInt(data.Year__c) == selectedYear){
             result.POINTs.actualForRunrate = helper.calDecimal(helper, 'plus', (parseFloat(result.POINTs.actualForRunrate)), (parseFloat(data.Actual_Amount__c) / (result.UNIT.volume ? result.UNIT.volume : 1)));
@@ -131,39 +88,13 @@
       
         
         if (parseInt(data.Month__c) == selectedMonth && parseInt(data.Year__c) == selectedYear) {
-          // console.log('result.UNIT.tgYTDValue: '+result.UNIT.tgYTDValue + ',  Target_Unit_Month__c: '+(multiplyDayofMonth * parseFloat(data.Target_Unit_Month__c)))
           if (selectedMonth == month && selectedYear == year) {
-                        //console.log('result.UNIT.tgYTDValue: '+result.UNIT.tgYTDValue + ',  Target_Unit_Month__c: '+(multiplyDayofMonth * parseFloat(data.Target_Unit_Month__c)))
-
-                        result.UNIT.tgYTDValue = helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgYTDValue), (helper.calDecimal(helper, "multiply", (day) ,(parseFloat(data.Target_Unit_Month__c)))));
+            result.UNIT.tgYTDValue = helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgYTDValue), (helper.calDecimal(helper, "multiply", (day) ,(parseFloat(data.Target_Unit_Month__c)))));
           }
-          // result.UNIT.tgYTDValue = helper.calDecimal(helper, "round", (parseFloat(result.UNIT.tgYTDValue)), null);
         } else {
           result.UNIT.tgYTDValue =  helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgYTDValue), parseFloat(data.Target_Unit_Month__c));
-          // console.log('Added TG_YTD '+ result.UNIT.tgYTDValue)
         }
-        
-        
-        if(BPE != ""){ 
-          // if(Capmax != ""){
-          //             actualYTDCapmax = (actualYearTD * (result.POINTs.RV ? result.POINTs.RV : 1) > (result.UNIT.tgYTDValue * (result.POINTs.RV ? result.POINTs.RV : 1) * Capmax/100)) ? (result.UNIT.tgYTDValue * (result.POINTs.RV ? result.POINTs.RV : 1)* (Capmax/100)) : (actualYearTD * (result.POINTs.RV ? result.POINTs.RV : 1));
-          // }       
-          // result.POINTs.actualYTD += actualYTDCapmax\
-          
-          //if(result.UNIT.tgYTDValue != 0 && result.UNIT.tgYTDValue != ""){
-          //  result.POINTs.tgYTDValue = (result.UNIT.tgYTDValue) * (result.POINTs.RV != "" ? result.POINTs.RV : 1);
-          //}else{
-          //  result.POINTs.tgYTDValue = "";  
-          //}
-          
-          // PointPercent = result.POINTs.actualYTD / result.POINTs.tgYTDValue;
-          // if(result.POINTs.tgYTDValue == 0 ||result.POINTs.tgYTDValue == ""){
-          //   PointPercent = "";
-          // }
-        }
-       
-        // result.POINTs.percent = PointPercent;
-        // result.POINTs.percentColor = "KPI0";
+
         UnitPercent = helper.calDecimal(helper, "round", (parseFloat(result.UNIT.actualYTD)), null) / helper.calDecimal(helper, "round", (parseFloat(result.UNIT.tgYTDValue)), null);
         if(result.UNIT.tgYTDValue == 0 || result.UNIT.tgYTDValue == 0){
           UnitPercent = "";
@@ -173,21 +104,12 @@
         if (parseInt(data.Month__c) == selectedMonth && parseInt(data.Year__c) == selectedYear) {
           if (selectedMonth == month && selectedYear == year && day > 0) {
             result.UNIT.tgMTDValue = helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgMTDValue), (multiplyDayofMonth * parseFloat(data.Target_Unit_Month__c)));
-            // result.UNIT.tgMTDValue = helper.calDecimal(helper, "round", (parseFloat(result.UNIT.tgMTDValue)) , null);
           } 
           else {
-            result.UNIT.tgMTDValue = helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgMTDValue),parseFloat(data.Target_Unit_Month__c));
+            // result.UNIT.tgMTDValue = helper.calDecimal(helper, 'plus', parseFloat(result.UNIT.tgMTDValue),parseFloat(data.Target_Unit_Month__c));
+            result.UNIT.tgMTDValue = 0;
           }
         }
-        
-        // actualMonthTDwithRV = (result.UNIT.actualMTD ? result.UNIT.actualMTD : 0) * (result.POINTs.RV ? result.POINTs.RV : 1);
-
-        // actualMonthTDwithRVrunrate = actualMonthTDwithRV * runrateDay;
-
-        // runrate = ((result.POINTs.actualYTD - actualMonthTDwithRV) + actualMonthTDwithRVrunrate) / (result.UNIT.tgYTDValue * (result.POINTs.RV ? result.POINTs.RV : 1));
-        // if(result.UNIT.tgYTDValue == 0 || result.UNIT.tgYTDValue == "" || BPE == "" || runrate < 0 ){
-        //   runrate = "";
-        // }
 
         percentMTD = (helper.calDecimal(helper, "round", parseFloat(result.UNIT.actualMTD), null)) / (helper.calDecimal(helper, "round", parseFloat(result.UNIT.tgMTDValue), null));
         if(result.UNIT.tgMTDValue == 0 || result.UNIT.tgMTDValue == ""){
@@ -195,8 +117,6 @@
         }
         
         result.UNIT.percentMTD = percentMTD;
-        // result.POINTs.percentMTD = runrate;
-        // result.POINTs.percentMTDColor = "KPI0";
         result.UNIT.percentMTDColor = "KPI0";
         
       }
@@ -207,8 +127,6 @@
   cssColorChange: function (component, helper) {
     function cssClassColor (value) {
       var colorClass;
-      // console.log(value) 
-      // console.log(!isNaN(value) && !(value === ""))
       if(!isNaN(value) && !(value === "") && value != Infinity){
         let data = value*100;
         if (data >= 0 && data < 60 || data < 0 ) {
@@ -227,12 +145,10 @@
       }else{
         colorClass = "KPI0";
       }
-      // console.log('Value: '+data +'  ColorCode: '+ colorClass);
       return colorClass;
     }
     var KPI = component.get("v.targetProductObjList");
     var actualMap = component.get("v.targetMapData");
-    // console.log(actualMap);
     const date = new Date();
     var day = date.getDate() - 2;
     var month = date.getMonth() + 1;
@@ -250,10 +166,8 @@
         var UnitPercent = "";
         var PointPercent = "";
         var PointRunrate = "";
-          // console.log('Debug actual map section C',actualMap ? true : false,actualMap)
         if(actualMap){
           if(actualMap.mapProductWithActual.hasOwnProperty(KPI[i].productList[j].ProductCode)){
-            
             KPI[i].productList[j].UNIT.actualYTD = helper.calDecimal(helper, "round", (actualMap.mapProductWithActual[KPI[i].productList[j].ProductCode]), null);
             UnitPercent = (parseFloat(KPI[i].productList[j].UNIT.actualYTD)).toFixed(2) / helper.calDecimal(helper, "round", ((parseFloat(KPI[i].productList[j].UNIT.tgYTDValue))), null);
             if(parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == 0 || parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == ""){
@@ -279,12 +193,10 @@
             }
           }
         }
-        // console.log(KPI[i].productList[j].UNIT.tgYTDValue.toFixed(2))
         var targetRV = helper.calDecimal(helper, "multiply", (helper.calDecimal(helper, "round", (parseFloat(KPI[i].productList[j].UNIT.tgYTDValue)), null)) , parseFloat(KPI[i].productList[j].POINTs.RV));
         KPI[i].productList[j].POINTs.tgYTDValue =  helper.calDecimal(helper, "round", parseFloat(targetRV), null);
         var actualRV = helper.calDecimal(helper, "round",  (parseFloat(KPI[i].productList[j].UNIT.actualYTD)), null) * parseFloat(KPI[i].productList[j].POINTs.RV);
         if(KPI[i].productList[j].POINTs.Capmax != "" && KPI[i].productList[j].POINTs.tgYTDValue != ""){
-            // console.log('targetRV : '+ targetRV + ' ' + (KPI[i].productList[j].POINTs.Capmax / 100))
           if(actualRV > (KPI[i].productList[j].POINTs.tgYTDValue * (KPI[i].productList[j].POINTs.Capmax / 100))){
             KPI[i].productList[j].POINTs.actualYTD = helper.calDecimal(helper, "multiply", helper.calDecimal(helper, "round", parseFloat(targetRV), null), (KPI[i].productList[j].POINTs.Capmax / 100));
           }else{
@@ -322,23 +234,18 @@
           let runrate = (parseFloat((KPI[i].productList[j].UNIT.runrate)));
           runrate =  parseFloat(runrate);
           let actualRunrate = helper.calDecimal(helper, 'plus', ac, runrate);
+          actualRunrate = helper.calDecimal(helper, "round", actualRunrate, null);
           if(targetRunrate != 0 && targetRunrate !=""){
             PointRunrate = actualRunrate/targetRunrate;
           }
-          // console.log('PointRunrate : '+PointRunrate)
-          // console.log('Actual before runrate: '+ ac)
-          // console.log('targetRunrate: '+ targetRunrate)
-          // console.log('actualRunrate: '+ actualRunrate)
           if(parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == 0 || parseFloat(KPI[i].productList[j].UNIT.tgYTDValue) == "" || PointRunrate < 0){
             PointRunrate = "";
           }
-          // console.log( PointRunrate + ' ' + KPI[i].productList[j].POINTs.Capmax)
           if(KPI[i].productList[j].POINTs.Capmax){
             KPI[i].productList[j].POINTs.percentMTD = (PointRunrate*100) > KPI[i].productList[j].POINTs.Capmax ? (KPI[i].productList[j].POINTs.Capmax)/100 : PointRunrate;
           }else{
             KPI[i].productList[j].POINTs.percentMTD = PointRunrate;
           }
-          // console.log('Percent Runrate: '+ PointRunrate)
         }
 		if(KPI[i].productList[j].UNIT.runrate < 0){
           KPI[i].productList[j].UNIT.runrate = "";
@@ -360,13 +267,11 @@
         KPI[i].productList[j].POINTs.percentMTDColor = percentMTDPColor;
       }
     }
-   	// console.log(KPI);
     component.set("v.targetProductObjList", KPI);
   },
 
   isNextButtonHandle: function (component) {
     var channelName = component.get("v.channelName");
-    // console.log('channelName--> '+channelName)
     var onedownValue = component.get("v.onedownValue");
     var summaryPage = component.get("v.summaryGroupType");
     var selectedYear = component.get("v.selectedYear");
@@ -384,7 +289,6 @@
       if (state === "SUCCESS") {
         var result = response.getReturnValue();
         component.set("v.isNext", result);
-        console.log('Is next button :' +  result);
       } else if (state === "ERROR") {
         console.log("STATE ERROR");
       } else {
@@ -400,10 +304,6 @@
   },
 
   calDecimal : function (helper,operator,val1,val2) {
-    // Number.prototype.countDecimals = function () {
-    //     if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
-    //     return this.toString().split(".")[1].length || 0; 
-    // }
     var val1_dec = helper.countDecimals(val1);
     var val2_dec = helper.countDecimals(val2);
 
@@ -431,14 +331,9 @@
             var round = Math.round((val1*1000)/10)/100;
             return round;
         }
-        // var dev = val1_engine;
     }
 
     return 0;
-
-    // var mul = (val1*val1_engine)*(val2*val2_engine)
-    // var dev = Math.pow(10,(val1_dec+val2_dec));
-    // return (mul/dev);
   },
 
   countDecimals : function(dec) {

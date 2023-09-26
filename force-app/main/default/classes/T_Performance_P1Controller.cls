@@ -1150,7 +1150,7 @@ public class T_Performance_P1Controller {
                 }
             }
 
-            if(!targetProduct.Sub_Group_Flag__c) {
+            if(!targetProduct.Sub_Group_Flag__c && product.achivement != null) {
                 summaryAchivement += product.achivement;
             }
             
