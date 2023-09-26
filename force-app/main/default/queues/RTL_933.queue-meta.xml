@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Queue xmlns="http://soap.sforce.com/2006/04/metadata">
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
-    <email>br933.bko@tmbbank.com</email>
-    <name>_(ปิด)933 สาขาเทสโก้ โลตัส เพชรเกษม 81</name>
+    <email>br933.bko@tmbbank.com.uat</email>
+    <name>933 สาขาเทสโก้ โลตัส เพชรเกษม 81</name>
     <queueSobject>
         <sobjectType>Case</sobjectType>
     </queueSobject>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Chat - OneApp bot greeting  message 5</label>
+    <protected>false</protected>
+    <values>
+        <field>iigproduct_2__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Chat_Channel__c</field>
+        <value xsi:type="xsd:string">Chat - TOUCH</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Message_EN__c</field>
+        <value xsi:type="xsd:string">Welcome {Customer_Name}
+YINDEE is at your service.</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Message_Type__c</field>
+        <value xsi:type="xsd:string">Greeting-existing-customer-bot</value>
+    </values>
+    <values>
+        <field>iigproduct_2__Message__c</field>
+        <value xsi:type="xsd:string">สวัสดีครับ คุณ{Customer_Name}
+ยินดีมาดูแล และพร้อมให้บริการแล้วครับ</value>
+    </values>
+</CustomMetadata>

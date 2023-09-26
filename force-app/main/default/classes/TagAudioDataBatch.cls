@@ -12,13 +12,24 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
 
     public List<RTL_Online_Service_Log__c> logList = new List<RTL_Online_Service_Log__c>();
     public List<Voice_Tagging__c> updateVoiceTagging = new List<Voice_Tagging__c>();     
-    
+    private String jobDailyName = 'Error_Summary_Import_Audio_Data_'+ Datetime.now().format('YYYYMMdd_hh:mm');
+    private String CSV_BODY = '';
+    private String csvHeaderStr = '';
+    private String sobjectName = '';
+
+    public Integer recordsSuccessful = 0;
+    public Integer recordsFailed = 0;
     public virtual class BaseException extends Exception {}
     public class OtherException extends BaseException {}
+    public Map<String, String> vtErrorMsgMap = new Map<String, String>();
 
     public class TagAudioService {
         public List<RTL_Online_Service_Log__c> TaglogList;
         public List<Voice_Tagging__c> voiceTagList;                                    
+        public Map<String,String> vtErrMap;
+        public Integer vtsuccessRecords; 
+        public Integer vtFailRecords; 
+        public String vtObject;
 
     }
     public static Integer VERINT_GETTOKEN_TIMEOUT_MILLISECS{
@@ -51,8 +62,8 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
         this.transGroupId = transGroupId;
     }
     global Database.QueryLocator start(Database.BatchableContext bc){
-        String query = 'SELECT id, Unique_Id__c, Call_Log_ID__c, Verint_Call_ID__c, Channel__c, Audio_Start_Time__c,Audio_Channel_Num__c,Audio_Module_Num__c,Audio_End_Time__c, Transaction_Group_Id__c, private_data__c, Import_Result__c,Import_Datetime__c, Error_Message__c, CREATEDDATE FROM Voice_tagging__c ';
-
+        String query = 'SELECT id, Unique_Id__c, Call_Log_ID__c, Verint_Call_ID__c, Channel__c, Audio_Start_Time__c,Audio_Channel_Num__c,Audio_Module_Num__c,Audio_End_Time__c, Transaction_Group_Id__c, private_data__c, Import_Type__c,Import_Result__c,Import_Datetime__c, Error_Message__c, CREATEDDATE FROM Voice_tagging__c ';
+        
         if(ListcallId != null){
             query += 'WHERE Call_Log_ID__c IN: ListcallId AND Import_Result__c = False';
             System.debug('ListcallId :' + ListcallId);
@@ -98,6 +109,10 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
                 newService = tagAudioData(auth_token,inputlist);
                 logList.addAll(newService.TaglogList);        
                 updateVoiceTagging.addAll(newService.voiceTagList);
+                vtErrorMsgMap.putAll(newService.vtErrMap);
+                recordsSuccessful += newService.vtsuccessRecords;
+                recordsFailed += newService.vtFailRecords;
+                sobjectName = newService.vtObject;
             }
         }
     }
@@ -115,6 +130,47 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
         } catch (Exception e) {
             system.debug('Cannot insert online log' + e.getMessage());
         }
+
+        try {
+            System.debug('recordsSuccessful:'+recordsSuccessful);
+            System.debug('recordsFailed:'+recordsFailed);
+
+            System.debug('vtErrorMsgMap:'+vtErrorMsgMap);
+            if(vtErrorMsgMap.size() > 0)
+            {             
+                csvHeaderStr = csvHeaderStr + 
+                        'Switch Call Id' + ',' +
+                        'Error Message';
+                List<String> emailOpsList = new List<String>();
+                for(String ID : vtErrorMsgMap.keySet()){
+                    System.debug(ID + ' : ' + vtErrorMsgMap.get(ID));
+                    
+                    String errorMsg = vtErrorMsgMap.get(ID); 
+                    
+                    System.debug(errorMsg);           
+
+                    CSV_BODY = CSV_BODY + 
+                        ID + ',' +
+                        vtErrorMsgMap.get(ID) + ',' + '\n';
+                }
+
+           
+                emailOpsList.add('CRM Admin 2');
+
+                RTL_BatchEmailService.SendFinishBatchSummaryEmail(batchDate
+                                                                , batchStartTime
+                                                                , batchEndTime
+                                                                , recordsSuccessful
+                                                                , recordsFailed
+                                                                , csvHeaderStr
+                                                                , jobDailyName
+                                                                , sobjectName
+                                                                , emailOpsList
+                                                                , CSV_BODY);
+            }
+        } catch (Exception e) {
+            system.debug('Cannot insert online log' + e.getMessage());
+        }
     }
     public static TagAudioService tagAudioData(String auth_token, List<Voice_Tagging__c> voicetaggingList){
         TagAudioService returnvalue = new TagAudioService();
@@ -129,13 +185,16 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
         Integer allRecords = 0;
         Integer successRecords = 0;
         Integer failRecords = 0;
+        String sobjectName;
         RTL_Online_Service_Log__c osLog = null;
         List<RTL_Online_Service_Log__c> osLogList = new List<RTL_Online_Service_Log__c>();
         List<Voice_Tagging__c> LstVoiceTag = new List<Voice_Tagging__c>();          
+        Map<String,String> mapCallLogwithErrmsg = new Map<String,String>();
         if(voicetaggingList.size() > 0){
             allRecords = voicetaggingList.size();
             for(Voice_Tagging__c vt: voicetaggingList)
             {
+                sobjectName = vt.Import_Type__c;
                 //System.debug('dasMap:'+dasMap.get(call_id).get('audio_ch_num'));
             
                 schemasMicrosoftCom200310Serializat1.ArrayOfstring envelop = new schemasMicrosoftCom200310Serializat1.ArrayOfstring();
@@ -203,6 +262,7 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
                     System.debug('Cannot save to verint :: ' + e.getMessage());
                     failRecords++;
                     vt.Error_Message__c = errorMessage;
+                    mapCallLogwithErrmsg.put(vt.Call_Log_ID__c,vt.Error_Message__c);
                 }
                 LstVoiceTag.add(vt);
                 osLogList.add(createOnlineLog(isSuccess, '', errorMessage, arrOfString.toString(), startDate, Datetime.now()));
@@ -211,8 +271,12 @@ global without sharing class TagAudioDataBatch implements Database.Batchable<sOb
         System.debug('All Records :'+ allRecords);
         System.debug('Success Records :'+ successRecords);
         System.debug('Fail Records :'+ failRecords);
+        returnvalue.vtErrMap = mapCallLogwithErrmsg;
         returnvalue.TaglogList = osLogList;
         returnvalue.voiceTagList = LstVoiceTag;
+        returnvalue.vtsuccessRecords = successRecords;
+        returnvalue.vtFailRecords = failRecords;
+        returnvalue.vtObject = sobjectName;
         return returnvalue;
         }
         public static String getAuthToken(){

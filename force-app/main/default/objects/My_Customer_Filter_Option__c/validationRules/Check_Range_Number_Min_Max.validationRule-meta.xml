@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Range_Number_Min_Max</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordType.Name = &apos;Range Number&apos;, ISNULL(Filter_Min__c),  ISNULL(Filter_Max__c))</errorConditionFormula>
+    <errorMessage>Required value of Min or Max</errorMessage>
+</ValidationRule>

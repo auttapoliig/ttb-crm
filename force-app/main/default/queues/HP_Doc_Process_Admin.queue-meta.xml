@@ -4,8 +4,8 @@
     <name>HP Doc. Process – Admin.</name>
     <queueMembers>
         <roles>
-            <role>HP_Doc_Process_Admin_TL</role>
-            <role>HP_Doc_Process_Admin_User</role>
+            <role>AL_Closing_AccountTL</role>
+            <role>AL_Closing_AccountUser</role>
         </roles>
     </queueMembers>
     <queueSobject>

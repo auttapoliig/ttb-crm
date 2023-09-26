@@ -1,4 +1,5 @@
 @IsTest
+
 public class RTL_OpportunityTriggerHandlerTest {  
     static List<Account> acctList;
     static List<Branch_And_Zone__c> branchAndZoneList;
@@ -211,13 +212,7 @@ public class RTL_OpportunityTriggerHandlerTest {
     public static testmethod void testAfterUpdateOpportunitytoCampaignMember(){       
         List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
         User firstUser = retailUsers[0];//outbound channel
-        // firstUser.Employee_ID__c = 'RTL02';
-        // update firstUser;
-    	// RTL_Branch_Manager_Title__c BMconfig = new RTL_Branch_Manager_Title__c();
-    	// BMconfig.Name = 'Branch Manager';
-    	// // BMconfig.Value__c = 'Branch Manager';
-        // BMconfig.RTL_Value__c = 'Branch Manager';        
-    	// insert BMconfig;
+
         TestInit.createUser(false);
         User adminUser = TestInit.us;  
         List<Account> accountList = null;
@@ -249,13 +244,7 @@ public class RTL_OpportunityTriggerHandlerTest {
         Contact ct = RTL_TestUtility.createContacts(accountList.get(0));
         ct.OwnerId = firstUser.id;
         insert ct;
-        // RTL_product_master__c prod = new RTL_product_master__c();
-        // prod.Name = 'CYC';
-        // prod.Product_Group__c = 'Auto Loan';
-        // prod.Product_Sub_group__c = 'HIRE PURCHASE';
-        // prod.Active__c = true;
-        // insert prod;
-
+                
         branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
         RTL_Referral__c referral = new RTL_Referral__c();
         //referral.RTL_Account_Name__c = accountList[0].id;
@@ -263,7 +252,6 @@ public class RTL_OpportunityTriggerHandlerTest {
         referral.RTL_Stage__c = 'New';
         referral.RTL_License_No__c = '4325325426';
         referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
-        // referral.RTL_Account_Name__c = acct.Id;
         system.debug('branch '+referral.RTL_Preferred_Branch__c);
         insert referral;
         system.debug('refid'+referral.id);  
@@ -273,12 +261,8 @@ public class RTL_OpportunityTriggerHandlerTest {
         oppt.CloseDate = Date.today().addDays(30);
         oppt.StageName = 'Sales (Investment)';
         oppt.recordtypeId = retailAutoloan;
-        // oppt.RTL_Product_Group__c = 'Auto Loan';
-        // oppt.RTL_Product_Name__c = prod.Id;
         //oppt.AccountId = accountList[0].id;
         oppt.RTL_Referral__c = referral.id;
-        // oppt.AccountId = acct.Id;
-
         insert oppt;
 
         system.debug('opptid'+oppt.id);  
@@ -297,10 +281,6 @@ public class RTL_OpportunityTriggerHandlerTest {
         cm.RTL_Referral_ID_4__c = referral.id; 
         cm.RTL_Referral_ID_5__c = referral.id;                
         cm.RTL_Hub_Name_1__c = 'test hub';
-        // cm.RTL_Product_Group_1__c = 'Auto Loan';
-        // cm.RTL_Sub_Group_1__c = 'HIRE PURCHASE';
-        // cm.RTL_Campaign_Product_1__c = prod.Id;
-        // cm.RTL_OfferResult_Product_1__c = 'Referred';
         insert cm;
         system.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
         system.debug('refer '+cm.RTL_Referral_ID_1__c);
@@ -348,7 +328,6 @@ public class RTL_OpportunityTriggerHandlerTest {
         referralup1.HPAP_Reason_Code__c = 'oooo';
         referralup1.HPAP_Reason_Description__c = 'oooo';
         update referralup1;*/
-
         AppConfig__c Aconfig1 = AppConfig__c.getValues('runtrigger');
         Aconfig1.Value__c = 'true';    
         update Aconfig1;    
@@ -361,17 +340,6 @@ public class RTL_OpportunityTriggerHandlerTest {
         system.debug('oppty '+opp.id);
         opp.RTL_Hub_Name__c = 'test hub';
         update opp;  
-        // Opportunity oppt2 = new Opportunity(); 
-        // oppt2.Name = 'Test Opp2';
-        // oppt2.CloseDate = Date.today().addDays(30);
-        // oppt2.StageName = 'Sales (Investment)';
-        // oppt2.recordtypeId = retailAutoloan;
-        // oppt2.RTL_Product_Group__c = 'Auto Loan';
-        // oppt2.RTL_Product_Name__c = prod.Id;
-        // oppt2.RTL_Referral__c = referral.id;
-        // oppt2.AccountId = acct.Id;
-        // insert oppt2;
-
 
     }
     TEST.stopTest();

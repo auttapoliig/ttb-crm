@@ -117,7 +117,7 @@
                 <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true"
                     onsectiontoggle="{! c.handleSectionToggle }" activeSectionName="{! v.activeSections }">
 
-                    <lightning:accordionSection name="SpecialPrefAndRelationshipLevel" label="ความต้องการพิเศษ/ระดับความสัมพันธ์">
+                    <lightning:accordionSection name="SpecialPrefAndRelationshipLevel" label="ความต้องการพิเศษ">
                         <!-- class="slds-section__title slds-theme_shade" -->
                         <lightning:layout verticalAlign="stretch" multipleRows="true">
                             <aura:iteration items="{!v.fieldsPartition.SpecialPrefAndRelationshipLevel}" var="field"

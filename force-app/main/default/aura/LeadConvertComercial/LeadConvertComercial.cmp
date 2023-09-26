@@ -1,0 +1,340 @@
+<aura:component controller="LeadConvertComercialController" implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId,lightning:isUrlAddressable">
+	<aura:attribute name="recordId" type="String" />
+    <aura:attribute name="activeSectionName" type="List" default="['A','B','C']" />
+	<aura:attribute name="leadInfo" type="Object" />
+	<aura:attribute name="contactStatusPicklist" type="List" />
+	<aura:attribute name="uncontactReasonPicklist" type="List" />
+	<aura:attribute name="campaignProducts" type="List" />
+	<aura:attribute name="crossSellProducts" type="List" />
+	<aura:attribute name="offerResultPicklist" type="Object" />
+	<aura:attribute name="unqualReasonPicklist" type="Object" />
+	<aura:attribute name="subUnqualReasonPicklist" type="Object" />
+    <aura:attribute name="otherReasonPicklist" type="Object" />
+	<aura:attribute name="activeSpinner" type="Boolean" />
+	<aura:attribute name="activeCrossSellModal" type="Boolean" />
+	<aura:attribute name="isEditCrossSell" type="Boolean" />
+    <aura:attribute name="isCommercialAcc" type="Boolean" default="false"/>
+	<aura:attribute name="selectedCrossSellId" type="Boolean" />
+	<aura:attribute name="requiredExpectedDate" type="Boolean" />
+    <aura:attribute name="isError" type="Boolean" />
+	<aura:attribute name="error" type="String" />
+    <aura:attribute name="containInterest" type="Boolean" default="false"/>
+    <aura:attribute name="isEdit" type="Boolean" default="true" />
+    <aura:attribute name="requireOfferResult" type="Boolean" default="false" />
+    <aura:attribute name="surveyId" type="String" default="" />
+
+    <!-- <aura:attribute name="isConvertToOppty" type="Boolean" default="false"/>
+    <aura:attribute name="covertPicklist" type="List" /> -->
+    <aura:attribute name="errorList" type="List" />
+    <!-- <aura:attribute name="intResult" type="String" default="None"/> -->
+    <aura:attribute name="isAllowedToConvert" type="Boolean" default="false"/>
+    <aura:attribute name="isCanEditOfferResult" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }" />
+    <aura:handler name="saveEvent" event="c:CommercialEditCrossSellProductEvent" action="{!c.handleSaveCrossSell}"/>
+    <aura:handler name="saveAndNewEvent" event="c:CommercialEditCrossSellProductEvent" action="{!c.handleSaveAndNewCrossSell}"/>
+    <aura:handler name="closeEvent" event="c:CommercialEditCrossSellProductEvent" action="{!c.handleCloseCrossSellModal}"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <body style="background-color:white;border-radius:5px;position: relative;">
+        <aura:if isTrue="{!v.activeSpinner}">
+            <lightning:spinner aura:id="spinner" alternativeText="loading" class="{! $Browser.formFactor=='DESKTOP'? 'loading_margin':''}" style="z-index: 9009"/>
+        </aura:if>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1">
+                <div class="{! !v.isError ? 'slds-hide' : 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error' }" role="alert" style="align-items: baseline;">             
+                    <aura:if isTrue="{!v.errorList.length == 0}">
+                        <span class="slds-assistive-text">error</span>
+                        <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+                            <lightning:icon iconName="utility:error" variant="inverse" size="x-small" />
+                        </span>                 
+                        <h2 style="white-space: break-spaces;text-align: left; font-weight: 200;">{!v.error}</h2>     
+                    </aura:if>         
+                    <aura:if isTrue="{!v.errorList.length > 0}">
+                        <div>
+                            <span class="slds-assistive-text">error</span>
+                            <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+                                <lightning:icon iconName="utility:error" variant="inverse" size="x-small" />
+                            </span>
+                        </div>
+                        <div>
+                            <h2 style="text-align: left;font-weight: bold;">Error</h2>
+                            <aura:iteration items="{!v.errorList}" var="error">
+                                <li style="text-align: left;">{!error}</li>
+                            </aura:iteration>                    
+                            
+                        </div>                  
+                    </aura:if>
+                   
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-m-top_small slds-float_right">
+                    <aura:if isTrue="{!v.isEdit}">
+                        <lightning:button class="slds-m-horizontal_small" label="Save" onclick="{! c.save }" disabled="{!!v.isAllowedToConvert}"/>
+                        <lightning:button class="slds-m-horizontal_small" label="Cancel" onclick="{! c.closeFocusedTab }"/>
+                        <aura:set attribute="else">
+                            <lightning:button class="slds-m-horizontal_small" label="Close" onclick="{! c.closeFocusedTab }"/>
+                        </aura:set>
+                    </aura:if>
+                    <!-- <lightning:button class="slds-m-horizontal_small" label="Convert" onclick="{! c.convert }" disabled="{!!v.isAllowedToConvert}"/> -->
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <lightning:accordion allowMultipleSectionsOpen="true" aura:id="accordion" activeSectionName="{!v.activeSectionName}" onsectiontoggle="{!c.handleToggle}">
+                    <lightning:accordionSection name="A" label="Convert Lead">
+                        <div class="slds-grid slds-wrap slds-form_horizontal">
+                            <div class="slds-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-p-horizontal_small">
+                                <aura:if isTrue="{!v.isEdit}">
+                                    <lightning:input aura:id="validate_input" type="date" value="{!v.leadInfo.COM_Expected_Submit_Date__c}" name="Expected Submit Date" label="Expected Submit Date" required="{!v.requiredExpectedDate}"/>
+                                    <lightning:input aura:id="validate_input" type="date" value="{!v.leadInfo.COM_Expected_Complete_Date__c}" name="Expected Complete Date" label="Expected Complete Date" required="{!v.requiredExpectedDate}"/>
+                                    <aura:set attribute="else">
+                                        <lightning:input aura:id="validate_input" type="date" value="{!v.leadInfo.COM_Expected_Submit_Date__c}" name="Expected Submit Date" label="Expected Submit Date" disabled="true"/>
+                                        <lightning:input aura:id="validate_input" type="date" value="{!v.leadInfo.COM_Expected_Complete_Date__c}" name="Expected Complete Date" label="Expected Complete Date" disabled="true"/>
+                                    </aura:set>
+                                </aura:if>
+                                </div>
+                            <div class="slds-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-p-horizontal_small">
+                                <aura:if isTrue="{!v.isEdit}">
+                                    <lightning:select name="Contact Status" label="Contact Status" value="{!v.leadInfo.Status}" onchange="{!c.onchangeContactStatus}">
+                                        <aura:iteration items="{!v.contactStatusPicklist}" var="item">
+                                            <option value="{!item.value}">{!item.label}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                    <aura:if isTrue="{!v.leadInfo.Status == 'Uncontact'}">
+                                        <lightning:select name="Uncontact Reason" label="Uncontact Reason" value="{!v.leadInfo.RTL_Uncontact_reason__c}">
+                                            <aura:iteration items="{!v.uncontactReasonPicklist}" var="item">
+                                                <option value="{!item.value}">{!item.label}</option>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                    </aura:if>
+                                    <aura:set attribute="else">
+                                        <lightning:input name="Contact Status" label="Contact Status" value="{!v.leadInfo.Status}" disabled="true"/>
+                                        <aura:if isTrue="{!v.leadInfo.Status == 'Uncontact'}">
+                                            <lightning:input name="Uncontact Reason" label="Uncontact Reason" value="{!v.leadInfo.RTL_Uncontact_reason__c}" disabled="true"/>
+                                        </aura:if>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-p-horizontal_small">
+                                <lightning:input label="Completion Code" name="Completion Code" value="{!v.leadInfo.COM_Complete_Code__c}" disabled="true"/>
+                            </div>
+                        </div>
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="B" label="Campaign Product">
+                        <aura:if isTrue="{!v.campaignProducts.length > 0}">
+                            <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-max-medium-table_stacked-horizontal">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Product Name">PRODUCT NAME</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Opportunity Type">OPPORTUNITY TYPE</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Offer Result"> 
+                                                <aura:if isTrue="{!and(v.requireOfferResult,v.isEdit)}">
+                                                    <lightning:formattedText value="*" style="color: red;"/>
+                                                </aura:if>
+                                                OFFER RESULT
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Unqualified Reason">UNQUALIFIED REASON</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Sub Unqualified Reason">SUB UNQUALIFIED REASON</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Other Reason">OTHER REASON</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Amount">AMOUNT</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Link To Opporunity">Link To Opporunity</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.campaignProducts}" var="item" indexVar="index">
+                                        <tr>
+                                            <td data-label="Product Name">
+                                                <div class="slds-truncate" title="{!item.Name}">
+                                                    <a name="{!item.Id}" href="javascript:void(0)" onclick="{!c.openNewSubTab}">{!item.Product__r.Name}</a>
+                                                </div>
+                                            </td>
+                                            <td data-label="Opporunity Type">
+                                                <div class="slds-truncate" title="Credit">{!item.Opportunity_Type__c}</div>
+                                            </td>
+                                            <td data-label="Offer Result">
+                                                <div class="no-label">
+                                                    <aura:if isTrue="{!v.isEdit}">
+                                                        <lightning:select name="{!item.Id}" value="{!item.COM_Offer_Result__c}" onchange="{!c.onChangeCampaignOfferResult}" required="{!v.requireOfferResult}" disabled="{!v.isCanEditOfferResult}">
+                                                            <aura:iteration items="{!v.offerResultPicklist}" var="var">
+                                                                <option value="{!var}">{!var}</option>
+                                                            </aura:iteration>
+                                                        </lightning:select>
+                                                        <aura:set attribute="else">
+                                                            <lightning:input name="{!item.Id}" value="{!item.COM_Offer_Result__c}"  disabled="true" />
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </div>
+                                            </td>
+                                            <td data-label="Unqualified Reason">
+                                                <aura:if isTrue="{!and(item.COM_Offer_Result__c != 'Interested', item.COM_Offer_Result__c != 'None')}">
+                                                    <div class="no-label">
+                                                        <aura:if isTrue="{!v.isEdit}">
+                                                            <lightning:select name="{!item.Id}" value="{!item.COM_Unqualified_Reason__c}" onchange="{!c.onChangeCampaignUnqualReason}" disabled="{!v.isCanEditOfferResult}">
+                                                                <aura:iteration items="{!item.unqualifiedReasonPicklist}" var="var">
+                                                                    <option value="{!var}">{!var}</option>
+                                                                </aura:iteration>
+                                                            </lightning:select>
+                                                            <aura:set attribute="else">
+                                                                <lightning:input name="{!item.Id}" value="{!item.COM_Unqualified_Reason__c}"  disabled="true" />
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                            </td>
+                                            <td data-label="Sub Unqualified Reason">
+                                                <aura:if isTrue="{!and(item.COM_Offer_Result__c != 'Interested', item.COM_Offer_Result__c != 'None')}">
+                                                    <div class="no-label">
+                                                        <aura:if isTrue="{!v.isEdit}">
+                                                            <lightning:select name="{!item.Id}" value="{!item.COM_Sub_Unqualified_Reason__c}" disabled="{!v.isCanEditOfferResult}">
+                                                                <aura:iteration items="{!item.subUnqualifiedReasonPicklist}" var="var">
+                                                                    <option value="{!var}">{!var}</option>
+                                                                </aura:iteration>
+                                                            </lightning:select>
+                                                            <aura:set attribute="else">
+                                                                <lightning:input name="{!item.Id}" value="{!item.COM_Sub_Unqualified_Reason__c}" disabled="true" />
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                            </td>
+                                            <td data-label="Other Reason">
+                                                <div class="no-label">
+                                                    <lightning:input type="text" variant="label-hidden" value="{!item.COM_Other_Reason__c}" class="input-align-right" disabled="{! !v.isEdit}"/>
+                                                </div>
+                                            </td>
+                                            <td data-label="Amount">
+                                                <div class="no-label">
+                                                    <lightning:input type="number" variant="label-hidden" value="{!item.Amount__c}" class="input-align-right" disabled="{! !v.isEdit}"/>
+                                                </div>
+                                            </td>
+                                            <td data-label="Link To Opportunity">
+                                                <c:CustomLookup
+                                                    objectAPIName="Opportunity"
+                                                    IconName="standard:opportunity"
+                                                    hasLastViewedDate="true"
+                                                    isSortNameField="true"
+                                                    selectedRecord="{!item.Opportunity}"
+                                                    condition="{! ' AND StageName IN (\'Analysis\', \'Develop &amp; Propose Solution\', \'Follow Up\') AND AccountId = \'' + item.Related_Account__c + '\'' }"
+                                                    disabled="{! !v.isCommercialAcc}"
+                                                />
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </aura:if>
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="C" label="Cross-Sell Product">
+                        <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-max-medium-table_stacked-horizontal">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Product Name">PRODUCT NAME</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Opportunity Type">OPPORTUNITY TYPE</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Offer Result">OFFER RESULT</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Unqualified Reason">UNQUALIFIED REASON</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Sub Unqualified Reason">SUB UNQUALIFIED REASON</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Other Reason">OTHER REASON</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Amount">AMOUNT</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Link To Opporunity">Link To Opporunity</div>
+                                    </th>
+                                    <aura:if isTrue="{!v.isEdit}">
+                                        <th scope="col" width="3%">
+                                            <lightning:buttonIcon iconName="utility:add" variant="bare" size="medium" alternativeText="Add Product" onclick="{!c.addCrossSellProduct}" disabled="{!v.campaignProducts.length == 0}"/>
+                                        </th>
+                                    </aura:if>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.crossSellProducts}" var="item" indexVar="index">
+                                    <tr>
+                                        <td data-label="Product Name">
+                                            <div class="slds-truncate" title="{!item.Name}">
+                                                <a name="{!item.Id}" href="javascript:void(0)" onclick="{!c.editCrossSellProduct}">{!item.Product__r.Name}</a>
+                                            </div>
+                                        </td>
+                                        <td data-label="Opporunity Type">
+                                            <div class="slds-truncate" title="Credit">{!item.Opportunity_Type__c}</div>
+                                        </td>
+                                        <td data-label="Offer Result">
+                                            <div class="no-label">
+                                                <lightning:select name="{!item.Id}" value="{!item.COM_Offer_Result__c}" disabled="true">
+                                                    <aura:iteration items="{!v.offerResultPicklist}" var="var">
+                                                        <option value="{!var}">{!var}</option>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                            </div>
+                                        </td>
+                                        <td data-label="Unqualified Reason">
+                                        </td>
+                                        <td data-label="Sub Unqualified Reason">
+                                        </td>
+                                        <td data-label="Other Reason">
+                                            <div class="no-label">
+                                                <lightning:input type="text" variant="label-hidden" value="{!item.COM_Other_Reason__c}" class="input-align-right" disabled="{! !v.isEdit}"/>
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div class="no-label">
+                                                <lightning:input type="number" variant="label-hidden" value="{!item.Amount__c}" class="input-align-right" disabled="{! !v.isEdit}"/>
+                                            </div>
+                                        </td>
+                                        <td data-label="Link To Opportunity">
+                                            <c:CustomLookup
+                                                objectAPIName="Opportunity"
+                                                IconName="standard:opportunity"
+                                                hasLastViewedDate="true"
+                                                isSortNameField="true"
+                                                selectedRecord="{!item.Opportunity}"
+                                                condition="{! ' AND StageName IN (\'Analysis\', \'Develop &amp; Propose Solution\', \'Follow Up\') AND AccountId = \'' + item.Related_Account__c + '\'' }"
+                                                disabled="{! !v.isCommercialAcc}"
+                                            />
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                    </lightning:accordionSection>
+                </lightning:accordion>
+            </div>
+        </div>
+    </body>
+
+    <div aura:id="backdrop" class="slds-backdrop"></div>
+    <section aura:id="crossSellModal" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-modal_medium" style="z-index: 9007;">
+        <aura:if isTrue="{!v.activeCrossSellModal}">
+            <c:CommercialEditCrossSellProduct productId="{!v.selectedCrossSellId}" isEdit="{!v.isEditCrossSell}" leadId="{!v.recordId}" />
+        </aura:if>
+    </section>
+</aura:component>

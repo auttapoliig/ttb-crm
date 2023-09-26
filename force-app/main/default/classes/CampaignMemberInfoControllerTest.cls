@@ -70,27 +70,30 @@ public with sharing class CampaignMemberInfoControllerTest {
         outCome.Uncontact_Reason__c = ''; 
         outCome.Reason__c = ''; 
         outCome.Offer_Result__c = 'Interested'; 
-        outCome.Avaya_Completion_Code__c = 'YES Complete Sale'; 
+        outCome.Avaya_Completion_Code__c = 'YES'; 
         outCome.IsActive__c = true; 
         outCome.Retail_Product_Group__c = 'Loan';
+        outCome.Screen_type__c = 'Outbound Campaign Member';
         
         Business_Outcome_Mapping__c outCome2 = new Business_Outcome_Mapping__c();
         outCome2.Contact_Status__c = 'Uncontact'; 
         outCome2.Uncontact_Reason__c = 'ลูกค้าไม่รับสาย'; 
         outCome2.Reason__c = ''; 
         outCome2.Offer_Result__c = ''; 
-        outCome2.Avaya_Completion_Code__c = 'NANS No Answer'; 
+        outCome2.Avaya_Completion_Code__c = 'NANS'; 
         outCome2.IsActive__c = true; 
-        
+        outCome2.Screen_type__c = 'Outbound Campaign Member';
+
         Business_Outcome_Mapping__c outCome3 = new Business_Outcome_Mapping__c();
         outCome3.Contact_Status__c = 'Contact'; 
         outCome3.Uncontact_Reason__c = ''; 
         outCome3.Reason__c = 'Loan_2_โอนต่างธนาคาร-ช่วงเวลาที่ระบบยังไม่ดึงบัญชี'; 
         outCome3.Offer_Result__c = 'Not Interested'; 
-        outCome3.Avaya_Completion_Code__c = 'NIN Not Interest - Recall'; 
+        outCome3.Avaya_Completion_Code__c = 'NIN_Recall'; 
         outCome3.IsActive__c = true;
         outCome3.Retail_Product_Group__c = 'Loan';
-        
+        outCome3.Screen_type__c = 'Outbound Campaign Member';
+
         outComeList.add(outCome);
         outComeList.add(outCome2);
         outComeList.add(outCome3);
@@ -120,6 +123,10 @@ public with sharing class CampaignMemberInfoControllerTest {
         
         Test.StopTest();
         CampaignMemberInfoController.getCampaign(cm.Id);
+        CampaignMemberInfoController.getCallBack(cm.Id);
+        CampaignMemberInfoController.getCrossSell(cm.Id);
+        CampaignMemberInfoController.updateProductOfferString(cm,'Test');
+
     }
     
     @isTest static void getCampaignMember() 
@@ -139,7 +146,6 @@ public with sharing class CampaignMemberInfoControllerTest {
         
         Test.StopTest();
         CampaignMemberInfoController.getCampaignMember(cm.Id);
-        CampaignMemberInfoController.checkUpperPicklistValue('CampaignMember','RTL_Sub_Group_1__c','HIRE PURCHASE');
     }
     
     @isTest static void getFieldLabel() 
@@ -176,6 +182,9 @@ public with sharing class CampaignMemberInfoControllerTest {
     {
         // Implement test code
         CampaignMemberInfoController.getDependentPicklistValues('CampaignMember','RTL_Sub_Group_1__c','Deposit');
+    }
+    @isTest static void checkUpperPicklistValue(){
+        CampaignMemberInfoController.checkUpperPicklistValue('CampaignMember','RTL_Sub_Group_1__c','Deposit');
     }
     
     @isTest static void getCampaignProductWrapperINT06() 
@@ -505,6 +514,170 @@ public with sharing class CampaignMemberInfoControllerTest {
         Test.StopTest();
         CampaignMemberInfoController.saveCampaign(cmWarpList,null,accObj,cm,false,null,leadInput);
     }
+    @isTest static void saveCampaignHaveContactReferred() 
+    {
+        Test.StartTest();
+        
+        Opportunity objOpp = new Opportunity();
+        objOpp.StageName = 'Sales (Loans)';
+        objOpp.recordTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByName().get('Retail Loans').getRecordTypeId();
+        objOpp.RTL_Status__c = 'Open';
+        objOpp.Amount = 12345;
+        objOpp.CloseDate = Date.today().addDays(2);
+        objOpp.Expected_submit_date__c = Date.today();
+                
+        // Implement test code
+        Account acc = [SELECT Id FROM Account LIMIT 1];
+        String accObj = '{"Id" : "'+ acc.Id +'", "Name" : "Test Test"}';
+        Contact ct = [SELECT Id,FirstName,LastName FROM Contact LIMIT 1];
+        
+        Lead ld = [SELECT Id,FirstName,LastName,RTL_ID_Type__c,RTL_Citizen_Id__c,RTL_Mobile_Number__c,OwnerId,Status,IsConverted,RTL_Allow_Convert_Lead__c FROM Lead LIMIT 1];
+        Campaign  masterC = [SELECT Id,isActive FROM Campaign WHERE isActive = true LIMIT 1];
+        
+        String leadInput = '{"Name" : "Test Test", "Mobile_Number_PE__c" : "0987654321", "ID_Type_PE__c" : "Other ID", "ID_Number_PE__c" : "123456789"}';
+
+        RTL_product_master__c retailMasterProducts = new RTL_product_master__c();
+        retailMasterProducts.Active__c = TRUE;
+        retailMasterProducts.Name = 'Loan Product';
+        retailMasterProducts.Product_Code__c = '0001';
+        retailMasterProducts.Product_Group__c = 'Loan';
+        retailMasterProducts.Product_Sub_group__c = 'Personal Loan';
+        insert retailMasterProducts;
+        
+        RTL_Interested_products_c__c insertPrimaryInterestedProduct = new RTL_Interested_products_c__c ( 
+            Branch_Code__c  = '0004',
+            Co_borrower_1__c = 'Test Co Borrower1',
+            Co_borrower_2__c = 'Test Co Borrower2',
+            Collateral_Type__c = 'Test Collateral Type',
+            Debt__c = '5000.23',
+            Income_SE__c = '3000.23',
+            Income_SL__c ='3000.23',
+            Is_Primary__c = TRUE,
+            Lead__c = ld.Id,
+            Loan_Amount__c = '3000.23',
+            product_group__c = retailMasterProducts.Product_Group__c,
+            Product_Name__c = retailMasterProducts.Id,
+            Product_Sub_Group__c = retailMasterProducts.Product_Sub_group__c );
+        insert insertPrimaryInterestedProduct;
+        
+        List<CampaignMemberInfoController.CampaignProductWrapper> cmWarpList = new List<CampaignMemberInfoController.CampaignProductWrapper>();
+        CampaignMemberInfoController.CampaignProductWrapper cmWarp = new CampaignMemberInfoController.CampaignProductWrapper();
+        cmWarp.numberOfProduct = 1;
+        cmWarp.rowNum = 1;
+        cmWarp.productGroup = insertPrimaryInterestedProduct.product_group__c;
+        cmWarp.productSubGroup = insertPrimaryInterestedProduct.Product_Sub_Group__c;
+        cmWarp.productId = insertPrimaryInterestedProduct.Product_Name__c;
+        cmWarp.productName = 'Loan Product';
+        cmWarp.offerResult = 'Referred';
+        cmWarp.offerResultLabel = '';
+        cmWarp.reason = '';
+        cmWarp.stageLabel = '';
+        cmWarp.statusLabel = '';
+        cmWarp.objOpp = objOpp;
+        cmWarp.viewGroup = true;
+        cmWarp.viewSubGroup = true;
+        cmWarp.viewProductName = true;
+        cmWarp.viewOfferResult = true;
+        cmWarp.viewReason = false;
+        cmWarpList.add(cmWarp);
+        
+        CampaignMember cm = new CampaignMember();
+        cm.ContactId = ct.id;
+        cm.CampaignId = masterC.id;
+        cm.RTL_Last_Contact_Status__c = 'New';
+        cm.RTL_Contact_Status__c = 'Contact';
+        cm.RTL_Product_Group_1__c = 'LOAN';
+        cm.RTL_OfferResult_Product_1__c = 'Interested';
+        cm.LeadId = ld.Id;
+        cm.RTL_Marketing_Code__c = 'ABCD12345';
+        cm.Customer__c = acc.Id;
+        insert cm;
+        
+        Test.StopTest();
+        CampaignMemberInfoController.saveCampaign(cmWarpList,null,accObj,cm,false,null,leadInput);
+    }
+    @isTest static void saveCampaignHaveContactNotInterested() 
+    {
+        Test.StartTest();
+        
+        Opportunity objOpp = new Opportunity();
+        objOpp.StageName = 'Sales (Loans)';
+        objOpp.recordTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByName().get('Retail Loans').getRecordTypeId();
+        objOpp.RTL_Status__c = 'Open';
+        objOpp.Amount = 12345;
+        objOpp.CloseDate = Date.today().addDays(2);
+        objOpp.Expected_submit_date__c = Date.today();
+                
+        // Implement test code
+        Account acc = [SELECT Id FROM Account LIMIT 1];
+        String accObj = '{"Id" : "'+ acc.Id +'", "Name" : "Test Test"}';
+        Contact ct = [SELECT Id,FirstName,LastName FROM Contact LIMIT 1];
+        
+        Lead ld = [SELECT Id,FirstName,LastName,RTL_ID_Type__c,RTL_Citizen_Id__c,RTL_Mobile_Number__c,OwnerId,Status,IsConverted,RTL_Allow_Convert_Lead__c FROM Lead LIMIT 1];
+        Campaign  masterC = [SELECT Id,isActive FROM Campaign WHERE isActive = true LIMIT 1];
+        
+        String leadInput = '{"Name" : "Test Test", "Mobile_Number_PE__c" : "0987654321", "ID_Type_PE__c" : "Other ID", "ID_Number_PE__c" : "123456789"}';
+
+        RTL_product_master__c retailMasterProducts = new RTL_product_master__c();
+        retailMasterProducts.Active__c = TRUE;
+        retailMasterProducts.Name = 'Loan Product';
+        retailMasterProducts.Product_Code__c = '0001';
+        retailMasterProducts.Product_Group__c = 'Loan';
+        retailMasterProducts.Product_Sub_group__c = 'Personal Loan';
+        insert retailMasterProducts;
+        
+        RTL_Interested_products_c__c insertPrimaryInterestedProduct = new RTL_Interested_products_c__c ( 
+            Branch_Code__c  = '0004',
+            Co_borrower_1__c = 'Test Co Borrower1',
+            Co_borrower_2__c = 'Test Co Borrower2',
+            Collateral_Type__c = 'Test Collateral Type',
+            Debt__c = '5000.23',
+            Income_SE__c = '3000.23',
+            Income_SL__c ='3000.23',
+            Is_Primary__c = TRUE,
+            Lead__c = ld.Id,
+            Loan_Amount__c = '3000.23',
+            product_group__c = retailMasterProducts.Product_Group__c,
+            Product_Name__c = retailMasterProducts.Id,
+            Product_Sub_Group__c = retailMasterProducts.Product_Sub_group__c );
+        insert insertPrimaryInterestedProduct;
+        
+        List<CampaignMemberInfoController.CampaignProductWrapper> cmWarpList = new List<CampaignMemberInfoController.CampaignProductWrapper>();
+        CampaignMemberInfoController.CampaignProductWrapper cmWarp = new CampaignMemberInfoController.CampaignProductWrapper();
+        cmWarp.numberOfProduct = 1;
+        cmWarp.rowNum = 1;
+        cmWarp.productGroup = insertPrimaryInterestedProduct.product_group__c;
+        cmWarp.productSubGroup = insertPrimaryInterestedProduct.Product_Sub_Group__c;
+        cmWarp.productId = insertPrimaryInterestedProduct.Product_Name__c;
+        cmWarp.productName = 'Loan Product';
+        cmWarp.offerResult = 'Not Interested';
+        cmWarp.offerResultLabel = '';
+        cmWarp.reason = '';
+        cmWarp.stageLabel = '';
+        cmWarp.statusLabel = '';
+        cmWarp.objOpp = objOpp;
+        cmWarp.viewGroup = true;
+        cmWarp.viewSubGroup = true;
+        cmWarp.viewProductName = true;
+        cmWarp.viewOfferResult = true;
+        cmWarp.viewReason = false;
+        cmWarpList.add(cmWarp);
+        
+        CampaignMember cm = new CampaignMember();
+        cm.ContactId = ct.id;
+        cm.CampaignId = masterC.id;
+        cm.RTL_Last_Contact_Status__c = 'New';
+        cm.RTL_Contact_Status__c = 'Contact';
+        cm.RTL_Product_Group_1__c = 'LOAN';
+        cm.RTL_OfferResult_Product_1__c = 'Interested';
+        cm.LeadId = ld.Id;
+        cm.RTL_Marketing_Code__c = 'ABCD12345';
+        cm.Customer__c = acc.Id;
+        insert cm;
+        
+        Test.StopTest();
+        CampaignMemberInfoController.saveCampaign(cmWarpList,null,accObj,cm,false,null,leadInput);
+    }
     
     @isTest static void updateCampaignMember1year() 
     {
@@ -750,7 +923,7 @@ public with sharing class CampaignMemberInfoControllerTest {
         cmWarp.rowNum = 1;
         cmWarp.productGroup = insertPrimaryInterestedProduct.product_group__c;
         cmWarp.productSubGroup = insertPrimaryInterestedProduct.Product_Sub_Group__c;
-        cmWarp.productId = insertPrimaryInterestedProduct.Product_Name__c;
+        // cmWarp.productId = insertPrimaryInterestedProduct.Product_Name__c;
         cmWarp.productName = 'Loan Product';
         cmWarp.offerResult = 'Interested';
         cmWarp.offerResultLabel = '';
@@ -778,9 +951,10 @@ public with sharing class CampaignMemberInfoControllerTest {
         cm.RTL_Contact_Status__c = 'Contact';
         cm.LeadId = ld.Id;
         cm.RTL_Marketing_Code__c = 'ABCD12345';     
-      
-        CampaignMemberInfoController.saveCampaign(cmWarpList,null,null,cm,true,crossSell,leadInput);
         
+        CampaignMemberInfoController.createInterestedProduct(ld,cm,cmWarpList);
+        CampaignMemberInfoController.saveCampaign(cmWarpList,null,null,cm,true,crossSell,leadInput);
+
         Test.StopTest();
     }
     
@@ -846,6 +1020,7 @@ public with sharing class CampaignMemberInfoControllerTest {
         
         CampaignMemberInfoController.MergeConvertLeadCAMPAIGN(cm, acc, lead, new List<CampaignMemberInfoController.CampaignProductWrapper>(),
                                                               new List<CampaignMemberInfoController.CampaignProductWrapper>(), crossSellObjs);
+        
         Test.StopTest();
     } 
     
@@ -913,5 +1088,7 @@ public with sharing class CampaignMemberInfoControllerTest {
                                                               new List<CampaignMemberInfoController.CampaignProductWrapper>(), crossSellObjs);
         Test.StopTest();
     } 
-    
+    @isTest static void getUncontactReasonPicklistTest(){
+        CampaignMemberInfoController.getUncontactReasonPicklist('Uncontact');
+    }
 }

@@ -1,32 +1,26 @@
 ({
     init: function (component, event, helper) {
         component.set('v.columns', [
-            { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'cusName' } } },
-            { label: 'Account Number', fieldName: 'Account_Number__c', type: 'text' },
-            {
-                label: 'Due Date', fieldName: 'Dormant_Date__c', type: 'date',
-                cellAttributes:
-                {
-                    class: { fieldName: 'textColor' }
-                }
-            }
+            { label: 'Customer Name', fieldName: 'Id', type: 'url', wrapText: true, typeAttributes: { label: { fieldName: 'Name' } } },
+            { label: 'Account Number', fieldName: 'Account_Number', type: 'text' },
+            { label: 'Due Date', fieldName: 'Dormant_Date', type: 'date', cellAttributes: { class: { fieldName: 'textColor' }}},
+            { label: 'Deposit Amount', fieldName: 'Amount', type: 'text' },
 
         ]);
         var action = component.get('c.getDormantAccount');
+        action.setParams({
+            "queryLimit" : component.get('v.queryLimit') ? component.get('v.queryLimit') : 5
+        })
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 var resp = response.getReturnValue();
                 var finalData = [];
                 var data = resp.data;
                 data.forEach(element => {
-                    var url = element.Customer__r.Id;
-                    element.Id = '/' + url;
-
-                    var cusName = element.Customer__r.Name;
-                    element.cusName = cusName;
+                    element.Id = '/' + element.Id;
 
                     var today = new Date();
-                    var duedate = new Date(element.Dormant_Date__c);
+                    var duedate = new Date(element.Dormant_Date);
                    
                     if (duedate < today) {                      
                         element.textColor = 'redText';
@@ -35,7 +29,7 @@
                     finalData.push(element);
 
                 });
-                component.set('v.data', finalData);
+                component.set("v.data", finalData);
                 component.set('v.reportId', resp.reportId);
             } else {
             }
@@ -43,6 +37,23 @@
 
         })
         $A.enqueueAction(action);
+    },
+
+    handleSort: function(component,event,helper){
+        var sortField = event.getParam("fieldName");
+        var sortDirection = event.getParam("sortDirection");
+        let columns = component.get('v.columns');
+        let sortBy;
+        columns.forEach((e) => {
+            if(e.fieldName == sortField){
+                sortBy = e.sortBy;
+            }
+        })
+   
+        component.set("v.sortBy",sortField);
+        component.set("v.sortDirection",sortDirection);
+         
+        helper.sortData(component, sortBy, sortDirection, null);
     },
 
     openTab: function (component, event, helper) {

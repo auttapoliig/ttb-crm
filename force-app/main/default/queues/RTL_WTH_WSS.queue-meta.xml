@@ -6,13 +6,6 @@
         <roles>
             <role>Pool_WA_TL</role>
         </roles>
-        <users>
-            <user>23749@tmbbank.com</user>
-            <user>22306@tmbbank.com</user>
-            <user>17800@tmbbank.com</user>
-            <user>80403@tmbbank.com</user>
-            <user>80131@tmbbank.com</user>
-        </users>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

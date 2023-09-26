@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Task_Subject__c</fullName>
+    <externalId>false</externalId>
+    <label>Subject</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ปรับปรุง FATCA</fullName>
+                <default>false</default>
+                <label>ปรับปรุง FATCA</label>
+            </value>
+            <value>
+                <fullName>Account Planning</fullName>
+                <default>false</default>
+                <label>Account Planning</label>
+            </value>
+            <value>
+                <fullName>Call</fullName>
+                <default>false</default>
+                <label>Call</label>
+            </value>
+            <value>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+                <label>Send Letter</label>
+            </value>
+            <value>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+                <label>Send Quote</label>
+            </value>
+            <value>
+                <fullName>Task Assignment</fullName>
+                <default>false</default>
+                <label>Task Assignment</label>
+            </value>
+            <value>
+                <fullName>Boost Utilization</fullName>
+                <default>false</default>
+                <label>Boost Utilization</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>New assignment</fullName>
+                <default>false</default>
+                <label>New assignment</label>
+            </value>
+            <value>
+                <fullName>Call customer</fullName>
+                <default>false</default>
+                <label>Call customer</label>
+            </value>
+            <value>
+                <fullName>Send e-mail</fullName>
+                <default>false</default>
+                <label>Send e-mail</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Contacted by Other Channels</fullName>
+                <default>false</default>
+                <label>Contacted by Other Channels</label>
+            </value>
+            <value>
+                <fullName>Portfolio Review</fullName>
+                <default>false</default>
+                <label>Portfolio Review</label>
+            </value>
+            <value>
+                <fullName>Call Visit</fullName>
+                <default>false</default>
+                <label>Call Visit</label>
+            </value>
+            <value>
+                <fullName>BA Life Renewal</fullName>
+                <default>false</default>
+                <label>BA Life Renewal</label>
+            </value>
+            <value>
+                <fullName>BD Greeting</fullName>
+                <default>false</default>
+                <label>BD Greeting</label>
+            </value>
+            <value>
+                <fullName>ติดต่อลูกค้า</fullName>
+                <default>false</default>
+                <label>ติดต่อลูกค้า</label>
+            </value>
+            <value>
+                <fullName>KYC Update</fullName>
+                <default>false</default>
+                <label>KYC Update</label>
+            </value>
+            <value>
+                <fullName>(Pilot) Engagement Call</fullName>
+                <default>false</default>
+                <label>(Pilot) Engagement Call</label>
+            </value>
+            <value>
+                <fullName>(Recheck) Portfolio Review</fullName>
+                <default>false</default>
+                <label>(Recheck) Portfolio Review</label>
+            </value>
+            <value>
+                <fullName>แนะนำตัวเป็นผู้ดูแลลูกค้า</fullName>
+                <default>false</default>
+                <label>แนะนำตัวเป็นผู้ดูแลลูกค้า</label>
+            </value>
+            <value>
+                <fullName>คัด นัด พบ</fullName>
+                <default>false</default>
+                <label>คัด นัด พบ</label>
+            </value>
+            <value>
+                <fullName>15/9</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>15/9</label>
+            </value>
+            <value>
+                <fullName>BA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BA</label>
+            </value>
+            <value>
+                <fullName>BA15/9</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BA15/9</label>
+            </value>
+            <value>
+                <fullName>BALife</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BALife</label>
+            </value>
+            <value>
+                <fullName>Ba life</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ba life</label>
+            </value>
+            <value>
+                <fullName>Ba ปู</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ba ปู</label>
+            </value>
+            <value>
+                <fullName>Birthday Greeting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Birthday Greeting</label>
+            </value>
+            <value>
+                <fullName>C2G</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>C2G</label>
+            </value>
+            <value>
+                <fullName>Home refinance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home refinance</label>
+            </value>
+            <value>
+                <fullName>HomeLoan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HomeLoan</label>
+            </value>
+            <value>
+                <fullName>Introduce BM as New Relationship Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Introduce BM as New Relationship Manager</label>
+            </value>
+            <value>
+                <fullName>Introduce PWA as New Relationship Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Introduce PWA as New Relationship Manager</label>
+            </value>
+            <value>
+                <fullName>MF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MF</label>
+            </value>
+            <value>
+                <fullName>MF เข้าพบ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MF เข้าพบ</label>
+            </value>
+            <value>
+                <fullName>October</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>October</label>
+            </value>
+            <value>
+                <fullName>SME</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SME</label>
+            </value>
+            <value>
+                <fullName>TD Maturity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TD Maturity</label>
+            </value>
+            <value>
+                <fullName>Top Up</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Top Up</label>
+            </value>
+            <value>
+                <fullName>Urgent!!: Contact Top Loss Customers</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Urgent!!: Contact Top Loss Customers</label>
+            </value>
+            <value>
+                <fullName>follow</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>follow</label>
+            </value>
+            <value>
+                <fullName>hl</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>hl</label>
+            </value>
+            <value>
+                <fullName>refinance home</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>refinance home</label>
+            </value>
+            <value>
+                <fullName>twl</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>twl</label>
+            </value>
+            <value>
+                <fullName>wl</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>wl</label>
+            </value>
+            <value>
+                <fullName>กองทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>กองทุน</label>
+            </value>
+            <value>
+                <fullName>การโทรศัพท์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>การโทรศัพท์</label>
+            </value>
+            <value>
+                <fullName>ขอดูรายละเอียดก่อน แต่สนใจ TWL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขอดูรายละเอียดก่อน แต่สนใจ TWL</label>
+            </value>
+            <value>
+                <fullName>ขายRMF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ขายRMF</label>
+            </value>
+            <value>
+                <fullName>งานใหม่</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>งานใหม่</label>
+            </value>
+            <value>
+                <fullName>ติดตาม RMF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ติดตาม RMF</label>
+            </value>
+            <value>
+                <fullName>ติดตาม TWL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ติดตาม TWL</label>
+            </value>
+            <value>
+                <fullName>นัดทำประกัน opd</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดทำประกัน opd</label>
+            </value>
+            <value>
+                <fullName>นัดพบลูกค้า Sign Wealth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดพบลูกค้า Sign Wealth</label>
+            </value>
+            <value>
+                <fullName>นัดพบวันจันทร์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดพบวันจันทร์</label>
+            </value>
+            <value>
+                <fullName>นัดหมาย</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดหมาย</label>
+            </value>
+            <value>
+                <fullName>นัดเสนอกองทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดเสนอกองทุน</label>
+            </value>
+            <value>
+                <fullName>นัดเสนอขายกองทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นัดเสนอขายกองทุน</label>
+            </value>
+            <value>
+                <fullName>นำเสนอประกันชีวิต</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>นำเสนอประกันชีวิต</label>
+            </value>
+            <value>
+                <fullName>บุญถิ่น ภักดีสุวรรณ์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>บุญถิ่น ภักดีสุวรรณ์</label>
+            </value>
+            <value>
+                <fullName>บ้าน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>บ้าน</label>
+            </value>
+            <value>
+                <fullName>ประกันชีวิต</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ประกันชีวิต</label>
+            </value>
+            <value>
+                <fullName>ปิดการขาย TWL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ปิดการขาย TWL</label>
+            </value>
+            <value>
+                <fullName>รีไฟแนนซ์บ้าน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>รีไฟแนนซ์บ้าน</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าเป้าหมาย</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ลูกค้าเป้าหมาย</label>
+            </value>
+            <value>
+                <fullName>วันเข้าพบ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>วันเข้าพบ</label>
+            </value>
+            <value>
+                <fullName>สนใจ C2G</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สนใจ C2G</label>
+            </value>
+            <value>
+                <fullName>สนใจบัตรเครดิต</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สนใจบัตรเครดิต</label>
+            </value>
+            <value>
+                <fullName>สินเชื่อบ้าน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>สินเชื่อบ้าน</label>
+            </value>
+            <value>
+                <fullName>ส่งอีเมล์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ส่งอีเมล์</label>
+            </value>
+            <value>
+                <fullName>อัพเดทข้อมูลการลงทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อัพเดทข้อมูลการลงทุน</label>
+            </value>
+            <value>
+                <fullName>อีเมล: ขอนำเสนอสินเชื่อสำหรับธุรกิจ คุณบุญชัย เอื้ออัครวงษ์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อีเมล: ขอนำเสนอสินเชื่อสำหรับธุรกิจ คุณบุญชัย เอื้ออัครวงษ์</label>
+            </value>
+            <value>
+                <fullName>อีเมล: รายละเอียดการขอวงเงินสินเชื่อบ้าน TMB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อีเมล: รายละเอียดการขอวงเงินสินเชื่อบ้าน TMB</label>
+            </value>
+            <value>
+                <fullName>อีเมล: รายละเอียดข้อมูลผลิตภัณฑ์ทางการเงินสำหรับข้าราชการทหาร</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อีเมล: รายละเอียดข้อมูลผลิตภัณฑ์ทางการเงินสำหรับข้าราชการทหาร</label>
+            </value>
+            <value>
+                <fullName>อีเมล: รายละเอียดวงเงินการขอกู้สินเชื่อบ้าน TMB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อีเมล: รายละเอียดวงเงินการขอกู้สินเชื่อบ้าน TMB</label>
+            </value>
+            <value>
+                <fullName>อีเมล: รายละเอียดสินเชื่อบ้าน TMB Re-Finance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อีเมล: รายละเอียดสินเชื่อบ้าน TMB Re-Finance</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>เสนอ WB &amp; TWL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอ WB &amp; TWL</label>
+            </value>
+            <value>
+                <fullName>เสนอกองทุน LTF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอกองทุน LTF</label>
+            </value>
+            <value>
+                <fullName>เสนอขาย กองทุน</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอขาย กองทุน</label>
+            </value>
+            <value>
+                <fullName>เสนอประกันภัยรถยนต์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>เสนอประกันภัยรถยนต์</label>
+            </value>
+            <value>
+                <fullName>โทร.ขอนัดเข้าพบ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทร.ขอนัดเข้าพบ</label>
+            </value>
+            <value>
+                <fullName>โทรตาม</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรตาม</label>
+            </value>
+            <value>
+                <fullName>โทรติดตาม</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรติดตาม</label>
+            </value>
+            <value>
+                <fullName>โทรติดต่อ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรติดต่อ</label>
+            </value>
+            <value>
+                <fullName>โทรติดต่อลูกค้า</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรติดต่อลูกค้า</label>
+            </value>
+            <value>
+                <fullName>โทรศัพย์</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรศัพย์</label>
+            </value>
+            <value>
+                <fullName>โทรหา</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรหา</label>
+            </value>
+            <value>
+                <fullName>โทรแจ้งลูกค้า</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>โทรแจ้งลูกค้า</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

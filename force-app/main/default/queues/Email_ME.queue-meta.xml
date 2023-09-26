@@ -5,20 +5,17 @@
     <name>Email - ME</name>
     <queueMembers>
         <users>
+            <user>50551@tmbbank.com</user>
             <user>33731@tmbbank.com</user>
             <user>41123@tmbbank.com</user>
             <user>41640@tmbbank.com</user>
             <user>23240@tmbbank.com</user>
             <user>41995@tmbbank.com</user>
-            <user>17203@tmbbank.com</user>
             <user>06478@tmbbank.com</user>
             <user>42526@tmbbank.com</user>
             <user>41639@tmbbank.com</user>
             <user>02821@tmbbank.com</user>
-            <user>48451@tmbbank.com</user>
-            <user>34424@tmbbank.com</user>
             <user>44620@tmbbank.com</user>
-            <user>22155@tmbbank.com</user>
         </users>
     </queueMembers>
     <queueRoutingConfig>Assign_Case_to_Agent</queueRoutingConfig>

@@ -50,7 +50,7 @@ trigger CampaignMemberTrigger on CampaignMember (before insert, after insert, af
             */
         }
     }
-    
+ 
     for (Lead l : [select id,Recordtype.name from Lead where id in: setLeadID and Recordtype.Name Like: 'Commercial%'])
     {
         if (mapCampaignMember.get(l.id) != null) ListCommercial.add(mapCampaignMember.get(l.id));

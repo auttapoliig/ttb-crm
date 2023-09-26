@@ -4,14 +4,14 @@
     <name>Live Chat - TMB</name>
     <queueMembers>
         <users>
-            <user>49113@tmbbank.com</user>
-            <user>49905@tmbbank.com</user>
-            <user>28315@tmbbank.com</user>
+            <user>47473@tmbbank.com</user>
             <user>41995@tmbbank.com</user>
             <user>47084@tmbbank.com</user>
             <user>47498@tmbbank.com</user>
             <user>48464@tmbbank.com</user>
+            <user>45006@tmbbank.com</user>
             <user>41996@tmbbank.com</user>
+            <user>33150@tmbbank.com</user>
         </users>
     </queueMembers>
     <queueRoutingConfig>Assign_Chat_to_Agent</queueRoutingConfig>

@@ -2,13 +2,31 @@ public with sharing class CampaignMemberToALSchedule implements Schedulable {
     public CampaignMemberToALSchedule() {
 
     }
-
+    // public static Integer CALLOUTLIMIT{
+    //     get{
+    //         Integer DEFAULT_LIMIT = 99;
+    //         if(CALLOUTLIMIT == null){
+    //             try{
+    //                 CALLOUTLIMIT = DEFAULT_LIMIT;
+    //                 List<App_Config__mdt> alcalloutlimit = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'AL Batch Callout Limit'];           
+    //                     if (alcalloutlimit != null && alcalloutlimit.size() > 0) {
+    //                         CALLOUTLIMIT = Integer.valueOf(alcalloutlimit.get(0).Value__c);
+    //                     }           
+                        
+    //                 }catch( Exception e ){
+    //                     CALLOUTLIMIT = DEFAULT_LIMIT;
+    //                 }
+    //         }
+    //         return CALLOUTLIMIT;
+            
+    //     }set;
+    // }
     public void execute(SchedulableContext SC){
 
         List<Campaignmember> listCampaign = [SELECT Id FROM Campaignmember WHERE RTL_Contact_Method__c =: 'AL Sales' AND RTL_Is_Interface_Success__c =: false 
-                                            AND RTL_Is_Send_To_HPAP__c  =: false AND createReferDate__c != null AND createReferDate__c >= :Datetime.now().addDays(-7)];
+                                            AND RTL_Is_Send_To_HPAP__c  =: false AND LastModifiedDate > :Datetime.now().addDays(-7)];
 
-        List<String> campaignId = new List<String>();
+        List<String> campagignID = new List<String>();
         if(listCampaign.size() > 0){
             for(Campaignmember cm : listCampaign){
                 campaignId.add(cm.Id);

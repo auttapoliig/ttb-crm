@@ -61,49 +61,80 @@ public with sharing class UploadCSVRunBatchController {
                 TagCaseBatch tcb = new TagCaseBatch(listCase);
                 Database.executeBatch(tcb);
             }
-            // if(objectName == 'Campaign Member'){
-            //     List<String> listCampaignID = new List<String>();
-            //     List<Task> listTask = [SELECT Id, Call_Log_ID__c, Related_Object__c, LastModifiedDate FROM Task WHERE Call_Log_ID__c in :listErrorDasQuery];
-            //     for(Task t : listTask){
-            //         listCampaignID.add(t.Related_Object__c);
-            //     }
+            if(objectName == 'Campaign Member'){
+                Set<String> listCampaignID = new Set<String>();
+                Set<String> listMarketingCode = new Set<String>();
+                List<Task> listTask = [SELECT Id, Call_Log_ID__c, Related_Object__c, LastModifiedDate FROM Task WHERE Call_Log_ID__c in :listErrorDasQuery];
+                for(Task t : listTask){
+                    String relatedObject = t.Related_Object__c;
+                    if (relatedObject.startsWith('00v')) {
+                        listCampaignID.add(relatedObject);
+                    } else {
+                        listMarketingCode.add(relatedObject);
+                    }
+                }
 
-            //     System.debug('listTask: '+ listTask);
-            //     System.debug('listCampaignID: '+ listCampaignID);
-            //     List<CampaignMember> campaignList = [SELECT Id, RTL_Web_Unique_ID__c, RTL_Marketing_Code__c,
-            //     RTL_Campaign_Product_1__r.Name, RTL_OfferResult_Product_1__c, RTL_Reason_1__c,
-            //     RTL_Campaign_Product_2__r.Name, RTL_OfferResult_Product_2__c, RTL_Reason_2__c,
-            //     RTL_Campaign_Product_3__r.Name, RTL_OfferResult_Product_3__c, RTL_Reason_3__c,
-            //     RTL_Campaign_Product_4__r.Name, RTL_OfferResult_Product_4__c, RTL_Reason_4__c
-            //     FROM CampaignMember
-            //     WHERE Id IN :listCampaignID 
-            //     ORDER BY CreatedDate ASC];
+                if (!listMarketingCode.isEmpty()) {
+                    for (CampaignMember cmRes : [SELECT Id FROM CampaignMember WHERE (RTL_Marketing_Code__c in :listMarketingCode or RTL_Web_Unique_ID__c in :listMarketingCode)]) {
+                        listCampaignID.add(cmRes.Id);
+                    }
+                }
 
-            //     System.debug('campaignList: '+ campaignList);
-            //     TagBODBatch tbb = new TagBODBatch(campaignList);
-            //     Database.executeBatch(tbb);
-            // }
-            // if(objectName == 'Lead'){
-            //     List<String> listLeadID = new List<String>();
-            //     List<Task> listTask = [SELECT Id, Call_Log_ID__c, Related_Object__c, LastModifiedDate FROM Task WHERE Call_Log_ID__c in :listErrorDasQuery];
-            //     for(Task t : listTask){
-            //         listLeadID.add(t.Related_Object__c);
-            //     }
+                System.debug('listTask: '+ listTask);
+                System.debug('listCampaignID: '+ listCampaignID);
+                List<CampaignMember> campaignList = [SELECT Id, RTL_Web_Unique_ID__c, RTL_Marketing_Code__c,
+                RTL_Campaign_Product_1__r.Name, RTL_OfferResult_Product_1__c, RTL_Reason_1__c,
+                RTL_Campaign_Product_2__r.Name, RTL_OfferResult_Product_2__c, RTL_Reason_2__c,
+                RTL_Campaign_Product_3__r.Name, RTL_OfferResult_Product_3__c, RTL_Reason_3__c,
+                RTL_Campaign_Product_4__r.Name, RTL_OfferResult_Product_4__c, RTL_Reason_4__c
+                FROM CampaignMember
+                WHERE Id IN :listCampaignID 
+                ORDER BY CreatedDate ASC];
 
-            //     System.debug('listTask: '+ listTask);
-            //     System.debug('listLeadID: '+ listLeadID);
+                System.debug('campaignList: '+ campaignList);
+                TagBODBatch tbb = new TagBODBatch(campaignList);
+                Database.executeBatch(tbb);
+            }
+            if(objectName == 'Lead'){
+                List<String> listLeadID = new List<String>();
+                List<Task> listTask = [SELECT Id, Call_Log_ID__c, Related_Object__c, LastModifiedDate FROM Task WHERE Call_Log_ID__c in :listErrorDasQuery];
+                for(Task t : listTask){
+                    listLeadID.add(t.Related_Object__c);
+                }
 
-            //     List<Lead> listLead = [SELECT Id, Status,
-            //     (SELECT Id, Name, COM_Offer_Result__c, COM_Unqualified_Reason__c FROM Product_Interest__r)
-            //     FROM Lead 
-            //     WHERE Id IN  :listLeadID 
-            //     AND Recordtype.Name = 'Commercial Lead' 
-            //     ORDER BY CreatedDate ASC];
-            //     System.debug('listLead: '+ listLead);
+                System.debug('listTask: '+ listTask);
+                System.debug('listLeadID: '+ listLeadID);
 
-            //     TagLeadBatch tlb = new TagLeadBatch(listLead);
-            //     Database.executeBatch(tlb);
-            // }
+                List<Lead> listLead = [SELECT Id, Status,
+                (SELECT Id, Name, COM_Offer_Result__c, COM_Unqualified_Reason__c FROM Product_Interest__r)
+                FROM Lead 
+                WHERE Id IN  :listLeadID 
+                AND Recordtype.Name = 'Commercial Lead' 
+                ORDER BY CreatedDate ASC];
+                System.debug('listLead: '+ listLead);
+
+                TagLeadBatch tlb = new TagLeadBatch(listLead);
+                Database.executeBatch(tlb);
+            }
+            if(objectName == 'Referral'){
+                List<String> listReferralID = new List<String>();
+                List<Task> listTask = [SELECT Id, Call_Log_ID__c, Related_Object__c, LastModifiedDate FROM Task WHERE Call_Log_ID__c in :listErrorDasQuery];
+                for(Task t : listTask){
+                    listReferralID.add(t.Related_Object__c);
+                }
+
+                System.debug('listTask: '+ listTask);
+                System.debug('listReferralID: '+ listReferralID);
+
+                List<RTL_Referral__c> listLead = [SELECT Id, Name, RTL_Interested_Product__c, RTL_Stage__c, RTL_Reason__c 
+                FROM RTL_Referral__c 
+                WHERE Id IN  :listReferralID 
+                ORDER BY CreatedDate ASC];
+                System.debug('listReferralID: '+ listReferralID);
+
+                TagReferralBatch trb = new TagReferralBatch(listLead);
+                Database.executeBatch(trb);
+            }
         }
 
         if(listErrorImport.size() > 0){

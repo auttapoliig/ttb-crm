@@ -324,18 +324,14 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
 
             insert opportunityHPAP;
             //Check update campaign Member
-            String external_ref_Id = '';
-            Boolean isUpdateCM = false;
             if(opportunityHPAP.RTL_External_Ref_ID__c != null && opportunityHPAP.RTL_External_Ref_ID__c != ''){
                 System.debug('RTL_External_Ref_ID__c----->' + opportunityHPAP.RTL_External_Ref_ID__c);
                 if(!opportunityHPAP.RTL_External_Ref_ID__c.startsWith('a2S')){
                     String cm_external_ref_Id = opportunityHPAP.RTL_External_Ref_ID__c;
-                    external_ref_Id = cm_external_ref_Id;
                     if(!opportunityHPAP.RTL_External_Ref_ID__c.startsWith('00v')){
                         List<CampaignMember> cm = [SELECT Id FROM CampaignMember WHERE RTL_Marketing_code__c =: opportunityHPAP.RTL_External_Ref_ID__c OR RTL_Web_Unique_ID__c =: opportunityHPAP.RTL_External_Ref_ID__c ORDER BY LASTMODIFIEDDATE DESC LIMIT 1];
                         if(cm.size ()> 0 ){
                             cm_external_ref_Id = cm[0].Id;
-                            external_ref_Id = cm_external_ref_Id;
                         }
                     }
                     stampOpptyToCampaignMember(opportunityHPAP.Id,cm_external_ref_Id);
@@ -605,7 +601,7 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
             if(isSuccess)
             {
                 if(((String)requestBodyMap.get('Id')).startsWith('a2S'))
-                {
+                {                
                     referUpdate.Id = (String)requestBodyMap.get('Id');
                     referUpdate.RTL_Ws_Stage__c = requestBodyMap.containsKey('StageName') ? (String)requestBodyMap.get('StageName') : '';
                     referUpdate.RTL_Status__c = requestBodyMap.containsKey('RTL_Status__c') ? (String)requestBodyMap.get('RTL_Status__c') : '';
@@ -640,6 +636,7 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
                     
                     stampReferToCampaignMember(referUpdate.Id);
                     update referUpdate;
+                    stampReferToCampaignMember(referUpdate.Id);
                 }
                 else if(((String)requestBodyMap.get('Id')).startsWith('00v')){
                     campaignMemberUpdate.Id = (String)requestBodyMap.get('Id');
@@ -745,6 +742,7 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
                     opportunityReferUpdate.Corebank_Sales_Manager_Head__c = requestBodyMap.containsKey('RTL_Group_Head_Name__c') ? (String)requestBodyMap.get('RTL_Group_Head_Name__c') : '';
 
                     update opportunityReferUpdate;
+                    stampOpptyToCampaignMember(opportunityReferUpdate.Id,null);
                 }else{
                     String mktcodeOrWebunique = ((String)requestBodyMap.get('Id'));
                     System.debug('mktcodeOrWebunique Id : ' + mktcodeOrWebunique );
@@ -961,7 +959,6 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
 
             if(isUpdateCM)
             {
-                campaignMem[0].RTL_isBatchUpdateCampaignMember__c = true;
                 update campaignMem;
                 // opportunityHPAP.Marketing_Code__c = campaignMem.get(0).RTL_Marketing_Code__c;
                 // update opportunityHPAP;
@@ -1019,7 +1016,6 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
 
             if(isUpdateCM)
             {
-                campaignMem[0].RTL_isBatchUpdateCampaignMember__c = true;
                 update campaignMem;
             }   
             
@@ -1074,7 +1070,6 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
 
             if(isUpdateCM)
             {
-                campaignMem[0].RTL_isBatchUpdateCampaignMember__c = true;
                 update campaignMem;
                 // opportunityHPAP.Marketing_Code__c = campaignMem.get(0).RTL_Marketing_Code__c;
                 // update opportunityHPAP;

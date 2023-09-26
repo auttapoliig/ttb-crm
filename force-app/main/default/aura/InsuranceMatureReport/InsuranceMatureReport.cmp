@@ -1,14 +1,25 @@
-<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes"
-    controller="InsuranceReportController" access="global">
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes" controller="InsuranceReportController"
+    access="global">
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
-    <lightning:workspaceAPI aura:id="riskReportCmp" />
+    <lightning:workspaceAPI aura:id="InsuranceMature" />
 
     <aura:attribute name="data" type="Object" />
     <aura:attribute name="columns" type="List" />
     <aura:attribute name="isLoading" type="Boolean" default="true" />
     <aura:attribute name="reportId" type="String" />
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
 
-    <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true" />
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:attribute name="sortDirection" type="String"/>
+
+    <lightning:datatable 
+        keyField="id" 
+        data="{! v.data }" 
+        columns="{! v.columns }"         
+        sortedBy="{!v.sortBy}"
+        sortedDirection="{!v.sortDirection}"
+        onsort="{!c.handleSort}"
+        hideCheckboxColumn="true" />
 
     <br />
     <aura:if isTrue="{!v.isLoading}">
@@ -20,5 +31,4 @@
     <div style="text-align: center;">
         <a href="#" onclick="{!c.openTab}">View More</a>
     </div>
-
 </aura:component>

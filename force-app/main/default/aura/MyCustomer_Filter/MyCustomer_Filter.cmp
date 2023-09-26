@@ -1,0 +1,51 @@
+<aura:component implements="force:hasRecordId,lightning:utilityItem,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable" access="global" controller="MyCustomerControllerClass">
+
+    <!-- <aura:handler name="init" value="{! this }" action="{! c.init }"/> -->
+    <aura:attribute name="itemFilter" type="Object"/>
+    <aura:attribute name="activeSections" type="List" default="['openFilter']" />
+
+    <aura:attribute name="Filters" type="Object[]" default="[]"/>
+    <aura:attribute name="customerData" type="Account" default="[]"/>
+
+    <aura:attribute name="FilterOption" type="String"/>
+    <aura:attribute name="selectedFilter" type="Object[]"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:attribute name="openFilter" type="Boolean" default="true" />
+
+    <aura:attribute name="parent" type="Aura.Component"/>
+    <aura:method name="clearFilterMethod" action="{!c.clearFilters}" access="PUBLIC"/> 
+
+
+    <div>
+        <lightning:accordion 
+            aura:id="accordion" 
+            activeSectionName="{!v.activeSections}" 
+            onsectiontoggle="{! c.handleSectionToggle }"
+            allowMultipleSectionsOpen="true">
+            <lightning:accordionSection name="openFilter" label="Filter">
+                <div class="clear-filter-section">
+                	<a onclick="{!c.clearFilters}" class="clear-filters">Clear Filter</a>
+                </div>
+                <div class="filter">
+                    <aura:iteration items="{!v.Filters}" var="filter" indexVar="idx">
+                        <div class="slds-form-element align-filter">
+                            <label class="slds-form-element__label" for="{!'filter_idx_' + idx}">{!filter.filterLabel}</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="{!'filter_idx_' + idx}" onchange="{!c.handleSelectFilter}">
+                                        <option value="$none;">-- None Selected --</option>
+                                        <aura:iteration items="{!filter.optionList}" var="option" indexVar="idxOption">
+                                            <option value="{!idxOption}">{!option.Name}</option>
+                                        </aura:iteration>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </lightning:accordionSection>
+        </lightning:accordion>
+    </div>
+</aura:component>

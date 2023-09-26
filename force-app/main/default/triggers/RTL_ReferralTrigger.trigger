@@ -1,5 +1,5 @@
 trigger RTL_ReferralTrigger on RTL_Referral__c (before insert,before update,after update,after insert) {
-	Boolean RunTrigger = AppConfig__c.getValues('runReferralTrigger').Value__c == 'true' ; 
+    Boolean RunTrigger = AppConfig__c.getValues('runReferralTrigger').Value__c == 'true' ; 
     
     if (Trigger.isBefore && Trigger.isInsert)
     {

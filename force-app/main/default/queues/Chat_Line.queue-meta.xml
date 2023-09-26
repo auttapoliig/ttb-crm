@@ -4,7 +4,14 @@
     <name>Chat - Line</name>
     <queueMembers>
         <users>
+            <user>47085@tmbbank.com</user>
+            <user>49113@tmbbank.com</user>
+            <user>47473@tmbbank.com</user>
             <user>28315@tmbbank.com</user>
+            <user>31862@tmbbank.com</user>
+            <user>45006@tmbbank.com</user>
+            <user>53187@tmbbank.com</user>
+            <user>33150@tmbbank.com</user>
         </users>
     </queueMembers>
     <queueRoutingConfig>Assign_Line_to_Agent</queueRoutingConfig>

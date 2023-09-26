@@ -633,12 +633,24 @@ public class NPSSurveyController {
                                         tempLead.Status = 'Contacted';
                                     }
                                     tempLead.Contacted_Flag__c = true;
+                                    //Update Completion Code
+                                    String leadSurvey = '';
+                                    if(tempLead.Status == 'Contacted')
+                                    {
+                                        leadSurvey = isCompleteSurvey ? 'Completed Survey' : 'Saved Survey';
+                                    }
+                                    String key = (String.isNotBlank(tempLead.Status) ? tempLead.Status : '') + (String.isNotBlank(tempLead.RTL_Uncontact_reason__c) ? ' ' + tempLead.RTL_Uncontact_reason__c : '') + (String.isNotBlank(leadSurvey) ? leadSurvey : '');
+                                    System.debug('key:'+key);
+                                    Map<String,String> mapAvayaCode = LeadConvertComercialController.mapAvayaCode();
+                                    tempLead.COM_Complete_Code__c = mapAvayaCode.containsKey(key) ? mapAvayaCode.get(key) : '';
+                                    System.debug('tempLead:'+tempLead);
                                     update templead;
                                 }
 
 
-
-
+                            List<String> userContactID = new List<String>();
+                            userContactID.add(templead.Id);
+                            AvayaCompletionCodeUtility.sendCompletionCodeToAvaya(tempLead.COM_Complete_Code__c, userContactID);
 
                             if(isCompleteSurvey && isLead){
                                  PageReference sObjectDetail;

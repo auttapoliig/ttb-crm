@@ -17,9 +17,9 @@
     },
     viewMoreTask : function(component, event, helper){
 
-        var spinner = component.find("apexSpinner");
-        $A.util.toggleClass(spinner, "slds-hide");
-
+        // var spinner = component.find("obLogacallHistSpinner");
+        // $A.util.toggleClass(spinner, "slds-hide");
+        component.set("v.showSpinner", false);
         component.set('v.recordLimit', component.get('v.expandSize'));
 
         var isViewMore = true;
@@ -27,12 +27,23 @@
     },
     viewLessTask : function(component, event, helper){
 
-        var spinner = component.find("apexSpinner");
-        $A.util.toggleClass(spinner, "slds-hide");
-
+        // var spinner = component.find("obLogacallHistSpinner");
+        // $A.util.toggleClass(spinner, "slds-hide");
+        component.set("v.showSpinner", false);
         component.set('v.recordLimit', component.get('v.collapseSize'));
 
         var isViewMore = false;
         helper.initTimeline(component, event, helper, isViewMore);
-    }
+    },
+
+    refreshAll: function(component, event, helper){     
+        var eventMsg = event.getParam("message").toUpperCase();
+        if(eventMsg && eventMsg.includes("WAS SAVED")){
+            $A.get('e.force:refreshView').fire();
+        }else if(eventMsg && eventMsg.includes("SAVE CALL BACK SUCCESS")){
+            // var spinner = component.find("obLogacallHistSpinner");
+            // $A.util.toggleClass(spinner, "slds-hide");
+        }
+    },
+
 })

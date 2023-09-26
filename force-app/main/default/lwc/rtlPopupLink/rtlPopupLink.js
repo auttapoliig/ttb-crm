@@ -102,6 +102,8 @@ export default class RtlPopupLink extends NavigationMixin(LightningElement) {
         if (!url) return;
 
         if (this._windowObjRef == null || this._windowObjRef.closed) {
+            url = 'https://uatbahub.tau2904.com/protection.r1.5/#/summary-dashboard?productGroup=LAH&tabMP=false';
+            console.log(url);
             // Desktop environment
             if (this._formFactor === 'Large') {
                 this._windowObjRef = window.open(url, uuid())

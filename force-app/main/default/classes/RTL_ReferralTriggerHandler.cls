@@ -568,7 +568,7 @@
     }
     public static void afterUpdateReferraltoCampaignMember(map<id,RTL_Referral__c> oldMap, map<id,RTL_Referral__c> newMap) {
         
-        List<CampaignMember> cmlistr =  [SELECT id,RTL_Contact_Status__c,RTL_Referral_ID_1__c,RTL_Referral_ID_2__c,RTL_Referral_ID_3__c,RTL_Referral_ID_4__c,RTL_Referral_ID_5__c FROM CampaignMember WHERE RTL_Referral_ID_1__c IN: newMap.keySet() OR RTL_Referral_ID_2__c IN: newMap.keySet() OR RTL_Referral_ID_3__c IN: newMap.keySet() OR RTL_Referral_ID_4__c IN: newMap.keySet() OR RTL_Referral_ID_5__c IN: newMap.keySet()];
+        List<CampaignMember> cmlistr =  [SELECT id,RTL_Referral_ID_1__c,RTL_Referral_ID_2__c,RTL_Referral_ID_3__c,RTL_Referral_ID_4__c,RTL_Referral_ID_5__c FROM CampaignMember WHERE RTL_Referral_ID_1__c IN: newMap.keySet() OR RTL_Referral_ID_2__c IN: newMap.keySet() OR RTL_Referral_ID_3__c IN: newMap.keySet() OR RTL_Referral_ID_4__c IN: newMap.keySet() OR RTL_Referral_ID_5__c IN: newMap.keySet()];
         //system.debug('test' + cmlist.size());
         Set<Id> refId = newMap.keySet();
         Set<Id> refCampaignId = new Set<Id>();
@@ -577,7 +577,7 @@
         System.debug('refid '+newMap.keySet());
         for(CampaignMember each : cmlistr){
             if(each.RTL_Referral_ID_1__c != null && newMap.containsKey(each.RTL_Referral_ID_1__c)){
-                each.RTL_Stage_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Ws_Stage__c'));
+                each.RTL_Stage_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Stage__c'));
                 each.RTL_Status_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Status__c'));
                 each.Details_of_Status_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('Details_of_Status__c'));
                 each.RTL_AL_Refer_No_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_AL_Refer_No__c'));
@@ -592,26 +592,10 @@
                 each.HPAP_Status_Code_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('HPAP_Status_Code__c'));
                 each.HPAP_Reason_Code_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('HPAP_Reason_Code__c'));
                 each.HPAP_Reason_Description_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('HPAP_Reason_Description__c'));
-
-                each.RTL_Refer_Date_1__c = Datetime.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Refer_Date__c'));
-                if(each.RTL_Contact_Status__c == 'New' || each.RTL_Contact_Status__c == 'Uncontact'){
-                    each.RTL_Contact_Status__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Contact_Status__c'));
-                    each.RTL_Reason__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Ws_Reason__c'));
-                }
-                each.Corebank_Branch_Code_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('Corebank_Branch_Code__c'));
-                each.Corebank_Branch_Name_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('Corebank_Branch_Name__c'));
-                each.Corebank_Sales_Manager_Head_Id_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('Corebank_Sales_Manager_Head_Id__c'));
-                each.Corebank_Sales_Manager_Head_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('Corebank_Sales_Manager_Head__c'));
-                each.RTL_Product_Campaign_Code_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Product_Campaign_Code__c'));
-                each.RTL_Product_Campaign_Name_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Product_Campaign_Name__c'));
-                each.RTL_Dealer_Code_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Dealer_Code__c'));
-                each.RTL_Dealer_Name_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Dealer_Name__c'));
-                each.RTL_Stage_Name_Date_Time_1__c = Datetime.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Stage_Name_Date_Time__c'));
-
                 refCampaignId.add(each.RTL_Referral_ID_1__c);
             }
             if(each.RTL_Referral_ID_2__c != null && newMap.containsKey(each.RTL_Referral_ID_2__c)){
-                each.RTL_Stage_2__c = String.valueOf(newMap.get(each.RTL_Referral_ID_2__c).get('RTL_Ws_Stage__c'));
+                each.RTL_Stage_2__c = String.valueOf(newMap.get(each.RTL_Referral_ID_2__c).get('RTL_Stage__c'));
                 each.RTL_Status_2__c = String.valueOf(newMap.get(each.RTL_Referral_ID_2__c).get('RTL_Status__c'));
                 each.Details_of_Status_2__c = String.valueOf(newMap.get(each.RTL_Referral_ID_2__c).get('Details_of_Status__c'));
                 each.RTL_AL_Refer_No_2__c = String.valueOf(newMap.get(each.RTL_Referral_ID_2__c).get('RTL_AL_Refer_No__c'));
@@ -630,7 +614,7 @@
             
             }
             if(each.RTL_Referral_ID_3__c != null && newMap.containsKey(each.RTL_Referral_ID_3__c)){
-                each.RTL_Stage_3__c = String.valueOf(newMap.get(each.RTL_Referral_ID_3__c).get('RTL_Ws_Stage__c'));
+                each.RTL_Stage_3__c = String.valueOf(newMap.get(each.RTL_Referral_ID_3__c).get('RTL_Stage__c'));
                 each.RTL_Status_3__c = String.valueOf(newMap.get(each.RTL_Referral_ID_3__c).get('RTL_Status__c'));
                 each.Details_of_Status_3__c = String.valueOf(newMap.get(each.RTL_Referral_ID_3__c).get('Details_of_Status__c'));
                 each.RTL_AL_Refer_No_3__c = String.valueOf(newMap.get(each.RTL_Referral_ID_3__c).get('RTL_AL_Refer_No__c'));
@@ -648,7 +632,7 @@
                 refCampaignId.add(each.RTL_RelatedOpportunity_3__c);
             }
             if(each.RTL_Referral_ID_4__c != null && newMap.containsKey(each.RTL_Referral_ID_4__c)){
-                each.RTL_Stage_4__c = String.valueOf(newMap.get(each.RTL_Referral_ID_4__c).get('RTL_Ws_Stage__c'));
+                each.RTL_Stage_4__c = String.valueOf(newMap.get(each.RTL_Referral_ID_4__c).get('RTL_Stage__c'));
                 each.RTL_Status_4__c = String.valueOf(newMap.get(each.RTL_Referral_ID_4__c).get('RTL_Status__c'));
                 each.Details_of_Status_4__c = String.valueOf(newMap.get(each.RTL_Referral_ID_4__c).get('Details_of_Status__c'));
                 each.RTL_AL_Refer_No_4__c = String.valueOf(newMap.get(each.RTL_Referral_ID_4__c).get('RTL_AL_Refer_No__c'));
@@ -666,7 +650,7 @@
                 refCampaignId.add(each.RTL_RelatedOpportunity_4__c);
             }
             if(each.RTL_Referral_ID_5__c != null && newMap.containsKey(each.RTL_Referral_ID_5__c)){
-                each.RTL_Stage_5__c = String.valueOf(newMap.get(each.RTL_Referral_ID_5__c).get('RTL_Ws_Stage__c'));
+                each.RTL_Stage_5__c = String.valueOf(newMap.get(each.RTL_Referral_ID_5__c).get('RTL_Stage__c'));
                 each.RTL_Status_5__c = String.valueOf(newMap.get(each.RTL_Referral_ID_5__c).get('RTL_Status__c'));
                 each.Details_of_Status_5__c = String.valueOf(newMap.get(each.RTL_Referral_ID_5__c).get('Details_of_Status__c'));
                 each.RTL_AL_Refer_No_5__c = String.valueOf(newMap.get(each.RTL_Referral_ID_5__c).get('RTL_AL_Refer_No__c'));
@@ -710,17 +694,6 @@
                 each.HPAP_Status_Code__c = String.valueOf(newMap.get(each.ReferralID__c).get('HPAP_Status_Code__c'));
                 each.HPAP_Reason_Code__c = String.valueOf(newMap.get(each.ReferralID__c).get('HPAP_Reason_Code__c'));
                 each.HPAP_Reason_Description__c = String.valueOf(newMap.get(each.ReferralID__c).get('HPAP_Reason_Description__c'));
-                
-                each.RTL_Refer_Date__c = Datetime.valueOf(newMap.get(each.ReferralID__c).get('RTL_Refer_Date__c'));
-                each.Corebank_Branch_Code__c = String.valueOf(newMap.get(each.ReferralID__c).get('Corebank_Branch_Code__c'));
-                each.Corebank_Branch_Name__c = String.valueOf(newMap.get(each.ReferralID__c).get('Corebank_Branch_Name__c'));
-                each.Corebank_Sales_Manager_Head_Id__c = String.valueOf(newMap.get(each.ReferralID__c).get('Corebank_Sales_Manager_Head_Id__c'));
-                each.Corebank_Sales_Manager_Head__c = String.valueOf(newMap.get(each.ReferralID__c).get('Corebank_Sales_Manager_Head__c'));
-                each.RTL_Product_Campaign_Code__c = String.valueOf(newMap.get(each.ReferralID__c).get('RTL_Product_Campaign_Code__c'));
-                each.RTL_Product_Campaign_Name__c = String.valueOf(newMap.get(each.ReferralID__c).get('RTL_Product_Campaign_Name__c'));
-                each.RTL_Dealer_Code__c = String.valueOf(newMap.get(each.ReferralID__c).get('RTL_Dealer_Code__c'));
-                each.RTL_Dealer_Name__c = String.valueOf(newMap.get(each.ReferralID__c).get('RTL_Dealer_Name__c'));
-                each.RTL_Stage_Name_Date_Time__c = Datetime.valueOf(newMap.get(each.ReferralID__c).get('RTL_Stage_Name_Date_Time__c'));
         }
     
         if(cmlistr.size() > 0){
