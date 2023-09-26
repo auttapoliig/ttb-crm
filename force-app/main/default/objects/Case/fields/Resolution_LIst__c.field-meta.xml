@@ -63,6 +63,16 @@
                 <label>แนะนำให้ลูกค้ารับทราบ</label>
             </value>
             <value>
+                <fullName>ลูกค้ายอมยุติข้อร้องเรียน</fullName>
+                <default>false</default>
+                <label>ลูกค้ายอมยุติข้อร้องเรียน</label>
+            </value>
+            <value>
+                <fullName>ธนาคารชดเชยให้ลูกค้า</fullName>
+                <default>false</default>
+                <label>ธนาคารชดเชยให้ลูกค้า</label>
+            </value>
+            <value>
                 <fullName>ส่งบัตร/เอกสารให้ลูกค้าแล้ว</fullName>
                 <default>false</default>
                 <label>ส่งบัตร/เอกสารให้ลูกค้าแล้ว</label>

@@ -129,6 +129,10 @@
             <fullName>8 Outbound web</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>9 Subsidiary</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>RTL_Campaign_Objective__c</picklist>

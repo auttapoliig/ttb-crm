@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Unqualified_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Unqualified Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contact_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ผู้รับสายไม่ใช่ลูกค้า, หมายเลขโทรศัพท์ผิด</fullName>
+                <default>false</default>
+                <label>ผู้รับสายไม่ใช่ลูกค้า, หมายเลขโทรศัพท์ผิด</label>
+            </value>
+            <value>
+                <fullName>ไม่มีผู้รับสาย, สายไม่ว่าง, เบอร์โทรสาร, เครื่องตอบรับอัตโนมัติ, ลูกค้าตัดสาย</fullName>
+                <default>false</default>
+                <label>ไม่มีผู้รับสาย, สายไม่ว่าง, เบอร์โทรสาร, เครื่องตอบรับอัตโนมัติ, ลูกค้าตัดสาย</label>
+            </value>
+            <value>
+                <fullName>ติดต่อแล้ว 3ครั้งและไม่ได้รับโอกาศพูดคุย</fullName>
+                <default>false</default>
+                <label>ติดต่อแล้ว 3ครั้งและไม่ได้รับโอกาศพูดคุย</label>
+            </value>
+            <value>
+                <fullName>ไม่พบหมายเลขโทรศัพท์เพื่อติดต่อใน Lead (สำหรับ RMC เท่านั้น)</fullName>
+                <default>false</default>
+                <label>ไม่พบหมายเลขโทรศัพท์เพื่อติดต่อใน Lead (สำหรับ RMC เท่านั้น)</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขาจ่าย เป็นหลัก</fullName>
+                <default>false</default>
+                <label>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขาจ่าย เป็นหลัก</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขารับ เป็นหลัก</fullName>
+                <default>false</default>
+                <label>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขารับ เป็นหลัก</label>
+            </value>
+            <value>
+                <fullName>ดอกเบี้ยถูกกว่า</fullName>
+                <default>false</default>
+                <label>ดอกเบี้ยถูกกว่า</label>
+            </value>
+            <value>
+                <fullName>ไม่ต้องการเสียค่าใช้จ่ายในการ Refinance</fullName>
+                <default>false</default>
+                <label>ไม่ต้องการเสียค่าใช้จ่ายในการ Refinance</label>
+            </value>
+            <value>
+                <fullName>ttb - ไม่มั่นใจในองค์กร</fullName>
+                <default>false</default>
+                <label>ttb - ไม่มั่นใจในองค์กร</label>
+            </value>
+            <value>
+                <fullName>กระบวนการ -ขั้นตอนการสมัครและการอนุมัติยุ่งยาก</fullName>
+                <default>false</default>
+                <label>กระบวนการ -ขั้นตอนการสมัครและการอนุมัติยุ่งยาก</label>
+            </value>
+            <value>
+                <fullName>การตลาด-คู่แข่งให้ข้อเสนอที่ดีกว่า</fullName>
+                <default>false</default>
+                <label>การตลาด-คู่แข่งให้ข้อเสนอที่ดีกว่า</label>
+            </value>
+            <value>
+                <fullName>ใช้บริการที่อื่นเรียบร้อยแล้ว</fullName>
+                <default>false</default>
+                <label>ใช้บริการที่อื่นเรียบร้อยแล้ว</label>
+            </value>
+            <value>
+                <fullName>การตลาด-โปรโมชั่นไม่น่าสนใจ</fullName>
+                <default>false</default>
+                <label>การตลาด-โปรโมชั่นไม่น่าสนใจ</label>
+            </value>
+            <value>
+                <fullName>ช่องทาง-ไม่สะดวกในการใช้งาน/รับบริการ</fullName>
+                <default>false</default>
+                <label>ช่องทาง-ไม่สะดวกในการใช้งาน/รับบริการ</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์ - ค่าธรรมเนียมแพง</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์ - ค่าธรรมเนียมแพง</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์ - วงเงินน้อย/ไม่เพียงพอ</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์ - วงเงินน้อย/ไม่เพียงพอ</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์ - อัตราดอกเบี้ยแพง</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์ - อัตราดอกเบี้ยแพง</label>
+            </value>
+            <value>
+                <fullName>ปริมาณธุรกรรมทางการเงินมีจำนวนน้อย</fullName>
+                <default>false</default>
+                <label>ปริมาณธุรกรรมทางการเงินมีจำนวนน้อย</label>
+            </value>
+            <value>
+                <fullName>วงเงินที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</fullName>
+                <default>false</default>
+                <label>วงเงินที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</label>
+            </value>
+            <value>
+                <fullName>ผลิตภัณฑ์ที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</fullName>
+                <default>false</default>
+                <label>ผลิตภัณฑ์ที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าไม่สะดวกในการใช้บริการ ttb</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่สะดวกในการใช้บริการ ttb</label>
+            </value>
+            <value>
+                <fullName>FRAUD, CSI - ผู้เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>FRAUD, CSI - ผู้เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>NCB - ผู้กู้</fullName>
+                <default>false</default>
+                <label>NCB - ผู้กู้</label>
+            </value>
+            <value>
+                <fullName>NCB - ผู้เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>NCB - ผู้เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>TDR/NPL  - ผู้กู้</fullName>
+                <default>false</default>
+                <label>TDR/NPL  - ผู้กู้</label>
+            </value>
+            <value>
+                <fullName>TDR/NPL - ผู้เกี่ยวข้อง</fullName>
+                <default>false</default>
+                <label>TDR/NPL - ผู้เกี่ยวข้อง</label>
+            </value>
+            <value>
+                <fullName>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์ (Year in Business)</fullName>
+                <default>false</default>
+                <label>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์ (Year in Business)</label>
+            </value>
+            <value>
+                <fullName>ปัจจุบันผู้กู้ดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</fullName>
+                <default>false</default>
+                <label>ปัจจุบันผู้กู้ดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</label>
+            </value>
+            <value>
+                <fullName>ผู้กู้มีผู้เกี่ยวข้องหรือบริษัท ซึ่งดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</fullName>
+                <default>false</default>
+                <label>ผู้กู้มีผู้เกี่ยวข้องหรือบริษัท ซึ่งดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</label>
+            </value>
+            <value>
+                <fullName>ยอดขายรวมเกินเกณฑ์ Segment SE</fullName>
+                <default>false</default>
+                <label>ยอดขายรวมเกินเกณฑ์ Segment SE</label>
+            </value>
+            <value>
+                <fullName>ภาระหนี้รวมเกินเกณฑ์ Segment SE</fullName>
+                <default>false</default>
+                <label>ภาระหนี้รวมเกินเกณฑ์ Segment SE</label>
+            </value>
+            <value>
+                <fullName>ไม่มีหลักประกัน / หลักประกันไม่เป็นไปตามเกณฑ์</fullName>
+                <default>false</default>
+                <label>ไม่มีหลักประกัน / หลักประกันไม่เป็นไปตามเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>หลักประกันมูลค่าเพียงพอกับวงเงินที่ต้องการ</fullName>
+                <default>false</default>
+                <label>หลักประกันมูลค่าเพียงพอกับวงเงินที่ต้องการ</label>
+            </value>
+            <value>
+                <fullName>อยู่ระหว่างนำเสนอสินเชื่อ - กู้ร่วม</fullName>
+                <default>false</default>
+                <label>อยู่ระหว่างนำเสนอสินเชื่อ - กู้ร่วม</label>
+            </value>
+            <value>
+                <fullName>อยู่ระหว่างนำเสนอสินเชื่อ - ในนามบริษัท</fullName>
+                <default>false</default>
+                <label>อยู่ระหว่างนำเสนอสินเชื่อ - ในนามบริษัท</label>
+            </value>
+            <value>
+                <fullName>อายุของผู้กู้ไม่ผ่านเกณฑ์ (และไม่มีทายาท)</fullName>
+                <default>false</default>
+                <label>อายุของผู้กู้ไม่ผ่านเกณฑ์ (และไม่มีทายาท)</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ /เงื่อนไข</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ /เงื่อนไข</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เกี่ยวกับประวัติทางการเงิน (NCB)</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เกี่ยวกับประวัติทางการเงิน (NCB)</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ที่ตั้งธุรกิจ</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ที่ตั้งธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ประสบการณ์ทางธุรกิจ</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ประสบการณ์ทางธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องรายได้ /ไม่ได้ทำธุรกิจ</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องรายได้ /ไม่ได้ทำธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องหลักประกัน</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องหลักประกัน</label>
+            </value>
+            <value>
+                <fullName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ อายุ/อาชีพ</fullName>
+                <default>false</default>
+                <label>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ อายุ/อาชีพ</label>
+            </value>
+            <value>
+                <fullName>อื่นๆ</fullName>
+                <default>false</default>
+                <label>อื่นๆ</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าไม่อยากยุ่งยากในการจัดเตรียมเอกสาร</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่อยากยุ่งยากในการจัดเตรียมเอกสาร</label>
+            </value>
+            <value>
+                <fullName>ลูกค้ายังไม่มีความต้องการใช้สินเชื่อในขณะนี้, วงเงินปัจจบันเพียงพออยู่แล้ว</fullName>
+                <default>false</default>
+                <label>ลูกค้ายังไม่มีความต้องการใช้สินเชื่อในขณะนี้, วงเงินปัจจบันเพียงพออยู่แล้ว</label>
+            </value>
+            <value>
+                <fullName>ไม่ต้องการเสียค่าใช้จ่ายในการขอสินเชื่อ (New ti Credit)</fullName>
+                <default>false</default>
+                <label>ไม่ต้องการเสียค่าใช้จ่ายในการขอสินเชื่อ (New ti Credit)</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าไม่รับนัด, ไม่ให้เข้าพบ</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่รับนัด, ไม่ให้เข้าพบ</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าไม่ได้ดำเนินธุรกิจ</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่ได้ดำเนินธุรกิจ</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า-เคยมีประสบการณ์ไม่ดีกับผลิตภัณฑ์</fullName>
+                <default>false</default>
+                <label>ลูกค้า-เคยมีประสบการณ์ไม่ดีกับผลิตภัณฑ์</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า-ปฏิเสธตั้งแต่เริ่มต้น</fullName>
+                <default>false</default>
+                <label>ลูกค้า-ปฏิเสธตั้งแต่เริ่มต้น</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า-มีเงินทุนหมุนเวียนเพียงพอแล้ว /ไม่ต้องการเป็นหนี้</fullName>
+                <default>false</default>
+                <label>ลูกค้า-มีเงินทุนหมุนเวียนเพียงพอแล้ว /ไม่ต้องการเป็นหนี้</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า-มีผลิตภัณฑ์อยู่แล้ว</fullName>
+                <default>false</default>
+                <label>ลูกค้า-มีผลิตภัณฑ์อยู่แล้ว</label>
+            </value>
+            <value>
+                <fullName>ลูกค้า-ไม่มีความมั่นใจความปลอดภัยออนไลน์</fullName>
+                <default>false</default>
+                <label>ลูกค้า-ไม่มีความมั่นใจความปลอดภัยออนไลน์</label>
+            </value>
+            <value>
+                <fullName>ลูกค้าไม่ต้องการให้ติดต่อ</fullName>
+                <default>false</default>
+                <label>ลูกค้าไม่ต้องการให้ติดต่อ</label>
+            </value>
+            <value>
+                <fullName>ไม่ประสงค์ให้ธนาคารติดต่อ</fullName>
+                <default>false</default>
+                <label>ไม่ประสงค์ให้ธนาคารติดต่อ</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason1</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason2</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason3</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason4</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason4</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason5</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason5</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason6</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason6</label>
+            </value>
+            <value>
+                <fullName>sub unqualified Reason7</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>sub unqualified Reason7</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผู้รับสายไม่ใช่ลูกค้า, หมายเลขโทรศัพท์ผิด</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่มีผู้รับสาย, สายไม่ว่าง, เบอร์โทรสาร, เครื่องตอบรับอัตโนมัติ, ลูกค้าตัดสาย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ติดต่อแล้ว 3ครั้งและไม่ได้รับโอกาศพูดคุย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่พบหมายเลขโทรศัพท์เพื่อติดต่อใน Lead (สำหรับ RMC เท่านั้น)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขาจ่าย เป็นหลัก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าเดินบัญชี/ใช้วงเงินกับธนาคารอื่น เป็นขารับ เป็นหลัก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ดอกเบี้ยถูกกว่า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่ต้องการเสียค่าใช้จ่ายในการ Refinance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ttb - ไม่มั่นใจในองค์กร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>กระบวนการ -ขั้นตอนการสมัครและการอนุมัติยุ่งยาก</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>การตลาด-คู่แข่งให้ข้อเสนอที่ดีกว่า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ใช้บริการที่อื่นเรียบร้อยแล้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>การตลาด-โปรโมชั่นไม่น่าสนใจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ช่องทาง-ไม่สะดวกในการใช้งาน/รับบริการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผลิตภัณฑ์ - ค่าธรรมเนียมแพง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผลิตภัณฑ์ - วงเงินน้อย/ไม่เพียงพอ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผลิตภัณฑ์ - อัตราดอกเบี้ยแพง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ปริมาณธุรกรรมทางการเงินมีจำนวนน้อย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>วงเงินที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผลิตภัณฑ์ที่นำเสนอไม่ตรงกับความต้องการของลูกค้า</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าไม่สะดวกในการใช้บริการ ttb</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>FRAUD, CSI - ผู้เกี่ยวข้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>NCB - ผู้กู้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>NCB - ผู้เกี่ยวข้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>TDR/NPL  - ผู้กู้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>TDR/NPL - ผู้เกี่ยวข้อง</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ประสบการณ์ธุรกิจไม่เป็นไปตามเกณฑ์ (Year in Business)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ปัจจุบันผู้กู้ดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ผู้กู้มีผู้เกี่ยวข้องหรือบริษัท ซึ่งดำเนินธุรกิจที่ไม่ผ่านเกณฑ์ Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ยอดขายรวมเกินเกณฑ์ Segment SE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ภาระหนี้รวมเกินเกณฑ์ Segment SE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่มีหลักประกัน / หลักประกันไม่เป็นไปตามเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักประกันมูลค่าเพียงพอกับวงเงินที่ต้องการ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>อยู่ระหว่างนำเสนอสินเชื่อ - กู้ร่วม</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>อยู่ระหว่างนำเสนอสินเชื่อ - ในนามบริษัท</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>อายุของผู้กู้ไม่ผ่านเกณฑ์ (และไม่มีทายาท)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ /เงื่อนไข</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เกี่ยวกับประวัติทางการเงิน (NCB)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ที่ตั้งธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ ประสบการณ์ทางธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องรายได้ /ไม่ได้ทำธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ เรื่องหลักประกัน</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>หลักเกณฑ์ - ไม่ผ่านคุณสมบัติ อายุ/อาชีพ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>อื่นๆ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าไม่อยากยุ่งยากในการจัดเตรียมเอกสาร</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้ายังไม่มีความต้องการใช้สินเชื่อในขณะนี้, วงเงินปัจจบันเพียงพออยู่แล้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่ต้องการเสียค่าใช้จ่ายในการขอสินเชื่อ (New ti Credit)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าไม่รับนัด, ไม่ให้เข้าพบ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าไม่ได้ดำเนินธุรกิจ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้า-เคยมีประสบการณ์ไม่ดีกับผลิตภัณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้า-ปฏิเสธตั้งแต่เริ่มต้น</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้า-มีเงินทุนหมุนเวียนเพียงพอแล้ว /ไม่ต้องการเป็นหนี้</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้า-มีผลิตภัณฑ์อยู่แล้ว</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้า-ไม่มีความมั่นใจความปลอดภัยออนไลน์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ลูกค้าไม่ต้องการให้ติดต่อ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>ไม่ประสงค์ให้ธนาคารติดต่อ</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

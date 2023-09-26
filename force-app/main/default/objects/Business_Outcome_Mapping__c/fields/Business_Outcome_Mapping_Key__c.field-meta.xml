@@ -3,7 +3,7 @@
     <fullName>Business_Outcome_Mapping_Key__c</fullName>
     <caseSensitive>false</caseSensitive>
     <encryptionScheme>None</encryptionScheme>
-    <externalId>false</externalId>
+    <externalId>true</externalId>
     <label>Business Outcome Mapping Key</label>
     <length>255</length>
     <required>false</required>

@@ -6,7 +6,6 @@
     <columns>RTL_Active_Flag__c</columns>
     <columns>RTL_Integration_Type__c</columns>
     <columns>RTL_IsAssign_Campaign__c</columns>
-    <columns>RTL_Lead_Record_Type__c</columns>
     <columns>RTL_Lead_Field_Criteria_1__c</columns>
     <columns>RTL_Lead_Field_Value_1__c</columns>
     <columns>RTL_Lead_Field_Criteria_2__c</columns>
@@ -15,12 +14,13 @@
     <columns>RTL_Lead_Field_Value_3__c</columns>
     <columns>RTL_Lead_Field_Criteria_4__c</columns>
     <columns>RTL_Lead_Field_Value_4__c</columns>
-    <columns>RTL_Assigned_Queue_Name__c</columns>
-    <filterScope>Everything</filterScope>
+    <columns>RTL_Assigned_User_field__c</columns>
+    <columns>RTL_Assigned_Apex__c</columns>
+    <filterScope>Mine</filterScope>
     <filters>
         <field>RTL_Active_Flag__c</field>
         <operation>equals</operation>
-        <value>1</value>
+        <value>0</value>
     </filters>
     <label>All</label>
 </ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Today_Lead_to_Voice_Tag</fullName>
+    <columns>NAME</columns>
+    <columns>Call_Log_ID__c</columns>
+    <columns>Verint_Call_ID__c</columns>
+    <columns>Import_Type__c</columns>
+    <columns>Import_Result__c</columns>
+    <columns>Error_Message__c</columns>
+    <columns>Private_Data__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Channel__c</field>
+        <operation>equals</operation>
+        <value>Outbound</value>
+    </filters>
+    <filters>
+        <field>Import_Type__c</field>
+        <operation>equals</operation>
+        <value>Lead</value>
+    </filters>
+    <label>All Today Lead to Voice Tag.</label>
+</ListView>

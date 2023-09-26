@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE2_North1_Phitsanulok2_Mail_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Zone_Name__c</columns>
+    <columns>Sub_Category__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>SB1 ZM North Central Phitsanulok Mail</label>
+    <language>en_US</language>
+    <queue>SB1_ZM_North_Central_Phitsanulok_Mail</queue>
+    <sharedTo>
+        <group>SB1_ZM_SrinakarinTara_Mail</group>
+    </sharedTo>
+</ListView>

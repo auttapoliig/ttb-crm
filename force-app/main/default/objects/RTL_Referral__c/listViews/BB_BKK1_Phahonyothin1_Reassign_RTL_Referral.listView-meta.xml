@@ -14,6 +14,6 @@
     <label>COM 1-13 Team</label>
     <queue>COM_1_13_Team</queue>
     <sharedTo>
-        <group>COM_1_13_Team</group>
+        <group>COM_1_13_TH_Team</group>
     </sharedTo>
 </ListView>

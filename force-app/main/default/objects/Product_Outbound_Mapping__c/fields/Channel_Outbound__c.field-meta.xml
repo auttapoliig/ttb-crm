@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Outbound__c</fullName>
+    <externalId>false</externalId>
+    <label>Channel Outbound</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>web</fullName>
+                <default>false</default>
+                <label>web</label>
+            </value>
+            <value>
+                <fullName>web_later</fullName>
+                <default>false</default>
+                <label>web_later</label>
+            </value>
+            <value>
+                <fullName>CMN_web_Absolute</fullName>
+                <default>false</default>
+                <label>CMN_web_Absolute</label>
+            </value>
+            <value>
+                <fullName>CMN_web_Absolute_later</fullName>
+                <default>false</default>
+                <label>CMN_web_Absolute_later</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

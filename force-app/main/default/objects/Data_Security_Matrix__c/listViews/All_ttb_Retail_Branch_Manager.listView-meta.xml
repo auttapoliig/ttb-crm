@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ttb_Retail_Branch_Manager</fullName>
+    <columns>NAME</columns>
+    <columns>Section_Name__c</columns>
+    <columns>Profile_Name__c</columns>
+    <columns>Access_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Profile_Name__c</field>
+        <operation>contains</operation>
+        <value>ttb Retail Branch Manager</value>
+    </filters>
+    <label>All ttb Retail Branch Manager</label>
+</ListView>

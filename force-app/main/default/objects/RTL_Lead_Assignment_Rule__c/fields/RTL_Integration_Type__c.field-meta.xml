@@ -20,12 +20,8 @@
             <value>
                 <fullName>Avaya</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Avaya</label>
-            </value>
-            <value>
-                <fullName>LGS_AL_Sales</fullName>
-                <default>false</default>
-                <label>LGS_AL_Sales</label>
             </value>
         </valueSetDefinition>
     </valueSet>

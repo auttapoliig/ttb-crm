@@ -9,14 +9,19 @@
     <columns>ACCOUNT.RATING</columns>
     <columns>CORE.USERS.FIRST_NAME</columns>
     <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Payroll__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Account_Type__c</field>
         <operation>equals</operation>
         <value>Prospect,Disqualified Prospect,Qualified Prospect</value>
     </filters>
+    <filters>
+        <field>Customer_Type__c</field>
+        <operation>equals</operation>
+        <value>Juristic</value>
+    </filters>
     <label>All Team Prospect</label>
-    <language>en_US</language>
     <sharedTo>
         <group>ZM_Above</group>
     </sharedTo>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Release__c</fullName>
+    <externalId>false</externalId>
+    <label>Release</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Account Quick win Convert Lightning</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Account Quick win Convert Lightning</label>
+            </value>
+            <value>
+                <fullName>AL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AL</label>
+            </value>
+            <value>
+                <fullName>AL campaign offering on CRM (AL Instant Loan)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AL campaign offering on CRM (AL Instant Loan)</label>
+            </value>
+            <value>
+                <fullName>AL - Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AL - Integration</label>
+            </value>
+            <value>
+                <fullName>BA Web View</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BA Web View</label>
+            </value>
+            <value>
+                <fullName>Commercial: KYC Review</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial: KYC Review</label>
+            </value>
+            <value>
+                <fullName>Commercial: SLL Group</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial: SLL Group</label>
+            </value>
+            <value>
+                <fullName>Commercial Int. - AL Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial Int. - AL Opportunity</label>
+            </value>
+            <value>
+                <fullName>Commercial Int._Custbase</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial Int. - Custbase</label>
+            </value>
+            <value>
+                <fullName>Commercial Int. - Forecast Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial Int. - Forecast Management</label>
+            </value>
+            <value>
+                <fullName>CR Migrate Contact WBG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CR Migrate Contact WBG</label>
+            </value>
+            <value>
+                <fullName>CRM Rebranding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CRM Rebranding</label>
+            </value>
+            <value>
+                <fullName>CRM Service Sprint 32-35</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CRM Service Sprint 32-35</label>
+            </value>
+            <value>
+                <fullName>CR Non-Voice: Email Suppression</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CR Non-Voice: Email Suppression</label>
+            </value>
+            <value>
+                <fullName>CR TMB SBO User</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CR TMB SBO User</label>
+            </value>
+            <value>
+                <fullName>CR Wealth Benefit Data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CR Wealth Benefit Data</label>
+            </value>
+            <value>
+                <fullName>Data Partition Phase 3</fullName>
+                <default>false</default>
+                <label>Data Partition Phase 3</label>
+            </value>
+            <value>
+                <fullName>Drop Lead Integrated with Avaya</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Drop Lead Integrated with Avaya</label>
+            </value>
+            <value>
+                <fullName>EC Project - WS1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EC Project - WS1</label>
+            </value>
+            <value>
+                <fullName>Invalid Token2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid Token2</label>
+            </value>
+            <value>
+                <fullName>LGS WS1</fullName>
+                <default>false</default>
+                <label>LGS WS1</label>
+            </value>
+            <value>
+                <fullName>LGS WS2</fullName>
+                <default>false</default>
+                <label>LGS WS2</label>
+            </value>
+            <value>
+                <fullName>M8 SilverLake</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>M8 SilverLake</label>
+            </value>
+            <value>
+                <fullName>NonVoice Phase 1</fullName>
+                <default>false</default>
+                <label>NonVoice Phase 1</label>
+            </value>
+            <value>
+                <fullName>NonVoice Phase 2 Issues</fullName>
+                <default>false</default>
+                <label>NonVoice Phase 2 Issues</label>
+            </value>
+            <value>
+                <fullName>Non-Voice Social Post</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-Voice Social Post</label>
+            </value>
+            <value>
+                <fullName>OneApp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OneApp</label>
+            </value>
+            <value>
+                <fullName>One App</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One App</label>
+            </value>
+            <value>
+                <fullName>One APP - NCB Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One APP - NCB Request</label>
+            </value>
+            <value>
+                <fullName>Opportunity - Batch SLOS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Opportunity - Batch SLOS</label>
+            </value>
+            <value>
+                <fullName>Outbound Integrated with Avaya</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outbound Integrated with Avaya</label>
+            </value>
+            <value>
+                <fullName>Outbound Juristic Integrated with Avaya</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outbound Juristic Integrated with Avaya</label>
+            </value>
+            <value>
+                <fullName>PDPA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PDPA</label>
+            </value>
+            <value>
+                <fullName>Product Holding Slowness</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Holding Slowness</label>
+            </value>
+            <value>
+                <fullName>PWA RM Cockpit MVP1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PWA RM Cockpit MVP1</label>
+            </value>
+            <value>
+                <fullName>QR on name card for Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QR on name card for Service</label>
+            </value>
+            <value>
+                <fullName>RD Tax</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RD Tax</label>
+            </value>
+            <value>
+                <fullName>RDT Project (SLL Group)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RDT Project (SLL Group)</label>
+            </value>
+            <value>
+                <fullName>Redesigned CSV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Redesigned CSV</label>
+            </value>
+            <value>
+                <fullName>Redesigned Drop Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Redesigned Drop Lead</label>
+            </value>
+            <value>
+                <fullName>Regression - T-Performance Phase 1.1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Regression - T-Performance Phase 1.1</label>
+            </value>
+            <value>
+                <fullName>Release: Spring&apos;22</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Release: Spring&apos;22</label>
+            </value>
+            <value>
+                <fullName>Release: Spring&apos;23</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Release: Spring&apos;23</label>
+            </value>
+            <value>
+                <fullName>Release: Summer&apos;23</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Release: Summer&apos;23</label>
+            </value>
+            <value>
+                <fullName>Release: Winter&apos;22</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Release: Winter&apos;22</label>
+            </value>
+            <value>
+                <fullName>Release Spring&apos;21</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Release Spring&apos;21</label>
+            </value>
+            <value>
+                <fullName>REQ012</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>REQ012</label>
+            </value>
+            <value>
+                <fullName>Retail: AL Config new profile for create campaign and upload campaign member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: AL Config new profile for create campaign and upload campaign member</label>
+            </value>
+            <value>
+                <fullName>Retail: AL Referral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: AL Referral</label>
+            </value>
+            <value>
+                <fullName>Retail: Data Partition</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: Data Partition</label>
+            </value>
+            <value>
+                <fullName>Retail: Data Partition Phase 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: Data Partition Phase 2</label>
+            </value>
+            <value>
+                <fullName>Retail: KYC Display</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: KYC Display</label>
+            </value>
+            <value>
+                <fullName>Retail: One APP IDP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: One APP IDP</label>
+            </value>
+            <value>
+                <fullName>Retail: PDPA Phae 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: PDPA Phae 2</label>
+            </value>
+            <value>
+                <fullName>Retail: RQ004&amp;RQ005</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: RQ004&amp;RQ005</label>
+            </value>
+            <value>
+                <fullName>Retail: RQ006</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: RQ006</label>
+            </value>
+            <value>
+                <fullName>Retail: Security Scan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: Security Scan</label>
+            </value>
+            <value>
+                <fullName>Retail: T-Performance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: T-Performance</label>
+            </value>
+            <value>
+                <fullName>Retail: T-Performance End Phase 1.1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail: T-Performance End Phase 1.1</label>
+            </value>
+            <value>
+                <fullName>RM Cockpit MVP2</fullName>
+                <default>false</default>
+                <label>RM Cockpit MVP2</label>
+            </value>
+            <value>
+                <fullName>RQ013</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RQ013</label>
+            </value>
+            <value>
+                <fullName>RQ029 - Campaign History</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RQ029 - Campaign History</label>
+            </value>
+            <value>
+                <fullName>Subsidiary : CR TBroker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subsidiary : CR TBroker</label>
+            </value>
+            <value>
+                <fullName>Summer&apos;20</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Summer&apos;20</label>
+            </value>
+            <value>
+                <fullName>Summer&apos;21 Release</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Summer&apos;21 Release</label>
+            </value>
+            <value>
+                <fullName>Summer&apos;22 Release</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Summer&apos;22 Release</label>
+            </value>
+            <value>
+                <fullName>Summer&apos;23 : Automate Question</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Summer&apos;23 : Automate Question</label>
+            </value>
+            <value>
+                <fullName>TBank Gap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TBank Gap</label>
+            </value>
+            <value>
+                <fullName>Telephony Inbound Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Telephony Inbound Integration</label>
+            </value>
+            <value>
+                <fullName>Telephony - Outbound</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Telephony - Outbound</label>
+            </value>
+            <value>
+                <fullName>TMB Convert Lightning - Commercial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB Convert Lightning - Commercial</label>
+            </value>
+            <value>
+                <fullName>TMB Convert Lightning - Retail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB Convert Lightning - Retail</label>
+            </value>
+            <value>
+                <fullName>TMB Convert Lightning - Retail Additional Tablet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMB Convert Lightning - Retail Additional Tablet</label>
+            </value>
+            <value>
+                <fullName>T-Performance 1.2</fullName>
+                <default>false</default>
+                <label>T-Performance 1.2</label>
+            </value>
+            <value>
+                <fullName>T-Performance Phase 1.1 CR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>T-Performance Phase 1.1 CR</label>
+            </value>
+            <value>
+                <fullName>Winter&apos;21 Release</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Winter&apos;21 Release</label>
+            </value>
+            <value>
+                <fullName>Winter&apos;23 Release</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Winter&apos;23 Release</label>
+            </value>
+            <value>
+                <fullName>Winter&apos;24</fullName>
+                <default>false</default>
+                <label>Winter&apos;24</label>
+            </value>
+            <value>
+                <fullName>Winter&apos;24 : Automate Question</fullName>
+                <default>false</default>
+                <label>Winter&apos;24 : Automate Question</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

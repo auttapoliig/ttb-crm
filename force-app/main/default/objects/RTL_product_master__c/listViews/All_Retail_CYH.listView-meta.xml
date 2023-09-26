@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Retail_CYH</fullName>
+    <columns>NAME</columns>
+    <columns>Product_Group__c</columns>
+    <columns>Product_Sub_group__c</columns>
+    <columns>Active__c</columns>
+    <columns>Description__c</columns>
+    <columns>RTL_Product2_Name__c</columns>
+    <columns>Fund_Type__c</columns>
+    <columns>Asset_Class__c</columns>
+    <columns>Product_Code__c</columns>
+    <columns>RTL_Product_Smart_Info__c</columns>
+    <columns>RTL_Issuer_Fund_House__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RTL_Product2_Name__c</field>
+        <operation>contains</operation>
+        <value>cyh</value>
+    </filters>
+    <label>All Retail-CYH</label>
+    <language>en_US</language>
+</ListView>

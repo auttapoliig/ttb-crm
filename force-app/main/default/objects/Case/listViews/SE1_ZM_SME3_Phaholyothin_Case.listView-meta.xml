@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE1_ZM_SME3_Phaholyothin_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>SE1 ZM SME3 Phaholyothin</label>
+    <queue>SE1_ZM_SME3_Phaholyothin</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -166,8 +166,8 @@
     <pluralLabel>FX Orders</pluralLabel>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <searchLayouts>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <listViewButtons>Cancel_Order</listViewButtons>
         <listViewButtons>Submit_to_Trader</listViewButtons>
         <listViewButtons>Acknowledge</listViewButtons>

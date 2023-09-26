@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Defect Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Coding Error</fullName>
+                <default>false</default>
+                <label>Coding Error</label>
+            </value>
+            <value>
+                <fullName>Configuration &amp; Parameter Error</fullName>
+                <default>false</default>
+                <label>Configuration &amp; Parameter Error</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+                <label>Data Error</label>
+            </value>
+            <value>
+                <fullName>Environment Error</fullName>
+                <default>false</default>
+                <label>Environment Error</label>
+            </value>
+            <value>
+                <fullName>Deployment Error</fullName>
+                <default>false</default>
+                <label>Deployment Error</label>
+            </value>
+            <value>
+                <fullName>Misunderstand</fullName>
+                <default>false</default>
+                <label>Misunderstand</label>
+            </value>
+            <value>
+                <fullName>Design Error</fullName>
+                <default>false</default>
+                <label>Design Error</label>
+            </value>
+            <value>
+                <fullName>Missed Requirement</fullName>
+                <default>false</default>
+                <label>Missed Requirement</label>
+            </value>
+            <value>
+                <fullName>Change Requirement</fullName>
+                <default>false</default>
+                <label>Change Requirement</label>
+            </value>
+            <value>
+                <fullName>Product limitation</fullName>
+                <default>false</default>
+                <label>Product limitation</label>
+            </value>
+            <value>
+                <fullName>Document Error</fullName>
+                <default>false</default>
+                <label>Document Error</label>
+            </value>
+            <value>
+                <fullName>Impacted Release</fullName>
+                <default>false</default>
+                <label>Impacted Release</label>
+            </value>
+            <value>
+                <fullName>Issues</fullName>
+                <default>false</default>
+                <label>Issues</label>
+            </value>
+            <value>
+                <fullName>Question?</fullName>
+                <default>false</default>
+                <label>Question?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

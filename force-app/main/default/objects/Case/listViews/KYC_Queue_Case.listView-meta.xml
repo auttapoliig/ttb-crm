@@ -6,10 +6,11 @@
     <columns>CASES.SUBJECT</columns>
     <columns>CASES.STATUS</columns>
     <columns>CASES.PRIORITY</columns>
-    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CREATED_DATE</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <filterScope>Queue</filterScope>
     <label>KYC Queue</label>
+    <language>en_US</language>
     <queue>KYC_Queue</queue>
     <sharedTo>
         <group>KYC</group>

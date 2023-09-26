@@ -162,11 +162,6 @@
                 <default>false</default>
                 <label>TBANK</label>
             </value>
-            <value>
-                <fullName>Touch</fullName>
-                <default>false</default>
-                <label>Touch</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

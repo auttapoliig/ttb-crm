@@ -11,9 +11,9 @@
     <columns>RTL_Channel_Segment__c</columns>
     <columns>RTL_Last_Assigned_Date_time__c</columns>
     <filterScope>Queue</filterScope>
-    <label>(NotUse)SE ZM SME7 Nakhonsithammarat Tea</label>
+    <label>SE ZM SME7 Nakhonsithammarat Team</label>
     <language>en_US</language>
-    <queue>NotUse_SE_ZM_SME7_Nakhonsithammarat_Tea</queue>
+    <queue>SE_ZM_SME7_Nakhonsithammarat_Team</queue>
     <sharedTo>
         <group>SE_ZM_SME7_Nakhonsithammarat_Team</group>
         <role>CCBO_Sales_Management</role>

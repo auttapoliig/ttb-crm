@@ -30,6 +30,16 @@
                 <default>false</default>
                 <label>CMN_web_Absolute_later</label>
             </value>
+            <value>
+                <fullName>callmenow_card</fullName>
+                <default>false</default>
+                <label>callmenow_card</label>
+            </value>
+            <value>
+                <fullName>callmenow_card_later</fullName>
+                <default>false</default>
+                <label>callmenow_card_later</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -18,6 +18,6 @@
     <language>en_US</language>
     <queue>SE_RG_SME1_10_Team</queue>
     <sharedTo>
-        <group>SE_RG_SME1_10</group>
+        <group>SE_RG_SME1_10_Team</group>
     </sharedTo>
 </ListView>

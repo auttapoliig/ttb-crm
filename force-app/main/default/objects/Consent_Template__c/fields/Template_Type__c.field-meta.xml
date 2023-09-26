@@ -21,6 +21,11 @@
                 <default>false</default>
                 <label>PDPA</label>
             </value>
+            <value>
+                <fullName>OneConsent</fullName>
+                <default>false</default>
+                <label>OneConsent</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

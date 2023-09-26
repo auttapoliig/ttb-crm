@@ -15,5 +15,4 @@
     <columns>Assign_to_Queue__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
-    <language>en_US</language>
 </ListView>

@@ -15,6 +15,7 @@
     <label>My Referral</label>
     <language>en_US</language>
     <sharedTo>
+        <group>Automotive_Lending_Solution_Advisory</group>
         <roleAndSubordinates>CCBO</roleAndSubordinates>
         <roleAndSubordinates>Product_Team</roleAndSubordinates>
     </sharedTo>

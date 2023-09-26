@@ -11,11 +11,6 @@
     <columns>RTL_Channel_Segment__c</columns>
     <columns>RTL_Last_Assigned_Date_time__c</columns>
     <filterScope>Queue</filterScope>
-    <filters>
-        <field>CREATED_DATE</field>
-        <operation>equals</operation>
-        <value>LAST_N_MONTHS:6</value>
-    </filters>
     <label>SB1 ZM SamutPrakarn Mail</label>
     <language>en_US</language>
     <queue>SB1_ZM_SamutPrakarn_Mail</queue>

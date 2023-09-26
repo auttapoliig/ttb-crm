@@ -12,7 +12,6 @@
     <columns>CS_Sales_Owner_Segment__c</columns>
     <columns>CS_Status__c</columns>
     <columns>CS_Level__c</columns>
-    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CS_Suspend_flag__c</field>

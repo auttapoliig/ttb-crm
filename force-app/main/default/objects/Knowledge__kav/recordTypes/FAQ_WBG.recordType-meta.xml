@@ -17,14 +17,6 @@
     <picklistValues>
         <picklist>Category__c</picklist>
         <values>
-            <fullName>Branch Communication</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Campaign Center</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Product Knowledge</fullName>
             <default>false</default>
         </values>
@@ -34,14 +26,6 @@
         </values>
         <values>
             <fullName>Tips</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Work Instruction</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ttb Advisory</fullName>
             <default>false</default>
         </values>
     </picklistValues>

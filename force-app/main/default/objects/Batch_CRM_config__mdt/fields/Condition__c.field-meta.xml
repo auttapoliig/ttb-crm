@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Condition__c</fullName>
+    <description>example :
+CreatedDate &gt; 2021-01-01T01:02:03Z and CreatedDate &lt; 2021-03-01T01:02:03Z</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
     <label>Condition</label>

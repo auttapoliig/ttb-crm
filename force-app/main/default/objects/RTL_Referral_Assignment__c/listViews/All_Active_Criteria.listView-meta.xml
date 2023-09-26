@@ -4,13 +4,16 @@
     <columns>NAME</columns>
     <columns>RTL_Referral_Type__c</columns>
     <columns>RTL_Priority__c</columns>
+    <columns>RTL_Integration_Flag__c</columns>
+    <columns>RTL_Campaign__c</columns>
     <columns>RTL_Assigned_Queue_Name__c</columns>
     <columns>RTL_Default_Queue_Name__c</columns>
-    <columns>RTL_Integration_Flag__c</columns>
     <columns>RTL_Referral_Field_Criteria_1__c</columns>
     <columns>RTL_Referral_Field_Value_1__c</columns>
     <columns>RTL_Referral_Field_Criteria_2__c</columns>
     <columns>RTL_Referral_Field_Value_2__c</columns>
+    <columns>RTL_Referral_Field_Criteria_3__c</columns>
+    <columns>RTL_Referral_Field_Value_3__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RTL_Active_Flag__c</field>

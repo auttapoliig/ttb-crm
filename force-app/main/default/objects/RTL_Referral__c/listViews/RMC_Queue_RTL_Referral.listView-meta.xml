@@ -12,18 +12,7 @@
     <columns>RTL_Last_Assigned_Date_time__c</columns>
     <columns>CREATEDBY_USER</columns>
     <filterScope>Queue</filterScope>
-    <filters>
-        <field>RTL_Stage__c</field>
-        <operation>equals</operation>
-        <value>New,In progress_Contacted</value>
-    </filters>
-    <filters>
-        <field>RTL_Interested_Product__c</field>
-        <operation>notEqual</operation>
-        <value>Relief Program_COVID19</value>
-    </filters>
     <label>RMC Queue</label>
-    <language>en_US</language>
     <queue>RMC_Queue</queue>
     <sharedTo>
         <group>RMC_Queue</group>

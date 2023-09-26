@@ -173,6 +173,18 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>SME Fully Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME So Smooth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME Step Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>TMB QR</fullName>
             <default>false</default>
         </values>
@@ -317,10 +329,6 @@
         </values>
         <values>
             <fullName>TBANK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Touch</fullName>
             <default>false</default>
         </values>
         <values>

@@ -3,13 +3,16 @@
     <fullName>All_Retail_Active_Campaigns</fullName>
     <columns>RTL_Campaign_Code_10_digits__c</columns>
     <columns>RTL_Campaign_Type_child__c</columns>
+    <columns>RTL_Campaign_Objective__c</columns>
+    <columns>RTL_Campaign_Objective_child__c</columns>
     <columns>RTL_CampaignRecordtype__c</columns>
     <columns>CAMPAIGN.NAME</columns>
     <columns>CAMPAIGN.STATUS</columns>
     <columns>RTL_Campaign_Channel__c</columns>
     <columns>CAMPAIGN.START_DATE</columns>
     <columns>CAMPAIGN.END_DATE</columns>
-    <columns>RTL_Total_Members__c</columns>
+    <columns>RTL_Call_End_Date__c</columns>
+    <columns>CAMPAIGN.LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CAMPAIGN.ACTIVE</field>

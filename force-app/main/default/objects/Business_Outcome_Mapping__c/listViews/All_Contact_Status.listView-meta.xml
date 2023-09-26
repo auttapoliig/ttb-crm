@@ -16,9 +16,8 @@
     </filters>
     <filters>
         <field>Contact_Status__c</field>
-        <operation>equals</operation>
-        <value>Contact</value>
+        <operation>contains</operation>
+        <value>Contact,Contacted</value>
     </filters>
     <label>All Contact Status</label>
-    <language>en_US</language>
 </ListView>

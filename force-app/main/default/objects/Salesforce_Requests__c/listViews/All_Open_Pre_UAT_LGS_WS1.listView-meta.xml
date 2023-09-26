@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Pre_UAT_LGS_WS1</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Title__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Status__c</columns>
+    <columns>Test_by__c</columns>
+    <columns>Assigned_to__c</columns>
+    <columns>Sandbox__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Fixed_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Release__c</field>
+        <operation>equals</operation>
+        <value>LGS WS1</value>
+    </filters>
+    <label>All Open Pre-UAT LGS WS1</label>
+</ListView>

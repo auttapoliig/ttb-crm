@@ -7,6 +7,7 @@
     <columns>Core_Banking_Suggested_Segment__c</columns>
     <columns>Business_CLICK_TEXT__c</columns>
     <columns>BIZ_TOUCH_CB__c</columns>
+    <columns>Payroll__c</columns>
     <filterScope>Mine</filterScope>
     <filters>
         <field>ACCOUNT.RECORDTYPE</field>

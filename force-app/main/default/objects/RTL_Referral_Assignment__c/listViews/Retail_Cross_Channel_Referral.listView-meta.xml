@@ -7,11 +7,15 @@
     <columns>RTL_Referral_Field_Value_1__c</columns>
     <columns>RTL_Referral_Field_Criteria_2__c</columns>
     <columns>RTL_Referral_Field_Value_2__c</columns>
+    <columns>RTL_Referral_Field_Criteria_3__c</columns>
+    <columns>RTL_Referral_Field_Value_3__c</columns>
     <columns>RTL_Assigned_User__c</columns>
+    <columns>RTL_Assigned_User_field__c</columns>
     <columns>RTL_Assigned_Queue_Name__c</columns>
     <columns>RTL_Branch_and_Zone_Queue_User_field__c</columns>
     <columns>RTL_Default_Queue_Name__c</columns>
-    <columns>RTL_Campaign__c</columns>
+    <columns>RTL_Default_Branch_Zone_Queue_User_field__c</columns>
+    <columns>RTL_Integration_Flag__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RTL_Referral_Type__c</field>
@@ -24,5 +28,4 @@
         <value>1</value>
     </filters>
     <label>Retail_Cross_Channel_Referral</label>
-    <language>en_US</language>
 </ListView>

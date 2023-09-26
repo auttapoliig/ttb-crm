@@ -30,6 +30,16 @@
                 <default>false</default>
                 <label>DP-DORMANT</label>
             </value>
+            <value>
+                <fullName>DEB</fullName>
+                <default>false</default>
+                <label>Debenture</label>
+            </value>
+            <value>
+                <fullName>MF-ADJ</fullName>
+                <default>false</default>
+                <label>MF-ADJ</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

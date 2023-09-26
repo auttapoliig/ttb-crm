@@ -5,7 +5,7 @@
     <displayedFields>
         <field>Subject</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Priority</field>

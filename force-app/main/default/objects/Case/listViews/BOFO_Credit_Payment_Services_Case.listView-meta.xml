@@ -19,6 +19,5 @@
     <queue>BOFO_Investigation_and_Charge_Back_1</queue>
     <sharedTo>
         <group>BOFO_Investigation_and_Charge_Back_1</group>
-        <role>Card_Operation_TH</role>
     </sharedTo>
 </ListView>

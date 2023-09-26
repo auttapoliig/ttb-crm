@@ -18,6 +18,11 @@
                 <label>ttb_Application Error เช่น ttb touch / Internet Banking</label>
             </value>
             <value>
+                <fullName>ttb_Network ขัดข้อง</fullName>
+                <default>false</default>
+                <label>ttb_Network ขัดข้อง</label>
+            </value>
+            <value>
                 <fullName>ttb_Set Up ข้อมูลไม่ถูกต้อง</fullName>
                 <default>false</default>
                 <label>ttb_Set Up ข้อมูลไม่ถูกต้อง</label>
@@ -163,9 +168,24 @@
                 <label>Third Party_อยู่ระหว่างตรวจสอบ</label>
             </value>
             <value>
-                <fullName>TMB_Network ขัดข้อง</fullName>
+                <fullName>ลูกค้ายอมยุติ</fullName>
                 <default>false</default>
-                <label>TMB_Network ขัดข้อง</label>
+                <label>ลูกค้ายอมยุติ</label>
+            </value>
+            <value>
+                <fullName>ไม่ได้มีสาเหตุจากธนาคาร</fullName>
+                <default>false</default>
+                <label>ไม่ได้มีสาเหตุจากธนาคาร</label>
+            </value>
+            <value>
+                <fullName>ธนาคารชดเชย</fullName>
+                <default>false</default>
+                <label>ธนาคารชดเชย</label>
+            </value>
+            <value>
+                <fullName>case ซ้ำ</fullName>
+                <default>false</default>
+                <label>case ซ้ำ</label>
             </value>
             <value>
                 <fullName>TTB Require KYC Review</fullName>
@@ -348,6 +368,18 @@
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Third party_ระบบต่างธนาคารขัดข้อง</label>
+            </value>
+            <value>
+                <fullName>test1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>test1</label>
+            </value>
+            <value>
+                <fullName>test2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>test2</label>
             </value>
         </valueSetDefinition>
     </valueSet>

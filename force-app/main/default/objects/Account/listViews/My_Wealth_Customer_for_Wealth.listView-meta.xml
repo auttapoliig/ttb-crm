@@ -8,18 +8,14 @@
     <columns>RTL_AUM__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>RTL_RM_Name__c</field>
-        <operation>notEqual</operation>
-    </filters>
-    <filters>
-        <field>RTL_RM_Name__c</field>
-        <operation>notEqual</operation>
-        <value>00000</value>
-    </filters>
-    <filters>
-        <field>RTL_Check_WM_RM_as_PWA__c</field>
+        <field>Customer_Type__c</field>
         <operation>equals</operation>
-        <value>PWA</value>
+        <value>Individual</value>
+    </filters>
+    <filters>
+        <field>Segment_crm__c</field>
+        <operation>equals</operation>
+        <value>1,2,3,4,5</value>
     </filters>
     <filters>
         <field>RTL_Is_PWA_Owner__c</field>

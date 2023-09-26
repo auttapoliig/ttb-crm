@@ -17,9 +17,9 @@
     <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Call_Log_ID__c</field>
+        <field>Channel__c</field>
         <operation>equals</operation>
-        <value>10004137181658405604</value>
+        <value>Inbound</value>
     </filters>
     <label>All</label>
 </ListView>

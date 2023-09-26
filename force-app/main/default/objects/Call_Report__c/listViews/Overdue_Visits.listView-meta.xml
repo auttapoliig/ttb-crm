@@ -16,10 +16,9 @@
         <value>TODAY</value>
     </filters>
     <filters>
-        <field>Status__c</field>
-        <operation>equals</operation>
-        <value>1 - Open</value>
+        <field>Zone__c</field>
+        <operation>contains</operation>
+        <value>8057</value>
     </filters>
     <label>Overdue Visits</label>
-    <language>en_US</language>
 </ListView>

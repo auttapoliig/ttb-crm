@@ -15,7 +15,7 @@
         <operation>equals</operation>
         <value>0</value>
     </filters>
-    <label>TMB CS-Investigation</label>
+    <label>TTB CS-Investigation</label>
     <queue>TMB_CS_Investigation</queue>
     <sharedTo>
         <group>TMB_CS_Investigation</group>

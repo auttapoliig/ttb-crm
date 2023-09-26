@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Summer_23_Issue</fullName>
+    <columns>NAME</columns>
+    <columns>Release__c</columns>
+    <columns>Type__c</columns>
+    <columns>Title__c</columns>
+    <columns>BAU_Issue__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Status__c</columns>
+    <columns>Test_by__c</columns>
+    <columns>Assigned_to__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Period_Testing__c</field>
+        <operation>equals</operation>
+        <value>Pre-UAT,UAT</value>
+    </filters>
+    <filters>
+        <field>Release__c</field>
+        <operation>equals</operation>
+        <value>Winter&apos;24</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Requests__c.SFRequest</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>All Open Winter&apos;24 Issues</label>
+</ListView>

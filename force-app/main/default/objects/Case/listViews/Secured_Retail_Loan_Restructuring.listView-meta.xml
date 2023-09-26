@@ -15,10 +15,10 @@
         <operation>equals</operation>
         <value>0</value>
     </filters>
-    <label>Unuse_Secured Retail Loan Restructuring</label>
+    <label>Retail Banking Collection &amp; Recovery</label>
     <language>en_US</language>
-    <queue>Secured_Retail_Loan_Restructuring</queue>
+    <queue>Retail_Banking_Collection_Recovery</queue>
     <sharedTo>
-        <group>Secured_Retail_Loan_Restructuring</group>
+        <group>Retail_Banking_Collection_Recovery</group>
     </sharedTo>
 </ListView>

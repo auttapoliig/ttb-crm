@@ -29,7 +29,7 @@
     <filters>
         <field>CASES.CREATED_DATE_DATE_ONLY</field>
         <operation>greaterOrEqual</operation>
-        <value>LAST_N_MONTHS:3</value>
+        <value>LAST_N_MONTHS:6</value>
     </filters>
     <label>My Outbox Case</label>
     <language>en_US</language>

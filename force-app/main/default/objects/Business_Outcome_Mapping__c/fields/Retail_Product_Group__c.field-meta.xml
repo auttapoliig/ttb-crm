@@ -51,6 +51,11 @@
                 <default>false</default>
                 <label>Others</label>
             </value>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Contact</controllingFieldValue>
@@ -83,6 +88,10 @@
         <valueSettings>
             <controllingFieldValue>Contact</controllingFieldValue>
             <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>Commercial</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

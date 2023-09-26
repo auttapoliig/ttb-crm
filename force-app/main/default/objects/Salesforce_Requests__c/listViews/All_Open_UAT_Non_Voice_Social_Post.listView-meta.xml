@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_UAT_Non_Voice_Social_Post</fullName>
+    <columns>NAME</columns>
+    <columns>Release__c</columns>
+    <columns>Type__c</columns>
+    <columns>Title__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Status__c</columns>
+    <columns>Test_by__c</columns>
+    <columns>Assigned_to__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Period_Testing__c</field>
+        <operation>equals</operation>
+        <value>UAT</value>
+    </filters>
+    <filters>
+        <field>Release__c</field>
+        <operation>equals</operation>
+        <value>Non-Voice Social Post</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Requests__c.SFRequest</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>All Open UAT Non-Voice Social Post</label>
+</ListView>

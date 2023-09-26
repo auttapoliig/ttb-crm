@@ -9,6 +9,7 @@
     <columns>SLA_Day__c</columns>
     <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
     <columns>Commit_Date__c</columns>
+    <columns>Email_Topic__c</columns>
     <filterScope>Queue</filterScope>
     <filters>
         <field>CASES.CLOSED</field>
@@ -19,6 +20,11 @@
         <field>Service_Type_Matrix_Code__c</field>
         <operation>notEqual</operation>
         <value>XW001,XW002,XW003,XW004,XW005,XW017,XW018,XW019,XW020,XW021,XW022,XW023,XW024,XW025,XW026</value>
+    </filters>
+    <filters>
+        <field>CASES.SUBJECT</field>
+        <operation>contains</operation>
+        <value>contact us</value>
     </filters>
     <label>TMB Contact Center-Follow up</label>
     <queue>TMB_Contact_Center_Follow_up</queue>

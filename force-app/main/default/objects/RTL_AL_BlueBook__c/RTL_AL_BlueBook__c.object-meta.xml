@@ -169,13 +169,13 @@
     </nameField>
     <pluralLabel>AL Blue Books</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
         <lookupDialogsAdditionalFields>RTL_AL_bluebook_code__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RTL_AL_car_brand__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RTL_AL_car_group__c</lookupDialogsAdditionalFields>

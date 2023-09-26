@@ -8,9 +8,8 @@
     <filterScope>Everything</filterScope>
     <filters>
         <field>Profile_Name__c</field>
-        <operation>equals</operation>
-        <value>TMB Retail Contact Center Inbound NonVoice Supervisor</value>
+        <operation>contains</operation>
+        <value>TMB Retail Channel Sale</value>
     </filters>
     <label>All_Age</label>
-    <language>en_US</language>
 </ListView>

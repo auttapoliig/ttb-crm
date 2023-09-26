@@ -231,55 +231,9 @@
                 <label>TTB ABSOLUTE CREDIT CARD(VISA CARD)</label>
             </value>
             <value>
-                <fullName>COMMERCIAL TERM LOAN</fullName>
-                <default>false</default>
-                <label>COMMERCIAL TERM LOAN</label>
-            </value>
-            <value>
-                <fullName>DOMESTIC</fullName>
-                <default>false</default>
-                <label>DOMESTIC</label>
-            </value>
-            <value>
-                <fullName>HOME EQUITY FOR STAFF</fullName>
-                <default>false</default>
-                <label>HOME EQUITY FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>HOME LOAN FOR STAFF</fullName>
-                <default>false</default>
-                <label>HOME LOAN FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>OD</fullName>
-                <default>false</default>
-                <label>OD</label>
-            </value>
-            <value>
-                <fullName>OTHER SECURED</fullName>
-                <default>false</default>
-                <label>OTHER SECURED</label>
-            </value>
-            <value>
-                <fullName>PERSONAL LOAN FOR STAFF</fullName>
-                <default>false</default>
-                <label>PERSONAL LOAN FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>STAFF LOAN</fullName>
-                <default>false</default>
-                <label>STAFF LOAN</label>
-            </value>
-            <value>
                 <fullName>TTB GLOBAL HOUSE CREDIT</fullName>
                 <default>false</default>
                 <label>TTB GLOBAL HOUSE CREDIT</label>
-            </value>
-            <value>
-                <fullName>flashcard</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>flashcard</label>
             </value>
         </valueSetDefinition>
         <valueSettings>
@@ -437,38 +391,6 @@
         <valueSettings>
             <controllingFieldValue>LOAN</controllingFieldValue>
             <valueName>UNSECURED REVOLVING</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>COMMERCIAL TERM LOAN</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>DOMESTIC</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>HOME EQUITY FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>HOME LOAN FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>OD</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>OTHER SECURED</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>PERSONAL LOAN FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>STAFF LOAN</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>OTHERS</controllingFieldValue>

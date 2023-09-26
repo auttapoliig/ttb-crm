@@ -78,6 +78,13 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>RTL_Campaign_Channel__c</picklist>
+        <values>
+            <fullName>9 Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>RTL_Campaign_Sub_Type_child2__c</picklist>
         <values>
             <fullName>2 HasCampaignFulfillment</fullName>

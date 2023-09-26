@@ -10,6 +10,7 @@
     <columns>CAMPAIGN.NUM_LEADS</columns>
     <columns>CAMPAIGN.NUM_CONVERTED_LEADS</columns>
     <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>RTL_Campaign_Objective_child__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CAMPAIGN.ACTIVE</field>

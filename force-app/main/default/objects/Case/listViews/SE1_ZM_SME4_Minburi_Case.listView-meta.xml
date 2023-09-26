@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE1_ZM_SME4_Minburi_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>SE1 ZM SME4 Minburi</label>
+    <queue>SE1_ZM_SME4_Minburi</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1147,19 +1147,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>DOMESTIC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME EQUITY FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HOME LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1187,23 +1175,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>OD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>OTHER SECURED</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OTHERS</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>PERSONAL LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PERSONAL LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1215,11 +1191,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>STAFF LOAN</fullName>
+            <fullName>TRANSACTIONAL</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>TRANSACTIONAL</fullName>
+            <fullName>UNSECURED REVOLVING</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1238,27 +1214,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>COMMERCIAL TERM LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>CREDIT CARDS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>DOMESTIC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME EQUITY FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HOME LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1286,14 +1246,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>OD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>OTHER SECURED</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OTHERS</fullName>
             <default>false</default>
         </values>
@@ -1302,19 +1254,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>PERSONAL LOAN FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>RDC</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>SECURED LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>STAFF LOAN</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1337,27 +1281,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>COMMERCIAL TERM LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>CREDIT CARDS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>DOMESTIC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME EQUITY FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HOME LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1385,14 +1313,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>OD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>OTHER SECURED</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OTHERS</fullName>
             <default>false</default>
         </values>
@@ -1401,19 +1321,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>PERSONAL LOAN FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>RDC</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>SECURED LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>STAFF LOAN</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1436,27 +1348,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>COMMERCIAL TERM LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>CREDIT CARDS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>DOMESTIC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME EQUITY FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HOME LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1484,14 +1380,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>OD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>OTHER SECURED</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OTHERS</fullName>
             <default>false</default>
         </values>
@@ -1500,19 +1388,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>PERSONAL LOAN FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>RDC</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>SECURED LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>STAFF LOAN</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1535,27 +1415,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>COMMERCIAL TERM LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>CREDIT CARDS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>DOMESTIC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME EQUITY FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HOME LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HOME LOAN FOR STAFF</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1583,14 +1447,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>OD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>OTHER SECURED</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OTHERS</fullName>
             <default>false</default>
         </values>
@@ -1599,19 +1455,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>PERSONAL LOAN FOR STAFF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>RDC</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>SECURED LOAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>STAFF LOAN</fullName>
             <default>false</default>
         </values>
         <values>

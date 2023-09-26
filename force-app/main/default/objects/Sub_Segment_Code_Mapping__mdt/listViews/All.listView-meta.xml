@@ -4,6 +4,7 @@
     <columns>Segment_Code__c</columns>
     <columns>Sub_Segment_Code__c</columns>
     <columns>MasterLabel</columns>
+    <columns>Description__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
     <language>en_US</language>

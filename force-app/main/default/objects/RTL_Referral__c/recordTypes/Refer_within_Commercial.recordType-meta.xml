@@ -237,6 +237,18 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>SME Fully Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME So Smooth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME Step Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Smart %26 Fast</fullName>
             <default>false</default>
         </values>
@@ -421,10 +433,6 @@
         </values>
         <values>
             <fullName>TBANK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Touch</fullName>
             <default>false</default>
         </values>
         <values>
@@ -661,6 +669,10 @@
     </picklistValues>
     <picklistValues>
         <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Call Back</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Cancel</fullName>
             <default>false</default>

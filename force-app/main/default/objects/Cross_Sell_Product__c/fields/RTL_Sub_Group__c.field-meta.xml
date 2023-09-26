@@ -231,6 +231,11 @@
                 <default>false</default>
                 <label>TTB ABSOLUTE CREDIT CARD(VISA CARD)</label>
             </value>
+            <value>
+                <fullName>TTB GLOBAL HOUSE CREDIT</fullName>
+                <default>false</default>
+                <label>TTB GLOBAL HOUSE CREDIT</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
@@ -327,6 +332,10 @@
         <valueSettings>
             <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
             <valueName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>TTB GLOBAL HOUSE CREDIT</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>DEPOSIT</controllingFieldValue>

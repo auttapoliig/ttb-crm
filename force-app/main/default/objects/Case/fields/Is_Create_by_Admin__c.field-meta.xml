@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Create_by_Admin__c</fullName>
     <externalId>false</externalId>
-    <formula>OR(CONTAINS(CreatedBy.UserProfileName__c , &apos;System Administrator&apos;),CreatedBy.UserProfileName__c  = &apos;App External API&apos; ,CreatedBy.UserProfileName__c = &apos;Retail Integration API Only&apos;,  CreatedBy.CommunityNickname = &apos;TMB-admin&apos;)</formula>
+    <formula>OR(CONTAINS(CreatedBy.UserProfileName__c , &apos;System Administrator&apos;),CreatedBy.UserProfileName__c  = &apos;App External API&apos; ,CreatedBy.UserProfileName__c = &apos;Retail Integration API Only&apos;)</formula>
     <label>Is Create by Admin</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

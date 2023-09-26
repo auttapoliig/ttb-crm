@@ -22,7 +22,6 @@
         <value>Campaign.Dummy_Campaign,Campaign.Commercial</value>
     </filters>
     <label>All Retail Inactive Campaigns</label>
-    <language>en_US</language>
     <sharedTo>
         <role>CEO</role>
         <role>CRBO</role>

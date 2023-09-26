@@ -7,6 +7,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>Screen_type__c</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -14,6 +15,11 @@
                 <fullName>Contact</fullName>
                 <default>false</default>
                 <label>Contact</label>
+            </value>
+            <value>
+                <fullName>Contacted</fullName>
+                <default>false</default>
+                <label>Contacted</label>
             </value>
             <value>
                 <fullName>Uncontact</fullName>
@@ -38,9 +44,55 @@
             <value>
                 <fullName>Do Not Contact 6 Months</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Do Not Contact 6 Months</label>
             </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Uncontact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Call Back</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Do Not Contact 1year</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Do Not Contact LifeTime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outbound Campaign Member</controllingFieldValue>
+            <valueName>Cancel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <valueName>Contacted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Juristic Lead</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Do Not Contact 6 Months</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

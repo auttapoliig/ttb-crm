@@ -7,5 +7,4 @@
     <columns>Destination_UPC__c</columns>
     <filterScope>Everything</filterScope>
     <label>Assignment Criteria</label>
-    <language>en_US</language>
 </ListView>

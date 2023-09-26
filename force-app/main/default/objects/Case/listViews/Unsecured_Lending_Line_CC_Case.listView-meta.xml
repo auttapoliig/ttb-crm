@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unsecured_Lending_Line_CC_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Unsecured Lending Line CC</label>
+    <queue>Unsecured_Lending_Line_CC</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

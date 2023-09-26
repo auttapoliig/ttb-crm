@@ -57,9 +57,23 @@
                 <label>เสียงเงียบ</label>
             </value>
             <value>
+                <fullName>ติดต่อลูกค้าแล้ว/ลงทะเบียนซ้ำ</fullName>
+                <default>false</default>
+                <label>ติดต่อลูกค้าแล้ว/ลงทะเบียนซ้ำ</label>
+            </value>
+            <value>
+                <fullName>คุณสมบัติเบื้องต้นไม่ผ่านเกณฑ์</fullName>
+                <default>false</default>
+                <label>คุณสมบัติเบื้องต้นไม่ผ่านเกณฑ์</label>
+            </value>
+            <value>
+                <fullName>ระบบมีปัญหา</fullName>
+                <default>false</default>
+                <label>ระบบมีปัญหา</label>
+            </value>
+            <value>
                 <fullName>ลูกค้าวางสาย</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>ลูกค้าวางสาย</label>
             </value>
         </valueSetDefinition>
@@ -98,6 +112,22 @@
         <valueSettings>
             <controllingFieldValue>Uncontact</controllingFieldValue>
             <valueName>เสียงเงียบ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uncontact</controllingFieldValue>
+            <valueName>ลูกค้าวางสาย</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>ติดต่อลูกค้าแล้ว/ลงทะเบียนซ้ำ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>คุณสมบัติเบื้องต้นไม่ผ่านเกณฑ์</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>ระบบมีปัญหา</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

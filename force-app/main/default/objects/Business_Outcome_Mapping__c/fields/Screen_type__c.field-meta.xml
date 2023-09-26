@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Screen_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Screen type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outbound Campaign Member</fullName>
+                <default>false</default>
+                <label>Outbound Campaign Member</label>
+            </value>
+            <value>
+                <fullName>Juristic Lead</fullName>
+                <default>false</default>
+                <label>Juristic Lead</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

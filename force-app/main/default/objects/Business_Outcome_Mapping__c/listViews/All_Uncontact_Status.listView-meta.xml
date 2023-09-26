@@ -6,12 +6,17 @@
     <columns>Uncontact_Reason__c</columns>
     <columns>Avaya_Completion_Code__c</columns>
     <columns>IsActive__c</columns>
+    <columns>Screen_type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Contact_Status__c</field>
         <operation>equals</operation>
         <value>Uncontact</value>
     </filters>
+    <filters>
+        <field>Screen_type__c</field>
+        <operation>equals</operation>
+        <value>Outbound Campaign Member,Juristic Lead</value>
+    </filters>
     <label>All Uncontact Status</label>
-    <language>en_US</language>
 </ListView>

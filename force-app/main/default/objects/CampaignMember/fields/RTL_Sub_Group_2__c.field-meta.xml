@@ -200,76 +200,6 @@
                 <default>false</default>
                 <label>TMB VISA INFINITE</label>
             </value>
-            <value>
-                <fullName>UNSECURED REVOLVING</fullName>
-                <default>false</default>
-                <label>UNSECURED REVOLVING</label>
-            </value>
-            <value>
-                <fullName>TTB SO CHILL CREDIT CARD(MASTER CARD)</fullName>
-                <default>false</default>
-                <label>TTB SO CHILL CREDIT CARD(MASTER CARD)</label>
-            </value>
-            <value>
-                <fullName>TTB SO FAST CREDIT CARD(VISA CARD)</fullName>
-                <default>false</default>
-                <label>TTB SO FAST CREDIT CARD(VISA CARD)</label>
-            </value>
-            <value>
-                <fullName>TTB SO SMART CREDIT CARD(VISA CARD)</fullName>
-                <default>false</default>
-                <label>TTB SO SMART CREDIT CARD(VISA CARD)</label>
-            </value>
-            <value>
-                <fullName>TTB ROYAL TOP BRASS (VISA CARD)</fullName>
-                <default>false</default>
-                <label>TTB ROYAL TOP BRASS (VISA CARD)</label>
-            </value>
-            <value>
-                <fullName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</fullName>
-                <default>false</default>
-                <label>TTB ABSOLUTE CREDIT CARD(VISA CARD)</label>
-            </value>
-            <value>
-                <fullName>COMMERCIAL TERM LOAN</fullName>
-                <default>false</default>
-                <label>COMMERCIAL TERM LOAN</label>
-            </value>
-            <value>
-                <fullName>DOMESTIC</fullName>
-                <default>false</default>
-                <label>DOMESTIC</label>
-            </value>
-            <value>
-                <fullName>HOME EQUITY FOR STAFF</fullName>
-                <default>false</default>
-                <label>HOME EQUITY FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>HOME LOAN FOR STAFF</fullName>
-                <default>false</default>
-                <label>HOME LOAN FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>OD</fullName>
-                <default>false</default>
-                <label>OD</label>
-            </value>
-            <value>
-                <fullName>OTHER SECURED</fullName>
-                <default>false</default>
-                <label>OTHER SECURED</label>
-            </value>
-            <value>
-                <fullName>PERSONAL LOAN FOR STAFF</fullName>
-                <default>false</default>
-                <label>PERSONAL LOAN FOR STAFF</label>
-            </value>
-            <value>
-                <fullName>STAFF LOAN</fullName>
-                <default>false</default>
-                <label>STAFF LOAN</label>
-            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
@@ -348,26 +278,6 @@
             <valueName>TMB VISA INFINITE</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>TTB SO CHILL CREDIT CARD(MASTER CARD)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>TTB SO FAST CREDIT CARD(VISA CARD)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>TTB SO SMART CREDIT CARD(VISA CARD)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>TTB ROYAL TOP BRASS (VISA CARD)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>DEPOSIT</controllingFieldValue>
             <valueName>NON TRANSACTIONAL</valueName>
         </valueSettings>
@@ -418,42 +328,6 @@
         <valueSettings>
             <controllingFieldValue>LOAN</controllingFieldValue>
             <valueName>HOME EQUITY</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>UNSECURED REVOLVING</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>COMMERCIAL TERM LOAN</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>DOMESTIC</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>HOME EQUITY FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>HOME LOAN FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>OD</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>OTHER SECURED</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>PERSONAL LOAN FOR STAFF</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>LOAN</controllingFieldValue>
-            <valueName>STAFF LOAN</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>OTHERS</controllingFieldValue>

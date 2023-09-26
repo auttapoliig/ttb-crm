@@ -4,10 +4,11 @@
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>HPAP Reason Description</label>
-    <length>300</length>
+    <length>255</length>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>LongTextArea</type>
-    <visibleLines>3</visibleLines>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

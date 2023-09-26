@@ -723,10 +723,6 @@
     <picklistValues>
         <picklist>Authorize_1__c</picklist>
         <values>
-            <fullName>น%2Eส%2Eกมลฉ%E0%B8%B1ตร ยมภ%E0%B8%B1กด%E0%B8%B5 %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eกรม%E0%B8%B4ษฐ%E0%B9%8C บ%E0%B8%B8ญเก%E0%B8%B4ด %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -743,23 +739,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eชญาน%E0%B8%B4ษฐ%E0%B9%8C อ%E0%B8%B4ศรางก%E0%B8%B9ร ณ อย%E0%B8%B8ธยา  %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eณ%E0%B8%B1ฐชน%E0%B8%B1นท เจร%E0%B8%B4ญผล %28CF5%29</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eปว%E0%B8%B1นฉ%E0%B8%B1ตร อร%E0%B8%B8ษส%E0%B8%B4ร%E0%B8%B4สาธ%E0%B8%B4ตา %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา  %28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -791,10 +775,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eเบญจมาศ ว%E0%B8%B1ฒนะโชต%E0%B8%B4  %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -808,10 +788,6 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eไพล%E0%B8%B4น ส%E0%B8%B1นต%E0%B8%B4วาน%E0%B8%B4ชก%E0%B8%B8ล %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -832,6 +808,10 @@
         </values>
         <values>
             <fullName>นางส%E0%B8%B8พ%E0%B8%B1ตรา แย%E0%B9%89มแสงส%E0%B8%B1งข%E0%B9%8C %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นางส%E0%B8%B8มณฑล ว%E0%B8%B4ศวช%E0%B8%B4ต%28CF2%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -867,7 +847,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>นายวรา ย%E0%B8%B8ต%E0%B8%B4ธาดา  %28CF3%29</fullName>
+            <fullName>นายภ%E0%B8%B1ทรว%E0%B8%B4ศว%E0%B9%8C พ%E0%B8%B8ฒาพ%E0%B8%B4ท%E0%B8%B1กษ%E0%B9%8C%28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -883,10 +863,6 @@
         <picklist>Authorize_2__c</picklist>
         <values>
             <fullName>ETELKA DALLON %28CF1%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eกมลฉ%E0%B8%B1ตร ยมภ%E0%B8%B1กด%E0%B8%B5 %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -906,23 +882,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eชญาน%E0%B8%B4ษฐ%E0%B9%8C อ%E0%B8%B4ศรางก%E0%B8%B9ร ณ อย%E0%B8%B8ธยา  %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eณ%E0%B8%B1ฐชน%E0%B8%B1นท เจร%E0%B8%B4ญผล %28CF5%29</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eปว%E0%B8%B1นฉ%E0%B8%B1ตร อร%E0%B8%B8ษส%E0%B8%B4ร%E0%B8%B4สาธ%E0%B8%B4ตา %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา %28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -962,10 +926,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eเบญจมาศ ว%E0%B8%B1ฒนะโชต%E0%B8%B4  %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -979,10 +939,6 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eไพล%E0%B8%B4น ส%E0%B8%B1นต%E0%B8%B4วาน%E0%B8%B4ชก%E0%B8%B8ล %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1007,6 +963,10 @@
         </values>
         <values>
             <fullName>นางส%E0%B8%B8พ%E0%B8%B1ตรา แย%E0%B9%89มแสงส%E0%B8%B1งข%E0%B9%8C %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นางส%E0%B8%B8มณฑล ว%E0%B8%B4ศวช%E0%B8%B4ต%28CF2%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1042,7 +1002,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>นายวรา ย%E0%B8%B8ต%E0%B8%B4ธาดา  %28CF3%29</fullName>
+            <fullName>นายภ%E0%B8%B1ทรว%E0%B8%B4ศว%E0%B9%8C พ%E0%B8%B8ฒาพ%E0%B8%B4ท%E0%B8%B1กษ%E0%B9%8C%28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1485,6 +1445,30 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>%5BContact Us Form%5D - ขอใช%E0%B9%89บร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%5BContact Us Form%5D - ช%E0%B8%B7%E0%B9%88นชม</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%5BContact Us Form%5D - ต%E0%B8%B4ดตามผลอน%E0%B8%B8ม%E0%B8%B1ต%E0%B8%B4 %2F ต%E0%B8%B4ดตามสถานะ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%5BContact Us Form%5D - ร%E0%B9%89องเร%E0%B8%B5ยน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%5BContact Us Form%5D - สอบถามข%E0%B9%89อม%E0%B8%B9ล</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%5BContact Us Form%5D - เสนอแนะ</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Complaints</fullName>
             <default>false</default>
         </values>
@@ -1630,7 +1614,7 @@
         </values>
         <values>
             <fullName>New</fullName>
-            <default>true</default>
+            <default>false</default>
         </values>
         <values>
             <fullName>Rejected</fullName>
@@ -2622,6 +2606,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>ธนาคารชดเชยให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>ปร%E0%B8%B1บปร%E0%B8%B8ง%2Fแก%E0%B9%89ไขรายการให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89า</fullName>
             <default>false</default>
         </values>
@@ -2639,6 +2627,10 @@
         </values>
         <values>
             <fullName>ย%E0%B8%B7นย%E0%B8%B1นรายการปกต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89ายอมย%E0%B8%B8ต%E0%B8%B4ข%E0%B9%89อร%E0%B9%89องเร%E0%B8%B5ยน</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2708,10 +2700,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>TMB_Network ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Third Party_ATM Timeout</fullName>
             <default>false</default>
         </values>
@@ -2760,7 +2748,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>case ซ%E0%B9%89ำ</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>ttb_Application Error เช%E0%B9%88น ttb touch %2F Internet Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_Network ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2829,6 +2825,18 @@
         </values>
         <values>
             <fullName>ตามคำส%E0%B8%B1%E0%B9%88งหน%E0%B9%88วยงานราชการ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ธนาคารชดเชย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89ายอมย%E0%B8%B8ต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ไม%E0%B9%88ได%E0%B9%89ม%E0%B8%B5สาเหต%E0%B8%B8จากธนาคาร</fullName>
             <default>false</default>
         </values>
     </picklistValues>

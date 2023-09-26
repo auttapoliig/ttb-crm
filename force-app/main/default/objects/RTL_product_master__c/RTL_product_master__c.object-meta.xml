@@ -183,6 +183,7 @@
         <searchResultsAdditionalFields>Product_Group__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Product_Sub_group__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Product_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Fund_Type__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

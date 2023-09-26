@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_2023_Campaign_Assignment_Rule</fullName>
+    <columns>NAME</columns>
+    <columns>RTL_Active__c</columns>
+    <columns>RTL_Campaign_Lead_Source__c</columns>
+    <columns>RTL_TMB_Campaign_Reference__c</columns>
+    <columns>LeadSource__c</columns>
+    <columns>RTL_Customer_Segment__c</columns>
+    <columns>RTL_Campaign__c</columns>
+    <columns>RTL_Start_Date__c</columns>
+    <columns>RTL_End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTL_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RTL_Start_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2023</value>
+    </filters>
+    <label>All 2023 Campaign Assignment Rule</label>
+</ListView>

@@ -9,8 +9,6 @@
     <filters>
         <field>Profile_Name__c</field>
         <operation>contains</operation>
-        <value>Client Support</value>
     </filters>
     <label>All_CS</label>
-    <language>en_US</language>
 </ListView>

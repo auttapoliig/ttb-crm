@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Start</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Not Start</label>
+            </value>
+            <value>
+                <fullName>Blocked</fullName>
+                <color>#666666</color>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
+                <fullName>Pass</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>Pass</label>
+            </value>
+            <value>
+                <fullName>Fail</fullName>
+                <color>#FF6666</color>
+                <default>false</default>
+                <label>Fail</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <color>#BBBBBB</color>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <color>#33CCFF</color>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Discussion</fullName>
+                <color>#9999FF</color>
+                <default>false</default>
+                <label>Discussion</label>
+            </value>
+            <value>
+                <fullName>Known Issue</fullName>
+                <color>#CC66CC</color>
+                <default>false</default>
+                <label>Known Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

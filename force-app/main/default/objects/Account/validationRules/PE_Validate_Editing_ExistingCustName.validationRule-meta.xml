@@ -3,6 +3,6 @@
     <fullName>PE_Validate_Editing_ExistingCustName</fullName>
     <active>true</active>
     <description>Preventing edit customer name of Existing customer</description>
-    <errorConditionFormula>AND(TEXT( Account_Type__c ) = &quot;Existing Customer&quot;, ISCHANGED(Name), $Profile.Name &lt;&gt; &quot;System Administrator&quot;,$Profile.Name &lt;&gt; &quot;Retail Integration API Only&quot; )</errorConditionFormula>
+    <errorConditionFormula>AND(TEXT( Account_Type__c ) = &quot;Existing Customer&quot;, ISCHANGED(Name), $Profile.Name &lt;&gt; &quot;System Administrator&quot;,$Profile.Name &lt;&gt; &quot;Retail Integration API Only&quot;,$Profile.Name &lt;&gt; &quot;TMB System Administrator&quot; )</errorConditionFormula>
     <errorMessage>The Existing Customer&apos;s name cannot be modified</errorMessage>
 </ValidationRule>

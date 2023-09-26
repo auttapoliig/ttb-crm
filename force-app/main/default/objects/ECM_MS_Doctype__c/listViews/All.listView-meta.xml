@@ -3,8 +3,16 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Type_Name_EN__c</columns>
+    <columns>Type_Name_TH__c</columns>
+    <columns>Document_Object__c</columns>
+    <columns>Doc_Template__c</columns>
+    <columns>Source__c</columns>
     <columns>Repository__c</columns>
-    <columns>Doc_Location__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Source__c</field>
+        <operation>equals</operation>
+        <value>A0291</value>
+    </filters>
     <label>All</label>
 </ListView>

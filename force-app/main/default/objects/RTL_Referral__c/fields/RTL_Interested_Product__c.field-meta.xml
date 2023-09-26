@@ -364,6 +364,21 @@
                 <label>สินเชื่อเพื่อธุรกิจ - SOLAR</label>
             </value>
             <value>
+                <fullName>SME So Smooth</fullName>
+                <default>false</default>
+                <label>SME So Smooth</label>
+            </value>
+            <value>
+                <fullName>SME Fully Cash</fullName>
+                <default>false</default>
+                <label>SME Fully Cash</label>
+            </value>
+            <value>
+                <fullName>SME Step Up</fullName>
+                <default>false</default>
+                <label>SME Step Up</label>
+            </value>
+            <value>
                 <fullName>BA (Credit Life)</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
@@ -650,6 +665,18 @@
         <valueSettings>
             <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
             <valueName>สินเชื่อเพื่อธุรกิจ - SOLAR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SME So Smooth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SME Fully Cash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <valueName>SME Step Up</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>

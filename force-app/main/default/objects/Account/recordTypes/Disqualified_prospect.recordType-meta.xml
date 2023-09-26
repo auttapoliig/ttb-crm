@@ -42,10 +42,6 @@
             <fullName>TBANK</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Touch</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Account_Approval_Status__c</picklist>
@@ -1018,6 +1014,29 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Cold Opp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RMC_Relationship_Level_by_RM__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Opp</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Hot</fullName>
             <default>false</default>
         </values>
@@ -1135,6 +1154,44 @@
         </values>
         <values>
             <fullName>South</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_Level_by_RM_Last_Year__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Opp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_Level_by_Team_Last_Year__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Opp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
             <default>false</default>
         </values>
     </picklistValues>

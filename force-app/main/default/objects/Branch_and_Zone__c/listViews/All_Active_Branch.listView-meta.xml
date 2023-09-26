@@ -15,7 +15,7 @@
     <columns>Zone_Code_BB__c</columns>
     <columns>Zone_BB__c</columns>
     <columns>Region_Code_BB__c</columns>
-    <columns>Region_BB__c</columns>
+    <columns>Branch_Queue_Name__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>IsActive__c</field>
@@ -23,5 +23,4 @@
         <value>1</value>
     </filters>
     <label>All Active Branch</label>
-    <language>en_US</language>
 </ListView>

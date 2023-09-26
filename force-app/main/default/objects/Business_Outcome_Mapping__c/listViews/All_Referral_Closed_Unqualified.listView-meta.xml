@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Referral_Closed_Unqualified</fullName>
+    <columns>NAME</columns>
+    <columns>Contact_Status__c</columns>
+    <columns>Retail_Product_Group__c</columns>
+    <columns>Offer_Result__c</columns>
+    <columns>Unqualified_Reason__c</columns>
+    <columns>Avaya_Completion_Code__c</columns>
+    <columns>IsActive__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IsActive__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Offer_Result__c</field>
+        <operation>equals</operation>
+        <value>Closed (Unqualified)</value>
+    </filters>
+    <label>All Referral - Closed (Unqualified)</label>
+</ListView>

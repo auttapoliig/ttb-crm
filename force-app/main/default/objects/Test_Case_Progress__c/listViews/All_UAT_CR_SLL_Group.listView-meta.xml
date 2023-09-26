@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_UAT_CR_SLL_Group</fullName>
+    <columns>NAME</columns>
+    <columns>Period__c</columns>
+    <columns>Tester_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Module__c</columns>
+    <columns>Test_scenario_no__c</columns>
+    <columns>Test_scenario_detail__c</columns>
+    <columns>Test_case_no__c</columns>
+    <columns>Test_case_detail__c</columns>
+    <columns>Expected_Pass__c</columns>
+    <columns>Scope__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Period__c</field>
+        <operation>equals</operation>
+        <value>UAT</value>
+    </filters>
+    <filters>
+        <field>Release__c</field>
+        <operation>equals</operation>
+        <value>CR SLL Group</value>
+    </filters>
+    <label>All UAT CR SLL Group</label>
+</ListView>

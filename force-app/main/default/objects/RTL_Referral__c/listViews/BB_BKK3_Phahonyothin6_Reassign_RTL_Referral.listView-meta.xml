@@ -11,9 +11,9 @@
     <columns>RTL_Channel_Segment__c</columns>
     <columns>RTL_Last_Assigned_Date_time__c</columns>
     <filterScope>Queue</filterScope>
-    <label>COM 1-16 Team</label>
-    <queue>COM_1_16_Team</queue>
+    <label>COM 1-16 TH Team</label>
+    <queue>COM_1_16_TH_Team</queue>
     <sharedTo>
-        <group>COM_1_16_Team</group>
+        <group>COM_1_16_TH_Team</group>
     </sharedTo>
 </ListView>

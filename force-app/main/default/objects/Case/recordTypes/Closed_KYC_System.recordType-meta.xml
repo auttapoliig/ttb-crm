@@ -722,10 +722,6 @@
     <picklistValues>
         <picklist>Authorize_1__c</picklist>
         <values>
-            <fullName>น%2Eส%2Eกมลฉ%E0%B8%B1ตร ยมภ%E0%B8%B1กด%E0%B8%B5 %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eกรม%E0%B8%B4ษฐ%E0%B9%8C บ%E0%B8%B8ญเก%E0%B8%B4ด %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -742,23 +738,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eชญาน%E0%B8%B4ษฐ%E0%B9%8C อ%E0%B8%B4ศรางก%E0%B8%B9ร ณ อย%E0%B8%B8ธยา  %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eณ%E0%B8%B1ฐชน%E0%B8%B1นท เจร%E0%B8%B4ญผล %28CF5%29</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eปว%E0%B8%B1นฉ%E0%B8%B1ตร อร%E0%B8%B8ษส%E0%B8%B4ร%E0%B8%B4สาธ%E0%B8%B4ตา %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา  %28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -790,10 +774,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eเบญจมาศ ว%E0%B8%B1ฒนะโชต%E0%B8%B4  %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -807,10 +787,6 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eไพล%E0%B8%B4น ส%E0%B8%B1นต%E0%B8%B4วาน%E0%B8%B4ชก%E0%B8%B8ล %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -831,6 +807,10 @@
         </values>
         <values>
             <fullName>นางส%E0%B8%B8พ%E0%B8%B1ตรา แย%E0%B9%89มแสงส%E0%B8%B1งข%E0%B9%8C %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นางส%E0%B8%B8มณฑล ว%E0%B8%B4ศวช%E0%B8%B4ต%28CF2%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -866,7 +846,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>นายวรา ย%E0%B8%B8ต%E0%B8%B4ธาดา  %28CF3%29</fullName>
+            <fullName>นายภ%E0%B8%B1ทรว%E0%B8%B4ศว%E0%B9%8C พ%E0%B8%B8ฒาพ%E0%B8%B4ท%E0%B8%B1กษ%E0%B9%8C%28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -882,10 +862,6 @@
         <picklist>Authorize_2__c</picklist>
         <values>
             <fullName>ETELKA DALLON %28CF1%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eกมลฉ%E0%B8%B1ตร ยมภ%E0%B8%B1กด%E0%B8%B5 %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -905,23 +881,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eชญาน%E0%B8%B4ษฐ%E0%B9%8C อ%E0%B8%B4ศรางก%E0%B8%B9ร ณ อย%E0%B8%B8ธยา  %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eณ%E0%B8%B1ฐชน%E0%B8%B1นท เจร%E0%B8%B4ญผล %28CF5%29</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eปว%E0%B8%B1นฉ%E0%B8%B1ตร อร%E0%B8%B8ษส%E0%B8%B4ร%E0%B8%B4สาธ%E0%B8%B4ตา %28CF6%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา %28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -961,10 +925,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>น%2Eส%2Eเบญจมาศ ว%E0%B8%B1ฒนะโชต%E0%B8%B4  %28CF3%29</fullName>
             <default>false</default>
         </values>
@@ -978,10 +938,6 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>น%2Eส%2Eไพล%E0%B8%B4น ส%E0%B8%B1นต%E0%B8%B4วาน%E0%B8%B4ชก%E0%B8%B8ล %28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1006,6 +962,10 @@
         </values>
         <values>
             <fullName>นางส%E0%B8%B8พ%E0%B8%B1ตรา แย%E0%B9%89มแสงส%E0%B8%B1งข%E0%B9%8C %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นางส%E0%B8%B8มณฑล ว%E0%B8%B4ศวช%E0%B8%B4ต%28CF2%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1041,7 +1001,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>นายวรา ย%E0%B8%B8ต%E0%B8%B4ธาดา  %28CF3%29</fullName>
+            <fullName>นายภ%E0%B8%B1ทรว%E0%B8%B4ศว%E0%B9%8C พ%E0%B8%B8ฒาพ%E0%B8%B4ท%E0%B8%B1กษ%E0%B9%8C%28CF4%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1780,10 +1740,6 @@
         </values>
         <values>
             <fullName>Email - ttbweb</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Live Chat</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2741,7 +2697,19 @@
     <picklistValues>
         <picklist>Resolution_LIst__c</picklist>
         <values>
+            <fullName>IT ดำเน%E0%B8%B4นการแก%E0%B9%89ไขระบบ</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ช%E0%B8%B5แจงข%E0%B9%89อม%E0%B8%B9ลท%E0%B8%B5%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89องให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89าร%E0%B8%B1บทราบ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ดำเน%E0%B8%B4นการตามท%E0%B8%B5%E0%B9%88ล%E0%B8%B9กค%E0%B9%89าร%E0%B9%89องขอ</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2749,11 +2717,47 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>ธนาคารชดเชยให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>ปร%E0%B8%B1บปร%E0%B8%B8ง%2Fแก%E0%B9%89ไขรายการให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89า</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>ปร%E0%B8%B1บปร%E0%B8%B8งการ Set Up ให%E0%B9%89ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ปร%E0%B8%B1บปร%E0%B8%B8งคะแนนค%E0%B8%B7น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ปร%E0%B8%B1บปร%E0%B8%B8งเง%E0%B8%B4นค%E0%B8%B7น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ย%E0%B8%B7นย%E0%B8%B1นรายการปกต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89ายอมย%E0%B8%B8ต%E0%B8%B4ข%E0%B9%89อร%E0%B9%89องเร%E0%B8%B5ยน</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ให%E0%B9%89ความร%E0%B9%88วมม%E0%B8%B7อ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ส%E0%B9%88งบ%E0%B8%B1ตร%2Fเอกสารให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89าแล%E0%B9%89ว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เจ%E0%B9%89าหน%E0%B9%89าท%E0%B8%B5%E0%B9%88แก%E0%B9%89ไขรายการให%E0%B9%89ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89าร%E0%B8%B1บทราบ</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -2795,11 +2799,155 @@
     <picklistValues>
         <picklist>Root_Cause_List__c</picklist>
         <values>
+            <fullName>Customer_ล%E0%B8%B9กค%E0%B9%89าร%E0%B9%89องขอบร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer_เก%E0%B8%B4ดจากล%E0%B8%B9กค%E0%B9%89าเข%E0%B9%89าใจผ%E0%B8%B4ด</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Other</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>TTB Require KYC Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ATM Timeout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ATM%2F ADM ต%E0%B9%88างธนาคารข%E0%B8%B1ดข%E0%B9%89อง %28Timeout%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_Hardware_Machine_Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_Network ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_การดำเน%E0%B8%B4นการ %2F การต%E0%B8%B4ดต%E0%B9%88อท%E0%B8%B5%E0%B9%88ไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ป%E0%B8%B4ดระบบ %2F Network ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ระบบงานภายนอกข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ระบบภายนอกป%E0%B8%B4ดปร%E0%B8%B1บปร%E0%B8%B8ง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ระบบเคร%E0%B8%B7%E0%B9%88อข%E0%B9%88ายภายนอกข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_ระบบเคร%E0%B8%B7%E0%B9%88อข%E0%B9%88ายภายนอกข%E0%B8%B1ดข%E0%B9%89อง_ไฟฟ%E0%B9%89าด%E0%B8%B1บ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party_อย%E0%B8%B9%E0%B9%88ระหว%E0%B9%88างตรวจสอบ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>case ซ%E0%B9%89ำ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_Application Error เช%E0%B9%88น ttb touch %2F Internet Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_Network ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_Set Up ข%E0%B9%89อม%E0%B8%B9ลไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ข%E0%B9%89อม%E0%B8%B9ลผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8C %2F Compaign ไม%E0%B9%88ช%E0%B8%B1ดเจน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ข%E0%B9%89อม%E0%B8%B9ลในระบบไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ป%E0%B8%B1ญหาอ%E0%B8%B7%E0%B9%88นๆ จากกระบวนการภายใน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ป%E0%B8%B1ญหาเก%E0%B8%B4ดจากพน%E0%B8%B1กงาน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8Cและบร%E0%B8%B4การไม%E0%B9%88ตรงตามความต%E0%B9%89องการล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ฟ%E0%B8%B1งก%E0%B9%8Cช%E0%B8%B1%E0%B9%88นการทำงานของเคร%E0%B8%B7%E0%B9%88อง ATM%2FADM ข%E0%B8%B1ดข%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ระบบงานภายในข%E0%B8%B1ดข%E0%B9%89อง เช%E0%B9%88น F2F %2FSD %2FSCS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ระบบภายในป%E0%B8%B4ดปร%E0%B8%B1บปร%E0%B8%B8ง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ยอมร%E0%B8%B1บนโยบายและหล%E0%B8%B1กการปฏ%E0%B8%B4บ%E0%B8%B1ต%E0%B8%B4ของธนาคาร</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_เคร%E0%B8%B7อข%E0%B9%88ายภายในข%E0%B8%B1ดข%E0%B9%89อง Host Down %2F Time out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_เจ%E0%B9%89าหน%E0%B9%89าท%E0%B8%B5%E0%B9%88ดำเน%E0%B8%B4นการล%E0%B9%88าช%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_เจ%E0%B9%89าหน%E0%B9%89าท%E0%B8%B5%E0%B9%88ทำรายการไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_เจ%E0%B9%89าหน%E0%B9%89าท%E0%B8%B5%E0%B9%88สอนการใช%E0%B9%89งานระบบให%E0%B9%89ล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ครบถ%E0%B9%89วน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_เจ%E0%B9%89าหน%E0%B9%89าท%E0%B8%B5%E0%B9%88ให%E0%B9%89ข%E0%B9%89อม%E0%B8%B9ลล%E0%B8%B9กค%E0%B9%89าไม%E0%B9%88ถ%E0%B8%B9กต%E0%B9%89อง</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ttb_ไม%E0%B9%88ม%E0%B8%B5 Process รองร%E0%B8%B1บความต%E0%B9%89องการล%E0%B8%B9กค%E0%B9%89า</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ธนาคารชดเชย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89ายอมย%E0%B8%B8ต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ไม%E0%B9%88ได%E0%B9%89ม%E0%B8%B5สาเหต%E0%B8%B8จากธนาคาร</fullName>
             <default>false</default>
         </values>
     </picklistValues>

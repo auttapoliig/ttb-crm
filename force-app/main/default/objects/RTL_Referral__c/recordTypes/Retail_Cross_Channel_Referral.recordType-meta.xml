@@ -149,14 +149,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>New%2FUsed Car %3C 10</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New%2FUsed Car %3E%3D 10</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>OD</fullName>
             <default>false</default>
         </values>
@@ -166,6 +158,18 @@
         </values>
         <values>
             <fullName>Prompt Pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME Fully Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME So Smooth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME Step Up</fullName>
             <default>false</default>
         </values>
         <values>
@@ -277,10 +281,6 @@
         </values>
         <values>
             <fullName>TBANK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Touch</fullName>
             <default>false</default>
         </values>
         <values>
@@ -497,6 +497,10 @@
     </picklistValues>
     <picklistValues>
         <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Accepted %26 In Progress</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Cancel</fullName>
             <default>false</default>

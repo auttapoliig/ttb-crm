@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Employee_ID__c</fullName>
     <encryptionScheme>None</encryptionScheme>
-    <externalId>true</externalId>
+    <externalId>false</externalId>
     <label>Employee ID</label>
     <length>10</length>
     <required>true</required>

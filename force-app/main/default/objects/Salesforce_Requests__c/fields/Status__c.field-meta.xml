@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>New</fullName>
+                <color>#999999</color>
+                <default>true</default>
+                <label>1 - New</label>
+            </value>
+            <value>
+                <fullName>Reopen</fullName>
+                <color>#2F5D85</color>
+                <default>false</default>
+                <label>1 - Reopen</label>
+            </value>
+            <value>
+                <fullName>2 - Acknowledge</fullName>
+                <color>#FF9900</color>
+                <default>false</default>
+                <label>2 - Acknowledge</label>
+            </value>
+            <value>
+                <fullName>Waiting to user confirm</fullName>
+                <color>#000066</color>
+                <default>false</default>
+                <label>3 - Waiting to user confirm</label>
+            </value>
+            <value>
+                <fullName>Investigate</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>4.1 - Investigate</label>
+            </value>
+            <value>
+                <fullName>Monitoring</fullName>
+                <color>#660000</color>
+                <default>false</default>
+                <label>4.2 - Monitoring</label>
+            </value>
+            <value>
+                <fullName>Fixing</fullName>
+                <color>#FF9966</color>
+                <default>false</default>
+                <label>4.3 - Fixing</label>
+            </value>
+            <value>
+                <fullName>Fixed on Dev Env.</fullName>
+                <color>#FF6666</color>
+                <default>false</default>
+                <label>4.4 - Fixed on Dev Env.</label>
+            </value>
+            <value>
+                <fullName>4.5 - Request to Open Snow</fullName>
+                <color>#3366FF</color>
+                <default>false</default>
+                <label>4.5 - Request to Open Snow</label>
+            </value>
+            <value>
+                <fullName>4.6 - Waiting to Open Snow</fullName>
+                <color>#6633FF</color>
+                <default>false</default>
+                <label>4.6 - Waiting to Open Snow</label>
+            </value>
+            <value>
+                <fullName>4.7 - Preparation Support Document</fullName>
+                <color>#333399</color>
+                <default>false</default>
+                <label>4.7 - Preparation Support Document</label>
+            </value>
+            <value>
+                <fullName>4.8 - Request to deployed to UAT</fullName>
+                <color>#000099</color>
+                <default>false</default>
+                <label>4.8 - Request to deployed to UAT</label>
+            </value>
+            <value>
+                <fullName>Fixed</fullName>
+                <color>#339999</color>
+                <default>false</default>
+                <label>5 - Fixed</label>
+            </value>
+            <value>
+                <fullName>Retest</fullName>
+                <color>#FF99FF</color>
+                <default>false</default>
+                <label>6 - Ready to UAT</label>
+            </value>
+            <value>
+                <fullName>Discussion</fullName>
+                <color>#F96FB7</color>
+                <default>false</default>
+                <label>7.1 - Discussion</label>
+            </value>
+            <value>
+                <fullName>Open Ticket to Salesforce</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+                <label>7.2 - Open Ticket to Salesforce</label>
+            </value>
+            <value>
+                <fullName>Salesforce Limitation</fullName>
+                <color>#333333</color>
+                <default>false</default>
+                <label>7.3 - Salesforce Limitation</label>
+            </value>
+            <value>
+                <fullName>Known Issues</fullName>
+                <color>#993300</color>
+                <default>false</default>
+                <label>7.4 - Known Issues</label>
+            </value>
+            <value>
+                <fullName>Pending next CR</fullName>
+                <color>#993399</color>
+                <default>false</default>
+                <label>7.5 - Pending next CR</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <color>#66E9BD</color>
+                <default>false</default>
+                <label>7.6 - Rejected</label>
+            </value>
+            <value>
+                <fullName>8 - UAT Accepted</fullName>
+                <color>#66FF99</color>
+                <default>false</default>
+                <label>8.1 - UAT Accepted</label>
+            </value>
+            <value>
+                <fullName>8 - Closed  - Snow opened</fullName>
+                <color>#66E9BD</color>
+                <default>false</default>
+                <label>8.2 - Closed  - Snow opened</label>
+            </value>
+            <value>
+                <fullName>Duplicate with Other Salesforce Request</fullName>
+                <color>#00CCCC</color>
+                <default>false</default>
+                <label>8.3 - Duplicate with Other Salesforce Request</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <color>#009900</color>
+                <default>false</default>
+                <label>8.4 - Closed</label>
+            </value>
+            <value>
+                <fullName>Closed with Monitoring</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+                <label>8.5 - Closed with Monitoring</label>
+            </value>
+            <value>
+                <fullName>Closed due to SF: Work as designed</fullName>
+                <color>#006600</color>
+                <default>false</default>
+                <label>8.6 - Closed due to SF: Work as designed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

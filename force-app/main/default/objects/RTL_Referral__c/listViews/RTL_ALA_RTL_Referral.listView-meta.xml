@@ -21,8 +21,5 @@
     <queue>RTL_ALA</queue>
     <sharedTo>
         <group>Automotive_Lending_Solution_Advisory</group>
-        <role>Automotive_Lending_Solution_Advisory_Line_SupportTL</role>
-        <role>Automotive_Lending_Solution_Advisory_Line_Support_MGR</role>
-        <role>Automotive_Lending_Solution_Advisory_Line_Support_USER</role>
     </sharedTo>
 </ListView>

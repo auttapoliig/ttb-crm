@@ -4,7 +4,8 @@
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>HPAP Reason Description</label>
-    <length>300</length>
-    <type>LongTextArea</type>
-    <visibleLines>3</visibleLines>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

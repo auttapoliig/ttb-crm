@@ -7,6 +7,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>Contact_Status__c</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -35,6 +36,157 @@
                 <default>false</default>
                 <label>Referred</label>
             </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Contacted &amp; In progress</fullName>
+                <default>false</default>
+                <label>Contacted &amp; In progress</label>
+            </value>
+            <value>
+                <fullName>Closed (Interested)</fullName>
+                <default>false</default>
+                <label>Closed (Interested)</label>
+            </value>
+            <value>
+                <fullName>Closed (Not Interested)</fullName>
+                <default>false</default>
+                <label>Closed (Not Interested)</label>
+            </value>
+            <value>
+                <fullName>Closed (Unable to contact)</fullName>
+                <default>false</default>
+                <label>Closed (Unable to contact)</label>
+            </value>
+            <value>
+                <fullName>Closed (Unqualified)</fullName>
+                <default>false</default>
+                <label>Closed (Unqualified)</label>
+            </value>
+            <value>
+                <fullName>Closed By AL System</fullName>
+                <default>false</default>
+                <label>Closed By AL System</label>
+            </value>
+            <value>
+                <fullName>Invalid (Duplicate Opportunity)</fullName>
+                <default>false</default>
+                <label>Invalid (Duplicate Opportunity)</label>
+            </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>Closed (Transferred)</fullName>
+                <default>false</default>
+                <label>Closed (Transferred)</label>
+            </value>
+            <value>
+                <fullName>Closed (Referral Ticket)</fullName>
+                <default>false</default>
+                <label>Closed (Referral Ticket)</label>
+            </value>
+            <value>
+                <fullName>Closed (Service Completed)</fullName>
+                <default>false</default>
+                <label>Closed (Service Completed)</label>
+            </value>
+            <value>
+                <fullName>Call Back</fullName>
+                <default>false</default>
+                <label>Call Back</label>
+            </value>
+            <value>
+                <fullName>Not Contact</fullName>
+                <default>false</default>
+                <label>Not Contact</label>
+            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>None</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>Not Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>Not Qualified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Referred</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Contacted &amp; In progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Interested)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Not Interested)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Unable to contact)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Unqualified)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed By AL System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Invalid (Duplicate Opportunity)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Cancel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Transferred)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Referral Ticket)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Closed (Service Completed)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <valueName>Call Back</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contact</controllingFieldValue>
+            <controllingFieldValue>Contacted</controllingFieldValue>
+            <valueName>Not Contact</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

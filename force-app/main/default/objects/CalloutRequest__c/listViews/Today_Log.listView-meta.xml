@@ -2,8 +2,6 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Today_Log</fullName>
     <columns>NAME</columns>
-    <columns>CalloutHandlerName__c</columns>
-    <columns>Duration__c</columns>
     <columns>RequestId__c</columns>
     <columns>Submit_DateTime__c</columns>
     <columns>Status__c</columns>
@@ -14,10 +12,6 @@
         <operation>equals</operation>
         <value>TODAY</value>
     </filters>
-    <filters>
-        <field>CREATEDBY_USER.ALIAS</field>
-        <operation>equals</operation>
-        <value>51077,59423</value>
-    </filters>
     <label>Today Log</label>
+    <language>en_US</language>
 </ListView>

@@ -272,10 +272,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Touch</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Walk In %2F Call in</fullName>
             <default>false</default>
         </values>
@@ -473,6 +469,10 @@
     </picklistValues>
     <picklistValues>
         <picklist>RTL_Stage__c</picklist>
+        <values>
+            <fullName>Accepted %26 In Progress</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Cancel</fullName>
             <default>false</default>
