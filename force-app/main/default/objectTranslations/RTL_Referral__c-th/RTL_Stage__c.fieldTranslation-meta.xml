@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ขั้นตอน</label>
+    <name>RTL_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Accepted &amp; In Progress</masterLabel>
+        <translation>รับงานแล้ว อยู่ระหว่างดำเนินการ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Call Back</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cancel</masterLabel>
+        <translation>ยกเลิก</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Interested)</masterLabel>
+        <translation>ปิดงาน (ลูกค้าสนใจ)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Not Interested)</masterLabel>
+        <translation>ปิดงาน (ลูกค้าไม่สนใจ)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Referral Ticket)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Service Completed)</masterLabel>
+        <translation>ปิดงาน (ดำเนินการแล้ว)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Transferred)</masterLabel>
+        <translation>ปิดงาน (ส่งต่อไปสาขา)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Unable to contact)</masterLabel>
+        <translation>ปิดงาน (ไม่สามารถติดต่อได้)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed (Unqualified)</masterLabel>
+        <translation>ปิดงาน (ไม่เข้าหลักเกณฑ์)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed By AL System</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contacted &amp; In progress</masterLabel>
+        <translation>ติดต่อแล้ว อยู่ระหว่างดำเนินการ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invalid (Duplicate Opportunity)</masterLabel>
+        <translation>Invalid (ซ้ำกับโอกาสที่มีแล้ว)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New</masterLabel>
+        <translation>ใหม่</translation>
+    </picklistValues>
+</CustomFieldTranslation>

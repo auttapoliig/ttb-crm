@@ -128,6 +128,7 @@
         <members>Account.MainBank_MoreDetail__c</members>
         <members>My_Customer_Filter_Option__c.My_Customer_Filter__c</members>
         <members>Activity.RTL_Task_Subject__c</members>
+        <members>RTL_Referral__c.RTL_Stage__c</members>
         <name>CustomField</name>
     </types>
 
@@ -214,7 +215,10 @@
         <members>Task_Priority</members>
         <name>CustomLabel</name>
     </types>
-
+    <types>
+        <members>RTL_Referral__c-th</members>
+        <name>CustomObjectTranslation</name>
+    </types>
     <types>
         <members>th</members>
         <name>Translations</name>
