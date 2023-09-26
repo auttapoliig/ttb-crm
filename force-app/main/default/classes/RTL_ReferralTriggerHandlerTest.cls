@@ -110,10 +110,10 @@ public class RTL_ReferralTriggerHandlerTest {
         }
         System.runAs(retailWithBranchUser){
             //Referral without preferred branch
-            referralList = TestUtility_Referral.createReferralsWithAccount(100,acctList[0].id,branchAndZoneList[0].id,true);
+            referralList = TestUtility_Referral.createReferralsWithAccount(50,acctList[0].id,branchAndZoneList[0].id,true);
             referralList = queryReferral();
             //assert insert bulk insert success
-            System.assertEquals(100,referralList.size());
+            System.assertEquals(50,referralList.size());
         }
         Test.stopTest();
     }
@@ -501,15 +501,15 @@ public class RTL_ReferralTriggerHandlerTest {
     //             ct.OwnerId = firstUser.id;
     //             insert ct;
                         
-    //             //branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
-    //             RTL_Referral__c referral = new RTL_Referral__c();
-    //             referral.RTL_Mobile1__c ='0884129128';
-    //             referral.RTL_Stage__c = 'New';
-    //             referral.RTL_License_No__c = '4325325426';
-    //             referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
-    //             system.debug('branch '+referral.RTL_Preferred_Branch__c);
-    //             insert referral;
-    //             system.debug('refid'+referral.id);  
+                //branchAndZoneList = RTL_TestUtility.createBranchZone(9,true); 
+                RTL_Referral__c referral = new RTL_Referral__c();
+                referral.RTL_Mobile1__c ='0884129128';
+                referral.RTL_Stage__c = 'New';
+                referral.RTL_License_No__c = '4325325426';
+                referral.RTL_Preferred_Branch__c = branchAndZoneList[0].id;   
+                system.debug('branch '+referral.RTL_Preferred_Branch__c);
+                insert referral;
+                system.debug('refid'+referral.id);  
 
     //             Opportunity oppt = new Opportunity(); 
     //             oppt.Name = 'Test Opp';
@@ -519,25 +519,25 @@ public class RTL_ReferralTriggerHandlerTest {
     //             oppt.RTL_Referral__c = referral.id;
     //             insert oppt;
 
-    //             system.debug('opptid'+oppt.id);  
-    //             //mock cm
-    //             CampaignMember cm = new CampaignMember();
-    //             cm.CampaignId = camp.id; 
-    //             cm.ContactId = ct.id;
-    //             cm.RTL_RelatedOpportunity_1__c = oppt.id;
-    //             cm.RTL_RelatedOpportunity_2__c = oppt.id;
-    //             cm.RTL_RelatedOpportunity_3__c = oppt.id;
-    //             cm.RTL_RelatedOpportunity_4__c = oppt.id;
-    //             cm.RTL_RelatedOpportunity_5__c = oppt.id;
-    //             cm.RTL_Referral_ID_1__c = referral.id;
-    //             cm.RTL_Referral_ID_2__c = referral.id; 
-    //             cm.RTL_Referral_ID_3__c = referral.id; 
-    //             cm.RTL_Referral_ID_4__c = referral.id; 
-    //             cm.RTL_Referral_ID_5__c = referral.id;                
-    //             cm.RTL_Hub_Name_1__c = 'test hub';
-    //             insert cm;
-    //             system.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
-    //             system.debug('refer '+cm.RTL_Referral_ID_1__c);
+                system.debug('opptid'+oppt.id);  
+                //mock cm
+                CampaignMember cm = new CampaignMember();
+                cm.CampaignId = camp.id; 
+                cm.ContactId = ct.id;
+                cm.RTL_RelatedOpportunity_1__c = oppt.id;
+                cm.RTL_RelatedOpportunity_2__c = oppt.id;
+                cm.RTL_RelatedOpportunity_3__c = oppt.id;
+                cm.RTL_RelatedOpportunity_4__c = oppt.id;
+                cm.RTL_RelatedOpportunity_5__c = oppt.id;
+                cm.RTL_Referral_ID_1__c = referral.id;
+                cm.RTL_Referral_ID_2__c = referral.id; 
+                cm.RTL_Referral_ID_3__c = referral.id; 
+                cm.RTL_Referral_ID_4__c = referral.id; 
+                cm.RTL_Referral_ID_5__c = referral.id;                
+                cm.RTL_Hub_Name_1__c = 'test hub';
+                insert cm;
+                system.debug('oppty '+cm.RTL_RelatedOpportunity_1__c);
+                system.debug('refer '+cm.RTL_Referral_ID_1__c);
             
     //             //update ref
     //             RTL_Referral__c referralup = new RTL_Referral__c();

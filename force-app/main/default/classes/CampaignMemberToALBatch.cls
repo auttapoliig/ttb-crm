@@ -51,6 +51,16 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
         }
         set;
     }
+    private static final String CMLGSPartner {
+        get {
+            if(CMLGSPartner == null){
+                List<App_Config__mdt> tempMetatdata = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Campaign Member LGS Partner Default'];
+                CMLGSPartner = tempMetatdata != null && tempMetatdata.size() > 0 ? String.valueOf(tempMetatdata.get(0).Value__c) : 'ttb';
+            }
+            return CMLGSPartner;
+        }
+        set;
+    }
     private static Integer CALLOUTLIMIT{
         get{
             Integer DEFAULT_LIMIT = 99;
@@ -155,7 +165,7 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
 
                }
 
-       RTL_CampaignUtil.saveToOnlineLog(lstLogDetail, null, null ,cmlogId, UserInfo.getName() ,RefName, getServiceName(SERVICENAME.CreateRefer), null, RefstartDate, DateTime.now());
+       RTL_CampaignUtil.saveToOnlineLog(lstLogDetail, null, null ,cmlogId, UserInfo.getName() ,true, getServiceName(SERVICENAME.CreateRefer), null, RefstartDate, DateTime.now());
        System.debug('Mapsize ' + MapRefwithResult.size());
        updateField(MapRefwithResult);
         for(CampaignMember each : campaignmemberlist){
@@ -163,7 +173,7 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 remain_listcm.add(each);
             }
         }
-       System.debug('remain_listcm Size : ' +remain_listcm.size());
+        System.debug('remain_listcm Size : ' +remain_listcm.size());
        mapError = mapCampaignIdwithErrorMsg;
        passRecords = recordAll;
        if(remain_listcm.size() == 0){
@@ -297,14 +307,22 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 eachCampaign.WS_Response_Detail__c = ResponseDetail;
                 eachCampaign.RTL_Is_Interface_Success__c = true;
                 eachCampaign.RTL_Is_Send_To_HPAP__c = true;
-                eachCampaign.RTL_Status_1__c = (String)result.get('HPAPStatus');
-                eachCampaign.RTL_AL_Refer_No_1__c = (String)result.get('RefCode3');
-                eachCampaign.RTL_Contact_Status__c = 'Contact';
+                eachCampaign.RTL_AL_Refer_No_1__c = (String)result.get('RefNo');
+                eachCampaign.HPAP_Status_Code_1__c = (String)result.get('HPAPStatus');
+                eachCampaign.RTL_Status_1__c = (String)result.get('HPAPStatusDesc');
+                // eachCampaign.Details_of_Status_1__c = (String)result.get('Remark');
+                eachCampaign.Corebank_Emp_Id_1__c = (String)result.get('EmpID');
+                eachCampaign.Corebank_Emp_Name_1__c = (String)result.get('EmpName');
+                eachCampaign.Corebank_Emp_Phone_No_1__c = (String)result.get('EmpMobileNo');
+                eachCampaign.RTL_Hub_Code_1__c = (String)result.get('HubCode');
+                eachCampaign.RTL_Hub_Name_1__c = (String)result.get('HubName');
+
+                eachCampaign.RTL_Contact_Status__c = 'New';
                 eachCampaign.RTL_OfferResult_Product_1__c = 'Referred';
                 OnlineServiceLog createlog = new OnlineServiceLog(true,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt));
                 lstLogDetail.add(createlog);
                 System.debug('Success!');
-                ThisCampaignNo = (String)result.get('RefCode3');
+                ThisCampaignNo = (String)result.get('RefNo');
                 MapRefwithResult.put(eachCampaign.Id,eachCampaign);
                 recordSuccess.add(eachCampaign.Id);
                 //updateField(eachCampaign);
@@ -372,8 +390,8 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 'RefCode'=> cmb.RTL_AL_oa_ref_code__c != null ? cmb.RTL_AL_oa_ref_code__c : '',
                 'RefCode2'=> refcode2,
                 'ObjectType'=>'Campaign Member',
-                'Channel'=> 'touch',
-                'System'=> 'SALESFORCE',
+                'LeadSource'=> cmb.LeadSource != null ? cmb.LeadSource : '',
+                'CampaignSource'=> cmb.RTL_TMB_Campaign_Source__c != null ? cmb.RTL_TMB_Campaign_Source__c : '',
                 'Product'=> cmb.RTL_Campaign_Product_1__c != null ? cmb.RTL_Campaign_Product_1__r.Name != null ? cmb.RTL_Campaign_Product_1__r.Name : '' : '',
                 'CarTypeDesc'=> cmb.RTL_AL_car_type__c != null ? cmb.RTL_AL_car_type__c : '',
                 'CarBrand'=> cmb.RTL_AL_car_brand__c != null ? cmb.RTL_AL_car_brand__c : '',
@@ -410,25 +428,25 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 'BranchZipcode' => '',
                 'BranchProvince' => '',
                 'BranchDistrict' => '',
-                'EmpId'=> cmb.Assigned_Agent_ID__c != null ? cmb.Assigned_Agent_ID__c : '',
+                'EmpId'=> cmb.Assigned_Agent_ID__c != null && cmb.RTL_AL_contact_channel__c == 'BR' ? cmb.Assigned_Agent_ID__c : '',
                 'RMNo'=> cmb.Customer__c != null ? cmb.Customer__r.ID_Number_PE__c != null ? cmb.Customer__r.ID_Number_PE__c : '' : '',
                 'PlateNo'=> cmb.RTL_AL_car_plate_no__c != null ? cmb.RTL_AL_car_plate_no__c : '',
                 'ProvincePlateNo'=> cmb.RTL_AL_province_car_plate_no__c != null ? cmb.RTL_AL_province_car_plate_no__c :'',
                 'RTLComment'=> cmb.RTL_AL_comment__c != null ? cmb.RTL_AL_comment__c : '',
                 'RTLComment2'=>'',
                 'RTLComment3'=> '',
-                'LGS_Refcode' => cmb.Id,
-                'LGS_Campaign_ID' => cmb.CampaignId,
-                'LGS_Campaign_Name' => cmb.Campaign.Name,
-                'LGS_Source_Group' => cmb.LeadSource != null ? cmb.LeadSource : '',
-                'LGS_Partner'=> cmb.LGS_Partner__c != null ? cmb.LGS_Partner__c : '',
-                'LGS_Lead_Received_Time'=> cmb.LGS_Lead_Received_Time__c != null ? cmb.LGS_Lead_Received_Time__c : null,
-                'LGS_Campaign_Start_Date' => null,
-                'LGS_Campaign_End_Date' => null,
+                // 'LGS_Refcode' => cmb.Id,
+                // 'LGS_Campaign_ID' => cmb.CampaignId,
+                // 'LGS_Campaign_Name' => cmb.Campaign.Name,
+                // 'LGS_Source_Group' => cmb.LeadSource != null ? cmb.LeadSource : '',
+                'LGS_Partner'=> cmb.LGS_Partner__c != null ? cmb.LGS_Partner__c : CMLGSPartner,
+                'LGS_Lead_Received_Time'=> cmb.LGS_Lead_Received_Time__c != null ? cmb.LGS_Lead_Received_Time__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null,
+                'LGS_Campaign_Start_Date' => cmb.LGS_Campaign_Start_Date__c  != null ? cmb.LGS_Campaign_Start_Date__c  : null,
+                'LGS_Campaign_End_Date' => cmb.LGS_Campaign_End_Date__c  != null ? cmb.LGS_Campaign_End_Date__c  : null,
                 'LGS_Interest' => cmb.RTL_AL_Interested_Rate__c != null ? cmb.RTL_AL_Interested_Rate__c : null,
-                'LGS_Assign_Rule'=> cmb.LGS_Assign_Rule__c != null ? cmb.LGS_Assign_Rule__c : '',
-                'LGS_Car_Brand_Showroom_ID'=> cmb.LGS_Car_Brand_Showroom_ID__c != null ? cmb.LGS_Car_Brand_Showroom_ID__c : '',
-                'LGS_Dealer_Showroom_ID'=> cmb.LGS_Dealer_Showroom_ID__c != null ? cmb.LGS_Dealer_Showroom_ID__c : '',
+                // 'LGS_Assign_Rule'=> cmb.LGS_Assign_Rule__c != null ? cmb.LGS_Assign_Rule__c : '',
+                // 'LGS_Car_Brand_Showroom_ID'=> cmb.LGS_Car_Brand_Showroom_ID__c != null ? cmb.LGS_Car_Brand_Showroom_ID__c : '',
+                // 'LGS_Dealer_Showroom_ID'=> cmb.LGS_Dealer_Showroom_ID__c != null ? cmb.LGS_Dealer_Showroom_ID__c : '',
                 'LGS_001'=> cmb.LGS_001__c != null ? cmb.LGS_001__c : '',
                 'LGS_002'=> cmb.LGS_002__c != null ? cmb.LGS_002__c : '',
                 'LGS_003'=> cmb.LGS_003__c != null ? cmb.LGS_003__c : '',
@@ -447,9 +465,23 @@ global without sharing class CampaignMemberToALBatch extends RTL_AL_WebserviceAb
                 'LGS_016'=> cmb.LGS_016__c != null ? cmb.LGS_016__c : null,
                 'LGS_017'=> cmb.LGS_017__c != null ? cmb.LGS_017__c : null,
                 'LGS_018'=> cmb.LGS_018__c != null ? cmb.LGS_018__c : null,
-                'LGS_019'=> cmb.LGS_019__c != null ? cmb.LGS_019__c : null,
-                'LGS_020'=> cmb.LGS_020__c != null ? cmb.LGS_020__c : null
-                
+                'LGS_019'=> cmb.LGS_019__c != null ? cmb.LGS_019__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null,
+                'LGS_020'=> cmb.LGS_020__c != null ? cmb.LGS_020__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null,
+                'LGS_Assignment_Code'=> cmb.LGS_Assignment_Code__c != null ? cmb.LGS_Assignment_Code__c : '',
+                'LGS_LinkInfo'=> cmb.LGS_LinkInfo__c != null ? cmb.LGS_LinkInfo__c : '',
+                'LGS_BrandCode'=> cmb.LGS_BrandCode__c != null ? cmb.LGS_BrandCode__c : '',
+                'LGS_BrandShowroomCode'=> cmb.LGS_BrandShowroomCode__c != null ? cmb.LGS_BrandShowroomCode__c : '',
+                'LGS_PartnerCode'=> cmb.LGS_PartnerCode__c != null ? cmb.LGS_PartnerCode__c : '',
+                'LGS_ChildCampaignID'=> cmb.LGS_Child_Campaign_ID__c != null ? cmb.LGS_Child_Campaign_ID__c : '',
+                'LGS_Campaign_Name'=> cmb.RTL_W2L_Campaign_Name__c != null ? cmb.RTL_W2L_Campaign_Name__c : '',
+                'LeadScore'=> cmb.Lead_Score__c != null ? cmb.Lead_Score__c : null,
+                'LeadScorelevel'=> cmb.Lead_Score_level__c != null ? cmb.Lead_Score_level__c : '',
+                'LGS_VIN_No'=> cmb.LGS_VIN_No__c != null ? cmb.LGS_VIN_No__c : '',
+                'LGS_WebUniqueID'=> cmb.RTL_Web_Unique_ID__c != null ? cmb.RTL_Web_Unique_ID__c : '',
+                'LGS_File_Upload'=> cmb.LGS_File_Upload__c != null ? cmb.LGS_File_Upload__c : ''
+
+                //LGS_Assignment_Code,LGS_LinkInfo,LGS_BrandCode,LGS_BrandShowroomCode,LGS_PartnerCode,LGS_ChildCampaignID,LeadScore,LeadScorelevel,LGS_VIN_No,LGS_File_Upload
+
 
         };
         

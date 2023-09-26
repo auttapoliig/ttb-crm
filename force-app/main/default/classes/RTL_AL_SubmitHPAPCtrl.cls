@@ -26,7 +26,16 @@ public with sharing class RTL_AL_SubmitHPAPCtrl extends RTL_AL_WebserviceAbstrac
         }
         set;
     }
-
+    private static final String OpptyLGSPartner {
+        get {
+            if(OpptyLGSPartner == null){
+                List<App_Config__mdt> tempMetatdata = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Opportunity LGS Partner Default'];
+                OpptyLGSPartner = tempMetatdata != null && tempMetatdata.size() > 0 ? String.valueOf(tempMetatdata.get(0).Value__c) : 'Branch';
+            }
+            return OpptyLGSPartner;
+        }
+        set;
+    }
     private static List<String> opptyFields {
         get {
             return new List<String>{
@@ -74,12 +83,22 @@ public with sharing class RTL_AL_SubmitHPAPCtrl extends RTL_AL_WebserviceAbstrac
     }
    
     private static Map<String, Object> bodyRequest(Opportunity oppty, Account acct) {
+        //code LGS
+
+        String oppID = oppty.id  ;
+        List<CampaignMember> cmb = [SELECT RTL_Web_Unique_ID__c,LGS_Partner__c,LGS_Lead_Received_Time__c,RTL_AL_Interested_Rate__c,LGS_001__c,LGS_002__c,LGS_003__c,LGS_004__c,
+                                LGS_005__c,LGS_006__c,LGS_007__c,LGS_008__c,LGS_009__c,LGS_010__c,LGS_011__c,LGS_012__c,LGS_013__c,LGS_014__c,LGS_015__c,
+                                LGS_016__c,LGS_017__c,LGS_018__c,LGS_019__c,LGS_020__c,LGS_Assignment_Code__c,LGS_LinkInfo__c,LGS_BrandCode__c,
+                                LGS_BrandShowroomCode__c,LGS_PartnerCode__c,LGS_Child_Campaign_ID__c,RTL_W2L_Campaign_Name__c,Lead_Score__c,Lead_Score_level__c,LGS_VIN_No__c,LGS_File_Upload__c ,
+                                LGS_Campaign_Start_Date__c,LGS_Campaign_End_Date__c
+                                FROM CampaignMember 
+                                WHERE RTL_RelatedOpportunity_1__c =:oppID OR RTL_RelatedOpportunity_2__c =:oppID OR RTL_RelatedOpportunity_3__c =:oppID OR RTL_RelatedOpportunity_4__c =:oppID OR RTL_RelatedOpportunity_5__c =:oppID limit 1];
         return new Map<String, Object> {
             'RefCode' => oppty.RTL_AL_oa_ref_code__c,
             'RefCode2' => oppty.Id,
             'ObjectType' => 'Opportunity',
-            'Channel' => oppty.LeadSource,
-            'System' => oppty.RTL_Campaign_Lead_Source__c,
+            'LeadSource' => oppty.LeadSource,
+            'CampaignSource' => oppty.RTL_Campaign_Lead_Source__c,
             'Product' => oppty.RTL_Retail_Product_Name__c,
             'CarTypeDesc' => oppty.RTL_AL_car_type__c,
             'CarBrand' => oppty.RTL_AL_car_brand__c,
@@ -116,10 +135,49 @@ public with sharing class RTL_AL_SubmitHPAPCtrl extends RTL_AL_WebserviceAbstrac
             'BranchZipcode' => '',
             'BranchProvince' => '',
             'BranchDistrict' => '',
-            'TcifNo' => '',
-            'EmpId' => oppty.RTL_Owner_Employee_ID__c,
-            'ECNo' => '',
-            'RMNo' => acct.TMB_Customer_ID_PE__c
+            // 'TcifNo' => '',
+            'EmpId' => oppty.RTL_AL_contact_channel__c == 'BR' ? oppty.RTL_Owner_Employee_ID__c : '',
+            // 'ECNo' => '',
+            'RMNo' => acct.TMB_Customer_ID_PE__c,
+            //Add from LGS
+            'LGS_Partner'=> cmb.size() > 0 ? cmb[0].LGS_Partner__c != null ? cmb[0].LGS_Partner__c : OpptyLGSPartner : OpptyLGSPartner,
+            'LGS_Lead_Received_Time'=> cmb.size() > 0 ? cmb[0].LGS_Lead_Received_Time__c != null ? cmb[0].LGS_Lead_Received_Time__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_Campaign_Start_Date' => cmb.size() > 0 ? cmb[0].LGS_Campaign_Start_Date__c  != null ? cmb[0].LGS_Campaign_Start_Date__c  : null : null,
+            'LGS_Campaign_End_Date' => cmb.size() > 0 ? cmb[0].LGS_Campaign_End_Date__c  != null ? cmb[0].LGS_Campaign_End_Date__c  : null : null,
+            'LGS_Interest' => cmb.size() > 0 ? cmb[0].RTL_AL_Interested_Rate__c != null ? cmb[0].RTL_AL_Interested_Rate__c : null : null,
+            'LGS_001'=> cmb.size() > 0 ? cmb[0].LGS_001__c != null ? cmb[0].LGS_001__c : '' : '',
+            'LGS_002'=> cmb.size() > 0 ? cmb[0].LGS_002__c != null ? cmb[0].LGS_002__c : '' : '',
+            'LGS_003'=> cmb.size() > 0 ? cmb[0].LGS_003__c != null ? cmb[0].LGS_003__c : '' : '',
+            'LGS_004'=> cmb.size() > 0 ? cmb[0].LGS_004__c != null ? cmb[0].LGS_004__c : '' : '',
+            'LGS_005'=> cmb.size() > 0 ? cmb[0].LGS_005__c != null ? cmb[0].LGS_005__c : '' : '',
+            'LGS_006'=> cmb.size() > 0 ? cmb[0].LGS_006__c != null ? cmb[0].LGS_006__c : '' : '',
+            'LGS_007'=> cmb.size() > 0 ? cmb[0].LGS_007__c != null ? cmb[0].LGS_007__c : '' : '',
+            'LGS_008'=> cmb.size() > 0 ? cmb[0].LGS_008__c != null ? cmb[0].LGS_008__c : '' : '',
+            'LGS_009'=> cmb.size() > 0 ? cmb[0].LGS_009__c != null ? cmb[0].LGS_009__c : '' : '',
+            'LGS_010'=> cmb.size() > 0 ? cmb[0].LGS_010__c != null ? cmb[0].LGS_010__c : null : null,
+            'LGS_011'=> cmb.size() > 0 ? cmb[0].LGS_011__c != null ? cmb[0].LGS_011__c : null : null,
+            'LGS_012'=> cmb.size() > 0 ? cmb[0].LGS_012__c != null ? cmb[0].LGS_012__c : null : null,
+            'LGS_013'=> cmb.size() > 0 ? cmb[0].LGS_013__c != null ? cmb[0].LGS_013__c : null : null,
+            'LGS_014'=> cmb.size() > 0 ? cmb[0].LGS_014__c != null ? cmb[0].LGS_014__c : null : null,
+            'LGS_015'=> cmb.size() > 0 ? cmb[0].LGS_015__c != null ? cmb[0].LGS_015__c : null : null,
+            'LGS_016'=> cmb.size() > 0 ? cmb[0].LGS_016__c != null ? cmb[0].LGS_016__c : null : null,
+            'LGS_017'=> cmb.size() > 0 ? cmb[0].LGS_017__c != null ? cmb[0].LGS_017__c : null : null,
+            'LGS_018'=> cmb.size() > 0 ? cmb[0].LGS_018__c != null ? cmb[0].LGS_018__c : null : null,
+            'LGS_019'=> cmb.size() > 0 ? cmb[0].LGS_019__c != null ? cmb[0].LGS_019__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_020'=> cmb.size() > 0 ? cmb[0].LGS_020__c != null ? cmb[0].LGS_020__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
+            'LGS_Assignment_Code'=> cmb.size() > 0 ? cmb[0].LGS_Assignment_Code__c != null ? cmb[0].LGS_Assignment_Code__c : '' : '',
+            'LGS_LinkInfo'=> cmb.size() > 0 ? cmb[0].LGS_LinkInfo__c != null ? cmb[0].LGS_LinkInfo__c : '' : '',
+            'LGS_BrandCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandCode__c != null ? cmb[0].LGS_BrandCode__c : '' : '',
+            'LGS_BrandShowroomCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandShowroomCode__c != null ? cmb[0].LGS_BrandShowroomCode__c : '' : '',
+            'LGS_PartnerCode'=> cmb.size() > 0 ? cmb[0].LGS_PartnerCode__c != null ? cmb[0].LGS_PartnerCode__c : '' : '',
+            'LGS_ChildCampaignID'=> cmb.size() > 0 ? cmb[0].LGS_Child_Campaign_ID__c != null ? cmb[0].LGS_Child_Campaign_ID__c : '' : '',
+            'LGS_Campaign_Name'=> cmb.size() > 0 ? cmb[0].RTL_W2L_Campaign_Name__c != null ? cmb[0].RTL_W2L_Campaign_Name__c : '' : '',
+            'LeadScore'=> cmb.size() > 0 ? cmb[0].Lead_Score__c != null ? cmb[0].Lead_Score__c : null : null,
+            'LeadScorelevel'=> cmb.size() > 0 ? cmb[0].Lead_Score_level__c != null ? cmb[0].Lead_Score_level__c : '' : '',
+            'LGS_VIN_No'=> cmb.size() > 0 ? cmb[0].LGS_VIN_No__c != null ? cmb[0].LGS_VIN_No__c : '' : '',
+            'LGS_WebUniqueID'=> cmb.size() > 0 ? cmb[0].RTL_Web_Unique_ID__c != null ? cmb[0].RTL_Web_Unique_ID__c : '' : '',
+            'LGS_File_Upload'=> cmb.size() > 0 ? cmb[0].LGS_File_Upload__c != null ? cmb[0].LGS_File_Upload__c : '' : ''
+
         };
     }
 
@@ -251,9 +309,16 @@ System.debug('Body after decrypt-->' + bodyResonseDecrypt);
             if(oppty.RTL_Is_Send_To_HPAP__c || Test.isRunningTest()) {
                 oppty.StageName = 'Submit App';
                 oppty.RTL_AL_oa_ref_code__c = (String)result.get('RefCode');
-                oppty.RTL_AL_Refer_No__c = (String)result.get('RefCode3');
+                oppty.RTL_AL_Refer_No__c = (String)result.get('RefNo');
                 oppty.Amount = opportunityObj.RTL_AL_wanted_amount__c;
                 oppty.HPAP_Status_Code__c = (String)result.get('HPAPStatus');
+                oppty.RTL_Status__c = (String)result.get('HPAPStatusDesc');
+                // oppty.Details_of_Status__c = (String)result.get('Remark');
+                oppty.Corebank_Emp_Id__c = (String)result.get('EmpID');
+                oppty.Corebank_Emp_Name__c = (String)result.get('EmpName');
+                oppty.Corebank_Emp_Phone_No__c = (String)result.get('EmpMobileNo');
+                oppty.RTL_Hub_Code__c = (String)result.get('HubCode');
+                oppty.RTL_Hub_Name__c = (String)result.get('HubName');
                 update oppty;
             }
             return oppty;

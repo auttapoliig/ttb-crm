@@ -145,7 +145,7 @@ global with sharing class RTL_AL_WsCampaignMemberInfo extends RTL_AL_WebserviceA
     }
     Map<String, Object> returnValue = new Map<String, Object>{
         'data' => res ,
-        'message' => message,
+        'status_desc' => 'Success.',
         'status_code' => status_code
       };
 
@@ -188,7 +188,7 @@ global with sharing class RTL_AL_WsCampaignMemberInfo extends RTL_AL_WebserviceA
         isSuccess = true;
       }
       Map<String, String> returnValue = new Map<String, String>{
-        'message' => errorMsg,
+        'status_desc' => errorMsg,
         'status_code' => statusCode
         // Don't create lead
         // 'Error' => e.getMessage(),
