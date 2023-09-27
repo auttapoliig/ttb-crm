@@ -638,7 +638,7 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
         HttpRequest req = new HttpRequest();
         APIGateway_Service.RequestToken request = new APIGateway_Service.RequestToken();
         request.endpoint = endPoint;        
-        
+        system.debug('callService');
         // AuthenticationToken authenTokenCalculateTools = APIGateway_Service.startCallGetTokenService('Smart_BDM_Cal_Tools_Create_Token');
         // String access_token = authenTokenCalculateTools.access_token;
         String access_token = SmartBDM_Utility.tokenKeyCalculateTools;
@@ -651,7 +651,7 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
                 return errorMessageRespone;
             }
         }
-        
+        system.debug('callService -- access_token'+access_token);
 
         Http http = new Http();
         Uuid uuidGenerateor = new Uuid();
