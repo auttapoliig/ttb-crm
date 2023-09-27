@@ -236,6 +236,15 @@
         <members>RTL_Referral__c.Refer_within_Commercial</members>
         <members>RTL_Referral__c.Retail_Cross_Channel_Referral</members>
         <members>RTL_Referral__c.Retail_Order_Transaction</members>
+        <members>My_Customer_Filter_Option__c.Range_Number</members>
+        <members>My_Customer_Filter_Option__c.Text_Equals</members>
+        <members>Task.RTL_Retail_Task</members>
+        <members>Account.Disqualified_prospect</members>
+        <members>Account.Existing_Customer</members>
+        <members>Account.Inactive_Customer</members>
+        <members>Account.Prospect</members>
+        <members>Account.Retail_Customer</members>
+        <members>Account.Retail_Prospect</members>
         <name>RecordType</name>
     </types>
     <types>
@@ -272,14 +281,6 @@
         <members>My_Customer_Filter_Record_Page</members>
         <name>FlexiPage</name>
     </types>
-
-    <types>
-        <members>My_Customer_Filter_Option__c.Range_Number</members>
-        <members>My_Customer_Filter_Option__c.Text_Equals</members>
-        <members>Task.RTL_Retail_Task</members>
-        <name>RecordType</name>
-    </types>
-
     <types>
         <members>My_Customer_Filter_Option__c.Check_Range_Number_Min_Max</members>
         <name>ValidationRule</name>
