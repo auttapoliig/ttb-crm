@@ -245,13 +245,15 @@
         <members>Account_With_Retail_Instant_Lending</members>
         <name>ReportType</name>
     </types>
-
     <types>
         <members>My_Customer_Filter__c</members>
         <members>My_Customer_Filter_Option__c</members>
         <name>CustomObject</name>
     </types>
-
+    <types>
+        <members>Retail_Sales_Console</members>
+        <name>CustomApplication</name>
+    </types>
     <types>
         <members>My_Customer_Filter__c-My Customer Filter Layout</members>
         <members>My_Customer_Filter_Option__c-My Customer Filter Option Layout</members>
@@ -259,7 +261,6 @@
         <members>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Text Equals</members>
         <name>Layout</name>
     </types>
-
     <types>
         <members>My_Customer_Filter__c.All</members>
         <name>ListView</name>
