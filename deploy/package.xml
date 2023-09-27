@@ -311,7 +311,6 @@
         <members>RMCockpitReports/Alerts/Campaign_ttb_reserve_fE3</members>
         <name>Report</name>
     </types>
-
     <types>
         <members>Admin</members>
         <members>App External API</members>
@@ -319,6 +318,19 @@
         <members>TMB CRM Admin Profile</members>
         <members>TMB Retail Wealth Management RM Cockpit</members>
         <members>TMB System Administrator</members>
+        <members>TMB BDM Profile</members>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Channel Support</members>
+        <members>TMB Retail CRM Specialist</members>
+        <members>TMB Retail Wealth Management</members> 
+        <members>TMB Retail Wealth Management RM Cockpit</members>  
+        <members>TMB RM Profile</members>
+        <members>TMB SB BDM Profile</members>
+        <members>TMB SB Regional Manager Profile</members>
+        <members>TMB SE Regional Manager Profile</members>
+        <members>TMB SE Zone Manager Profile</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
         <name>Profile</name>
     </types>
     <version>58.0</version>
