@@ -266,4 +266,15 @@
         <tab>My_Customer_Filter__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+    <layoutAssignments>
+        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Range Number</layout>
+        <recordType>My_Customer_Filter_Option__c.Range_Number</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Text Equals</layout>
+        <recordType>My_Customer_Filter_Option__c.Text_Equals</recordType>
+    </layoutAssignments>
 </Profile>
