@@ -7,10 +7,6 @@
         <translation>รับงานแล้ว อยู่ระหว่างดำเนินการ</translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Call Back</masterLabel>
-        <translation></translation>
-    </picklistValues>
-    <picklistValues>
         <masterLabel>Cancel</masterLabel>
         <translation>ยกเลิก</translation>
     </picklistValues>
