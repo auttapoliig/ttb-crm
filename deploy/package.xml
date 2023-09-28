@@ -33,6 +33,7 @@
         <members>PDPAReportControllerTest</members>
         <members>T_Performance_SummaryController</members>
         <members>T_Performance_P1Controller</members>
+        <members>RTL_Distribute_CM_BatchTest</members>
         <name>ApexClass</name>
     </types>
     <types>
