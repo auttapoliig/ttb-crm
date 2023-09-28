@@ -312,6 +312,10 @@
         <name>Report</name>
     </types>
     <types>
+        <members>RTL_Referral__c</members>
+        <name>Workflow</name>
+    </types>
+    <types>
         <members>Admin</members>
         <members>App External API</members>
         <members>Retail Integration API Only</members>
