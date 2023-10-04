@@ -250,6 +250,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.RMC_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.RMC_Relationship_Level_by_RM__c</field>
         <readable>true</readable>
     </fieldPermissions>

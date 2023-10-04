@@ -250,6 +250,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.RMC_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.RMC_Relationship_Level_by_RM__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -296,4 +301,4 @@
         <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Text Equals</layout>
         <recordType>My_Customer_Filter_Option__c.Text_Equals</recordType>
     </layoutAssignments>
-</Profile>
+    </Profile>
