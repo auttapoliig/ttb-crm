@@ -248,7 +248,13 @@
         <field>Account.RMC_Number_of_Selected__c</field>
         <readable>true</readable>
     </fieldPermissions>
-        <objectPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.RMC_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -281,4 +287,4 @@
         <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Text Equals</layout>
         <recordType>My_Customer_Filter_Option__c.Text_Equals</recordType>
     </layoutAssignments>
-</Profile>
+    </Profile>

@@ -218,6 +218,12 @@
         <field>Account.RMC_Number_of_Selected__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.RMC_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
