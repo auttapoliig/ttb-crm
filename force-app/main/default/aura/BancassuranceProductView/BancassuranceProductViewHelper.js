@@ -68,6 +68,7 @@
             var state = response.getState();
             if (component.isValid() && state === 'SUCCESS') {
                 var result = response.getReturnValue();
+                // console.log(result);
                 if (result) {
                     if (result.StatusDesc) {
                         helper.displayToast('error', result.Message);
