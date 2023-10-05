@@ -320,14 +320,10 @@ public without sharing class ForecastReportController {
         String orderBy = ' ORDER BY Customer__r.Owner.Zone_Code__c ASC , Customer__r.Owner.Name ASC';
         String queryStrCurrent = Fields + whereYear + whereStr + orderBy;
         String LYqueryStrCurrent = Fields + whereLastYear + whereStr + orderBy;
-        System.debug(queryStrCurrent);
-        System.debug(LYqueryStrCurrent);
-        System.debug(Limits.getHeapSize() + 'of' + Limits.getLimitHeapSize());
+        //System.debug(queryStrCurrent);
         cube1WithUser.priorityProduct = priorityProduct;
         cube1WithUser.listCube1 = Database.query(queryStrCurrent);
-        System.debug(Limits.getHeapSize() + 'of' + Limits.getLimitHeapSize());
         cube1WithUser.LastYearlistCube1 = Database.query(LYqueryStrCurrent);
-        System.debug(Limits.getHeapSize() + 'of' + Limits.getLimitHeapSize());
         
         for (Forecast_Cube_1__c cube : cube1WithUser.listCube1) {
             Region_and_Zone_Mapping__c regionZone = regionZoneMapping.get(cube.Customer__r.Owner.Zone_Code__c);

@@ -48,54 +48,52 @@ global class ManipulationObjectService {
         try
         {
             Map<String, Object> requestBodyMap = (Map<String, Object>)JSON.deserializeUntyped(RestContext.request.requestBody.toString());
-            Map<String,String> requestHeader = RestContext.request.headers;
-
-            System.debug('requestHeader: ' + requestHeader);
-            System.debug('requestBodyMap: ' + requestBodyMap);
-
             String objectName = (String)requestBodyMap.get('object_name');
             String recordId = (String)requestBodyMap.get('record_id');
             String extIdField = (String)requestBodyMap.get('extId_field');
             Object body = (Object)requestBodyMap.get('body');
-            String apiVersion = requestHeader.get('api-version');
             map<String,Object> bodyMap = (map<String,Object>) body;
-           
 
-            if(bodyMap.containsKey('q')) {
+            if(bodyMap.containsKey('q'))
+            {
                 processType = 'Query';
             }
 
             //set endpoint
-            if(processType == 'Query') {
+            if(processType == 'Query')
+            {
                 endpoint = 'parameterizedSearch';
-            } else {
-                if (objectName == 'composite') {
-                    endpoint = 'composite';
-                } else if(recordId != '' && recordId != null)  {
-                    if(extIdField != '' && extIdField != null) {
+            }
+            else
+            {
+                if(recordId != '' && recordId != null)
+                {
+                    if(extIdField != '' && extIdField != null)
+                    {
                         endpoint += objectName+'/'+extIdField+'/'+recordId+'?_HttpMethod=PATCH';
-                    } else {
+                    }
+                    else
+                    {
                         endpoint += objectName+'/'+recordId+'?_HttpMethod=PATCH';
+
                     }
                     processType = 'Update';
 
-                } else {
+                }
+                else
+                {
                     endpoint += objectName+'/';
                     processType = 'Insert';
                 }
             }
             System.debug('endpoint:'+endpoint);
             System.debug('body:'+body);
-            if (apiVersion == null) {
-                apiVersion = 'v48.0';
-            }
-            serviceName = '/services/data/' + apiVersion + '/'+endpoint;
-            System.debug('serviceName:'+serviceName);
+            Map<String,String> requestHeader = RestContext.request.headers;
             
             Http h = new Http();
             HttpRequest req = new HttpRequest();
             
-            req.setEndpoint(URL.getSalesforceBaseUrl().toExternalForm() + serviceName);
+            req.setEndpoint(URL.getSalesforceBaseUrl().toExternalForm() + '/services/data/v48.0/'+endpoint);
             req.setBody(JSON.serialize(body));
             req.setHeader('Authorization', 'OAuth ' + UserInfo.getSessionId());
             System.debug('SERVICE_TIMEOUT_MILISEC:'+SERVICE_TIMEOUT_MILISEC);
@@ -142,7 +140,7 @@ global class ManipulationObjectService {
             }
             
             endTime = DateTime.Now();
-            
+            serviceName = '/services/data/v48.0/sobjects/'+endpoint;
             requestBody = requestHeader.toString() + '\n\n' +RestContext.request.requestBody.toString();
             responseBody = res.getBody();
 
@@ -178,12 +176,10 @@ global class ManipulationObjectService {
 
                 }
             }
-            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
-            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-            //                                      startTime ,  endTime,  null );
-            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
+            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
                                                   rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime );
+                                                  startTime ,  endTime,  null );
+            
         }
         catch(exception e)
         {       
@@ -201,12 +197,9 @@ global class ManipulationObjectService {
             RestContext.response.statusCode = 500;
             RestContext.response.responseBody = Blob.valueOf(reponseString);
 
-            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
-            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-            //                                      startTime ,  endTime,  null );
-            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
+            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName,
                                                   rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime );
+                                                  startTime ,  endTime,  null );
         }
     }
 }

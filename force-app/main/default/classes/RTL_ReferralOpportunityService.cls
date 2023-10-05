@@ -126,16 +126,9 @@ public class RTL_ReferralOpportunityService {
             }
             
         }
-         
-        try {
-            if(referralToUpdate.size() > 0){
-                update referralToUpdate;
-            }
-        } catch (Exception e) {
-            System.debug('Error:'+e);
-            //ไม่สามารถ mapping Completion code ส่งไป Avaya ได้ กรุณาเลือก stage ใหม่
-            Trigger.New[0].addError(System.Label.RTL_Referral_CompletionCode_ErrorMsg);
+        
+        if(referralToUpdate.size() > 0){
+            update referralToUpdate;
         }
     }
-    
 }

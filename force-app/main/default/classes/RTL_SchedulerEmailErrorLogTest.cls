@@ -1,21 +1,26 @@
 @isTest
 public class RTL_SchedulerEmailErrorLogTest {
-    @testSetup static void setupmethod() {
+  
+    static {
         TestUtils.createAppConfig();
         RTL_TestUtility.createEmailConfig();
-    }
+  }     
+    
     //use createddate to test since it's not able to change lastmodifieddate
+    
     public static testMethod void scheduleEmailErrorLogTest(){
         //create retail online service log
-        RTL_TestUtility.createOnlineServiceLog(100,true);
+        Test.startTest();
+
+        RTL_TestUtility.createOnlineServiceLog(100,true);  
         List<Account> accList = RTL_TestUtility.createAccountDataQualityNA(true);
         List<Opportunity> oppListUpdate = TestForUtility.createOpportunities(accList.get(0),1,true);
         List<Campaign> commCampList = TestForUtility.createCampaign(1,'SE',true);
         TestForUtility.createCommLead(1, true,commCampList.get(0).Id);
         
         for (Opportunity opp:oppListUpdate) {
-            opp.RTL_IsLock__c = false;
-            opp.StageName = 'Closed Won (Deposit)';
+          opp.RTL_IsLock__c = false;
+          opp.StageName = 'Closed Won (Deposit)';
         }
 
         update oppListUpdate;
@@ -60,47 +65,54 @@ public class RTL_SchedulerEmailErrorLogTest {
         
 
         List<Migration_Info__c> migtLst = new List<Migration_Info__c>();
-        migtLst.add(new Migration_Info__c(
-            Name = 'Migrate_Branch_And_Zone',
-            Email__c = 'aa@aa.com;bb@bb.com',
-            IsActive__c = true,
-            Migrated_Field__c = '',
-            Migrated_Field_1__c = '',
-            Migrated_Field_2__c = '',
-            ObjectName__c = 'Branch_and_Zone__c',
-            SQL1__c = 'Id,Name,Branch_Code__c',
-            SQL2__c = 'Where RTL_Zone_Code__c in (\'6480\',\'6490\')',
-            SQL3__c = '',
-            Type__c = 'MIGRATE_INFO'
-        ));
-        migtLst.add(new Migration_Info__c(
-            Name = 'CampaignMember_Closed_Won_Report',
-            Email__c = 'aa@aa.com;bb@bb.com',
-            IsActive__c = true,
-            Migrated_Field__c = 'RTL_RelatedOpportunity_2__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_2__r.Closed_Won_Date__c,RTL_RelatedOpportunity_3__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_3__r.Closed_Won_Date__c',
-            Migrated_Field_1__c = '',
-            Migrated_Field_2__c = 'RTL_RelatedOpportunity_4__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_4__r.Closed_Won_Date__c,RTL_RelatedOpportunity_5__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_5__r.Closed_Won_Date__c',
-            ObjectName__c = 'CampaignMember',
-            SQL1__c = 'Id,Customer__r.TMB_Customer_ID_PE__c,Oldest_Closed_Date_Opportunity__c,RTL_RelatedOpportunity_1__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_1__r.Closed_Won_Date__c',
-            SQL2__c = '',
-            SQL3__c = '',
-            Type__c = 'EXPORT_REPORT'
-        ));
 
-        migtLst.add(new Migration_Info__c(
-            Name = 'Fulfillment_Upload',
-            Email__c = '',
-            IsActive__c = true,
-            Migrated_Field__c = 'RTL_Fulfillment_Type__c,RTL_Description__c,RTL_Account_ID__c,RTL_Amount__c,RTL_Campaign__r.RTL_Campaign_Code_10_digits__c,RTL_Customer__r.TMB_Customer_ID_PE__c,RTL_Delivery_Date__c,RTL_Fulfillment_ID__c,RTL_Fulfillment_Status__c',
-            Migrated_Field_1__c = 'RTL_Fulfillment_Type__c,RTL_Home_No__c,RTL_Mobile_No__c,RTL_Office_No__c,RTL_PCI_Card_NO__c',
-            Migrated_Field_2__c = '',
-            ObjectName__c = 'RTL_Fulfillment__c',
-            SQL1__c = '',
-            SQL2__c = '',
-            SQL3__c = '',
-            Type__c = 'UPLOAD_EMAIL'
-        ));
+        Migration_Info__c mig = new Migration_Info__c();
+        mig.Name = 'Migrate_Branch_And_Zone';
+        mig.Email__c = 'aa@aa.com;bb@bb.com';
+        mig.IsActive__c = true;
+        mig.Migrated_Field__c = '';
+        mig.Migrated_Field_1__c = '';
+        mig.Migrated_Field_2__c = '';
+        mig.ObjectName__c = 'Branch_and_Zone__c';
+        mig.SQL1__c = 'Id,Name,Branch_Code__c';
+        mig.SQL2__c = 'Where RTL_Zone_Code__c in (\'6480\',\'6490\')';
+        mig.SQL3__c = '';
+        mig.Type__c = 'MIGRATE_INFO';
+
+        Migration_Info__c mig2 = new Migration_Info__c();
+        mig2.Name = 'CampaignMember_Closed_Won_Report';
+        mig2.Email__c = 'aa@aa.com;bb@bb.com';
+        mig2.IsActive__c = true;
+        mig2.Migrated_Field__c = 'RTL_RelatedOpportunity_2__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_2__r.Closed_Won_Date__c,RTL_RelatedOpportunity_3__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_3__r.Closed_Won_Date__c';
+        mig2.Migrated_Field_1__c = '';
+        mig2.Migrated_Field_2__c = 'RTL_RelatedOpportunity_4__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_4__r.Closed_Won_Date__c,RTL_RelatedOpportunity_5__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_5__r.Closed_Won_Date__c';
+        mig2.ObjectName__c = 'CampaignMember';
+        mig2.SQL1__c = 'Id,Customer__r.TMB_Customer_ID_PE__c,Oldest_Closed_Date_Opportunity__c,RTL_RelatedOpportunity_1__r.Closed_Won_Emp__c,RTL_RelatedOpportunity_1__r.Closed_Won_Date__c';
+        mig2.SQL2__c = '';
+        mig2.SQL3__c = '';
+        mig2.Type__c = 'EXPORT_REPORT';
+
+        Migration_Info__c mig3 = new Migration_Info__c();
+        mig3.Name = 'Fulfillment_Upload';
+        mig3.Email__c = '';
+        mig3.IsActive__c = true;
+        mig3.Migrated_Field__c = 'RTL_Fulfillment_Type__c,RTL_Description__c,RTL_Account_ID__c,RTL_Amount__c,RTL_Campaign__r.RTL_Campaign_Code_10_digits__c,RTL_Customer__r.TMB_Customer_ID_PE__c,RTL_Delivery_Date__c,RTL_Fulfillment_ID__c,RTL_Fulfillment_Status__c';
+        mig3.Migrated_Field_1__c = 'RTL_Fulfillment_Type__c,RTL_Home_No__c,RTL_Mobile_No__c,RTL_Office_No__c,RTL_PCI_Card_NO__c';
+        mig3.Migrated_Field_2__c = '';
+        mig3.ObjectName__c = 'RTL_Fulfillment__c';
+        mig3.SQL1__c = '';
+        mig3.SQL2__c = '';
+        mig3.SQL3__c = '';
+        mig3.Type__c = 'UPLOAD_EMAIL';
+
+        migtLst.add(mig);
+        migtLst.add(mig2);
+        migtLst.add(mig3);
+
         insert migtLst;
+
+        Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
+
         List<User> retailUsers = RTL_TestUtility.createRetailTestUserOppt(true);
         User firstUser = retailUsers[0];//outbound channel
 
@@ -112,7 +124,7 @@ public class RTL_SchedulerEmailErrorLogTest {
         camp.Name = 'Campaign_';
         camp.Segment__c = 'MB';
         camp.OwnerId  = UserInfo.getUserId();
-        camp.RecordTypeId = Schema.SObjectType.Campaign.getRecordTypeInfosByDeveloperName().get('Dummy_Campaign').getRecordTypeId();
+        camp.RecordTypeId = Recordtypeid;
         insert camp;
             
     
@@ -142,7 +154,8 @@ public class RTL_SchedulerEmailErrorLogTest {
         insert cmList;
 
         List<Opportunity> opptList = new List<Opportunity>();
-        Id retailBancassuranceOpportunityRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Retail_Bancassurance').getRecordTypeId();
+        RecordType recordType = [select Id from RecordType where developername='Retail_Bancassurance' 
+                                    and SobjectType = 'Opportunity' and IsActive = true limit 1];
         for (Integer i = 0;i<10;i++) {
             Opportunity o = new Opportunity(Name='II-OPP-'+i,
                                 StageName = 'Analysis',
@@ -154,21 +167,26 @@ public class RTL_SchedulerEmailErrorLogTest {
                                 Post_Approval_Date__c = Date.today(),
                                 Complete_Date__c = Date.today(),
                                 Expected_submit_date__c = Date.today(),
-                                RecordTypeId=retailBancassuranceOpportunityRecordTypeId,
+                                RecordTypeId=recordType.Id,
                                 Created_Channel__c = 'Branch'
-                            );
+                               );
             opptList.add(o);
         }
         
         insert opptList;
-        Test.startTest();
+
         // Schedule the test job, but after Test.stopTest, the purge hasn't started.
-        String jobId = System.schedule('EmailErrorLogTest', RTL_TestUtility.CRON_EXP, new RTL_SchedulerEmailErrorLog());
-        Test.stopTest();
+        String jobId = System.schedule('EmailErrorLogTest',
+                        RTL_TestUtility.CRON_EXP, 
+                        new RTL_SchedulerEmailErrorLog());
+                        
         // Get the information from the CronTrigger API object
         CronTrigger ct = [SELECT Id, CronExpression, TimesTriggered, NextFireTime FROM CronTrigger WHERE id = :jobId];
+
         // Verify the expressions are the same
         System.assertEquals(RTL_TestUtility.CRON_EXP, ct.CronExpression);
+        
+        Test.stopTest();
     }
     
     public static testMethod void batchEmailErrorLogTest(){

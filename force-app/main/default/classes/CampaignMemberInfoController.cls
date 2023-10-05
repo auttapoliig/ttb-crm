@@ -77,7 +77,20 @@ public without sharing class CampaignMemberInfoController {
         }
         set;
     }
+    private static Set<String> ALPrdNameSet {
+        get{
+            if(ALPrdNameSet == null){
+                ALPrdNameSet = new Set<String>();
+                List<AL_screen_Product_Name__mdt> prdHLCALlst = AL_screen_Product_Name__mdt.getAll().values();
 
+                for (AL_screen_Product_Name__mdt prd : prdHLCALlst) {
+                    ALPrdNameSet.add(prd.Product_Name__c);
+                }
+            }
+            return ALPrdNameSet;
+        }
+        set;
+    }
 
     public static List<RTL_NBO_Product_Record_Type_Mapping__mdt> getConfRecordType(){
         return [SELECT Id,DeveloperName,Default_Stage__c,RTL_Product_Group__c,RTL_Record_Type_DevName__c,Stage_List__c FROM RTL_NBO_Product_Record_Type_Mapping__mdt];
@@ -126,6 +139,7 @@ public without sharing class CampaignMemberInfoController {
         public Boolean isShowHLCALMoredetail {get;set;}
         // @AuraEnabled
         // public Boolean isValidate {get;set;}
+
     }
     public class CampaignMemberResponseObject
     {
@@ -427,7 +441,7 @@ public without sharing class CampaignMemberInfoController {
             LeadSource,RTL_TMB_Campaign_Source__c,RTL_TMB_Campaign_Reference__c,RTL_Lead_Group__c,Lead.RTL_Media_Source__c,Lead.RTL_Medium__c,Lead.RTL_W2L_Campaign_Name__c,Lead.RTL_W2L_Content__c,Lead.RTL_W2L_Term__c,RTL_Channel_Subsidiary__c,RTL_Product_name__c,
             RTL_OfferResult_Product_1__c, RTL_OfferResult_Product_2__c, RTL_OfferResult_Product_3__c, RTL_OfferResult_Product_4__c, RTL_OfferResult_Product_5__c
             FROM CampaignMember Where Id =: recordId LIMIT 1];
-            System.debug(cmObj);
+            // System.debug(cmObj);
             if(cmObj.RTL_Last_Contact_Status__c  != null)
             {
                 cmObj.RTL_Last_Contact_Status__c = RTL_Utility.transLastContactStatus(cmObj.RTL_Last_Contact_Status__c);
@@ -455,7 +469,7 @@ public without sharing class CampaignMemberInfoController {
             //System.debug(objectFields.get(fieldName).getDescribe().getLabel());
             fieldLabelMap.put(objectFields.get(fieldName).getDescribe().getName(),objectFields.get(fieldName).getDescribe().getLabel());
         }
-        System.debug('fieldLabelMap:'+fieldLabelMap);
+        // System.debug('fieldLabelMap:'+fieldLabelMap);
         return fieldLabelMap;
     }
     
@@ -585,7 +599,7 @@ public without sharing class CampaignMemberInfoController {
         }
         for(Object key : dependentPicklistValues.keySet())
         {
-            System.debug('Dependent ' + (dependentPicklistValues.get(key)));
+            // System.debug('Dependent ' + (dependentPicklistValues.get(key)));
             if(dependentPicklistValues.get(key).contains(contrlValue))
             {
                return key.ToString(); 
@@ -634,7 +648,7 @@ public without sharing class CampaignMemberInfoController {
         {   
             CampaignMember cmObj = getProductInCampaign(recordId);
             CampaignMember cmObjLabel = getCampaignMemberLabel(recordId);
-            System.debug('cmObj:'+cmObj); 
+            // System.debug('cmObj:'+cmObj); 
             //Mapping Product group with record type
             for(RTL_NBO_Product_Record_Type_Mapping__mdt each : getConfRecordType() )
             {
@@ -681,9 +695,11 @@ public without sharing class CampaignMemberInfoController {
                 Boolean viewProductName = (cmObj.get('RTL_Campaign_Product_'+i+'__c') == null) ? false : true;
                 Boolean viewOfferResult = (cmObj.get('RTL_OfferResult_Product_'+i+'__c') == null) ? false : true;
                 Boolean viewReason = (cmObj.get('Not_Interest_Reason'+i+'__c') == null) ? false : true;
+
                 // system.debug('productGroup:'+String.valueOf(cmObj.get('RTL_Product_Group_'+i+'__c')));
                 // system.debug('OfferResult:'+cmObj.get('RTL_OfferResult_Product_'+i+'__c'));
                 // system.debug('RTL_RelatedOpportunity_:'+cmObj.get('RTL_RelatedOpportunity_'+i+'__c'));
+
                 if(cmObj.get('RTL_OfferResult_Product_'+i+'__c') == 'Interested' || cmObj.get('RTL_OfferResult_Product_'+i+'__c') == 'Referred')
                 {
                     viewOfferResult = true;
@@ -708,7 +724,7 @@ public without sharing class CampaignMemberInfoController {
                     if( mapConfRecordType.containsKey( productGroup.ToUppercase() ) )
                     {
                         String recordTypeByProductGroup = mapConfRecordType.get( productGroup.ToUppercase() ).RTL_Record_Type_DevName__c;
-                        system.debug('objOpp'+objOpp);
+                        // system.debug('objOpp'+objOpp);
                         if( opptyNameMap.containsKey( 'RTL_RelatedOpportunity_'+i+'__c' ) )
                         {
                             objOpp.Name = opptyNameMap.get('RTL_RelatedOpportunity_'+i+'__c');
@@ -735,7 +751,7 @@ public without sharing class CampaignMemberInfoController {
                     intProduct.viewGroup = viewGroup;
                     intProduct.viewSubGroup = viewSubGroup;
                     intProduct.viewProductName = viewProductName;       
-                    
+
                     intProduct.numberOfProduct = i;
                     intProduct.isShowHLCALMoredetail = getHLCALmoreDetailVisible(intProduct.productName, cmObj.Lead.RTL_W2L_Source_Collateral_Type__c);
                     productList.add( intProduct );               
@@ -813,7 +829,7 @@ public without sharing class CampaignMemberInfoController {
                     productList.add( intProduct ); 
                 }
             }
-            System.debug('productList'+productList); 
+            // System.debug('productList'+productList); 
             return productList;
         } 
         catch (Exception e) 
@@ -828,7 +844,7 @@ public without sharing class CampaignMemberInfoController {
     {
         try 
         {   
-            System.debug('cmObj:'+cmObj); 
+            // System.debug('cmObj:'+cmObj); 
             //Mapping Product group with record type
             for(RTL_NBO_Product_Record_Type_Mapping__mdt each : getConfRecordType() )
             {
@@ -852,8 +868,8 @@ public without sharing class CampaignMemberInfoController {
                 Boolean viewOfferResult = (cmObj.get('RTL_OfferResult_Product_'+i+'__c') == null) ? false : true;
                 Boolean viewReason = (cmObj.get('Not_Interest_Reason'+i+'__c') == null) ? false : true;
 
-                system.debug('productGroup:'+String.valueOf(cmObj.get('RTL_Product_Group_'+i+'__c')));
-                system.debug('OfferResult:'+cmObj.get('RTL_OfferResult_Product_'+i+'__c'));
+                // system.debug('productGroup:'+String.valueOf(cmObj.get('RTL_Product_Group_'+i+'__c')));
+                // system.debug('OfferResult:'+cmObj.get('RTL_OfferResult_Product_'+i+'__c'));
 
                 // Now get product to create opportunities only not converted product
                 if( cmObj.get('RTL_OfferResult_Product_'+i+'__c') == null 
@@ -867,7 +883,7 @@ public without sharing class CampaignMemberInfoController {
                     if( mapConfRecordType.containsKey( productGroup.ToUppercase() ) )
                     {
                         String recordTypeByProductGroup = mapConfRecordType.get( productGroup.ToUppercase() ).RTL_Record_Type_DevName__c;
-                        system.debug('objOpp'+objOpp);
+                        // system.debug('objOpp'+objOpp);
 
                         objOpp.Id = (String)cmObj.get('RTL_RelatedOpportunity_'+i+'__c');
                         objOpp.StageName = mapConfRecordType.get( productGroup.ToUppercase() ).Default_Stage__c;
@@ -892,7 +908,7 @@ public without sharing class CampaignMemberInfoController {
                     productList.add( intProduct );               
                 }            
             }
-            System.debug('productList'+productList); 
+            // System.debug('productList'+productList); 
             return productList;
         } 
         catch (Exception e) 
@@ -1016,8 +1032,8 @@ public without sharing class CampaignMemberInfoController {
             
             //con.addHttpRequest(req);
     
-            System.debug(res.getStatusCode());
-            System.debug(res.getBody());
+            // System.debug(res.getStatusCode());
+            // System.debug(res.getBody());
 
             resultBody = res.getBody();
     
@@ -1033,7 +1049,7 @@ public without sharing class CampaignMemberInfoController {
             String errorDescText =  header.getChildElement('ErrorDescription', null).getText();
             String errorStatusText =  header.getChildElement('ErrorStatus', null).getText();
     
-            system.debug('errorStatusText : '+errorStatusText);
+            // system.debug('errorStatusText : '+errorStatusText);
     
             if( errorStatusText == 'fail' ) 
             {
@@ -1146,7 +1162,7 @@ public without sharing class CampaignMemberInfoController {
                                 
                                 if(objectFields.contains(channelValue.RTL_CHANNEL_FIELD_NAME__c)) {
                                     campaignMemObj.put(channelValue.RTL_CHANNEL_FIELD_NAME__c,true);
-                                    System.debug('RTL_CHANNEL_FIELD_NAME__c:'+channelValue.RTL_CHANNEL_FIELD_NAME__c);
+                                    // System.debug('RTL_CHANNEL_FIELD_NAME__c:'+channelValue.RTL_CHANNEL_FIELD_NAME__c);
                                 }
                                 
                             }                              
@@ -1261,8 +1277,8 @@ public without sharing class CampaignMemberInfoController {
                     }
                 }
             }    
-            System.debug('campaignMemObj:'+campaignMemObj);
-            System.debug('campaignMemberResponse:'+campaignMemberResponse);
+            // System.debug('campaignMemObj:'+campaignMemObj);
+            // System.debug('campaignMemberResponse:'+campaignMemberResponse);
             endCallINT06 = system.now();
     
             RTL_CampaignUtil.insertOnlineLogWithResponse( errorCodeText,errorDescText, rmId , RTL_CampaignUtil.INT06_SERVICE_NAME , 
@@ -1296,11 +1312,11 @@ public without sharing class CampaignMemberInfoController {
 
     @AuraEnabled
     public static String saveCampaign(List<CampaignProductWrapper> productList,String extAccId,String accObj,CampaignMember campaignMemObj,Boolean isMerge,String productCrossSellList,String leadInput){
-        System.debug('productList:'+productList);
-        System.debug('extAccId:'+extAccId);
-        System.debug('accObj:'+accObj);
-        System.debug('isMerge:'+isMerge);
-        System.debug('leadInput:'+leadInput);
+        // System.debug('productList:'+productList);
+        // System.debug('extAccId:'+extAccId);
+        // System.debug('accObj:'+accObj);
+        // System.debug('isMerge:'+isMerge);
+        // System.debug('leadInput:'+leadInput);
        
         Map<String, Object> accObjMap = new Map<String, Object>();
         Map<String, Object> leadObjMap = new Map<String, Object>();
@@ -1308,13 +1324,13 @@ public without sharing class CampaignMemberInfoController {
         {
             accObjMap = (Map<String, Object>)JSON.deserializeUntyped(accObj);
         }
-        System.debug('accObj'+accObjMap);
+        // System.debug('accObj'+accObjMap);
 
         if(leadInput != null)
         {
             leadObjMap = (Map<String, Object>)JSON.deserializeUntyped(leadInput);
         }
-        System.debug('leadObjMap:'+leadObjMap);
+        // System.debug('leadObjMap:'+leadObjMap);
         String accDupId;
         if(extAccId != null)
         {
@@ -1336,13 +1352,13 @@ public without sharing class CampaignMemberInfoController {
         {
             crossSellObjs = (List<Object>)JSON.deserializeUntyped(productCrossSellList);
         }  
-        System.debug('crossSellObjs : '+ crossSellObjs);
-         System.debug('crossSellObjs size: '+ crossSellObjs.size());
+        // System.debug('crossSellObjs : '+ crossSellObjs);
+        //  System.debug('crossSellObjs size: '+ crossSellObjs.size());
 
         
         for(CampaignProductWrapper product : productList)
         {
-
+            
             if(product.offerResult == 'Interested')
             {
                 if(campaignMemObj.RTL_Contact_Status__c == 'Contact' || campaignMemObj.RTL_Contact_Status__c == 'Call Back')
@@ -1370,11 +1386,11 @@ public without sharing class CampaignMemberInfoController {
                 campaignMemObj.put('Not_Interest_Reason'+(String.valueOf(product.numberOfProduct))+'__c',product.reason); 
             }
 
-            System.debug('productGroup:'+product.productGroup.toUpperCase());
-            System.debug('offerResult:'+product.offerResult);
-            System.debug('reason:'+product.reason);
-            System.debug('outComeMap:'+outComeMap);
-            System.debug('product.productGroup.toUpperCase()+product.offerResult+product.reason:'+product.productGroup.toUpperCase()+product.offerResult+product.reason);
+            // System.debug('productGroup:'+product.productGroup.toUpperCase());
+            // System.debug('offerResult:'+product.offerResult);
+            // System.debug('reason:'+product.reason);
+            // System.debug('outComeMap:'+outComeMap);
+            // System.debug('product.productGroup.toUpperCase()+product.offerResult+product.reason:'+product.productGroup.toUpperCase()+product.offerResult+product.reason);
             //System.debug('outComeMap:'+outComeMap.get(product.productGroup+product.offerResult+product.reason).Avaya_Completion_Code__c);
             if(campaignMemObj.RTL_Contact_Status__c == 'Contact' )
             {            
@@ -1384,14 +1400,14 @@ public without sharing class CampaignMemberInfoController {
                 } else {
                     key = product.productGroup.toUpperCase()+product.offerResult;
                 }
-                System.debug('Key1 ----->' + key);
+                // System.debug('Key1 ----->' + key);
                 if(outComeMap.containsKey(key))
                 {
                     campaignMemObj.put('Completion_Code_'+(String.valueOf(product.rowNum))+'__c',outComeMap.get(key).Avaya_Completion_Code__c);     
                 }
             }
         }
-        System.debug('interestedProductList:'+interestedProductList);
+        // System.debug('interestedProductList:'+interestedProductList);
 
         List<Object> crossSellInterestedObj = new List<Object>();
         List<Object> crossSellReferredObj = new List<Object>();
@@ -1399,7 +1415,7 @@ public without sharing class CampaignMemberInfoController {
         for (Integer i = 0; i < crossSellObjs.size(); i++) {
     
             Map<String, Object> product = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(crossSellObjs[i]));
-            System.debug('product'+i+' :'+product);
+            // System.debug('product'+i+' :'+product);
 
             if(product.get('offerResult') == 'Interested' )
             {
@@ -1425,7 +1441,7 @@ public without sharing class CampaignMemberInfoController {
             leadObj = [SELECT Id,FirstName,LastName,RTL_ID_Type__c,RTL_Citizen_Id__c,RTL_Mobile_Number__c,OwnerId,Status,IsConverted,RTL_Allow_Convert_Lead__c FROM Lead Where Id =: campaignMemObj.LeadId];
         }
 
-        System.debug('leadObj before:'+leadObj);
+        // System.debug('leadObj before:'+leadObj);
         //Set Data To Lead
         if(leadObjMap != null && leadObjMap.size() > 0)
         {
@@ -1436,7 +1452,7 @@ public without sharing class CampaignMemberInfoController {
             leadObj.RTL_Citizen_Id__c = String.valueOf(leadObjMap.get('ID_Number_PE__c'));
         }
 
-        System.debug('leadObj after:'+leadObj);
+        // System.debug('leadObj after:'+leadObj);
 
         //UPDATE CAMPAIGN MEMBER
         Savepoint sp = Database.setSavepoint();
@@ -1497,7 +1513,7 @@ public without sharing class CampaignMemberInfoController {
 
             //create opp line
             Map<Integer,Opportunity> productNoOpptyMap = new  Map<Integer,Opportunity>();
-            System.debug('Customer__c:'+campaignMemObj.Customer__c);
+            // System.debug('Customer__c:'+campaignMemObj.Customer__c);
             if(accId == null && campaignMemObj.Customer__c != null)
             {
                 accId = campaignMemObj.Customer__c;
@@ -1505,11 +1521,11 @@ public without sharing class CampaignMemberInfoController {
             else {
                 accId = accDupId;
             }
-            System.debug('Account Id :'+accId);
+            // System.debug('Account Id :'+accId);
             // if(accId == null && campaignMemObj.Customer__c != null)
             if( interestedProductList.size() > 0 ){            
                 for( CampaignProductWrapper product : interestedProductList ){
-                    System.debug('objOpp:'+product.objOpp.Id);
+                    // System.debug('objOpp:'+product.objOpp.Id);
                     if(String.isEmpty(product.objOpp.Id) && product.offerResult == 'Interested')
                     {
                         Opportunity newOpp = new Opportunity();
@@ -1548,7 +1564,7 @@ public without sharing class CampaignMemberInfoController {
             try{
                 if( productNoOpptyMap.values().size() > 0 )
                 {
-                    system.debug('productNoOpptyMap:'+productNoOpptyMap);
+                    // system.debug('productNoOpptyMap:'+productNoOpptyMap);
                     if (!Test.isRunningTest()) {
                         insert productNoOpptyMap.values();
                     }    
@@ -1585,12 +1601,12 @@ public without sharing class CampaignMemberInfoController {
                     campaignMemObj.put('RTL_Opportunity_CloseDate_'+i+'__c',opptyObj.CloseDate);                             
         
                 }
-                System.Debug('campaignMemObj:'+campaignMemObj);
+                // System.Debug('campaignMemObj:'+campaignMemObj);
                 try{
                     if(campaignMemObj.Id != null){
                         update campaignMemObj;
                     }else{
-                        system.debug('Insert Campaign member : '+campaignMemObj);
+                        // system.debug('Insert Campaign member : '+campaignMemObj);
                         String store = campaignMemObj.RTL_Products_Offer_String__c;
                         campaignMemObj.RTL_Products_Offer_String__c = null;
                         insert campaignMemObj;
@@ -1613,16 +1629,6 @@ public without sharing class CampaignMemberInfoController {
                 saveOpportunity(crossSellInterestedObj, campaignMemObj, accId);  
             }
         }
-        List<String> userContactID = new List<String>();
-        if(campaignMemObj.Id != null){
-            userContactID.add(campaignMemObj.Id);
-        }
-        if(campaignMemObj.RTL_Marketing_Code__c != null){
-            userContactID.add(campaignMemObj.RTL_Marketing_Code__c);
-        }
-        if(userContactID.size() > 0){
-            AvayaCompletionCodeUtility.sendCompletionCodeToAvaya(campaignMemObj.Avaya_Completion_Code__c, userContactID);
-        }
         return 'Success';
     }
 
@@ -1642,7 +1648,7 @@ public without sharing class CampaignMemberInfoController {
         {
             if( campaignMemObj.ContactId == null && leadObj.Id != null && !leadObj.IsConverted  && interestedProductList.size() > 0)             
             {
-                System.debug('Convert Lead Step (MERGE ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
+                // System.debug('Convert Lead Step (MERGE ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
                 // FOR SKIP CHECK UP CONVERT LEAD
                 leadObj.RTL_Allow_Convert_Lead__c = true;
                 leadObj.Status = 'Qualified';
@@ -1660,7 +1666,7 @@ public without sharing class CampaignMemberInfoController {
                     Database.rollback(sp);
                     return null;
                 }
-                System.debug('leadObj:'+leadObj);
+                // System.debug('leadObj:'+leadObj);
                 update leadObj;
 
                 List<Contact> ExistingConList = [SELECT Id,FirstName,LastName,AccountID
@@ -1692,9 +1698,9 @@ public without sharing class CampaignMemberInfoController {
             {
                 List<CampaignProductWrapper> crossSellInterestList = new List<CampaignProductWrapper>();
                 for (Integer i = 0; i < crossSellInterestedObj.size(); i++) {
-                    System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
+                    // System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
                     Map<String, Object> product = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(crossSellInterestedObj[i]));
-                    System.debug('product'+i+' :'+product);
+                    // System.debug('product'+i+' :'+product);
                     
                     CampaignProductWrapper crossSellWrapper = new CampaignProductWrapper();
                     
@@ -1705,7 +1711,7 @@ public without sharing class CampaignMemberInfoController {
                     crossSellInterestList.add(crossSellWrapper);
                 }
 
-                System.debug('Convert Lead Step (MERGE ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
+                // System.debug('Convert Lead Step (MERGE ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
                 // FOR SKIP CHECK UP CONVERT LEAD
                 leadObj.RTL_Allow_Convert_Lead__c = true;
                 leadObj.Status = 'Qualified';
@@ -1723,7 +1729,7 @@ public without sharing class CampaignMemberInfoController {
                     Database.rollback(sp);
                     return null;
                 }
-                System.debug('leadObj:'+leadObj);
+                // System.debug('leadObj:'+leadObj);
                 update leadObj;
 
                 List<Contact> ExistingConList = [SELECT Id,FirstName,LastName,AccountID
@@ -1767,10 +1773,10 @@ public without sharing class CampaignMemberInfoController {
                 if(product.offerResult == 'Interested')
                 {
                     Opportunity newOpp = new Opportunity();
-                    System.debug('RTL_Product_Group__c'+String.valueOf(product.productGroup));
-                    System.debug('RTL_Prod_SubGrp__c'+String.valueOf(product.productSubGroup));
-                    System.debug('RTL_Product_Name__c'+String.valueOf(product.productId));
-                    System.debug('accId'+accId);
+                    // System.debug('RTL_Product_Group__c'+String.valueOf(product.productGroup));
+                    // System.debug('RTL_Prod_SubGrp__c'+String.valueOf(product.productSubGroup));
+                    // System.debug('RTL_Product_Name__c'+String.valueOf(product.productId));
+                    // System.debug('accId'+accId);
                     newOpp = product.objOpp;
                     newOpp.RTL_Product_Group__c = String.valueOf(product.productGroup);
                     newOpp.RTL_Prod_SubGrp__c = String.valueOf(product.productSubGroup);
@@ -1805,7 +1811,7 @@ public without sharing class CampaignMemberInfoController {
         try{
             if( productNoOpptyMap.values().size() > 0 )
             {
-                system.debug('productNoOpptyMap'+productNoOpptyMap);
+                // system.debug('productNoOpptyMap'+productNoOpptyMap);
                 if (!Test.isRunningTest()) {
                     insert productNoOpptyMap.values();
                 }              
@@ -1839,16 +1845,16 @@ public without sharing class CampaignMemberInfoController {
                 campaignMemObj.put('RTL_Opportunity_Amount_'+i+'__c',opptyObj.Amount); 
                 campaignMemObj.put('RTL_Opportunity_CloseDate_'+i+'__c',opptyObj.CloseDate);  
 
-                system.debug('RTL_Product_Group__c : '+opptyObj.RTL_Product_Group__c);     
-                system.debug('RTL_Prod_SubGrp__c : '+opptyObj.RTL_Prod_SubGrp__c);     
-                system.debug('RTL_Product_Name__c : '+opptyObj.RTL_Product_Name__c);                             
+                // system.debug('RTL_Product_Group__c : '+opptyObj.RTL_Product_Group__c);     
+                // system.debug('RTL_Prod_SubGrp__c : '+opptyObj.RTL_Prod_SubGrp__c);     
+                // system.debug('RTL_Product_Name__c : '+opptyObj.RTL_Product_Name__c);                             
             }
            
             try{
                 if(campaignMemObj.Id != null){
                     update campaignMemObj;
                 }else{
-                    system.debug('Insert Campaign member : '+campaignMemObj);
+                    // system.debug('Insert Campaign member : '+campaignMemObj);
                     String store = campaignMemObj.RTL_Products_Offer_String__c;
                     campaignMemObj.RTL_Products_Offer_String__c = null;
                     insert campaignMemObj;
@@ -1883,7 +1889,7 @@ public without sharing class CampaignMemberInfoController {
         try{ 
             if( campaignMemObj.ContactId == null && leadObj.Id != null && !leadObj.IsConverted  && interestedProductList.size() > 0)             
             {
-                System.debug('Convert Lead Step (NEW ACCOUNT LEAD DETAIL PAGE) : Lead => '+ leadObj.Id);
+                // System.debug('Convert Lead Step (NEW ACCOUNT LEAD DETAIL PAGE) : Lead => '+ leadObj.Id);
 
                 // FOR SKIP CHECK UP CONVERT LEAD
                 leadObj.RTL_Allow_Convert_Lead__c = true;
@@ -1902,7 +1908,7 @@ public without sharing class CampaignMemberInfoController {
                     Database.rollback(sp);
                     return null;
                 }
-                System.debug('leadObj:'+leadObj);
+                // System.debug('leadObj:'+leadObj);
                 update leadObj;
 
 
@@ -1926,9 +1932,9 @@ public without sharing class CampaignMemberInfoController {
             {
                 List<CampaignProductWrapper> crossSellInterestList = new List<CampaignProductWrapper>();
                 for (Integer i = 0; i < crossSellInterestedObj.size(); i++) {
-                    System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
+                    // System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
                     Map<String, Object> product = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(crossSellInterestedObj[i]));
-                    System.debug('product'+i+' :'+product);
+                    // System.debug('product'+i+' :'+product);
                     
                     CampaignProductWrapper crossSellWrapper = new CampaignProductWrapper();
                     
@@ -1939,7 +1945,7 @@ public without sharing class CampaignMemberInfoController {
                     crossSellInterestList.add(crossSellWrapper);
                 }
 
-                System.debug('Convert Lead Step (NEW ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
+                // System.debug('Convert Lead Step (NEW ACCOUNT LEAD DETAIL PAGE) : Lead => '+leadObj.Id);
                 // FOR SKIP CHECK UP CONVERT LEAD
                 leadObj.RTL_Allow_Convert_Lead__c = true;
                 leadObj.Status = 'Qualified';
@@ -1957,7 +1963,7 @@ public without sharing class CampaignMemberInfoController {
                     Database.rollback(sp);
                     return null;
                 }
-                System.debug('leadObj:'+leadObj);
+                // System.debug('leadObj:'+leadObj);
                 update leadObj;
 
                 List<Contact> ExistingConList = [SELECT Id,FirstName,LastName,AccountID
@@ -2032,7 +2038,7 @@ public without sharing class CampaignMemberInfoController {
          try{
              if( productNoOpptyMap.values().size() > 0 )
              {
-                 system.debug('productNoOpptyMap:'+productNoOpptyMap);
+                //  system.debug('productNoOpptyMap:'+productNoOpptyMap);
                  if (!Test.isRunningTest()) {
                      insert productNoOpptyMap.values();
                  }    
@@ -2072,7 +2078,7 @@ public without sharing class CampaignMemberInfoController {
                  if(campaignMemObj.Id != null){
                      update campaignMemObj;
                  }else{
-                     system.debug('Insert Campaign member : '+campaignMemObj);
+                    //  system.debug('Insert Campaign member : '+campaignMemObj);
                      String store = campaignMemObj.RTL_Products_Offer_String__c;
                      campaignMemObj.RTL_Products_Offer_String__c = null;
                      insert campaignMemObj;
@@ -2149,23 +2155,6 @@ public without sharing class CampaignMemberInfoController {
             campaignMemObj.RTL_Contact_Date__c = System.today();
 
             update campaignMemObj;
-
-            List<Task> taskList = [SELECT Id,WhatId,Related_Object__c FROM Task WHERE Related_Object__c =: campaignMemObj.Id ORDER BY LastModifiedDate DESC LIMIT 1];
-            if(taskList.size() > 0)
-            {
-                System.debug('taskList:'+taskList);
-                System.debug('campaignMemObj:'+campaignMemObj);
-                if(campaignMemObj.Customer__c != null)
-                {
-                    if( taskList[0].WhatId == null || taskList[0].WhatId != campaignMemObj.Customer__c)
-                    {
-                        taskList[0].WhatId = campaignMemObj.Customer__c;
-                        update taskList;
-                    }
-                  
-                }
-            }
-
             //Do not contact 
             try {
                 if (String.isNotEmpty(campaignMemObj.Customer__c) && String.isNotEmpty(campaignMemObj.ContactId)) {
@@ -2216,7 +2205,7 @@ public without sharing class CampaignMemberInfoController {
             Boolean chkPrimary = false;
             List<RTL_Interested_products_c__c> interestProduct = [SELECT Id,Product_Name__c,Is_Primary__c FROM RTL_Interested_products_c__c 
                           WHERE Lead__c = :leadObj.Id order by Is_Primary__c DESC];   
-            System.debug('interestProduct:'+interestProduct); 
+            // System.debug('interestProduct:'+interestProduct); 
             if( interestProduct.size() > 0 ){                  
 
                 //Get product id for new opp
@@ -2229,7 +2218,7 @@ public without sharing class CampaignMemberInfoController {
                         productId = (Id) productList.get(0).productId;
                     }
                 }
-                system.debug(interestProduct);
+                // system.debug(interestProduct);
 
                 //Check matching product on interested product lead
                 for( RTL_Interested_products_c__c each : interestProduct ){
@@ -2243,7 +2232,7 @@ public without sharing class CampaignMemberInfoController {
                             each.Is_Primary__c = true;
                             chkPrimary = true;
                             updateIntProduct.add(each);
-                            system.debug(each);
+                            // system.debug(each);
                             break;
                         }
                     }
@@ -2258,12 +2247,12 @@ public without sharing class CampaignMemberInfoController {
                 //Not Matching in interested product lead
                 if(!chkPrimary){
                     createInterestedProduct(leadObj,campaignMemObj,productList);
-                    system.debug('CPM : Create interested product when product not match.');
+                    // system.debug('CPM : Create interested product when product not match.');
                 }
                 
             }else{
                 createInterestedProduct(leadObj,campaignMemObj,productList);
-                system.debug('CPM : Create interested product when product not found.');
+                // system.debug('CPM : Create interested product when product not found.');
             }
         }
         return returnCheck;
@@ -2272,11 +2261,11 @@ public without sharing class CampaignMemberInfoController {
 
     public static void createInterestedProduct(Lead leadObj,CampaignMember campaignMemObj,List<CampaignProductWrapper> productList){
 
-        System.debug('productList:'+productList.size()); 
+        // System.debug('productList:'+productList.size()); 
         if(productList.size() > 0){
-            System.debug('productId:'+productList.get(0).productId); 
+            // System.debug('productId:'+productList.get(0).productId); 
             Id productId = (Id) productList.get(0).productId;
-            system.debug('Product for new opp id : '+productId);
+            // system.debug('Product for new opp id : '+productId);
             if(productId != null){
                 RTL_Interested_products_c__c interestedProduct = new RTL_Interested_products_c__c();
                 interestedProduct.Is_Primary__c = true;
@@ -2450,16 +2439,16 @@ public without sharing class CampaignMemberInfoController {
             // List<Object> crossSellObjs = (List<Object>)JSON.deserializeUntyped(jsonList);
             // System.debug('crossSellObjs : '+ crossSellObjs);
             for (Integer i = 0; i < crossSellObjs.size(); i++) {
-                System.debug('Object'+i+' :'+ crossSellObjs[i]);
+                // System.debug('Object'+i+' :'+ crossSellObjs[i]);
                 Map<String, Object> product = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(crossSellObjs[i]));
                 if (opptyIdList.size() > 0) {
                     product.put('opportunityId', opptyIdList[i]);
                 }
-                System.debug('product'+i+' :'+product);
+                // System.debug('product'+i+' :'+product);
                 Cross_Sell_Product__c crossSell = mapCrossSell(product, campaignMemObj.Id);
                 createCrossSellList.add(crossSell);
             }
-            System.debug('createCrossSellList : '+ createCrossSellList);
+            // System.debug('createCrossSellList : '+ createCrossSellList);
             insert createCrossSellList;
             return JSON.serialize(createCrossSellList);
             
@@ -2481,7 +2470,7 @@ public without sharing class CampaignMemberInfoController {
         crossSell.RTL_OfferResult_Product__c = String.valueOf(AbstractCoreClass.getResult('offerResult', product));
         crossSell.OpportunityId__c = String.valueOf(AbstractCoreClass.getResult('opportunityId', product));
         crossSell.CampaignMemberId__c = CampaignMemberId;
-        System.debug('mapCrossSell : '+ crossSell);
+        // System.debug('mapCrossSell : '+ crossSell);
         return crossSell;
     }
 
@@ -2492,12 +2481,12 @@ public without sharing class CampaignMemberInfoController {
             List<Opportunity> createOpputunityList = new List<Opportunity>();
             // List<Object> crossSellObjs = (List<Object>)JSON.deserializeUntyped(jsonList);
             List<String> opptyIdList = new List<String> ();
-            System.debug('crossSellInterestedObj : '+ crossSellInterestedObj);
-            System.debug('crossSellInterestedObj size : '+ crossSellInterestedObj.size());
+            // System.debug('crossSellInterestedObj : '+ crossSellInterestedObj);
+            // System.debug('crossSellInterestedObj size : '+ crossSellInterestedObj.size());
             for (Integer i = 0; i < crossSellInterestedObj.size(); i++) {
-                System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
+                // System.debug('Object'+i+' :'+ crossSellInterestedObj[i]);
                 Map<String, Object> product = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(crossSellInterestedObj[i]));
-                System.debug('product'+i+' :'+product);
+                // System.debug('product'+i+' :'+product);
                 String recTypeId = '';
                 String RecordType_DevName = String.valueOf(AbstractCoreClass.getResult('opptyRecordType_DevName', product));
                 recTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByDeveloperName().get(RecordType_DevName).getRecordTypeId();
@@ -2511,7 +2500,7 @@ public without sharing class CampaignMemberInfoController {
                 insert createOpputunityList;
             }
             if (createOpputunityList.size() > 0) {
-                System.debug('opptyIdList : '+ opptyIdList);
+                // System.debug('opptyIdList : '+ opptyIdList);
                 for (Opportunity opportunity : createOpputunityList) {
                     opptyIdList.add(opportunity.id);
                 }
@@ -2530,7 +2519,7 @@ public without sharing class CampaignMemberInfoController {
 
     public static Opportunity mapOpportunity (Map<String, Object> product, CampaignMember campaignMemObj, String Customer_Id, String RecordTypeId) {
         String marketingCode = '';
-        System.debug('CampaignMemberId:'+campaignMemObj);
+        // System.debug('CampaignMemberId:'+campaignMemObj);
         if(campaignMemObj.RTL_Marketing_Code__c != null)
         {
             marketingCode = campaignMemObj.RTL_Marketing_Code__c;
@@ -2551,7 +2540,7 @@ public without sharing class CampaignMemberInfoController {
         opportunityObj.RecordTypeId = RecordTypeId; //Oppty recordTypeId
         opportunityObj.LeadSource = 'Cross Sell';
         opportunityObj.Marketing_Code__c = marketingCode;
-        System.debug('mapOpputunity : '+ opportunityObj);
+        // System.debug('mapOpputunity : '+ opportunityObj);
         return opportunityObj;
     }
 
@@ -2566,7 +2555,7 @@ public without sharing class CampaignMemberInfoController {
         {
             recTypeId = recordTypeId;
         }
-        system.debug('recTypeId:'+ recTypeId);
+        // system.debug('recTypeId:'+ recTypeId);
         if (String.isNotEmpty(recTypeId)) {
             Http http = new Http();
             HttpRequest request = new HttpRequest();
@@ -2589,7 +2578,7 @@ public without sharing class CampaignMemberInfoController {
                 response.setBody('{"values" : [ {"label" : "Contact","value" : "Contact"}]}');
                 response.setStatusCode(200);
             }
-            system.debug('response body'+ response.getBody());
+            // system.debug('response body'+ response.getBody());
             try {
                 Map <String, Object> root = (Map <String, Object>) JSON.deserializeUntyped( response.getBody());
                 return root;
@@ -2636,8 +2625,8 @@ public without sharing class CampaignMemberInfoController {
 
     public static Map<String,Business_Outcome_Mapping__c> getBusinessOutcomeMapping()
     {
-        List<Business_Outcome_Mapping__c> outComeList = [SELECT Id, Name, Contact_Status__c, Uncontact_Reason__c, Reason__c, Offer_Result__c, Avaya_Completion_Code__c, IsActive__c, Retail_Product_Group__c, Screen_type__c 
-        FROM Business_Outcome_Mapping__c Where IsActive__c = true AND Screen_type__c = 'Outbound Campaign Member'];
+        List<Business_Outcome_Mapping__c> outComeList = [SELECT Id, Name, Contact_Status__c, Uncontact_Reason__c, Reason__c, Offer_Result__c, Avaya_Completion_Code__c, IsActive__c, Retail_Product_Group__c 
+        FROM Business_Outcome_Mapping__c Where IsActive__c = true];
         Map<String,Business_Outcome_Mapping__c> outComeMap = new Map<String,Business_Outcome_Mapping__c>();
         for(Business_Outcome_Mapping__c bom : outComeList)
         {
@@ -2650,13 +2639,7 @@ public without sharing class CampaignMemberInfoController {
                 {
                     reason = '';
                 }
-                if(product == null)
-                {
-                    product = '';
-                }else{
-                    product = product.toUpperCase();
-                }
-                outComeMap.put(product+offerResult+reason,bom);
+                outComeMap.put(product.toUpperCase()+offerResult+reason,bom);
             }
             else if(bom.Contact_Status__c == 'Uncontact')
             {
@@ -2693,19 +2676,19 @@ public without sharing class CampaignMemberInfoController {
             {
                 for( Integer i = 1 ; i <= 5 ; i++ )
                 { 
-                    if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'Yes'/*'YES Complete Sale'*/)
+                    if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'YES Complete Sale')
                     {
                         count_Of_YES_Complete_Sale++;
                     }
-                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NIN'/*'NIN Not Interest'*/)
+                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NIN Not Interest')
                     {
                         count_Of_NIN_Not_Interest++;
                     }
-                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NQF'/*'NQF Not Qualify'*/)
+                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NQF Not Qualify')
                     {
                         count_Of_NQF_Not_Qualify++;
                     }
-                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NIN_Recall' /*'NIN Not Interest - Recall'*/)
+                    else if(campaignMemObj.get('Completion_Code_'+i+'__c') == 'NIN Not Interest - Recall')
                     {
                         count_Of_Not_Interest_Recall++;
                     }
@@ -2717,63 +2700,63 @@ public without sharing class CampaignMemberInfoController {
                 // System.debug('count_Of_Not_Interest_Recall:'+count_Of_Not_Interest_Recall);
                 if(numberOfProduct == count_Of_YES_Complete_Sale)
                 {
-                    completionCode = 'Yes';//'YES Complete Sale';
+                    completionCode = 'YES Complete Sale';
                 }
                 else if(numberOfProduct == count_Of_NIN_Not_Interest)
                 {
-                    completionCode = 'NIN';//'NIN Not Interest';
+                    completionCode = 'NIN Not Interest';
                 }
                 else if(numberOfProduct == count_Of_NQF_Not_Qualify)
                 {
-                    completionCode = 'NQF';//'NQF Not Qualify';
+                    completionCode = 'NQF Not Qualify';
                 }
                 else if(numberOfProduct == count_Of_Not_Interest_Recall)
                 {
-                    completionCode = 'NIN_Recall';//'NIN Not Interest - Recall';
+                    completionCode = 'NIN Not Interest - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify == 0 && count_Of_Not_Interest_Recall == 0)
                 {
-                    completionCode = 'Yes_Partial';//'Yes Partial';
+                    completionCode = 'Yes Partial';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest == 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall == 0)
                 {
-                    completionCode = 'Yes_Partial';//'Yes Partial';
+                    completionCode = 'Yes Partial';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest == 0 && count_Of_NQF_Not_Qualify == 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'Yes_Recall';//'Yes - Recall';
+                    completionCode = 'Yes - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale == 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall == 0)
                 {
-                    completionCode = 'NQF';//'NQF Not Qualify';
+                    completionCode = 'NQF Not Qualify';
                 }
                 else if(count_Of_YES_Complete_Sale == 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify == 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'NIN_Recall';//'NIN Not Interest - Recall';
+                    completionCode = 'NIN Not Interest - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale == 0 && count_Of_NIN_Not_Interest == 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'NIN_Recall';//'NIN Not Interest - Recall';
+                    completionCode = 'NIN Not Interest - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall == 0)
                 {
-                    completionCode = 'Yes_Partial';//'Yes Partial';
+                    completionCode = 'Yes Partial';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify == 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'Yes_Recall';//'Yes - Recall';
+                    completionCode = 'Yes - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest == 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'Yes_Recall';//'Yes - Recall';
+                    completionCode = 'Yes - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale == 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'NIN_Recall';//'NIN Not Interest - Recall';
+                    completionCode = 'NIN Not Interest - Recall';
                 }
                 else if(count_Of_YES_Complete_Sale > 0 && count_Of_NIN_Not_Interest > 0 && count_Of_NQF_Not_Qualify > 0 && count_Of_Not_Interest_Recall > 0)
                 {
-                    completionCode = 'Yes_Recall';//'Yes - Recall';
+                    completionCode = 'Yes - Recall';
                 }
             }
             else {
@@ -2799,7 +2782,7 @@ public without sharing class CampaignMemberInfoController {
                 }
             }
         }
-        System.debug('completionCode:'+completionCode);
+        // System.debug('completionCode:'+completionCode);
         return completionCode;
     }
 
@@ -2851,8 +2834,8 @@ public without sharing class CampaignMemberInfoController {
             if(objLead.RTL_Mobile_Number__c == acc.Mobile_Number_PE__c){
                 Mobdup = true;
             }               
-            System.debug('IDdup:'+IDdup); 
-            System.debug('Mobdup:'+Mobdup); 
+            // System.debug('IDdup:'+IDdup); 
+            // System.debug('Mobdup:'+Mobdup); 
             // }
             if(IDdup && Mobdup){
                 return false;
@@ -2903,25 +2886,12 @@ public without sharing class CampaignMemberInfoController {
 
     public static Boolean getHLCALmoreDetailVisible(String prdName, String LeadSourceCollateralType){
         Boolean prodctName = false;
-        List<String> AutoLoanproduct = new list<String>{'CYC','CYB','NEW','USED'};
-        if (AutoLoanproduct.contains(prdName) || (HLCALPrdNameSet.contains(prdName) && LeadSourceCollateralType != '')){
+        // List<String> AutoLoanproduct = new list<String>{'CYC','CYB','NEW','USED'};
+        if (ALPrdNameSet.contains(prdName) || (HLCALPrdNameSet.contains(prdName) && LeadSourceCollateralType != '')){
             prodctName = true ;
         }
         else    prodctName = false;
         return prodctName;
-    }
-    @AuraEnabled
-    public static List<String> getUncontactReasonPicklist(String contactStatus)
-    {
-        List<Business_Outcome_Mapping__c> outComeList = [SELECT Id, Name, Contact_Status__c, Uncontact_Reason__c, Reason__c, Offer_Result__c, Avaya_Completion_Code__c, IsActive__c, Retail_Product_Group__c, Screen_type__c 
-        FROM Business_Outcome_Mapping__c Where IsActive__c = true AND Screen_type__c = 'Outbound Campaign Member' AND Contact_Status__c =: contactStatus];
-        List<String> uncontactReasonList = new List<String>();
+    }            
 
-        for(Business_Outcome_Mapping__c eachBom : outComeList){
-            String reason = eachBom.Uncontact_Reason__c + ',' + eachBom.Uncontact_Reason__c;
-            if(!uncontactReasonList.contains(reason))
-            uncontactReasonList.add(reason);
-        }
-        return uncontactReasonList;
-    }
 }

@@ -1,20 +1,3 @@
-/**
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* Apex REST class designed to [Insert Summary Description Here].
-*
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @author         Auttapol Pipatpatama   <atp@ii.co.th>
-* @version        1.1
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @changes
-* v1.0            atp@ii.co.th
-* 2021-10-01      Initial version with comment to control version first time.
-* v1.1            atp@ii.co.th
-* 2021-12-01      Add retry logic for getScsEncryptKey.
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
-*/
-
-
 global class SCSMessageAPIUtil {
     private static final String ALGORITHYM = 'AES256';
     public static final Integer ACCOUNT_TYPE = 10;
@@ -187,43 +170,8 @@ global class SCSMessageAPIUtil {
 		String value = '';
         if(String.isEmpty(key)) return value;
 
-        /* Retry to call service five times. Because sometime session id is expired when call service */
-        Boolean isGoing = true;
-        Integer retry = 10;
-        Integer round = 1;
-        while (isGoing) {
-            System.debug('Try round ' + round);
-
-            value = callSilverlakeService(key, sessionId);
-
-            if (String.isEmpty(value)) {
-                round++;
-                sessionId = fetchUserSessionId();
-
-                if (round > retry) {
-                    isGoing = false;
-                }
-            } else {
-                isGoing = false;
-            }
-        }
-        
-        return value;
-    }
-
-     /** Seperate method to call silverlake to get key value.
-     * @author  Auttapol Pipatpatama
-     * @since   2021-12-01 
-     * @param Key               Encryption Key
-     * @param sessionId         User session id on salesforce
-     * @return Encryption Key Value
-     * 
-    */
-    private static String callSilverlakeService(String key, String sessionId) {
         Http http = new Http();
         HttpResponse response = http.send(createHttpRequest(key, sessionId));
-        String value = '';
-
         if (response != null) {
             if (response.getStatusCode() == 200) {
                 String body = response.getBody();
@@ -235,7 +183,7 @@ global class SCSMessageAPIUtil {
         } else {
             System.debug('Response is Null');
         }
-
+        
         return value;
     }
 
@@ -243,10 +191,10 @@ global class SCSMessageAPIUtil {
         DateTime startTime = DateTime.now();
         Uuid uuid = new Uuid();
         String uuidValue = uuid.getValue();
-        System.debug('SessionId: '+ sessionId);
+        
         HttpRequest req = new HttpRequest();
         req.setMethod('POST');
-        req.setHeader('Authorization', 'OAuth ' + sessionId);
+        req.setHeader('Authorization', 'Bearer ' + sessionId);
         req.setHeader('Content-Type', 'application/json;Charset="UTF-8"');
         req.setEndpoint('callout:' + key +'?uuid=' + uuidValue);
         req.setBody('{"api_key":"{!HTMLENCODE($Credential.Password)}"}');
@@ -263,48 +211,34 @@ global class SCSMessageAPIUtil {
     }
 
     public static String fetchUserSessionId(){
-        /* Get session from UserInfo before if got null try to get from VF */
         String sessionId = '';
-        Integer randomNumber = Integer.valueof((Math.random() * 2));
-        if (randomNumber == 1) {
-            sessionId = UserInfo.getSessionId();
-            System.debug('Fetch-->' + UserInfo.getOrganizationId().substring(0, 15) + ' ' +  UserInfo.getSessionId().substring(15));
+        // Get the content of the VF page
+        String vfContent;
+        String ns =  [SELECT NamespacePrefix FROM Organization].NamespacePrefix;
 
-            return sessionId;
-        }
-        
-        if (String.isEmpty(sessionId)) {
-            System.debug('Fetch session id from VF');
-            String vfContent;
-            String ns =  [SELECT NamespacePrefix FROM Organization].NamespacePrefix;
+       try {
+           String vf_url = '/apex/';
+           if(String.isNotBlank(ns)) {
+               vf_url += ns + '__' + 'getsessionidvf';    
+           } else {
+               vf_url += 'getsessionidvf';       
+           }
 
-            try {
-                String vf_url = '/apex/';
-                if(String.isNotBlank(ns)) {
-                    vf_url += ns + '__' + 'getsessionidvf';    
-                } else {
-                    vf_url += 'getsessionidvf';       
-                }
-
-                PageReference pg = new PageReference(vf_url);
-        
-                if(!test.isRunningTest()) {
-                    vfContent = pg.getContent().toString();
-                } else {
-                    vfContent = String.valueOf('Start_Of_Session_Id Test End_Of_Session_Id');
-                }
-        
-                Integer startP = vfContent.indexOf('Start_Of_Session_Id') + 'Start_Of_Session_Id'.length(),
-                endP = vfContent.indexOf('End_Of_Session_Id');
-                // Get the Session Id
-                sessionId = vfContent.substring(startP, endP);
-
-                System.debug('----->' + sessionId);
-            } catch(Exception ex) {
-                System.debug('***** ex: ' + ex);
-            }
-        }
-        // Get the content of the VF page 
+           PageReference pg = new PageReference(vf_url);
+   
+           if(!test.isRunningTest()) {
+               vfContent = pg.getContent().toString();
+           } else {
+               vfContent = String.valueOf('Start_Of_Session_Id Test End_Of_Session_Id');
+           }
+   
+           Integer startP = vfContent.indexOf('Start_Of_Session_Id') + 'Start_Of_Session_Id'.length(),
+           endP = vfContent.indexOf('End_Of_Session_Id');
+           // Get the Session Id
+           sessionId = vfContent.substring(startP, endP);
+       } catch(Exception ex) {
+           System.debug('***** ex: ' + ex);
+       }
 
        return sessionId;
    }

@@ -3,7 +3,11 @@ public with sharing class CampaignMember_AutoLoanControllerTest {
     public CampaignMember_AutoLoanControllerTest() {
 
     }
-
+    private static String encryptKey {
+        get {
+            return '208f6c8723b80c36fefc349575764dd14baf52d950a98c101034c403b1172b65';
+        }
+    }
     @testSetup static void setup() {
         // Implement test code
         
@@ -55,6 +59,8 @@ public with sharing class CampaignMember_AutoLoanControllerTest {
         // Implement test code
         Test.StartTest();
         // Implement test code  
+        Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
+
         Contact ct = [SELECT Id FROM Contact LIMIT 1];
         Campaign  masterC = [SELECT Id, CampaignMemberRecordTypeId  FROM Campaign LIMIT 1];
         CampaignMember cm = new CampaignMember();

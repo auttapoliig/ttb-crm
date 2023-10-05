@@ -33,7 +33,7 @@ global with sharing class RTL_AL_WsCampaignMember extends RTL_AL_WebserviceAbstr
         'marketingCode',
         JSON.deserializeUntyped(requestBodyDecrypt)
       );
-      System.debug('marketingCode -->' + marketingCode);
+      // System.debug('marketingCode -->' + marketingCode);
 
       List<CampaignMember> ListcampaignMemberTouch = [
         SELECT
@@ -50,7 +50,13 @@ global with sharing class RTL_AL_WsCampaignMember extends RTL_AL_WebserviceAbstr
           RTL_RelatedOpportunity_5__c,
           RTL_AL_Response_Flage__c,
           RTL_Is_Send_To_HPAP__c,
-          RTL_Is_Interface_Success__c
+          RTL_Is_Interface_Success__c,
+          RTL_OfferResult_Product_1__c,
+          RTL_OfferResult_Product_2__c,
+          RTL_OfferResult_Product_3__c,
+          RTL_OfferResult_Product_4__c,
+          RTL_OfferResult_Product_5__c,
+          Campaign.Status
         FROM CampaignMember
         WHERE
           RTL_Marketing_Code__c = :marketingCode
@@ -61,7 +67,7 @@ global with sharing class RTL_AL_WsCampaignMember extends RTL_AL_WebserviceAbstr
           throw new OtherException('Marketing code does not found in salseforce');
         }
       CampaignMember campaignMemberTouch = ListcampaignMemberTouch[0];
-
+      Boolean isCampaignExpired = campaignMemberTouch != null && campaignMemberTouch.Campaign.Status == 'Expired';
       Boolean isConvertedToOppty =
         (campaignMemberTouch != null &&
         (campaignMemberTouch.RTL_RelatedOpportunity_1__c != null ||
@@ -70,16 +76,23 @@ global with sharing class RTL_AL_WsCampaignMember extends RTL_AL_WebserviceAbstr
         campaignMemberTouch.RTL_RelatedOpportunity_4__c != null ||
         campaignMemberTouch.RTL_RelatedOpportunity_5__c != null)) || campaignMemberTouch.RTL_AL_response__c;
 
+      Boolean isReferralCreated = 
+        (campaignMemberTouch.RTL_OfferResult_Product_1__c == 'Referred' ||
+        campaignMemberTouch.RTL_OfferResult_Product_2__c == 'Referred' ||
+        campaignMemberTouch.RTL_OfferResult_Product_3__c == 'Referred' ||
+        campaignMemberTouch.RTL_OfferResult_Product_4__c == 'Referred' ||
+        campaignMemberTouch.RTL_OfferResult_Product_5__c == 'Referred');
+
       Boolean ResponseHPAP = campaignMemberTouch != null && campaignMemberTouch.RTL_Is_Send_To_HPAP__c == true ;
       
       Boolean isInterfaceSuccess =  campaignMemberTouch != null && campaignMemberTouch.RTL_Is_Interface_Success__c == true ;
-      System.debug(ResponseHPAP);
-      System.debug(isInterfaceSuccess);
+      // System.debug(ResponseHPAP);
+      // System.debug(isInterfaceSuccess);
       
 
       Map<String, String> returnValue = new Map<String, String>{
-        'status_code' => isConvertedToOppty || ResponseHPAP || isInterfaceSuccess ? '1' : '2',
-        'message' => isConvertedToOppty || ResponseHPAP || isInterfaceSuccess
+        'status_code' => isConvertedToOppty || ResponseHPAP || isInterfaceSuccess || isReferralCreated || isCampaignExpired ? '1' : '2',
+        'message' => isConvertedToOppty || ResponseHPAP || isInterfaceSuccess || isReferralCreated || isCampaignExpired
           ? 'ขอขอบคุณที่ตอบรับข้อเสนอสินเชื่อรถแลกเงินท็อปอัพ ตามที่ท่านได้ยื่นเรื่องสมัครเรียบร้อยแล้ว สามารถตรวจสอบผลการอนุมัติได้ที่เจ้าหน้าที่รับสมัคร หรือโทร 1428'
           : 'Marketing code does not convert to Opportunity. Submit button in Touch is available.'
       };

@@ -32,13 +32,13 @@ global with sharing class RTL_AL_WsCampaignMemberInfo extends RTL_AL_WebserviceA
         'marketingCode',
         JSON.deserializeUntyped(requestBodyDecrypt)
       );
-      System.debug('marketingCode -->' + marketingCode);
+      // System.debug('marketingCode -->' + marketingCode);
 
       String webUniqueId = (String) AbstractCoreClass.getResult(
         'webUniqueId',
         JSON.deserializeUntyped(requestBodyDecrypt)
       );
-      System.debug('webUniqueId -->' + webUniqueId);
+      // System.debug('webUniqueId -->' + webUniqueId);
 
     if(marketingCode != null && marketingCode != ''){
         key = marketingCode;
@@ -132,7 +132,7 @@ global with sharing class RTL_AL_WsCampaignMemberInfo extends RTL_AL_WebserviceA
                 LIMIT 1
               ];
         }
-        System.debug('campaignMemberInfo => ' + campaignMemberInfo);
+        // System.debug('campaignMemberInfo => ' + campaignMemberInfo);
 
     }else{
       throw new OtherException('Invalid Marketing code and Web UniqueId');

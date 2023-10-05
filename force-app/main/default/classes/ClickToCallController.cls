@@ -324,7 +324,7 @@ System.debug('JSON Body -->' + jsonBody );
                 isSuccess = true;   
                 // message = 'Success';               
             } 
-            else if (response.getStatusCode() == 201) {
+            if (response.getStatusCode() == 201) {
                 isSuccess = true;
                 // message = 'Success';               
             } 
@@ -364,12 +364,10 @@ System.debug('JSON Body -->' + jsonBody );
 
             endTime = DateTime.now();
 
-            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
-            //                                        rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-            //                                        startTime ,  endTime,  null );
-            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
+            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
                                                     rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                    startTime ,  endTime );
+                                                    startTime ,  endTime,  null );
+    
             return responseBodyMap;
         } 
         catch(System.CalloutException e) 
@@ -379,12 +377,9 @@ System.debug('JSON Body -->' + jsonBody );
             errorMessage = '{"message:"'+ e.getMessage()+'"}';
             endTime = DateTime.now();
             isSuccess = false;
-            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
-            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-            //                                      startTime ,  endTime,  null );
-            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
+            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
                                                   rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime );
+                                                  startTime ,  endTime,  null );
             Map<String, Object> responseBodyMap = new Map<String,Object>();
             responseBodyMap.put('message',e.getMessage());
             responseBodyMap.put('status','TIME OUT');
@@ -405,12 +400,10 @@ System.debug('JSON Body -->' + jsonBody );
             errorMessage = '{"message:"'+ e.getMessage()+'"}';
             endTime = DateTime.now();
             isSuccess = false;
-            //OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
-            //                                      rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-            //                                      startTime ,  endTime,  null );
-            RTL_CampaignUtil.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
+            OnlineServiceLogUtils.saveToOnlineLog( isSuccess , customerName,  errorMessage,  msLogId ,  userName, 
                                                   rmId ,  serviceName , requestBody , responseBody ,  accForLog , 
-                                                  startTime ,  endTime );
+                                                  startTime ,  endTime,  null );
+
                                                   
 
             return null;
@@ -425,20 +418,19 @@ System.debug('JSON Body -->' + jsonBody );
 
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('callout:Telephony_Avaya_Centralize_Token');
+        request.setEndpoint('callout:Telephony_Avaya_C2C_getToken');
         request.setMethod('POST');
         request.setHeader('Content-Type', 'application/json');
         request.setBody(jsonBody);
         HttpResponse response = http.send(request);
         System.debug('Get Token status code --->' + response.getStatusCode());
-        System.debug('Get response' + response.getBody());
 
         if (response.getStatusCode() == 200) 
         {
             Map<String, Object> getTokenMap = (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
             //token = JSON.serialize(getTokenMap.get('api_token'));
-            token = getTokenMap.containsKey('id_token') ? getTokenMap.get('id_token').ToString() : token;
-            System.debug('token:'+getTokenMap.get('id_token'));
+            token = getTokenMap.get('api_token').ToString();
+            System.debug('token:'+getTokenMap.get('api_token'));
         } else {
             System.debug('Get Token status body --->' + response.getBody());
         }

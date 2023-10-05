@@ -1,4 +1,4 @@
-public without sharing class ChangeOwnerApproverController {
+public class ChangeOwnerApproverController {
     
     private ApexPages.StandardController standardController;
     

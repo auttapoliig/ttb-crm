@@ -23,7 +23,7 @@ public class  ProductSelectionControllerTest {
          User SalesOwner = TestUtils.createUsers(1,'opptyProduct', 'AddProduct','AddProdTest@tmbbank.com', false).get(0);
 
                SalesOwner.Zone_Code__c = '1001';
-         	   SalesOwner.Employee_ID__c  = '54431';
+         	   SalesOwner.Employee_ID__c  = '8888888';
         insert SalesOwner;
           Test.startTest();
         System.runAs(SalesOwner){
@@ -112,7 +112,7 @@ public class  ProductSelectionControllerTest {
          User SalesOwner = AccountPlanTestUtilities.createUsers(1, 'RM', 'ProductSelect', 'productselection@tmbbank.com', AccountPlanTestUtilities.TMB_RM_PROFILE_ID,false, true).get(0);
 
                SalesOwner.Zone_Code__c = '1001';
-        	   SalesOwner.Employee_ID__c  = '54432';
+        	   SalesOwner.Employee_ID__c  = '8888888';
         update SalesOwner;
         System.runAs(SalesOwner){
             

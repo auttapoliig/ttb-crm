@@ -21,7 +21,7 @@ global without sharing class TagCaseBatch implements Database.Batchable<sObject>
     global Datetime batchEndTime = null;
     private String transGroup;
     private String sobjectName = 'Case';
-    private String jobDailyName = 'Error_Summary_Inquiry_API_'+ Datetime.now().format('YYYYMMdd_hh:mm');
+    private String jobDailyName = 'Error_Summary_Import Audio Data_'+ Datetime.now().format('YYYYMMdd_hh:mm');
     private String CSV_BODY = '';
     private String csvHeaderStr = '';
     private List<String> emailOpsList = new List<String>();

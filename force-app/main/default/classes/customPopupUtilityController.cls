@@ -762,9 +762,6 @@ global with sharing class customPopupUtilityController {
     @AuraEnabled
     public static Map<String, String> preparePopupByUniqueKey(String unique_key, String task_id, String callback_id){
 
-        System.debug('unique_key:'+unique_key);
-        System.debug('task_id:'+task_id);
-        System.debug('callback_id:'+callback_id);
         Map<String, String> return_map = new Map<String, String>();
         String type = '';
 
@@ -786,15 +783,15 @@ global with sharing class customPopupUtilityController {
                 List<CampaignMember> member = [SELECT Id, Customer__r.Id FROM CampaignMember WHERE RTL_Marketing_Code__c = :unique_key LIMIT 1];
                 
                 if(member.size() > 0){
-                    
+
                     return_map.put('type', 'CampaignMember');
                     return_map.put('id', member.get(0).Id);
-                    System.debug('Marketing code condition --> ' + unique_key);
+
                     String acctId = member.get(0).Customer__r.Id;
-                    if(String.isNotBlank(task_id)) {
+                    if(String.isNotBlank(task_id)){
                         List<Task> tasks = [SELECT Id, Related_Object__c, WhatId FROM Task WHERE Id = :task_id LIMIT 1];
                         if(tasks.size() > 0 && String.isEmpty(tasks.get(0).Related_Object__c)){
-                            //tasks.get(0).Related_Object__c = member.get(0).Id;
+                            tasks.get(0).Related_Object__c = member.get(0).Id;
                             tasks.get(0).WhatId = acctId;
                             update tasks;
                         }
