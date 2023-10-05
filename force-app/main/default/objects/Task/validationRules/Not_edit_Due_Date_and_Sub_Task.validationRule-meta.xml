@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_edit_Due_Date_and_Sub_Task</fullName>
+    <active>true</active>
+    <description>If task subject  is &apos;Task Assigment&apos;. Who is not creator cannot edit Sub task and Due Date.</description>
+    <errorConditionFormula>if( AND( LOWER(Subject ) = &apos;task assignment&apos;), if($User.Id !=  CreatedBy.Id ,if( OR(ISCHANGED( Sub_Task__c ),ISCHANGED( ActivityDate )),true,false) , false),false)</errorConditionFormula>
+    <errorMessage>You don&apos;t have permission to edit Due Date or Sub Task.</errorMessage>
+</ValidationRule>

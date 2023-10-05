@@ -171,39 +171,61 @@
             var type = referralObj.RTL_Type__c;
             var recordType = referralObj.RTL_RecordType_Name__c;
 
-            if (type == 'To Product Team (เพื่อส่งให้ทีม Product)' && stage != 'New' && stage != 'In progress_Contacted' && stage != 'Closed (Service Completed)') {
-                helper.displayToast(component, 'Error', RTL_Referral_ERR020);
-                helper.closeActionOrTab(component);
-            } else if (type != 'To Product Team (เพื่อส่งให้ทีม Product)' && stage != 'New' && stage != 'In progress_Contacted' && stage != 'Closed (Interested)') {
-                helper.displayToast(component, 'Error', RTL_Referral_ERR009);
-                helper.closeActionOrTab(component);
-            } else if (type == 'Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)') {
-                helper.displayToast(component, 'Error', RTL_Referral_ERR013);
-                helper.closeActionOrTab(component);
-            } else if (isOwner == false && isClosed == false) {
-                helper.displayToast(component, 'Error', RTL_Referral_ERR004);
-                helper.closeActionOrTab(component);
-            } else if (!referralObj.RTL_Account_Name__c) {
-                helper.displayToast(component, 'Error', RTL_Referral_ERR001);
-                helper.closeActionOrTab(component);
-            } else {
-
-                if (recordType == 'Refer to Commercial' || recordType == 'Closed Refer to Commercial' || recordType == 'Refer within Commercial' || recordType == 'Closed Refer within Commercial') {
-                    helper.navigateToOpportunity(component, referralObj, false, '');
-                } else if (recordType == 'Refer to Retail' || recordType == 'Closed Refer to Retail' || recordType == 'Retail Order Transaction' || recordType == 'Closed Retail Order Transaction') {
-                    helper.navigateToOpportunity(component, referralObj, true, '');
-                } else {
-                    if (stage == 'Closed (Interested)') {
-                        helper.navigateToOpportunity(component, referralObj, true);
-                    } else {
-                        var productGroup = referralObj.RTL_Product_Name__r ? referralObj.RTL_Product_Name__r.Product_Group__c : '';
-                        var oppRecordType = productGroup ? opptyRecordTypeId[productGroup] : '';
-                        helper.navigateToOpportunity(component, referralObj, true, oppRecordType);
+            //CR Outbound
+            var action = component.get('c.checkPermissionByCompletionCode');
+            action.setParams({
+                refObj: referralObj
+            })
+            action.setCallback(this, function (response) {
+                var state = response.getState();
+                if (component.isValid() && state === 'SUCCESS') {
+                    var result = response.getReturnValue();
+                    if(!result)
+                    {
+                        helper.displayToast(component, 'Error', $A.get('$Label.c.RTL_Referral_CompletionCode_ErrorMsg'));
+                        helper.closeActionOrTab(component);
                     }
+                    else
+                    {
+                        if (type == 'To Product Team (เพื่อส่งให้ทีม Product)' && stage != 'New' && stage != 'In progress_Contacted' && stage != 'Closed (Service Completed)') {
+                            helper.displayToast(component, 'Error', RTL_Referral_ERR020);
+                            helper.closeActionOrTab(component);
+                        } else if (type != 'To Product Team (เพื่อส่งให้ทีม Product)' && stage != 'New' && stage != 'In progress_Contacted' && stage != 'Closed (Interested)') {
+                            helper.displayToast(component, 'Error', RTL_Referral_ERR009);
+                            helper.closeActionOrTab(component);
+                        } else if (type == 'Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)') {
+                            helper.displayToast(component, 'Error', RTL_Referral_ERR013);
+                            helper.closeActionOrTab(component);
+                        } else if (isOwner == false && isClosed == false) {
+                            helper.displayToast(component, 'Error', RTL_Referral_ERR004);
+                            helper.closeActionOrTab(component);
+                        } else if (!referralObj.RTL_Account_Name__c) {
+                            helper.displayToast(component, 'Error', RTL_Referral_ERR001);
+                            helper.closeActionOrTab(component);
+                        } else {
+        
+                            if (recordType == 'Refer to Commercial' || recordType == 'Closed Refer to Commercial' || recordType == 'Refer within Commercial' || recordType == 'Closed Refer within Commercial') {
+                                helper.navigateToOpportunity(component, referralObj, false, '');
+                            } else if (recordType == 'Refer to Retail' || recordType == 'Closed Refer to Retail' || recordType == 'Retail Order Transaction' || recordType == 'Closed Retail Order Transaction') {
+                                helper.navigateToOpportunity(component, referralObj, true, '');
+                            } else {
+                                if (stage == 'Closed (Interested)') {
+                                    helper.navigateToOpportunity(component, referralObj, true);
+                                } else {
+                                    var productGroup = referralObj.RTL_Product_Name__r ? referralObj.RTL_Product_Name__r.Product_Group__c : '';
+                                    var oppRecordType = productGroup ? opptyRecordTypeId[productGroup] : '';
+                                    helper.navigateToOpportunity(component, referralObj, true, oppRecordType);
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    var errors = response.getError();
+                    console.log('Error:',errors);
                 }
-
-            }
+            });
+            $A.enqueueAction(action);
             // helper.stopSpinner(component);
         }
-    }
+    },
 })

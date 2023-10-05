@@ -9,8 +9,8 @@
         component.set('v.fields', {
             'SpecialPrefAndRelationshipLevel': [
                'RTL_Special_Pref__c',
-               'RTL_Other2__c',
-               'RMC_Relationship_Level__c'
+               'RTL_Other2__c'
+            //    'RMC_Relationship_Level__c'
             ],
             'Sales_Support_Information': [
                 'FATCA_Form_Completed__c',

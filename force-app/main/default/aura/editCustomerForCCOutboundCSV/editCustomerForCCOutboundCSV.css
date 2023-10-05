@@ -1,0 +1,40 @@
+.THIS.container {
+    position: relative;
+    height: 100%;
+}
+
+.THIS .slds-accordion__summary-heading {
+    padding: 0 .5rem;
+    background-color: var(--lwc-colorBackground, rgb(243, 242, 242));
+    display: flex;
+    align-items: center;
+    font-size: var(--lwc-varFontSize5, 1rem);
+    line-height: var(--lwc-lineHeightButton, 1.875rem);
+    border: var(--lwc-borderWidthThin, 1px) solid transparent;
+    border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+}
+
+.THIS .slds-accordion__summary-action lightning-primitive-icon {
+    display: none;
+}
+
+.THIS .slds-text-heading_medium {
+    font-size: var(--lwc-fontSize7, 1.25rem);
+    line-height: var(--lwc-lineHeightHeading, 1.25);
+}
+
+.THIS .slds-form-element__static {
+    font-size: var(--lwc-formLabelFontSize, 0.875rem);
+}
+
+.THIS .div-element__static {
+    display: grid;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.THIS .element-span__static {
+    margin-top: 0.3%;
+    padding-bottom: 0.75rem;
+    color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextLabel, rgb(68, 68, 68)));
+}

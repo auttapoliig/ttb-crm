@@ -36,6 +36,14 @@ sf project deploy quick --job-id _<<jobid>>_
 ```
 ---
 # Release Track
+#### 05 Oct 2023
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
+| SCR0578084,SCR0580261 | RM cockpit MVP2 | Taechatiphon | 05 Oct 2023 |
+| SCR0592577 | Hot warm cold interim solution | Taechatiphon | 05 Oct 2023 |
+| SCR0585931 | T-Performance 1.2 backlog | Taechatiphon | 05 Oct 2023 |
+| SCR0599861 | Add new Dropdown List on Referral (Phase 1) | Kiitisak | 05 Oct 2023 |
+| SCR0599491 | ALSAL-Cancel email notify from CRM | Attasit | 05 Oct 2023 |
 #### 21 Sep 2023
 | SCR No.     | Description    | Implementor | Release Date |
 | --------|---------|-------|-------|

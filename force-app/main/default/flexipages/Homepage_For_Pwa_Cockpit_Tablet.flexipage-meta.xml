@@ -28,13 +28,19 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>MyCustomer_Tablet</componentName>
+                <identifier>c_MyCustomer_Tablet</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Customer Dashboard&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;span style=&quot;color: rgb(8, 0, 0); font-size: 14px;&quot;&gt;My Portfolio&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
@@ -62,7 +68,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Sales Activity&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;My Sales Activity&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText2</identifier>
@@ -320,6 +326,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>queryLimit</name>
+                    <value>5</value>
+                </componentInstanceProperties>
                 <componentName>AlertSectionCover</componentName>
                 <identifier>c_AlertSectionCover</identifier>
             </componentInstance>

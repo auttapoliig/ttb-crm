@@ -38,6 +38,8 @@
                 var result =  response.getReturnValue();
                 // console.log('campaignMemObj:',result);    
                 component.set('v.campaignMemObj',result);
+                helper.getUncontactReasonPickList(component, event, helper);
+
                 if(result)
                 {
                     if(result.RTL_Web_Unique_ID__c)
@@ -69,7 +71,7 @@
                             component.set('v.isCallBack', true);
 
                         }               
-                        else if(result.RTL_Contact_Status__c == 'Uncontact')
+                        else if(result.RTL_Contact_Status__c == 'Uncontact' || result.RTL_Contact_Status__c == 'Cancel')
                         {
                             component.set('v.isChangeContact', true);
                             component.set('v.isReadonly', false);
@@ -83,6 +85,30 @@
                             component.set('v.isConvert',true); 
                             component.set('v.confirmDNC',true);
                         }
+                        // if (result.RTL_Contact_Status__c == 'Do Not Contact 1year' || result.RTL_Contact_Status__c == 'Do Not Contact LifeTime'){
+                        //     component.set('v.isCallBack', false);
+                        // }
+                        // else if(result.RTL_Contact_Status__c == 'Contact'){
+                        //     var isAllInterested = true;
+                        //     var isAllNull = 0;
+                        //     for(var i=1;i<=5;i++){
+                        //         var offerResult = 'RTL_OfferResult_Product_'+i+'__c';
+                        //         if(result.hasOwnProperty(offerResult)){
+                        //             if(result[offerResult] != null){
+                        //                 if(result[offerResult] != 'Interested'){
+                        //                     isAllInterested = false;
+                        //                 }
+                        //             }
+                        //             else
+                        //             {
+                        //                 isAllNull++;
+                        //             }
+                        //         }
+                        //     }
+                        //     if(isAllInterested && isAllNull < 5){
+                        //         component.set('v.isCallBack', false);
+                        //     }
+                        // }
                     }
                    
                  
@@ -112,7 +138,8 @@
                             });              
                        })
                         .catch(function(error) {
-                            console.log(error);
+                            // console.log(error);
+                            console.error(error);
                         });                   
                     } 
                     else
@@ -135,7 +162,8 @@
                                 });                              
                             })
                             .catch(function(error) {
-                                console.log(error);
+                                // console.log(error);
+                                console.error(error);
                             });
                         }
                     } 
@@ -168,7 +196,7 @@
                 //console.log('productList:',productList);
                 if(productList != null)
                 {
-                    productList.forEach((product,index) => {        
+                    productList.forEach((product,index) => {
                         product.productGroupList = [];                 
                         product.productNameList = [];
                         product.offerResultList = [];                    
@@ -195,7 +223,7 @@
                         if(!product.viewOfferResult)
                         {
                             component.set('v.isChangeContact', true);
-                        }  
+                        }
                         // if(product.offerResult != null || product.offerResult != undefined)
                         // {
                         //     if(product.objOpp.Name != null || product.objOpp.Name != undefined )
@@ -222,6 +250,7 @@
                 // console.log('Product:',productList);  
                 // component.set('v.isConvert',isConvert); 
                 component.set('v.productList',productList); 
+
                 // console.log('productList:',component.get('v.productList')); 
 
                 //helper.getFieldLabel(component, event, helper,result);
@@ -340,10 +369,11 @@
 
     getContactStatusPickList: function (component,event,helper) {
         
-        var action = component.get('c.getPickListValues');
+        var action = component.get('c.getDependentPicklistValues');
         action.setParams({
-            "objectName": 'Business_Outcome_Mapping__c',
-            "fieldName": 'Contact_Status__c'
+            "objectName" : 'Business_Outcome_Mapping__c',
+            "fieldName" : 'Contact_Status__c',
+            "contrlValue" : 'Outbound Campaign Member'
         });
         action.setCallback(this, function (response) {
             var state = response.getState();
@@ -378,11 +408,9 @@
     },
 
     getUncontactReasonPickList: function (component,event,helper) {
-        
-        var action = component.get('c.getPickListValues');
+        var action = component.get('c.getUncontactReasonPicklist');
         action.setParams({
-            "objectName" : 'Business_Outcome_Mapping__c',
-            "fieldName" : 'Uncontact_Reason__c'
+            "contactStatus" : component.get("v.campaignMemObj.RTL_Contact_Status__c")
         });
         action.setCallback(this, function (response) {
             var state = response.getState();
@@ -536,32 +564,32 @@
 
     setProductSubGroupPickListCrossSell: function (component, event, helper, productGroup, index) {
         if(productGroup != null && productGroup != ''){
-            var action = component.get('c.getDependentPicklistValues');
-            action.setParams({
-                "objectName" : 'CampaignMember',
-                "fieldName" : 'RTL_Sub_Group_1__c',
-                "contrlValue" : productGroup
-            });
-            action.setCallback(this, function (response) {
-                var state = response.getState();
-                if (state === "SUCCESS") {               
-                    var result =  response.getReturnValue();  
-                    var items = [];
-                    if(result)
-                    {
-                        result.forEach(value => {
-                            var item = {
-                                "label": value.split(',')[0],
-                                "value": value.split(',')[1]
-                            };
-                            items.push(item);
-                        }); 
-                    }
-                    component.set('v.CrossSellList['+index+'].productSubGroupList', items);
-                }                     
-            });
+        var action = component.get('c.getDependentPicklistValues');
+        action.setParams({
+            "objectName" : 'CampaignMember',
+            "fieldName" : 'RTL_Sub_Group_1__c',
+            "contrlValue" : productGroup
+        });
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {               
+                var result =  response.getReturnValue();  
+                var items = [];
+                if(result)
+                {
+                    result.forEach(value => {
+                        var item = {
+                            "label": value.split(',')[0],
+                            "value": value.split(',')[1]
+                        };
+                        items.push(item);
+                    }); 
+                }
+                component.set('v.CrossSellList['+index+'].productSubGroupList', items);
+            }                     
+        });
         
-            $A.enqueueAction(action);
+        $A.enqueueAction(action);
         }else{
             var action = component.get('c.getPickListValues');
             action.setParams({
@@ -732,7 +760,8 @@
                         });                      
                    })
                     .catch(function(error) {
-                        console.log(error);
+                        // console.log(error);
+                        console.error(error);
                     });
                 
                 } 
@@ -756,7 +785,8 @@
                         
                         })
                         .catch(function(error) {
-                            console.log(error);
+                            // console.log(error);
+                            console.error(error);
                         });
                     }
                 } 
@@ -772,6 +802,8 @@
                 }
                 // Display the message
                 // console.log('segment Error');
+                console.error('segment Error');
+
                 // helper.displayToast(component,helper,'Error','error',message);
                 //$A.get('e.force:refreshView').fire();            
             }
@@ -1139,11 +1171,11 @@
                                 {
                                     isValidate = false;
                                     $A.util.addClass(reason, "slds-has-error");
-                                }    
+                                }
                             }
                             else if(product.offerResult == 'Referred' )  
                             {
-                                //checkLeadConversion = false;   
+                                //checkLeadConversion = false;                       
                                 if(product.productId)
                                 {                              
                                     
@@ -1164,7 +1196,7 @@
                                         isValidate = false;
                                         $A.util.addClass(productName[index+index_Input], "slds-has-error");
                                     }                          
-                                }        
+                                }
                             }
                             else
                             {
@@ -1327,7 +1359,7 @@
                             }
                             else if(product.offerResult == 'Not Interested' || product.offerResult == 'Not Qualified' )  
                             {
-                                //checkLeadConversion = false;     
+                                //checkLeadConversion = false;         
                                 if(product.productId)
                                 {                              
                                     
@@ -1348,7 +1380,7 @@
                                         isValidate = false;
                                         $A.util.addClass(productName[index+index_Input], "slds-has-error");
                                     }                          
-                                }                         
+                                }              
                                 if(product.reason)
                                 {
                                     if(product.reason == null || product.reason == "" )
@@ -1538,13 +1570,13 @@
             workspaceAPI.closeTab({tabId: focusedTabId});
         })
         .catch(function(error) {
-            console.log(error);
+            // console.log(error);
+            console.error(error);
         });
     },
 
     validateSaveCampaign : function(component, event, helper)
     {
-        // console.log('KYB event isMerge 1547: ' + event.getParam("isMerge"));
         component.set('v.loaded', true);  
         var productList = component.get('v.productList');
         var isValidate_Info = true;
@@ -1572,8 +1604,6 @@
  
         };
 
-        // console.log('KYB isMerge 1574: ' + component.get('v.isMerge'));
-
         // console.log('leadInput:',leadInput);
 
         // console.log('callbackCmp:',callbackCmp);
@@ -1587,8 +1617,6 @@
             isValidate_LeadConversion = true;
             accObj = null;
         }
-        // console.log('KYB isMerge 1589: ' + component.get('v.isMerge'));
-        // console.log('KYB extAccObj 1590: ' + extAccObj);
      
         var campaignMemObj = component.get('v.campaignMemObj');
 
@@ -1598,19 +1626,19 @@
             var contactStatusReason = component.find('contactStatusReason');
             isValidate_Info = false;  
             $A.util.addClass(contactStatus, "slds-has-error");
-            helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_ContactStatus_ErrMsg"));
             component.set('v.loaded', false);  
+            helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_ContactStatus_ErrMsg"));
         }
 
-        if(campaignMemObj.RTL_Contact_Status__c == 'Uncontact')
+        if(campaignMemObj.RTL_Contact_Status__c == 'Uncontact' || campaignMemObj.RTL_Contact_Status__c == 'Cancel')
         {
             if(campaignMemObj.RTL_Reason__c == null || campaignMemObj.RTL_Reason__c == '')
             {
                 var contactStatusReason = component.find('contactStatusReason');
                 isValidate_Info = false;  
                 $A.util.addClass(contactStatusReason, "slds-has-error");
-                helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_UncontactStatus_ErrMsg"));
                 component.set('v.loaded', false);  
+                helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_UncontactStatus_ErrMsg"));
             }
         }
 
@@ -1636,6 +1664,9 @@
             if(callbackCmp)
             {
                 callbackCmp.clearValidate();
+                if(campaignMemObj.RTL_Contact_Status__c.includes('Do Not Contact')){
+                    callbackCmp.DNCcancelCallback();
+                }
             }
         }
 
@@ -1651,7 +1682,7 @@
                 product.productSubGroup = product.selectedproductsubgroup;
             }
         });   
-        
+
         if(isValidate_Info && isValidate_Callback)
         {        
             // console.log('RTL_Contact_Status__c:',campaignMemObj.RTL_Contact_Status__c);           
@@ -1663,13 +1694,13 @@
                 {         
                     if(campaignMemObj.RTL_Contact_Status__c == 'Contact')
                     {
-                        helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_Product_Invalid_ErrMsg"));
                         component.set('v.loaded', false);  
+                        helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_Product_Invalid_ErrMsg"));
                     }
                     else
                     {
+                        component.set('v.loaded', false);  
                         helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_Product_ErrMsg"));  
-                        component.set('v.loaded', false);
                     }       
                 }
                 else
@@ -1682,8 +1713,8 @@
                         checkCrossSellProduct = true;
                         isValidateCrossSell = helper.validateCrossSells(component, event, helper);
                         if (!isValidateCrossSell) {
+                            component.set('v.loaded', false);                  
                             helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_CrossSellProduct_ErrMsg"));   
-                            component.set('v.loaded', false);    
                         }
                     }
                 }
@@ -1693,7 +1724,7 @@
                     {
                         checkLeadConvert = true;
                     }
-                }); 
+                });   
                 //Validate Product with Opportunity                 
                 if(isValidate_Product && isValidateCrossSell)
                 {
@@ -1710,15 +1741,15 @@
                                 isValidate_LeadConversion = leadConversion.getLeadConversionData();
                                 if(!isValidate_LeadConversion)
                                 {
-                                    helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_LeadConversion_ErrMsg"));
                                     component.set('v.loaded', false);
+                                    helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_LeadConversion_ErrMsg"));
                                 }
                             }
                             else
                             {
+                                component.set('v.loaded', false);
                                 isValidate_LeadConversion = false;
                                 helper.displayToast(component,helper,'Error','error',$A.get("$Label.c.RTL_CampaignMemberEdit_LeadConversion_ErrMsg"));
-                                component.set('v.loaded', false);
                             }
                             
                         }
@@ -1770,7 +1801,6 @@
                     productCrossSellList = helper.saveCrossSells(component, event, helper);
                 }
                 // component.set('v.loaded', true)
-                // console.log('KYB isMerge 1772: ' + isMerge);
                 helper.saveCampaignAll(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge, leadInput);                                       
     
             }
@@ -1788,12 +1818,24 @@
                 helper.saveCampaignAll(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge, leadInput);                                       
     
             }
+        }else if(campaignMemObj.RTL_Contact_Status__c == 'Cancel'){
+            if(isValidate_Info && isValidate_Callback   && isValidate_Product && isValidateCrossSell && isValidate_LeadConversion )
+            {        
+                var productCrossSellList;
+                if(checkCrossSellProduct)
+                {
+                    productCrossSellList = helper.saveCrossSells(component, event, helper);
+                }
+                // component.set('v.loaded', true)
+                helper.saveCampaignAll(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge, leadInput);                                       
+    
+            }
         }
     },
 
     saveCampaignAll : function(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge , leadInput) {
         //component.set('v.loaded', true);  
-        // console.log('KYB isMerge 1759: ' + component.get('v.isMerge'));
+
         var callbackCmp = component.find("callbackCmp");
         var action = component.get('c.saveCampaign');
 
@@ -1814,30 +1856,51 @@
             if(state === 'SUCCESS')
             {
                 var result =  response.getReturnValue();
-                if(callbackCmp)
+                if(campaignMemObj.RTL_Contact_Status__c == 'Call Back')
                 {
-                    callbackCmp.parentSubmit();
-                }            
-                if(campaignMemObj.RTL_Contact_Status__c.includes('Do Not Contact') && campaignMemObj.ContactId == null)
+                    component.set('v.loaded', false);
+                    if(callbackCmp)
+                    {
+                        // console.log(callbackCmp.parentSubmit());
+                        helper.displayToast(component,helper,'Success','success',result);
+                        callbackCmp.parentSubmit(function(result) {
+                            // console.log("callback for aura:method was executed");
+                            // console.log("result: " + result);
+                            helper.redirectAfterSave(component,event,helper);
+                        });                   
+                        // callbackCmp.parentSubmit();
+                    }   
+                }         
+                else if(campaignMemObj.RTL_Contact_Status__c.includes('Do Not Contact') && campaignMemObj.ContactId == null)
                 {
+                    component.set('v.loaded', false);
                     helper.displayToast(component,helper,'Warning','warning',$A.get('$Label.c.RTL_CampaignMember_DoNotContact_Warning'));
+                    helper.redirectAfterSave(component,event,helper);
                 }
-                helper.displayToast(component,helper,'Success','success',result);
+                else
+                {
+                    component.set('v.loaded', false);
+                    helper.displayToast(component,helper,'Success','success',result);
+                    helper.redirectAfterSave(component,event,helper);
+                }
+                // helper.displayToast(component,helper,'Success','success',result);
                 //component.set('v.loaded', false);
                 //$A.get('e.force:refreshView').fire();
-                helper.redirectAfterSave(component,event,helper);
+                //helper.redirectAfterSave(component,event,helper);
             }
             else{
                 var errors = response.getError();
                 var message = 'Unknown error'; // Default error message
+                // console.log(errors)
+
                 // Retrieve the error message sent by the server
                 if (errors && Array.isArray(errors) && errors.length > 0) {
                     message = errors[0].message;
                 }
                 // Display the message
+                component.set('v.loaded', false);
                 helper.displayToast(component,helper,'Error','error',message);
                 //$A.get('e.force:refreshView').fire();            
-                component.set('v.loaded', false);
             }
 
         });

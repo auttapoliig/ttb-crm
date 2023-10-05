@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Sub_Task_Assignment</fullName>
+    <active>true</active>
+    <description>ถ้า User เลือก Subject Task Assignment, Field ใน Main Task และ Sub Task ห้าม Blank</description>
+    <errorConditionFormula>If(OR(ISPICKVAL(Main_Task__c, &apos;Add ECM&apos;), ISPICKVAL(Main_Task__c, &apos;Add Account Team&apos;),ISPICKVAL(Main_Task__c, &apos;SE Advisory&apos;), ISPICKVAL(Main_Task__c, &apos;SE Corner&apos;)),false, AND( NOT(ISPICKVAL(Main_Task__c, &apos;&apos;) ),
+ISPICKVAL(Sub_Task__c, &apos;&apos;)) )</errorConditionFormula>
+    <errorDisplayField>Sub_Task__c</errorDisplayField>
+    <errorMessage>Please enter Sub Task before save record.</errorMessage>
+</ValidationRule>

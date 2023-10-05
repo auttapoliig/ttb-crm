@@ -1,0 +1,12 @@
+.THIS .parentComponent{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.THIS .parentComponentTablet{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}

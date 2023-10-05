@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Record_type</fullName>
+    <active>true</active>
+    <label>Task Record type</label>
+    <picklistValues>
+        <picklist>Call_Back_Mode__c</picklist>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strict Agent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Info_Provided__c</picklist>
+        <values>
+            <fullName>PromptPay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ผล%E0%B8%B4ตภ%E0%B8%B1ณฑ%E0%B9%8C - อ%E0%B8%B7%E0%B9%88นๆ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำ Auto-lobby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำ Business Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>แนะนำ TMB Touch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Main_Task__c</picklist>
+        <values>
+            <fullName>Add Account Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add ECM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Referrals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_A%2FR%26INV Approach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_A%2FR%26INV Approach and Refer Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Offer Top up W%2FC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Propose Refinance package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Register Full Amount%2C No additional limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Register Proportionate Amount%2C No additional limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intl Trade Inbound Calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intl Trade Outbound Calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE Advisory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE Corner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME CS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To %3A RM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Operation in progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending from customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RM%2FRA Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reject by RM%2FRA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for someone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Task__c</picklist>
+        <values>
+            <fullName>1%2E Boost Utilization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E LT %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee%2Finterest rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E ขอรายช%E0%B8%B7%E0%B9%88อ Supplier%2FBuyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%2E LG %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1201 Appraisal Request %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1202 Appeal Appraisal Value %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1203 BA Partner - Quotation%2FPayment  before Limit set up or new collateral %2810 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1204 BA Non-Partner - Follow up after closed deal %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1205 Draft Agreement - Not Set Up %28Exclude BB%29 %285 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1206 Credit Limit - Set Up %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1207 One-off%2FTemp Allocate%2FF-Cash Limit - Set Up %2810 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1208 Forfaiting Set up %2F Allocate Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1209 Process on NPLP customer  %2815 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1210 Annual Review - MiniRM %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1211 Extend Annual Review - MiniRM %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1212 Intraday%2C Intraday%2FLMS %28MB Only%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1213 ENC %28กรณ%E0%B8%B5เข%E0%B9%89าระบบไม%E0%B9%88ได%E0%B9%89%29 %28MB Only%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1214 Data Form for EximBill%2FMurex %28กรณ%E0%B8%B5เข%E0%B9%89าระบบไม%E0%B9%88ได%E0%B9%89%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1215 Booking No%2E of CA%2C SA%2C TD %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1217 Float Charge %2F Payment Assignment%2FPOA%2FPayment Instruction %2810 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1218 Appraisal for Financial Collateral %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1219 Appraisal %2B Agreement %2B Setup %28Setup within Month%29 %2820 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1220 Appraisal %2B Agreement %28No Setup within Month%29 %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1221 Set up - กองท%E0%B8%B8น %28FI Only%29 %282 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1222 Quote ราคาค%E0%B9%88าบร%E0%B8%B4การในการประเม%E0%B8%B4นราคา %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1224  ต%E0%B8%B1%E0%B9%89งวงเง%E0%B8%B4น LFS - ออกหน%E0%B8%B1งส%E0%B8%B7อร%E0%B8%B1บรองเครด%E0%B8%B4ตเพ%E0%B8%B7%E0%B9%88อประกอบย%E0%B8%B7%E0%B9%88นซอง หร%E0%B8%B7อ จ%E0%B8%B1ดช%E0%B8%B1%E0%B9%89น %282 days%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1301 Appraisal for Drawdown %28Progress%2FInvestment Cost%2FRemaining value%29 %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1302 Appraisal for Release %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1303 Credit - Change Condition %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1304 Credit - Change Pricing %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1305 Renew%2FChange Collateral %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1306 Counter Guarantee - Bank Confirm %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1307 Credit - Change POA %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1308 CCI4%2C CCI2 %28เปล%E0%B8%B5%E0%B9%88ยนแปลงข%E0%B9%89อม%E0%B8%B9ลล%E0%B8%B9กค%E0%B9%89า%29 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1309 Realign Limit %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1310 Maintenance Data - M1 %283 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1311 Set Auto Debit %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1312 Credit Repayment - H1  %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1313 Earmark%2FExcess - T0 %28Approve by Mandate%2FCUC Only%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1314 Cancel Earmark%2FExcess - T0 %28Before due only%29 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1315 Cap%2FUncap%2FFreeze%2FUnfreeze Limit - H1-1 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1316 Decrease%2FCancel%2FCleansing - H1-1 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1317 Account - Hold %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1318 Account Hold - Withdraw Interest %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1319 Account Hold - Update Book %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1320 Refund Amercement Fee %28ค%E0%B8%B7นค%E0%B9%88าส%E0%B8%B4นไหม%29 %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1321 Refund Interest  and Fee %28Credit Only%29 %282 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1322 Credit - Assignment of Proceed %28จ%E0%B8%B1ดสรรหน%E0%B8%B5%E0%B9%89%29 %285 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1323 Setup - Temporary LG Limt for Replace LG %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1324 Cancel - Temporary LG Limit for Replace LG %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1325 เบ%E0%B8%B4กเอกสารท%E0%B8%B5%E0%B9%88เก%E0%B8%B5%E0%B9%88ยวก%E0%B8%B1บหล%E0%B8%B1กประก%E0%B8%B1นเป%E0%B9%87นการช%E0%B8%B1%E0%B9%88วคราว %28L2 Form%29 %283 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1326 ปร%E0%B8%B1บปร%E0%B8%B8งแก%E0%B9%89ไขข%E0%B9%89อม%E0%B8%B9ลเครด%E0%B8%B4ต %28NCB Form%29 %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1328 Credit - Receipt%2FAdvice %28Manual%29 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1329 Audit Confirmation Request %283 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1330 Comfirmation Letter - Prepare %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1331 Agreement%2FCollateral - internal Borrow %28Strong Room only%29  %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1332 Notice%2FPrepare Transfer form to CR %28NPL%29 %285 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1333 Share%2FBond Pledge or Release of Pledge %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1334 COMS update %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1335 Credit - Prepare Statement%2FInvoice%2FLiability %28Manual 6 customers for MB Only%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1336 Credit - Request Prepare Collection Letter %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1337 Credit - Add Buyer%2FSupplier List %28After Approve%29 %282 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1338 Credit - Co-ordinate - KYC %2CCDD ผ%E0%B8%B9กความส%E0%B8%B1มพ%E0%B8%B1นธ%E0%B9%8C %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1339 Credit Disbursement %28Power Sector Only%29 %283 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1340 Check status float charge %28เส%E0%B8%B5ยค%E0%B9%88าธรรมเน%E0%B8%B5ยม%29 %284 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1341 Check status float charge %28ไม%E0%B9%88เส%E0%B8%B5ยค%E0%B9%88าธรรมเน%E0%B8%B5ยม%29 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1342 LG%2FAval Application %28Fullfillment%2FCheck%2FInquiry%29 %28Exclude BB%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1343 LG Foreign currency form %28Non-standard form%29 - Consult %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1344 LG claim %2815 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1401 Cancel%2FRelease - All Limit %28including Re-finance to Other Bank%29 %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1402 Cancel%2FRelease -Partial Limit%2Fno crosss collateral %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1403 Gradully Redemption - Limit%2FCollateral %2810 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1404 Credit - น%E0%B8%B4ต%E0%B8%B4กรรมขาออกอ%E0%B8%B7%E0%B9%88นๆ นอกเหน%E0%B8%B7อจาก 1401%2C1402%2C1403 %287 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1501 Customer request - Credit Receipt%2FAdvice %28Mannual%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1502 Customer request - Credit Issue %283 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1503 Credit - Defect SLMR %28Repayment%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1504 Credit - Defect SLMR %28Maintenance%29 %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1505 Credit - Defect LS%2ECO %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1506 Credit - Defect Audit Confirmation %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1507 Credit - Defect CDM %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1508 Credit - Defect LAR %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1509 Credit - Defect Others Unit %281 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Follow up on original%2Fdeferred documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E PN%2FODB%2FOD %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee%2Finterest rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E ขอให%E0%B9%89ตรวจสอบความถ%E0%B8%B9กต%E0%B9%89องการกรอก Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2202 First Package Prep and Onboard%3B %28Exclude BB%29 %283 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2308 Trade Application Fulfillment %2F Check %2F Inquiry%3B %28Exclude BB%29 %282 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2312 Trade report request%2F Trade Service issue %2FTrade consult %2FTrade receipt or advice%3B %28Exclude BB%29 %282 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2317 Trade Investigate %3B %28Exclude BB%29 %283 Day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E TF %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee%2Finterest rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E ขอเอกสารเช%E0%B9%88น Debit%2FCredit Advice%2C MT103%2C etc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E แจ%E0%B9%89ง Status การแก%E0%B9%89ป%E0%B8%B1ญหา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3201 Deposit - Pricing %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3301 Transaction - Investigate %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3302 Credit - Insuff Fund %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3303 System - support %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3304 SCF - Inquiry %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3305 Cash - Service at Branch%2FBC %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3306 Product Fee - Inquiry %283 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3307 Fleet Card - Waive Fee %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3308 Fleet Card -Payment Issue  %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3309 Statement - Request %28%3C%3D 1 year%29 %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3310 Statement - Request %28%3E 1 year%29 %285 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3311 Account - Dormant %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3312 Adjust%2FRefund %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3313 Fee - Waive request  %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3314 Deposit - Fee Waive %28 Re-curring %29 %282 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3315 Deposit-Witholding TAX %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3316 Comfirmation Letter - Prepare %281 day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E LG %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E สอบถามความพ%E0%B8%B6งพอใจหล%E0%B8%B1งการใช%E0%B9%89บร%E0%B8%B4การ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E แจ%E0%B9%89งต%E0%B8%B1ดชำระหน%E0%B8%B5%E0%B9%89 ก%E0%B9%88อนว%E0%B8%B1นครบกำหนด</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E Fleet card %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee%2Finterest rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E สอบถาม Outstanding%2Fวงเง%E0%B8%B4นคงเหล%E0%B8%B7อ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%2E Cash - DTB %3A แก%E0%B9%89ไข%2Fปร%E0%B8%B1บเปล%E0%B8%B5%E0%B9%88ยน%2Fลดหย%E0%B9%88อน fee%2Finterest rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%2E สอบถามข%E0%B8%B1%E0%B9%89นตอนการทำรายการหร%E0%B8%B7อเง%E0%B8%B7%E0%B9%88อนไขการใช%E0%B9%89วงเง%E0%B8%B4น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E สอบถามค%E0%B9%88าธรรมเน%E0%B8%B5ยม %2F อ%E0%B8%B1ตราดอกเบ%E0%B8%B5%E0%B9%89ย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E1  LT %3A Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89 ตามท%E0%B8%B5%E0%B9%88ล%E0%B8%B9กค%E0%B9%89า request เช%E0%B9%88น ขยายระยะเวลาการเบ%E0%B8%B4ก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E2  LT %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89 %28customerไม%E0%B9%88สามารถปฎ%E0%B8%B4บ%E0%B8%B1ต%E0%B8%B4ตามเง%E0%B8%B7%E0%B9%88อนไขได%E0%B9%89%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E3  LT %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89 %28เร%E0%B8%B7%E0%B9%88องเก%E0%B8%B5%E0%B9%88ยวก%E0%B8%B1บประเม%E0%B8%B4น%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E4  LT %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89 %28อ%E0%B8%B7%E0%B9%88นๆ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E สอบถามรายละเอ%E0%B8%B5ยดของรายการท%E0%B8%B5%E0%B9%88ทำไปแล%E0%B9%89ว</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E1 TF-Import products  %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E2 TF-Export products  %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E PN %3A Review condition %2F Credit modification เพ%E0%B8%B7%E0%B9%88อให%E0%B9%89เบ%E0%B8%B4กใช%E0%B9%89ได%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E สอบถามสถานะ Application %2F Transaction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A Convert BE%2FTD to OBOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A Realign วงเง%E0%B8%B4น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ขอค%E0%B8%B7น%2Fยกเว%E0%B9%89น ค%E0%B9%88าธรรมเน%E0%B8%B5ยม LG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ขอเคลม LG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ค%E0%B8%B7นค%E0%B9%88าธรรมเน%E0%B8%B5ยม บสย%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ต%E0%B9%88ออาย%E0%B8%B8โครงการค%E0%B9%89ำประก%E0%B8%B1น บสย%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ฝากถอนตามภาระ LG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ออกหน%E0%B8%B1งส%E0%B8%B7อย%E0%B8%B4นยอม %28ร%E0%B8%B1งว%E0%B8%B1ก%2Fแบ%E0%B9%88งแยก%2Fรวมโฉนด%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A อาย%E0%B8%B1ดบ%E0%B8%B1ญช%E0%B8%B5เง%E0%B8%B4นฝาก%2Fนำส%E0%B9%88งเง%E0%B8%B4นตามคำส%E0%B8%B1%E0%B9%88งหน%E0%B9%88วยงานราชการ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A เปล%E0%B8%B5%E0%B9%88ยนอ%E0%B8%B1ตราดอกเบ%E0%B8%B5%E0%B9%89ย%2Fค%E0%B9%88าธรรมเน%E0%B8%B5ยม %28เพ%E0%B8%B4%E0%B9%88ม%2Fลด%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A เปล%E0%B8%B5%E0%B9%88ยนเลขบ%E0%B8%B1ญช%E0%B8%B5%2Fประเภทเง%E0%B8%B4นฝากท%E0%B8%B5%E0%B9%88เป%E0%B9%87นประก%E0%B8%B1น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A โอนย%E0%B9%89ายวงเง%E0%B8%B4นส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อระหว%E0%B9%88างสาขา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU %3A ไถ%E0%B9%88ถอนชำระหน%E0%B8%B5%E0%B9%89เสร%E0%B9%87จส%E0%B8%B4%E0%B9%89น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A Floating Charge Set Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A ขอสำเนาเอกสารน%E0%B8%B4ต%E0%B8%B4กรรมส%E0%B8%B1ญญา</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A ชำระค%E0%B8%B7นก%E0%B9%88อนกำหนด %28RPN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A น%E0%B8%B4ต%E0%B8%B4กรรม Reschedule ตามผลอน%E0%B8%B8ม%E0%B8%B1ต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A น%E0%B8%B4ต%E0%B8%B4กรรม จำนอง Refinance ตามผลอน%E0%B8%B8ม%E0%B8%B1ต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A น%E0%B8%B4ต%E0%B8%B4กรรม เปล%E0%B8%B5%E0%B9%88ยนอ%E0%B8%B1ตราดอกเบ%E0%B8%B5%E0%B9%89ย%2Fค%E0%B9%88าธรรมเน%E0%B8%B5ยม ตามผลอน%E0%B8%B8ม%E0%B8%B1ต%E0%B8%B4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A ระง%E0%B8%B1บการใช%E0%B9%89วงเง%E0%B8%B4นส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อหม%E0%B8%B8นเว%E0%B8%B5ยน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A ล%E0%B8%B9กค%E0%B9%89าปกต%E0%B8%B4ถอนดอกเบ%E0%B8%B5%E0%B9%89ยเง%E0%B8%B4นฝาก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A ล%E0%B8%B9กค%E0%B9%89าปกต%E0%B8%B4ห%E0%B8%B1กบ%E0%B8%B1ญช%E0%B8%B5ชำระหน%E0%B8%B5%E0%B9%89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A แก%E0%B9%89ไขข%E0%B9%89อม%E0%B8%B9ลงานประก%E0%B8%B1นภ%E0%B8%B1ย %28 Suf 999 %2Fปลด Freeze %29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS %3A แก%E0%B9%89ไขข%E0%B9%89อม%E0%B8%B9ลล%E0%B8%B9กค%E0%B9%89าในระบบธนาคาร</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled this visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Accept %26 will Sign-off Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Referrals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Reject</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPD Transaction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Not Receive Registration%2C Already had%2FWill sign-off Negative Pledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Charge_Stay with Customer%2C No Negative Pledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float Chrage_Exit this Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To follow up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A Reschedule Program ล%E0%B8%B9กหน%E0%B8%B5%E0%B9%89ไม%E0%B9%88ค%E0%B9%89างชำระ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A จ%E0%B8%B1ดสรรเง%E0%B8%B4นค%E0%B9%88าส%E0%B8%B4นไหมทดแทนจากการประก%E0%B8%B1นภ%E0%B8%B1ย</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A ปร%E0%B8%B1บช%E0%B8%B1%E0%B9%89นค%E0%B8%B8ณภาพล%E0%B8%B9กค%E0%B9%89า %28ด%E0%B8%B5ข%E0%B8%B6%E0%B9%89น%2Fด%E0%B9%89อยลง%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A ออกหน%E0%B8%B1งส%E0%B8%B7อให%E0%B9%89ความย%E0%B8%B4นยอมยกเป%E0%B9%87นทางสาธารณะ%2Fเวนค%E0%B8%B7น</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนการค%E0%B9%89ำประก%E0%B8%B1น บสย%2E %28ลด%2Fยกเล%E0%B8%B4ก%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนการค%E0%B9%89ำประก%E0%B8%B1น บสย%2E Flood Program %28ลด%2Fยกเล%E0%B8%B4ก%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนผ%E0%B8%B9%E0%B9%89ก%E0%B8%B9%E0%B9%89%2Fผ%E0%B8%B9%E0%B9%89ค%E0%B9%89ำประก%E0%B8%B1น %28เพ%E0%B8%B4%E0%B9%88ม%2Fลด%2Fยกเล%E0%B8%B4ก%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนวงเง%E0%B8%B4นส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อ %28ลด%2Fยกเล%E0%B8%B4ก%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนหล%E0%B8%B1กประก%E0%B8%B1น %28ม%E0%B8%B9ลค%E0%B9%88า%2Fช%E0%B8%B4%E0%B9%89นหล%E0%B8%B1กประก%E0%B8%B1น%2Fโอนกรรมส%E0%B8%B4ทธ%E0%B8%B4%E0%B9%8C%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนเง%E0%B8%B7%E0%B9%88อนไขการชำระค%E0%B8%B7น %28อ%E0%B8%B1ตราการผ%E0%B9%88อนชำระ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A เปล%E0%B8%B5%E0%B9%88ยนเง%E0%B8%B7%E0%B9%88อนไขการเบ%E0%B8%B4กใช%E0%B9%89%2Fการใช%E0%B9%89ส%E0%B8%B4นเช%E0%B8%B7%E0%B9%88อ %28ผ%E0%B9%88อนผ%E0%B8%B1นใบอน%E0%B8%B8ญาต%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UW %3A ไถ%E0%B9%88ถอนหล%E0%B8%B1กประก%E0%B8%B1นบางส%E0%B9%88วน</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nEWS%2FDPD %3A Reschedule Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nEWS%2FDPD%3ATDR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>อ%E0%B8%B7%E0%B9%88นๆ ระบ%E0%B8%B8หมายเหต%E0%B8%B8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>เร%E0%B8%B7%E0%B9%88องอ%E0%B8%B7%E0%B9%88น ๆ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Boost Utilization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task Assignment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

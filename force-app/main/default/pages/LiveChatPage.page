@@ -15,86 +15,105 @@
     border-radius: 3px;
     margin-top: 5px;
     outline: none;
+ 
     }
     
     .uiInput--select .Subject{
-    padding: 7px;
-    margin: 0 0 0 0px;
-    width: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    margin-top: 5px;
-    outline: none;
-    height: 10%;
+        padding: 7px;
+        margin: 0 0 0 0px;
+        width: 100%;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        margin-top: 5px;
+        outline: none;
+        height: 10%;
+        font-family: Ekachon;
+        color: #58585B;
     }
     
     .select{
-    font-size: 14px;
-    height: 30px;
+        font-size: 14px;
+        height: 30px;
+        
     }
     
     .prechatUI.cPreChat .prechatContent{
-    margin: 20px;
-    text-align: left;
-    position: relative;
-    margin-top: 10px;
+        margin: 20px;
+        text-align: left;
+        position: relative;
+        margin-top: 10px;
+        
     }
-    
+  
     .embeddedServiceHelpButton .helpButton .uiButton {
-    background-color: #0e599e;      
+        background-color: #f68b1f; 
+        border-radius: 15px; 
     }
     
     .embeddedServiceSidebar.layout-docked .dockableContainer{
-    max-height: 100%;
-    width: 50%;
+        max-height: 100%;
+        width: 50%;
+        
     }
-
+    
     .embeddedServiceLiveAgentSidebarFeature {
         font-size: 14px;
+        font-family: Ekachon;
+        color: #58585B;
     }
-
+    
     .message {
-    font-size: 13px; 
-    color: #fff;
-    background-color: #0e599e;
-    border-style: solid;
-    border-width: 0px;
-    padding: 0px;
-    margin: 0px;
+        font-size: 13px; 
+        color: #ffffff;
+        background-color: #f68b1f;
+        border-style: solid;
+        border-width: 0px;
+        padding: 0px;
+        margin: 0px;
+        font-family: Ekachon;
     }
 
     
     .uiButton--default {
-    position: absolute;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 8px 0px;
-    padding: 10px 0px;
-    bottom: 0;
-    width: 50%;
-    right: 21px;
-    box-shadow: none;
-    text-shadow: none;
-    background: #0e599e;
-    color: #ffffff;
+        position: absolute;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 8px 0px;
+        padding: 10px 0px;
+        bottom: 0;
+        width: 50%;
+        right: 21px;
+        box-shadow: none;
+        text-shadow: none;
+        background: #0050F0;  
+        color: #ffffff;  
+        font-family: Ekachon;
+        <!-- border-radius: 15px; -->
     }
+    
     
     .embeddedServiceLiveAgentStateChat .endChatContainer .endChatButton {
     width: calc(100% - 48px);
     height: 44px;
     line-height: 19px;
     margin: 10px 0px;
+   <!-- background: #0050F0;
+    text-decoration: none;    -->
     }
+    
     
     .uiButton--default .label {
-    color: #ffffff;
+    color: #ffffff; 
+   
     }
     
+    
     .uiButton--default:hover:enabled{
-    background: #045d9b;
-    color: #ffffff;
+    background: #045d9b; 
+    color: #ffffff; 
     outline: none;
+     
     }
     
     .logoHeader{
@@ -104,10 +123,12 @@
     margin-top: 10px;
     position: absolute;
     left: 21px;
+    
     }
     
     .headerUI{
     height: 60px;
+    
     }
     
     .prechatUI{
@@ -117,6 +138,15 @@
 
     .embeddedServiceHelpButton .helpButton {
         right: 10%;
+    }
+    
+    h2[embeddedservice-chatheader_chatheader] {
+        color: #fff;
+    }
+
+    .embeddedServiceHelpButton .helpButton .helpButtonEnabled:hover::before,
+    .embeddedServiceHelpButton .helpButton .helpButtonEnabled:focus::before {
+        background-color: inherit;
     }
 </style>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -236,16 +266,16 @@
         embedded_svc.settings.entryFeature = 'LiveAgent';
         
         embedded_svc.init(
-            'https://tmbbank.my.salesforce.com',
-            'https://tmbbank.secure.force.com/livechat',
+            'https://tmbbank--uat.sandbox.my.salesforce.com',
+            'https://tmbbank--uat.sandbox.my.salesforce-sites.com/livechat',
             gslbBaseURL,
-            '00D90000000yI4A',
+            '00DO00000053vkH',
             'Live_Chat',
             {
-                baseLiveAgentContentURL: 'https://c.la2-c2-hnd.salesforceliveagent.com/content',
+                baseLiveAgentContentURL: 'https://c.la1-c1cs-ukb.salesforceliveagent.com/content',
                 deploymentId: '5722j0000004C9N',
                 buttonId: '5732j0000004C9S',
-                baseLiveAgentURL: 'https://d.la2-c2-hnd.salesforceliveagent.com/chat',
+                baseLiveAgentURL: 'https://d.la1-c1cs-ukb.salesforceliveagent.com/chat',
                 eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2j0000008OI5EAM_16fd23b669e',
                 isOfflineSupportEnabled: false
             }
@@ -254,7 +284,7 @@
 
     if (!window.embedded_svc) {
         var s = document.createElement('script');
-        s.setAttribute('src', 'https://tmbbank.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.setAttribute('src', 'https://tmbbank--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
         s.onload = function() {
             initESW(null);
         };
@@ -263,5 +293,5 @@
         initESW('https://service.force.com');
     }
 </script>
-<img src='https://tmbbank.secure.force.com/livechat/resource/1581011452000/TMBChatLogo?'></img>
+<img src='https://tmbbank--uat--c.visualforce.com/resource/1628043576000/TMBChatLogo?'></img>
 </apex:page>

@@ -12,8 +12,8 @@ public class PDPAReportControllerTest {
         acc.RMC_Has_Market_Conduct__c = 'N';
         insert acc;
         
-        PDPAReportController.getPDPAReport();
-        PDPAReportController.getMarketConductReport();
+        PDPAReportController.getPDPAReport(5);
+        PDPAReportController.getMarketConductReport(5);
         PDPAReportController.getPDPAList(acc.Id);
         
          Account acc2 = new Account();

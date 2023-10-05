@@ -19,6 +19,11 @@
                 <label>New</label>
             </value>
             <value>
+                <fullName>Accepted &amp; In Progress</fullName>
+                <default>false</default>
+                <label>Accepted &amp; In Progress</label>
+            </value>
+            <value>
                 <fullName>In progress_Contacted</fullName>
                 <default>false</default>
                 <label>Contacted &amp; In progress</label>
@@ -96,6 +101,23 @@
             <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
             <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
             <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>
+            <controllingFieldValue>To Product Team (เพื่อส่งให้ทีม Product)</controllingFieldValue>
+            <controllingFieldValue>For System Only</controllingFieldValue>
+            <controllingFieldValue>DM Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Drop Lead (โทรนัดหมายเพื่อการขาย)</controllingFieldValue>
+            <controllingFieldValue>Service (เพื่อให้บริการ)</controllingFieldValue>
+            <controllingFieldValue>Sell (เพื่อนำเสนอขาย)</controllingFieldValue>
+            <controllingFieldValue>Account Opening/Service (เพื่อเปิดบัญชี / สมัครบริการ)</controllingFieldValue>
+            <controllingFieldValue>Collect Document</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch (สาขารอต้อนรับ)</controllingFieldValue>
+            <controllingFieldValue>Introduction call (สาขาโทรสร้างความสัมพันธ์)</controllingFieldValue>
+            <controllingFieldValue>เพื่อติดต่อกลับ</controllingFieldValue>
+            <controllingFieldValue>Meeting at branch &amp; Account Opening (สาขารอต้อนรับพร้อมให้บริการเปิดบัญชี)</controllingFieldValue>
+            <controllingFieldValue>บริการให้คำปรึกษา (TMB BIZ ADVISORY)</controllingFieldValue>
+            <valueName>Accepted &amp; In Progress</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Service (เพื่อทำรายการ)</controllingFieldValue>

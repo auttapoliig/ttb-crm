@@ -57,6 +57,7 @@
 
 .THIS .overwrite-firstchild {
     border-left: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(229, 229, 229));
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
     /* padding-left: 0.5rem !important; */
 }
 
@@ -127,9 +128,6 @@
     .THIS td {
         border: 1px red;
     }
-    /* .THIS .slds-table_bordered thead>tr+tr>th{
-        border-top: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(229, 229, 229)) !important;
-    } */
     /* .THIS .slds-table_bordered{
         border-collapse: collapse !important; 
     } */
@@ -226,4 +224,15 @@
 .THIS .error-title {
     font-weight: 600;
     color: #666666;
+}
+
+.THIS .slds-table_bordered thead>tr+tr>th{
+    /* border-top: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(229, 229, 229)) !important; */
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
+}
+.THIS .slds-table_col-bordered th+th {
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
+}
+.THIS .slds-table_bordered tbody td {
+    border-color: var(--lwc-colorBorder,rgb(229, 229, 229));
 }

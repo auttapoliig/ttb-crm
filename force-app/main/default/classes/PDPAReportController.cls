@@ -1,15 +1,10 @@
 public with sharing class PDPAReportController {
    
     @AuraEnabled
-    public static  Map<String, Object> getPDPAReport(){
+    public static  Map<String, Object> getPDPAReport(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
           try {
-            List<Account> AccountList = [SELECT Id, Name, tolabel(RMC_Has_PDPA__c)
-                                          FROM Account 
-                                          WHERE RTL_Wealth_RM__c = :UserInfo.getUserId() AND (RMC_Has_PDPA__c = 'N/A')
-                                          AND RMC_Is_current_RM_BM__c = true
-                                          LIMIT 5
-                                          ];
+            List<Account> AccountList = getPDPAQueryData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Has_MarketPDPA_2OX'];
 
@@ -25,17 +20,26 @@ public with sharing class PDPAReportController {
        
         return response;
     }
+
+    public static List<Account> getPDPAQueryData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, tolabel(RMC_Has_PDPA__c) FROM Account ';
+            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND (RMC_Has_PDPA__c = \'N/A\') AND RMC_Is_current_RM_BM__c = true ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Account>();
+        }
+    }
     
      @AuraEnabled
-    public static  Map<String, Object> getMarketConductReport(){
+    public static  Map<String, Object> getMarketConductReport(Integer queryLimit){
         Map<String, Object> response = new Map<String, Object>();
           try {
-            List<Account> AccountList = [SELECT Id, Name, tolabel(RMC_Has_Market_Conduct__c)
-                                          FROM Account 
-                                          WHERE RTL_Wealth_RM__c = :UserInfo.getUserId() AND  (RMC_Has_Market_Conduct__c = 'N/A')
-                                          AND RMC_Is_current_RM_BM__c = true
-                                          LIMIT 5
-                                          ];
+            List<Account> AccountList = getMarketConductQueryData(queryLimit);
 
             List<Report> reportList = [SELECT Id, Name FROM Report WHERE DeveloperName = 'Has_Market_Conduct_7wg'];
 
@@ -50,6 +54,20 @@ public with sharing class PDPAReportController {
         }           
        
         return response;
+    }
+
+    public static List<Account> getMarketConductQueryData(Integer queryLimit){
+        try{
+            String query = 'SELECT Id, Name, tolabel(RMC_Has_Market_Conduct__c) FROM Account ';
+            String whereCon = 'WHERE RTL_Wealth_RM__c = \'' + UserInfo.getUserId() + '\' ' + 'AND  (RMC_Has_Market_Conduct__c = \'N/A\') AND RMC_Is_current_RM_BM__c = true ';
+            query += whereCon;
+            if(queryLimit > 0){
+                query += 'LIMIT ' + queryLimit;
+            } 
+            return Database.query(query);
+        }catch(Exception e){
+            return new List<Account>();
+        }
     }
 
     @AuraEnabled

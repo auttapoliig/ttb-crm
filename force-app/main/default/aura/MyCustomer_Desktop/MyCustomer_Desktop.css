@@ -1,0 +1,144 @@
+/* GroupBtn */
+.THIS .groupBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.THIS .groupBtn-right{
+    display: flex;
+    align-items: center;
+}
+/* table */
+.THIS .table{
+    margin: 10px 0px 5px 0px;
+    height: 100%;
+    background-color:rgb(251, 248, 248);
+}
+.THIS .slds-table th{
+    white-space: pre-wrap;
+}
+.THIS .slds-table th div{
+    word-wrap: break-word;
+}
+.THIS .slds-table_cell-buffer tr>td:first-child, .THIS .slds-table_cell-buffer tr>th:first-child{
+    padding-left: 10px;
+}
+.THIS .sticky-col,.THIS .sticky-col-tablet{
+    position: sticky;
+    z-index: 3;
+    background-color: rgb(243, 243, 243);
+}
+.THIS .sticky-row ,.THIS .sticky-row-tablet{
+    position: sticky;
+    z-index: 3;
+    background-color: rgb(251, 248, 248);
+}
+.THIS .sticky-col:nth-child(1),.THIS .sticky-row:nth-child(1){
+    left: 0px;
+}
+.THIS .sticky-col:nth-child(2),.THIS .sticky-row:nth-child(2){
+    left: 38px;
+}
+.THIS .sticky-col:nth-child(3),.THIS .sticky-row:nth-child(3){
+    left: 308.03px;
+}
+.THIS .sticky-col-tablet:nth-child(1),.THIS .sticky-row-tablet:nth-child(1){
+    left: 0px;
+}
+.THIS .sticky-col-tablet:nth-child(2),.THIS .sticky-row-tablet:nth-child(2){
+    left: 53px;
+}
+.THIS .sticky-col-tablet:nth-child(3),.THIS .sticky-row-tablet:nth-child(3){
+    left: 343.03px;
+}
+.THIS .fixed-allCol{
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+    background-color: rgb(243, 243, 243);
+}
+.THIS .sortData{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.THIS .sortcolumn .slds-icon{
+    width: 12px;
+    fill:rgb(243, 243, 243);
+}
+.THIS .sortcolumn:hover .slds-icon{
+    fill:rgb(1, 118, 211);
+
+} 
+.THIS .sortcolumnHover .slds-icon{
+    width: 12px;
+    fill:rgb(1, 118, 211);
+}
+.THIS .widthColumns-small{
+    min-width: 80px;
+}
+.THIS .widthColumns-medium{
+    min-width: 100px;
+}
+.THIS .widthColumns-large{
+    min-width: 120px;
+}
+/* modal */
+.THIS .slds-modal__content{
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.THIS .modalCreateTask{
+    margin: auto;
+    height: 60%;
+}
+.THIS .slds-modal__header{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+}
+.THIS .slds-modal__footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: right;
+}
+.THIS .footerViewMore{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.THIS .slds-modal__container{
+    justify-content: start;
+    padding: 50px 0px 50px 0px;
+}
+.THIS .slds-p-around_medium{
+    padding: 0px;
+    margin: 1rem;
+}
+.THIS .tableViewMore{
+    height: 100%;
+    background-color: rgb(251, 248, 248);
+}
+.THIS .modalViewMore{
+    margin: auto;
+    height: 90%;
+}
+/* toast */
+.THIS .slds-notify_container{
+    position: fixed;
+    top: 125px;
+}
+.THIS .slds-notify{
+    width: 98%;
+}
+@media (max-width: 1300px) {
+    .THIS .slds-modal__container {
+      width: 80%;
+    }
+  }

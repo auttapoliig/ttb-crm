@@ -8,6 +8,7 @@
     <aura:attribute name="columns" type="List" />
     <aura:attribute name="isLoading" type="Boolean" default="true" />
     <aura:attribute name="reportId" type="String" />
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
 
     <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true" />
 

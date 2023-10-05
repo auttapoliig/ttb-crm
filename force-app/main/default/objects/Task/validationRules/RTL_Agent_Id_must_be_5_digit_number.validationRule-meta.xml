@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RTL_Agent_Id_must_be_5_digit_number</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(RecordType.DeveloperName = &apos;RTL_Retail_Outbound_Phone_Call&apos;,OR
+(
+NOT(ISNUMBER(RTL_Agent__c)),
+AND(ISNUMBER(RTL_Agent__c), LEN(RTL_Agent__c) &lt;&gt;5)
+))</errorConditionFormula>
+    <errorMessage>Agent must be 5 digit number.</errorMessage>
+</ValidationRule>

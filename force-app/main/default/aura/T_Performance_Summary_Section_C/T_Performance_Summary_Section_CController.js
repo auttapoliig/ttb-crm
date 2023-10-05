@@ -20,12 +20,10 @@
     ];
 
     component.set("v.subColumnLabel", subColumnLabel);
-    // component.set('v.teamList',teamList);
   },
 
   isNextButtonHandle: function (component) {
     var channelName = component.get("v.channelName");
-    // console.log('channelName--> '+channelName)
     var onedownValue = component.get("v.onedownValue");
     var summaryPage = component.get("v.summaryGroupType");
     var selectedYear = component.get("v.selectedYear");
@@ -46,7 +44,6 @@
       if (state === "SUCCESS") {
         var result = response.getReturnValue();
         component.set("v.isNext", result);
-        // console.log('Is next button :' +  result);
       } else if (state === "ERROR") {
         console.log("STATE ERROR");
       } else {
@@ -83,15 +80,6 @@
     ];
 
     component.set("v.subColumnLabel", subColumnLabel);
-    // const group = helper.groupBy(KPI, 'Indicator_Level1__c')
-    // const JSONGroup = JSON.parse(group);
-    // const STP = component.get("v.summaryTeamData");
-    // console.log(STP);
-    // var mapProductGroupWithCode = new Map();
-    // var mapTotalAmountByMonth = new Map();
-    // var mapCodeWithTotalAmount = new Map();
-    // var mapProductwithTotalAmount = new Map();
-    // var mapProductwithCapMax = new Map();
     const date = new Date();
     var day = date.getDate() - 2 ;
     var month = date.getMonth() + 1;
@@ -100,40 +88,31 @@
     var curDay = date.getDate();
     const groupArrayKPI = () => {
       const KPI = component.get("v.targetProductData");
-      // const KPI1 = component.get("v.targetMapData");
-      // console.log(KPI);
       
       var selectedMonth = component.get("v.selectedMonth");
       var selectedYear = component.get("v.selectedYear");
-      // console.log('selectedMonth validateData' +selectedMonth)
-      // console.log('selectedYear validateData' +selectedYear)
 
       var map = new Map();
       
       for (let i = 0; i < KPI.length; i++) {
         var actualMonthTD = 0;
-        // var actualMonthTDwithRV = 0;
-        // var actualMonthTDwithRVrunrate = 0;
         var actualYearTD = 0;
-        // var actualYTDCapmax = 0;
         var TotaltgYTDValue;
         var percentMTD = 0;
         var TG = 0;
         var BPE = "";
-        // var runrate = "";
-        // var PointPercent = "";
         var actualForRunrate = 0;
         var UnitPercent = "";
         var volume = 1;
         var Capmax = "";
         if (month == parseInt(KPI[i].Month__c) && year == parseInt(KPI[i].Year__c)){
-          // console.log('Before prorate: '+ parseFloat(KPI[i].Target_Unit_Month__c))
-          TotaltgYTDValue = helper.calDecimal(helper, "multiply", (day) ,parseFloat(KPI[i].Target_Unit_Month__c/curDoM));
-        // TotaltgYTDValue =  helper.calDecimal(helper, "round", parseFloat(TotaltgYTDValue), null);
-          // console.log('After prorate: '+ parseFloat(KPI[i].Target_Unit_Month__c/curDoM))
+          if(day > 0) {
+            TotaltgYTDValue = helper.calDecimal(helper, "multiply", (day) ,parseFloat(KPI[i].Target_Unit_Month__c/curDoM));
+          } else {
+            TotaltgYTDValue = 0;
+          }
         } else {
           TotaltgYTDValue =  parseFloat(KPI[i].Target_Unit_Month__c);
-          // console.log('1st TG_YTD '+ TotaltgYTDValue)
         }
         var targetMTDValue = 0;
         if (parseInt(KPI[i].Month__c) == selectedMonth && parseInt(KPI[i].Year__c) == selectedYear) {
@@ -143,8 +122,12 @@
             volume = 1;
           } 
           if (selectedMonth == month && selectedYear == year) {
-            targetMTDValue =  helper.calDecimal(helper, "multiply", (day), parseFloat(KPI[i].Target_Unit_Month__c)/curDoM);
-            targetMTDValue = parseFloat(targetMTDValue);
+            if(day > 0) {
+              targetMTDValue =  helper.calDecimal(helper, "multiply", (day), parseFloat(KPI[i].Target_Unit_Month__c)/curDoM);
+              targetMTDValue = parseFloat(targetMTDValue);
+            } else {
+              targetMTDValue = 0;
+            }
           } else {
             targetMTDValue = parseFloat(KPI[i].Target_Unit_Month__c);
             
@@ -164,7 +147,6 @@
           }else {
             Capmax = "";
           }
-            // console.log("Branch Point Engine : " + BPE)
         }
      	 if(parseInt(KPI[i].Month__c) != selectedMonth && parseInt(KPI[i].Year__c) == selectedYear){
             actualForRunrate = helper.calDecimal(helper, "round", (parseFloat(KPI[i].Actual_Amount__c) / volume) , null);
@@ -174,32 +156,9 @@
           multiplyDayofMonth = curDoM / (curDay);
         }
         
-        // actualYearTD = helper.calDecimal(helper, "round", ((parseFloat(KPI[i].Actual_Amount__c)) / volume) , null);
       	actualYearTD = ((parseFloat(KPI[i].Actual_Amount__c)) / volume)
-      	// console.log(actualYearTD);
-        //if(actualYearTD == null){
-        //  actualYearTD = 0;      
-        //}
-        // if(BPE != "" && Capmax != ""){
-        //   actualYTDCapmax = (actualYearTD * (BPE ? BPE : 1) > (TotaltgYTDValue * (BPE ? BPE : 1) * Capmax/100)) ? (TotaltgYTDValue * (BPE ? BPE : 1)* (Capmax/100)) : (actualYearTD * (BPE ? BPE : 1));
-        // }
-        
-        // actualMonthTDwithRV = (actualMonthTD ? actualMonthTD : 0) * (BPE ? BPE : 1)
 
-        // actualMonthTDwithRVrunrate = actualMonthTDwithRV * multiplyDayofMonth
-
-        // runrate = ((actualYTDCapmax - (actualMonthTDwithRV ? actualMonthTDwithRV : 0)) + (actualMonthTDwithRVrunrate ? actualMonthTDwithRVrunrate : 0))/(TotaltgYTDValue * (BPE ? BPE : 1));
-        // if(TotaltgYTDValue == 0 || TotaltgYTDValue == "" || BPE == "" || runrate < 0){
-        //   runrate = "";
-        // }
-        
-        // PointPercent = actualYTDCapmax / (TotaltgYTDValue * (BPE ? BPE : 1));
-        // if(TotaltgYTDValue == 0 || TotaltgYTDValue == "" || BPE == ""){
-        //   PointPercent = "";
-        // }
-        // 
-		UnitPercent =  helper.calDecimal(helper, "round", parseFloat(actualYearTD), null) /  helper.calDecimal(helper, "round", parseFloat(TotaltgYTDValue), null);
-        //UnitPercent = parseFloat(actualYearTD).toFixed(2) / parseFloat(TotaltgYTDValue).toFixed(2);
+		    UnitPercent =  helper.calDecimal(helper, "round", parseFloat(actualYearTD), null) /  helper.calDecimal(helper, "round", parseFloat(TotaltgYTDValue), null);
         if(TotaltgYTDValue == 0 || TotaltgYTDValue == ""){
           UnitPercent = "";
         }
@@ -252,14 +211,11 @@
             }
           });
           if (checkproduct) {
-            // console.log(KPI[i].Product_Group_Name__c +' Actual Amont:'+ KPI[i].Actual_Amount__c)
             helper.sumProductvalues(
               component,
               KPI[i],
               map.get(KPI[i].Indicator_Level1__c),helper
             );
-            // map.get(KPI[i].Indicator_Level1__c) = newMap;
-            // console.log(newMap);
           } else {
             var arr = {
               Label: KPI[i].Product_Group_Name__c,
@@ -294,47 +250,30 @@
           }
         }
       }
-      // console.log('Count loop :' + count)
       const res = Array.from(map.values());
       return res;
     };
     
-    // console.log(groupArrayKPI());
     const groupKPI = groupArrayKPI();
-    // const groupSTP = STP;
-    //  const groupSort = helper.groupBy(groupArray(KPI), 'quadant');
-    // console.log(groupKPI);
 
     component.set("v.targetProductObjList", groupKPI);
     var params = event.getParam("arguments");
     helper.cssColorChange(component, helper);
-    // var returnGroupKPI = component.get("v.targetProductObjList");
-    // console.log(params);
     component.set("v.loaded", false);
     if (params) {
       return groupKPI;
     }
-    // component.set("v.summaryTeamObjList", groupSTP);
-    // helper.calculatedSummary(component);
   },
 
   navigateToOneDown: function (component) {
-    // console.log(
-    //   component.get("v.summaryGroupType") +
-    //     " " +
-    //     component.get("v.summaryGroupValue")
-    // );
     var selectedYear = component.get("v.selectedYear");
     var selectedMonth = component.get("v.selectedMonth");
     var channelName = component.get("v.channelName");
-    // console.log("selectYear" + selectedYear);
-    // console.log("selectMonth" + selectedMonth);
     var uid = "1";
     var summaryGroupValue = component.get("v.summaryGroupValue");
     if (summaryGroupValue == null || summaryGroupValue == undefined) {
       summaryGroupValue = component.get("v.onedownValue");
     }
-    // const test = summaryGroupValue;
     var workspaceAPI = component.find("workspace");
     workspaceAPI.getFocusedTabInfo().then(function (response) {
       var focusedTabId = response.tabId;
@@ -372,17 +311,6 @@
           // console.log(error);
         });
     });
-
-    // console.log(test);
-    // var evt = $A.get("e.force:navigateToComponent");
-    // evt.setParams({
-    //   componentDef: "c:T_Performance_Onedown",
-    //   componentAttributes: {
-    //     summaryGroupType: component.get("v.summaryGroupType"),
-    //     summaryGroupValue: test
-    //   }
-    // });
-    // evt.fire();
   },
 
   handleMouseOver: function (component, event, helper) {
