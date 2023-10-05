@@ -4,8 +4,8 @@
     <name>Non-Juristic (Agreement)</name>
     <queueMembers>
         <roles>
+            <role>Non_Juristic_Agreement_TL</role>
             <role>Non_Juristic_Agreement_User</role>
-            <role>Non_Juristic_Loan_Contact_Processing_TL</role>
         </roles>
     </queueMembers>
     <queueSobject>

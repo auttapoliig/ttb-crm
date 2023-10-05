@@ -5,6 +5,8 @@
     <queueMembers>
         <roles>
             <role>Corporate_Investigation_Non_Credit_User</role>
+            <role>Customer_Incident_Control_Center_User</role>
+            <role>Customer_Incident_Control_Center_TL</role>
         </roles>
     </queueMembers>
     <queueSobject>

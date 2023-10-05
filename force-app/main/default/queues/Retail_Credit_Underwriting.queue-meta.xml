@@ -4,7 +4,6 @@
     <name>Retail Credit Underwriting</name>
     <queueMembers>
         <roles>
-            <role>Team_Head_RCU</role>
             <role>UW_RCU</role>
         </roles>
     </queueMembers>
