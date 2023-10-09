@@ -221,6 +221,16 @@
                 <default>false</default>
                 <label>นายภัทรวิศว์ พุฒาพิทักษ์(CF4)</label>
             </value>
+            <value>
+                <fullName>นาง เพ็ญจิตร์ นิเลิศรัมย์(CF6)</fullName>
+                <default>false</default>
+                <label>นาง เพ็ญจิตร์ นิเลิศรัมย์(CF6)</label>
+            </value>
+            <value>
+                <fullName>นาย วาทิศ ปรศุพัฒนา(CF6)</fullName>
+                <default>false</default>
+                <label>นาย วาทิศ ปรศุพัฒนา(CF6)</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

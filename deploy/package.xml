@@ -141,6 +141,8 @@
         <members>Opportunity.LeadSource</members>
         <members>Lead.LeadSource</members>
         <members>CampaignMember.LeadSource</members>
+        <members>Case.Authorize_1__c</members>
+        <members>Case.Authorize_2__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -378,6 +380,16 @@
         <members>Opportunity.Retail_Others</members>
         <members>Opportunity.Retail_Others_Closed</members>
         <members>Opportunity.Retail_Retentions</members>
+        <members>Case.Closed_KYC_System</members>
+        <members>Case.Closed_Operation</members>
+        <members>Case.Closed_Retail_Service</members>
+        <members>Case.Closed_SE_Call_Center</members>
+        <members>Case.Closed_WBG_Service</members>
+        <members>Case.KYC_System</members>
+        <members>Case.Operation</members>
+        <members>Case.Retail_Service</members>
+        <members>Case.SE_Call_Center</members>
+        <members>Case.WBG_Service</members>
         <name>RecordType</name>
     </types>
     <types>
