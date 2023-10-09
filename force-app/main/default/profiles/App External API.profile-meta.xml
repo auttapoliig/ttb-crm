@@ -1,271 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <custom>true</custom>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>My_Customer_Filter_Option__c.Range_Number</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>My_Customer_Filter_Option__c.Text_Equals</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <classAccesses>
-        <apexClass>MyCustomerControllerClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RM_Cockpit_My_Customer_CreateTask</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PerformanceUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.MainBank_MoreDetail__c</field>
+        <editable>true</editable>
+        <field>RTL_Referral__c.LGS_Assignment_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Sub_Segment_Key__c</field>
+        <field>RTL_Referral__c.LGS_LinkInfo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Last_Selected_Date__c</field>
+        <field>RTL_Referral__c.LGS_BrandCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Task.Subject</field>
+        <field>RTL_Referral__c.LGS_BrandShowroomCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>My_Customer_Filter__c.Active__c</field>
+        <field>RTL_Referral__c.LGS_PartnerCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>My_Customer_Filter_Option__c.Active__c</field>
+        <field>RTL_Referral__c.Lead_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.CC_Other_Point_Balance__c</field>
+        <field>RTL_Referral__c.Lead_Score_level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.CC_Reserve_Anual_Point__c</field>
+        <field>RTL_Referral__c.LGS_VIN_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.CC_Reserve_Eligible__c</field>
+        <field>RTL_Referral__c.LGS_File_Upload__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.CC_Reserve_Point__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.RMC_Suitability_Risk_Level_Diff__c</field>
+        <field>RTL_Referral__c.LGS_Campaign_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>My_Customer_Filter_Option__c.Filter_Max__c</field>
+        <field>RTL_Referral__c.LGS_Campaign_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>My_Customer_Filter_Option__c.Filter_Min__c</field>
+        <field>RTL_Referral__c.LGS_Child_Campaign_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>My_Customer_Filter_Option__c.Filter_Value__c</field>
+        <field>RTL_Referral__c.Car_Reference_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Customer_Product_Alert__c.Financial_Account_Group__c</field>
+        <field>RTL_Referral__c.LGS_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Customer_Product_Alert__c.Insurance_Fully_Paid_Flag__c</field>
+        <field>Opportunity.LGS_Assignment_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Customer_Product_Alert__c.MF_Gain_Loss_Percent__c</field>
+        <field>Opportunity.LGS_LinkInfo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Customer_Product_Alert__c.MF_Outstanding__c</field>
+        <field>Opportunity.LGS_BrandCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Large_Transaction_Movements__c.Product_Name__c</field>
+        <field>Opportunity.LGS_BrandShowroomCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Allfree_OS__c</field>
+        <field>Opportunity.LGS_PartnerCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_AUM_LastPeriod__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.RMC_AUM_RANGE__c</field>
+        <field>Opportunity.Lead_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Sub_Debt_Flag__c</field>
+        <field>Opportunity.Lead_Score_level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+        <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_VIN_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Reserve_Waive_Doc_Flag__c</field>
+        <field>Opportunity.RTL_Web_Unique_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Payroll_Flag__c</field>
+        <field>Opportunity.LGS_File_Upload__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_NFX_OS__c</field>
+        <field>Opportunity.LGS_Campaign_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_NFX_Rate__c</field>
+        <field>Opportunity.LGS_Campaign_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_OtherDP_OS__c</field>
+        <field>Opportunity.LGS_Child_Campaign_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Percent_Deposit_Change__c</field>
+        <field>Opportunity.Car_Reference_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Percent_MF_Change__c</field>
+        <field>Opportunity.RTL_W2L_Campaign_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Shareholder_Flag__c</field>
+        <field>Opportunity.LGS_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Suitability_Risk_Level_Required__c</field>
+        <field>Lead.RTL_AL_TentName__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_TD_OS__c</field>
+        <field>Lead.RTL_AL_Showroom__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Wealth_Flag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.RTL_Age_Range__c</field>
+        <field>CampaignMember.RTL_Integration_System__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Relationship_Level__c</field>
+        <field>Lead.RTL_Integration_System__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Credit_Card_flag__c</field>
+        <field>CampaignMember.RTL_Lead_Score_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Cash_2_go_flag__c</field>
+        <field>RTL_Referral__c.RTL_Lead_Score_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Flash_Card_flag__c</field>
+        <field>Lead_Score_Level__c.Definition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Credit_Card_limit__c</field>
+        <field>Lead_Scoring_Condition_Detail__c.Value2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Cash_2_go_limit__c</field>
+        <field>Lead_Scoring_List__c.Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Flash_Card_limit__c</field>
+        <field>Lead_Scoring_List__c.IsActive__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Retail_Instant_Lending__c.Instant_lending_detail__c</field>
+        <field>Lead_Scoring_List__c.Summary_weight__c</field>
+        <readable>true</readable>
+    </fieldPermissions>    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_Data__c.Date_Format__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Last_Update_RMC10__c</field>
+        <field>Inquiry_Data__c.Empty_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Number_of_Selected__c</field>
+        <field>Inquiry_Data__c.Field_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_AUM__c</field>
+        <field>Inquiry_Data__c.Fixed_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RMC_Relationship_Level_by_RM__c</field>
+        <field>Inquiry_Data__c.IsActive__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Relationship_Level_by_Team_Last_Year__c</field>
+        <field>Inquiry_Data__c.Parent_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Relationship_Level_by_RM_Last_Year__c</field>
+        <field>Inquiry_Key__c.Operation_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_Key__c.Parent_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_List__c.Condition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_List__c.Operation_Format__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_List__c.Order_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <objectPermissions>
@@ -273,32 +264,86 @@
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>My_Customer_Filter__c</object>
         <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Score_Level__c</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>My_Customer_Filter_Option__c</object>
         <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Scoring_Condition__c</object>
     </objectPermissions>
-    <tabVisibilities>
-        <tab>My_Customer_Filter__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <layoutAssignments>
-        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Range Number</layout>
-        <recordType>My_Customer_Filter_Option__c.Range_Number</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>My_Customer_Filter_Option__c-My Customer Filter Option Layout - Text Equals</layout>
-        <recordType>My_Customer_Filter_Option__c.Text_Equals</recordType>
-    </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Scoring_Condition_Detail__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Scoring_List__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Inquiry_Data__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Inquiry_Key__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Inquiry_List__c</object>
+    </objectPermissions>
+    <classAccesses>
+        <apexClass>LeadScoreCalculation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeadScorConTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTL_LGS_InquiryLeadScoringList</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTL_LGS_InquiryScoringConDetail</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>InquiryManager</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeadScoringController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 </Profile>
