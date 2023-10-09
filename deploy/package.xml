@@ -150,7 +150,7 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>Batch_Export_LGS__mdt.Export_Lead_Info_LGS</members>
+        <members>Batch_Export_LGS.Export_Lead_Info_LGS</members>
         <name>CustomMetadata</name>    
     </types>
     <types>
@@ -336,5 +336,5 @@
         <members>ttb Subsidiary Sales</members>
         <name>Profile</name>
     </types>
-    <version>59.0</version>
+    <version>58.0</version>
 </Package>
