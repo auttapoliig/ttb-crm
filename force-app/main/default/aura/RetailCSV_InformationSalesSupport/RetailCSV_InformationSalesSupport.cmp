@@ -21,7 +21,7 @@
     <aura:attribute name="TouchIBProm" type="Map" default="{}" />
     <aura:attribute name="EStatement" type="Map" default="{}" />
     <aura:attribute name="CYCCampaignMappingInq" type="Object"/>
-    <aura:attribute name="CYCCampaignMappingInqStatus" type="Object"/>
+    <aura:attribute name="CYCCampaignMappingInqStatus" type="Object" default="default"/>
     <aura:attribute name="deviceSize" type="Map" default="{
         small: '12',
         medium: '6',
@@ -329,14 +329,16 @@
                                         <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                                 <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
                                             <aura:set attribute="else">
-                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
-                                                    <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
-                                                    <aura:set attribute="else">
-                                                        <span style="color :red;font-weight: bold;">
-                                                            {!$Label.c.cyc_promo_apifail}                                           
-                                                        </span>
-                                                        <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
-                                                    </aura:set>
+                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus != 'default'}">
+                                                    <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
+                                                        <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
+                                                        <aura:set attribute="else">
+                                                            <span style="color :red;font-weight: bold;">
+                                                                {!$Label.c.cyc_promo_apifail}                                           
+                                                            </span>
+                                                            <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
+                                                        </aura:set>
+                                                    </aura:if>
                                                 </aura:if>
                                             </aura:set>
                                         </aura:if>
@@ -703,6 +705,7 @@
                     </lightning:layoutItem>
 
                     <!-- Test UAN-->
+                    <!-- promotion/condition -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
                         <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
@@ -721,14 +724,16 @@
                                         <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                                 <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
                                             <aura:set attribute="else">
-                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
-                                                    <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
-                                                    <aura:set attribute="else">
-                                                        <span style="color :red;font-weight: bold;">
-                                                            {!$Label.c.cyc_promo_apifail}                                           
-                                                        </span>
-                                                        <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
-                                                    </aura:set>
+                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus != 'default'}">
+                                                    <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
+                                                        <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
+                                                        <aura:set attribute="else">
+                                                            <span style="color :red;font-weight: bold;">
+                                                                {!$Label.c.cyc_promo_apifail}                                           
+                                                            </span>
+                                                            <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
+                                                        </aura:set>
+                                                    </aura:if>
                                                 </aura:if>
                                             </aura:set>
                                         </aura:if>
