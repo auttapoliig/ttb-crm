@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retail_Investment_Closed</fullName>
+    <active>true</active>
+    <businessProcess>Retail Investments</businessProcess>
+    <label>Retail Investment Closed</label>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>CM Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Boost Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Dark post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hiring Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBANK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk In %2F Call in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>คนร%E0%B8%B9%E0%B9%89จ%E0%B8%B1ก</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ล%E0%B8%B9กค%E0%B9%89าเด%E0%B8%B4มจากท%E0%B8%B5%E0%B9%88อ%E0%B8%B7%E0%B9%88นๆ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

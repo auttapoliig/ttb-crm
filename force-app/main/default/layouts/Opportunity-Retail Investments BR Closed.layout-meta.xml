@@ -24,6 +24,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>LeadSource</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>RTL_TMB_Advisory_Room__c</field>
             </layoutItems>
             <layoutItems>
