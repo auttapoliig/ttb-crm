@@ -57,7 +57,7 @@ public with sharing class InquiryManagerTest {
         inquiryKeyMap.put('Test', 'Test');
         
         InquiryManager inqMgr = new InquiryManager('Test Inquiry', inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
     }
 
     @IsTest
@@ -83,7 +83,7 @@ public with sharing class InquiryManagerTest {
         inquiryKeyMap.put('zipcode', '10900');
         
         InquiryManager inqMgr = new InquiryManager(inquiryName, inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
 
         System.assertEquals(1, jsonResult.size() , 'Invalid result');
         System.assertEquals('Somchai', jsonResult[0].get('Firstname') , 'Invalid firstname result');
@@ -116,7 +116,7 @@ public with sharing class InquiryManagerTest {
         inquiryKeyMap.put('zipcode', '10230');
         
         InquiryManager inqMgr = new InquiryManager(inquiryName, inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
 
         System.assertEquals(1, jsonResult.size() , 'Invalid result');
         System.assertEquals('Somchai', jsonResult[0].get('Firstname') , 'Invalid firstname result');
@@ -137,7 +137,7 @@ public with sharing class InquiryManagerTest {
         inquiryKeyMap.put('rmid', '12345');
         
         InquiryManager inqMgr = new InquiryManager(inquiryName, inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
 
         System.assertEquals(0, jsonResult.size() , 'Invalid firstname result');
         
@@ -148,7 +148,7 @@ public with sharing class InquiryManagerTest {
         String inquiryName = '123';
         Map<String, Object> inquiryKeyMap = new Map<String, Object>();
         InquiryManager inqMgr = new InquiryManager(inquiryName, inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
 
         System.assertEquals(null, jsonResult , 'Invalid result');
     }
@@ -229,7 +229,7 @@ public with sharing class InquiryManagerTest {
         inquiryKeyMap.put('occupation', 'Student');
         
         InquiryManager inqMgr = new InquiryManager(inquiryName, inquiryKeyMap);
-        List<Map<String, Object>> jsonResult = inqMgr.getResult();
+        List<Map<String, Object>> jsonResult = (List<Map<String, Object>>) inqMgr.getResult();
 
         System.assertEquals(1, jsonResult.size() , 'Invalid firstname result');
         System.assertEquals('Empty Value', jsonResult[0].get('RMID') , 'Invalid RMID result');
