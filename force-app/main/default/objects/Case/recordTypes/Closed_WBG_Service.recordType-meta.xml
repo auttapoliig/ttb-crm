@@ -31,7 +31,7 @@
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
             <default>false</default>
         </values>
-        <values>
+<values>
             <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา  %28CF4%29</fullName>
             <default>false</default>
         </values>
@@ -63,7 +63,7 @@
             <fullName>น%2Eส%2Eอ%E0%B8%B1ญชนา ร%E0%B8%B1ตนว%E0%B8%B1จ %28CF5%29</fullName>
             <default>false</default>
         </values>
-        <values>
+<values>
             <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
             <default>false</default>
         </values>
@@ -81,6 +81,10 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นาง เพ%E0%B9%87ญจ%E0%B8%B4ตร%E0%B9%8C น%E0%B8%B4เล%E0%B8%B4ศร%E0%B8%B1มย%E0%B9%8C%28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -109,6 +113,10 @@
         </values>
         <values>
             <fullName>นางอมรร%E0%B8%B1ตน%E0%B9%8C โชคท%E0%B9%88าพระ  %28CF3%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นาย วาท%E0%B8%B4ศ ปรศ%E0%B8%B8พ%E0%B8%B1ฒนา%28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -182,7 +190,7 @@
             <fullName>น%2Eส%2Eประภาพร ธนว%E0%B8%B4ร%E0%B8%B8ฬห%E0%B9%8C %28CF3%29</fullName>
             <default>false</default>
         </values>
-        <values>
+<values>
             <fullName>น%2Eส%2Eรว%E0%B8%B4วรรณ น%E0%B8%B1นตา %28CF4%29</fullName>
             <default>false</default>
         </values>
@@ -222,7 +230,7 @@
             <fullName>น%2Eส%2Eอ%E0%B8%B1ญชนา ร%E0%B8%B1ตนว%E0%B8%B1จ %28CF5%29</fullName>
             <default>false</default>
         </values>
-        <values>
+<values>
             <fullName>น%2Eส%2Eอมรร%E0%B8%B1ตน%E0%B9%8C ภ%E0%B8%B9%E0%B9%88ให%E0%B9%89ผล %28CF4%29</fullName>
             <default>false</default>
         </values>
@@ -240,6 +248,10 @@
         </values>
         <values>
             <fullName>น%2Eส%2Eเสาวล%E0%B8%B1กษณ%E0%B9%8C ถ%E0%B8%B6งศร%E0%B8%B5ป%E0%B8%B1%E0%B9%89น  %28CF4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นาง เพ%E0%B9%87ญจ%E0%B8%B4ตร%E0%B9%8C น%E0%B8%B4เล%E0%B8%B4ศร%E0%B8%B1มย%E0%B9%8C%28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -272,6 +284,10 @@
         </values>
         <values>
             <fullName>นางอมรร%E0%B8%B1ตน%E0%B9%8C โชคท%E0%B9%88าพระ  %28CF3%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>นาย วาท%E0%B8%B4ศ ปรศ%E0%B8%B8พ%E0%B8%B1ฒนา%28CF6%29</fullName>
             <default>false</default>
         </values>
         <values>
