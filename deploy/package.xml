@@ -138,6 +138,9 @@
         <members>Lead.RTL_Integration_System__c</members>
         <members>CampaignMember.RTL_TMB_Campaign_Reference__c</members>
         <members>RTL_Referral__c.RTL_LeadSource__c</members>
+        <members>Opportunity.LeadSource</members>
+        <members>Lead.LeadSource</members>
+        <members>CampaignMember.LeadSource</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -174,6 +177,25 @@
     <types>
         <members>Opportunity-Retail Auto Loan</members>
         <members>Opportunity-Retail Auto Loan Closed</members>
+        <members>Opportunity-Retail Bancassurance</members>
+        <members>Opportunity-Retail Bancassurance BR</members>
+        <members>Opportunity-Retail Bancassurance BR Closed</members>
+        <members>Opportunity-Retail Bancassurance Closed</members>
+        <members>Opportunity-Retail Credit Card</members>
+        <members>Opportunity-Retail Credit Card Closed</members>
+        <members>Opportunity-Retail Deposits</members>
+        <members>Opportunity-Retail Deposits Closed</members>
+        <members>Opportunity-Retail Investment to Order</members>
+        <members>Opportunity-Retail Investment to Order Closed</members>
+        <members>Opportunity-Retail Investments</members>
+        <members>Opportunity-Retail Investments BR</members>
+        <members>Opportunity-Retail Investments BR Closed</members>
+        <members>Opportunity-Retail Investments Closed</members>
+        <members>Opportunity-Retail Loan Retentions</members>
+        <members>Opportunity-Retail Loans</members>
+        <members>Opportunity-Retail Loans Closed</members>
+        <members>Opportunity-Retail Others</members>
+        <members>Opportunity-Retail Others Closed</members>
         <members>RTL_Referral__c-Retail Cross Channel Referral</members>
         <members>RTL_Referral__c-Closed Retail Cross Channel Referral</members>
         <members>Lead-Retail Leads</members>
@@ -335,6 +357,32 @@
         <members>ttb Subsidiary Report Specialist</members>
         <members>ttb Subsidiary Sales</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>Opportunity.Edit_Lead_Source_Manual_Oppty_Validation</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Opportunity.Retail_Auto_Loan</members>
+        <members>Opportunity.Retail_Auto_Loan_Closed</members>
+        <members>Opportunity.Retail_Bancassurance</members>
+        <members>Opportunity.Retail_Bancassurance_Closed</members>
+        <members>Opportunity.Retail_Card_and_RDC</members>
+        <members>Opportunity.Retail_Card_and_RDC_Closed</members>
+        <members>Opportunity.Retail_Deposit</members>
+        <members>Opportunity.Retail_Deposit_Closed</members>
+        <members>Opportunity.Retail_Investment</members>
+        <members>Opportunity.Retail_Investment_Closed</members>
+        <members>Opportunity.Retail_Loans</members>
+        <members>Opportunity.Retail_Loans_Closed</members>
+        <members>Opportunity.Retail_Others</members>
+        <members>Opportunity.Retail_Others_Closed</members>
+        <members>Opportunity.Retail_Retentions</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>LeadSource</members>
+        <name>StandardValueSet</name>
     </types>
     <version>58.0</version>
 </Package>

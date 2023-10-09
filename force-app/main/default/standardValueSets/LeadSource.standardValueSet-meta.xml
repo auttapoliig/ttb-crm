@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>by Sale Management</fullName>
+        <default>false</default>
+        <label>by Sale Management</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Campaign</fullName>
+        <default>false</default>
+        <label>Campaign</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CM Referral</fullName>
+        <default>false</default>
+        <label>CM Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Credit System</fullName>
+        <default>false</default>
+        <label>Credit System</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event</fullName>
+        <default>false</default>
+        <label>Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketing event</fullName>
+        <default>false</default>
+        <label>Marketing event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer from branch</fullName>
+        <default>false</default>
+        <label>Refer from branch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer from customer</fullName>
+        <default>false</default>
+        <label>Refer from customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer from RM/BDM</fullName>
+        <default>false</default>
+        <label>Refer from RM/BDM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer from RMC</fullName>
+        <default>false</default>
+        <label>Refer from RMC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer from TBANK</fullName>
+        <default>false</default>
+        <label>Refer from TBANK</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Walk In / Call in</fullName>
+        <default>false</default>
+        <label>Walk In / Call in</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Walk-in customer</fullName>
+        <default>false</default>
+        <label>Walk-in customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Others Referral</fullName>
+        <default>false</default>
+        <label>Others Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <label>Others</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refer within Commercial</fullName>
+        <default>false</default>
+        <label>Refer within Commercial</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Biztouch</fullName>
+        <default>false</default>
+        <label>Biztouch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hiring Lead</fullName>
+        <default>false</default>
+        <label>Hiring Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ลูกค้าเดิมจากที่อื่นๆ</fullName>
+        <default>false</default>
+        <label>ลูกค้าเดิมจากที่อื่นๆ</label>
+    </standardValue>
+    <standardValue>
+        <fullName>คนรู้จัก</fullName>
+        <default>false</default>
+        <label>คนรู้จัก</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EDM</fullName>
+        <default>false</default>
+        <label>EDM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FB Boost Post</fullName>
+        <default>false</default>
+        <label>FB Boost Post</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FB Dark post</fullName>
+        <default>false</default>
+        <label>FB Dark post</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Line</fullName>
+        <default>false</default>
+        <label>Line</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SEM</fullName>
+        <default>false</default>
+        <label>SEM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SMS</fullName>
+        <default>false</default>
+        <label>SMS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Organic</fullName>
+        <default>false</default>
+        <label>Organic</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TBANK</fullName>
+        <default>false</default>
+        <label>TBANK</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Touch</fullName>
+        <default>false</default>
+        <label>Touch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </standardValue>
+</StandardValueSet>
