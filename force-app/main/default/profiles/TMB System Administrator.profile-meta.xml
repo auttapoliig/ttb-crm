@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <viewAllRecords>true</viewAllRecords>
+        <object>Retail_Instant_lending_Manual__c</object>
+    </objectPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>T_Performance_Target_Product_by_Team__c.Zone_Name__c</field>
+        <field>Retail_Instant_lending_Manual__c.Lending_Privileges_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>T_Performance_Target_Product_by_Team__c.Region_Name__c</field>
+        <field>Retail_Instant_lending_Manual__c.Promotion_Condition_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>T_Performance_Target_Product_by_Team__c.Branch_Team_Name__c</field>
+        <field>Retail_Instant_lending_Manual__c.As_of_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
 </Profile>

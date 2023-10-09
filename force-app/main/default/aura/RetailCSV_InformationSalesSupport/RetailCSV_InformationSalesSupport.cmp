@@ -310,6 +310,48 @@
                         </div>
                     </lightning:layoutItem>
 
+                    <!-- promotion/condition -->
+                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
+                        size="{!v.deviceSize.size}">
+                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
+                            <label class="slds-form-element__label">{!$Label.c.cyc_promo_cond}</label>
+                            <!--<aura:if isTrue="{!v.dataFields.CYC_Campaign_PromoCond_api.isAccessible}">
+                                <lightning:helptext content="Test Krub" />
+                            </aura:if>-->
+                            <div class="slds-form-element__control custom_form">
+                                <aura:if isTrue="{!v.dataFields.CYC_Campaign_PromoCond_api.isAccessible}">
+                                    <div class="slds-form-element__static">
+                                        <!-- {!v.dataFields.TMB_Customer_ID_PE__c.value}<br/> -->
+                                        <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}"  />
+                                        <aura:if isTrue="{!v.pro_con != ''}">
+                                            <br/>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
+                                                <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
+                                            <aura:set attribute="else">
+                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
+                                                    <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
+                                                    <aura:set attribute="else">
+                                                        <span style="color :red;font-weight: bold;">
+                                                            {!$Label.c.cyc_promo_apifail}                                           
+                                                        </span>
+                                                        <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
+                                                    </aura:set>
+                                                </aura:if>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-form-element__static">
+                                            <lightning:formattedText value="{!$Label.c.Data_Condition_Hidden_Text}" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if> 
+
+                            </div>
+                        </div>
+                    </lightning:layoutItem>
+
                     <!-- RTL_Privilege2__c -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
@@ -672,7 +714,7 @@
                                 <aura:if isTrue="{!v.dataFields.CYC_Campaign_PromoCond_api.isAccessible}">
                                     <div class="slds-form-element__static">
                                         <!-- {!v.dataFields.TMB_Customer_ID_PE__c.value}<br/> -->
-                                        <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}" />
+                                        <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}"  />
                                         <aura:if isTrue="{!v.pro_con != ''}">
                                             <br/>
                                         </aura:if>

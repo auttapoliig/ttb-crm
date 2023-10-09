@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>RTL_Power_Bi_Error_No_Access</fullName>
-        <categories>Power Bi</categories>
+        <fullName>cyc_promo_cond</fullName>
+        <categories>CallCenter_CSV</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>RTL_Power_Bi_Error_No_Access</shortDescription>
-        <value>You do not have permission to access!!</value>
-    </labels>
-    <labels>
-        <fullName>RTL_Power_Bi_subject</fullName>
-        <categories>Power Bi</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>RTL_Power_Bi_subject</shortDescription>
-        <value>Hot Link to &quot;Power BI&quot; แหล่วงรวมข้อแนะนำเพื่อการนำเสนอผลิตภัณฑ์ต่างๆ ให้กับลูกค้า</value>
-    </labels>
-    <labels>
-        <fullName>ERROR_SEGMENT</fullName>
-        <categories>Account</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ERROR_SEGMENT</shortDescription>
-        <value>พนักงานที่ถูก assign งานอยู่ใน  branch/zone  ที่ยังไม่มีการกำหนดใน sub segment mapping</value>
+        <shortDescription>CYC Promo/Cond</shortDescription>
+        <value>Promotion/Condition</value>
     </labels>
     <labels>
         <fullName>AFYP</fullName>

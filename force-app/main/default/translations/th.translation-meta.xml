@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>สิทธิพิเศษสำหรับผลิตภัณฑ์สินเชื่อรถยนต์/บ้าน</label>
+        <name>cyc_promo_cond</name>
+    </customLabels>
+</Translations>
