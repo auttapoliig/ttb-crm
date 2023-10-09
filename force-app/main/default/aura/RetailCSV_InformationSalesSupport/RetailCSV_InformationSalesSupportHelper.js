@@ -101,7 +101,7 @@
             });
             $A.enqueueAction(action);
         });
-    },
+    }, 
 
     getInstantLendingManual: function (component, event, helper, field){
         var action = component.get('c.getRILendingManualData');
@@ -473,7 +473,7 @@
                 if( component.isValid() && state == "SUCCESS" && returnValue != null){
                     if(returnValue.description == 'Unauthorized'){
                         if(round < numOfRetryTime){
-                            response_value.promotion_condition = "Retry round : " + round;
+                            response_value.promotion_condition = `Error getting data, retrying... ('${round}')`;
                             response_status.cyc_status = "SUCCESS";
                             this.retryCallCYCCampaignMapingInq(component, event, helper, ObjectField, round+1);
                         }

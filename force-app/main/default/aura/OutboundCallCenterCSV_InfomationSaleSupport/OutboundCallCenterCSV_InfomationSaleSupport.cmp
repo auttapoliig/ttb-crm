@@ -662,7 +662,8 @@
                                                 -
                                                 <aura:set attribute="else">
                                                     <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'LOAD'}">
-                                                            <lightning:spinner alternativeText="Loading" size="small" />                                                         
+                                                        {!v.CYCCampaignMappingInq.promotion_condition}                                                       
+                                                            <lightning:spinner alternativeText="Loading" size="small" />  
                                                         <aura:set attribute="else">
                                                             <span style="color :red;font-weight: bold;">
                                                                 {!$Label.c.cyc_promo_apifail}                                           

@@ -346,6 +346,7 @@
                 if(returnValue.description == 'Unauthorized' && round < numOfRetryTime){   
                     round += 1;
                     response_value.promotion_condition = 'Error getting data, retrying... ('+round+')';
+                    response_status.cyc_status = 'LOAD';
                     window.setTimeout(
                         $A.getCallback(function() {
                             helper.CallCYCCampaignMapingInq(component,event,helper,ObjectField,round);
