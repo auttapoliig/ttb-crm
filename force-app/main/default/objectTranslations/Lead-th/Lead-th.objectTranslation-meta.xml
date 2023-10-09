@@ -4,4 +4,58 @@
         <plural>false</plural>
         <value>รายชื่อเป้าหมาย</value>
     </caseValues>
+    <layouts>
+        <layout>Retail Leads</layout>
+        <sections>
+            <label>ข้อมูลโปรแกรมส่งเสริมการขาย</label>
+            <section>Campaign-Related</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการแนะนำลูกค้ากลุ่มธุรกิจ</label>
+            <section>Commercial Referral</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลช่องทางที่ประสงค์ให้ทำการติดต่อ</label>
+            <section>Contact Address</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์ที่สนใจ</label>
+            <section>Interested Product</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</label>
+            <section>Leasing Product Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลแหล่งที่มาและการติดต่อ</label>
+            <section>Source &amp; Contact Result</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Retail Leads - Read Only</layout>
+        <sections>
+            <label>ข้อมูลโปรแกรมส่งเสริมการขาย</label>
+            <section>Campaign-Related</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการแนะนำลูกค้ากลุ่มธุรกิจ</label>
+            <section>Commercial Referral</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลช่องทางที่ประสงค์ให้ทำการติดต่อ</label>
+            <section>Contact Address</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์ที่สนใจ</label>
+            <section>Interested Product</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</label>
+            <section>Leasing Product Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลแหล่งที่มาและการติดต่อ</label>
+            <section>Source &amp; Contact Result</section>
+        </sections>
+    </layouts>
 </CustomObjectTranslation>

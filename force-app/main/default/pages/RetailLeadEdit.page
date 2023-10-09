@@ -171,13 +171,16 @@
                 <apex:inputField value="{!Lead.RTL_AL_wanted_amount__c}" styleClass="inputFields" />
                 <apex:inputField value="{!Lead.RTL_AL_car_plate_no__c}" styleClass="inputFields" />
                 <apex:inputField value="{!Lead.RTL_AL_max_set_up_amount__c}" styleClass="inputFields" />
-                
-                <apex:inputHidden />
+                <apex:inputField value="{!Lead.RTL_AL_province_car_plate_no__c}" styleClass="inputFields" />
                 <apex:inputField value="{!Lead.RTL_AL_normal_price__c}" styleClass="inputFields" />
                 <apex:inputHidden />
                 <apex:inputField value="{!Lead.RTL_AL_installment_amount__c}" styleClass="inputFields" />
                 <apex:inputHidden />
                 <apex:inputField value="{!Lead.RTL_AL_installment_periods__c}" styleClass="inputFields" />
+                <apex:inputHidden />
+                <apex:inputField value="{!Lead.RTL_AL_Car_Status__c}" styleClass="inputFields" />
+                <apex:inputHidden />
+                <apex:inputField value="{!Lead.RTL_AL_Leasing_Condition__c}" styleClass="inputFields" />
             </apex:pageblocksection>
 
             <apex:pageblocksection title="{!$Label.ContactAddress_Title}" columns="{!displayS1}">

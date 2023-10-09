@@ -131,7 +131,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                     RefstartDate = Datetime.now();
                     callhttpReferral(eachRef);
                 }catch(Exception e){
-                    System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e + ' || ' + e.getLineNumber());
+                    System.debug('TRY FAIL : ' + COUNT_RETRY + ' : '+  e);
                     Datetime ErrDateTime = Datetime.now();
                     //String ErrMsg = null;
                     if(e.getMessage().contains('Failed Cache.Org.put()') || e.getMessage().contains('Read timed out')){
@@ -320,11 +320,9 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
         }
 
         String cmid = ref.RTL_Campaign_Member__c ;
-        List<CampaignMember> cmb = [SELECT RTL_Web_Unique_ID__c,LGS_Partner__c,LGS_Lead_Received_Time__c,RTL_AL_Interested_Rate__c,LGS_001__c,LGS_002__c,LGS_003__c,LGS_004__c,
+        List<CampaignMember> cmb = [SELECT RTL_Web_Unique_ID__c,LGS_Lead_Received_Time__c,RTL_AL_Interested_Rate__c,LGS_001__c,LGS_002__c,LGS_003__c,LGS_004__c,
                             LGS_005__c,LGS_006__c,LGS_007__c,LGS_008__c,LGS_009__c,LGS_010__c,LGS_011__c,LGS_012__c,LGS_013__c,LGS_014__c,LGS_015__c,
-                            LGS_016__c,LGS_017__c,LGS_018__c,LGS_019__c,LGS_020__c,LGS_Assignment_Code__c,LGS_LinkInfo__c,LGS_BrandCode__c,
-                            LGS_BrandShowroomCode__c,LGS_PartnerCode__c,LGS_Child_Campaign_ID__c,RTL_W2L_Campaign_Name__c,Lead_Score__c,Lead_Score_level__c,LGS_VIN_No__c,LGS_File_Upload__c,
-                            LGS_Campaign_Start_Date__c,LGS_Campaign_End_Date__c   
+                            LGS_016__c,LGS_017__c,LGS_018__c,LGS_019__c,LGS_020__c,LGS_Campaign_Start_Date__c,LGS_Campaign_End_Date__c   
                             FROM CampaignMember WHERE ID =: cmid LIMIT 1];
 
         return new Map<String, Object> {
@@ -354,7 +352,7 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             'Name'=> FName,
             'Surname'=> LName,
             'MobileNo'=> ref.RTL_Mobile1__c != null ? ref.RTL_Mobile1__c : null,
-            'Email'=> ref.RTL_Account_Name__c != null ? ref.RTL_Account_Name__r.Email_Address_PE__c != null ? ref.RTL_Account_Name__r.Email_Address_PE__c : '' : '',
+            'Email'=> ref.RTL_Email__c != null ? ref.RTL_Email__c : null,
             'ContactPeriod'=> ref.RTL_AL_available_time__c != null ? ref.RTL_AL_available_time__c : '',
             'ContactZipcode'=> ref.RTL_AL_ContactZipcode__c != null ? ref.RTL_AL_ContactZipcode__c : '',
             'ContactProvince'=> ref.RTL_AL_ContactProvince__c != null ? ref.RTL_AL_ContactProvince__c : '',
@@ -379,12 +377,11 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             'RTLComment' => ref.RTL_Comment__c != null ? ref.RTL_Comment__c : '',
             'RTLComment2' => ref.RTL_Comment2__c != null ? ref.RTL_Comment2__c : '',
             'RTLComment3' => ref.RTL_Comment3__c != null ? ref.RTL_Comment3__c : '',
-
             //Add from LGS
-            'LGS_Partner'=> cmb.size() > 0 ? cmb[0].LGS_Partner__c != null ? cmb[0].LGS_Partner__c : RefLGSPartner : RefLGSPartner,
+            'LGS_Partner'=> ref.LGS_Partner__c != null ? ref.LGS_Partner__c : RefLGSPartner,
             'LGS_Lead_Received_Time'=> cmb.size() > 0 ? cmb[0].LGS_Lead_Received_Time__c != null ? cmb[0].LGS_Lead_Received_Time__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
-            'LGS_Campaign_Start_Date'=> cmb.size() > 0 ? cmb[0].LGS_Campaign_Start_Date__c != null ? cmb[0].LGS_Campaign_Start_Date__c : null : null,
-            'LGS_Campaign_End_Date'=> cmb.size() > 0 ? cmb[0].LGS_Campaign_End_Date__c != null ? cmb[0].LGS_Campaign_End_Date__c : null : null,
+            'LGS_Campaign_Start_Date' => cmb.size() > 0 ? cmb[0].LGS_Campaign_Start_Date__c  : null,
+            'LGS_Campaign_End_Date' => cmb.size() > 0 ? cmb[0].LGS_Campaign_End_Date__c  : null,
             'LGS_Interest' => cmb.size() > 0 ? cmb[0].RTL_AL_Interested_Rate__c != null ? cmb[0].RTL_AL_Interested_Rate__c : null : null,
             'LGS_001'=> cmb.size() > 0 ? cmb[0].LGS_001__c != null ? cmb[0].LGS_001__c : '' : '',
             'LGS_002'=> cmb.size() > 0 ? cmb[0].LGS_002__c != null ? cmb[0].LGS_002__c : '' : '',
@@ -406,18 +403,19 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
             'LGS_018'=> cmb.size() > 0 ? cmb[0].LGS_018__c != null ? cmb[0].LGS_018__c : null : null,
             'LGS_019'=> cmb.size() > 0 ? cmb[0].LGS_019__c != null ? cmb[0].LGS_019__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
             'LGS_020'=> cmb.size() > 0 ? cmb[0].LGS_020__c != null ? cmb[0].LGS_020__c.format('yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX', 'GMT+07:00') : null : null,
-            'LGS_Assignment_Code'=> cmb.size() > 0 ? cmb[0].LGS_Assignment_Code__c != null ? cmb[0].LGS_Assignment_Code__c : '' : '',
-            'LGS_LinkInfo'=> cmb.size() > 0 ? cmb[0].LGS_LinkInfo__c != null ? cmb[0].LGS_LinkInfo__c : '' : '',
-            'LGS_BrandCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandCode__c != null ? cmb[0].LGS_BrandCode__c : '' : '',
-            'LGS_BrandShowroomCode'=> cmb.size() > 0 ? cmb[0].LGS_BrandShowroomCode__c != null ? cmb[0].LGS_BrandShowroomCode__c : '' : '',
-            'LGS_PartnerCode'=> cmb.size() > 0 ? cmb[0].LGS_PartnerCode__c != null ? cmb[0].LGS_PartnerCode__c : '' : '',
-            'LGS_ChildCampaignID'=> cmb.size() > 0 ? cmb[0].LGS_Child_Campaign_ID__c != null ? cmb[0].LGS_Child_Campaign_ID__c : '' : '',
-            'LGS_Campaign_Name'=> cmb.size() > 0 ? cmb[0].RTL_W2L_Campaign_Name__c != null ? cmb[0].RTL_W2L_Campaign_Name__c : '' : '',
-            'LeadScore'=> cmb.size() > 0 ? cmb[0].Lead_Score__c != null ? cmb[0].Lead_Score__c : null : null,
-            'LeadScorelevel'=> cmb.size() > 0 ? cmb[0].Lead_Score_level__c != null ? cmb[0].Lead_Score_level__c : '' : '',
-            'LGS_VIN_No'=> cmb.size() > 0 ? cmb[0].LGS_VIN_No__c != null ? cmb[0].LGS_VIN_No__c : '' : '',
-            'LGS_WebUniqueID'=> cmb.size() > 0 ? cmb[0].RTL_Web_Unique_ID__c != null ? cmb[0].RTL_Web_Unique_ID__c : '' : '',
-            'LGS_File_Upload'=> cmb.size() > 0 ? cmb[0].LGS_File_Upload__c != null ? cmb[0].LGS_File_Upload__c : '' : ''
+
+            'LGS_Assignment_Code'=> ref.LGS_Assignment_Code__c != null ? ref.LGS_Assignment_Code__c : '',
+            'LGS_LinkInfo'=> ref.LGS_LinkInfo__c != null ? ref.LGS_LinkInfo__c : '',
+            'LGS_BrandCode'=> ref.LGS_BrandCode__c != null ? ref.LGS_BrandCode__c : '',
+            'LGS_BrandShowroomCode'=> ref.LGS_BrandShowroomCode__c != null ? ref.LGS_BrandShowroomCode__c : '',
+            'LGS_PartnerCode'=> ref.LGS_PartnerCode__c != null ? ref.LGS_PartnerCode__c : '',
+            'LGS_ChildCampaignID'=> ref.LGS_Child_Campaign_ID__c != null ? ref.LGS_Child_Campaign_ID__c : '',
+            'LGS_Campaign_Name'=> ref.RTL_W2L_Campaign_Name__c != null ? ref.RTL_W2L_Campaign_Name__c : '',
+            'LeadScore'=> ref.Lead_Score__c != null ? ref.Lead_Score__c : null,
+            'LeadScorelevel'=> ref.Lead_Score_level__c != null ? ref.Lead_Score_level__c : '',
+            'LGS_VIN_No'=> ref.LGS_VIN_No__c != null ? ref.LGS_VIN_No__c : '',
+            'LGS_WebUniqueID'=> ref.RTL_Web_Unique_ID__c != null ? ref.RTL_Web_Unique_ID__c : '',
+            'LGS_File_Upload'=> ref.LGS_File_Upload__c != null ? ref.LGS_File_Upload__c : ''
 
         };
     }
@@ -483,7 +481,23 @@ public with sharing class RTL_SubmitReferralToALAPPCtrl extends RTL_AL_Webservic
                 'RTL_Type__c',
                 'RTL_Campaign_Member__c',
                 'RTL_LeadSource__c',
-                'RTL_TMB_Campaign_Source__c'
+                'RTL_TMB_Campaign_Source__c',
+                'LGS_Assignment_Code__c',
+                'LGS_LinkInfo__c',
+                'LGS_BrandCode__c',
+                'LGS_BrandShowroomCode__c',
+                'LGS_PartnerCode__c',
+                'Lead_Score__c',
+                'Lead_Score_level__c',
+                'LGS_VIN_No__c',
+                'LGS_File_Upload__c',
+                'LGS_Campaign_Start_Date__c',
+                'LGS_Campaign_End_Date__c',
+                'LGS_Child_Campaign_ID__c',
+                'RTL_Web_Unique_ID__c',
+                'RTL_W2L_Campaign_Name__c',
+                'LGS_Partner__c',
+                'RTL_Email__c'
             };
         }
     }

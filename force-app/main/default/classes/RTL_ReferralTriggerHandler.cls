@@ -115,11 +115,14 @@
             List<RTL_Referral__c> referralWithCust = new List<RTL_Referral__c>();
             List<RTL_Referral__c> referralToUpdate = new List<RTL_Referral__c>();
             List<RTL_Referral__c> referralWithRetailProduct = new List<RTL_Referral__c>();
-            
+            Map<RTL_Referral__c,String> mapReferralwithcmScoreLevel = new Map<RTL_Referral__c,String>();
+            Map<String,Decimal> mapLeadLevelWithScore = new Map<String,Decimal>();
+            List<Id> obcmId = new List<Id>();
+            Map<Id,CampaignMember> outboundCampaignMember = new Map<Id,CampaignMember>();
             Set<Id> retailProductIdSet = new Set<Id>();
             Set<Id> accountIdSet = new Set<Id>();
             Set<String> accountExternalIdSet = new Set<String>();
-                List<String> multiInterestedProduct = new List<String>();
+            List<String> multiInterestedProduct = new List<String>();
             Map<String,Account> accountExtIdMap = new Map<String,Account>();
     
             for(RTL_Referral__c referral: newList){
@@ -129,8 +132,20 @@
                 referral.countsendHPAP__c = 0;
                 referral.Is_Update_Refer__c = false;
                 referral.Is_Send_to_HPAP_Done__c = true;
+                if(referral.RTL_Campaign_Member__c != null){
+                    obcmId.add(referral.RTL_Campaign_Member__c);
+                }
             }
-    
+            if(obcmId.size() > 0){
+                for(CampaignMember each : [SELECT Id,Lead_Score_LeveL__c,Lead_Score__c FROM CampaignMember WHERE Id IN: obcmId]){
+                    outboundCampaignMember.put(each.Id,each);
+                }
+            }
+
+            for(Lead_Score_Level__c each : [SELECT Name,Score_Min__c FROM Lead_Score_Level__c]){
+                mapLeadLevelWithScore.put(each.Name,each.Score_Min__c);
+            }
+
             if(accountExternalIdSet.size() > 0){
                 for(Account acct : [SELECT Id,Name,TMB_Customer_ID_PE__c FROM Account WHERE TMB_Customer_ID_PE__c IN : accountExternalIdSet]){
                     accountExtIdMap.put(acct.TMB_Customer_ID_PE__c,acct);
@@ -244,6 +259,23 @@
                 System.debug('current user branch code  : '+currentUser.RTL_Branch_Code__c );
                 //Update Over SLA from createDate with SLA days from appconfig
                 updateOverSLA(referral);
+
+                if(outboundCampaignMember.containsKey(referral.RTL_Campaign_Member__c)){
+                    CampaignMember obcm = outboundCampaignMember.get(referral.RTL_Campaign_Member__c);
+                    if(referral.Lead_Score_Level__c != obcm.Lead_Score_Level__c){
+                        // Referral to set default score
+                        if(mapLeadLevelWithScore.containsKey(referral.Lead_Score_Level__c)){
+                            referral.Lead_Score__c = mapLeadLevelWithScore.get(referral.Lead_Score_LeveL__c);
+                            referral.RTL_Lead_Score_Flag__c = true;
+                        }
+                    }
+                }
+                else{
+                    if(mapLeadLevelWithScore.containsKey(referral.Lead_Score_Level__c)){
+                        referral.Lead_Score__c = mapLeadLevelWithScore.get(referral.Lead_Score_LeveL__c);
+                        referral.RTL_Lead_Score_Flag__c = true;
+                    }
+                }
             }
             
             
@@ -286,7 +318,8 @@
         }
         
         public static void handleAfterInsert(List<RTL_Referral__c> newList){
-            
+            List<CampaignMember> listcmtoUpdateLeadScore = new List<CampaignMember>();
+            List<Lead> Leadupdatedlist = new List<Lead>();
             manualShareCreatorRecord(newList);
             sendToCallMeNowService(newList);
             String RetailCrossChannel_RecordTypeId = Schema.SObjectType.RTL_Referral__c.getRecordTypeInfosByName().get('Retail Cross Channel Referral').getRecordTypeId();
@@ -299,8 +332,37 @@
                 if((ref.RecordTypeId == RetailCrossChannel_RecordTypeId || ref.RecordTypeId == ReferToRetail_RecordTypeId) && ref.RTL_Stage__c == 'New'){
                     emailSendRefId.add(ref);
                 }
+                
+
+                if(ref.RTL_Campaign_Member__c != null && ref.RTL_Lead_Score_Flag__c != null){
+                    CampaignMember cm = new CampaignMember();
+                    cm.Id = ref.RTL_Campaign_Member__c;
+                    cm.Lead_Score__c = ref.Lead_Score__c;
+                    cm.Lead_Score_Level__c = ref.Lead_Score_LeveL__c;
+                    cm.RTL_Lead_Score_Flag__c = true;
+                    CampaignMember cmWithLead = [SELECT Id,Lead_Score__c,Lead_Score_Level__c,LeadId FROM CampaignMember WHERE Id =: cm.Id LIMIT 1];
+                    if(cmWithLead.LeadId != null){
+                        Lead updateLead = new Lead();
+                        updateLead.Id = cmWithLead.leadId;
+                        updateLead.Lead_Score__c = ref.Lead_Score__c;
+                        updateLead.Lead_Score_Level__c =ref.Lead_Score_Level__c;
+                        System.debug('Update Lead when insert ref: '+ updateLead);
+                        Leadupdatedlist.add(updateLead);
+                    }
+                    listcmtoUpdateLeadScore.add(cm);
+                }
             }
             createdReferralEmailNotification(emailSendRefId);  
+            if(listcmtoUpdateLeadScore.size() > 0){
+                update listcmtoUpdateLeadScore;  
+            }
+            if(Leadupdatedlist.size() > 0){
+                try{
+                    update Leadupdatedlist;
+                }catch(Exception e){
+                    System.debug(e.getMessage());
+                }
+            }
         }
         
         public static void handleBeforeUpdate(Map<Id,RTL_Referral__c> oldMap,Map<Id,RTL_Referral__c> newMap){
@@ -310,7 +372,8 @@
             List<RTL_Referral__c> referralOwnerChanged = new List<RTL_Referral__c>();
             List<RTL_Referral__c> referralAssign  = new List<RTL_Referral__c>();
             List<RTL_Referral__c> referralWithRetailProduct = new List<RTL_Referral__c>();
-    
+            List<RTL_Referral__c> referralCalLeadScore = new List<RTL_Referral__c>();
+
             
             Set<Id> retailProductIdSet = new Set<Id>();
             Set<Id> accountIdSet = new Set<Id>();
@@ -461,6 +524,11 @@
                     newReferral.RTL_EMP_BR_Code__c = null;
                     newReferral.RTL_Is_BM__c = false;
                 }
+
+                // LGS Set Lead Score
+                if(newReferral.Lead_Score_Level__c != null && newReferral.Lead_Score_Level__c != oldReferral.Lead_Score_Level__c && newReferral.RTL_Is_Send_To_HPAP__c == false){
+                    referralCalLeadScore.add(newReferral);
+                }
     
             }
             //If Owner Changed
@@ -500,6 +568,17 @@
                        referral.RTL_Reporting_Product__c = productMap.get(referral.RTL_Product_Name__c).Product_Group__c;
                 }
             }
+            if(referralCalLeadScore.size() > 0){
+                Map<String,Integer> mapLeadLevelwithScore = new Map<String,Integer>();
+                for(Lead_Score_Level__c lv : [SELECT Id,Name,Score_Min__c FROM Lead_Score_Level__c]){
+                    mapLeadLevelwithScore.put(lv.Name,Integer.valueOf(lv.Score_Min__c));
+                }
+                for(RTL_Referral__c ref : referralCalLeadScore){
+                    if(mapLeadLevelwithScore.containsKey(ref.Lead_Score_Level__c)){
+                        ref.Lead_Score__c = mapLeadLevelwithScore.get(ref.Lead_Score_Level__c);
+                    }
+                }
+            }
             isBeforeUpdate = true;
     
         }
@@ -510,7 +589,8 @@
             List<RTL_Referral__c> referralChangeAccontList = new List<RTL_Referral__c>();
             List<RTL_Referral__c> referralChangeOwnerList = new List<RTL_Referral__c>();
             Set<Id> refIdCallAPI = new Set<Id>();
-           
+            List<RTL_Referral__c> referraltoUpdateCMLeadScore = new List<RTL_Referral__c>();
+
             
             for(Id referralId : newMap.keySet()){ 
                 RTL_Referral__c newReferral = newMap.get(referralId);
@@ -539,6 +619,9 @@
                 if( newReferral.FNA_Activity__c != null && newReferral.RTL_Account_Name__c != oldReferral.RTL_Account_Name__c){
                     referralChangeAccontList.add(newReferral);
                 }
+                if( newReferral.Lead_Score__c != null && newReferral.Lead_Score__c != oldReferral.Lead_Score__c && newReferral.RTL_Campaign_Member__c != null && newReferral.RTL_Is_Send_To_HPAP__c == false){
+                    referraltoUpdateCMLeadScore.add(newReferral);
+                }
     
             }
             // if(refIdCallAPI.size() > 0){
@@ -559,7 +642,10 @@
             if(referralChangeOwnerList.size() > 0){
                 updateOwnerLead(referralChangeOwnerList);            
             }
-    
+            System.debug('referraltoUpdateCMLeadScore' + referraltoUpdateCMLeadScore.size());
+            if(referraltoUpdateCMLeadScore.size() > 0){
+                updateCMLeadScore(referraltoUpdateCMLeadScore);
+            }
     
             retrySendToCallMeNowService(oldMap,newMap);
             
@@ -594,7 +680,7 @@
                 each.HPAP_Reason_Description_1__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('HPAP_Reason_Description__c'));
 
                 each.RTL_Refer_Date_1__c = Datetime.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Refer_Date__c'));
-                if(each.RTL_Contact_Status__c == 'New' || each.RTL_Contact_Status__c == 'Uncontact'){
+                if(each.RTL_Contact_Status__c != 'Contact'){
                     each.RTL_Contact_Status__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Contact_Status__c'));
                     each.RTL_Reason__c = String.valueOf(newMap.get(each.RTL_Referral_ID_1__c).get('RTL_Ws_Reason__c'));
                 }
@@ -1362,6 +1448,53 @@
                     ref.RTL_AL_ContactZipcode__c = contactAddrMap.containsKey(ref.RTL_Contact_Address__c) ? contactAddrMap.get(ref.RTL_Contact_Address__c).RTL_Zipcode__c : null;
                 }
             }
+        }
+        private static void updateCMLeadScore(List<RTL_Referral__c> refList){
+    
+            Map<Id, RTL_Referral__c> referralMap = new Map<Id, RTL_Referral__c>();
+            Map<Id, RTL_Referral__c> campaignMemberMapwithRef = new Map<Id, RTL_Referral__c>();
+
+            for(RTL_Referral__c ref : refList){
+                referralMap.put(ref.id, ref);
+                campaignMemberMapwithRef.put(ref.RTL_Campaign_Member__c,ref);
+            }
+        
+            List<CampaignMember> cmlist = [SELECT Id,Lead_Score__c,Lead_Score_Level__c,LeadId FROM CampaignMember WHERE Id IN: campaignMemberMapwithRef.keySet()];
+            List<Lead> Leadupdatedlist = new List<Lead>();
+
+            for(CampaignMember cm : cmlist){
+                if(campaignMemberMapwithRef.containsKey(cm.Id)){
+                    RTL_Referral__c refupdate = campaignMemberMapwithRef.get(cm.Id);
+                    System.debug('refupdate.Lead_Score__c ' + refupdate.Lead_Score__c);
+                    cm.RTL_Lead_Score_Flag__c = true;
+                    cm.Lead_Score__c = refupdate.Lead_Score__c;
+                    cm.Lead_Score_Level__c = refupdate.Lead_Score_Level__c;
+                    if(cm.LeadId != null){
+                        Lead updateLead = new Lead();
+                        updateLead.Id = cm.leadId;
+                        updateLead.Lead_Score__c = refupdate.Lead_Score__c;
+                        updateLead.Lead_Score_Level__c =refupdate.Lead_Score_Level__c;
+                        System.debug('Update Lead : '+ updateLead);
+                        Leadupdatedlist.add(updateLead);
+                    }
+                }
+            }
+            if(cmlist.size() > 0){
+                try{
+                    System.debug('Is Lead Updated');
+                    update cmlist;
+                }catch(Exception e){
+                    System.debug(e.getMessage());
+                }
+            }
+            if(Leadupdatedlist.size() > 0){
+                try{
+                    update Leadupdatedlist;
+                }catch(Exception e){
+                    System.debug(e.getMessage());
+                }
+            }
+
         }
         
         public static void updateOverSLA(RTL_Referral__c ref){

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>เหตุผลที่ไม่สามารถติดต่อได้</label>
+    <name>RTL_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Busy line</masterLabel>
+        <translation>สายไม่ว่าง</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contact number not found</masterLabel>
+        <translation>ข้อมูลไม่มีเบอร์หรือเบอร์ครบถ้วน</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer is not available</masterLabel>
+        <translation>ลูกค้าไม่สะดวกคุย</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Do not Contact</masterLabel>
+        <translation>ไม่ประสงค์ให้ธนาคารติดต่อ  กรณีพนักงานบันทึกผลใน CSV</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate Customer</masterLabel>
+        <translation>ลูกค้าซ้ำ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Prescreening</masterLabel>
+        <translation>ข้อมูลผิดพลาด/ ลูกค้าไม่ผ่านเกณฑ์ธนาคาร</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fax</masterLabel>
+        <translation>เป็นเบอร์แฟ็กซ์</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No answer</masterLabel>
+        <translation>ลูกค้าไม่รับสาย</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation>อื่นๆ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reach Maximum Call</masterLabel>
+        <translation>ครบจำนวนครั้งที่ให้ติดต่อแล้ว</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Receiver is not prospect</masterLabel>
+        <translation>ผู้รับสายไม่ใช่ลูกค้า</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Voicemail</masterLabel>
+        <translation>เข้าบริการรับฝากข้อความ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wrong customer</masterLabel>
+        <translation>ไม่ใช่เบอร์ลูกค้า</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wrong number</masterLabel>
+        <translation>เบอร์ยังไม่เปิดใช้บริการ</translation>
+    </picklistValues>
+</CustomFieldTranslation>

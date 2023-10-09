@@ -1,0 +1,140 @@
+<aura:component controller="LeadScoringController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global">
+
+<aura:registerEvent name="leadSettingDeleteRowEvt" type="c:InquiryDeleteRowEvt" />
+<aura:registerEvent name="leadSettingAddNewRowEvt" type="c:InquiryAddNewRowEvt" />
+<aura:attribute name="LeadScoringList" type="Object[]" default="" />
+<aura:attribute name="rowIndex" type="String" default="0"/>
+<aura:attribute name="showModal" type="Boolean" default="false" />
+<aura:attribute name="showDeleteModal" type="Boolean" default="false" />
+<aura:attribute name="operation" type="String" />
+<aura:attribute name="fieldType" type="String" />
+<aura:attribute name="readonly" type="Boolean" default="true" />
+<aura:attribute name="isEdit" type="Boolean" />
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<aura:html tag="style">
+    .slds-text-title_caps {
+        text-transform: none;
+    }
+    .slds-modal__content{
+        background: white;
+        box-shadow: none !important;
+        height : 100px !important;
+    }
+    .slds-select_container .slds-select {
+        text-align: center;
+    }
+</aura:html>
+
+
+    <tr class="slds-text-title_caps">
+        <td>
+            <div style="
+            padding: 0px 0px 0px 0px;
+            text-align: center;width:100%; padding-bottom:15px">
+                <aura:if isTrue="{!v.LeadScoringList.rowIndex == 998 || v.LeadScoringList.rowIndex == 999 ||v.LeadScoringList.inputrowIndex == 998 || v.LeadScoringList.inputrowIndex == 999}">
+                    <lightning:input disabled="true"  aura:id="inputrowIndex" value="{!v.LeadScoringList.rowIndex}"  />
+                    <aura:set attribute="else">
+                    <lightning:input disabled="{!v.isEdit}"  aura:id="inputrowIndex" value="{!v.LeadScoringList.inputrowIndex}"  />      
+                    </aura:set>
+                </aura:if>
+            </div>
+        </td>
+        <td>
+            <div class="" style="width:100%; padding-bottom:15px">
+                <aura:if isTrue="{!v.LeadScoringList.rowIndex == 998 || v.LeadScoringList.rowIndex == 999 || v.LeadScoringList.inputrowIndex == 998 || v.LeadScoringList.inputrowIndex == 999}">
+                    <lightning:select  aura:id="operatorId" value="{!v.LeadScoringList.Operator}" label=""  disabled="true" onchange="{!c.onchangeOperation}">           
+                            <aura:iteration items="{!v.operation}" var="op" indexVar="index">
+                                <!-- <option value="">=</option>  -->
+                                <option value="{!op}">{!op}</option>
+                            </aura:iteration>
+                    </lightning:select>
+                    <aura:set attribute="else">
+                        <lightning:select disabled="{!v.isEdit}" aura:id="operatorId" value="{!v.LeadScoringList.Operator}" label=""  onchange="{!c.onchangeOperation}">           
+                            <aura:iteration items="{!v.operation}" var="op" indexVar="index">
+                                <!-- <option value="">=</option>  -->
+                                <option value="{!op}">{!op}</option>
+                            </aura:iteration>
+                    </lightning:select>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </td>
+        <td>
+            <div class="itemList" style="width:100%; padding-bottom:15px;">
+                <aura:if isTrue="{!v.LeadScoringList.rowIndex == 998 || v.LeadScoringList.rowIndex == 999 ||v.LeadScoringList.inputrowIndex == 998 || v.LeadScoringList.inputrowIndex == 999}">
+                    <lightning:input disabled="{!v.isEdit}" aura:id="value1Id" value="{!v.LeadScoringList.Value1}" readonly="true" />       
+                <aura:set attribute="else">
+                    <aura:if isTrue="{!v.fieldType == 'Boolean'}">
+                        <lightning:select disabled="{!v.isEdit}" aura:id="value1Id" variant="label-hidden" value="{!v.LeadScoringList.Value1}" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </lightning:select>
+                        <aura:set attribute="else">
+                            <lightning:input disabled="{!v.isEdit}" aura:id="value1Id" value="{!v.LeadScoringList.Value1}"  />       
+                        </aura:set>
+                    </aura:if>
+                </aura:set>
+            </aura:if>
+            </div>
+        </td>
+        <td>
+            <div class="itemList" style="padding-bottom:15px">
+                <lightning:input disabled="{!v.isEdit}" aura:id="value2Id" value="{!v.LeadScoringList.Value2}" readonly="{!v.readonly}" /> 
+            </div>
+        </td>
+        <td>
+            <div class="itemList" style="padding-bottom:15px">
+                <lightning:input maxlength="3"  type="number" min="0" max="100" formatter="decimal"  disabled="{!v.isEdit}" aura:id="scoreId" value="{!v.LeadScoringList.Score}" />       
+            </div>
+        </td>
+        <td>
+            <aura:if isTrue="{!v.isEdit == false}">
+                <a onclick="{!c.AddNewRow}">
+                    <lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small"
+                        alternativeText="add" />
+                    <span class="slds-assistive-text">Add Icon</span>
+                </a>
+                <aura:if isTrue="{!v.LeadScoringList.rowIndex == 998 || v.LeadScoringList.rowIndex == 999 ||v.LeadScoringList.inputrowIndex == 998 || v.LeadScoringList.inputrowIndex == 999}">            
+                    <aura:set attribute="else">
+                        <a onclick="{!c.openCFDeleteModal}" >
+                            <lightning:icon  iconName="utility:dash" class="slds-icon slds-icon_small"
+                                size="small" alternativeText="Delete" />
+                            <span class="slds-assistive-text">Delete Icon</span>
+                        </a>
+                    </aura:set>
+                </aura:if>
+            </aura:if>
+            <aura:if isTrue="{!v.showDeleteModal}">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open ">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.c.LGS_Delete_LSCD_Header}</h1>
+                        </div>
+                        <div style="text-align: center;font-size: medium;line-height: 60px;" class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            {!$Label.c.LGS_Delete_LSCD_messages}
+                        </div>
+                        <div class="slds-modal__footer"> 
+                            <button class="slds-button slds-button_neutral"
+                            onclick='{!c.onCancel}'>Cancel</button>
+                            <button class="slds-button slds-button_brand"
+                            onclick='{!c.removeRow}'>OK</button>
+                        </div>
+                    </div>    
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" style="
+                    width: 1000%;
+                    height: 1000%;
+                    opacity: 1;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: -100%;
+                    background: var(--slds-c-backdrop-color-background, var(--sds-c-backdrop-color-background, var(--slds-g-color-neutral-10-opacity-50, var(--lwc-colorBackgroundTempModalTint,rgba(8, 7, 7, 0.6)))));
+                    z-index: var(--lwc-zIndexModal,9000);
+                " role="presentation"></div>
+            </aura:if>
+        </td>
+    </tr>
+</aura:component>
