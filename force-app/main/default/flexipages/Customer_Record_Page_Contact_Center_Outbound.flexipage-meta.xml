@@ -14,16 +14,43 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>CustomButton.Account.Personalize_Timeline</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Account.Customer_Migration_Note</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Account.EditCCOutbound</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Account.Inquiry</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Account.Product_Holding_S1</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Account.RTL_Retail_Campaign_SF1</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsInNative</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
@@ -33,47 +60,53 @@
                 <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>CallCenterCSV_InfomationVerification</componentName>
+                <identifier>c_CallCenterCSV_InfomationVerification</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>RetailCSV_InformationBasic</componentName>
-                <identifier>RetailCSV_InformationBasic</identifier>
+                <componentName>OutboundCallCenterCSV_InfomationBasic</componentName>
+                <identifier>c_OutboundCallCenterCSV_InfomationBasic</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-72deae6c-cbde-4ecb-8f24-d823ada3cb1a</name>
+        <name>Facet-d465c97d-24cf-443d-8c5a-d1bc1ad4170b</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>RetailCSV_InformationAddress</componentName>
-                <identifier>RetailCSV_InformationAddress</identifier>
+                <componentName>OutboundCallCenterCSV_InfomationAddressContact</componentName>
+                <identifier>c_OutboundCallCenterCSV_InfomationAddressContact</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-c1aca082-27d1-4854-a8aa-9b654132ab51</name>
+        <name>Facet-6rn99c9swrs</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>RetailCSV_InformationSalesSupport</componentName>
-                <identifier>RetailCSV_InformationSalesSupport</identifier>
+                <componentName>OutboundCallCenterCSV_InfomationSaleSupport</componentName>
+                <identifier>c_OutboundCallCenterCSV_InfomationSaleSupport</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-b501f68d-ed02-4e98-95ac-16dcbe431c23</name>
+        <name>Facet-9vtnoucl0ev</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>RetailCSV_InformationRelationBenefits</componentName>
-                <identifier>RetailCSV_InformationRelationBenefits</identifier>
+                <componentName>OutboundCallCenterCSV_InfomationImportant</componentName>
+                <identifier>c_OutboundCallCenterCSV_InfomationImportant</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-bu5hyld2v0g</name>
+        <name>Facet-irhskn7pebb</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -121,17 +154,17 @@
                 <identifier>flexipage_visualforcePage2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-wa6vi25icmc</name>
+        <name>Facet-80331904-5bf7-4b2b-855e-7c5af79746b1</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentName>LoanTaxCertificateCSV</componentName>
-                <identifier>c_LoanTaxCertificateCSV1</identifier>
+                <identifier>c_LoanTaxCertificateCSV</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-5c63098c-183a-48a5-b380-68013e41f7d9</name>
+        <name>Facet-1b554112-36a1-4737-b347-cabdb1a7937d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -147,13 +180,21 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
-                    <value>GRID</value>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>20</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-d8mnl0z2e7o</name>
+        <name>Facet-00d2a891-c609-487b-99ae-d82ab6c29f68</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -183,7 +224,7 @@
                 <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-22f80927-ee6a-477b-a656-a564056bba0b</name>
+        <name>Facet-oa48b2yrwks</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -213,7 +254,21 @@
                 <identifier>force_relatedListSingleContainer3</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-83335fdb-7070-4887-b2fe-ad5e3fce98fe</name>
+        <name>Facet-34gmnzglddn</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-kk1yvpey4ih</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -225,7 +280,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>OpenActivities</value>
+                    <value>Customer_Complain__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
@@ -251,7 +306,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>ActivityHistories</value>
+                    <value>Verification_History__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
@@ -269,21 +324,189 @@
                 <identifier>force_relatedListSingleContainer5</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-e41a0b9e-e19a-449e-871a-b4a09d650a78</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>GRID</value>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Do_not_Contact_Infos__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer6</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-24630520-214c-4eee-ba96-c8658f047172</name>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Opportunities</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Referrals__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Interested_Products__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Histories</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Questionnaire_Forms__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>CombinedAttachments</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-25qdfzvq13h</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -295,183 +518,169 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-72deae6c-cbde-4ecb-8f24-d823ada3cb1a</value>
+                    <value>Facet-d465c97d-24cf-443d-8c5a-d1bc1ad4170b</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>ข้อมูลเบื้องต้น</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab</identifier>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-c1aca082-27d1-4854-a8aa-9b654132ab51</value>
+                    <value>Facet-6rn99c9swrs</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>ที่อยู่และหมายเลขติดต่อ</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab2</identifier>
+                <identifier>flexipage_tab3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-b501f68d-ed02-4e98-95ac-16dcbe431c23</value>
+                    <value>Facet-9vtnoucl0ev</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>ข้อมูลสนับสนุนการขาย</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab3</identifier>
+                <identifier>flexipage_tab4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-bu5hyld2v0g</value>
+                    <value>Facet-irhskn7pebb</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>ข้อมูลความสัมพันธ์/สิทธิประโยชน์</value>
+                    <value>ข้อมูลความสัมพันธ์กับลูกค้า</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab4</identifier>
+                <identifier>flexipage_tab5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-wa6vi25icmc</value>
+                    <value>Facet-80331904-5bf7-4b2b-855e-7c5af79746b1</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>PDPA &amp; Market Conduct</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab5</identifier>
+                <identifier>flexipage_tab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-5c63098c-183a-48a5-b380-68013e41f7d9</value>
+                    <value>Facet-1b554112-36a1-4737-b347-cabdb1a7937d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>Tax Consent</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab1</identifier>
+                <identifier>flexipage_tab6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-d8mnl0z2e7o</value>
+                    <value>Facet-00d2a891-c609-487b-99ae-d82ab6c29f68</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>เคส</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab6</identifier>
+                <identifier>flexipage_tab7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-22f80927-ee6a-477b-a656-a564056bba0b</value>
+                    <value>Facet-oa48b2yrwks</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>TBank เคส</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab7</identifier>
+                <identifier>flexipage_tab8</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-83335fdb-7070-4887-b2fe-ad5e3fce98fe</value>
+                    <value>Facet-34gmnzglddn</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>TBank คอมเพลน</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab8</identifier>
+                <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-e41a0b9e-e19a-449e-871a-b4a09d650a78</value>
+                    <value>Facet-kk1yvpey4ih</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>กิจกรรม</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab9</identifier>
+                <identifier>flexipage_tab10</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-24630520-214c-4eee-ba96-c8658f047172</value>
+                    <value>Facet-25qdfzvq13h</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>ข้อมูลอื่นๆ</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab10</identifier>
+                <identifier>flexipage_tab11</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-35338a50-bb9d-4cb3-a56f-084741b6b837</name>
+        <name>Facet-e7467c96-4eaf-4274-aec9-5b048dc61e75</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>PDPANotify</componentName>
-                <identifier>PDPANotify</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>CXMSurvey_For_CSV</componentName>
-                <identifier>CXMSurvey_For_CSV</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>RetailCSV_DetailCustomer</componentName>
-                <identifier>RetailCSV_DetailCustomer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
-                    <value>Facet-35338a50-bb9d-4cb3-a56f-084741b6b837</value>
+                    <value>Facet-e7467c96-4eaf-4274-aec9-5b048dc61e75</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset</identifier>
@@ -480,32 +689,14 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>retailCSVProductHolding</componentName>
-                <identifier>retailCSVProductHolding</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>mainBankInfo</componentName>
-                <identifier>mainBankInfo</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>retailCSVChartUsageLastMonth</componentName>
-                <identifier>retailCSVChartUsageLastMonth</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>sidebar</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <masterLabel>Customer Record page retail front</masterLabel>
+    <masterLabel>Customer Record Page Contact Center Outbound</masterLabel>
     <sobjectType>Account</sobjectType>
     <template>
-        <name>flexipage:recordHomeTemplateDesktop</name>
+        <name>flexipage:recordHomeSimpleViewTemplate</name>
+        <properties>
+            <name>enablePageActionConfig</name>
+            <value>false</value>
+        </properties>
     </template>
     <type>RecordPage</type>
 </FlexiPage>

@@ -27,7 +27,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
-                    <value>6</value>
+                    <value>8</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>
@@ -67,54 +67,20 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Lead.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>OpenActivities</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer</identifier>
+                <componentName>CampaignMember_CallBackIncoming</componentName>
+                <identifier>c_CampaignMember_CallBackIncoming</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Lead.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>ActivityHistories</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer2</identifier>
+                <componentName>CampaignMember_CallBackHist</componentName>
+                <identifier>c_CampaignMember_CallBackHist</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

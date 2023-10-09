@@ -48,7 +48,7 @@
                 <componentInstanceProperties>
                     <name>height</name>
                     <type>decorator</type>
-                    <value>480</value>
+                    <value>550</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>icon</name>
@@ -204,12 +204,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>popUpSearch</componentName>
-                <identifier>popUpSearch</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>backgroundComponents</name>
         <type>Background</type>
     </flexiPageRegions>

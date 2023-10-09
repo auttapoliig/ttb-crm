@@ -181,9 +181,12 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
     List<PDPAMapping__c> PDPAMapping = new List<PDPAMapping__c>();
 
     public List<PDPAStructure.PDPAconsents> pdpaForDisplay {get;set;}
+    //New Service PDPA 2023 (One Consent)
+    public List<PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent> pdpaForDisplayNew {get;set;}
     public Integer selectedConsentIdx {get;set;}
-
-    List<PDPAStructure.PDPAconsents> pdpaForHistory = New List<PDPAStructure.PDPAconsents>();
+	//New Service PDPA 2023 (One Consent)
+    //List<PDPAStructure.PDPAconsents> pdpaForHistory = New List<PDPAStructure.PDPAconsents>();
+    List<PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent> pdpaForHistory = New List<PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent>();
     
     private List<PDPA_Update_Flag_Permission__c> profileList {
         get{
@@ -213,9 +216,10 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
     Map<String,String> profileMapPreviousFlag = New Map<String, String>(); 
 
     User currentUser = new User();
-
-    public PDPAStructure.PDPAconsents pdpaViewBeforeEdit {get;set;}
-
+    
+	//New Service PDPA 2023 (One Consent)
+    //public PDPAStructure.PDPAconsents pdpaViewBeforeEdit {get;set;}
+	public PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent pdpaViewBeforeEdit {get;set;}
     public list<PDPAMapping__c> getPDPAMapping(){
         if(PDPAMapping.size() <= 0 || PDPAMapping == null){
             return [Select Name, Description__c,Display_Type__c, Template_Type__c, Description_TH__c,
@@ -277,16 +281,22 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
 
     }
 
-    public PageReference consentPDF(PDPAStructure.PDPAconsents selectedConsent)
+    //public PageReference consentPDF(PDPAStructure.PDPAconsents selectedConsent)
+    public PageReference consentPDF(PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent selectedConsent)
     {
         // [channel=RSL, consentBy=RSLU0151, consentDateTime=2021-09-11 10:51:00, consentSignDate=2021-09-11 00:00:00, decriptionEN=Consent for Disclosure of Personal Information, decriptionTH=การให้ความยินยอมในการเปิดเผยข้อมูลส่วนบุคคลตามพ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล, flag=NO, needUpdateFlag=No, needUpdateFlagReason=, type=PDPA, version=8]
         // System.debug('Selected pdpa ' + selectedConsent);
         PageReference pageRef = Page.MarketConductConsentPDF;
-        pageRef.getParameters().put('ver', selectedConsent.version);
-        pageRef.getParameters().put('type', selectedConsent.type);
+        //pageRef.getParameters().put('ver', selectedConsent.version);
+        //pageRef.getParameters().put('type', selectedConsent.type);
+        pageRef.getParameters().put('ver', selectedConsent.version_number);
+        pageRef.getParameters().put('type', selectedConsent.type_of_consent);
         pageRef.getParameters().put('via', selectedConsent.channel);
-        if(selectedConsent.consentSignDate != null) {
+        /*if(selectedConsent.consentSignDate != null) {
             pageRef.getParameters().put('grantdate', string.valueof(((Datetime)selectedConsent.consentSignDate).format('dd/MM/yyyy')));
+        }*/
+        if(selectedConsent.signup_date != null) {
+            pageRef.getParameters().put('grantdate', string.valueof(((Datetime)selectedConsent.signup_date).format('dd/MM/yyyy')));
         }
         String displayFlag = '';
         String name = '';
@@ -338,7 +348,8 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
     }
 
     public PageReference printConsentPDF() {
-        PDPAStructure.PDPAconsents selectedConsent = pdpaForDisplay.get(selectedConsentIdx);
+        PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent selectedConsent = pdpaForDisplayNew.get(selectedConsentIdx);
+        //PDPAStructure.PDPAconsents selectedConsent = pdpaForDisplay.get(selectedConsentIdx);
         saveActivityLog('Print', selectedConsent);
         return consentPDF(selectedConsent);
     }
@@ -346,7 +357,8 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
     public void sendMail() {
         // if account does not have email then hide email button
         if(validateEmail(accountObj.Email_Address_PE__c)) {
-            PDPAStructure.PDPAconsents selectedConsent = pdpaForDisplay.get(selectedConsentIdx);
+            //PDPAStructure.PDPAconsents selectedConsent = pdpaForDisplay.get(selectedConsentIdx);
+            PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent selectedConsent = pdpaForDisplayNew.get(selectedConsentIdx);
             List<String> EmailIds = new List<String>{};
         	EmailIds.add(accountObj.Email_Address_PE__c);
             PageReference ref = consentPDF(selectedConsent);
@@ -458,21 +470,27 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
         return res;	
     }
 
-    private void saveActivityLog(String activityType, PDPAStructure.PDPAconsents consentData) {
+    //private void saveActivityLog(String activityType, PDPAStructure.PDPAconsents consentData) {
+    private void saveActivityLog(String activityType, PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent consentData) {
         if(consentData != null) {
             PDPA_Activity_Log__c activity = new PDPA_Activity_Log__c(
                 Account_Id__c = accountObj.Id,
                 Description_EN__c = consentData.decriptionEN,
                 Description_TH__c = consentData.decriptionTH,
-                Version__c = consentData.version,
+                //Version__c = consentData.version,
+                Version__c = consentData.version_number,
                 Consent__c = consentData.wsCurrentFlag,
                 Activity_Channel__c = consentData.channel,
                 Activity_Type__c = activityType,
-                Consent_Type__c = consentData.type,
-                Employee_Id__c = consentData.consentBy,
-                Record_Date__c = consentData.consentDateTime,
+                //Consent_Type__c = consentData.type,
+                Consent_Type__c = consentData.type_of_consent,
+                //Employee_Id__c = consentData.consentBy,
+                Employee_Id__c = consentData.user_id,
+                //Record_Date__c = consentData.consentDateTime,
+                Record_Date__c = consentData.system_date,
                 Create_Date__c = Datetime.now(),
-                Sign_Off_Date__c = consentData.consentSignDate,
+                //Sign_Off_Date__c = consentData.consentSignDate,
+                Sign_Off_Date__c = consentData.signup_date,
                 Requested_Date__c = Date.today()
             );
             
@@ -490,13 +508,17 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
     public void viewPDPA(){
         String requestBody = '';
         String responseBody = '';
+        String NewtmbCustId = '';
         
+        system.debug('customerId : '+customerId);
+        system.debug('financialId : '+financialId);
         if(isExistingCust){          
             this.checkPrintPermission(); // check permission
             if(tmbCustId == null && pdpatype == null){
                 requestBody = '{'+  '"customerId":"' +customerId+ '",' +'"financialId":"'+financialId+'"}';
+                NewtmbCustId = financialId+customerId;
             }else{
-
+				NewtmbCustId = tmbCustId;
                 customerId = tmbCustId.substring(16,30);
                 financialId = tmbCustId.substring(0,16);
                 requestBody = '{'+  '"customerId":"' +customerId+ '",' +'"financialId":"'+financialId+'"}';
@@ -521,9 +543,18 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
                 isEdit = true;
             }
 
+            PDPAGetConsentAPI pdpaConsent = new PDPAGetConsentAPI();
+            PDPAGetConsentAPI.PDPAConsentDetail consentPDPA = pdpaConsent.callRequest(NewtmbCustId);
+            //system.debug('NewtmbCustId : '+NewtmbCustId);
+			//system.debug('consentPDPA : '+consentPDPA);
+			//
             PDPAStructure pdpaData = New PDPAStructure();
-            responseBody = callService(requestBody, 'PDPA_and_Market_Consent_getFlag');
-            System.debug('Get flag response'+responseBody);
+            PDPAGetConsentAPI.PDPAConsentDetailStatus pdpaDataNew = New PDPAGetConsentAPI.PDPAConsentDetailStatus();
+            
+            //responseBody = callService(requestBody, 'PDPA_and_Market_Consent_getFlag');
+            //responseBody = string.valueof(pdpaConsent);
+				            
+            //System.debug('Get flag response'+responseBody);
 
             isPDPAInvalidToken = responseBody.contains('invalid_token');
             if(isPDPAInvalidToken && pdpaRetryRemain <= 0) {
@@ -532,7 +563,7 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
             //Set defualt not error Thailand list
             isErrorThailandList = false;
 
-            if(responseBody != null){  
+            /*if(responseBody != null){  
                 if(responseBody.contains('"consentDateTime": ""')){
                     responseBody = responseBody.replace('"consentDateTime": ""', '"consentDateTime": null');
                 }                
@@ -548,7 +579,24 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
                     onlineLog('VIEW_PDPA_AND_MARKET_CONSENT',requestBody,responseBody);             
                 }   
 
-            }                                
+            }*/
+            /*if(responseBody != null){  
+                if(responseBody.contains('"signup_date": ""')){
+                    responseBody = responseBody.replace('"signup_date": ""', '"signup_date": null');
+                }                
+                if(responseBody.contains('"signup_date": ""')){
+                    responseBody = responseBody.replace('"signup_date": ""', '"signup_date": null');
+                }
+                try{
+                    pdpaData = PDPAStructure.parseJsontoObj(responseBody);
+                    errorMessageRespone = pdpaData.status.description; 
+                }catch(Exception e){
+                    isErrorResponse = true;
+                    errorMessageRespone = e.getMessage();  
+                    //onlineLog('VIEW_PDPA_AND_MARKET_CONSENT',requestBody,responseBody);             
+                }   
+
+            }*/
             //Response not error
             if(isErrorResponse == false){               
                 isSuccess = true;
@@ -558,10 +606,11 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
                         mapType.put(PDPAMapping[i].Name, PDPAMapping[i]);
                     }
                 }     
-
-                List<PDPAStructure.PDPAconsents> papaList = pdpaData.data.consents;
-                pdpaForDisplay = New List<PDPAStructure.PDPAconsents>();
-                for(integer i = 0; i < papaList.size(); i++){
+                
+                //List<PDPAStructure.PDPAconsents> papaList = pdpaData.data.consents;
+                //pdpaForDisplay = New List<PDPAStructure.PDPAconsents>();
+                
+                /*for(integer i = 0; i < papaList.size(); i++){
                         
                         //Check customer in Thailand list flag Y, if customer in thailand list show error in screen
                         if(papaList[i].needUpdateFlagReason == 'TS2000'){                            
@@ -611,7 +660,118 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
 
                             }
                         }                       
+                }*/ 
+                //pdpaForDisplayNew
+                // Test New PDPA OCT 2023
+                List<PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent> pdpaList = consentPDPA.customer.consents;
+                pdpaForDisplayNew = New List<PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent>();
+                system.debug('pdpaList : '+pdpaList);
+                system.debug('pdpaList : '+pdpaList.size());
+                for(PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent pdpa : pdpaList){
+                        
+                    //Check customer in Thailand list flag Y, if customer in thailand list show error in screen
+                    if(pdpa.need_update_flag_reason == 'TS2000'){                            
+                        isErrorThailandList = true;                            
+                        isErrorResponse = false;
+                        isSuccess = true;
+                        errorMessageRespone = Label.PDPA_Thailand_List_Flag;                           
+                        break;
+                    }
+
+                    pdpa.wsCurrentFlag = pdpa.flag;
+                    if(pdpa.flag == 'Y'){
+                        pdpa.flag = Label.PDPA_Accept_YES;
+                    }else if(pdpa.flag == 'N'){
+                        pdpa.flag = Label.PDPA_Accept_NO;
+                    }
+
+                     if(pdpa.need_update_flag == 'Y'){
+                        pdpa.need_update_flag = Label.PDPA_Need_Update_YES;
+                    }else if(pdpa.need_update_flag == 'N'){
+                        pdpa.need_update_flag = Label.PDPA_Need_Update_NO;
+                    }
+
+                    //Show only record in mapping
+                    if(mapType.get(pdpa.type_of_consent) != null){                            
+                        String originType = pdpa.type_of_consent;
+
+                        PDPAMapping__c newMap = new PDPAMapping__c();
+                        newMap = mapType.get(pdpa.type_of_consent);                      
+
+                        pdpa.type_of_consent = newMap.Display_Type__c;
+                        pdpa.decriptionEN = newMap.Description__c;
+                        pdpa.decriptionTH = newMap.Description_TH__c;
+                        pdpaForDisplayNew.add(pdpa);
+                        //Add 1 record to show before edit
+                        if((newMap.Display_Type__c == pdpatype && pdpatype != null )|| Test.isRunningTest()){    
+                                                   
+                            tempConsentSignDate = pdpa.signup_date;
+                            pdpaViewBeforeEdit = pdpa;
+                            pdpaForHistory.add(pdpa);                             
+                            //Default consent sign date to Today 
+                            pdpaViewBeforeEdit.signup_date = system.today(); 
+                            
+                            tempType = originType;                                  
+                            tempFlag = pdpa.flag; 
+                            needUpdateflagHistory = pdpaViewBeforeEdit.need_update_flag;                          
+
+                        }
+                        
+                    }                          
                 }
+                /*for(integer i = 0; i < pdpaList.size(); i++){
+                        
+                    //Check customer in Thailand list flag Y, if customer in thailand list show error in screen
+                    if(pdpaList[i].need_update_flag_reason == 'TS2000'){                            
+                        isErrorThailandList = true;                            
+                        isErrorResponse = false;
+                        isSuccess = true;
+                        errorMessageRespone = Label.PDPA_Thailand_List_Flag;                           
+                        break;
+                    }
+
+                    pdpaList[i].wsCurrentFlag = pdpaList[i].flag;
+                    if(pdpaList[i].flag == 'Y'){
+                        pdpaList[i].flag = Label.PDPA_Accept_YES;
+                    }else if(pdpaList[i].flag == 'N'){
+                        pdpaList[i].flag = Label.PDPA_Accept_NO;
+                    }
+
+                     if(pdpaList[i].need_update_flag == 'Y'){
+                        pdpaList[i].need_update_flag = Label.PDPA_Need_Update_YES;
+                    }else if(pdpaList[i].need_update_flag == 'N'){
+                        pdpaList[i].need_update_flag = Label.PDPA_Need_Update_NO;
+                    }
+
+                    //Show only record in mapping
+                    if(mapType.get(pdpaList[i].type_of_consent) != null){                            
+                        String originType = pdpaList[i].type_of_consent;
+
+                        PDPAMapping__c newMap = new PDPAMapping__c();
+                        newMap = mapType.get(pdpaList[i].type_of_consent);                      
+
+                        pdpaList[i].type_of_consent = newMap.Display_Type__c;
+                        pdpaList[i].decriptionEN = newMap.Description__c;
+                        pdpaList[i].decriptionTH = newMap.Description_TH__c;
+                        pdpaForDisplayNew.add(pdpaList[i]);
+                        //Add 1 record to show before edit
+                        if((newMap.Display_Type__c == pdpatype && pdpatype != null )|| Test.isRunningTest()){    
+                                                   
+                            tempConsentSignDate = Date.valueOf(pdpaList[i].signup_date);
+                            //pdpaViewBeforeEdit = pdpaList[i];
+                            //pdpaForHistory.add(pdpaList[i]);                             
+                            //Default consent sign date to Today 
+                            //pdpaViewBeforeEdit.signup_date = system.today(); 
+                            
+                            tempType = originType;                                  
+                            tempFlag = pdpaList[i].flag; 
+                            needUpdateflagHistory = pdpaViewBeforeEdit.needUpdateFlag;                          
+
+                        }
+                        
+                    }                       
+            }*/system.debug('pdpaList After loop : '+pdpaList);
+
             }
 
             try{                
@@ -638,7 +798,7 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
         HttpRequest req = new HttpRequest();
         APIGateway_Service.RequestToken request = new APIGateway_Service.RequestToken();
         request.endpoint = endPoint;        
-        system.debug('callService');
+        
         // AuthenticationToken authenTokenCalculateTools = APIGateway_Service.startCallGetTokenService('Smart_BDM_Cal_Tools_Create_Token');
         // String access_token = authenTokenCalculateTools.access_token;
         String access_token = SmartBDM_Utility.tokenKeyCalculateTools;
@@ -651,7 +811,7 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
                 return errorMessageRespone;
             }
         }
-        system.debug('callService -- access_token'+access_token);
+        
 
         Http http = new Http();
         Uuid uuidGenerateor = new Uuid();
@@ -744,10 +904,12 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
         //This is for test class only
         if(Test.isRunningTest()){  
             isEdit = true;   
-            pdpaViewBeforeEdit = new PDPAStructure.PDPAconsents();       
+            //pdpaViewBeforeEdit = new PDPAStructure.PDPAconsents();
+            pdpaViewBeforeEdit = new PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent();       
             pdpaViewBeforeEdit.flag = 'YES';
             permissionflag = 'Y';
-            pdpaViewBeforeEdit.consentSignDate = system.today();
+            //pdpaViewBeforeEdit.consentSignDate = system.today();
+            pdpaViewBeforeEdit.signup_date = system.today();
             tempType = 'PDPA-DEPOSIT';
             multiUpdate = 'PDPA';
             
@@ -807,13 +969,13 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
             isSuccess =false;
             errorMessageRespone = Label.PDPA_validate_contact_center;
             ApexPages.addmessage(new ApexPages.Message(ApexPages.Severity.ERROR,Label.PDPA_validate_contact_center));
-        }else if(pdpaViewBeforeEdit.consentSignDate != null && pdpaViewBeforeEdit.consentSignDate > System.today()){
+        }else if(pdpaViewBeforeEdit.signup_date != null && pdpaViewBeforeEdit.signup_date > System.today()){
             isSuccess =false;
             errorMessageRespone = Label.PDPA_Error_ConsentSignDate;
             ApexPages.addmessage(new ApexPages.Message(ApexPages.Severity.ERROR,Label.PDPA_Error_ConsentSignDate));
         }else{            
             
-            String consentDate = DateTime.newInstance(pdpaViewBeforeEdit.consentSignDate.year(),pdpaViewBeforeEdit.consentSignDate.month(),pdpaViewBeforeEdit.consentSignDate.day()).format('yyyy-MM-dd');
+            String consentDate = DateTime.newInstance(pdpaViewBeforeEdit.signup_date.year(),pdpaViewBeforeEdit.signup_date.month(),pdpaViewBeforeEdit.signup_date.day()).format('yyyy-MM-dd');
             if(!Test.isRunningTest()){
                 multiUpdate = mapType.get(tempType).Multiple_Update__c;
             }
@@ -846,15 +1008,20 @@ public class PDPAWebserviceCtl implements Database.AllowsCallouts{
             }            
 
             //Add log history before update PDPA flag
-            PDPAStructure.PDPAconsents pdpaUpdate = New PDPAStructure.PDPAconsents();
+            PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent pdpaUpdate = New PDPAGetConsentAPI.PDPAConsentDetailCustomerConsent();
             pdpaUpdate.flag = pdpaViewBeforeEdit.flag;
-            pdpaUpdate.type = pdpaViewBeforeEdit.type;
-            pdpaUpdate.consentBy = currentUser.Employee_ID__c;
-            pdpaUpdate.needUpdateFlag = needUpdateflagHistory;
-            pdpaUpdate.version = version;
-            pdpaUpdate.consentDateTime = system.now();
+            //pdpaUpdate.type = pdpaViewBeforeEdit.type;
+            pdpaUpdate.type_of_consent = pdpaViewBeforeEdit.type_of_consent;
+            //pdpaUpdate.consentBy = currentUser.Employee_ID__c;
+            pdpaUpdate.user_id = currentUser.Employee_ID__c;
+            //pdpaUpdate.needUpdateFlag = needUpdateflagHistory;
+            pdpaUpdate.need_update_flag = needUpdateflagHistory;
+            //pdpaUpdate.version = version;
+            pdpaUpdate.version_number = version;
+            //pdpaUpdate.consentDateTime = system.now();
+            pdpaUpdate.system_date = system.now();
             pdpaUpdate.channel = channel;
-            pdpaUpdate.consentSignDate = pdpaViewBeforeEdit.consentSignDate;
+            pdpaUpdate.signup_date = pdpaViewBeforeEdit.signup_date;
 
             pdpaForHistory.add(pdpaUpdate);                
             

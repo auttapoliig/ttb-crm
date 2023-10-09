@@ -67,9 +67,9 @@ global class pdpaCalloutUtil {
         }
         set;
     }
-    public static void getPDPAConsents(){
-        system.debug('ApiGatewayToken---'+ApiGatewayToken);
-
+    public static void getPDPAConsents(string apiToken){
+        system.debug('ApiGatewayToken---'+apiToken);
+        DateTime startTime = DateTime.now();
         //call pdpa consents service
         String requestJSONBody = '{'+
             '"initial_vector": "B04C0EA60BAC08706BB782FED77E8849"'+
@@ -83,17 +83,25 @@ global class pdpaCalloutUtil {
 
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json;charset=utf-8');
-        req.setHeader('Authorization', 'Bearer ' + ApiGatewayToken);
+        req.setHeader('Authorization', 'Bearer ' + apiToken);
         req.setHeader('request-uid', uuidGenerateor.getValue());
         req.setHeader('request-datetime', Datetime.now().format('yyyy-MM-dd\'T\'HH:mm:ss.SSSZ'));
-
+        req.setHeader('request-app-id', AppConfig__c.getValues('PDPA_ETE_Digital_App_ID').Value__c);
         req.setEndpoint('callout:PDPA_GET_Consents');
         req.setBody(requestJSONBody);
         req.setTimeout(timeout * 1000);
 
         HttpResponse res = http.send(req);
         String result = res.getBody();
+        system.debug('requestJSONBody'+requestJSONBody);
         system.debug(result);
+        system.debug(res.getStatus());
+        Boolean isSuccess = false;
+        if(res.getStatusCode()==200){
+            isSuccess = true;
+        }
+        DateTime endTime = DateTime.now();
+        onlineLog('PDPA_GET_Consents', res.getStatusCode()==200, '001100000000000000000008010686', res.getBody(), uuidGenerateor.getValue(), requestJSONBody, res.getBody(), startTime, endTime, 'callout:PDPA_GET_Consents');
     }
 
     public static Boolean isGetHistSuccess = false;

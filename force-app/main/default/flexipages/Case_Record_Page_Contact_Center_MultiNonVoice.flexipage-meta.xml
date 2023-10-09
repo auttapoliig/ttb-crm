@@ -18,10 +18,6 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>enableActionsConfiguration</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>hideChatterActions</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -117,6 +113,12 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>forceKnowledge:articleSearchDesktop</componentName>
+                <identifier>forceKnowledge_articleSearchDesktop</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

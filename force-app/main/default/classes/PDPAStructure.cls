@@ -10,8 +10,10 @@ public class PDPAStructure {
     }
 
     public class PDPAdata {
-        public String customerId {get;set;}
-        public String financialId {get;set;}
+        public String cc_id {get;set;}
+        public String rm_id {get;set;}
+        //public String customerId {get;set;}
+        //public String financialId {get;set;}
         public List<PDPAconsents> consents {get;set;}
     }
 

@@ -28,19 +28,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>MyCustomer_Tablet</componentName>
-                <identifier>c_MyCustomer_Tablet</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;span style=&quot;color: rgb(8, 0, 0); font-size: 14px;&quot;&gt;My Portfolio&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Customer Dashboard&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
@@ -68,7 +62,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;My Sales Activity&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Sales Activity&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText2</identifier>
@@ -326,10 +320,6 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>queryLimit</name>
-                    <value>5</value>
-                </componentInstanceProperties>
                 <componentName>AlertSectionCover</componentName>
                 <identifier>c_AlertSectionCover</identifier>
             </componentInstance>
@@ -359,12 +349,30 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:reportChart</componentName>
                 <identifier>flexipage_reportChart</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.UserRoleName__c}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>WA-TEAM</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRoleName__c}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>WM-TL</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRoleName__c}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>WM-TH</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Homepage_For_Pwa_Cockpit_Tablet</masterLabel>
+    <masterLabel>Home</masterLabel>
     <template>
         <name>flexipage:appHomeTemplateHeaderTwoColumns</name>
     </template>

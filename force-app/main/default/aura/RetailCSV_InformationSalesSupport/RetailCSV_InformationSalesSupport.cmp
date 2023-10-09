@@ -30,9 +30,11 @@
     }" />
     <aura:attribute name="width" type="String" description=" width of parent region" />
     <lightning:flexipageRegionInfo width="{!v.width}" />
-
+    
     <aura:attribute name="account" type="Object" />
-
+    
+    <aura:attribute name="pro_con" type="String" default=""/>
+    <aura:attribute name="lend_priv" type="String" default=""/>
 
     <aura:attribute name="isError" type="Boolean" default="false" />
     <aura:attribute name="isRerender" type="Boolean" default="false" />
@@ -335,13 +337,15 @@
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
                         <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                            <label class="slds-form-element__label">{!v.instantLendingFieldName}</label>
+                            <!-- <label class="slds-form-element__label">{!v.instantLendingFieldName}</label> -->
+                            <label class="slds-form-element__label">{!$Label.c.Instant_Lending}</label>
                             <!-- <aura:if isTrue="{! v.dataFields.RTL_Privilege2__c.inlineHelpText }">
                                 <lightning:helptext content="{! v.dataFields.RTL_Privilege2__c.inlineHelpText }" />
                             </aura:if>  -->
                             <div class="slds-form-element__control custom_form">
                                 <!-- <aura:if isTrue="{!v.dataFields.RTL_Privilege2__c.isAccessible}"> -->
                                     <div class="slds-form-element__static">
+                                        <lightning:formattedRichText value="{!v.lend_priv}"/>
                                         <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
                                             type="TEXTAREA" value="{!v.instantLendingDetail}" />
                                     </div>
@@ -668,6 +672,10 @@
                                 <aura:if isTrue="{!v.dataFields.CYC_Campaign_PromoCond_api.isAccessible}">
                                     <div class="slds-form-element__static">
                                         <!-- {!v.dataFields.TMB_Customer_ID_PE__c.value}<br/> -->
+                                        <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}" />
+                                        <aura:if isTrue="{!v.pro_con != ''}">
+                                            <br/>
+                                        </aura:if>
                                         <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                                 <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
                                             <aura:set attribute="else">
@@ -722,13 +730,14 @@
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                     size="{!v.deviceSize.size}">
                     <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                        <label class="slds-form-element__label">{!v.instantLendingFieldName}</label>
+                        <label class="slds-form-element__label">{!$Label.c.Instant_Lending}</label>
                         <!-- <aura:if isTrue="{! v.dataFields.RTL_Privilege2__c.inlineHelpText }">
                             <lightning:helptext content="{! v.dataFields.RTL_Privilege2__c.inlineHelpText }" />
                         </aura:if>  -->
                         <div class="slds-form-element__control">
                             <!-- <aura:if isTrue="{!v.dataFields.RTL_Privilege2__c.isAccessible}"> -->
                                 <div class="slds-form-element__static">
+                                    <lightning:formattedRichText value="{!v.lend_priv}"/>
                                     <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
                                         type="TEXTAREA" value="{!v.instantLendingDetail}" />
                                 </div>

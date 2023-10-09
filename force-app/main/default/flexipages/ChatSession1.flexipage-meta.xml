@@ -7,12 +7,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>iigproduct_2__ChatSession__c.iigproduct_2__Transfer_Chat</value>
                             <visibilityRule>
                                 <criteria>
@@ -21,21 +15,6 @@
                                     <rightValue>false</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Clone</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ChangeRecordType</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>PrintableView</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Share</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>RecordShareHierarchy</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -139,26 +118,38 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>iigproduct_2:LiveChatHistoryComponent</componentName>
-                <identifier>LiveChatHistoryComponent</identifier>
+                <componentInstanceProperties>
+                    <name>lookupFieldName</name>
+                    <value>iigproduct_2__ChatSession__c.iigproduct_2__Social_ID__c.iigproduct_2__Account__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleFieldName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>updateQuickActionName</name>
+                    <value>Account.EditChat</value>
+                </componentInstanceProperties>
+                <componentName>console:relatedRecord</componentName>
+                <identifier>console_relatedRecord2</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.iigproduct_2__Social_ID__r.iigproduct_2__Social_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>OneApp</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.iigproduct_2__Social_ID__r.iigproduct_2__Social_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>TOUCH</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>lookupFieldName</name>
-                    <value>iigproduct_2__ChatSession__c.iigproduct_2__Case__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>titleFieldName</name>
-                    <value>case</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>updateQuickActionName</name>
-                    <value>Case._LightningUpdateCase</value>
-                </componentInstanceProperties>
-                <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord</identifier>
+                <componentName>iigproduct_2:LiveChatHistoryComponent</componentName>
+                <identifier>LiveChatHistoryComponent</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>
