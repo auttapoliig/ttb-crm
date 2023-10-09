@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_weight__c</fullName>
+    <externalId>false</externalId>
+    <label>Summary Weight</label>
+    <summarizedField>Lead_Scoring_Condition__c.Weight__c</summarizedField>
+    <summaryForeignKey>Lead_Scoring_Condition__c.Lead_Scoring_List__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

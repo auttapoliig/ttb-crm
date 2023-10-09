@@ -1,2 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObjectTranslation></CustomObjectTranslation>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Retail Auto Loan</layout>
+        <sections>
+            <label>ข้อมูลโปรแกรมส่งเสริมการขาย</label>
+            <section>Campaign Related</section>
+        </sections>
+        <sections>
+            <label>สถานที่สะดวกให้ติดต่อกลับ</label>
+            <section>Contact Address</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลจากระบบ HPAP</label>
+            <section>HPAP System Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</label>
+            <section>Leasing Product Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการเปิดบัญชีจากฐานข้อมูลธนาคาร</label>
+            <section>Updated Account Info. from backend</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Retail Auto Loan Closed</layout>
+        <sections>
+            <label>ข้อมูลโปรแกรมส่งเสริมการขาย</label>
+            <section>Campaign Related</section>
+        </sections>
+        <sections>
+            <label>สถานที่สะดวกให้ติดต่อกลับ</label>
+            <section>Contact Address</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลจากระบบ HPAP</label>
+            <section>HPAP System Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</label>
+            <section>Leasing Product Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการเปิดบัญชีจากฐานข้อมูลธนาคาร</label>
+            <section>Updated Account Info. from backend</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

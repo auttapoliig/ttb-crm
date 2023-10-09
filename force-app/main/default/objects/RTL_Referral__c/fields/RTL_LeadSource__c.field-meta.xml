@@ -9,7 +9,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -161,11 +160,6 @@
                 <fullName>TBANK</fullName>
                 <default>false</default>
                 <label>TBANK</label>
-            </value>
-            <value>
-                <fullName>Touch</fullName>
-                <default>false</default>
-                <label>Touch</label>
             </value>
         </valueSetDefinition>
     </valueSet>

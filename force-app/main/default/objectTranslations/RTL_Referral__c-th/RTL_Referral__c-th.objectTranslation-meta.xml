@@ -4,5 +4,67 @@
         <plural>false</plural>
         <value>Referral</value>
     </caseValues>
+    <layouts>
+        <layout>Closed Retail Cross Channel Referral</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลพนักงาน Refer และ ประวัติการ refer</label>
+            <section>Employee Information</section>
+        </sections>
+        <sections>
+            <label>Retail Cross Channel : ข้อมูลลูกค้า / ผู้ติดต่อ</label>
+            <section>Retail Cross Channel : Contact / Customer Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการ Refer</label>
+            <section>ข้อมูลการ Refer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลจากระบบ HPAP</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลช่องทางที่ประสงค์ให้ทำการติดต่อ</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Retail Cross Channel Referral</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลพนักงาน Refer และ ประวัติการ refer</label>
+            <section>Employee Information</section>
+        </sections>
+        <sections>
+            <label>Retail Cross Channel: ข้อมูลผู้ติดต่อ / ลูกค้า</label>
+            <section>Retail Cross Channel :  Contact / Customer Information</section>
+        </sections>
+        <sections>
+            <label>ข้อมูลการ Refer</label>
+            <section>ข้อมูลการ Refer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลจากระบบ HPAP</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลช่องทางที่ประสงค์ให้ทำการติดต่อ</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>ข้อมูลผลิตภัณฑ์เช่าซื้อรถยนต์</section>
+        </sections>
+    </layouts>
     <nameFieldLabel></nameFieldLabel>
 </CustomObjectTranslation>

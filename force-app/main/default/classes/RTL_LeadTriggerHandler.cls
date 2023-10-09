@@ -1,5 +1,4 @@
-public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {
-    //Use without sharing to allow lead conversion from non-owner
+public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {//Use without sharing to allow lead conversion from non-owner
     /*------------------------------------------------------------------------
     Author:        Debi Prasad Baral
     Company:       Salesforce
@@ -1531,16 +1530,67 @@ public without sharing class RTL_LeadTriggerHandler extends TriggerHandler {
                     campaignMemb.RTL_AL_Leasing_Condition__c = leadObj.RTL_AL_Leasing_Condition__c;
                     campaignMemb.RTL_Partner_Branch__c = leadObj.RTL_Partner_Branch__c;
                     campaignMemb.RTL_Partner_Employee__c = leadObj.RTL_Partner_Employee__c;
-                     /** LGS WS1*/
-                    // campaignMemb.LGS_Assignment_Code__c = leadObj.LGS_Assignment_Code__c;
-                    // campaignMemb.LGS_LinkInfo__c = leadObj.LGS_LinkInfo__c;
-                    // campaignMemb.LGS_BrandCode__c = leadObj.LGS_BrandCode__c;
-                    // campaignMemb.LGS_BrandShowroomCode__c = leadObj.LGS_BrandShowroomCode__c;
-                    // campaignMemb.LGS_PartnerCode__c = leadObj.LGS_PartnerCode__c;
-                    // campaignMemb.LGS_Child_Campaign_ID__c = leadObj.LGS_Child_Campaign_ID__c;
-                    // campaignMemb.RTL_W2L_Campaign_Name__c = leadObj.RTL_W2L_Campaign_Name__c;
-                    // campaignMemb.LGS_VIN_No__c = leadObj.LGS_VIN_No__c;
-                    // campaignMemb.LGS_File_Upload__c = leadObj.LGS_File_Upload__c;
+                    
+                                    /** LGS WS2 enhancement */
+                campaignMemb.Partner_Lead_ID__c = leadObj.Partner_Lead_ID__c;
+                campaignMemb.RTL_AL_province_car_plate_no__c = leadObj.RTL_AL_province_car_plate_no__c;
+                campaignMemb.Car_Reference_No__c = leadObj.Car_Reference_No__c;
+                campaignMemb.LGS_VIN_No__c = leadObj.LGS_VIN_No__c;
+                campaignMemb.RTL_AL_DownAmt__c = leadObj.RTL_AL_DownAmt__c;
+                campaignMemb.RTL_AL_DownPercent__c = leadObj.RTL_AL_DownPercent__c;
+                campaignMemb.RTL_AL_PayPerMonth__c = leadObj.RTL_AL_PayPerMonth__c;
+                campaignMemb.RTL_AL_IsCarBooked__c = leadObj.RTL_AL_IsCarBooked__c;
+                campaignMemb.RTL_Promotion__c = leadObj.RTL_Promotion__c;
+                campaignMemb.RTL_Remark__c = leadObj.RTL_Remark__c;
+                campaignMemb.RTL_W2L_Campaign_Name__c = leadObj.RTL_W2L_Campaign_Name__c;
+                campaignMemb.LGS_Child_Campaign_ID__c = leadObj.LGS_Child_Campaign_ID__c;
+                campaignMemb.LGS_Campaign_Start_Date__c = leadObj.LGS_Campaign_Start_Date__c;
+                campaignMemb.LGS_Campaign_End_Date__c = leadObj.LGS_Campaign_End_Date__c;
+                campaignMemb.RTL_Media_Source__c = leadObj.RTL_Media_Source__c;
+                campaignMemb.RTL_Medium__c = leadObj.RTL_Medium__c;
+                campaignMemb.RTL_W2L_Content__c = leadObj.RTL_W2L_Content__c;
+                campaignMemb.RTL_W2L_Term__c = leadObj.RTL_W2L_Term__c;
+                campaignMemb.RTL_AL_Income__c = leadObj.RTL_Income__c;
+                campaignMemb.RTL_Consent__c = leadObj.RTL_Consent__c;
+                campaignMemb.RTL_Market_Conduct__c = leadObj.RTL_Market_Conduct__c;
+                campaignMemb.RTL_PDPA__c = leadObj.RTL_PDPA__c;
+                campaignMemb.RTL_TC__c = leadObj.RTL_TC__c;
+                campaignMemb.LGS_Partner__c = leadObj.LGS_Partner__c;
+                // campaignMemb.RTL_Partner_Branch_Code__c = leadObj.RTL_Partner_Branch_Code__c;
+                // campaignMemb.RTL_Partner_Employee_Code__c = leadObj.RTL_Partner_Employee_Code__c;
+                campaignMemb.LGS_Lead_Received_Time__c = leadObj.LGS_Lead_Received_Time__c;
+                campaignMemb.LGS_001__c = leadObj.LGS_001__c;
+                campaignMemb.LGS_002__c = leadObj.LGS_002__c;
+                campaignMemb.LGS_003__c = leadObj.LGS_003__c;
+                campaignMemb.LGS_004__c = leadObj.LGS_004__c;
+                campaignMemb.LGS_005__c = leadObj.LGS_005__c;
+                campaignMemb.LGS_006__c = leadObj.LGS_006__c;
+                campaignMemb.LGS_007__c = leadObj.LGS_007__c;
+                campaignMemb.LGS_008__c = leadObj.LGS_008__c;
+                campaignMemb.LGS_009__c = leadObj.LGS_009__c;
+                campaignMemb.LGS_010__c = leadObj.LGS_010__c;
+                campaignMemb.LGS_011__c = leadObj.LGS_011__c;
+                campaignMemb.LGS_012__c = leadObj.LGS_012__c;
+                campaignMemb.LGS_013__c = leadObj.LGS_013__c;
+                campaignMemb.LGS_014__c = leadObj.LGS_014__c;
+                campaignMemb.LGS_015__c = leadObj.LGS_015__c;
+                campaignMemb.LGS_016__c = leadObj.LGS_016__c;
+                campaignMemb.LGS_017__c = leadObj.LGS_017__c;
+                campaignMemb.LGS_018__c = leadObj.LGS_018__c;
+                campaignMemb.LGS_019__c = leadObj.LGS_019__c;
+                campaignMemb.LGS_020__c = leadObj.LGS_020__c;
+                campaignMemb.LGS_Assignment_Code__c = leadObj.LGS_Assignment_Code__c;
+                campaignMemb.LGS_LinkInfo__c = leadObj.LGS_LinkInfo__c;
+                campaignMemb.LGS_BrandCode__c = leadObj.LGS_BrandCode__c;
+                campaignMemb.LGS_BrandShowroomCode__c = leadObj.LGS_BrandShowroomCode__c;
+                campaignMemb.LGS_PartnerCode__c = leadObj.LGS_PartnerCode__c;
+                campaignMemb.LGS_File_Upload__c = leadObj.LGS_File_Upload__c;
+                campaignMemb.RTL_Integration_System__c = leadObj.RTL_Integration_System__c;
+                campaignMemb.Scoring_Condition_Id__c = leadObj.Scoring_Condition_Id__c;
+                campaignMemb.RTL_Partner_Branch_Code__c = leadObj.RTL_Partner_Branch_Code__c;
+                campaignMemb.RTL_Partner_Employee_Code__c = leadObj.RTL_Partner_Employee_Code__c;
+                campaignMemb.RTL_AL_Showroom__c = leadObj.RTL_AL_Showroom__c;
+                campaignMemb.RTL_AL_TentName__c = leadObj.RTL_AL_TentName__c;
     
                     campaignMemberToInsert.add(campaignMemb);
                 } 
