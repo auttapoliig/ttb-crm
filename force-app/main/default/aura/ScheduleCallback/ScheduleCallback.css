@@ -76,15 +76,3 @@
         top: -8px;
     }
 } */
-
-.THIS .customChecked{
-    background: var(--lwc-colorGray8,rgb(150, 148, 146));
-    width: .5rem;
-    height: .5rem;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: var(--lwc-borderRadiusCircle,50%);
-}

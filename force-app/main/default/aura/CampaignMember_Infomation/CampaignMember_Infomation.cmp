@@ -350,7 +350,7 @@
                 <!-- Call Back Section -->
                
                 <c:ScheduleCallback Mode="{!v.Mode}" aura:id="callbackCmp" recordId="{!v.recordId}" readonly="{!!v.isCallBack}" task="{!v.task}" marketingCode="{!v.marketingCodeOrWebUniqueId}" 
-                currentUser="{!v.currentUser}" contactStatus = "{!v.campaignMemObj.RTL_Contact_Status__c}"/>         
+                currentUser="{!v.currentUser}" />                    
                 <!-- Product In Campaign Section -->
                 <div class="{! 'slds-section' + (v.isExpanded3 ? ' slds-is-open' : '')}">
                     <h3 class="slds-section__title">
@@ -474,7 +474,7 @@
                                                                     condition="{!'AND Active__c = true AND RTL_Product_Group_Upper__c = \'' + product.productGroupUpper + '\' '}" onchange="{! c.handleSelectedProduct}"  index="{!index}"/>
                                                                 </div>
                                                             </aura:set> 
-                                                        </aura:renderIf>                        
+                                                        </aura:renderIf>                         
                                                 </aura:set>
                                                 </aura:renderIf>
                                             </td>
@@ -530,7 +530,7 @@
                                             </td>
                                             <td data-label="">
                                                 <aura:renderIf isTrue="{!product.isShowHLCALMoredetail}">
-                                                    <a id = "{!index}"  onclick="{!c.showMoreDetail}">More Detail</a>
+                                                    <a id='{!index}' onclick="{!c.showMoreDetail}">More Detail</a>
                                                 </aura:renderIf>
                                             </td>
                                         </tr>
@@ -855,7 +855,7 @@
                 </div>
                 <!-- Call Back Section -->
                 <c:ScheduleCallback Mode="{!v.Mode}" aura:id="callbackCmp" recordId="{!v.recordId}" readonly="{!!v.isCallBack}" task="{!v.task}" marketingCode="{!v.marketingCodeOrWebUniqueId}" 
-                currentUser="{!v.currentUser}" contactStatus = "{!v.campaignMemObj.RTL_Contact_Status__c}"/>
+                currentUser="{!v.currentUser}" />
 
                 <!-- Product In Campaign Section -->
                 <div class="{! 'slds-section' + (v.isExpanded3 ? ' slds-is-open' : '')}">

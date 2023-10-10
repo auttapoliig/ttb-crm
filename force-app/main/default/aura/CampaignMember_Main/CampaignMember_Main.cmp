@@ -76,9 +76,8 @@
                 <c:CampaignMember_Infomation Mode="{!v.mode}" recordId="{!v.recordId}" mcode="{!v.mcode}" task="{!v.task}" tmbCustId="{!v.tmbCustId}" isExpire="{!v.isExpire}" 
                 recordIsClosed="{!v.recordIsClosed}" recordCanNotSell="{!v.recordCanNotSell}"/>
             </div>
-            <div class="slds-col slds-size_2-of-7">           
+            <div class="slds-col slds-size_2-of-7">
                 <c:CampaignMember_History recordId="{!v.recordId}"/>
-                <c:CampaignMember_CallBackIncoming recordId="{!v.recordId}"/>
                 <c:CampaignMember_CallBackHist recordId="{!v.recordId}" />
                 <c:CampaignMember_CallLog recordId="{!v.recordId}" />
             </div>

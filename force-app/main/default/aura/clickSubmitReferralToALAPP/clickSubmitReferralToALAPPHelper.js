@@ -4,7 +4,7 @@
     },
     getRecord: function (component, event, helper) {
         var recordId = component.get("v.recordId");
-        console.log('getRecord : ' + recordId);
+        // console.log('getRecord : ' + recordId);
         var action = component.get("c.getRecord");
         action.setParams({
             recordId: recordId,
@@ -12,7 +12,7 @@
         action.setCallback(this, function (response) {
             var state = response.getState();
             if (component.isValid() && state === "SUCCESS") {
-                console.log('SUCCESS');
+                // console.log('SUCCESS');
                 var result = response.getReturnValue();
                 var isAccess = result.isAccess;
                 if (isAccess == false) {
@@ -24,10 +24,10 @@
                 var RefNo = result.RefNo;
                 var isSendDone = result.isSendDone;
 
-                console.log('Return Value :' + JSON.stringify(result));
-                console.log('Return Value isSend:' + isSend);
-                console.log('Return Value isSend Done:' + isSendDone);
-                console.log('Return Value RefNo:' + RefNo);
+                // console.log('Return Value :' + JSON.stringify(result));
+                // console.log('Return Value isSend:' + isSend);
+                // console.log('Return Value isSend Done:' + isSendDone);
+                // console.log('Return Value RefNo:' + RefNo);
                 component.set('v.isSendDone', isSendDone);
                 component.set('v.isSend', isSend);
 
@@ -49,8 +49,8 @@
                 component.set("v.isLoading", false);
             } else {
                 var error = response.getError();
-                console.log(JSON.stringify(error));
-                console.log('Err : ' + JSON.stringify(error[0].message));
+                // console.log(JSON.stringify(error));
+                // console.log('Err : ' + JSON.stringify(error[0].message));
                 component.set('v.iconName', 'action:close');
                 component.set('v.isSendDone', true);
                 component.set('v.isError', true);
@@ -65,10 +65,10 @@
             var recordId = component.get("v.recordId");
             var numOfRetryTime = parseInt($A.get('$Label.c.Number_Of_Retry_Times'));
             var retrySetTimeOut = parseInt($A.get('$Label.c.Retry_SetTimeOut'));
-            console.log(numOfRetryTime);
-            console.log(retrySetTimeOut);
+            // console.log(numOfRetryTime);
+            // console.log(retrySetTimeOut);
 
-            console.log('Send recordId : ' + recordId);
+            // console.log('Send recordId : ' + recordId);
             var action = component.get("c.submitALALPP");
             action.setParams({
                 rec: recordId,
@@ -76,14 +76,14 @@
             action.setCallback(this, function (response) {
                 var state = response.getState();
                 if (component.isValid() && state === "SUCCESS") {
-                    console.log('SUCCESS');
+                    // console.log('SUCCESS');
                     var result = response.getReturnValue();
                     var Err = result.ErrMsg;
                     var RefNo = result.RefNo;
-                    console.log('Return Value :' + JSON.stringify(result));
-                    console.log('Return Value Err:' + Err);
-                    console.log('Return Value RefNo:' + RefNo);
-                    console.log('Round:' + round);
+                    // console.log('Return Value :' + JSON.stringify(result));
+                    // console.log('Return Value Err:' + Err);
+                    // console.log('Return Value RefNo:' + RefNo);
+                    // console.log('Round:' + round);
 
                     if (result != null && RefNo != null) { // SUCCESS
                         component.set('v.iconName', 'action:approval');
@@ -119,8 +119,8 @@
                     // helper.refreshFocusedTab(component, event, helper);
                 } else {
                     var error = response.getError();
-                    console.log(JSON.stringify(error));
-                    console.log('Err : ' + JSON.stringify(error[0].pageErrors[0].message));
+                    // console.log(JSON.stringify(error));
+                    // console.log('Err : ' + JSON.stringify(error[0].pageErrors[0].message));
                     component.set('v.iconName', 'action:close');
                     component.set('v.isError', true);
                     component.set('v.errorMessage', error[0].pageErrors[0].message);

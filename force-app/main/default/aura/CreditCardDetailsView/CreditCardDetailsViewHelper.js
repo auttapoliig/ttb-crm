@@ -56,6 +56,7 @@
         var allRejected = allRes.filter(eachRes => eachRes.status == 'rejected');
         var allReason = allRejected.map(eachReason => eachReason.reason);
         var haveRejected = allRes.map(eachRes => eachRes.status == 'rejected' ? eachRes.reason : '' );
+        // console.log('all reject reason: ',haveRejected);
         var isServiceErr = allReason.some(res => res.includes('SNOW'))
         if (isServiceErr) {
             var error = $A.get('$Label.c.ERR001');
@@ -77,6 +78,7 @@
             } else {
                 if(isTimeout) {
                     var isIndexTimeout =  haveRejected.map(res => { return res.includes('{0}') ? true : false })
+                    // console.log("isIndexTimeout: ",isIndexTimeout);
                     var onRety;
                     // Check Which service timeout: [0] = get-card, [1] = get-unbilled-statement, [2] = get-summary
                     if(isIndexTimeout[0] && !isIndexTimeout[1] && !isIndexTimeout[2]) {
@@ -140,14 +142,17 @@
         var promiseGetSummary = helper.callGetSummaryService(component, helper, tmbCustId);
         Promise.allSettled([promiseGetCard, promiseGetUnbilled, promiseGetSummary])
         .then(function (callProduct) {
+            // console.log('Promise all', callProduct);
             helper.CheckErrorMsg(component, helper, callProduct);
             return 'Success';
             }
         )
         .catch(function (error) {
+            // console.log('Promise all error', error);
             return 'Error';
         })
         .then(function (PromiseMessage) {
+            // console.log('promiseMes', PromiseMessage);
             helper.stopSpinner(component);
         });
     },
@@ -158,20 +163,25 @@
         try {
             helper.callGetCardService(component, helper, tmbCustId)
             .then(function (callProduct) {
+                console.log('Promise GetCard Success', callProduct);
                 helper.CheckErrorMsg(component, helper, callProduct);
                 return 'Success';
                 },
                 function (error) {
+                console.log('Promise GetCard Unsuccess', error);
                 return 'Unsuccess';
                 }
             )
             .catch(function (error) {
+                console.log('Promise GetCard error', error);
                 return 'Error';
             })
             .then(function (PromiseMessage) {
+                console.log('promiseMes GetCard', PromiseMessage);
                 helper.stopSpinner(component);
             });
         } catch (error) {
+            console.log('GetCard Promise try error', error);
         }
     },
 
@@ -181,20 +191,25 @@
         try {
             helper.callGetUnbilledService(component, helper, tmbCustId)
             .then(function (callProduct) {
+                console.log('Promise GetCardUnbilled Success', callProduct);
                 helper.CheckErrorMsg(component, helper, callProduct);
                 return 'Success';
                 },
                 function (error) {
+                console.log('Promise GetCardUnbilled Unsuccess', error);
                 return 'Unsuccess';
                 }
             )
             .catch(function (error) {
+                console.log('Promise GetCardUnbilled error', error);
                 return 'Error';
             })
             .then(function (PromiseMessage) {
+                console.log('promiseMes GetCardUnbilled', PromiseMessage);
                 helper.stopSpinner(component);
             });
         } catch (error) {
+            console.log('GetCardUnbilled Promise try error', error);
         }
     },
 
@@ -204,20 +219,25 @@
         try {
             helper.callGetSummaryService(component, helper, tmbCustId)
             .then(function (callProduct) {
+                console.log('Promise GetSummary Success', callProduct);
                 helper.CheckErrorMsg(component, helper, callProduct);
                 return 'Success';
                 },
                 function (error) {
+                console.log('Promise GetSummary Unsuccess', error);
                 return 'Unsuccess';
                 }
             )
             .catch(function (error) {
+                console.log('Promise GetSummary error', error);
                 return 'Error';
             })
             .then(function (PromiseMessage) {
+                console.log('promiseMes GetSummary', PromiseMessage);
                 helper.stopSpinner(component);
             });
         } catch (error) {
+            console.log('GetSummary Promise try error', error);
         }
     },
 
@@ -238,19 +258,23 @@
             // var getCardData = {};
             actionGetcard.setCallback(this, function (response) {
                 var state = response.getState();
+                console.log("state from get-card",state);
                 //test mock data
                 if (component.isValid() && state === 'SUCCESS') {
                     var result = response.getReturnValue();
                     var statusCode = result.status;
                     var getCardData = result.result;
+                    console.log("result from get-card",getCardData);
                     if (getCardData) {
                         helper.setCreditDetail(component, helper, getCardData, tmbCustId)
                         .then(function (callProduct) {
+                            console.log('Set-Data Get-card Success', callProduct);
                             res(getCardData);
                             return 'Success';
                         }
                         )
                         .catch(function (error) {
+                            console.log('Set-Data Get-card ', error);
                             return 'Error';
                         })
                     }
@@ -268,18 +292,22 @@
                                 errorSavelogOrTimeout = true;
                                 helper.callGetCardService(component, helper, tmbCustId)
                                 .then(function (callProduct) {
+                                    console.log('Promise GetCard Success', callProduct);
                                     res('Retry 1st time')
                                     return 'Success';
                                     },
                                     function (error) {
+                                    console.log('Promise GetCard Unsuccess', error);
                                     rej(error)
                                     return 'Unsuccess';
                                     }
                                 )
                                 .catch(function (error) {
+                                    console.log('Promise GetCard error', error);
                                     rej($A.get('$Label.c.ERR001'))
                                     return 'Error';
                                 })
+                                console.log('Getcard Retry 1st time');
                             }
                         } else {
                             error = result.Message;
@@ -327,9 +355,11 @@
                 });
                 actionGetunbilled.setCallback(this, function (response) {
                     var state = response.getState();
+                    console.log("state from get-unbilled",state);
                     if (component.isValid() && state === 'SUCCESS') {
                         var result = response.getReturnValue();
                         // var dueDate = result.card_statement.due_date;
+                        console.log("result from get-unbilled",result);
                         var status = result.status;
                         if (status && status.status_code != 1) {
                             // result = JSON.parse(result);
@@ -350,18 +380,22 @@
                                     errorSavelogOrTimeout = true;
                                     helper.callGetUnbilledService(component, helper, tmbCustId)
                                     .then(function (callProduct) {
+                                        console.log('Promise GetCardUnbilled Success', callProduct);
                                         res('Retry 1st time')
                                         return 'Success';
                                         },
                                         function (error) {
+                                        console.log('Promise GetCardUnbilled Unsuccess', error);
                                         rej(error)
                                         return 'Unsuccess';
                                         }
                                     )
                                     .catch(function (error) {
+                                        console.log('Promise GetCardUnbilled error', error);
                                         rej($A.get('$Label.c.ERR001'))
                                         return 'Error';
                                     })
+                                    console.log('Getunbilled Retry 1st time');
                                 }
                             } else {
                                 error = result.Message;
@@ -404,12 +438,16 @@
                 }),
                 'tmbCustId': tmbCustId,
             });
+            // console.log('account id: ', component.get('v.account_id'));
             actionGetsummary.setCallback(this, function (response) {
                 var state = response.getState();
+                console.log("state from get-summary",state);
                 if (component.isValid() && state === 'SUCCESS') {
                     var result = response.getReturnValue();
                     // var status_code = (result.status.code) ? result.status.code : "1";
+                    console.log("result from get-summary", result);
                     if(result.creditCardInfo && !(Array.isArray(result.creditCardInfo))) {
+                        console.log("1st");
                         result = result.creditCardInfo
                     // if (result.creditCardInfo && result.creditCardInfo[0]) {
                         // result = result.creditCardInfo[0];
@@ -442,18 +480,22 @@
                                 errorSavelogOrTimeout = true;
                                 helper.callGetSummaryService(component, helper, tmbCustId)
                                 .then(function (callProduct) {
+                                    console.log('Promise GetSummary Success', callProduct);
                                     res('Retry 1st time')
                                     return 'Success';
                                     },
                                     function (error) {
+                                    console.log('Promise GetSummary Unsuccess', error);
                                     rej(error)
                                     return 'Unsuccess';
                                     }
                                 )
                                 .catch(function (error) {
+                                    console.log('Promise GetSummary error', error);
                                     rej($A.get('$Label.c.ERR001'))
                                     return 'Error';
                                 })
+                                console.log('Getsummary Retry 1st time');
                             }
                         } else {
                             error = ((result.Message) ? result.Message: result.status.description);
@@ -483,6 +525,7 @@
     
     generateValue: function (component, helper, result) {
         helper.doWorkspaceAPI(component, component.get('v.product').MarkedCardNumber);
+        // console.log('data: ', result)
         var CreditCardRDCProduct = new Object();
         var isEmployee = false;
         var markedCreditLimit = '-'
@@ -515,6 +558,7 @@
             // 'CardStopReason': (result.credit_card.card_status.stop_code_desc != '') ? result.credit_card.card_status.stop_code_desc: '-',
             'PreviousExpiryDate': (result.credit_card.card_status.previous_expiry_date),
         }
+        // console.log("generateValue result: ",result);     
         
         //////////////// masked CreditCard /////////////////////
         var creditcardInfo = component.get('v.fields.CreditCardInfo');
@@ -550,6 +594,7 @@
         helper.doWorkspaceAPI(component, component.get('v.product').MarkedCardNumber);
         // PayPlanRecord format: ###,### [.toLocaleString()]
         // result = result.creditCardInfo;
+        // console.log("PayPlanRecord: ", result);
         var PayPlanRecord = {
             'NumberOfNonInterestChargeTransactions': (result.numberOfNonInterestChargeTransactions == '') ? '' : ((Number(result.numberOfNonInterestChargeTransactions)).toLocaleString()),
             'AmountOfNonInterestChargeTransactions': (result.amountOfNonInterestChargeTransactions == '') ? '' : ((Number(result.amountOfNonInterestChargeTransactions)).toLocaleString()),
@@ -672,6 +717,7 @@
 			var state = response.getState();
             if(state === "SUCCESS") {
             	var watermarkHTML = response.getReturnValue();
+                // console.log('watermarkHTML: ', watermarkHTML);
 
                 var imgEncode = btoa("<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='90px' width='140px'>" +
                     "<text transform='translate(20, 65) rotate(-45)' fill='rgb(226,226,226)' font-size='30' >" + watermarkHTML + "</text></svg>");

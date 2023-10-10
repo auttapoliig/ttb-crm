@@ -19,9 +19,8 @@ access="global">
         <lightning:select name="select1" aura:id="object" label="Select Object" required="true" onchange="{!c.handleObjectChange}">
         <option >choose one...</option>
         <option value="Case">Case</option>
-        <option value="Campaign Member">Campaign Member</option>
-        <option value="Lead">Lead</option>
-        <option value="Referral">Referral</option>
+        <!-- <option value="Campaign Member">Campaign Member</option>
+        <option value="Lead">Lead</option> -->
         </lightning:select>
         <br />
 
