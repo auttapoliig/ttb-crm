@@ -426,7 +426,7 @@ applyBodyTag="false" showHeader="false" standardstylesheets="true">
                                         <!--{!cml.campaignmemberobj.RTL_Channel_Subsidiary__c} -->
                                         
                                         
-                                        <!-- <apex:outputlink value="#" rendered="{!IF(cml.campaignmemberobj.RTL_Channel_Subsidiary__c==true,true,false)}"
+                                        <apex:outputlink value="#" rendered="{!IF(cml.campaignmemberobj.RTL_Channel_Subsidiary__c==true,true,false)}"
                                             target="_parent"
                                             onClick="openOutboundTab('{!cml.campaignmemberobj.Id}');return false">
                                                 {! $Label.RTL_Campaign_CallList_Edit_Text } OB 
@@ -435,12 +435,7 @@ applyBodyTag="false" showHeader="false" standardstylesheets="true">
                                             target="_parent"
                                             onClick="openTab('{!cml.campaignmemberobj.Id}','/apex/RTL_CampaignMemberEdit?id=','Campaign Member');return false">
                                                 {! $Label.RTL_Campaign_CallList_Edit_Text }
-                                        </apex:outputlink> -->
-                                        <apex:outputlink value="#" 
-                                        target="_parent"
-                                        onClick="openCampaignMemberTab('{!cml.campaignmemberobj.Id}','/apex/RTL_CampaignMemberEdit?id=','Campaign Member');return false">
-                                            {! $Label.RTL_Campaign_CallList_Edit_Text }
-                                    </apex:outputlink>
+                                        </apex:outputlink>
                                     </div>
                                 </td>
                                 <td data-label="{!$ObjectType.Account.fields.RTL_Do_Not_Contact__c.Label} ">
@@ -1073,17 +1068,7 @@ applyBodyTag="false" showHeader="false" standardstylesheets="true">
             var url = "/one/one.app#"+encodedCompDef;
             sforce.console.openPrimaryTab(null , url, true);        
         }
-        function openCampaignMemberTab(recId,url, tabName){
-            var checkcmprofileAssign = {!campaignMemberProfileAssignment};
-            console.log('checkcmprofileAssign ' + checkcmprofileAssign)
-            if(checkcmprofileAssign){
-                console.log('open Outbound Tab')
-                openOutboundTab(recId);
-            }else{
-                console.log('open branch Tab')
-                openTab(recId,url, tabName);
-            }
-        }
+        
         
         
         function redirectToPageopenTab(recid,url, tabName)
