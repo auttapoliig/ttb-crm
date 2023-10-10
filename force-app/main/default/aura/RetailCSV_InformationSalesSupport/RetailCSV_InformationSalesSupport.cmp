@@ -30,10 +30,10 @@
     }" />
     <aura:attribute name="width" type="String" description=" width of parent region" />
     <lightning:flexipageRegionInfo width="{!v.width}" />
-
+    
     <aura:attribute name="account" type="Object" />
-
-
+    
+    
     <aura:attribute name="isError" type="Boolean" default="false" />
     <aura:attribute name="isRerender" type="Boolean" default="false" />
     <aura:if isTrue="{! v.isRerender }">
@@ -112,54 +112,6 @@
                             </div>
                         </div>
                     </lightning:layoutItem> -->
-
-                    <!-- RTL_Lifetime_Code__c -->
-                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
-                        size="{!v.deviceSize.size}">
-                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                            <label class="slds-form-element__label">{!v.dataFields.RTL_Lifetime_Code__c.label}</label>
-                            <aura:if isTrue="{! v.dataFields.RTL_Lifetime_Code__c.inlineHelpText }">
-                                <lightning:helptext content="{! v.dataFields.RTL_Lifetime_Code__c.inlineHelpText }" />
-                            </aura:if>
-                            <div class="slds-form-element__control custom_form">
-                                <aura:if isTrue="{!v.dataFields.RTL_Lifetime_Code__c.isAccessible}">
-                                    <div class="slds-form-element__static">
-                                        <c:CallCenterCSV_PillOutput aura:id="{!v.dataFields.RTL_Lifetime_Code__c.name}"
-                                            type="{!v.dataFields.RTL_Lifetime_Code__c.type}" value="{!v.dataFields.RTL_Lifetime_Code__c.value}" />
-                                    </div>
-                                    <aura:set attribute="else">
-                                        <div class="slds-form-element__static">
-                                            <lightning:formattedText value="{!$Label.c.Data_Condition_Hidden_Text}" />
-                                        </div>
-                                    </aura:set>
-                                </aura:if>
-                            </div>
-                        </div>
-                    </lightning:layoutItem>
-
-                    <!-- RTL_Lifetime_link__c -->
-                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
-                        size="{!v.deviceSize.size}">
-                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                            <label class="slds-form-element__label">{!v.dataFields.RTL_Lifetime_link__c.label}</label>
-                            <aura:if isTrue="{! v.dataFields.RTL_Lifetime_link__c.inlineHelpText }">
-                                <lightning:helptext content="{! v.dataFields.RTL_Lifetime_link__c.inlineHelpText }" />
-                            </aura:if>
-                            <div class="slds-form-element__control custom_form">
-                                <aura:if isTrue="{!v.dataFields.RTL_Lifetime_link__c.isAccessible}">
-                                    <div class="slds-form-element__static">
-                                        <c:CallCenterCSV_PillOutput aura:id="{!v.dataFields.RTL_Lifetime_link__c.name}"
-                                            type="{!v.dataFields.RTL_Lifetime_link__c.type}" value="{!v.dataFields.RTL_Lifetime_link__c.value}" />
-                                    </div>
-                                    <aura:set attribute="else">
-                                        <div class="slds-form-element__static">
-                                            <lightning:formattedText value="{!$Label.c.Data_Condition_Hidden_Text}" />
-                                        </div>
-                                    </aura:set>
-                                </aura:if>
-                            </div>
-                        </div>
-                    </lightning:layoutItem>
 
                     <!-- RTL_Credit_Card_History__c -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
@@ -342,7 +294,7 @@
                             <div class="slds-form-element__control custom_form">
                                 <!-- <aura:if isTrue="{!v.dataFields.RTL_Privilege2__c.isAccessible}"> -->
                                     <div class="slds-form-element__static">
-                                        <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
+                                                                                <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
                                             type="TEXTAREA" value="{!v.instantLendingDetail}" />
                                     </div>
                                     <!-- <aura:set attribute="else">
@@ -484,30 +436,6 @@
                             </div>
                         </div>
                     </lightning:layoutItem> -->
-
-                    <!-- RTL_Lifetime_Code__c -->
-                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
-                        size="{!v.deviceSize.size}">
-                        <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
-                            <label class="slds-form-element__label">{!v.dataFields.RTL_Lifetime_Code__c.label}</label>
-                            <aura:if isTrue="{! v.dataFields.RTL_Lifetime_Code__c.inlineHelpText }">
-                                <lightning:helptext content="{! v.dataFields.RTL_Lifetime_Code__c.inlineHelpText }" />
-                            </aura:if>
-                            <div class="slds-form-element__control">
-                                <aura:if isTrue="{!v.dataFields.RTL_Lifetime_Code__c.isAccessible}">
-                                    <div class="slds-form-element__static">
-                                        <c:CallCenterCSV_PillOutput aura:id="{!v.dataFields.RTL_Lifetime_Code__c.name}"
-                                            type="{!v.dataFields.RTL_Lifetime_Code__c.type}" value="{!v.dataFields.RTL_Lifetime_Code__c.value}" />
-                                    </div>
-                                    <aura:set attribute="else">
-                                        <div class="slds-form-element__static">
-                                            <lightning:formattedText value="{!$Label.c.Data_Condition_Hidden_Text}" />
-                                        </div>
-                                    </aura:set>
-                                </aura:if>
-                            </div>
-                        </div>
-                    </lightning:layoutItem>
 
                     <!-- RTL_Credit_Card_History__c -->
                     <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
@@ -657,7 +585,7 @@
                     </lightning:layoutItem>
 
                     <!-- Test UAN-->
-                    <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
+                                        <lightning:layoutItem class="slds-form__item slds-p-bottom_x-small slds-p-horizontal_x-small" flexibility="auto"
                         size="{!v.deviceSize.size}">
                         <div class="slds-form-element slds-form-element_horizontal slds-form-element_readonly">
                             <label class="slds-form-element__label">{!$Label.c.cyc_promo_cond}</label>
@@ -668,18 +596,18 @@
                                 <aura:if isTrue="{!v.dataFields.CYC_Campaign_PromoCond_api.isAccessible}">
                                     <div class="slds-form-element__static">
                                         <!-- {!v.dataFields.TMB_Customer_ID_PE__c.value}<br/> -->
-                                        <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
+                                                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                                 <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="{!v.CYCCampaignMappingInq.promotion_condition}" />
                                             <aura:set attribute="else">
-                                                <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
-                                                    <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
-                                                    <aura:set attribute="else">
-                                                        <span style="color :red;font-weight: bold;">
-                                                            {!$Label.c.cyc_promo_apifail}                                           
-                                                        </span>
-                                                        <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
-                                                    </aura:set>
-                                                </aura:if>
+                                                                                                    <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'INACTIVE'}">
+                                                        <c:CallCenterCSV_PillOutput aura:id="test1" type="STRING" value="-" />
+                                                        <aura:set attribute="else">
+                                                            <span style="color :red;font-weight: bold;">
+                                                                {!$Label.c.cyc_promo_apifail}                                           
+                                                            </span>
+                                                            <span id="cycException" style="display:none">{!v.CYCCampaignMappingInqStatus.description}</span>
+                                                        </aura:set>
+                                                                                                    </aura:if>
                                             </aura:set>
                                         </aura:if>
                                     </div>
@@ -729,7 +657,7 @@
                         <div class="slds-form-element__control">
                             <!-- <aura:if isTrue="{!v.dataFields.RTL_Privilege2__c.isAccessible}"> -->
                                 <div class="slds-form-element__static">
-                                    <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
+                                                                        <c:CallCenterCSV_PillOutput aura:id="Instant_lending_detail__c"
                                         type="TEXTAREA" value="{!v.instantLendingDetail}" />
                                 </div>
                                 <!-- <aura:set attribute="else">
