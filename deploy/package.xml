@@ -155,6 +155,7 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Integration_System.LGS</members>
         <members>Batch_Export_LGS.Export_Lead_Info_LGS</members>
         <name>CustomMetadata</name>    
     </types>
