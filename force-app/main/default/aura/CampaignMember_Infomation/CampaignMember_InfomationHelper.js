@@ -816,7 +816,9 @@
                     message = errors[0].message;
                 }
                 // Display the message
-                console.log('segment Error');
+                // console.log('segment Error');
+                console.error('segment Error');
+
                 // helper.displayToast(component,helper,'Error','error',message);
                 //$A.get('e.force:refreshView').fire();            
             }
@@ -1589,7 +1591,6 @@
 
     validateSaveCampaign : function(component, event, helper)
     {
-        console.log('KYB event isMerge 1547: ' + event.getParam("isMerge"));
         component.set('v.loaded', true);  
         var productList = component.get('v.productList');
         var isValidate_Info = true;
@@ -1617,8 +1618,6 @@
  
         };
 
-        console.log('KYB isMerge 1574: ' + component.get('v.isMerge'));
-
         // console.log('leadInput:',leadInput);
 
         // console.log('callbackCmp:',callbackCmp);
@@ -1632,8 +1631,6 @@
             isValidate_LeadConversion = true;
             accObj = null;
         }
-        console.log('KYB isMerge 1589: ' + component.get('v.isMerge'));
-        console.log('KYB extAccObj 1590: ' + extAccObj);
      
         var campaignMemObj = component.get('v.campaignMemObj');
 
@@ -1815,7 +1812,6 @@
                     productCrossSellList = helper.saveCrossSells(component, event, helper);
                 }
                 // component.set('v.loaded', true)
-                console.log('KYB isMerge 1772: ' + isMerge);
                 helper.saveCampaignAll(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge, leadInput);                                       
     
             }
@@ -1838,7 +1834,7 @@
 
     saveCampaignAll : function(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge , leadInput) {
         //component.set('v.loaded', true);  
-        console.log('KYB isMerge 1759: ' + component.get('v.isMerge'));
+
         var callbackCmp = component.find("callbackCmp");
         var action = component.get('c.saveCampaign');
 

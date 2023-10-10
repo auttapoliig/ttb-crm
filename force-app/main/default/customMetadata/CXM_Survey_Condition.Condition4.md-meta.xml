@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Emotion_Face__c</field>
-        <value xsi:type="xsd:string">Grey_Face</value>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>Highest_Score__c</field>

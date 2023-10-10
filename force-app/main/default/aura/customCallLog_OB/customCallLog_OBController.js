@@ -17,9 +17,9 @@
     },
     viewMoreTask : function(component, event, helper){
 
-        // var spinner = component.find("obLogacallSpinner");
-        // $A.util.toggleClass(spinner, "slds-hide");
-        component.set("v.showSpinner", false);
+        var spinner = component.find("apexSpinner");
+        $A.util.toggleClass(spinner, "slds-hide");
+
         component.set('v.recordLimit', component.get('v.expandSize'));
 
         var isViewMore = true;
@@ -27,12 +27,12 @@
     },
     viewLessTask : function(component, event, helper){
 
-        // var spinner = component.find("obLogacallSpinner");
-        // $A.util.toggleClass(spinner, "slds-hide");
-        component.set("v.showSpinner", false);
+        var spinner = component.find("apexSpinner");
+        $A.util.toggleClass(spinner, "slds-hide");
+
         component.set('v.recordLimit', component.get('v.collapseSize'));
 
         var isViewMore = false;
         helper.initTimeline(component, event, helper, isViewMore);
-    },
+    }
 })
