@@ -172,6 +172,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.RTL_AL_DownAmt__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_DownPercent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_PayPerMonth__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_IsCarBooked__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CampaignMember.RTL_Lead_Score_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -246,11 +266,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Inquiry_List__c.Is_Multiple_Records__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Inquiry_List__c.Condition__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -262,6 +277,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Inquiry_List__c.Order_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Inquiry_List__c.Is_Multiple_Records__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <objectPermissions>

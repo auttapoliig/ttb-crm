@@ -27,6 +27,7 @@
         <members>RTL_CampaignMemberTriggerHandler</members>
         <members>TestUtils</members>
         <members>CampaignMemberInfoController</members>
+        <members>RTL_LeadDistribution</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -143,6 +144,7 @@
         <members>CampaignMember.LeadSource</members>
         <members>Case.Authorize_1__c</members>
         <members>Case.Authorize_2__c</members>
+        <members>Opportunity.RTL_Hub_Name__c</members>
         <name>CustomField</name>
     </types>
     <types>
