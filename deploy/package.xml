@@ -152,6 +152,7 @@
         <members>LeadScoringItem</members>
         <members>LeadScoringSettingItem</members>
         <members>LeadScoringAddNewRowEvt</members>
+        <members>RetailCSV_InformationSalesSupport</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
