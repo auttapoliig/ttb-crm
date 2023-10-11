@@ -28,6 +28,7 @@
         <members>TestUtils</members>
         <members>CampaignMemberInfoController</members>
         <members>RTL_LeadDistribution</members>
+        <members>RTL_AL_WsOpportunity</members>
         <name>ApexClass</name>
     </types>
     <types>
