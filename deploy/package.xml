@@ -28,6 +28,12 @@
         <members>TestUtils</members>
         <members>CampaignMemberInfoController</members>
         <members>RTL_LeadDistribution</members>
+        <members>RTL_AL_WsOpportunity</members>
+        <members>CampaignMemberToALSchedule</members>
+        <members>CampaignMemberToALBatch</members>
+        <members>RTL_Distribute_CM_Batch</members>
+        <members>RTL_Distribute_CM_BatchTest</members>
+        <members>CampaignMemberToALBatchTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -145,6 +151,7 @@
         <members>Case.Authorize_1__c</members>
         <members>Case.Authorize_2__c</members>
         <members>Opportunity.RTL_Hub_Name__c</members>
+        <members>CampaignMember.RTL_AL_PayPerMonth__c</members>
         <name>CustomField</name>
     </types>
     <types>

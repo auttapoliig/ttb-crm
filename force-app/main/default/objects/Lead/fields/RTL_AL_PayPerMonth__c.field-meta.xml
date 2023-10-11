@@ -3,9 +3,9 @@
     <fullName>RTL_AL_PayPerMonth__c</fullName>
     <externalId>false</externalId>
     <label>PayPerMonth</label>
-    <precision>13</precision>
+    <precision>15</precision>
     <required>false</required>
-    <scale>0</scale>
+    <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Number</type>

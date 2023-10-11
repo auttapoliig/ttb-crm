@@ -262,7 +262,7 @@ global without sharing  class RTL_Distribute_CM_Batch extends RTL_AL_WebserviceA
                 eachCampaign.RTL_Hub_Code_1__c = (String)result.get('HubCode');
                 eachCampaign.RTL_Hub_Name_1__c = (String)result.get('HubName');
 
-                eachCampaign.RTL_Contact_Status__c = 'New';
+                // eachCampaign.RTL_Contact_Status__c = 'New';
                 eachCampaign.RTL_OfferResult_Product_1__c = 'Referred';
                 OnlineServiceLog createlog = new OnlineServiceLog(true,null,bodyRequestRaw, bodyResonseDecrypt == null || String.isEmpty(bodyResonseDecrypt) ? response.getBody() : AbstractCoreClass.serializePrettyString(bodyResonseDecrypt),eachCampaign.RTL_Marketing_Code__c);
                 lstLogDetail.add(createlog);
@@ -314,17 +314,20 @@ global without sharing  class RTL_Distribute_CM_Batch extends RTL_AL_WebserviceA
             String IdCardNo = '';
             String FirstName = '';
             String SurName = '';
+            String Email = '';
 
             if(cmb.Customer__c != null){
                 IdCardType = cmb.Customer__r.ID_Type_PE__c;
                 IdCardNo = cmb.Customer__r.ID_Number_PE__c;
                 FirstName = cmb.Customer__r.First_name_PE__c;
                 SurName = cmb.Customer__r.Last_name_PE__c;
+                Email = cmb.Customer__r.Email_Address_PE__c;
             }else if(cmb.LeadId != null){
                 IdCardType = cmb.Lead.RTL_ID_Type__c;
                 IdCardNo = cmb.Lead.RTL_Citizen_Id__c;
                 FirstName = cmb.Lead.FirstName;
                 SurName = cmb.Lead.LastName;
+                Email = cmb.Lead.RTL_Email_Address__c;
             }
             return new Map<String, Object> {
                 'RefCode'=> cmb.RTL_AL_oa_ref_code__c != null ? cmb.RTL_AL_oa_ref_code__c : '',
@@ -352,7 +355,7 @@ global without sharing  class RTL_Distribute_CM_Batch extends RTL_AL_WebserviceA
                 'Name'=> FirstName,
                 'Surname'=> SurName,
                 'MobileNo'=> cmb.RTL_CampHis_Phone__c != null ? cmb.RTL_CampHis_Phone__c : '',
-                'Email'=> cmb.Customer__c != null ? cmb.Customer__r.Email_Address_PE__c != null ? cmb.Customer__r.Email_Address_PE__c : '' : '',
+                'Email'=> Email,
                 'ContactPeriod'=> cmb.RTL_AL_available_time__c != null ? cmb.RTL_AL_available_time__c: '',
                 'ContactZipcode'=> cmb.RTL_AL_ContactZipcode__c != null ? cmb.RTL_AL_ContactZipcode__c: '',
                 'ContactProvince'=> cmb.RTL_AL_ContactProvince__c != null ? cmb.RTL_AL_ContactProvince__c : '',
@@ -369,7 +372,7 @@ global without sharing  class RTL_Distribute_CM_Batch extends RTL_AL_WebserviceA
                 'BranchProvince' => '',
                 'BranchDistrict' => '',
                 'EmpId'=> cmb.Assigned_Agent_ID__c != null && cmb.RTL_AL_contact_channel__c == 'BR' ? cmb.Assigned_Agent_ID__c : '',
-                'RMNo'=> cmb.Customer__c != null ? cmb.Customer__r.ID_Number_PE__c != null ? cmb.Customer__r.ID_Number_PE__c : '' : '',
+                'RMNo'=> cmb.Customer__c != null ? cmb.Customer__r.TMB_Customer_ID_PE__c != null ? cmb.Customer__r.TMB_Customer_ID_PE__c : '' : '',
                 'PlateNo'=> cmb.RTL_AL_car_plate_no__c != null ? cmb.RTL_AL_car_plate_no__c : '',
                 'ProvincePlateNo'=> cmb.RTL_AL_province_car_plate_no__c != null ? cmb.RTL_AL_province_car_plate_no__c :'',
                 'RTLComment'=> cmb.RTL_AL_comment__c != null ? cmb.RTL_AL_comment__c : '',
