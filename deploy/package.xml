@@ -146,6 +146,7 @@
         <members>CampaignMember.RTL_TMB_Campaign_Reference__c</members>
         <members>RTL_Referral__c.RTL_LeadSource__c</members>
         <members>Opportunity.RTL_Hub_Name__c</members>
+        <members>CampaignMember.RTL_AL_PayPerMonth__c</members>
         <name>CustomField</name>
     </types>
     <types>

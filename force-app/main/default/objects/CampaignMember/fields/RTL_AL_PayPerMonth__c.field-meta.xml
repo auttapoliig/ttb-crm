@@ -4,9 +4,9 @@
     <description>ความสามารถในการผ่อนชำระต่อเดือน</description>
     <externalId>false</externalId>
     <label>PayPerMonth</label>
-    <precision>18</precision>
+    <precision>15</precision>
     <required>false</required>
-    <scale>0</scale>
+    <scale>2</scale>
     <type>Number</type>
     <unique>false</unique>
 </CustomField>
