@@ -379,8 +379,10 @@
             response_status = (returnValue!=undefined && returnValue.status!=undefined)? returnValue.status :  response_status;
             if( component.isValid() && state == "SUCCESS" && returnValue != null){
                 if(returnValue.description == 'Unauthorized'){
-                    response_status.cyc_status = "SUCCESS";
-                    this.retryCallCYCCampaignMapingInq(component, event, helper, ObjectField, 1);
+                    let round = 1;
+                    response_value.promotion_condition = `Error getting data, retrying... (${round})`;
+                    response_status.cyc_status = "SUCCESS";                    
+                    this.retryCallCYCCampaignMapingInq(component, event, helper, ObjectField, round + 1);
                 }
                 else if( returnValue != undefined && returnValue.status != undefined && returnValue.status.code != undefined && statusCodeSuccess.indexOf(returnValue.status.code) >=0){
                     response_status.cyc_status = "SUCCESS";
@@ -472,8 +474,8 @@
                 response_status = (returnValue!=undefined && returnValue.status!=undefined)? returnValue.status :  response_status;
                 if( component.isValid() && state == "SUCCESS" && returnValue != null){
                     if(returnValue.description == 'Unauthorized'){
-                        if(round < numOfRetryTime){
-                            response_value.promotion_condition = `Error getting data, retrying... ('${round}')`;
+                        if(round <= numOfRetryTime){
+                            response_value.promotion_condition = `Error getting data, retrying... (${round})`;
                             response_status.cyc_status = "SUCCESS";
                             this.retryCallCYCCampaignMapingInq(component, event, helper, ObjectField, round+1);
                         }
