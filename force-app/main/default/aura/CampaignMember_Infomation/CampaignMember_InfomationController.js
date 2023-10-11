@@ -455,9 +455,9 @@
             acc_name = campaign.Customer__c;
         }
         var Email = '';
-        if(campaign.Customer__c != null){
+        if(campaign.Customer__c != null && campaign.Customer__r.Email_Address_PE__c != null){
             Email = campaign.Customer__r.Email_Address_PE__c;
-        }else if(campaign.LeadId != null){
+        }else if(campaign.LeadId != null && campaign.Lead.RTL_Email_Address__c){
             Email = campaign.Lead.RTL_Email_Address__c;
         }
         var FName = campaign.FirstName ? campaign.FirstName : '';
