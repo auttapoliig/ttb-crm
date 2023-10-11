@@ -457,7 +457,7 @@
         var Email = '';
         if(campaign.Customer__c != null && campaign.Customer__r.Email_Address_PE__c != null){
             Email = campaign.Customer__r.Email_Address_PE__c;
-        }else if(campaign.LeadId != null && campaign.Lead.RTL_Email_Address__c){
+        }else if(campaign.LeadId != null && campaign.Lead.RTL_Email_Address__c != null){
             Email = campaign.Lead.RTL_Email_Address__c;
         }
         var FName = campaign.FirstName ? campaign.FirstName : '';
