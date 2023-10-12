@@ -34,6 +34,7 @@
         <members>RTL_Distribute_CM_Batch</members>
         <members>RTL_Distribute_CM_BatchTest</members>
         <members>CampaignMemberToALBatchTest</members>
+        <members>RTL_DuplicateAccountComponentController</members>
         <name>ApexClass</name>
     </types>
     <types>
