@@ -280,6 +280,7 @@
                     />
                     <apex:actionFunction name="apexRedirect" action="{!redirectAfterSave}" />
 
+
                     <apex:actionFunction action="{!requestCampaignData}" name="requestData" reRender="saveButton,section3,saveButton2,header_title,section1_1,section1_2{!IF(currentObject.id==null,',productList','')}"
                         status="loadRequestStatus" oncomplete="refreshCampaignMemberView('{!IF(currentObject.contact.id != null,currentObject.contact.account.name,objLead.Name)}','{!CampaingNameEscaped}')"
                     />
@@ -516,6 +517,49 @@
                                         <apex:outputText value="{!currentObject.RTL_TMB_Campaign_Source__c}" />
                                     </div>
                                 </div>
+                                <!-- LGSWS2 -->
+                                <div class="col-xs-12 col-sm-6 col-md-6 paddingline">
+                                    <span class="padding-label">
+                                    </span>
+                                    <div class="padding-values">
+                                    </div>
+                                </div>
+                                <!-- Row 8 -->
+                                <apex:outputPanel id="sectionLeadScore">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.Lead_Score__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext value="{!currentObject.Lead_Score__c}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.Lead_Score_Level__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:selectList id="leadScoreSelect" value="{!currentObject.Lead_Score_Level__c}" 
+                                                multiselect="false" size="1"
+                                                styleClass="removeUnused"
+                                                onchange="passSelectedValue(this.value)" >
+                                                <apex:selectOptions value="{!options}" />
+                                            </apex:selectList>
+                                            <apex:actionFunction name="passSelectedValues" action="{!handleSelectedValue}" reRender="sectionLeadScore">
+                                                <apex:param name="selectedValueParam" value="" assignTo="{!selectedValue}" />
+                                            </apex:actionFunction>
+                                        </div>
+                                    </div>    
+                                </apex:outputPanel>
+                                <!-- Row 9 -->
+                                <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                    <span class="padding-label">
+                                        <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.LGS_Partner__c.Label}" />
+                                    </span>
+                                    <div class="padding-values">
+                                        <apex:outputText value="{!currentObject.LGS_Partner__c}" style="position:absolute;" />
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -608,6 +652,13 @@
                                 <!-- Row 3 -->
                                 <div class="slds-grid slds-wrap slds-grid_pull-padded">
                                     <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.RTL_TMB_Campaign_Reference__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext escape="false" value="{!currentObject.RTL_TMB_Campaign_Reference__c}" style="width:100%;height:100%;display: block;white-space: pre-line;"
+                                            />
+                                        </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
                                         <span class="padding-label">
@@ -620,6 +671,65 @@
                                     </div>
                                 </div>
                                 <!--END CR RTL_Personalized_Message__c-->
+                                <!-- Row 4 LGSws2-->
+                                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.LGS_Child_Campaign_ID__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext escape="false" value="{!currentObject.LGS_Child_Campaign_ID__c}" style="width:100%;height:100%;display: block;white-space: pre-line;"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.RTL_W2L_Campaign_Name__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext escape="false" value="{!currentObject.RTL_W2L_Campaign_Name__c}" style="width:100%;height:100%;display: block;white-space: pre-line;"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row 5 -->
+                                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.LGS_Campaign_Start_Date__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext escape="false" value="{0,date,yyyy'-'MM'-'dd}" style="width:100%;height:100%;display: block;white-space: pre-line;">
+                                                <apex:param value="{!currentObject.LGS_Campaign_Start_Date__c}" />
+                                            </apex:outputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                        </span>
+                                        <div class="padding-values">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row 6 -->
+                                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                            <apex:outputlabel styleclass="output-label" value="{!$ObjectType.CampaignMember.fields.LGS_Campaign_End_Date__c.Label}" />
+                                        </span>
+                                        <div class="padding-values">
+                                            <apex:outputtext escape="false" value="{0,date,yyyy'-'MM'-'dd}" style="width:100%;height:100%;display: block;white-space: pre-line;">
+                                                <apex:param value="{!currentObject.LGS_Campaign_End_Date__c}" />
+                                            </apex:outputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 paddingline" style="padding-bottom:10px;">
+                                        <span class="padding-label">
+                                        </span>
+                                        <div class="padding-values">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </apex:outputPanel>
@@ -704,10 +814,10 @@
                                                         <td data-label="{!$Label.RTL_CampaignMemberEdit_ColOpportunity} ">
                                                             <apex:outputField value="{!currentObject[each.apiOpportunity]}" />
                                                         </td>
-                                                        <td data-label="More Detail">
+                                                        <td data-label="More Detail"> 
                                                             <apex:commandLink rendered="{!((each.isMoreDetailProduct == true && each.isALProd == false && !ISNULL(objLead.RTL_W2L_Source_Collateral_Type__c)) || (each.isMoreDetailProduct == true && each.isALProd == true))}"
                                                             onclick="openMoreDetailSubTab('{!currentObject[each.apiProductName]}','{!index}');return false;">More Detail</apex:commandLink>
-                                                        </td>
+                                                          </td>
                                                     </tr>
                                                     <apex:variable var="index" value="{!index + 1}" />
                                                 </apex:repeat>
@@ -883,7 +993,7 @@
                 $(text2).val('');
                 $(text2).prop('disabled', true);
 
-                //disableSelect
+                //disableSelectcurrentObject
                 $('[id$="reasonOfferresult' + index + '"]').addClass('disableSelect');
 
             } else {
@@ -1037,13 +1147,13 @@
         function openMoreDetailSubTab(prdName,index) {
             var recId = '{!currentObject.Id}';
             var navigateTo = '';
-            // let AutoloanList = ['CYC', 'CYB', 'NEW', 'USED'];
+            // let AutoloanList = ['CYC', 'CYB', 'NEW', 'USED', 'CYC Revolving'];
             // let HomeloanList = ['Refinance Home', 'Loan Home Equity', 'Home Loan'];
             var tabName = '';
             var compDefinition;
             let AutoloanList = '{!ALPrdNameSet}';
             let HomeloanList = '{!HCALPrdNameSet}';
-
+            
             if (AutoloanList.includes(prdName)) {
                 navigateTo = 'c:CampaignMember_AutoLoanCalInfo';
                 tabName = 'Auto Loan Information';
@@ -1083,7 +1193,13 @@
                 });
             }
         }
-        function newreferral() {
+
+        function passSelectedValue(selectedValue) {
+        // Update the value of the apex:param component
+            console.log('selectedValue',selectedValue);   
+            passSelectedValues(selectedValue);
+    }
+    function newreferral() {
     console.log('start new referral');
         var contactId =  '{!currentObject.contactId}' ;
         var contactAcc =  '{!currentObject.Contact.Account__c}' ;
@@ -1189,7 +1305,7 @@
 
     }
 
-
+    
     </script>
 
     </html>
