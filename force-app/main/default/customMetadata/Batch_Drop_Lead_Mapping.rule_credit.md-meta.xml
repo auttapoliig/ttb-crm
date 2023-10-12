@@ -16,6 +16,7 @@
 3:Other Credit Card=1
 3:TMB VISA SIGNATURE=7
 3:Payroll_Unsecure=8
-3:GBHCC=9</value>
+3:GBHCC=9
+3:ttb reserve=10</value>
     </values>
 </CustomMetadata>

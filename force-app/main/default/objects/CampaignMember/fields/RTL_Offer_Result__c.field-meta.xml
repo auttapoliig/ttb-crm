@@ -12,11 +12,14 @@ $Label.RTL_Campaign_Member_Filter_Offer_Pending,
         $Label.RTL_Campaign_Member_Filter_Offer_Pending ,
              IF( RTL_Count_Interest__c&gt;0 ,
              $Label.RTL_Campaign_Member_Filter_Offer_Interest,
+             IF( RTL_Count_Referred__c&gt;0 ,
+             $Label.RTL_Campaign_Member_Filter_Offer_Referred,
                 IF( RTL_Count_Not_Interest__c &gt;0,
                 $Label.RTL_Campaign_Member_Filter_Offer_NotInterest,
                 &apos;N/A&apos;
                 )
              )
+           )
     )
   )
 )</formula>

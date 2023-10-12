@@ -270,6 +270,11 @@
                 <default>false</default>
                 <label>STAFF LOAN</label>
             </value>
+            <value>
+                <fullName>ttb reserve</fullName>
+                <default>false</default>
+                <label>ttb reserve</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>BANCASSURANCE</controllingFieldValue>
@@ -366,6 +371,10 @@
         <valueSettings>
             <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
             <valueName>TTB ABSOLUTE CREDIT CARD(VISA CARD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>ttb reserve</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>DEPOSIT</controllingFieldValue>

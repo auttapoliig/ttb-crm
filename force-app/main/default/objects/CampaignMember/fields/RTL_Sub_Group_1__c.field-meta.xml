@@ -276,6 +276,11 @@
                 <label>TTB GLOBAL HOUSE CREDIT</label>
             </value>
             <value>
+                <fullName>ttb reserve</fullName>
+                <default>false</default>
+                <label>ttb reserve</label>
+            </value>
+            <value>
                 <fullName>flashcard</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
@@ -381,6 +386,10 @@
         <valueSettings>
             <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
             <valueName>TTB GLOBAL HOUSE CREDIT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
+            <valueName>ttb reserve</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>DEPOSIT</controllingFieldValue>

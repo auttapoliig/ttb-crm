@@ -235,7 +235,9 @@
                 </apex:outputPanel>
 
                   <div class="slds-form-element slds-button-block">   
-                      <apex:commandButton id="editButton"  value="{!$Label.Edit}" styleClass="saveButtonId slds-button slds-button_brand" rendered="{!isRetailUser}" action="{!editCampaignMemberButton}" disabled="{!!isCampaignActive}"/>
+                      <!-- <apex:commandButton value="New Referral" styleclass="slds-button slds-button--neutral"  onclick="openSubTab('/lightning/o/RTL_Referral__c/new?useRecordTypeCheck=1','New Referral','New Referral',true);return false;"/> -->
+                      <apex:commandButton value="New Referral" styleclass="slds-button slds-button--neutral"  onclick="newreferral()"/>
+                      <apex:commandButton id="editButton"  value="{!$Label.Edit}" styleClass="saveButtonId slds-button slds-button_brand" rendered="{!isRetailUser}" action="{!editCampaignMemberButton}" disabled="{!OR(!isCampaignActive,!isofferResultEditable)}"/>
                       <apex:outputPanel rendered="{!IF(currentObject.id==NULL,false,true)}">
                         <apex:commandButton value="{!$Label.RTL_CampaignMemberEdit_ViewHistory}" styleclass="slds-button slds-button--neutral" immediate="true" onclick="openSubTab('/apex/RTL_CampaignMemberHistory?id={!currentObject.Id}&retURL={!currentObject.Id}','Campaign Member History','Campaign Member History',true);return false;"
                         />
@@ -911,7 +913,8 @@
                 
 
                 <div class="slds-form-element slds-button-block">   
-                   <apex:commandButton id="editButton2"  value="{!$Label.Edit}" styleClass="saveButtonId slds-button slds-button_brand" rendered="{!isRetailUser}" action="{!editCampaignMemberButton}" disabled="{!!isCampaignActive}"/>
+                  <apex:commandButton value="New Referral" styleclass="slds-button slds-button--neutral"  onclick="newreferral()"/>
+                   <apex:commandButton id="editButton2"  value="{!$Label.Edit}" styleClass="saveButtonId slds-button slds-button_brand" rendered="{!isRetailUser}" action="{!editCampaignMemberButton}" disabled="{!OR(!isCampaignActive,!isofferResultEditable)}"/>
                     <apex:outputPanel rendered="{!IF(currentObject.id==NULL,false,true)}">
                       <apex:commandButton value="{!$Label.RTL_CampaignMemberEdit_ViewHistory}" styleclass="slds-button slds-button--neutral" immediate="true" onclick="openSubTab('/apex/RTL_CampaignMemberHistory?id={!currentObject.Id}&retURL={!currentObject.Id}','Campaign Member History','Campaign Member History',true);return false;"
                       />
@@ -1036,6 +1039,7 @@
                     "componentDef": navigateTo,
                     "state": {
                         "c__campaignMemberId": recId,
+                        'c__productNumber' : index
                     }
                 };
             }
@@ -1249,6 +1253,105 @@
       // $('#loadingPanel').hide();
       // $('#ResultPanel').show();
       //console.log('stop');
+    }
+    function newreferral() {
+    console.log('start new referral');
+        var contactId =  '{!currentObject.contactId}' ;
+        var contactAcc =  '{!currentObject.Contact.Account__c}' ;
+        var customer =  '{!currentObject.Customer__c}' ;
+        var acc_name = '';
+        if (contactId != null && contactAcc != null) {
+            acc_name = contactAcc;
+        } else if (customer != null) {
+            acc_name = customer;
+        }
+        var FName = '{!currentObject.FirstName}' ;
+        var LName = '{!currentObject.LastName}' ;
+        var Phone = '{!currentObject.RTL_CampHis_Phone__c}' ;
+        var avatime = '{!currentObject.RTL_AL_available_time__c}';
+        var carbf = '{!currentObject.RTL_AL_car_bought_from__c}' ;
+        var car_brand = '{!currentObject.RTL_AL_car_brand__c}' ;
+        var cargear = '{!currentObject.RTL_AL_car_gear__c}' ;
+        var carg = '{!currentObject.RTL_AL_car_group__c}' ;
+        var carsub = '{!currentObject.RTL_AL_car_subtype__c}';
+        var cartype = '{!currentObject.RTL_AL_car_type__c}' ;
+        var caryear = '{!currentObject.RTL_AL_car_year__c}' ;
+        var comment = '{!currentObject.RTL_AL_comment__c}';
+        var cChannel = '{!currentObject.RTL_AL_contact_channel__c}' ;
+        var instAmount = '{!currentObject.RTL_AL_installment_amount__c}' ;
+        var instPeriod = '{!currentObject.RTL_AL_installment_periods__c}';
+        var nprice = '{!currentObject.RTL_AL_normal_price__c}' ;
+        var wAmount = '{!currentObject.RTL_AL_wanted_amount__c}' ;
+        var refCode = '{!currentObject.RTL_AL_oa_ref_code__c}' ;
+        var carplate = '{!currentObject.RTL_AL_car_plate_no__c}' ;
+        var intRate = '{!currentObject.RTL_AL_Interested_Rate__c}' ;
+        var cDistrict = '{!currentObject.RTL_AL_ContactDistrict__c}';
+        var cSubDis = '{!currentObject.RTL_AL_ContactSubDistrict__c}' ;
+        var cZip = '{!currentObject.RTL_AL_ContactZipcode__c}' ;
+        var cProvince = '{!currentObject.RTL_AL_ContactProvince__c}';
+        var maxAmount = '{!currentObject.RTL_AL_max_set_up_amount__c}' ;
+        var ILA = '{!currentObject.RTL_AL_ILA_AMT__c}' ;
+        var REMN = '{!currentObject.RTL_AL_REMN_MTH__c}' ;
+        var oILA_AMT = '{!currentObject.RTL_AL_OFFR_ILA_AMT__c}' ;
+        var oILA_MTH = '{!currentObject.RTL_AL_OFFR_ILA_MTH__c}' ;
+        var BlueBook = '{!currentObject.RTL_AL_BlueBook__c}' ;
+        var CMId = '{!currentObject.Id}';
+        var Campaign = '{!currentObject.CampaignId}' ;
+        var LeadSource = '{!currentObject.LeadSource}';
+        var RTL_TMB_Campaign_Source__c = '{!currentObject.RTL_TMB_Campaign_Source__c}' ;
+        var RTL_TMB_Campaign_Reference__c = '{!currentObject.RTL_TMB_Campaign_Reference__c}' ;
+        var RTL_Lead_Group__c = '{!currentObject.RTL_Lead_Group__c}' ;
+        var RTL_Marketing_Code__c = '{!currentObject.RTL_Marketing_Code__c}';
+        var RTL_Web_Unique_ID__c = '{!currentObject.RTL_Web_Unique_ID__c}';
+        var RTL_Media_Source__c =  '{!currentObject.LeadId}' && '{!currentObject.RTL_Media_Source__c}' ?  '{!currentObject.RTL_Media_Source__c}' : '';
+        var RTL_Medium__c =  '{!currentObject.LeadId}' && '{!currentObject.Lead.RTL_Medium__c}' ?  '{!currentObject.Lead.RTL_Medium__c}' : '';
+        var RTL_W2L_Campaign_Name__c =  '{!currentObject.LeadId}' && '{!currentObject.Lead.RTL_W2L_Campaign_Name__c}' ?  '{!currentObject.Lead.RTL_W2L_Campaign_Name__c}' : '';
+        var RTL_W2L_Content__c =  '{!currentObject.LeadId}' && '{!currentObject.Lead.RTL_W2L_Content__c}' ?  '{!currentObject.Lead.RTL_W2L_Content__c}' : '';
+        var RTL_W2L_Term__c = '{!currentObject.LeadId}' && '{!currentObject.Lead.RTL_W2L_Term__c}' ?  '{!currentObject.Lead.RTL_W2L_Term__c}' : '';
+
+        var LGS_Assignment_Code = '{!currentObject.LGS_Assignment_Code__c}'; 
+        var LGS_LinkInfo = '{!currentObject.LGS_LinkInfo__c}';
+        var LGS_BrandCode = '{!currentObject.LGS_BrandCode__c}';
+        var LGS_BrandShowroomCode = '{!currentObject.LGS_BrandShowroomCode__c}';
+        var LGS_PartnerCode = '{!currentObject.LGS_PartnerCode__c}';
+        var Lead_Score = '{!currentObject.Lead_Score__c}';
+        var Lead_Score_level = '{!currentObject.Lead_Score_Level__c}';
+        var LGS_VIN_No = '{!currentObject.LGS_VIN_No__c}';
+        var LGS_File_Upload = '{!currentObject.LGS_File_Upload__c}';
+        var LGS_Campaign_Start_Date = '{!currentObject.LGS_Campaign_Start_Date__c}';
+        var LGS_Campaign_End_Date = '{!currentObject.LGS_Campaign_End_Date__c}';
+        var LGS_Child_Campaign_ID = '{!currentObject.LGS_Child_Campaign_ID__c}';
+        var Car_Reference_No = '{!currentObject.Car_Reference_No__c}';
+        var LGS_Partner = '{!currentObject.LGS_Partner__c}';
+        var RTL_Assigned_Branch = '{!currentObject.RTL_Assigned_Branch__c}';
+        // console.log('LeadSource:',campaign.LeadSource);
+
+        var param = 'RTL_FirstName__c=' + FName + ',RTL_LastName__c=' + LName + ',RTL_Mobile1__c=' + Phone + ',RTL_AL_available_time__c=' + avatime +
+            ',RTL_AL_car_bought_from__c=' + carbf + ',RTL_AL_car_brand__c=' + car_brand + ',RTL_AL_car_gear__c=' + cargear +
+            ',RTL_AL_car_group__c=' + carg + ',RTL_AL_car_subtype__c=' + carsub + ',RTL_AL_car_type__c=' + cartype + ',RTL_AL_car_year__c=' + caryear +
+            ',RTL_AL_comment__c=' + comment + ',RTL_AL_contact_channel__c=' + cChannel + ',RTL_AL_installment_amount__c=' + instAmount +
+            ',RTL_AL_installment_periods__c=' + instPeriod + ',RTL_AL_normal_price__c=' + nprice + ',RTL_AL_wanted_amount__c=' + wAmount +
+            ',RTL_AL_oa_ref_code__c=' + refCode + ',RTL_AL_car_plate_no__c=' + carplate + ',RTL_AL_Interested_Rate__c=' + intRate +
+            ',RTL_AL_ContactDistrict__c=' + cDistrict + ',RTL_AL_ContactSubDistrict__c=' + cSubDis + ',RTL_AL_ContactZipcode__c=' + cZip +
+            ',RTL_AL_ContactProvince__c=' + cProvince + ',RTL_AL_max_set_up_amount__c=' + maxAmount + ',RTL_AL_ILA_AMT__c=' + ILA +
+            ',RTL_AL_REMN_MTH__c=' + REMN + ',RTL_AL_OFFR_ILA_AMT__c=' + oILA_AMT + ',RTL_AL_OFFR_ILA_MTH__c=' + oILA_MTH +
+            ',RTL_AL_BlueBook__c=' + BlueBook + ',RTL_Account_Name__c=' + acc_name + ',RTL_Campaign_Member__c=' + CMId +
+            ',RTL_CampaignID__c=' + Campaign + ',RTL_LeadSource__c=' + LeadSource + ',RTL_TMB_Campaign_Source__c=' + RTL_TMB_Campaign_Source__c +
+            ',RTL_TMB_Campaign_Reference__c=' + RTL_TMB_Campaign_Reference__c + ',RTL_Lead_Group__c=' + RTL_Lead_Group__c + ',RTL_Marketing_Code__c=' + RTL_Marketing_Code__c + 
+            ',RTL_Web_Unique_ID__c=' + RTL_Web_Unique_ID__c + ',RTL_Media_Source__c=' + RTL_Media_Source__c + ',RTL_Medium__c=' + RTL_Medium__c +
+            ',RTL_W2L_Campaign_Name__c=' + RTL_W2L_Campaign_Name__c + ',RTL_W2L_Content__c=' + RTL_W2L_Content__c + ',RTL_W2L_Term__c=' + RTL_W2L_Term__c;
+            ',LGS_Assignment_Code__c=' + LGS_Assignment_Code  + ',LGS_BrandCode__c=' + LGS_BrandCode + ',LGS_Partner__c=' + LGS_Partner+
+            ',LGS_BrandShowroomCode__c=' + LGS_BrandShowroomCode + ',LGS_PartnerCode__c=' + LGS_PartnerCode + ',Lead_Score__c=' + Lead_Score +
+            ',Lead_Score_Level__c=' + Lead_Score_level + ',LGS_VIN_No__c=' + LGS_VIN_No + ',LGS_File_Upload__c=' + LGS_File_Upload + ',Car_Reference_No__c=' + Car_Reference_No +
+            ',LGS_Campaign_Start_Date__c=' + LGS_Campaign_Start_Date + ',LGS_Campaign_End_Date__c=' + LGS_Campaign_End_Date + ',LGS_Child_Campaign_ID__c=' + LGS_Child_Campaign_ID + 'RTL_Assigned_Branch__c=' + RTL_Assigned_Branch;
+        param += ',LGS_LinkInfo__c=' +LGS_LinkInfo;
+
+        var url = "/lightning/o/RTL_Referral__c/new?useRecordTypeCheck=1&defaultFieldValues=" + encodeURIComponent(param) ;
+
+        sforce.one.navigateToURL(url, false);
+    
+
+
     }
 
 

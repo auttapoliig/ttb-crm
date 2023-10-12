@@ -20,6 +20,8 @@ public without sharing class RTL_CampaignMemberExtension {
     //Telephony Outbound
     public Account existingCustomer {get;set;}
 
+    //------------------------ GBH2 ------------------------
+    //------------------------ GBH2 ------------------------
     //------------------------ RQ013 ------------------------
 
     public class lookupWrapper {
@@ -50,6 +52,7 @@ public without sharing class RTL_CampaignMemberExtension {
     public String contactStatus {get;set;}
     public String lastContactStatus {get;set;}
     private String LABEL_INTEREST = 'Interested';
+    private String LABEL_REFERRED = 'Referred';
     private String LABEL_NOT_INTEREST = 'Not Interested';
     private String LABEL_CONTACT = 'Contact';
     private String LABEL_CONTACT_W_C = 'Contact (Walk-in/Call-in)';
@@ -162,6 +165,7 @@ public without sharing class RTL_CampaignMemberExtension {
     public boolean isContactStatusNew{get;set;}
     public boolean isRetailUser{get;set;}
     public boolean isCampaignActive{get;set;}
+    public boolean isofferResultEditable{get;set;}
     private String saveErrorMessage = '';
     private String preloadErrorMessage = '';
     private String requestBody;
@@ -268,6 +272,7 @@ public without sharing class RTL_CampaignMemberExtension {
         currentObject = (CampaignMember)stdController.getRecord();
         isRetailUser = false;
         isCampaignActive = false;
+        isofferResultEditable = false;
         fulfillmentPage = 1;
         
         markettingCode = apexpages.currentpage().getparameters().get('mcode');
@@ -289,7 +294,10 @@ public without sharing class RTL_CampaignMemberExtension {
             system.debug('member : '+currentObject);
             checkCampaignStatus();
             checkCampaignChannel();
-
+            //GBH2
+            checkOfferResult();
+            System.debug('isCampaignActive-->' +  isCampaignActive);
+            System.debug('isofferResultEditable-->' +  isofferResultEditable);
             if (currentObject.RTL_Promotion__c != null) {
                 //System.debug('currentObject.RTL_Promotion__c-->' +  currentObject.RTL_Promotion__c.indexOf('^'));
             	currentObject.RTL_Promotion__c = currentObject.RTL_Promotion__c.replace('^', '<br>');
@@ -490,12 +498,12 @@ public without sharing class RTL_CampaignMemberExtension {
             }
             // Check if offer result is interested and not create opportunity yet
             if( currentObject.get('RTL_OfferResult_Product_'+i+'__c') == LABEL_INTEREST 
+                &&  currentObject.get('RTL_RelatedOpportunity_'+i+'__c') == LABEL_REFERRED
                 &&  currentObject.get('RTL_RelatedOpportunity_'+i+'__c') == null ){
                 nextStepCreateOpp = true;
                 break;
             }
         }
-
         if( nextStepCreateOpp ){
             isSaveSucess = false;
             return null;
@@ -580,7 +588,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
 
-    @TestVisible private static Map<ID, String> userNameMap {get{
+    private static Map<ID, String> userNameMap {get{
         if (userNameMap == null) {
             userNameMap = new Map<ID, String>();
         }
@@ -588,7 +596,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    @TestVisible private static Map<ID, String> branchNameMap {get{
+    private static Map<ID, String> branchNameMap {get{
         if (branchNameMap == null) {
             branchNameMap = new Map<ID, String>();
         }
@@ -596,7 +604,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    @TestVisible private static Map<ID, String> contactNameMap {get{
+    private static Map<ID, String> contactNameMap {get{
         if (contactNameMap == null) {
             contactNameMap = new Map<ID, String>();
         }
@@ -611,14 +619,14 @@ public without sharing class RTL_CampaignMemberExtension {
     //    system.debug('xxx productoffer.RTL_Products_Offer_String__c: '+ productoffer.RTL_Products_Offer_String__c);
     //}
     //Update product offer string later , after insert to avoid trigger
-    @TestVisible private void updateProductOfferString(CampaignMember camMem,String storeData){
+    private void updateProductOfferString(CampaignMember camMem,String storeData){
         if(storeData!=null){
             camMem.RTL_Products_Offer_String__c = storeData;
             update camMem;
         }
     }
     //save log to RTL_Campaign_Member_History__c.
-    @TestVisible private void saveLogCampaignmember(CampaignMember camMem){
+    private void saveLogCampaignmember(CampaignMember camMem){
         
         for (String fieldName : RTL_CampaignMemberTriggerHandler.getFieldTracking()) {
             if(camMem.get(fieldName) != null) {
@@ -1452,12 +1460,14 @@ public without sharing class RTL_CampaignMemberExtension {
             String strQuery = 'select Customer__r.Name,RTL_Contact_Staff_Name__r.Name,Contact.Name,Campaign.Name,Lead.Name,Contact.AccountId,Campaign.RTL_Campaign_Code_10_digits__c,Contact.TMB_Customer_ID__c, ';
             strQuery += 'RTL_Campaign_Product_1__r.Name,RTL_Campaign_Product_2__r.Name,RTL_Campaign_Product_3__r.Name,RTL_Campaign_Product_4__r.Name,RTL_Campaign_Product_5__r.Name,Campaign.RTL_Campaign_Start_Date__c,Lead.IsConverted,Lead.ConvertedAccountId, Contact.account.name,RTL_Assigned_Agent__r.name,';
             //strQuery += 'customer__r.name + ';
+            strQuery += 'Lead.RTL_Medium__c,Lead.RTL_W2L_Campaign_Name__c,Lead.RTL_W2L_Content__c,Lead.RTL_W2L_Term__c,Contact.Account__c , ';
+            // strQuery += 'LGS_Assignment_Code__c,LGS_LinkInfo__c,LGS_BrandCode__c,LGS_BrandShowroomCode__c,LGS_PartnerCode__c,Lead_Score__c,Lead_Score_Level__c,LGS_VIN_No__c,LGS_File_Upload__c,LGS_Campaign_Start_Date__c,LGS_Campaign_End_Date__c,LGS_Child_Campaign_ID__c,Car_Reference_No__c,LGS_Partner__c + ';
             strQuery += queryAllField(objectName);
             strQuery = strQuery.substring(0,strQuery.length()-1);
             String strWhere = ' where id = :inputId ';
             strQuery += ' from '+objectName;
             strQuery += strWhere;
-            //System.debug('strQuery : '+strQuery);
+            System.debug('strQuery : '+strQuery);
             return Database.query(strQuery);
             
         }catch(QueryException e){
@@ -1811,19 +1821,20 @@ public without sharing class RTL_CampaignMemberExtension {
         String errorCodeText = '';
         String errorDescText = '';
 
-        Account accountObj = new Account();
-        String rmId = currentObject.RTL_Marketing_Code__c;
+      Account accountObj = new Account();
+      String rmId = currentObject.RTL_Marketing_Code__c;
     //   String customerName;
-        if(currentObject.Contact.Account != null)
-        {
-            accountObj =  currentObject.Contact.Account;
+      if(currentObject.Contact.Account != null)
+      {
+          accountObj =  currentObject.Contact.Account;
         //   customerName = accountObj.Name;
-        }
+      }
 
-        try
-        {
+      try
+      {
+          
         // Get the response by using the unique label
-            HttpResponse response = Continuation.getResponse(this.requestLabel);
+        HttpResponse response = Continuation.getResponse(this.requestLabel);
 
         if( response == null ) 
         { 
@@ -1954,6 +1965,7 @@ public without sharing class RTL_CampaignMemberExtension {
                         if(campaignMemberResponse.personalizedMessage !=null){
                             currentObject.RTL_Personalized_Message__c = campaignMemberResponse.personalizedMessage;
                         }
+
                         if(currentObject.id == null)
                         {
                             currentObject.RTL_CampHis_Phone__c = campaignMemberResponse.mobilenumber;
@@ -2391,7 +2403,7 @@ public without sharing class RTL_CampaignMemberExtension {
 
     public static CampaignMemberResponseObject  campaignMemberResponse {get;set;}
 
-    @TestVisible private String requestLabel;
+    private String requestLabel;
 
     public Boolean exclusiveCalloutSuccess{
         get{
@@ -2444,7 +2456,7 @@ public without sharing class RTL_CampaignMemberExtension {
     {
         Boolean isCampaignMemberCanSell = true;
         Boolean isMatch = false;
-        if(campaignChannelFormula != null){   
+        if(campaignChannelFormula != null){
             for(CM_OB_Sell_Permission__mdt cmOBPermission : cmOBSellPermissionList)
             {
                 if(campaignChannelFormula.toUpperCase() == cmOBPermission.MasterLabel.toUpperCase())
@@ -2456,9 +2468,30 @@ public without sharing class RTL_CampaignMemberExtension {
             System.debug('isCampaignMemberCanSell:'+isCampaignMemberCanSell);
             if(!isCampaignMemberCanSell && isMatch){
                 isCampaignActive = false;
-                preloadErrorMessage = System.Label.RTL_CampaignMember_CampaignMember_CanNotSell;
-                ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.WARNING,System.Label.RTL_CampaignMember_CampaignMember_CanNotSell));    
+
             }
+        } else {
+            isCampaignActive = false;
+            preloadErrorMessage = System.Label.RTL_CampaignMember_CampaignMember_CanNotSell;
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.WARNING,System.Label.RTL_CampaignMember_CampaignMember_CanNotSell));    
+        }
+    }
+    //GBH2
+    private void checkOfferResult()
+    {
+        // isofferResultEditable = false;
+        for( Integer i = 1 ; i <= 5 ; i++ ){
+            if (currentObject.get('RTL_Campaign_Product_'+i+'__c') != null) {
+                if( currentObject.get('RTL_OfferResult_Product_'+i+'__c') != LABEL_INTEREST && currentObject.get('RTL_OfferResult_Product_'+i+'__c') != LABEL_REFERRED)
+                {
+                    isOfferResultEditable = true;
+                    
+                }
+            }
+        }
+        if (!isOfferResultEditable) {
+            preloadErrorMessage = System.Label.RTL_CampaignMember_CampaignMember_CanNotEdit;
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.WARNING,System.Label.RTL_CampaignMember_CampaignMember_CanNotEdit));   
         }
     }
 
