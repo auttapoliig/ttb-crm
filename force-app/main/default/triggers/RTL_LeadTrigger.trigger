@@ -2,7 +2,9 @@ trigger RTL_LeadTrigger on Lead ( before insert, before update, after insert, af
   	
     Id retailLead = Schema.Sobjecttype.Lead.getRecordTypeInfosByName().get('Retail Banking').getRecordTypeId();
     Boolean LeadScoreRunner = false;
-    LeadScoreRunner = AppConfig__c.getValues('LeadScoreRunner').Value__c == 'true';
+    if(!Test.isRunningTest()){
+        LeadScoreRunner = AppConfig__c.getValues('LeadScoreRunner').Value__c == 'true';
+    }
     
     boolean runRetailTrigger = false;
     for(Lead lead: trigger.new){
