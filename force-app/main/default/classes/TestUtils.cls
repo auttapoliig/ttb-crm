@@ -894,6 +894,11 @@ public with sharing class TestUtils {
         refAssignNotNULL.Value__c = 'IS NOT NULL';
         apps.add(refAssignNotNULL);
 
+        AppConfig__c leadScoreRunner = new AppConfig__c();
+        leadScoreRunner.Name = 'LeadScoreRunner';
+        leadScoreRunner.Value__c = 'false';
+        apps.add(leadScoreRunner);
+
         insert apps;
         
         // Add this method following the CR Change owner from Retail to Commercial 
