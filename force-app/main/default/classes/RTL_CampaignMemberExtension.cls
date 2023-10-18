@@ -603,7 +603,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
 
-    private static Map<ID, String> userNameMap {get{
+    @TestVisible private static Map<ID, String> userNameMap {get{
         if (userNameMap == null) {
             userNameMap = new Map<ID, String>();
         }
@@ -611,7 +611,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> branchNameMap {get{
+    @TestVisible private static Map<ID, String> branchNameMap {get{
         if (branchNameMap == null) {
             branchNameMap = new Map<ID, String>();
         }
@@ -619,7 +619,7 @@ public without sharing class RTL_CampaignMemberExtension {
         } set;
     }
   
-    private static Map<ID, String> contactNameMap {get{
+    @TestVisible private static Map<ID, String> contactNameMap {get{
         if (contactNameMap == null) {
             contactNameMap = new Map<ID, String>();
         }
@@ -634,14 +634,14 @@ public without sharing class RTL_CampaignMemberExtension {
     //    system.debug('xxx productoffer.RTL_Products_Offer_String__c: '+ productoffer.RTL_Products_Offer_String__c);
     //}
     //Update product offer string later , after insert to avoid trigger
-    private void updateProductOfferString(CampaignMember camMem,String storeData){
+    @TestVisible private void updateProductOfferString(CampaignMember camMem,String storeData){
         if(storeData!=null){
             camMem.RTL_Products_Offer_String__c = storeData;
             update camMem;
         }
     }
     //save log to RTL_Campaign_Member_History__c.
-    private void saveLogCampaignmember(CampaignMember camMem){
+    @TestVisible private void saveLogCampaignmember(CampaignMember camMem){
         
         for (String fieldName : RTL_CampaignMemberTriggerHandler.getFieldTracking()) {
             if(camMem.get(fieldName) != null) {
@@ -2432,7 +2432,7 @@ public without sharing class RTL_CampaignMemberExtension {
 
     public static CampaignMemberResponseObject  campaignMemberResponse {get;set;}
 
-    private String requestLabel;
+    @TestVisible private String requestLabel;
 
     public Boolean exclusiveCalloutSuccess{
         get{
