@@ -806,6 +806,9 @@ public without sharing class RTL_CampaignMemberExtension {
 
     public PageReference apexCreateOpportunity(){
         Savepoint sp = Database.setSavepoint();
+        if (currentObject.Lead_Score_Level__c == LABEL_NONE) {
+            currentObject.Lead_Score_Level__c = null;
+        }
         oppList = new List<Opportunity>();
         Id accId = currentObject.Contact.AccountId;
         Id conId;
