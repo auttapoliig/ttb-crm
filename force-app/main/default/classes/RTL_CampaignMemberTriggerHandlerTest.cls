@@ -197,7 +197,7 @@ public with sharing class RTL_CampaignMemberTriggerHandlerTest {
 
         List<CampaignMember> cmList = new List<CampaignMember>();
         for( CampaignMember campaignMemberObj : [SELECT id,RTL_Register_Date__c,RTL_Product_Name__c,
-                                        RTL_Lead_Group__c,RTL_TMB_Campaign_Source__c,RTL_Product_Feature__c,RTL_Reason_1__c
+                                        RTL_Lead_Group__c,RTL_TMB_Campaign_Source__c,RTL_Product_Feature__c,RTL_Reason_1__c,RTL_Income__c
                                         FROM CampaignMember] 
         ) {
             campaignMemberObj.RTL_OfferResult_Product_1__c = 'Interested';
