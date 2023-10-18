@@ -16,14 +16,12 @@ public class BatchMergeCustomerTest {
         //retailProductMasterList = RTL_TestUtility.createRetailProducts(true);
         retailWithBranchUser = RTL_TestUtility.createRetailTestUserWithBranch(true);
         adminUser = TestUtils.createUsers(1,'USERADMIN','TESTCLASS','test_TMB@tmbbank.com',true)[0];
-       
         
         RTL_Branch_Manager_Title__c branchTitle = new RTL_Branch_Manager_Title__c(Name='Branch Manager',RTL_Value__c='Branch Manager');
         insert branchTitle;
         //ls = Test.loadData(Branch_And_Zone__c.sObjectType, 'BranchAndZoneMaster');
         ID RMC_ROLE_ID = [SELECT Id FROM UserRole WHERE Name LIKE '%RMC%' LIMIT 1].id;
         System.debug('RMC ROLE ID '+RMC_ROLE_ID);
-        
        // queueMap = new Map<String, Group>();
        // for(Group queue : [Select Id, Name, DeveloperName from Group where Type = 'Queue'])
         //    queueMap.put(queue.DeveloperName, queue);
@@ -35,14 +33,16 @@ public class BatchMergeCustomerTest {
             bdmUser = TestUtility_Referral.createBDMTestUser(true);
         }
         
+        User currentUser = [SELECT Id FROM User WHERE Id=:UserInfo.getUserId()];
+        currentUser.Employee_ID__c = 'T9999';
+        update currentUser;
     }
 
     public static testmethod void testRunBatch(){  
-
+        insert new Trigger_Msg__c(name = 'Not_Found_Employee_ID', Description__c   = 'description');
         Test.startTest();
 
-       // TestUtils.createAppConfig();
-          
+       // TestUtils.createAppConfig();          
         List<AppConfig__c> appconfig = new List<AppConfig__c>();
         AppConfig__c runTriger = new AppConfig__c();
         runTriger.Name = 'runtrigger';

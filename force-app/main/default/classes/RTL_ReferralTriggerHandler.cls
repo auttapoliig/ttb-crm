@@ -25,6 +25,16 @@
             return currentUser;
             
         }set;}
+
+        public static List<RTL_Contact_Address__c> contactAddr{
+            get{
+                if(contactAddr == null){
+                    contactAddr = [SELECT Id,Name,RTL_Province__c,RTL_District__c,RTL_Sub_District__c,RTL_Zipcode__c,isActive__c FROM RTL_Contact_Address__c WHERE isActive__c = true];
+                }
+                return contactAddr;
+            }
+            set;
+        }
         
         public static Map<String, Branch_and_Zone__c> branchCodeMap{
         get{
@@ -1432,7 +1442,6 @@
         //-- CR AL Re-org Long Term --
         public static void autoStampContactAddress(List<RTL_Referral__c> refList)
         {
-            List<RTL_Contact_Address__c> contactAddr = [SELECT Id,Name,RTL_Province__c,RTL_District__c,RTL_Sub_District__c,RTL_Zipcode__c,isActive__c FROM RTL_Contact_Address__c WHERE isActive__c = true];
             Map<String,RTL_Contact_Address__c> contactAddrMap = new Map<String,RTL_Contact_Address__c>();
             for(RTL_Contact_Address__c ca : contactAddr)
             {

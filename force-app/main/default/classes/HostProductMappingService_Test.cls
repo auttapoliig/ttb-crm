@@ -13,6 +13,10 @@ private class HostProductMappingService_Test {
         *****************************************************/
         system.debug('HostProductMapping:::initContextData');        
         SLOSDataset.DataSet1();
+
+        User currentUser = [SELECT Id FROM User WHERE Id=:UserInfo.getUserId()];
+        currentUser.Employee_ID__c = 'T9999';
+        update currentUser;
     }
     @isTest
     static void verify_DataSet() {

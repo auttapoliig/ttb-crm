@@ -1,11 +1,11 @@
 public without sharing class RTL_CampaignMemberTriggerHandler{
   private static List<CampaignMember> campaignmemberchangedStatusList = new List<CampaignMember>();
   private static Map<Id,RTL_NBO_History_Product__c> updateNBOProductList = new Map<Id,RTL_NBO_History_Product__c>();
-  private static FINAL App_Config__mdt CONTACTCENTER = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Contact Center']; 
-  private static FINAL App_Config__mdt OUTBOUND = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Outbound']; 
-  private static FINAL App_Config__mdt TMBADMINVALUES = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'TMB Admin']; 
-  private static FINAL App_Config__mdt TMBADMINNISTRATOR = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'TMB Administrator']; 
-  private static FINAL App_Config__mdt BRANCH = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Branch']; 
+  private static FINAL App_Config__mdt CONTACTCENTER = App_Config__mdt.getInstance('Contact Center');
+  private static FINAL App_Config__mdt OUTBOUND = App_Config__mdt.getInstance('Outbound');
+  private static FINAL App_Config__mdt TMBADMINVALUES = App_Config__mdt.getInstance('TMB Admin');
+  private static FINAL App_Config__mdt TMBADMINNISTRATOR = App_Config__mdt.getInstance('TMB Administrator'); 
+  private static FINAL App_Config__mdt BRANCH = App_Config__mdt.getInstance('Branch');
 
   private static List<String> fieldTrackingList {get{
       if (fieldTrackingList == null) {

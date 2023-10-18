@@ -10,6 +10,8 @@ private class submitToEOnBoardingButtonControllerTest {
         mc.Add(new AppConfig__c(Name = 'runtrigger', Value__c = 'false'));
         insert mc;
 		
+        insert new Trigger_Msg__c(name = 'Not_Found_Employee_ID', Description__c   = 'description');
+
 		RTL_Branch_Manager_Title__c branchTitle = new RTL_Branch_Manager_Title__c(Name='Branch Manager',RTL_Value__c='Branch Manager');
 		insert branchTitle;
 
@@ -35,6 +37,10 @@ private class submitToEOnBoardingButtonControllerTest {
         acct.ID_Number_PE__c = '1885816433556';
         acct.TMB_Customer_ID_PE__c = null;
 		insert acct;
+
+        User currentUser = [SELECT Id FROM User WHERE Id=:UserInfo.getUserId()];
+        currentUser.Employee_ID__c = 'T9999';
+        update currentUser;
 	}
 
 

@@ -17,8 +17,12 @@ public class CustomLookUpControllerTest
         apps.add(Aconfig);
         insert apps;
         TestUtils.prepareIntegrationMapping();
-        TestUtils.prepareEIMmaps();      
+        TestUtils.prepareEIMmaps();
+        insert new Trigger_Msg__c(name = 'Not_Found_Employee_ID', Description__c   = 'description');
         
+        User currentUser = [SELECT Id FROM User WHERE Id=:UserInfo.getUserId()];
+        currentUser.Employee_ID__c = 'T9999';
+        update currentUser;
     }
     
     @isTest

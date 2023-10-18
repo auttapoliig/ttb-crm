@@ -36,6 +36,16 @@ sf project deploy quick --job-id _<<jobid>>_
 ```
 ---
 # Release Track
+#### 19 Oct 2023
+| SCR No.     | Description    | Implementor | Release Date |
+| --------|---------|-------|-------|
+| SCR0599185 | Lead Source Social Media | | 19 Oct 2023 |
+| SCR0603885 | Remove field Code of Life time link | Attasit | 19 Oct 2023 |
+| SCR0601884 | ขออนุมัติเพิ่ม Drop down list รายชื่อ  UW บน case management |  | 19 Oct 2023 |
+| SCR0597347 | การขอเพิ่มทีม Retail Payroll and Benefits |  | 19 Oct 2023 |
+| SCR0597860 | LGS WS2 | Auttapol, Phongrawee, Monkol, Jedilok | 19 Oct 2023 |
+| INC0227328 | เป็น Exisitng cust | | 19 Oct 2023 |
+
 #### 05 Oct 2023
 | SCR No.     | Description    | Implementor | Release Date |
 | --------|---------|-------|-------|
