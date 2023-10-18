@@ -161,8 +161,10 @@
     </types>
     <types>
         <members>Integration_System.LGS</members>
-        <members>Batch_Export_LGS.Export_Lead_Info_LGS</members>
-        <name>CustomMetadata</name>    
+        <members>Batch_Export_LGS.Export_Lead_Info_LGS</members> 
+        <members>App_Config.LGS_Is_null_Defaul_Score</members>
+        <members>App_Config.LGS_Not_match_Defaul_Score</members>
+        <name>CustomMetadata</name>
     </types>
     <types>
         <members>Batch_Export_LGS__mdt</members>
@@ -207,6 +209,10 @@
         <members>LGS_Delete_LSCD_Header</members>
         <members>LGS_Summary_Weight_Warn_Message</members>
         <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>get_lgs_key</members>
+        <name>NamedCredential</name>
     </types>
     <types>
         <members>Lead_Scoring_List_Record_Page</members>
