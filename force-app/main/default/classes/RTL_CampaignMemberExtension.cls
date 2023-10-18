@@ -49,6 +49,7 @@ public without sharing class RTL_CampaignMemberExtension {
     public List<SelectOption> options { get; set; }
     public Map<String, String> leadMin {get; set;}   
     public Map<String,String> myMap { get; set; }
+private String LABEL_NONE = System.Label.None;
     //------------------------ RQ013 ------------------------
 
     public Lead objLead {get;set;}
@@ -2643,19 +2644,9 @@ public without sharing class RTL_CampaignMemberExtension {
     public void leadScoreLevelList() {
         options = new List<SelectOption>();
 	options.add(new SelectOption( LABEL_NONE , LABEL_NONE));
-        System.debug('leadScore:'+leadScore);
-
         for (Lead_Score_Level__c obj : leadScore) {
             options.add(new SelectOption(obj.Name,obj.Name));
         }
-        System.debug('options:'+options);
-    }
-    public void test123() {
-
-        string passedParam1 = Apexpages.currentPage().getParameters().get('leadScoreData');
-        string passedParam2 = system.CurrentPageReference().getParameters().get('leadScoreData');
-        System.debug(passedParam1);
-        System.debug(passedParam2);
     }
     public Map<String, String> getLeadScoreData() {
         Map<String, String> myMap2 = new Map<String, String>();
@@ -2668,17 +2659,9 @@ public without sharing class RTL_CampaignMemberExtension {
 
         return myMap2;
     }
-    // public List<Lead_Score_Level__c> getLeadScoreData(){
-    //     getLeadScoreData = [SELECT Name, Score_Min__c FROM Lead_Score_Level__c order by Score_Min__c asc];
-
-    //     return getLeadScoreData;
-    // }
     public String getSelectedOptionLabel() {
-        System.debug(':Start getSelectedOptionLabel:');
-        System.debug(':selectedOption:'+selectedOption);
         for (SelectOption option : options) {
             if (option.getValue().equals(selectedOption)) {
-                System.debug(':selectedOption:'+option.getLabel());
                 return option.getLabel();
             }
         }
@@ -2687,18 +2670,12 @@ public without sharing class RTL_CampaignMemberExtension {
     
     public void handleselectedValue(){
         String var3 = ApexPages.currentPage().getParameters().get('selectedValueParam');
-        System.debug(':Start changeLeadScore:');
         if (selectedValue == LABEL_NONE) {
             currentObject.Lead_Score__c = null;
             currentObject.Lead_Score_Level__c = null;
             currentObject.RTL_Lead_Score_Flag__c = true;
         } else {
-
-            System.debug(':var3:'+ var3);
-            System.debug(':currentObject.RTL_Lead_Score_Flag__c:'+ currentObject.RTL_Lead_Score_Flag__c);
             for (Lead_Score_Level__c obj : leadScore) {
-                System.debug('obj.Name'+ obj.Name);
-                System.debug(':selectedValue:'+ selectedValue);
                 if (obj.Name == selectedValue) {
                     currentObject.Lead_Score__c = obj.Score_Min__c;
                     currentObject.Lead_Score_Level__c = obj.Name;
@@ -2706,13 +2683,6 @@ public without sharing class RTL_CampaignMemberExtension {
                 }
             }
         }
-        // Decimal score = Decimal.valueOf(newLeadScore);
-        // currentObject.Lead_Score__c = score;
-        // currentObject.Lead_Score_Level__c = newLeadScoreLevel;
     }
-    // public void changeLeadScore(String newLeadScore, String newLeadScoreLevel){
-    //     Decimal score = Decimal.valueOf(newLeadScore);
-    //     currentObject.Lead_Score__c = score;
-    //     currentObject.Lead_Score_Level__c = newLeadScoreLevel;
-    // }
+
 }
