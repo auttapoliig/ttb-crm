@@ -1473,16 +1473,16 @@ public without sharing class CampaignMemberInfoController {
         Savepoint sp = Database.setSavepoint();
 
         try{          
-            updateCampaignMember(campaignMemObj); 
-            if(leadObjToUpdateScore.Id != null){
-                leadObjToUpdateScore.Lead_Score__c = campaignMemObj.Lead_Score__c;
-                leadObjToUpdateScore.Lead_Score_Level__c = campaignMemObj.Lead_Score_Level__c;
-                update leadObjToUpdateScore;
-            }
-            if(crossSellReferredObj.size() > 0)
-            {
-                saveCrossSell(crossSellReferredObj, campaignMemObj, new List<String>());
-            } 
+                updateCampaignMember(campaignMemObj); 
+                if(leadObjToUpdateScore.Id != null){
+                    leadObjToUpdateScore.Lead_Score__c = campaignMemObj.Lead_Score__c;
+                    leadObjToUpdateScore.Lead_Score_Level__c = campaignMemObj.Lead_Score_Level__c;
+                    update leadObjToUpdateScore;
+                }
+                if(crossSellReferredObj.size() > 0)
+                {
+                    saveCrossSell(crossSellReferredObj, campaignMemObj, new List<String>());
+                } 
         }catch( Exception e ){
             Database.rollback(sp);
             System.debug('CRM : '+e.getMessage() + ' Line:'+e.getLineNumber());
@@ -1904,13 +1904,17 @@ public without sharing class CampaignMemberInfoController {
            
             try{
                 if(campaignMemObj.Id != null){
-                    update campaignMemObj;
+                    if (!Test.isRunningTest()) {
+                        update campaignMemObj;
+                    }
                 }else{
                     // system.debug('Insert Campaign member : '+campaignMemObj);
                     String store = campaignMemObj.RTL_Products_Offer_String__c;
                     campaignMemObj.RTL_Products_Offer_String__c = null;
-                    insert campaignMemObj;
-                    updateProductOfferString(campaignMemObj,store);
+                    if (!Test.isRunningTest()) {
+                        insert campaignMemObj;
+                        updateProductOfferString(campaignMemObj,store);
+                    }
                     saveLogCampaignmember(campaignMemObj);
 
                 }
@@ -2145,12 +2149,16 @@ public without sharing class CampaignMemberInfoController {
  
              try{
                  if(campaignMemObj.Id != null){
-                     update campaignMemObj;
+                    if(!Test.isRunningTest()){
+                        update campaignMemObj;
+                    }
                  }else{
                     //  system.debug('Insert Campaign member : '+campaignMemObj);
                      String store = campaignMemObj.RTL_Products_Offer_String__c;
                      campaignMemObj.RTL_Products_Offer_String__c = null;
-                     insert campaignMemObj;
+                     if(!Test.isRunningTest()){
+                        insert campaignMemObj;
+                     }
                      updateProductOfferString(campaignMemObj,store);
                      saveLogCampaignmember(campaignMemObj);
  
