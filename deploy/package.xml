@@ -35,6 +35,8 @@
         <members>RTL_Distribute_CM_BatchTest</members>
         <members>CampaignMemberToALBatchTest</members>
         <members>RTL_DuplicateAccountComponentController</members>
+        <members>fnaUtility_Test</members>
+        <members>fnaProductDetailCtrl_Test</members>
         <name>ApexClass</name>
     </types>
     <types>
