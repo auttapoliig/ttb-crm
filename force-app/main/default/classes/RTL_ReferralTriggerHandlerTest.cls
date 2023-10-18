@@ -133,6 +133,7 @@ public class RTL_ReferralTriggerHandlerTest {
             System.debug('BEFORE OPPORTUNITY   :: '+opptyList);
             
             opptyList[0].RTL_Referral__c = referralList[0].id;
+            opptyList[0].RTL_External_Ref_ID__c = 'testext';
             update opptyList;
             
             opptyList = queryOpportunity();

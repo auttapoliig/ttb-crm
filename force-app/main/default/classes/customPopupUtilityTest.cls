@@ -586,11 +586,10 @@ public with sharing class customPopupUtilityTest {
 
         insert cch;
 
-        AppConfig__c runtrigger = new AppConfig__c();
-        runtrigger.Name = 'runtrigger';
-        runtrigger.Value__c = 'false';
-
-        insert runtrigger;
+        List<AppConfig__c> appConfigs = new List<AppConfig__c>();
+        appConfigs.add(new AppConfig__c(Name = 'runtrigger', Value__c = 'false'));
+        appConfigs.add(new AppConfig__c(Name = 'LeadScoreRunner', Value__c = 'false'));
+        insert appConfigs;
 
         Lead testLead = new Lead();
         testLead.LastName = 'Test';
@@ -638,12 +637,10 @@ public with sharing class customPopupUtilityTest {
         cch.Field_2__c = 'Verification_Action__c';
 
         insert cch;
-
-        AppConfig__c runtrigger = new AppConfig__c();
-        runtrigger.Name = 'runtrigger';
-        runtrigger.Value__c = 'false';
-
-        insert runtrigger;
+        List<AppConfig__c> appConfigs = new List<AppConfig__c>();
+        appConfigs.add(new AppConfig__c(Name = 'runtrigger', Value__c = 'false'));
+        appConfigs.add(new AppConfig__c(Name = 'LeadScoreRunner', Value__c = 'false'));
+        insert appConfigs;
 
         Lead testLead = new Lead();
         testLead.LastName = 'Test';

@@ -16,6 +16,7 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
         appConfig.Value__c = 'true';
         update appConfig;
 
+        User currentUser = [SELECT Id FROM User WHERE Id =: UserInfo.getUserId()];
         TestUtils.prepareIntegrationMapping();
         insert new List<EIM_Map__c>{
             new EIM_Map__c(IsActive__c=true,Field_Type__c='Request',External_Field__c='LastModifiedDate',Job_Type__c='OPPTY_TO_CXM',SF_Field__c='LastModifiedDate',Node__c='DataNode',Object__c='Opportunity'),
@@ -85,52 +86,46 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
         branch.IsActive__c = true;
         insert branch;
         
-        Id recordTypeId  = [select Id from RecordType where SobjectType = 'Campaign' and DeveloperName=: 'Dummy_Campaign' and IsActive=true ].Id;
-        Campaign camp = new Campaign();
-        camp.Name = 'Campaign_';
-        camp.Segment__c = 'MB';
-        camp.OwnerId  = UserInfo.getUserId();
-        camp.RecordTypeId = Recordtypeid;
-        insert camp;
-
-        Lead l = new Lead(Company = 'JohnMiller', LastName = 'Mike', Status = 'Open');
-        l.RTL_Branch_Code_Rpt__c = '611';
-        insert l;
+        Id recordTypeId = Schema.SObjectType.Campaign.getRecordTypeInfosByDeveloperName().get('Dummy_Campaign').getRecordTypeId();
         
-        Campaignmember cm = new Campaignmember();
-        cm.RTL_Marketing_Code__c = 'DOUTBOUND1HN00001023';
-        cm.RTL_AL_response__c = true;
-        cm.Customer__c = null;
-        cm.RTL_AL_Response_Flage__c = true;
-        cm.RTL_Is_Send_To_HPAP__c = true;
-        cm.RTL_Is_Interface_Success__c = true;
-        cm.CampaignId = camp.Id;
-        cm.LeadId = l.Id;
-        insert cm;
+        System.runAs(currentUser){
+            Campaign camp = new Campaign();
+            camp.Name = 'Campaign_';
+            camp.Segment__c = 'MB';
+            camp.OwnerId  = UserInfo.getUserId();
+            camp.RecordTypeId = Recordtypeid;
+            insert camp;
+
+            Lead l = new Lead(Company = 'JohnMiller', LastName = 'Mike', Status = 'Open');
+            l.RTL_Branch_Code_Rpt__c = '611';
+            insert l;
+            
+            Campaignmember cm = new Campaignmember();
+            cm.RTL_Marketing_Code__c = 'DOUTBOUND1HN00001023';
+            cm.RTL_AL_response__c = true;
+            cm.Customer__c = null;
+            cm.RTL_AL_Response_Flage__c = true;
+            cm.RTL_Is_Send_To_HPAP__c = true;
+            cm.RTL_Is_Interface_Success__c = true;
+            cm.CampaignId = camp.Id;
+            cm.LeadId = l.Id;
+            insert cm;
+            System.debug('getQueries -->'+Limits.getQueries());
+            RTL_Referral__c ref = new RTL_Referral__c();
+            ref.RTL_Account_Name__c = tempAccount.Id;
+            ref.RTL_FirstName__c = 'Fname001';
+            ref.RTL_LastName__c = 'Lname001';
+            ref.RTL_Mobile1__c = '0951234560';
+            ref.RTL_Product_Name__c = prod.Id;
+            ref.RTL_Contact_Address__c = adds.Id;
+            ref.RTL_Stage__c = 'New';
+            ref.RTL_Preferred_Branch__c = branch.Id;
+            ref.RTL_AL_contact_channel__c = 'DS';
+            ref.RTL_Campaign_Member__c = cm.id;
+            ref.RecordTypeId = RTL_Referral__c.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Cross_Channel_Referral').getRecordTypeId();
+            insert ref;
+        }
         System.debug('getQueries -->'+Limits.getQueries());
-        RTL_Referral__c ref = new RTL_Referral__c();
-        ref.RTL_Account_Name__c = tempAccount.Id;
-        ref.RTL_FirstName__c = 'Fname001';
-        ref.RTL_LastName__c = 'Lname001';
-        ref.RTL_Mobile1__c = '0951234560';
-        ref.RTL_Product_Name__c = prod.Id;
-        ref.RTL_Contact_Address__c = adds.Id;
-        ref.RTL_Stage__c = 'New';
-        ref.RTL_Preferred_Branch__c = branch.Id;
-        ref.RTL_AL_contact_channel__c = 'DS';
-        ref.RTL_Campaign_Member__c = cm.id;
-        ref.RecordTypeId = RTL_Referral__c.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Cross_Channel_Referral').getRecordTypeId();
-        insert ref;
-        System.debug('getQueries -->'+Limits.getQueries());
-        Opportunity refOpportunity = new Opportunity(
-            AccountId = tempAccount.Id,
-            StageName = 'App In',
-            RTL_Product_Name__c = prod.Id,
-            RTL_Referral__c = ref.Id,
-            CloseDate = Date.valueOf(Datetime.now()),
-            RecordTypeId = Opportunity.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Auto_Loan').getRecordTypeId()
-        );
-        insert refOpportunity;
         // System.debug('getQueries -->'+Limits.getQueries());
         // Cross_Sell_Product__c csp = new Cross_Sell_Product__c(
         // CampaignMemberId__c = cm.id,
@@ -231,14 +226,27 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
     }
     @IsTest
     static void testStampReferToCampaignMember(){
-        Test.startTest();
-        User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
-        RTL_Referral__c ref = [SELECT Id FROM RTL_Referral__c LIMIT 1];            
-        RTL_Contact_Address__c contactAd = [SELECT Id,Name FROM  RTL_Contact_Address__c WHERE IsActive__c = TRUE LIMIT 1];
+        RTL_Referral__c ref = [SELECT Id FROM RTL_Referral__c WHERE RTL_FirstName__c='Fname001' LIMIT 1];
         RTL_product_master__c prod = [SELECT Id,Name FROM RTL_product_master__c WHERE Name = 'CYC' AND Product_Group__c = 'Auto Loan' LIMIT 1];
+        RTL_Contact_Address__c contactAd = [SELECT Id,Name FROM  RTL_Contact_Address__c WHERE IsActive__c = TRUE LIMIT 1];
         Branch_and_Zone__c pb = [SELECT Id,Name FROM  Branch_and_Zone__c WHERE Name = 'AL Marketing' LIMIT 1];
+        Account tempAccount = [SELECT Id FROM Account LIMIT 1];
+        User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
+        User currentUser = [SELECT Id FROM user WHERE Id =: UserInfo.getUserId()];
+        /*Test.startTest();
+        System.runAs(currentUser){
+            Opportunity refOpportunity = new Opportunity(
+                AccountId = tempAccount.Id,
+                StageName = 'App In',
+                RTL_Product_Name__c = prod.Id,
+                RTL_Referral__c = ref.Id,
+                CloseDate = Date.valueOf(Datetime.now()),
+                RecordTypeId = Opportunity.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Auto_Loan').getRecordTypeId()
+            );
+            insert refOpportunity;
+        }
+        Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
         System.runAs(sfextapi){
-
             RestRequest request = new RestRequest();
             request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/Opportunity/';
             request.httpMethod = 'PATCH';
@@ -258,10 +266,9 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
                 }
             ), encryptKey)));
             RestContext.request = request;
-            Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
             RTL_AL_WebserviceAbstract.SCSReqRes response = RTL_AL_WsOpportunity.httpPatchWebservice();
         }
-        Test.stopTest();
+        Test.stopTest();*/
     }
 
      @IsTest

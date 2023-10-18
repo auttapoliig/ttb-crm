@@ -37,6 +37,12 @@
         <members>RTL_DuplicateAccountComponentController</members>
         <members>fnaUtility_Test</members>
         <members>fnaProductDetailCtrl_Test</members>
+        <members>submitToEOnBoardingButtonControllerTest</members>
+        <members>CustomLookUpControllerTest</members>
+        <members>BatchMergeCustomerTest</members>
+        <members>FileExtensionHandlerTest</members>
+        <members>HostProductMappingService_Test</members>
+        <members>customPopupUtilityTest</members>
         <name>ApexClass</name>
     </types>
     <types>
