@@ -71,4 +71,12 @@
         <shortDescription>LGS_Warning_messages</shortDescription>
         <value>Summary Weight is not equal to Total Weight, Please complete the information.</value>
     </labels>
+    <labels>
+        <fullName>None</fullName>
+        <categories>None</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>None</shortDescription>
+        <value>--None--</value>
+    </labels>
 </CustomLabels>

@@ -36,4 +36,8 @@
         <label>น้ำหนักที่ได้น้อยกว่าน้ำหนักรวมที่กำหนด กรุณากรอกข้อมูลเพิ่มเติม</label>
         <name>LGS_Warning_messages</name>
     </customLabels>
+    <customLabels>
+        <label>--ไม่มี--</label>
+        <name>None</name>
+    </customLabels>
 </Translations>
