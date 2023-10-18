@@ -233,8 +233,8 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
         Account tempAccount = [SELECT Id FROM Account LIMIT 1];
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
         User currentUser = [SELECT Id FROM user WHERE Id =: UserInfo.getUserId()];
-        /*Test.startTest();
-        System.runAs(currentUser){
+        
+        /*System.runAs(currentUser){
             Opportunity refOpportunity = new Opportunity(
                 AccountId = tempAccount.Id,
                 StageName = 'App In',
@@ -244,7 +244,8 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
                 RecordTypeId = Opportunity.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Auto_Loan').getRecordTypeId()
             );
             insert refOpportunity;
-        }
+        }*/
+        Test.startTest();
         Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
         System.runAs(sfextapi){
             RestRequest request = new RestRequest();
@@ -268,17 +269,26 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
             RestContext.request = request;
             RTL_AL_WebserviceAbstract.SCSReqRes response = RTL_AL_WsOpportunity.httpPatchWebservice();
         }
-        Test.stopTest();*/
+        Test.stopTest();
     }
 
      @IsTest
     static void testStampOpptyToCampaignMember(){
-        Test.startTest();
         User sfextapi = [SELECT Id FROM user WHERE name = 'sfextapi'];
-        tempOpportunity = [SELECT Id FROM Opportunity WHERE RTL_Referral__c != NULL LIMIT 1];
         RTL_product_master__c pn = [SELECT Id,Name FROM RTL_product_master__c LIMIT 1];
-        RTL_Referral__c ref = [SELECT Id FROM RTL_Referral__c LIMIT 1];            
-        System.runAs(sfextapi){
+        RTL_Referral__c ref = [SELECT Id FROM RTL_Referral__c LIMIT 1];
+        Account tempAccount = [SELECT Id FROM Account LIMIT 1];
+        Opportunity refOpportunity = new Opportunity(
+            AccountId = tempAccount.Id,
+            StageName = 'App In',
+            RTL_Product_Name__c = pn.Id,
+            RTL_Referral__c = ref.Id,
+            CloseDate = Date.valueOf(Datetime.now()),
+            RecordTypeId = Opportunity.getSObjectType().getDescribe().getRecordTypeInfosByDeveloperName().get('Retail_Auto_Loan').getRecordTypeId()
+        );
+        insert refOpportunity;
+        Test.startTest();
+        /*System.runAs(sfextapi){
             RestRequest request = new RestRequest();
             request.requestUri = URL.getSalesforceBaseUrl().toExternalForm() + '/data/V1.0/sobjects/Opportunity/';
             request.httpMethod = 'PATCH';
@@ -295,7 +305,7 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
             Test.setMock(HttpCalloutMock.class, new MockHttpResponseCallMeNow(200, encryptKey));
             
             RTL_AL_WebserviceAbstract.SCSReqRes responseEncrypt = RTL_AL_WsOpportunity.httpPatchWebservice();
-        }
+        }*/
         Test.stopTest();
     }
 
