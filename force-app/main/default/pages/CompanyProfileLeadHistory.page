@@ -143,7 +143,9 @@
             <apex:column headerValue="Last Update Date">
                 <apex:outputField value="{!t.lastmodifieddate}" />
             </apex:column>
-
+            <apex:column headerValue="Product Summary">
+                <apex:commandButton onClick="openProductSummary('{!t.Id}','{!t.Name}');return false;" value="Product Summary"/>
+            </apex:column>
         </apex:pageblockTable>
 
         <div style="height:10px"></div>
@@ -211,6 +213,34 @@
             });
         }
     }
+    
+    function openProductSummary(recId,recName)
+        {
+            console.log(recId);
+            var compDefinition = { 
+                "componentDef": "c:LeadConvertComercialContainer",
+                "state":{
+                    "c__recordId": recId,
+                    "c__LeadName": recName,
+                }
+            };
+            var encodedCompDef = btoa(JSON.stringify(compDefinition));
+            var url = "/one/one.app#"+encodedCompDef;
+            var theme = '{!$User.UIThemeDisplayed}';
+
+            if (theme == 'Theme4u') {
+                sforce.one.navigateToURL(url);
+            }
+            else if (!sforce.console.isInConsole()) {
+                window.parent.location.replace(url);
+            } else {
+                sforce.console.getEnclosingPrimaryTabId(function (result) {
+                    sforce.console.openSubtab(result.id , url, true, 'Product Summary', null);
+                });
+            }
+ 
+        
+        }
 
 </script>
 </apex:page>

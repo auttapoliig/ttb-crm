@@ -30,6 +30,7 @@ private class FileExtensionHandlerTest {
 
     @isTest
     private static void TestAttachment(){
+        insert new AppConfig__c(Name = 'LeadScoreRunner', Value__c = 'false');
         Lead lead = new Lead();
         lead.RTL_Mobile_Number__c = '0987654321';
         lead.RTL_ID_Type__c = 'Other ID'; 

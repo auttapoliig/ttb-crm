@@ -13,7 +13,7 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
     static void makeData() {
         TestUtils.createAppConfig();
         AppConfig__c appConfig = AppConfig__c.getValues('runtrigger');
-        appConfig.Value__c = 'true';
+        appConfig.Value__c = 'false';
         update appConfig;
 
         TestUtils.prepareIntegrationMapping();
@@ -123,6 +123,7 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
         insert ref;
         System.debug('getQueries -->'+Limits.getQueries());
         Opportunity refOpportunity = new Opportunity(
+            Name = 'Test',
             AccountId = tempAccount.Id,
             StageName = 'App In',
             RTL_Product_Name__c = prod.Id,
@@ -142,6 +143,8 @@ public with sharing class RTL_AL_WsOpportunityTestExtended {
         // );
         // insert csp;
         // System.debug('getQueries -->'+Limits.getQueries());
+        appConfig.Value__c = 'true';
+        update appConfig;
     }
 
     @IsTest

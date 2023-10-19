@@ -36,7 +36,13 @@
     <aura:attribute name="isExpire" type="Boolean" default="false"/>
     <aura:attribute name="recordIsClosed" type="Boolean" default="false" />
     <aura:attribute name="recordCanNotSell" type="Boolean" default="false" />
+    <aura:attribute name="ALPrdNameSet" type="String"/>
+    <aura:attribute name="HLCALPrdNameSet" type="String"/>
 
+    <!-- lgsws2 -->
+    <aura:attribute name="leadScoreLevelList" type="List"/>
+    <aura:attribute name="leadScoreLevelListmin" type="List"/>
+    <aura:attribute name="leadscoremin" type="String" />
     <!-- Conversion Lead Section -->
     <aura:attribute name="customerName" type="String" />
     <aura:attribute name="mobileNumber" type="String" />
@@ -299,6 +305,30 @@
                             <div class="slds-col slds-size_1-of-4">
                                 <div class="outputStyle">{!v.campaignMemObj.Avaya_Completion_Code__c}</div>
                             </div>
+                            <!-- LGS -->
+                            <!-- <div class = "slds-size_4-of-4"> -->
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="labelStyle">{!v.labelMap.Lead_Score__c}</div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="outputStyle">{!v.campaignMemObj.Lead_Score__c}</div>  
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="labelStyle">{!v.labelMap.Lead_Score_Level__c}</div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">     
+                                    <lightning:combobox aura:id="LeadScoreLevel" autocomplete="true" class="inputStyle slds-form-element" name="LeadScoreLevel" value="{!v.campaignMemObj.Lead_Score_Level__c}"  options="{!v.leadScoreLevelList }" onchange="{! c.handleChangeLeadScoreLevel }" />
+                                </div>
+                            <!-- </div> -->
+                            <!-- <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.Lead_Score_Level__c}</div>
+                            </div> -->
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Partner__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Partner__c}</div>
+                            </div>
                         </div>    
                     </div>
                 </div>
@@ -343,7 +373,50 @@
                             <div class="slds-col slds-size_1-of-4">
                                 <!-- <div class="outputStyle">{!v.campaignMemObj.RTL_Remark__c}</div> -->
                                 <aura:unescapedHtml value="{!v.campaignMemObj.RTL_Remark__c}"/>
-                            </div>              
+                            </div>   
+                            <!-- lgsws2 -->
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.RTL_TMB_Campaign_Reference__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.RTL_TMB_Campaign_Reference__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Child_Campaign_ID__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Child_Campaign_ID__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.RTL_W2L_Campaign_Name__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.RTL_W2L_Campaign_Name__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Campaign_Start_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Campaign_Start_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Campaign_End_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Campaign_End_Date__c}</div>
+                            </div>
                         </div>    
                     </div>
                 </div>
@@ -805,6 +878,25 @@
                             <div class="slds-col slds-size_1-of-4">
                                 <div class="outputStyle">{!v.campaignMemObj.Avaya_Completion_Code__c}</div>                             
                             </div>
+                            <!-- LGS -->
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.Lead_Score__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.Lead_Score__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.Lead_Score_Level__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.Lead_Score_Level__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Partner__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Partner__c}</div>
+                            </div>
                         </div>    
                     </div>
                 </div>
@@ -849,7 +941,50 @@
                             <div class="slds-col slds-size_1-of-4">
                                 <!-- <div class="outputStyle">{!v.campaignMemObj.RTL_Remark__c}</div>    -->
                                 <aura:unescapedHtml value="{!v.campaignMemObj.RTL_Remark__c}"/>                           
-                            </div>              
+                            </div>      
+                            <!-- lgsws2 -->
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.RTL_TMB_Campaign_Reference__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.RTL_TMB_Campaign_Reference__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Child_Campaign_ID__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Child_Campaign_ID__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.RTL_W2L_Campaign_Name__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.RTL_W2L_Campaign_Name__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Campaign_Start_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Campaign_Start_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="labelStyle">{!v.labelMap.LGS_Campaign_End_Date__c}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <div class="outputStyle">{!v.campaignMemObj.LGS_Campaign_End_Date__c}</div>
+                            </div>        
                         </div>    
                     </div>
                 </div>

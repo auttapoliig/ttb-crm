@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ผลการติดต่อ/วิเคราะห์ลูกค้า</label>
+    <name>RTL_Contact_Status__c</name>
+    <picklistValues>
+        <masterLabel>Close</masterLabel>
+        <translation>ไม่สามารถติดต่อได้</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contact</masterLabel>
+        <translation>ติดต่อแล้ว/วิเคราะห์แล้ว</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Follow-up</masterLabel>
+        <translation>ลูกค้าให้ติดต่อกลับภายหลัง</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New</masterLabel>
+        <translation>ใหม่</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Contact</masterLabel>
+        <translation>ลูกค้าไม่ประสงค์ให้ติดต่อ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Re-attempt</masterLabel>
+        <translation>ยังพยายามติดต่อ</translation>
+    </picklistValues>
+</CustomFieldTranslation>

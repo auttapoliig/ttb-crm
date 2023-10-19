@@ -16,6 +16,6 @@
     </values>
     <values>
         <field>URL_Report__c</field>
-        <value xsi:type="xsd:string">https://app.powerbi.com/reportEmbed?reportId=f96e3677-e606-4253-9d19-883e5b1c8a1e&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=FALSE&amp;pageName=ReportSection4358dceb0d057706d693&amp;filter=AccPlan/param_1%20eq%20</value>
+        <value xsi:type="xsd:string">https://app.powerbi.com/reportEmbed?reportId=3cdd4a72-b730-4159-992f-b63cb390737c&amp;autoAuth=true&amp;ctid=771863e0-ae69-42c9-9bb8-40e48d597651&amp;navContentPaneEnabled=false&amp;pageName=ReportSectionaff4ada000cc3171148b&amp;filter=AccPlan/param_1%20eq%20</value>
     </values>
 </CustomMetadata>

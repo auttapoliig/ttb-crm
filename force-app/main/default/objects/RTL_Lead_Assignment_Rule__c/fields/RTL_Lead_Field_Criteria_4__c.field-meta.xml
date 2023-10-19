@@ -41,6 +41,11 @@
                 <default>false</default>
                 <label>RTL_Owner_Type__c</label>
             </value>
+            <value>
+                <fullName>RTL_Product_Name__c</fullName>
+                <default>false</default>
+                <label>RTL_Product_Name__c</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

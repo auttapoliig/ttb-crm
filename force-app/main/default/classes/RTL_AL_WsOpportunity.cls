@@ -878,7 +878,7 @@ global without sharing class RTL_AL_WsOpportunity extends RTL_AL_WebserviceAbstr
             campaignMemberUpdate.RTL_AL_Req_No2_1__c = requestBodyMap.containsKey('RTL_AL_Req_No2__c') ? (String)requestBodyMap.get('RTL_AL_Req_No2__c') : '';
             campaignMemberUpdate.RTL_AL_Refer_No_1__c = requestBodyMap.containsKey('RTL_AL_Refer_No__c') ? (String)requestBodyMap.get('RTL_AL_Refer_No__c') : '';
             //Update From LGS
-            if(campaignMemberUpdate.RTL_Contact_Status__c == 'New' || campaignMemberUpdate.RTL_Contact_Status__c == 'Uncontact'){
+            if(campaignMemberUpdate.RTL_Contact_Status__c != 'Contact'){
                 campaignMemberUpdate.RTL_Contact_Status__c = requestBodyMap.containsKey('RTL_Contact_Status__c') ? (String)requestBodyMap.get('RTL_Contact_Status__c') : '';
                 campaignMemberUpdate.RTL_Reason__c = requestBodyMap.containsKey('RTL_Reason__c') ? (String)requestBodyMap.get('RTL_Reason__c') : '';
             }

@@ -1,11 +1,11 @@
 public without sharing class RTL_CampaignMemberTriggerHandler{
   private static List<CampaignMember> campaignmemberchangedStatusList = new List<CampaignMember>();
   private static Map<Id,RTL_NBO_History_Product__c> updateNBOProductList = new Map<Id,RTL_NBO_History_Product__c>();
-  private static FINAL App_Config__mdt CONTACTCENTER = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Contact Center']; 
-  private static FINAL App_Config__mdt OUTBOUND = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Outbound']; 
-  private static FINAL App_Config__mdt TMBADMINVALUES = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'TMB Admin']; 
-  private static FINAL App_Config__mdt TMBADMINNISTRATOR = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'TMB Administrator']; 
-  private static FINAL App_Config__mdt BRANCH = [SELECT Value__c FROM App_Config__mdt WHERE MasterLabel = 'Branch']; 
+  private static FINAL App_Config__mdt CONTACTCENTER = App_Config__mdt.getInstance('Contact_Center');
+  private static FINAL App_Config__mdt OUTBOUND = App_Config__mdt.getInstance('Outbound');
+  private static FINAL App_Config__mdt TMBADMINVALUES = App_Config__mdt.getInstance('TMB_Admin');
+  private static FINAL App_Config__mdt TMBADMINNISTRATOR = App_Config__mdt.getInstance('TMB_Administrator'); 
+  private static FINAL App_Config__mdt BRANCH = App_Config__mdt.getInstance('Branch');
 
   private static List<String> fieldTrackingList {get{
       if (fieldTrackingList == null) {
@@ -382,6 +382,21 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
     }
   
     update campaignMemberListforUpdate;
+    
+    // List<CampaignMember> campaignMemberToALList = new  List<CampaignMember>();
+    // for(CampaignMember cm : newList)
+    // {
+    //     if(cm.RTL_Contact_Method__c == 'AL Sales')
+    //     {
+    //         campaignMemberToALList.add(cm);
+    //     }
+    // }
+
+    // if(campaignMemberToALList.size() > 0)
+    // {
+    //     RTL_AL_CampaignMemberToAL.sendCampaignMemberToAL(campaignMemberToALList);
+    // }
+
   }
 
   public static void settingValueTranformation(String IdValue) {
@@ -445,13 +460,13 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
   public static void beforeInsert(List<CampaignMember> newList){
     system.debug('CPM : beforeInsert start');
     //system.debug('CPM : newList' + newList);
+        List<CampaignMember> listcmToCalculate = new List<CampaignMember>();
         RTL_AssignmentCriteriaService assignmentService = new RTL_AssignmentCriteriaService();
         Set<Id> leadIdSet = new Set<Id>();
         Set<String> branchNameSet = new Set<String>();
         Map<Id,Lead> leadMap;
         User tmbAdmin = [SELECT ID,Name FROM User WHERE Name = 'TMB Administrator'];
         List<CampaignMember> dropLeadCampaignMember = new List<CampaignMember>();
-
         List<RTL_Channel_Code_Mapping__mdt> channelCodeMapping = [SELECT Id, RTL_Lead_Group__c, 
                                   RTL_Campaign_Lead_Source__c, 
                                   RTL_Channel_Code__c, 
@@ -479,7 +494,9 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
             if(campaignMemberObj.RTL_Branch_Code__c != null){
               branchNameSet.add(campaignMemberObj.RTL_Branch_Code__c);
             }
-
+            if(campaignMemberObj.Scoring_Condition_Id__c != null){
+              listcmToCalculate.add(campaignMemberObj);
+            }
         }
         if(leadIdSet.size() > 0){
             leadMap = new Map<Id,Lead>([SELECT Id,Name,RTL_Branch_Name__c,RTL_TMB_Campaign_Reference__c,
@@ -695,6 +712,16 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
           }
           system.debug('CRM : campaign mapping lead : '+campaignMemberObj);
         }
+        if(listcmToCalculate.size() > 0 && listcmToCalculate.size() == 1 && newList.size() == 1){
+          System.debug('call LeadScoreCalculate beforeInsert!');
+          CampaignMember cmUpdatedScore = new CampaignMember();
+          cmUpdatedScore = LeadScoreCalculation.LeadScoreCalculate(listcmToCalculate[0]);
+          for(CampaignMember cm : newList){
+              cm.Lead_Score__c = cmUpdatedScore.Lead_Score__c;
+              cm.Lead_Score_Level__c = cmUpdatedScore.Lead_Score_Level__c;
+            
+          }
+        }
         system.debug('CPM : beforeInsert end');
   }
 
@@ -756,7 +783,8 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
     system.debug('CPM : BeforeUpdateTrigger excute');
 
     Set<Id> campaignIdSet = new Set<Id>();
-    
+    List<CampaignMember> campaignMemIdSet = new List<CampaignMember>();
+
     for(CampaignMember cm : newList){
       if(cm.CampaignId != null){
         campaignIdSet.add(cm.CampaignId);
@@ -811,10 +839,23 @@ public without sharing class RTL_CampaignMemberTriggerHandler{
       }
 
       cm.RTL_isBatchUpdateCampaignMember__c = false;
-
+      if(cm.Scoring_Condition_Id__c != null && cm.RTL_Lead_Score_Flag__c == false && cm.RTL_Is_Send_To_HPAP__c == false){
+        campaignMemIdSet.add(cm);
+      }
+      
     }
-
-
+    
+    if(campaignMemIdSet.size() > 0 && campaignMemIdSet.size() == 1 && newList.size() == 1){
+      CampaignMember cmUpdatedScore = new CampaignMember();
+      System.debug('call LeadScoreCalculate beforeUpdate!');
+      cmUpdatedScore = LeadScoreCalculation.LeadScoreCalculate(campaignMemIdSet[0]);
+      for(CampaignMember cm : newList){
+        if(campaignMemIdSet[0].Id == cm.Id){
+          cm.Lead_Score__c = cmUpdatedScore.Lead_Score__c;
+          cm.Lead_Score_Level__c = cmUpdatedScore.Lead_Score_Level__c;
+        }
+      }
+    }
 
     system.debug('CPM : BeforeUpdateTrigger excute');
   }

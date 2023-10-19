@@ -11,11 +11,10 @@ public without sharing class fnaProductDetailCtrl_Test {
         branch.name = 'CM500';
         branch.IsActive__c = true;
         insert branch;
-
-        AppConfig__c app = new AppConfig__c();
-        app.name = 'runtrigger';
-        app.Value__c = 'false';
-        insert app;
+        List<AppConfig__c> appConfigs = new List<AppConfig__c>();
+        appConfigs.add(new AppConfig__c(Name = 'runtrigger', Value__c = 'false'));
+        appConfigs.add(new AppConfig__c(Name = 'LeadScoreRunner', Value__c = 'false'));
+        insert appConfigs;
         
         List<Avatar_Master__c> listAvatarMaster = new List<Avatar_Master__c>();
         Avatar_Master__c avatarMaster = new Avatar_Master__c();

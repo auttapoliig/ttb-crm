@@ -1,343 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
-        <label>อายุ</label>
-        <name>AGE</name>
+        <label>ลบ Lead Scoring Condition Detail</label>
+        <name>LGS_Delete_LSCD_Header</name>
     </customLabels>
     <customLabels>
-        <label>ช่วงอายุของลูกค้า</label>
-        <name>AGE_Range</name>
+        <label>คุณแน่ใจว่าต้องการลบ Lead Scoring Condition Detail นี้หรือไม่</label>
+        <name>LGS_Delete_LSCD_messages</name>
     </customLabels>
     <customLabels>
-        <label>ลูกค้าที่มี AUM เปลี่ยนแปลงเทียบสิ้นเดือนก่อนหน้า</label>
-        <name>AUMChangeAlertReport</name>
+        <label>ลบ Lead Scoring Condition</label>
+        <name>LGS_Delete_LSC_Header</name>
     </customLabels>
     <customLabels>
-        <label>ยอด AUM ล่าสุด</label>
-        <name>AUM_OS</name>
+        <label>คุณแน่ใจว่าต้องการลบ Lead Scoring Condition นี้หรือไม่</label>
+        <name>LGS_Delete_LSC_messages</name>
     </customLabels>
     <customLabels>
-        <label>ช่วง AUM ของลูกค้า</label>
-        <name>AUM_Range</name>
+        <label>คุณได้ทำการตรวจสอบว่า Lead Scoring List ไม่ได้ถูกใช้ในระบบ LGS</label>
+        <name>LGS_Inactive_Message</name>
     </customLabels>
     <customLabels>
-        <label>ยอดรวมบัญชี All Free ล่าสุด</label>
-        <name>AllFree_OS</name>
+        <label><!-- LGS_Summary_Weight --></label>
+        <name>LGS_Summary_Weight</name>
     </customLabels>
     <customLabels>
-        <label>วันเกิดลูกค้าในเดือนนี้และเดือนหน้า</label>
-        <name>BirthdayReport</name>
+        <label>หมายเหตุ : กรณีปุ่ม Active ไม่ปรากฏ ให้ตรวจสอบผลรวม Summary Weight ต้องเท่ากับ 100%</label>
+        <name>LGS_Summary_Weight_Warn_Message</name>
     </customLabels>
     <customLabels>
-        <label>คะแนนบัตรเครดิตอื่นๆ</label>
-        <name>CC_Other_POINT_BALANCE</name>
+        <label><!-- LGS_Total_Weight --></label>
+        <name>LGS_Total_Weight</name>
     </customLabels>
     <customLabels>
-        <label>คะแนนสะสมพิเศษรายปี ของลูกค้าบัตรเครดิต ttb reserve</label>
-        <name>CC_RESERVE_ANUAL_POINT</name>
+        <label>น้ำหนักที่ได้น้อยกว่าน้ำหนักรวมที่กำหนด กรุณากรอกข้อมูลเพิ่มเติม</label>
+        <name>LGS_Warning_messages</name>
     </customLabels>
     <customLabels>
-        <label>คะแนนบัตรเครดิต ttb reserve</label>
-        <name>CC_RESERVE_POINT</name>
+        <label>--ไม่มี--</label>
+        <name>None</name>
     </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ได้รับเชิญถือบัตรเครดิต ttb reserve</label>
-        <name>CC_Reserve_Eligible</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ได้รับการ Fulfillment จากแต่ละ Campaign</label>
-        <name>CampaignFulfillmentAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ได้รับสิทธิพิเศษ Instant Lending ที่ได้รับการยกเว้นเอกสาร</label>
-        <name>CampaignInstantLendingAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label>แคมเปญและโปรโมชั่นใหม่</label>
-        <name>CampaignReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ได้รับสิทธิพิเศษ เรียนเชิญถือบัตร ttb reserve</label>
-        <name>CampaignTTBReserveAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Campaign Trigger --></label>
-        <name>Campaign_Trigger</name>
-    </customLabels>
-    <customLabels>
-        <label>Sub Segment  ของลูกค้า</label>
-        <name>Cust_Sub_Segment</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่มีบัญชีเงินฝากประจำครบกำหนดในอีก 30 วันข้างหน้า</label>
-        <name>Customer_Deposit_Mature</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่มีบัญชีขาดการเคลื่อนไหวในอีก 30 วันข้างหน้า</label>
-        <name>Customer_Dormant_Accounts</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ต้องชำระเบี้ยประกันใน 30วันข้างหน้า  พร้อมแจ้ง Fully Paid</label>
-        <name>Customer_Insurance_Anniversary</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่มีกรมธรรม์หมดอายุในอีก 30 วันข้างหน้า</label>
-        <name>Customer_Insurance_Mature</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่มีกองทุนใกล้หมดอายุในอีก 30 วันข้างหน้า</label>
-        <name>Customer_MF_Mature</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดเงินฝากล่าสุด</label>
-        <name>DP_OS</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้ามีหุ้นกู้ (Y/N)</label>
-        <name>Debenture</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมหุ้นกู้ที่จะครบกำหนดเดือนนี้</label>
-        <name>Debenture_this_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมหุ้นกู้ที่จะครบกำหนดเดือนหน้า</label>
-        <name>Debentured_next_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าเป็นผู้ถือหุ้นบริษัท (Y/N)</label>
-        <name>Employer_Flag</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่บัตรประชาชน จะหมดในอีก 30 วันข้างหน้าและหมดอายุแล้ว</label>
-        <name>IDCardReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ต้องอัพเดต KYC โดยด่วน</label>
-        <name>KYCReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้า Non-Wealth ที่มี Trxn อย่างน้อย +/-1 ล้านบาท ใน 5 วัน ที่ผ่านมา</label>
-        <name>LargeTransactionNonWealthAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้า Wealth ที่มี Trxn อย่างน้อย +/-3 ล้านบาท ใน 5 วัน ที่ผ่านมา</label>
-        <name>LargeTransactionWealthAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label>กิจกรรมล่าสุด (ย้อนหลัง 90 วัน)</label>
-        <name>Last_Activity</name>
-    </customLabels>
-    <customLabels>
-        <label>วันที่ทำกิจกรรมล่าสุด (ย้อนหลัง 90 วัน)</label>
-        <name>Last_Activity_Date</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้ากองทุนที่ต้องนำเสนอการแก้พอร์ต</label>
-        <name>MFAdjustAlertReportLabel</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดกองทุนรวมล่าสุด</label>
-        <name>MF_OS</name>
-    </customLabels>
-    <customLabels>
-        <label>บริษัทของลูกค้ามี Payroll (Y/N)</label>
-        <name>MOU_payroll_flag</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Max Select Customer on My Customer Screen --></label>
-        <name>Max_Select_Customer</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Moment Trigger --></label>
-        <name>Moment_Trigger</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมกองทุนที่จะครบกำหนดเดือนหน้า</label>
-        <name>Mutual_FUND_next_month</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- My Customer Filter Validation Message --></label>
-        <name>My_Customer_Filter_Validation_Message</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมบัญชี No Fixed ล่าสุด</label>
-        <name>NFX_OS</name>
-    </customLabels>
-    <customLabels>
-        <label>ชื่อลูกค้า</label>
-        <name>Name_My_Customer</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Portfolio Trigger --></label>
-        <name>Portfolio_Trigger</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Product Trigger --></label>
-        <name>Product_Trigger</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Regulation Trigger --></label>
-        <name>Regulation_Trigger</name>
-    </customLabels>
-    <customLabels>
-        <label>H-W-C ระดับทีม</label>
-        <name>Relationship_Level</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ภาพรวมพอร์ตกองทุนเป็น Risk Mismatch</label>
-        <name>RiskMisMatchAlertReport</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้าที่ Risk Suitability จะหมดในอีก 30 วันข้างหน้าและหมดอายุแล้ว</label>
-        <name>RiskReport</name>
-    </customLabels>
-    <customLabels>
-        <label>Suit Score ของลูกค้า</label>
-        <name>SUIT_SCORE_FIN</name>
-    </customLabels>
-    <customLabels>
-        <label>วันที่คัดลูกค้าล่าสุด</label>
-        <name>Select_Date_Time</name>
-    </customLabels>
-    <customLabels>
-        <label>คัด</label>
-        <name>Select_customer</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมบัญชีเงินฝากประจำล่าสุด</label>
-        <name>TD_OS</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมเงินฝากประจำที่จะครบกำหนดเดือนหน้า</label>
-        <name>TD_next_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ปกติ</label>
-        <name>Task_Priority</name>
-    </customLabels>
-    <customLabels>
-        <label>ลูกค้า Wealth (Y/N)</label>
-        <name>WEALTH_FLAG</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมประกันที่จะครบกำหนดชำระเดือนหน้า</label>
-        <name>ba_ape_next_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมประกันที่จะครบกำหนดชำระเดือนนี้</label>
-        <name>ba_ape_this_month</name>
-    </customLabels>
-    <customLabels>
-        <label>คัดลูกค้า</label>
-        <name>link_for_My_Customer_Tablet</name>
-    </customLabels>
-    <customLabels>
-        <label>%กำไร/ขาดทุนของกองทุนรวม</label>
-        <name>mf_gain_loss</name>
-    </customLabels>
-    <customLabels>
-        <label>อัตราดอกเบี้ยบัญชี No Fixed</label>
-        <name>nfx_rate</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมบัญชีเงินฝากอื่นๆล่าสุด</label>
-        <name>other_dp_os</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมเงินฝากประจำที่จะครบกำหนดเดือนนี้</label>
-        <name>td_maturity_this_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมกองทุนที่จะครบกำหนดเดือนนี้</label>
-        <name>term_fund_maturity_this_month</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- tmb cust id on my customer screen --></label>
-        <name>tmb_cust_id</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมผลิตภัณฑ์ที่จะครบกำหนดเดือนหน้า</label>
-        <name>total_maturity_next_month</name>
-    </customLabels>
-    <customLabels>
-        <label>ยอดรวมผลิตภัณฑ์ที่จะครบกำหนดเดือนนี้</label>
-        <name>total_maturity_this_month</name>
-    </customLabels>
-    <customLabels>
-        <label>กรุณาเลือกลูกค้าครั้งละไม่เกิน 50 รายการ</label>
-        <name>warnning_for_maxSelectCustomer</name>
-    </customLabels>
-    <customLabels>
-        <label>กรุณาเลือกลูกค้าอย่างน้อย 1 รายการ</label>
-        <name>warnning_for_noneSelectCustomer</name>
-    </customLabels>
-    <reportTypes>
-        <description><!-- Account With Fulfillment --></description>
-        <label><!-- Account With Fulfillment --></label>
-        <name>Account_With_Fulfillment</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Customers --></label>
-            <name>Customers</name>
-        </sections>
-        <sections>
-            <label><!-- Fulfillment --></label>
-            <name>Fulfillment</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Account With Retail Instant Lending --></description>
-        <label><!-- Account With Retail Instant Lending --></label>
-        <name>Account_With_Retail_Instant_Lending</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Customers --></label>
-            <name>Customers</name>
-        </sections>
-        <sections>
-            <label><!-- Retail Instant Lendings --></label>
-            <name>Retail Instant Lendings</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Account with Customer Product Alert --></description>
-        <label><!-- Account with Customer Product Alert --></label>
-        <name>Account_with_Customer_Product_Alert</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Customer Product Alerts --></label>
-            <name>Customer Product Alerts</name>
-        </sections>
-        <sections>
-            <label><!-- Customers --></label>
-            <name>Customers</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Account with Large Transaction Movement --></description>
-        <label><!-- Account with Large Transaction Movement --></label>
-        <name>Account_with_Large_Transaction_Movement</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Customers --></label>
-            <name>Customers</name>
-        </sections>
-        <sections>
-            <label><!-- Large Transaction Movements --></label>
-            <name>Large Transaction Movements</name>
-        </sections>
-    </reportTypes>
 </Translations>

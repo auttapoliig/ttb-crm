@@ -3,6 +3,16 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
     
     public RTL_AL_WsCreateLead() {}
 
+    private static Map<Id, RTL_Lead_Assignment_Rule__c>  leadAssignmentRule {
+        get{
+            if(leadAssignmentRule == null){
+                leadAssignmentRule = new Map<Id, RTL_Lead_Assignment_Rule__c>([SELECT Id, Name, RTL_Active_Flag__c, RTL_Priority__c, RTL_Lead_Record_Type__c, RTL_Integration_Type__c, RTL_Lead_Field_Criteria_1__c, RTL_Lead_Field_Criteria_2__c, RTL_Lead_Field_Criteria_3__c, RTL_Lead_Field_Criteria_4__c, RTL_Lead_Field_Criteria_5__c, RTL_Lead_Field_Value_1__c, RTL_Lead_Field_Value_2__c, RTL_Lead_Field_Value_3__c, RTL_Lead_Field_Value_4__c, RTL_Lead_Field_Value_5__c, RTL_Assigned_User__c, RTL_Assigned_User_field__c, RTL_Assigned_Queue_Name__c, RTL_Branch_and_Zone_Queue_User_field__c, RTL_Default_Queue_Name__c, RTL_Default_User__c, RTL_IsAssign_Campaign__c, RTL_Assigned_Apex__c, RTL_IsInsertProduct__c FROM RTL_Lead_Assignment_Rule__c WHERE RTL_Active_Flag__c = true ORDER BY RTL_Priority__c]);
+            }
+            return leadAssignmentRule;
+        }
+        set{}
+    }
+
     @HttpPost
     global static SCSReqRes httpPostWebservice() {
         Savepoint sp;
@@ -76,7 +86,7 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         RTL_AL_ILA_AMT__c,RTL_AL_REMN_MTH__c,RTL_AL_OFFR_ILA_AMT__c,RTL_AL_OFFR_ILA_MTH__c,RTL_AL_promotion_detail__c,RTL_Contact_Method__c,LeadSource,
                         RTL_Customer_Segment__c,RTL_TMB_Campaign_Source__c,RTL_Medium__c, RTL_W2L_Campaign_Name__c, RTL_W2L_Term__c, RTL_W2L_Content__c, RTL_Media_Source__c, RTL_Consent__c,
                         // Notification to ...
-                        RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Email, RTL_Assigned_Agent__r.Email,RTL_Contact_Staff_Name__r.Email,createReferDate__c
+                        RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Email, RTL_Assigned_Agent__r.Email,RTL_Contact_Staff_Name__r.Email,createReferDate__c,RTL_Integration_System__c
                         FROM CampaignMember 
                         WHERE RTL_Marketing_Code__c = :marketingCode];
 
@@ -98,6 +108,7 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                 if(checkIsEmpty(marketingCode)) {
                     if(isSuccess) {
                         System.debug('Remark -->' + dropLeadO2O.RTL_Remark__c);
+                        dropLeadO2O.RTL_Integration_System__c = requestHeader.get('Integration-System');
                         insert dropLeadO2O;
                         System.debug('testdrop' + dropLeadO2O);
                         
@@ -110,7 +121,7 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                         RTL_Contact_Staff_Name__r.Name,RTL_Assigned_Agent__r.Name,RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Name,RTL_Medium__c, RTL_W2L_Campaign_Name__c, RTL_W2L_Term__c, RTL_W2L_Content__c, RTL_Media_Source__c, RTL_Consent__c,
                         RTL_AL_ContactProvince__c,RTL_AL_ContactDistrict__c,RTL_AL_ContactSubDistrict__c,RTL_AL_ContactZipcode__c,
                         // Notification to ...
-                        RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Email, RTL_Assigned_Agent__r.Email, RTL_Contact_Staff_Name__r.Email
+                        RTL_Assigned_Branch__r.RTL_Branch_Manager_User__r.Email, RTL_Assigned_Agent__r.Email, RTL_Contact_Staff_Name__r.Email,RTL_Integration_System__c
                         FROM CampaignMember 
                         WHERE LeadId = :dropLeadO2O.Id LIMIT 1];
                         if(listcm.size() > 0){
@@ -221,11 +232,35 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
             
                     campaignMemberTouch.RTL_AL_comment__c = dropLeadO2O.RTL_AL_comment__c;
                     campaignMemberTouch.RTL_AL_oa_ref_code__c = dropLeadO2O.RTL_AL_oa_ref_code__c;
-                    campaignMemberTouch.RTL_AL_Showroom__c = String.valueOf(jsonMap.get('RTL_AL_Showroom__c'));
-                    campaignMemberTouch.RTL_AL_TentName__c = String.valueOf(jsonMap.get('RTL_AL_TentName__c'));
+                    // campaignMemberTouch.RTL_AL_Showroom__c = String.valueOf(jsonMap.get('RTL_AL_Showroom__c'));
+                    // campaignMemberTouch.RTL_AL_TentName__c = String.valueOf(jsonMap.get('RTL_AL_TentName__c'));
+                    campaignMemberTouch.RTL_AL_Showroom__c = dropLeadO2O.RTL_AL_Showroom__c;
+                    campaignMemberTouch.RTL_AL_TentName__c = dropLeadO2O.RTL_AL_TentName__c;
                     campaignMemberTouch.RTL_AL_car_bought_from__c = dropLeadO2O.RTL_AL_car_bought_from__c;
                     campaignMemberTouch.RTL_AL_available_time__c = dropLeadO2O.RTL_AL_available_time__c;
-
+                    //LGS
+                    campaignMemberTouch.Scoring_Condition_Id__c = dropLeadO2O.Scoring_Condition_Id__c;
+                    campaignMemberTouch.RTL_Integration_System__c = requestHeader.get('Integration-System');
+                    campaignMemberTouch.RTL_Partner_Branch_Code__c = dropLeadO2O.RTL_Partner_Branch_Code__c;
+                    campaignMemberTouch.RTL_Partner_Employee_Code__c = dropLeadO2O.RTL_Partner_Employee_Code__c;
+                    campaignMemberTouch.LGS_Assignment_Code__c = dropLeadO2O.LGS_Assignment_Code__c;
+                    campaignMemberTouch.LGS_BrandCode__c = dropLeadO2O.LGS_BrandCode__c;
+                    campaignMemberTouch.LGS_BrandShowroomCode__c = dropLeadO2O.LGS_BrandShowroomCode__c;
+                    campaignMemberTouch.LGS_PartnerCode__c = dropLeadO2O.LGS_PartnerCode__c;
+                    campaignMemberTouch.LGS_LinkInfo__c = dropLeadO2O.LGS_LinkInfo__c;
+                    campaignMemberTouch.LGS_File_Upload__c = dropLeadO2O.LGS_File_Upload__c;
+                    campaignMemberTouch.Partner_Lead_ID__c = dropLeadO2O.Partner_Lead_ID__c;
+                    campaignMemberTouch.LGS_Child_Campaign_ID__c = dropLeadO2O.LGS_Child_Campaign_ID__c;
+                    campaignMemberTouch.Car_Reference_No__c = dropLeadO2O.Car_Reference_No__c;
+                    campaignMemberTouch.LGS_VIN_No__c = dropLeadO2O.LGS_VIN_No__c;
+                    campaignMemberTouch.RTL_AL_DownAmt__c = dropLeadO2O.RTL_AL_DownAmt__c;
+                    campaignMemberTouch.RTL_AL_DownPercent__c = dropLeadO2O.RTL_AL_DownPercent__c;
+                    campaignMemberTouch.LGS_Campaign_Start_Date__c = dropLeadO2O.LGS_Campaign_Start_Date__c;
+                    campaignMemberTouch.LGS_Campaign_End_Date__c = dropLeadO2O.LGS_Campaign_End_Date__c;
+                    campaignMemberTouch.RTL_AL_PayPerMonth__c = dropLeadO2O.RTL_AL_PayPerMonth__c;
+                    campaignMemberTouch.RTL_AL_IsCarBooked__c = dropLeadO2O.RTL_AL_IsCarBooked__c;
+                    campaignMemberTouch.RTL_AL_province_car_plate_no__c = dropLeadO2O.RTL_AL_province_car_plate_no__c;
+                    
                     //stamp value into field Remark in Campaign member.					
                     //Value: Line2 1= 'ลูกค้าระบุวงเงินที่ต้องการ' + RTL_AL_wanted_amount__c + 'ระยะเวลาผ่อน (งวด)' + RTL_AL_installment_periods__c + 'ประมาณค่างวด' + RTL_AL_installment_amount__c
                     if(campaignMemberTouch.RTL_TMB_Campaign_Source__c == 'Touch'){
@@ -239,12 +274,33 @@ global without sharing class RTL_AL_WsCreateLead extends RTL_AL_WebserviceAbstra
                             campaignMemberTouch.createReferDate__c = Datetime.now();
                         }
                     }
+    
                     update campaignMemberTouch;
 
-                    if(campaignMemberTouch.RTL_Contact_Method__c == 'AL Sales')
-                    {                  
-                        RTL_AL_CampaignMemberToAL.sendCampaignMemberToAL(new List<CampaignMember>{campaignMemberTouch});
+                    // LGSWS2
+                    
+                    List <Lead> newlist = new List<Lead>{dropLeadO2O};
+                    Map<Id,String> mapLeadwithIntegrationtype = new Map<Id,String>();
+                    LeadAssignmentUtil.assignLeadOwnerByLeadAssignmentrule(newlist);
+                    // System.debug('Debug11 dropLeadO2O:'+dropLeadO2O.RTL_Lead_Assigned_By_Rule__c);
+                    // System.debug('Debug11 dropLeadO2O id:'+dropLeadO2O.Id);
+                    // System.debug('Debug11 dropLeadO2O:'+newlist[0].RTL_Lead_Assigned_By_Rule__c);
+                    RTL_Lead_Assignment_Rule__c rule = leadAssignmentRule.containsKey(dropLeadO2O.RTL_Lead_Assigned_By_Rule__c) ? leadAssignmentRule.get(dropLeadO2O.RTL_Lead_Assigned_By_Rule__c) : null;
+                    // System.debug('Debug11 rule:'+rule);
+                    // System.debug('Debug11 rule.RTL_Integration_Type__c:'+rule.RTL_Integration_Type__c);
+                    if(rule != null && rule.RTL_Integration_Type__c != null && rule.RTL_Integration_Type__c != 'Cisco') {
+                        mapLeadwithIntegrationtype.put(dropLeadO2O.Id, rule.RTL_Integration_Type__c);
                     }
+
+                    if(mapLeadwithIntegrationtype.size() > 0){
+                        List<CampaignMember> campaignlist = new List<CampaignMember>{campaignMemberTouch};
+                        RTL_LeadDistribution.mappingleadDistribution(campaignlist,mapLeadwithIntegrationtype);
+                    }
+                    // System.debug('campaignMemberTouch.RTL_Contact_Method__c'+campaignMemberTouch.RTL_Contact_Method__c);	
+                    // if(campaignMemberTouch.RTL_Contact_Method__c == 'AL Sales')
+                    // {                  
+                    //     RTL_AL_CampaignMemberToAL.sendCampaignMemberToAL(new List<CampaignMember>{campaignMemberTouch});
+                    // }
                     
                 }
 

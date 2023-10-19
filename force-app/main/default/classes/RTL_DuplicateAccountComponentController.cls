@@ -508,7 +508,33 @@ public without sharing class RTL_DuplicateAccountComponentController {
                 newOpp.RTL_AL_normal_price__c = currentObject.RTL_AL_normal_price__c;
                 newOpp.RTL_AL_oa_ref_code__c = currentObject.RTL_AL_oa_ref_code__c;
                 newOpp.RTL_AL_wanted_amount__c = currentObject.RTL_AL_wanted_amount__c;
+                //Added From LGSWS2
+                newOpp.LGS_Assignment_Code__c = currentObject.LGS_Assignment_Code__c;
+                newOpp.LGS_LinkInfo__c = currentObject.LGS_LinkInfo__c;
+                newOpp.LGS_BrandCode__c = currentObject.LGS_BrandCode__c;
+                newOpp.LGS_BrandShowroomCode__c = currentObject.LGS_BrandShowroomCode__c;
+                newOpp.LGS_PartnerCode__c = currentObject.LGS_PartnerCode__c;
+                // newOpp.RTL_Campaign_Name__c = currentObject.RTL_W2L_Campaign_Name__c;
+                newOpp.Lead_Score__c = currentObject.Lead_Score__c;
+                newOpp.Lead_Score_level__c = currentObject.Lead_Score_level__c;
+                newOpp.LGS_VIN_No__c = currentObject.LGS_VIN_No__c;
+                newOpp.LGS_File_Upload__c = currentObject.LGS_File_Upload__c;
+                newOpp.LGS_Campaign_Start_Date__c = currentObject.LGS_Campaign_Start_Date__c;
+                newOpp.LGS_Campaign_End_Date__c = currentObject.LGS_Campaign_End_Date__c;
+                newOpp.LGS_Child_Campaign_ID__c = currentObject.LGS_Child_Campaign_ID__c;
+                newOpp.Car_Reference_No__c = currentObject.Car_Reference_No__c;
+                newOpp.RTL_W2L_Campaign_Name__c = currentObject.RTL_W2L_Campaign_Name__c;
+                newOpp.LGS_Partner__c = currentObject.LGS_Partner__c;
 
+                if(currentObject.RTL_Marketing_Code__c != null)
+                {
+                    newOpp.Marketing_Code__c = currentObject.RTL_Marketing_Code__c;
+                }
+                if(currentObject.RTL_Web_Unique_ID__c != null)
+                {
+                    newOpp.RTL_Web_Unique_ID__c = currentObject.RTL_Web_Unique_ID__c;
+                }
+                
                 Integer numberOfProduct =  each.numberOfProduct;
                 productNoOpptyMap.put( numberOfProduct, newOpp );
 
@@ -694,7 +720,33 @@ public without sharing class RTL_DuplicateAccountComponentController {
                 newOpp.RTL_AL_normal_price__c = currentObject.RTL_AL_normal_price__c;
                 newOpp.RTL_AL_oa_ref_code__c = currentObject.RTL_AL_oa_ref_code__c;
                 newOpp.RTL_AL_wanted_amount__c = currentObject.RTL_AL_wanted_amount__c;
-                
+                //Added From LGSWS2
+                newOpp.LGS_Assignment_Code__c = currentObject.LGS_Assignment_Code__c;
+                newOpp.LGS_LinkInfo__c = currentObject.LGS_LinkInfo__c;
+                newOpp.LGS_BrandCode__c = currentObject.LGS_BrandCode__c;
+                newOpp.LGS_BrandShowroomCode__c = currentObject.LGS_BrandShowroomCode__c;
+                newOpp.LGS_PartnerCode__c = currentObject.LGS_PartnerCode__c;
+                // newOpp.RTL_Campaign_Name__c = currentObject.RTL_W2L_Campaign_Name__c;
+                newOpp.Lead_Score__c = currentObject.Lead_Score__c;
+                newOpp.Lead_Score_level__c = currentObject.Lead_Score_level__c;
+                newOpp.LGS_VIN_No__c = currentObject.LGS_VIN_No__c;
+                newOpp.LGS_File_Upload__c = currentObject.LGS_File_Upload__c;
+                newOpp.LGS_Campaign_Start_Date__c = currentObject.LGS_Campaign_Start_Date__c;
+                newOpp.LGS_Campaign_End_Date__c = currentObject.LGS_Campaign_End_Date__c;
+                newOpp.LGS_Child_Campaign_ID__c = currentObject.LGS_Child_Campaign_ID__c;
+                newOpp.Car_Reference_No__c = currentObject.Car_Reference_No__c;
+                newOpp.RTL_W2L_Campaign_Name__c = currentObject.RTL_W2L_Campaign_Name__c;
+                newOpp.LGS_Partner__c = currentObject.LGS_Partner__c;
+
+                if(currentObject.RTL_Marketing_Code__c != null)
+                {
+                    newOpp.Marketing_Code__c = currentObject.RTL_Marketing_Code__c;
+                }
+                if(currentObject.RTL_Web_Unique_ID__c != null)
+                {
+                    newOpp.RTL_Web_Unique_ID__c = currentObject.RTL_Web_Unique_ID__c;
+                }
+
                 Integer numberOfProduct =  each.numberOfProduct;
                 productNoOpptyMap.put( numberOfProduct, newOpp );
 

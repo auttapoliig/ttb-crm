@@ -1,201 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <classAccesses>
-        <apexClass>RTL_LeadDistribution</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RTL_Distribute_CM_Batch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_Assignment_Code__c</field>
+        <field>RTL_Referral__c.LGS_Assignment_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_Assignment_Code__c</field>
+        <field>RTL_Referral__c.LGS_LinkInfo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_BrandCode__c</field>
+        <field>RTL_Referral__c.LGS_BrandCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_BrandCode__c</field>
+        <field>RTL_Referral__c.LGS_BrandShowroomCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_BrandShowroomCode__c</field>
+        <field>RTL_Referral__c.LGS_PartnerCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_BrandShowroomCode__c</field>
+        <field>RTL_Referral__c.Lead_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_PartnerCode__c</field>
+        <field>RTL_Referral__c.Lead_Score_level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_PartnerCode__c</field>
+        <field>RTL_Referral__c.LGS_VIN_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.Car_Reference_No__c</field>
+        <field>RTL_Referral__c.LGS_File_Upload__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Car_Reference_No__c</field>
+        <field>RTL_Referral__c.LGS_Campaign_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.RTL_AL_CarBooked__c</field>
+        <field>RTL_Referral__c.LGS_Campaign_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.RTL_AL_CarBooked__c</field>
+        <field>RTL_Referral__c.LGS_Child_Campaign_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_File_Upload__c</field>
+        <field>RTL_Referral__c.Car_Reference_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_File_Upload__c</field>
+        <field>RTL_Referral__c.LGS_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_CAMPAIGN_END_DATE__c</field>
+        <field>Opportunity.LGS_Assignment_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_CAMPAIGN_END_DATE__c</field>
+        <field>Opportunity.LGS_LinkInfo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_CAMPAIGN_START_DATE__c</field>
+        <field>Opportunity.LGS_BrandCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_CAMPAIGN_START_DATE__c</field>
+        <field>Opportunity.LGS_BrandShowroomCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.LGS_Child_Campaign_ID__c</field>
+        <field>Opportunity.LGS_PartnerCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.LGS_Child_Campaign_ID__c</field>
+        <field>Opportunity.Lead_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.Lead_Score__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Lead_Score__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.Lead_Score_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Lead_Score_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.LGS_LinkInfo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.LGS_LinkInfo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.RTL_Partner_Branch_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.RTL_Partner_Branch_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.RTL_Partner_Employee_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.RTL_Partner_Employee_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.Partner_Lead_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.RTL_Submit_Date_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Partner_Lead_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.Scoring_Condition_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Scoring_Condition_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.LGS_VIN_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.LGS_VIN_No__c</field>
+        <field>Opportunity.Lead_Score_level__c</field>
         <readable>true</readable>
     </fieldPermissions>
         <fieldPermissions>
         <editable>true</editable>
-        <field>RTL_Lead_Assignment_Rule__c.RTL_Integration_Type__c</field>
+        <field>Opportunity.LGS_VIN_No__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.RTL_Web_Unique_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_File_Upload__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_Campaign_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_Campaign_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_Child_Campaign_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Car_Reference_No__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.RTL_W2L_Campaign_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LGS_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -210,272 +162,135 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.RTL_Status_Approve_1__c</field>
+        <field>CampaignMember.RTL_Integration_System__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Refer_Date_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.Corebank_Branch_Code_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.Corebank_Branch_Name_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.Corebank_Sales_Manager_Head_Id_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.Corebank_Sales_Manager_Head_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Request_Hub_Code_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Request_Hub_Name_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.Corebank_Approved_Date_Time_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Product_Campaign_Code_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Product_Campaign_Name_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Dealer_Code_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Dealer_Name_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>CampaignMember.RTL_Stage_Name_Date_Time_1__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Refer_Date__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.Corebank_Branch_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.Corebank_Branch_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.Corebank_Sales_Manager_Head_Id__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.Corebank_Sales_Manager_Head__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Product_Campaign_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Product_Campaign_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Dealer_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Dealer_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Stage_Name_Date_Time__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Contact_Status__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>RTL_Referral__c.RTL_Ws_Reason__c</field>
-            <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>RTL_Referral__c.RTL_Ws_Stage__c</field>
+        <field>Lead.RTL_Integration_System__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Status_Approve__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_DownAmt__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Refer_Date__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_DownPercent__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Corebank_Branch_Code__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_PayPerMonth__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Corebank_Branch_Name__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead.RTL_AL_IsCarBooked__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Corebank_Sales_Manager_Head_Id__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>CampaignMember.RTL_Lead_Score_Flag__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Corebank_Sales_Manager_Head__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>RTL_Referral__c.RTL_Lead_Score_Flag__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Request_Hub_Code__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead_Score_Level__c.Definition__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Request_Hub_Name__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead_Scoring_Condition_Detail__c.Value2__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Corebank_Approved_Date_Time__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead_Scoring_List__c.Description__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Product_Campaign_Code__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead_Scoring_List__c.IsActive__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Product_Campaign_Name__c</field>
-            <readable>true</readable>
+        <editable>true</editable>
+        <field>Lead_Scoring_List__c.Summary_weight__c</field>
+        <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Dealer_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Dealer_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Contact_Status__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Ws_Reason__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.Submit_Date__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Opportunity.RTL_Stage_Name_Date_Time__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Refer_Date__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.Corebank_Branch_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.Corebank_Branch_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.Corebank_Sales_Manager_Head_Id__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.Corebank_Sales_Manager_Head__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Product_Campaign_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Product_Campaign_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Dealer_Code__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Dealer_Name__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-            <editable>true</editable>
-            <field>Cross_Sell_Product__c.RTL_Stage_Name_Date_Time__c</field>
-            <readable>true</readable>
-    </fieldPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Score_Level__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Scoring_Condition__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lead_Scoring_Condition_Detail__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <viewAllRecords>true</viewAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Lead_Scoring_List__c</object>
+    </objectPermissions>
+    <classAccesses>
+        <apexClass>LeadScoreCalculation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeadScorConTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTL_LGS_InquiryLeadScoringList</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTL_LGS_InquiryScoringConDetail</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>InquiryManager</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeadScoringController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <tabVisibilities>
+        <tab>Lead_Score_Level__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Lead_Scoring_List__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
 </Profile>

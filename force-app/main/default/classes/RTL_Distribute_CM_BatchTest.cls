@@ -164,7 +164,7 @@ public with sharing class RTL_Distribute_CM_BatchTest {
         ',RTL_AL_car_subtype__c, RTL_AL_car_gear__c, RTL_AL_car_year__c, RTL_AL_wanted_amount__c, RTL_AL_max_set_up_amount__c,RTL_AL_normal_price__c '+
         ', RTL_AL_installment_periods__c, RTL_AL_PayPerMonth__c, RTL_AL_DownPercent__c, RTL_AL_DownAmt__c, RTL_AL_installment_amount__c, RTL_AL_available_time__c'+
         ',RTL_AL_ContactZipcode__c, RTL_AL_ContactProvince__c, RTL_AL_ContactDistrict__c, RTL_AL_ContactSubDistrict__c, RTL_AL_contact_channel__c, RTL_AL_IsCarBooked__c'+
-        ', RTL_AL_car_bought_from__c, RTL_AL_TentName__c, RTL_Branch_Code__c, RTL_AL_car_plate_no__c, RTL_AL_province_car_plate_no__c, RTL_AL_Showroom__c, LeadId, Lead.RTL_ID_Type__c, Lead.RTL_Citizen_Id__c, Lead.FirstName, Lead.LastName'+
+        ', RTL_AL_car_bought_from__c, RTL_AL_TentName__c, RTL_Branch_Code__c, RTL_AL_car_plate_no__c, RTL_AL_province_car_plate_no__c, RTL_AL_Showroom__c, LeadId, Lead.RTL_ID_Type__c, Lead.RTL_Citizen_Id__c, Lead.FirstName, Lead.LastName, Lead.RTL_Email_Address__c'+
         ', Customer__c, Customer__r.ID_Number_PE__c, Customer__r.ID_Type_PE__c, Customer__r.First_name_PE__c, Customer__r.Last_name_PE__c, Customer__r.Mobile_Number_PE__c,Customer__r.Email_Address_PE__c, RTL_CampHis_Phone__c '+
         ', Customer__r.TMB_Customer_ID_PE__c, RTL_AL_comment__c, LGS_Partner__c, LGS_Lead_Received_Time__c '+
         ', RTL_AL_Interested_Rate__c, LGS_001__c, LGS_002__c, LGS_003__c, LGS_004__c, LGS_005__c, LGS_006__c, LGS_007__c, LGS_008__c, LGS_009__c, LGS_010__c '+
@@ -190,7 +190,7 @@ public with sharing class RTL_Distribute_CM_BatchTest {
         ',RTL_AL_car_subtype__c, RTL_AL_car_gear__c, RTL_AL_car_year__c, RTL_AL_wanted_amount__c, RTL_AL_max_set_up_amount__c,RTL_AL_normal_price__c '+
         ', RTL_AL_installment_periods__c, RTL_AL_PayPerMonth__c, RTL_AL_DownPercent__c, RTL_AL_DownAmt__c, RTL_AL_installment_amount__c, RTL_AL_available_time__c'+
         ',RTL_AL_ContactZipcode__c, RTL_AL_ContactProvince__c, RTL_AL_ContactDistrict__c, RTL_AL_ContactSubDistrict__c, RTL_AL_contact_channel__c, RTL_AL_IsCarBooked__c'+
-        ', RTL_AL_car_bought_from__c, RTL_AL_TentName__c, RTL_Branch_Code__c, RTL_AL_car_plate_no__c, RTL_AL_province_car_plate_no__c, RTL_AL_Showroom__c, LeadId, Lead.RTL_ID_Type__c, Lead.RTL_Citizen_Id__c, Lead.FirstName, Lead.LastName'+
+        ', RTL_AL_car_bought_from__c, RTL_AL_TentName__c, RTL_Branch_Code__c, RTL_AL_car_plate_no__c, RTL_AL_province_car_plate_no__c, RTL_AL_Showroom__c, LeadId, Lead.RTL_ID_Type__c, Lead.RTL_Citizen_Id__c, Lead.FirstName, Lead.LastName, Lead.RTL_Email_Address__c'+
         ', Customer__c, Customer__r.ID_Number_PE__c, Customer__r.ID_Type_PE__c, Customer__r.First_name_PE__c, Customer__r.Last_name_PE__c, Customer__r.Mobile_Number_PE__c,Customer__r.Email_Address_PE__c, RTL_CampHis_Phone__c '+
         ', Customer__r.TMB_Customer_ID_PE__c, RTL_AL_comment__c, LGS_Partner__c, LGS_Lead_Received_Time__c '+
         ', RTL_AL_Interested_Rate__c, LGS_001__c, LGS_002__c, LGS_003__c, LGS_004__c, LGS_005__c, LGS_006__c, LGS_007__c, LGS_008__c, LGS_009__c, LGS_010__c '+

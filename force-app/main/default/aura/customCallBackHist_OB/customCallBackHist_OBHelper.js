@@ -1,6 +1,6 @@
 ({
     initTimeline : function(component, event, helper, isViewMore) {
-
+        component.set("v.showSpinner", true);
         var action = component.get("c.getCallBackHist");
         action.setParams({
             recordId: component.get('v.recordId'),
@@ -42,8 +42,9 @@
                 // component.set('v.marketingCode', response.getReturnValue().marketing_code)
                 component.set('v.isViewMore', isViewMore);
 
-                var spinner = component.find("apexSpinner");
-                $A.util.toggleClass(spinner, "slds-hide");
+                // var spinner = component.find("obCallbackHistSpinner");
+                // $A.util.toggleClass(spinner, "slds-hide");
+                component.set("v.showSpinner", false);
                
             }
             else if (state === "INCOMPLETE") {
@@ -62,5 +63,6 @@
                 }
         });
         $A.enqueueAction(action);
+        console.log('Call Back History.')
     }
 })

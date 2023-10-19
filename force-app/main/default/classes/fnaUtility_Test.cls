@@ -159,6 +159,12 @@ public without sharing class fnaUtility_Test {
         Aconfig3.Name = 'FilterRetailSegment';
         Aconfig3.Value__c = '5|6|7|8|9';
         listAconfig.add(Aconfig3);
+
+        AppConfig__c leadScoreRunner = new AppConfig__c();
+        leadScoreRunner.Name = 'LeadScoreRunner';
+        leadScoreRunner.Value__c = 'false';
+        listAconfig.add(leadScoreRunner);
+
         insert listAconfig;   
 
         List<Account> listAccount = new List<Account>();
@@ -224,6 +230,12 @@ public without sharing class fnaUtility_Test {
             Aconfig.Name = 'runtrigger';
             Aconfig.Value__c = 'true';
             listAconfig.add(Aconfig);
+
+            AppConfig__c leadScoreRunner = new AppConfig__c();
+            leadScoreRunner.Name = 'LeadScoreRunner';
+            leadScoreRunner.Value__c = 'false';
+            listAconfig.add(leadScoreRunner);
+
             insert listAconfig;
     
             List<FNA_Activity__c> listFnaAct = new List<FNA_Activity__c>();
@@ -247,10 +259,18 @@ public without sharing class fnaUtility_Test {
     @isTest
     private static void Test_FnaCheckExisting() {
         
+        List<AppConfig__c> apps = new List<AppConfig__c>();
         AppConfig__c app = new AppConfig__c();
         app.name = 'runtrigger';
         app.Value__c = 'false';
-        insert app;
+        apps.add(app);
+
+        AppConfig__c leadScoreRunner = new AppConfig__c();
+        leadScoreRunner.Name = 'LeadScoreRunner';
+        leadScoreRunner.Value__c = 'false';
+        apps.add(leadScoreRunner);
+        
+        insert apps;
         
         List<Avatar_Master__c> listAvatarMaster = new List<Avatar_Master__c>();
         Avatar_Master__c avatarMaster = new Avatar_Master__c();
@@ -273,10 +293,18 @@ public without sharing class fnaUtility_Test {
     @isTest
     private static void Test_FnaCheckExistingNonEncrypt() {
         
+        List<AppConfig__c> apps = new List<AppConfig__c>();
         AppConfig__c app = new AppConfig__c();
         app.name = 'runtrigger';
         app.Value__c = 'false';
-        insert app;
+        apps.add(app);
+
+        AppConfig__c leadScoreRunner = new AppConfig__c();
+        leadScoreRunner.Name = 'LeadScoreRunner';
+        leadScoreRunner.Value__c = 'false';
+        apps.add(leadScoreRunner);
+        
+        insert apps;
         
         List<Avatar_Master__c> listAvatarMaster = new List<Avatar_Master__c>();
         Avatar_Master__c avatarMaster = new Avatar_Master__c();
@@ -321,10 +349,18 @@ public without sharing class fnaUtility_Test {
 
     @isTest
     private static void Test_checkCustomerId() {
-        AppConfig__c Aconfig = new AppConfig__c();
-        Aconfig.Name = 'runtrigger';
-        Aconfig.Value__c = 'true';
-        insert Aconfig;   
+        List<AppConfig__c> apps = new List<AppConfig__c>();
+        AppConfig__c app = new AppConfig__c();
+        app.name = 'runtrigger';
+        app.Value__c = 'false';
+        apps.add(app);
+
+        AppConfig__c leadScoreRunner = new AppConfig__c();
+        leadScoreRunner.Name = 'LeadScoreRunner';
+        leadScoreRunner.Value__c = 'false';
+        apps.add(leadScoreRunner);
+        
+        insert apps;
 
         List<Account> listAccount = new List<Account>();
         Account account = new Account();

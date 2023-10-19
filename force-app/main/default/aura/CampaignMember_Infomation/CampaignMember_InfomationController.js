@@ -29,10 +29,12 @@
         helper.getOfferResultPickList(component, event, helper);
         helper.getContactStatusPickList(component, event, helper);
         helper.getUncontactReasonPickList(component, event, helper);
+        helper.getLeadScoreLevelPickList(component, event, helper);
         // helper.getExistingCallback(component, event, helper);
 
         // CrossSell value
         helper.getProductGroupPickList(component, event, helper);
+        helper.getMoreDetailAvailableProduct(component, event, helper);
     },
 
     changeState: function (component, event, helper) {
@@ -76,6 +78,24 @@
         campaignMemObj.RTL_Reason__c = selectedOptionValue;
         component.set('v.campaignMemObj', campaignMemObj);
         // console.log('campaignMemObj:',campaignMemObj);
+    },
+    handleChangeLeadScoreLevel: function (component, event, helper) {
+        // This will contain the string of the "value" attribute of the selected option
+        var listMin = component.get('v.leadScoreLevelListmin');
+        var campaignMemObj = component.get('v.campaignMemObj');
+        var min;
+            listMin.forEach(element => {
+                if (element.label == campaignMemObj.Lead_Score_Level__c) {
+                    campaignMemObj.Lead_Score__c = element.value;
+                    campaignMemObj.RTL_Lead_Score_Flag__c = true;                  
+                    return null
+                }
+            });
+            component.set('v.campaignMemObj', campaignMemObj);
+        
+        // console.log('campaignMemObj:',campaignMemObj);
+        // console.log('listMin:',listMin);
+        // console.log('campaignMemObj.Lead_Score_Level__c:',campaignMemObj.Lead_Score_Level__c);
     },
     handleChangeContactStatus: function (component, event, helper) {
         var selectedOptionValue = event.getParam("value");
@@ -434,6 +454,12 @@
         } else if (campaign.Customer__c != null) {
             acc_name = campaign.Customer__c;
         }
+        var Email = '';
+        if(campaign.Customer__c != null && campaign.Customer__r.Email_Address_PE__c != null){
+            Email = campaign.Customer__r.Email_Address_PE__c;
+        }else if(campaign.LeadId != null && campaign.Lead.RTL_Email_Address__c != null){
+            Email = campaign.Lead.RTL_Email_Address__c;
+        }
         var FName = campaign.FirstName ? campaign.FirstName : '';
         var LName = campaign.LastName ? campaign.LastName : '';
         var Phone = campaign.RTL_CampHis_Phone__c ? campaign.RTL_CampHis_Phone__c : '';
@@ -477,10 +503,24 @@
         var RTL_W2L_Campaign_Name__c = campaign.LeadId && campaign.Lead.RTL_W2L_Campaign_Name__c ?  campaign.Lead.RTL_W2L_Campaign_Name__c : '';
         var RTL_W2L_Content__c = campaign.LeadId && campaign.Lead.RTL_W2L_Content__c ?  campaign.Lead.RTL_W2L_Content__c : '';
         var RTL_W2L_Term__c = campaign.LeadId && campaign.Lead.RTL_W2L_Term__c ?  campaign.Lead.RTL_W2L_Term__c : '';
+        var LGS_Assignment_Code = campaign.LGS_Assignment_Code__c ? campaign.LGS_Assignment_Code__c : '';
+        var LGS_LinkInfo = campaign.LGS_LinkInfo__c ? campaign.LGS_LinkInfo__c : '';
+        // console.log('LINK INFO: ' + LGS_LinkInfo);
+        var LGS_BrandCode = campaign.LGS_BrandCode__c ? campaign.LGS_BrandCode__c : '';
+        var LGS_BrandShowroomCode = campaign.LGS_BrandShowroomCode__c ? campaign.LGS_BrandShowroomCode__c : '';
+        var LGS_PartnerCode = campaign.LGS_PartnerCode__c ? campaign.LGS_PartnerCode__c : '';
+        var Lead_Score = campaign.Lead_Score__c;
+        // console.log('Lead_Score : ' + campaign.Lead_Score__c);
+        var Lead_Score_level = campaign.Lead_Score_Level__c ? campaign.Lead_Score_Level__c : '';
+        var LGS_VIN_No = campaign.LGS_VIN_No__c ? campaign.LGS_VIN_No__c : '';
+        var LGS_File_Upload = campaign.LGS_File_Upload__c ? campaign.LGS_File_Upload__c : '';
+        var LGS_Campaign_Start_Date = campaign.LGS_Campaign_Start_Date__c ? campaign.LGS_Campaign_Start_Date__c : '';
+        var LGS_Campaign_End_Date = campaign.LGS_Campaign_End_Date__c ? campaign.LGS_Campaign_End_Date__c : '';
+        var LGS_Child_Campaign_ID = campaign.LGS_Child_Campaign_ID__c ? campaign.LGS_Child_Campaign_ID__c : '';
+        var Car_Reference_No = campaign.Car_Reference_No__c ? campaign.Car_Reference_No__c : '';
+        var LGS_Partner = campaign.LGS_Partner__c ? campaign.LGS_Partner__c : '';
 
-        // console.log('LeadSource:',campaign.LeadSource);
-
-        var param = 'RTL_FirstName__c=' + FName + ',RTL_LastName__c=' + LName + ',RTL_Mobile1__c=' + Phone + ',RTL_AL_available_time__c=' + avatime +
+        var param = 'RTL_FirstName__c=' + FName + ',RTL_LastName__c=' + LName + ',RTL_Email__c=' + Email +',RTL_Mobile1__c=' + Phone + ',RTL_AL_available_time__c=' + avatime +
             ',RTL_AL_car_bought_from__c=' + carbf + ',RTL_AL_car_brand__c=' + car_brand + ',RTL_AL_car_gear__c=' + cargear +
             ',RTL_AL_car_group__c=' + carg + ',RTL_AL_car_subtype__c=' + carsub + ',RTL_AL_car_type__c=' + cartype + ',RTL_AL_car_year__c=' + caryear +
             ',RTL_AL_comment__c=' + comment + ',RTL_AL_contact_channel__c=' + cChannel + ',RTL_AL_installment_amount__c=' + instAmount +
@@ -493,12 +533,18 @@
             ',RTL_CampaignID__c=' + Campaign + ',RTL_LeadSource__c=' + LeadSource + ',RTL_TMB_Campaign_Source__c=' + RTL_TMB_Campaign_Source__c +
             ',RTL_TMB_Campaign_Reference__c=' + RTL_TMB_Campaign_Reference__c + ',RTL_Lead_Group__c=' + RTL_Lead_Group__c + ',RTL_Marketing_Code__c=' + RTL_Marketing_Code__c + 
             ',RTL_Web_Unique_ID__c=' + RTL_Web_Unique_ID__c +',RTL_Media_Source__c=' + RTL_Media_Source__c + ',RTL_Medium__c=' + RTL_Medium__c +
-            ',RTL_W2L_Campaign_Name__c=' + RTL_W2L_Campaign_Name__c + ',RTL_W2L_Content__c=' + RTL_W2L_Content__c + ',RTL_W2L_Term__c=' + RTL_W2L_Term__c;
+            ',RTL_W2L_Campaign_Name__c=' + RTL_W2L_Campaign_Name__c + ',RTL_W2L_Content__c=' + RTL_W2L_Content__c + ',RTL_W2L_Term__c=' + RTL_W2L_Term__c +
+            ',LGS_Assignment_Code__c=' + LGS_Assignment_Code  + ',LGS_BrandCode__c=' + LGS_BrandCode + ',LGS_Partner__c=' + LGS_Partner+
+            ',LGS_BrandShowroomCode__c=' + LGS_BrandShowroomCode + ',LGS_PartnerCode__c=' + LGS_PartnerCode + ',Lead_Score__c=' + Lead_Score +
+            ',Lead_Score_Level__c=' + Lead_Score_level + ',LGS_VIN_No__c=' + LGS_VIN_No + ',LGS_File_Upload__c=' + LGS_File_Upload + ',Car_Reference_No__c=' + Car_Reference_No +
+            ',LGS_Campaign_Start_Date__c=' + LGS_Campaign_Start_Date + ',LGS_Campaign_End_Date__c=' + LGS_Campaign_End_Date + ',LGS_Child_Campaign_ID__c=' + LGS_Child_Campaign_ID;
 
+        param += ',LGS_LinkInfo__c=' +LGS_LinkInfo;
         // console.log('param to ref:',param);
+
         var urlEvent = $A.get("e.force:navigateToURL");
         urlEvent.setParams({
-            "url": "/lightning/o/RTL_Referral__c/new?useRecordTypeCheck=1&defaultFieldValues=" + param
+            "url": "/lightning/o/RTL_Referral__c/new?useRecordTypeCheck=1&defaultFieldValues=" +  encodeURIComponent(param)
         });
         urlEvent.fire();
     },
@@ -558,8 +604,11 @@
         var indexVar = event.target.getAttribute('id');
         var productName = productList[indexVar].productName;
         var navigateTo;
-        var AutoloanList = 'CYC, CYB, NEW, USED';
-        var Homeloan = 'Home Loan';
+        // var AutoloanList = 'CYC, CYB, NEW, USED';
+        var AutoloanList = component.get("v.ALPrdNameSet");
+        // var Homeloan = 'Home Loan';
+        var Homeloan = component.get("v.HLCALPrdNameSet");
+
         if (AutoloanList.includes(productName)) {
             navigateTo = 'c__CampaignMember_AutoLoanCalInfo';
         }

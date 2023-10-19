@@ -391,6 +391,7 @@
                 var items = [];
                 if(result)
                 {
+                    // console.log('getUncontactReasonPickList',result);
                     result.forEach(value => {
                         var item = {
                             "label": value.split(',')[0],
@@ -406,6 +407,50 @@
         $A.enqueueAction(action);
     },
 
+    // lgsws2
+    getLeadScoreLevelPickList: function (component,event,helper) {
+        
+        var action = component.get('c.getLeadScoreLevelPickListValues');
+        // action.setParams({
+        //     "objectName": 'Business_Outcome_Mapping__c',
+        //     "fieldName": 'Contact_Status__c'
+        // });
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {               
+                var result =  response.getReturnValue();  
+                var items = [];
+                var mins = [];
+                if(result)
+                {
+                    result.forEach(value => {
+                        // console.log('Result items',value);
+                        var item = {
+                            "label": value.Name,
+                            "value": value.Name
+                        };
+                        // var item =value.Name;
+                        
+                        items.push(item);
+                        var min = {
+                            "label": value.Name,
+                            "value": value.Score_Min__c
+                        };
+                        mins.push(min);
+                    });
+                    // console.log('Result items',items);
+                    // console.log('Result lead Score Level List',result);
+                    
+                }
+                component.set("v.leadScoreLevelList", items);
+                component.set("v.leadScoreLevelListmin", mins);
+            }
+        });
+        
+            $A.enqueueAction(action);
+        
+            
+    },
     getReasonForNotInterestPickList: function (component,event,helper,index,productGroup,offerResult) {
         var productList = component.get('v.productList');
         var action = component.get('c.getReasonNotInterestFromBOM');
@@ -771,7 +816,7 @@
                     message = errors[0].message;
                 }
                 // Display the message
-                // console.log('segment Error');
+                console.log('segment Error');
                 // helper.displayToast(component,helper,'Error','error',message);
                 //$A.get('e.force:refreshView').fire();            
             }
@@ -968,7 +1013,7 @@
                 			// console.log('product.offerResult------>' + product.offerResult);
                             if(product.offerResult == 'Interested')
                             {
-                				// console.log('Step ---------> productGroup');
+                				console.log('Step ---------> productGroup');
                                 if(product.productGroup)
                                 {
                                     if(product.productGroup == null || product.productGroup == "" )
@@ -997,7 +1042,7 @@
                                     isValidate = false;
                                     $A.util.addClass(productSubGroup[index+index_Input], "slds-has-error");
                                 }
-                				// console.log('Step ---------> productId');
+                				console.log('Step ---------> productId');
                                 if(product.productId)
                                 {                              
                                     
@@ -1074,7 +1119,7 @@
                                     isValidate = false;
                                     $A.util.addClass(stage, "slds-has-error");
                                 }
-        //  console.log('product.objOpp.RTL_Status__c ---------> ' + product.objOpp.RTL_Status__c);
+         console.log('product.objOpp.RTL_Status__c ---------> ' + product.objOpp.RTL_Status__c);
                                 if(product.objOpp.RTL_Status__c)
                                 {   
                                     if(product.objOpp.RTL_Status__c == null || product.objOpp.RTL_Status__c == "" )
@@ -1088,7 +1133,7 @@
                                     isValidate = false;
                                     $A.util.addClass(status, "slds-has-error");
                                 }
-    // console.log('product.objOpp.CloseDate ---------> ' + product.objOpp.CloseDate);
+    console.log('product.objOpp.CloseDate ---------> ' + product.objOpp.CloseDate);
                                 if(product.objOpp.CloseDate)
                                 {               
                                     if(product.objOpp.CloseDate == null || product.objOpp.CloseDate == "" )
@@ -1544,7 +1589,7 @@
 
     validateSaveCampaign : function(component, event, helper)
     {
-        // console.log('KYB event isMerge 1547: ' + event.getParam("isMerge"));
+        console.log('KYB event isMerge 1547: ' + event.getParam("isMerge"));
         component.set('v.loaded', true);  
         var productList = component.get('v.productList');
         var isValidate_Info = true;
@@ -1572,7 +1617,7 @@
  
         };
 
-        // console.log('KYB isMerge 1574: ' + component.get('v.isMerge'));
+        console.log('KYB isMerge 1574: ' + component.get('v.isMerge'));
 
         // console.log('leadInput:',leadInput);
 
@@ -1587,8 +1632,8 @@
             isValidate_LeadConversion = true;
             accObj = null;
         }
-        // console.log('KYB isMerge 1589: ' + component.get('v.isMerge'));
-        // console.log('KYB extAccObj 1590: ' + extAccObj);
+        console.log('KYB isMerge 1589: ' + component.get('v.isMerge'));
+        console.log('KYB extAccObj 1590: ' + extAccObj);
      
         var campaignMemObj = component.get('v.campaignMemObj');
 
@@ -1770,7 +1815,7 @@
                     productCrossSellList = helper.saveCrossSells(component, event, helper);
                 }
                 // component.set('v.loaded', true)
-                // console.log('KYB isMerge 1772: ' + isMerge);
+                console.log('KYB isMerge 1772: ' + isMerge);
                 helper.saveCampaignAll(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge, leadInput);                                       
     
             }
@@ -1793,7 +1838,7 @@
 
     saveCampaignAll : function(component, event, helper, campaignMemObj, productList, productCrossSellList, accId , accObj , isMerge , leadInput) {
         //component.set('v.loaded', true);  
-        // console.log('KYB isMerge 1759: ' + component.get('v.isMerge'));
+        console.log('KYB isMerge 1759: ' + component.get('v.isMerge'));
         var callbackCmp = component.find("callbackCmp");
         var action = component.get('c.saveCampaign');
 
@@ -1891,5 +1936,28 @@
         // });
         // $A.enqueueAction(action);
     },
-    
+    getMoreDetailAvailableProduct: function (component, event, helper) {
+        var action = component.get('c.getMoreDetailAvailableProduct');
+        action.setParams({});
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if(state === 'SUCCESS')
+            {
+                var result = response.getReturnValue()
+                component.set('v.ALPrdNameSet',result.ALProductSet)
+                component.set('v.HLCALPrdNameSet',result.HLProductSet)
+            }
+            else{
+                var errors = response.getError();
+                var message = 'Unknown error'; // Default error message
+                // Retrieve the error message sent by the server
+                if (errors && Array.isArray(errors) && errors.length > 0) {
+                    message = errors[0].message;
+                }
+                console.log('message : ' + message);
+                component.set('v.loaded', false);
+            }
+        });
+        $A.enqueueAction(action);
+    }
 })

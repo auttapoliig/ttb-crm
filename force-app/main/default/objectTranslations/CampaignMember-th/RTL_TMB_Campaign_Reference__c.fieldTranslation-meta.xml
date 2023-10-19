@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>แหล่งที่มาของรายชื่อ</label>
+    <name>RTL_TMB_Campaign_Reference__c</name>
+</CustomFieldTranslation>
