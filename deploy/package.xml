@@ -35,6 +35,16 @@
         <members>RTL_Distribute_CM_BatchTest</members>
         <members>CampaignMemberToALBatchTest</members>
         <members>RTL_DuplicateAccountComponentController</members>
+        <members>fnaUtility_Test</members>
+        <members>fnaProductDetailCtrl_Test</members>
+        <members>submitToEOnBoardingButtonControllerTest</members>
+        <members>CustomLookUpControllerTest</members>
+        <members>BatchMergeCustomerTest</members>
+        <members>FileExtensionHandlerTest</members>
+        <members>HostProductMappingService_Test</members>
+        <members>customPopupUtilityTest</members>
+        <members>RTL_AL_WsOpportunityTestExtended</members>
+        <members>RTL_CampaignMemberTriggerHandlerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -210,10 +220,6 @@
         <members>LGS_Summary_Weight_Warn_Message</members>
         <members>None</members>
         <name>CustomLabel</name>
-    </types>
-    <types>
-        <members>get_lgs_key</members>
-        <name>NamedCredential</name>
     </types>
     <types>
         <members>Lead_Scoring_List_Record_Page</members>
