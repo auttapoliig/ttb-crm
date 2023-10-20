@@ -214,9 +214,5 @@
         <members>Chat</members>
         <name>ServiceChannel</name>
     </types>
-    <types>
-        <members>Production</members>
-        <name>RemoteSiteSetting</name>
-    </types>
     <version>58.0</version>
 </Package>
