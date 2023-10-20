@@ -3,7 +3,7 @@
     <fullName>WaitingTime_Sec__c</fullName>
     <description>duration from customer&apos;s first message til agent&apos;s first response message</description>
     <externalId>false</externalId>
-    <formula>( Accept_Datetime__c -   Assign_Datetime__c )*24 *60 *60</formula>
+    <formula>(Case( iigproduct_2__Channel__c,&quot;ttb Website&quot;, (Accept_Datetime__c -   Assign_Datetime__c) ,( iigproduct_2__Case__r.ClosedDate - First_Message_DateTime__c)))  *24 *60 *60</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>WaitingTime (Sec)</label>
     <precision>18</precision>

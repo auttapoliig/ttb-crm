@@ -31,7 +31,7 @@
         <field>CUST_CREATED_DATE</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>04-Leave Chat Transaction</name>
+    <name>07-Leave Chat Transaction</name>
     <params>
         <name>co</name>
         <value>0</value>

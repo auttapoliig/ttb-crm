@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Case_UnAnswered__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND (NOT(ISBLANK( iigproduct_2__Case__c )) ,ISPICKVAL( iigproduct_2__Case__r.Status , &quot;New&quot;)),true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Number Case UnAnswered</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

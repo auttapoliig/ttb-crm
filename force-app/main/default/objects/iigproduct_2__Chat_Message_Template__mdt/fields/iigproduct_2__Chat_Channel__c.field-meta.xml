@@ -12,11 +12,6 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Chat - OneApp</fullName>
-                <default>true</default>
-                <label>Chat - OneApp</label>
-            </value>
-            <value>
                 <fullName>Chat - ttb web</fullName>
                 <default>false</default>
                 <label>Chat - ttb web</label>
@@ -30,6 +25,16 @@
                 <fullName>Chat - Line</fullName>
                 <default>false</default>
                 <label>Chat - Line</label>
+            </value>
+            <value>
+                <fullName>Chat - TOUCH</fullName>
+                <default>false</default>
+                <label>Chat - TOUCH</label>
+            </value>
+            <value>
+                <fullName>Chat - OneApp</fullName>
+                <default>true</default>
+                <label>Chat - OneApp</label>
             </value>
         </valueSetDefinition>
     </valueSet>

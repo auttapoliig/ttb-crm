@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isTracking__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(iigproduct_2__Tracking_Case__c != null, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>isTracking</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

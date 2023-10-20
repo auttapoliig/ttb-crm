@@ -41,6 +41,11 @@
                 <default>false</default>
                 <label>Other</label>
             </value>
+            <value>
+                <fullName>TOUCH</fullName>
+                <default>false</default>
+                <label>TOUCH</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
