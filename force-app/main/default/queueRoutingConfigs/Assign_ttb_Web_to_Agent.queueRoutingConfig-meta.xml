@@ -5,5 +5,5 @@
     <label>Assign ttb Web to Agent</label>
     <pushTimeout>120</pushTimeout>
     <routingModel>MOST_AVAILABLE</routingModel>
-    <routingPriority>2</routingPriority>
+    <routingPriority>1</routingPriority>
 </QueueRoutingConfig>

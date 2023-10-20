@@ -2,7 +2,7 @@ trigger CaseAutoCreateTrigger on AgentWork (before insert, after update) {
 	System.debug('---CaseAutoCreateTrigger---');
 	System.debug('CaseAutoCreateTrigger StartTime: ' + System.now() + ' | ' + System.now().getTime());
 	CaseAutoCreateTriggerHandler.run();
-	System.debug('CaseAutoCreateTrigger EndTime: ' + System.now() + ' | ' + System.now().getTime());
+	System.debug('CaseAutoCreateTrigger Endtime: ' + System.now() + ' | ' + System.now().getTime());
 	// Boolean RunTrigger = AppConfig__c.getValues('runtrigger').Value__c == 'true';
 	// System.debug('RunTrigger: ' + RunTrigger);
 	// filter all chatSession__c from AgentWork

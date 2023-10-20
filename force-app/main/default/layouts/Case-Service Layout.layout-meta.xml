@@ -28,24 +28,6 @@
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>test</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>CreatedDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Commit_Date__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Fields</label>
@@ -845,19 +827,11 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>iigproduct_2__Channel__c</fields>
         <relatedList>iigproduct_2__ChatSession__c.iigproduct_2__Case__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Name</fields>
-        <fields>Persona</fields>
-        <fields>Content</fields>
-        <fields>Posted</fields>
-        <fields>Parent</fields>
-        <fields>ReviewedStatus</fields>
-        <fields>Notes</fields>
-        <relatedList>SocialPost.Case__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

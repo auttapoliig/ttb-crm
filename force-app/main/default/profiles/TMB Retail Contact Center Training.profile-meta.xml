@@ -192,6 +192,10 @@
     <layoutAssignments>
         <layout>Case-Service Layout</layout>
     </layoutAssignments>
+    <loginIpRanges>
+        <endAddress>255.255.255.255</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>

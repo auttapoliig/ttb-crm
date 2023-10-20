@@ -79,14 +79,14 @@
     <columns>
         <field>iigproduct_2__ChatSession__c.iigproduct_2__Chat_Transfer_Log__r$iigproduct_2__Transfer_To__c</field>
     </columns>
-    <description>Summary Staff Performance for Leave Chat (FB, Line, OneApp)</description>
+    <description>Summary Staff Performance for Leave Chat (FB, Line, TOUCH)</description>
     <filter>
         <criteriaItems>
             <column>BucketField_31525194</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,TOUCH</value>
+            <value>Facebook,Line,OneApp,TOUCH</value>
         </criteriaItems>
         <criteriaItems>
             <column>iigproduct_2__ChatSession__c$Owner.Name</column>
@@ -94,6 +94,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>iigproduct_2__ChatSession__c$Owner.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Bot Call Centre Chat Queue,Chat - OneApp,Chat – TOUCH,Chat - TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -112,7 +119,7 @@
         <field>BucketField_31525194</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>13-1Summary Staff Performance:Leave Chat</name>
+    <name>Summary Staff Performance:Leave Chat</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -121,9 +128,11 @@
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
-        <interval>INTERVAL_THISMONTH</interval>
+        <endDate>2023-07-28</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2023-06-01</startDate>
     </timeFrameFilter>
 </Report>

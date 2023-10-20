@@ -3,7 +3,7 @@
     <apiVersion>55.0</apiVersion>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>11</minorNumber>
+        <minorNumber>1</minorNumber>
         <namespace>iigproduct_2</namespace>
     </packageVersions>
     <status>Active</status>

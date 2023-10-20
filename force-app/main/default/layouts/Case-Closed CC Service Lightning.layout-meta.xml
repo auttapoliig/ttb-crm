@@ -726,14 +726,11 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>Name</fields>
-        <fields>Persona</fields>
-        <fields>Content</fields>
-        <fields>Posted</fields>
-        <fields>Parent</fields>
-        <fields>ReviewedStatus</fields>
-        <fields>Notes</fields>
-        <relatedList>SocialPost.Case__c</relatedList>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>iigproduct_2__Channel__c</fields>
+        <relatedList>iigproduct_2__ChatSession__c.iigproduct_2__Case__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

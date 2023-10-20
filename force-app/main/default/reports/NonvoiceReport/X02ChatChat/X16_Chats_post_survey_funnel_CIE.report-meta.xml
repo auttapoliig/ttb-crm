@@ -66,7 +66,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,TOUCH,ttb Website</value>
+            <value>Facebook,Line,OneApp,ttb Website</value>
         </criteriaItems>
         <criteriaItems>
             <column>iigproduct_2__ChatSession__c$iigproduct_2__End_with_Survey__c</column>
@@ -92,16 +92,16 @@
         <field>iigproduct_2__ChatSession__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>16 - Survey detail</name>
+    <name>Survey detail</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Chat_session_with_post_survey__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_TODAY</interval>
