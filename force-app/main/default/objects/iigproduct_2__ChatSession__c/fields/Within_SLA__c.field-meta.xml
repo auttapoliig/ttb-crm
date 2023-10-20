@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Within_SLA__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(iigproduct_2__Case__r.ClosedDate),&quot;&quot;,IF(Within_30_Min__c = True , &quot;In-time SLA&quot;, &quot;Over SLA&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Within SLA</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -99,6 +99,36 @@
             <rowSpan>7</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>9</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>FORMULA1</column>
+                </chartSummary>
+                <componentType>Gauge</componentType>
+                <decimalPrecision>0</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
+                <gaugeMax>100.0</gaugeMax>
+                <gaugeMin>0.0</gaugeMin>
+                <groupingSortProperties/>
+                <header>Current Month - Service level - OneApp</header>
+                <indicatorBreakpoint1>84.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>89.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
+                <report>NonVoiceDashboardReport/ServicelevelbyChannel/X04Service_level_OneApp</report>
+                <showPercentage>true</showPercentage>
+                <showRange>false</showRange>
+                <showTotal>false</showTotal>
+                <showValues>false</showValues>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>7</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
             <colSpan>6</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>

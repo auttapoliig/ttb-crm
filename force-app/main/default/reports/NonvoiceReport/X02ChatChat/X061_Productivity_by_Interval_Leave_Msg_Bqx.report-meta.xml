@@ -45,14 +45,12 @@
         </values>
     </buckets>
     <columns>
-        <aggregateTypes>Unique</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.CaseNumber</field>
     </columns>
     <columns>
         <field>iigproduct_2__ChatSession__c$Name</field>
     </columns>
     <columns>
-        <aggregateTypes>Unique</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Owner</field>
     </columns>
     <columns>
@@ -67,14 +65,25 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Over_60_Min__c</field>
     </columns>
-    <description>Productivity by Interval for Leave Chat (Facebook, Line, OneApp)</description>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>iigproduct_2__ChatSession__c$SLA_No_Value__c</field>
+    </columns>
+    <description>Productivity by Interval for Leave Chat (Facebook, Line, TOUCH)</description>
     <filter>
         <criteriaItems>
             <column>BucketField_49735072</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,OneApp</value>
+            <value>Facebook,Line,OneApp,TOUCH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>iigproduct_2__ChatSession__c$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Bot Call Centre Chat Queue,Chat - OneApp,Chat – TOUCH,Chat - TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -93,16 +102,16 @@
         <field>BucketField_49735072</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>06-1 Productivity by Interval:Leave Chat</name>
+    <name>Productivity by Interval:Leave Chat</name>
     <params>
         <name>co</name>
-        <value>0</value>
+        <value>1</value>
     </params>
     <reportType>ChatSession_with_Case__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
-    <showGrandTotal>false</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_THISMONTH</interval>

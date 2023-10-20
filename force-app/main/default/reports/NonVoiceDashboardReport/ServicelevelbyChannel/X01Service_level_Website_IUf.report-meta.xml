@@ -5,11 +5,10 @@
 (iigproduct_2__Survey__c.IsDetractors__c:SUM/RowCount*100)</calculatedFormula>
         <datatype>number</datatype>
         <developerName>FORMULA1</developerName>
-        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
         <isActive>true</isActive>
         <isCrossBlock>false</isCrossBlock>
         <masterLabel>%NPS</masterLabel>
-        <scale>0</scale>
+        <scale>2</scale>
     </aggregates>
     <aggregates>
         <calculatedFormula>PARENTGROUPVAL(iigproduct_2__Survey__c.iigproduct_2__NPS_Score__c:SUM, BucketField_93988918) / PARENTGROUPVAL(iigproduct_2__Survey__c.iigproduct_2__NPS_Score__c:SUM,GRAND_SUMMARY)</calculatedFormula>
@@ -73,7 +72,7 @@
     <groupingsDown>
         <dateGranularity>Month</dateGranularity>
         <field>FK_CREATED_DATE</field>
-        <sortOrder>Asc</sortOrder>
+        <sortOrder>Desc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
@@ -83,12 +82,12 @@
     <name>01-Service level [Website]</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$iigproduct_2__Survey__c@iigproduct_2__Survey__c.iigproduct_2__ChatSession__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
-    <showGrandTotal>true</showGrandTotal>
+    <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>FK_CREATED_DATE</dateColumn>

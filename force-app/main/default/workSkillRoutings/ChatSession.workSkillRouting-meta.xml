@@ -8,13 +8,6 @@
         <isAdditionalSkill>false</isAdditionalSkill>
         <skill>MB_Chat_General_TH_EN</skill>
         <skillLevel>10</skillLevel>
-        <value>สอบถามผลิตภัณฑ์เงินฝากและบริการ</value>
-    </workSkillRoutingAttributes>
-    <workSkillRoutingAttributes>
-        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
-        <isAdditionalSkill>false</isAdditionalSkill>
-        <skill>MB_Chat_General_TH_EN</skill>
-        <skillLevel>10</skillLevel>
         <value>สอบถามผลิตภัณฑ์เงินกู้และสินเชื่อ</value>
     </workSkillRoutingAttributes>
     <workSkillRoutingAttributes>
@@ -36,6 +29,55 @@
         <isAdditionalSkill>false</isAdditionalSkill>
         <skill>MB_Chat_General_TH_EN</skill>
         <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์เงินฝากและบริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
         <value>สอบถามข้อมูลโครงการช่วยเหลือ covid-19</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>ติดตามสถานะการสมัคร</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_Complaint_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>แจ้งปัญหา / ร้องเรียน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์/บริการ/เรื่องทั่วไป</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_HP_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับสินเชื่อรถยนต์</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_MF_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับกองทุน</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_Digital_TH_EN</skill>
+        <skillLevel>10</skillLevel>
+        <value>สอบถามเกี่ยวกับการใช้งาน ttb touch</value>
     </workSkillRoutingAttributes>
 </WorkSkillRouting>
