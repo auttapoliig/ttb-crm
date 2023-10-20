@@ -149,7 +149,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>Chat - Facebook,Chat - Line,Chat - ttb touch,Chat - ttb Web,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb,Social Media - Facebook,Social Media - Pantip,Social Media - Twitter</value>
+            <value>Chat - Facebook,Chat - Line,Chat - ttb Web,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb,Social Media - Facebook,Social Media - Pantip,Social Media - Twitter</value>
         </criteriaItems>
         <criteriaItems>
             <column>STATUS</column>
@@ -176,7 +176,7 @@
         <field>Case.Issue__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Close Reason</name>
+    <name>14 - Close Reason</name>
     <params>
         <name>units</name>
         <value>d</value>

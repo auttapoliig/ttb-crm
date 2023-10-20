@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <aggregates>
-        <calculatedFormula>IF(iigproduct_2__ChatSession__c.iigproduct_2__End_with_Survey__c:SUM= 0, 0, (iigproduct_2__Survey__c.Survey_Submitted__c:SUM/iigproduct_2__ChatSession__c.iigproduct_2__End_with_Survey__c:SUM)*100)</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA1</developerName>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Percent Submit Survey</masterLabel>
-        <scale>2</scale>
-    </aggregates>
     <buckets>
         <bucketType>text</bucketType>
         <developerName>BucketField_42118420</developerName>
@@ -42,7 +33,6 @@
         </values>
     </buckets>
     <columns>
-        <aggregateTypes>Unique</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Name</field>
     </columns>
     <columns>
@@ -69,14 +59,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,ttb Website,OneApp</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>iigproduct_2__ChatSession__c$iigproduct_2__EndedBy__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value></value>
+            <value>Facebook,Line,ttb Website,TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -90,16 +73,16 @@
         <field>BucketField_42118420</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Chat&apos;s post survey funnel</name>
+    <name>15 - Chat&apos;s post survey funnel</name>
     <params>
         <name>co</name>
-        <value>0</value>
+        <value>1</value>
     </params>
     <reportType>Chat_session_with_post_survey__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
-    <showGrandTotal>false</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_THISMONTH</interval>

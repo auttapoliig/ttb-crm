@@ -24,13 +24,13 @@
         </values>
     </buckets>
     <columns>
-        <field>BucketField_10875112</field>
-    </columns>
-    <columns>
         <field>iigproduct_2__ChatSession__c$iigproduct_2__Case__c.CaseNumber</field>
     </columns>
     <columns>
         <field>iigproduct_2__ChatSession__c$Name</field>
+    </columns>
+    <columns>
+        <field>iigproduct_2__ChatSession__c$Owner</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -39,6 +39,12 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Number_case_answered__c</field>
+    </columns>
+    <columns>
+        <field>iigproduct_2__ChatSession__c$Accept_Datetime__c</field>
+    </columns>
+    <columns>
+        <field>iigproduct_2__ChatSession__c$Assign_Datetime__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -78,17 +84,17 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>iigproduct_2__ChatSession__c$Owner</field>
+        <field>BucketField_10875112</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>SL by agent by Interval : Live Chat</name>
+    <name>09-2 SL by agent by Interval : Live Chat</name>
     <params>
         <name>co</name>
         <value>0</value>
     </params>
     <reportType>ChatSession_with_Case__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>

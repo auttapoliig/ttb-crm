@@ -2,17 +2,13 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>CaseAutoCreateTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ChatSessionTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <tabVisibilities>
-        <tab>iigproduct_2__ChatSession__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Day10__c</field>

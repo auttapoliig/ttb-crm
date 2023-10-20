@@ -15,6 +15,7 @@
  )</calculatedFormula>
         <datatype>number</datatype>
         <developerName>FORMULA2</developerName>
+        <downGroupingContext>Case.EmailMessages$Interval__c</downGroupingContext>
         <isActive>true</isActive>
         <isCrossBlock>false</isCrossBlock>
         <masterLabel>AHT(hrs)</masterLabel>
@@ -33,6 +34,9 @@ PREVGROUPVAL(RowCount, EmailMessage.Interval__c),0)</calculatedFormula>
     </aggregates>
     <columns>
         <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Owner.Name</field>
     </columns>
     <columns>
         <field>Case$Category__c</field>
@@ -65,7 +69,7 @@ PREVGROUPVAL(RowCount, EmailMessage.Interval__c),0)</calculatedFormula>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>Email,Email - Commercial,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb</value>
+            <value>Email,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb</value>
         </criteriaItems>
         <criteriaItems>
             <column>Case.EmailMessages$Status</column>
@@ -91,11 +95,6 @@ PREVGROUPVAL(RowCount, EmailMessage.Interval__c),0)</calculatedFormula>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>Case.EmailMessages$Interval__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>Case$Owner.Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>07 - Email SL by agent by interval</name>

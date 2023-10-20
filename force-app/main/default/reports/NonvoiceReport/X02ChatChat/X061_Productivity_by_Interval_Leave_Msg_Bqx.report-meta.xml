@@ -65,25 +65,14 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Over_60_Min__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>iigproduct_2__ChatSession__c$SLA_No_Value__c</field>
-    </columns>
-    <description>Productivity by Interval for Leave Chat (Facebook, Line, TOUCH)</description>
+    <description>Productivity by Interval for Leave Chat (Facebook, Line, OneApp)</description>
     <filter>
         <criteriaItems>
             <column>BucketField_49735072</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,OneApp,TOUCH</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>iigproduct_2__ChatSession__c$Owner</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Bot Call Centre Chat Queue,Chat - TOUCH,Chat – OneApp</value>
+            <value>Facebook,Line,TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -102,7 +91,7 @@
         <field>BucketField_49735072</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Productivity by Interval:Leave Chat</name>
+    <name>06-1 Productivity by Interval:Leave Chat</name>
     <params>
         <name>co</name>
         <value>1</value>

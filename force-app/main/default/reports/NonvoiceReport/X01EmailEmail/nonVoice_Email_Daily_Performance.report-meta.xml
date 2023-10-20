@@ -52,7 +52,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>Email,Email - Commercial,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb</value>
+            <value>Email,Email - ME,Email - TMB Advisory,Email - TMBWeb,Email - Touch,Email - ttb Advisory,Email - ttbweb</value>
         </criteriaItems>
         <criteriaItems>
             <column>Case$Category__c</column>

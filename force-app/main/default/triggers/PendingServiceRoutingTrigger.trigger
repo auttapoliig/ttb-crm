@@ -1,8 +1,6 @@
 trigger PendingServiceRoutingTrigger on PendingServiceRouting (before insert, before update, after update) {
     System.debug('PendingServiceRoutingTriggerStart...');
-    System.debug('Start...'+System.now()+' | '+System.now().getTime());
     PendingServiceRoutingTriggerHandler.run();
-    System.debug('End...'+System.now()+' | '+System.now().getTime());
     // if (Trigger.isAfter) {
     //     List<PendingServiceRouting> psrList = new List<PendingServiceRouting>();
     //     Set<Id> chatSessionId = new Set<Id>();

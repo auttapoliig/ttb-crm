@@ -5,5 +5,5 @@
     <label>Assign FB chat to Agent</label>
     <pushTimeout>120</pushTimeout>
     <routingModel>MOST_AVAILABLE</routingModel>
-    <routingPriority>2</routingPriority>
+    <routingPriority>3</routingPriority>
 </QueueRoutingConfig>

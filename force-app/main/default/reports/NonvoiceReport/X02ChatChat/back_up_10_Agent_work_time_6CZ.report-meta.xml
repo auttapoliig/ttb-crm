@@ -198,7 +198,7 @@
         <field>BucketField_28901911</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Agent work time</name>
+    <name>10 - Agent work time</name>
     <params>
         <name>co</name>
         <value>0</value>

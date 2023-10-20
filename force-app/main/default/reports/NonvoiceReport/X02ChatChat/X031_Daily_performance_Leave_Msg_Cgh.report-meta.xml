@@ -65,29 +65,14 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>iigproduct_2__ChatSession__c$Over_60_Min__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>iigproduct_2__ChatSession__c$SLA_No_Value__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>iigproduct_2__ChatSession__c$Number_case_answered__c</field>
-    </columns>
-    <description>Daily performance for Leave Chat (Facebook, Line, TOUCH)</description>
+    <description>Daily performance for Leave Chat (Facebook, Line, OneApp)</description>
     <filter>
         <criteriaItems>
             <column>BucketField_88433420</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Facebook,Line,OneApp,TOUCH</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>iigproduct_2__ChatSession__c$Owner</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Bot Call Centre Chat Queue,Chat - TOUCH,Chat – OneApp</value>
+            <value>Facebook,Line,TOUCH</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -101,7 +86,7 @@
         <field>BucketField_88433420</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Daily performance: Leave Chat</name>
+    <name>03-1 Daily performance: Leave Chat</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -110,7 +95,7 @@
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>iigproduct_2__ChatSession__c$CreatedDate</dateColumn>
         <interval>INTERVAL_THISMONTH</interval>

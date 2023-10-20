@@ -19,7 +19,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
 
                     if (workAcceptDateTime != null && workStatus == 'Opened') {
                         Schema.SObjectType wiObjectType = agentWork.WorkItemId.getSObjectType();
-                        
+
                         if (Schema.iigproduct_2__ChatSession__c.getSObjectType() == wiObjectType) {
                             Id chatSessionId = agentWork.WorkItemId;
                             chatSessionIdList.add(chatSessionId);
@@ -38,15 +38,17 @@ public without sharing class CaseAutoCreateTriggerHandler {
 
                 if (chatSessionIdList.size() > 0) {
                     CaseAutoCreateTriggerHandler.afterUpdate(chatSessionIdList, agentWorkMap);
+                    CaseAutoCreateTriggerHandler.forAutoCloseCase(chatSessionIdList);
                 }
 
                 if (socialPostIdList.size() > 0) {
                 	CaseAutoCreateTriggerHandler.afterUpdateForSocialPost(socialPostIdList, agentWorkMap);
                 }
-                
+
                 if (caseIdList.size() > 0) {
                     CaseAutoCreateTriggerHandler.afterUpdateForCase(caseIdList, agentWorkMap);
                 }
+
             }
         }
     }
@@ -177,7 +179,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
             }
         }
         System.debug('CaseCreate put data done: ' + System.now() + ' | ' + System.now().getTime());
-        
+
         System.debug('CaseCreate case owner mapping: ' + System.now() + ' | ' + System.now().getTime());
         List<iigproduct_2__ChatSession__c> caseSessionList = [
             SELECT Id, iigproduct_2__Case__c, iigproduct_2__Case__r.OwnerId
@@ -198,7 +200,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
             eachCase.OwnerId = currUserId;
         }
         System.debug('CaseCreate case owner done: ' + System.now() + ' | ' + System.now().getTime());
-        
+
         if (!changedOwnerCase.isEmpty()){
             System.debug('change case owner start: ' + System.now() + ' | ' + System.now().getTime());
             update changedOwnerCase;
@@ -220,7 +222,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
             }
             System.debug('changed session');
         }
-        
+
         update chatSessionList;
     }
 
@@ -234,22 +236,22 @@ public without sharing class CaseAutoCreateTriggerHandler {
 
             // Find skill master information
             Map<String, Skill_Master__c> skillMasterMap = new Map<String, Skill_Master__c>();
-            for (Skill_Master__c skillMaster : [SELECT id, Topic__c, Source__c, Segment__c, Assign_to_Queue__c, Service_Level1__c, Service_Level2__c, Service_Level3__c, Problem_Type__c, Social_Network__c, Topic_Profile_Name__c 
-                                                    FROM Skill_Master__c 
+            for (Skill_Master__c skillMaster : [SELECT id, Topic__c, Source__c, Segment__c, Assign_to_Queue__c, Service_Level1__c, Service_Level2__c, Service_Level3__c, Problem_Type__c, Social_Network__c, Topic_Profile_Name__c
+                                                    FROM Skill_Master__c
                                                     WHERE Assign_to_Queue__c like 'Post%']) {
 
                 skillMasterMap.put(skillMaster.Topic_Profile_Name__c, skillMaster);
             }
-            
+
             List<Social_Post__c> socialPostList = [SELECT id, Topic_Profile_Name__c, Social_Post_Author__r.Post_Author_Name__c
-                                                    FROM Social_Post__c 
+                                                    FROM Social_Post__c
                                                     WHERE id in :socialPostIdList AND Case__c = NULL];
 
             for (Social_Post__c socialPost : socialPostList) {
                 System.debug('SocialPost :: ' + socialPost.id);
 
                 currentSkillMaster = skillMasterMap.get(socialPost.Topic_Profile_Name__c);
-                
+
                 // Create new Case
                 newCase = new Case();
                 newCase.Status = 'New';
@@ -281,7 +283,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
             for (Case eachCase : changedOwnerCase) {
                 eachCase.OwnerId = currUserId;
             }
-            
+
             if (!changedOwnerCase.isEmpty()){
                 update changedOwnerCase;
             }
@@ -322,4 +324,33 @@ public without sharing class CaseAutoCreateTriggerHandler {
             }
         }
     }
+
+    public static void forAutoCloseCase(List<Id> chatSessionIdList){
+        if(!chatSessionIdList.isEmpty()){
+            List<Case> CaseList = new List<Case>();
+            System.debug('chatSessionIdList start :' + chatSessionIdList);
+            List<iigproduct_2__ChatSession__c> caseSessionList = [
+                SELECT Id , iigproduct_2__Case__c, iigproduct_2__Case__r.OwnerId , iigproduct_2__EndedBy__c
+                FROM iigproduct_2__ChatSession__c
+                WHERE Id IN :chatSessionIdList AND iigproduct_2__Case__c != NULL AND iigproduct_2__EndedBy__c != NULL AND iigproduct_2__Status__c != NULL
+            ];
+            for(iigproduct_2__ChatSession__c data : caseSessionList){
+                Case assign_case = new Case(Id = data.iigproduct_2__Case__c);
+                if(assign_case.Status != 'Resolved'){
+                    assign_case.PTA_Segment__c = 'RBG';
+                    assign_case.Category__c = 'Inquiry';
+                    assign_case.Sub_Category__c = 'Contact Center';
+                    assign_case.Product_Category__c = 'Others';
+                    assign_case.Issue__c = 'Customer has left the chat';
+                    assign_case.FCR__c = true;
+                    assign_case.Status = 'Completed';
+                    CaseList.add(assign_case);
+                }
+                update CaseList;
+            }
+            System.debug('caseSessionList :' + caseSessionList.size());
+        }
+    }
+
+
 }

@@ -130,18 +130,12 @@
                     <value>Account.EditChat</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord2</identifier>
+                <identifier>console_relatedRecord3</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.iigproduct_2__Social_ID__r.iigproduct_2__Social_Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>OneApp</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.iigproduct_2__Social_ID__r.iigproduct_2__Social_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>TOUCH</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
