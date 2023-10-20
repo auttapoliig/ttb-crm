@@ -364,6 +364,11 @@
             <field>Within_SLA__c</field>
             <table>iigproduct_2__ChatSession__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLA_Status__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
         <masterLabel>ChatSession</masterLabel>
     </sections>
 </ReportType>

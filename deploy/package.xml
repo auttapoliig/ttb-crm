@@ -50,28 +50,8 @@
         <members>Case.Day9__c</members>
         <members>Case.Number_Case_Answered__c</members>
         <members>Case.Number_Case_Offered__c</members>
-        <members>Case.Origin</members>
-        <members>iigproduct_2__ChatSession__c.SLA_No_Value__c</members>
-        <members>iigproduct_2__ChatSession__c.Interval__c</members>
-        <members>iigproduct_2__ChatSession__c.Number_case_answered__c</members>
-        <members>iigproduct_2__ChatSession__c.Number_case_offered__c</members>
-        <members>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</members>
-        <members>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</members>
-        <members>iigproduct_2__ChatSession__c.SLA_No_Value__c</members>
-        <members>iigproduct_2__ChatSession__c.WaitingTime_Sec__c</members>
-        <members>iigproduct_2__ChatSession__c.Within_SLA__c</members>
-        <members>iigproduct_2__ChatSession__c.Authentication__c</members>
-        <members>iigproduct_2__ChatSession__c.First_Message_DateTime__c</members>
-        <members>iigproduct_2__ChatSession__c.isTracking__c</members>
-        <members>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</members>
-        <members>iigproduct_2__ChatSession__c.Within_30_Min__c</members>
         <members>EmailMessage.Over_24_hrs__c</members>
         <members>EmailMessage.within_24_hrs__c</members>
-        <members>iigproduct_2__Survey__c.IsDetractors__c</members>
-        <members>iigproduct_2__Survey__c.IsPromotors__c</members>
-        <members>iigproduct_2__Survey__c.NPS_Group__c</members>
-        <members>iigproduct_2__Survey__c.Survey_Submitted__c</members>
-        <members>iigproduct_2__SocialAccount__c.iigproduct_2__Social_Type__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -82,8 +62,6 @@
     </types>
     <types>
         <members>SLA_Config__mdt</members>
-        <members>iigproduct_2__Chat_Message_Template__mdt</members>
-        <members>iigproduct_2__Chat_Topic__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -181,14 +159,6 @@
         <name>ValidationRule</name>
     </types>
     <types>
-        <members>iigproduct_2__Chat_Topic.Advisory</members>
-        <members>iigproduct_2__Chat_Topic.Covid_19</members>
-        <members>iigproduct_2__Chat_Topic.Deposit</members>
-        <members>iigproduct_2__Chat_Topic.Feedback</members>
-        <members>iigproduct_2__Chat_Topic.Lending</members>
-        <name>CustomMetadata</name>
-    </types>
-    <types>
         <members>ChatSession1</members>
         <name>FlexiPage</name>
     </types>
@@ -197,8 +167,6 @@
         <members>TMB Retail Contact Center Business Support</members>
         <members>TMB Retail Contact Center Customer Care</members>
         <members>TMB Retail Contact Center Fulfillment Outbound</members>
-        <members>TMB Retail Contact Center Inbound Multi</members>
-        <members>TMB Retail Contact Center Inbound Multi Supervisor</members>
         <members>TMB Retail Contact Center Inbound NonVoice</members>
         <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
         <members>TMB Retail Contact Center Outbound</members>
@@ -249,10 +217,6 @@
     <types>
         <members>Production</members>
         <name>RemoteSiteSetting</name>
-    </types>
-    <types>
-        <members>iigproduct_2__Setup_Social_Chat</members>
-        <name>CustomTab</name>
     </types>
     <version>58.0</version>
 </Package>

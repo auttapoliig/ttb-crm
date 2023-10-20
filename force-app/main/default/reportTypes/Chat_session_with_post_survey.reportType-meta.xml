@@ -321,6 +321,11 @@
             <field>End_Date_Time__c</field>
             <table>iigproduct_2__ChatSession__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLA_Status__c</field>
+            <table>iigproduct_2__ChatSession__c</table>
+        </columns>
         <masterLabel>ChatSession</masterLabel>
     </sections>
     <sections>

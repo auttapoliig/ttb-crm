@@ -36,6 +36,13 @@
         <isAdditionalSkill>false</isAdditionalSkill>
         <skill>MB_Chat_General_TH_EN</skill>
         <skillLevel>10</skillLevel>
+        <value>สอบถามผลิตภัณฑ์เงินฝากและบริการ</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>iigproduct_2__ChatSession__c.iigproduct_2__Subject__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>MB_Chat_General_TH_EN</skill>
+        <skillLevel>10</skillLevel>
         <value>สอบถามข้อมูลโครงการช่วยเหลือ covid-19</value>
     </workSkillRoutingAttributes>
     <workSkillRoutingAttributes>
