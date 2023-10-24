@@ -52,6 +52,13 @@
         <members>Case.Number_Case_Offered__c</members>
         <members>EmailMessage.Over_24_hrs__c</members>
         <members>EmailMessage.within_24_hrs__c</members>
+        <members>iigproduct_2__ChatSession__c.First_Message_DateTime__c</members>
+        <members>iigproduct_2__ChatSession__c.SLA_No_Value__c</members>
+        <members>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</members>
+        <members>iigproduct_2__ChatSession__c.isTracking__c</members>
+        <members>iigproduct_2__ChatSession__c.SLA_Time__c</members>
+        <members>iigproduct_2__ChatSession__c.Within_SLA__c</members>
+        <members>iigproduct_2__SocialAccount__c.iigproduct_2__Social_Type__c</members>
         <name>CustomField</name>
     </types>
     <types>
