@@ -3,6 +3,7 @@
     <types>
         <members>RTL_CampaignMemberExtension</members>
         <members>RTL_LeadTriggerHandler</members>
+        <members>LeadAssignmentUtil</members>
         <name>ApexClass</name>
     </types>
     <types>

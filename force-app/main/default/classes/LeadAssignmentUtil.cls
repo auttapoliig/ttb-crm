@@ -22,7 +22,7 @@ public class LeadAssignmentUtil {
     public static Map<Id, Group> mapIdQueue{
         get{
             if(mapIdQueue == null){
-                mapIdQueue = new Map<id, Group>([SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue']);
+                mapIdQueue = new Map<id, Group>([SELECT Id, DeveloperName, Email FROM Group WHERE Type = 'Queue']);
             }
             return mapIdQueue;
         }set;
