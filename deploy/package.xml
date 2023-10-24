@@ -26,11 +26,11 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Batch_Drop_Lead_Mapping__mdt.rule_credit</members>
-        <members>RTL_Home_Campaign_Manage_Button__mdt.Branch_Sales_Support_TL</members>
-        <members>RTL_Home_Campaign_Manage_Button__mdt.Branch_Sales_Support_User</members>
-        <members>RTL_Campaign_Reassign_Role_Setting__mdt.Branch_Sales_Support_TL</members>
-        <members>RTL_Campaign_Reassign_Role_Setting__mdt.Branch_Sales_Support_User</members>
+        <members>Batch_Drop_Lead_Mapping.rule_credit</members>
+        <members>RTL_Home_Campaign_Manage_Button.Branch_Sales_Support_TL</members>
+        <members>RTL_Home_Campaign_Manage_Button.Branch_Sales_Support_User</members>
+        <members>RTL_Campaign_Reassign_Role_Setting.Branch_Sales_Support_TL</members>
+        <members>RTL_Campaign_Reassign_Role_Setting.Branch_Sales_Support_User</members>
         <name>CustomMetadata</name>    
     </types>
     <types>
