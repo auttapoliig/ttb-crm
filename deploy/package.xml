@@ -213,6 +213,8 @@
         <name>WorkSkillRouting</name>
     </types>
     <types>
+        <members>webchat2</members>
+        <members>webchat3</members>
         <members>WebChat</members>
         <name>ConnectedApp</name>
     </types>
