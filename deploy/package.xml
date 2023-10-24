@@ -58,7 +58,6 @@
         <members>iigproduct_2__ChatSession__c.isTracking__c</members>
         <members>iigproduct_2__ChatSession__c.SLA_Time__c</members>
         <members>iigproduct_2__ChatSession__c.Within_SLA__c</members>
-        <members>iigproduct_2__SocialAccount__c.iigproduct_2__Social_Type__c</members>
         <name>CustomField</name>
     </types>
     <types>
