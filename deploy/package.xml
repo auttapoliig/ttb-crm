@@ -222,5 +222,9 @@
         <members>Chat</members>
         <name>ServiceChannel</name>
     </types>
+    <types>
+        <members>Bot_Call</members>
+        <name>Queue</name>
+    </types>
     <version>58.0</version>
 </Package>
