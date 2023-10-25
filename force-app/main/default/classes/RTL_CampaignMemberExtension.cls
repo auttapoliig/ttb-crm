@@ -521,7 +521,6 @@ private String LABEL_NONE = System.Label.None;
             }
             // Check if offer result is interested and not create opportunity yet
             if( currentObject.get('RTL_OfferResult_Product_'+i+'__c') == LABEL_INTEREST 
-            &&  currentObject.get('RTL_RelatedOpportunity_'+i+'__c') == LABEL_REFERRED
                 &&  currentObject.get('RTL_RelatedOpportunity_'+i+'__c') == null ){
                 nextStepCreateOpp = true;
                 break;
