@@ -68,6 +68,7 @@
         <name>Queue</name>
     </types>
     <types>
+        <members>iigproduct_2__Chat_Message_Template__mdt</members>
         <members>SLA_Config__mdt</members>
         <name>CustomObject</name>
     </types>
@@ -227,5 +228,10 @@
         <members>Bot_Call</members>
         <name>Queue</name>
     </types>
+    <types>
+		<members>Chat_Message_Template.ttb_Web_greeting_message_1</members>
+		<members>Chat_Message_Template.ttb_Web_greeting_message_2</members>
+		<name>CustomMetadata</name>
+	</types>
     <version>58.0</version>
 </Package>
