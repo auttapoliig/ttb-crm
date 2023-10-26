@@ -229,6 +229,12 @@
         <name>Queue</name>
     </types>
     <types>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_agent_greeting_message_1</members>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_agent_greeting_message_2</members>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_agent_greeting_message_3</members>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_agent_greeting_message_4</members>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_bot_greeting_message_5</members>
+        <members>iigproduct_2__Chat_Message_Template.Chat_OneApp_bot_greeting_message_7</members>
 		<members>iigproduct_2__Chat_Message_Template.ttb_Web_greeting_message_1</members>
 		<members>iigproduct_2__Chat_Message_Template.ttb_Web_greeting_message_2</members>
 		<name>CustomMetadata</name>
