@@ -32,11 +32,11 @@
         <members>RTL_Home_Campaign_Manage_Button.Branch_Sales_Support_User</members>
         <members>RTL_Campaign_Reassign_Role_Setting.Branch_Sales_Support_TL</members>
         <members>RTL_Campaign_Reassign_Role_Setting.Branch_Sales_Support_User</members>
-        <name>CustomMetadata</name>    
+        <name>CustomMetadata</name>
     </types>
     <types>
         <members>RTL_Campaign_Member_Filter_Offer_Referred</members>
-        <name>CustomLabel</name>	
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>RTL_CampaignMemberEdit</members>
@@ -47,5 +47,61 @@
         <members>RTL_BSS</members>
         <name>Queue</name>
     </types>
-    <version>58.0</version>
+    <types>
+        <members>Admin</members>
+        <members>Retail Integration API Only</members>
+        <members>TMB Auto Loan Sales Profile</members>
+        <members>TMB CampLoad CC Report Specialist</members>
+        <members>TMB CRM Admin Profile</members>
+        <members>TMB Retail Business Activity Upload</members>
+        <members>TMB Retail Business Document Upload</members>
+        <members>TMB Retail Business Lead Upload</members>
+        <members>TMB Retail Business Support</members>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Channel Sales Mobile</members>
+        <members>TMB Retail Channel Sales Pilot FNA</members>
+        <members>TMB Retail Channel Support</members>
+        <members>TMB Retail Contact Center</members>
+        <members>TMB Retail Contact Center Business Support</members>
+        <members>TMB Retail Contact Center Customer Care</members>
+        <members>TMB Retail Contact Center Fulfillment Outbound</members>
+        <members>TMB Retail Contact Center Inbound Multi</members>
+        <members>TMB Retail Contact Center Inbound Multi Supervisor</members>
+        <members>TMB Retail Contact Center Inbound NonVoice</members>
+        <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
+        <members>TMB Retail Contact Center Inbound Voice</members>
+        <members>TMB Retail Contact Center Inbound Voice Supervisor</members>
+        <members>TMB Retail Contact Center Outbound</members>
+        <members>TMB Retail Contact Center Report Specialist</members>
+        <members>TMB Retail Contact Center Training</members>
+        <members>TMB Retail CRM Specialist</members>
+        <members>TMB Retail Flagship Sales</members>
+        <members>TMB Retail Management</members>
+        <members>TMB Retail Mktg Analytic</members>
+        <members>TMB Retail Mktg Analytic TL</members>
+        <members>TMB Retail Mktg Campaign Mgmt</members>
+        <members>TMB Retail Mktg Campaign Mgmt TL</members>
+        <members>TMB Retail Product Retention</members>
+        <members>TMB Retail Report Specialist</members>
+        <members>TMB Retail Wealth Advisory Multi</members>
+        <members>TMB Retail Wealth Advisory Multi Supervisor</members>
+        <members>TMB Retail Wealth Management</members>
+        <members>TMB Retail Wealth Management %28WAP POC%29</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>TMB Retail Workbench Profile</members>
+        <members>TMB SB ABDM Profile</members>
+        <members>TMB SB BDM Profile</members>
+        <members>TMB SB Client Support Profile</members>
+        <members>TMB SB Client Support Report Profile</members>
+        <members>TMB SB RMC %2F Telesales Profile</members>
+        <members>TMB SB TH%26TL RMC %2F Telesales Profile</members>
+        <members>TMB SB Zone Manager Profile</members>
+        <members>TMB System Administrator</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
+        <members>ttb Subsidiary Report Specialist</members>
+        <members>ttb Subsidiary Sales</members>
+        <name>Profile</name>
+    </types>
+    <version>54.0</version>
 </Package>
