@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iigproduct_2__Information</fullName>
+    <fields>Name</fields>
+    <fields>iigproduct_2__Social_Display_Name__c</fields>
+    <fields>iigproduct_2__Connected_from__c</fields>
+    <fields>Authentication__c</fields>
+    <fields>iigproduct_2__First_Responded_DateTime__c</fields>
+    <fields>iigproduct_2__Tracking_Case__c</fields>
+    <fields>iigproduct_2__Case__c</fields>
+    <label>Information</label>
+</CompactLayout>

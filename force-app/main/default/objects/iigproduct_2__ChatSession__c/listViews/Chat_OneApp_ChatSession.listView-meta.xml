@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chat_OneApp_ChatSession</fullName>
+    <columns>NAME</columns>
+    <columns>iigproduct_2__Connected_from__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>iigproduct_2__Subject__c</columns>
+    <columns>iigproduct_2__Status__c</columns>
+    <columns>iigproduct_2__EndedBy__c</columns>
+    <columns>iigproduct_2__IsExpired__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>iigproduct_2__Connected_from__c</field>
+        <operation>equals</operation>
+        <value>ttb Touch</value>
+    </filters>
+    <label>Chat - OneApp</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -13,7 +13,7 @@ trigger chatSessionTrigger on iigproduct_2__ChatSession__c (before insert, befor
                 }
             }
             Map<String, Account> accMap = new Map<String, Account>();
-            for (Account a : [SELECT Id, TMB_Customer_ID_PE__c, RTL_Customer_Name_TH__c, Customer_Name_PE_Eng__c, First_Name_PE__c, First_Name_Eng_PE__c FROM Account WHERE TMB_Customer_ID_PE__c IN :rmidList WITH SECURITY_ENFORCED]) {
+            for (Account a : [SELECT Id, TMB_Customer_ID_PE__c, RTL_Customer_Name_TH__c, Customer_Name_PE_Eng__c, First_Name_PE__c, First_Name_Eng_PE__c FROM Account WHERE TMB_Customer_ID_PE__c IN :rmidList]) {
                 accMap.put(a.TMB_Customer_ID_PE__c, a);
             }
             
