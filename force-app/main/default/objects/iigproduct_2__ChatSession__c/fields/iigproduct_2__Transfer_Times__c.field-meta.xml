@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iigproduct_2__Transfer_Times__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Transfer Times</label>
+    <summaryForeignKey>iigproduct_2__Chat_Transfer_Log__c.iigproduct_2__ChatSession__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_20_Sec__c</fullName>
+    <externalId>false</externalId>
+    <formula>If (WaitingTime_Sec__c  &gt;  $CustomMetadata.SLA_Config__mdt.Live_chat.Time_Sec__c,true,false)</formula>
+    <inlineHelpText>customer should be wait less than 20 sec</inlineHelpText>
+    <label>Over 20 Sec</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

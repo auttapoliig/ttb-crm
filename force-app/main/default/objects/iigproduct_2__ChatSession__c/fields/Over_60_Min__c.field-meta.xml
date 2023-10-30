@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_60_Min__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (WaitingTime_Sec__c &gt; 3600) , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Over 60 Min</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
