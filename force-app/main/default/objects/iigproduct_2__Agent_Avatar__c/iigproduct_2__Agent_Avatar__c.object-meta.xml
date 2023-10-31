@@ -160,6 +160,7 @@
         <label>Agent Avatar Name</label>
         <type>AutoNumber</type>
     </nameField>
+    <pluralLabel>Agent Avatar</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
