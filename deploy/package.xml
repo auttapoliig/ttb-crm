@@ -24,6 +24,7 @@
         <members>CampaignMember.RTL_OfferResult_Product_5__c</members>
         <members>CampaignMember.RTL_Count_Referred__c</members>
         <members>CampaignMember.RTL_Offer_Result__c </members>
+        <members>CampaignMember.RTL_Offer_Result_Eng__c </members>
         <name>CustomField</name>
     </types>
     <types>

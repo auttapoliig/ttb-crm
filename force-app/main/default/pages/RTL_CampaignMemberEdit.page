@@ -1274,7 +1274,6 @@
         var LGS_Child_Campaign_ID = '{!currentObject.LGS_Child_Campaign_ID__c}';
         var Car_Reference_No = '{!currentObject.Car_Reference_No__c}';
         var LGS_Partner = '{!currentObject.LGS_Partner__c}';
-        var RTL_Assigned_Branch = '{!currentObject.RTL_Assigned_Branch__c}';
         // console.log('LeadSource:',campaign.LeadSource);
 
         var param = 'RTL_FirstName__c=' + FName + ',RTL_LastName__c=' + LName + ',RTL_Mobile1__c=' + Phone + ',RTL_AL_available_time__c=' + avatime +
@@ -1294,7 +1293,7 @@
             ',LGS_Assignment_Code__c=' + LGS_Assignment_Code  + ',LGS_BrandCode__c=' + LGS_BrandCode + ',LGS_Partner__c=' + LGS_Partner+
             ',LGS_BrandShowroomCode__c=' + LGS_BrandShowroomCode + ',LGS_PartnerCode__c=' + LGS_PartnerCode + ',Lead_Score__c=' + Lead_Score +
             ',Lead_Score_Level__c=' + Lead_Score_level + ',LGS_VIN_No__c=' + LGS_VIN_No + ',LGS_File_Upload__c=' + LGS_File_Upload + ',Car_Reference_No__c=' + Car_Reference_No +
-            ',LGS_Campaign_Start_Date__c=' + LGS_Campaign_Start_Date + ',LGS_Campaign_End_Date__c=' + LGS_Campaign_End_Date + ',LGS_Child_Campaign_ID__c=' + LGS_Child_Campaign_ID + 'RTL_Assigned_Branch__c=' + RTL_Assigned_Branch;
+            ',LGS_Campaign_Start_Date__c=' + LGS_Campaign_Start_Date + ',LGS_Campaign_End_Date__c=' + LGS_Campaign_End_Date + ',LGS_Child_Campaign_ID__c=' + LGS_Child_Campaign_ID;
         param += ',LGS_LinkInfo__c=' +LGS_LinkInfo;
 
         var url = "/lightning/o/RTL_Referral__c/new?useRecordTypeCheck=1&defaultFieldValues=" + encodeURIComponent(param) ;

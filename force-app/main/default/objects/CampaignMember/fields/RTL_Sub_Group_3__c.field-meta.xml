@@ -266,7 +266,7 @@
                 <label>STAFF LOAN</label>
             </value>
             <value>
-                <fullName>ttb reserve</fullName>
+                <fullName>TTB RESERVE</fullName>
                 <default>false</default>
                 <label>ttb reserve</label>
             </value>
@@ -369,7 +369,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>CREDIT CARD &amp; RDC</controllingFieldValue>
-            <valueName>ttb reserve</valueName>
+            <valueName>TTB RESERVE</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>DEPOSIT</controllingFieldValue>

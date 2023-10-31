@@ -8,16 +8,19 @@ IF( OR( TEXT(RTL_Contact_Status__c) = &apos;Unused&apos;,
 TEXT(RTL_Contact_Status__c) = &apos;Close&apos;, 
 RTL_Count_Offer_Product__c = 0), 
 &apos;N/A&apos;, 
-IF( RTL_Count_Interest__c+RTL_Count_Not_Interest__c+RTL_Count_NA__c &lt; RTL_Count_Offer_Product__c , 
+IF( RTL_Count_Interest__c+RTL_Count_Not_Interest__c+RTL_Count_NA__c+RTL_Count_Referred__c &lt; RTL_Count_Offer_Product__c , 
 &apos;Pending&apos;, 
 IF( RTL_Count_Interest__c&gt;0 , 
 &apos;Interested&apos;, 
+IF( RTL_Count_Referred__c &gt;0 ,
+&apos;Referred&apos;,
 IF( RTL_Count_Not_Interest__c&gt;0, 
 &apos;Not Interested&apos;, 
 &apos;N/A&apos; 
 ) 
 ) 
 ) 
+)
 )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
