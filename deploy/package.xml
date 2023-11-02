@@ -241,5 +241,9 @@
 		<members>iigproduct_2__Chat_Message_Template.ttb_Web_greeting_message_2</members>
 		<name>CustomMetadata</name>
 	</types>
+    <types>
+        <members>iigproduct_2__Survey__c.ALL</members>
+        <name>ListView</name>
+     </types>
     <version>58.0</version>
 </Package>
