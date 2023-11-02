@@ -13,7 +13,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>iigproduct_2__ChatSession__c.Within_30_Min__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Within_SLA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.SLA_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <objectPermissions>
@@ -25,4 +40,8 @@
         <object>iigproduct_2__ChatSession__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <tabVisibilities>
+        <tab>iigproduct_2__ChatSession__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
 </Profile>
