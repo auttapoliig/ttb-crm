@@ -1,26 +1,47 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-	<types>
-		<members>iigproduct_2__ChatSession__c.Number_case_answered__c</members>
-		<members>iigproduct_2__ChatSession__c.SLA_No_Value__c</members>
-        <members>iigproduct_2__ChatSession__c.Within_30_Min__c</members>
-		<name>CustomField</name>
-	</types>
-	<types>
-		<members>Retail Integration API Only</members>
-		<members>TMB CRM Admin Profile</members>
-		<members>TMB Retail Contact Center Inbound Multi</members>
-		<members>TMB Retail Contact Center Inbound Multi Supervisor</members>
-		<members>TMB Retail Contact Center Inbound NonVoice</members>
-		<members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
-		<members>TMB Retail Wealth Advisory Multi</members>
-		<members>TMB Retail Wealth Advisory Multi Supervisor</members>
-		<members>TMB System Administrator</members>
-		<name>Profile</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>Skill</name>
-	</types>
-	<version>58.0</version>
-</Package>
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Number_case_answered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.SLA_No_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Within_30_Min__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.Within_SLA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.SLA_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>iigproduct_2__ChatSession__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <tabVisibilities>
+        <tab>iigproduct_2__ChatSession__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+</Profile>
