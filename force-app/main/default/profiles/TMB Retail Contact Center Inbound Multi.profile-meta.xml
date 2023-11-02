@@ -26,6 +26,11 @@
         <field>iigproduct_2__ChatSession__c.Within_SLA__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>iigproduct_2__ChatSession__c.SLA_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
