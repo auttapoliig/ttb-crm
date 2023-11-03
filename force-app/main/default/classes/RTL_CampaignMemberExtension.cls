@@ -2514,7 +2514,8 @@ private String LABEL_NONE = System.Label.None;
             System.debug('isCampaignMemberCanSell:'+isCampaignMemberCanSell);
             if(!isCampaignMemberCanSell && isMatch){
                 isCampaignActive = false;
-
+                preloadErrorMessage = System.Label.RTL_CampaignMember_CampaignMember_CanNotSell;
+                ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.WARNING,System.Label.RTL_CampaignMember_CampaignMember_CanNotSell));    
             }
         } else {
                 isCampaignActive = false;
