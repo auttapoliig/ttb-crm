@@ -5,6 +5,7 @@
         <members>PendingServiceRoutingTrigger</members>
         <members>CaseChatSessionTrigger</members>
         <members>chatSessionTrigger</members>
+        <members>SocialAccountTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
