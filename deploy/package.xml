@@ -224,10 +224,6 @@
         <name>ConnectedApp</name>
     </types>
     <types>
-        <members>Chat</members>
-        <name>ServiceChannel</name>
-    </types>
-    <types>
         <members>Bot_Call</members>
         <name>Queue</name>
     </types>
