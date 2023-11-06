@@ -260,14 +260,13 @@ public class RTL_CSVLightningUtil_Test {
         String recordId = [SELECT Id FROM Account WHERE TMB_Customer_ID_PE__c = '001100000001100000000000000500' LIMIT 1].Id;
         Test.startTest();
         Map<String, Object> output =  RetailCSVLightningUtil.getRILendingManualData(recordId, 'pro_con');
-        Map<String, Object> output2 =  RetailCSVLightningUtil.getRILendingManualData(recordId, 'lend_priv');
         Test.stopTest();
     }
 
     @isTest static void test_getRILendingManualDataError(){
-        String recordId = 'aaa';
+        String recordId = [SELECT Id FROM Account WHERE TMB_Customer_ID_PE__c = '001100000001100000000000000500' LIMIT 1].Id;   
         Test.startTest();
-        Map<String, Object> output =  RTL_CSVLightningUtil.getRILendingManualData(recordId, 'pro_con');
+        Map<String, Object> output =  RTL_CSVLightningUtil.getRILendingManualData(recordId, 'lend_priv');
         Test.stopTest();
     }
     
