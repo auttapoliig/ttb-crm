@@ -61,6 +61,7 @@
         <members>RTL_Customer_Call_Center.TMB_System_Administrator</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Report_Specialist</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Sales</members>
+        <members>AL_screen_Product_Name.CYB_Revolving</members>
         <name>CustomMetadata</name>
     </types>
     <types>
@@ -86,6 +87,14 @@
     <types>
         <members>Security_Matrix__mdt.CC_CSV</members>
         <name>ListView</name>
+    </types>
+    <types>
+		<members>RTL_Referral__c.Validate_Contact_Address</members>
+		<members>RTL_Referral__c.Validate_Contact_Channel</members>
+		<members>RTL_Referral__c.Validate_Customer_First_Name</members>
+        <members>RTL_Referral__c.Validate_Customer_Last_Name</members>
+        <members>RTL_Referral__c.Validate_Customer_Mobile</members>
+        <name>ValidationRule</name>
     </types>
     <version>58.0</version>
 </Package>
