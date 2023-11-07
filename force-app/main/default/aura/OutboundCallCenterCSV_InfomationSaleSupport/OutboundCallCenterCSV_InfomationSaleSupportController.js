@@ -96,24 +96,18 @@
         const getProfile = helper.getProfileName(component, event, helper);
 
         getProfile.then((profileName) => {
-            const salesSupportVisible = helper.onVerifyFieldSecurity(component, event, helper, profileName, 'RtlCust:Sales Support Information');
-            salesSupportVisible.then((result) => {
-                if (result == true) {
-                    helper.onMessengerCoverArea(component, event, helper);
-                }else{
-                    component.set('v.messengerCoverArea',{value : $A.get('$Label.c.Data_Condition_Hidden_Text'), class : ''});
+
+            helper.getVerifyAPIFeild(component, event, helper, 'Message_Cover_Area', profileName);
+            helper.getVerifyAPIFeild(component, event, helper, 'CYC_Campaign_PromoCond_api', profileName);
+
+            const getFirstLending = helper.getInstantLendingDetail(component, event, helper);
+            getFirstLending.then((data) => {
+                if(data != $A.get('$Label.c.Data_Condition_Hidden_Text')){
+                    helper.getInstantLendingManual(component, event, helper, 'lend_priv');
                 }
-            });
-            const MIBenenfitVisible = helper.onVerifyFieldSecurity(component, event, helper, profileName, 'RtlCust:MI Benefits');
-            MIBenenfitVisible.then((result) => {
-                if (result == true) {
-                    helper.CYCPrepareDataCustomer(component, event, helper);
-                }else{
-                    component.set('v..CYCCampaignMappingInq.promotion_condition', $A.get('$Label.c.Data_Condition_Hidden_Text'));
-                }
-            });
-            helper.getInstantLendingDetail(component, event, helper);
-            helper.getDescribeFieldResults(component, event, helper);
+            })
+
+            helper.getDescribeFieldResults(component, event, helper); 
         });
     },
 

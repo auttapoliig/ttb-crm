@@ -56,6 +56,12 @@ public with sharing class RetailCSVLightningUtil {
         return [SELECT Id, Name, Profile.Name FROM User WHERE Id = :userId].Profile.Name;
     }
 
+    @AuraEnabled(continuation=true)
+    public static Object getCVSAnalyticsDataByAccID(String accId)
+    {    
+        Account acc = [SELECT Id, TMB_Customer_ID_PE__c, Name FROM Account WHERE Id = :accId];
+        return RTL_CSVLightningUtil.getCVSAnalyticsData(acc.TMB_Customer_ID_PE__c);
+    }
 
     @AuraEnabled(continuation=true)
     public static Object getCVSAnalyticsData(String rmId)
@@ -352,6 +358,31 @@ public with sharing class RetailCSVLightningUtil {
                 return System.Label.Data_Condition_Hidden_Text;
             }
         }catch(Exception e){
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    @AuraEnabled
+    public static String getMessengerCoverArea(String recordId){
+        return RTL_CSVLightningUtil.getMessengerCoverArea(recordId);
+    }
+
+
+    @AuraEnabled
+    public static Map<String, Object> getRILendingManualData(String recordId, String field){
+        try {
+            Retail_Instant_lending_Manual__c e = [SELECT Lending_Privileges_Detail__c, Promotion_Condition_Detail__c FROM Retail_Instant_lending_Manual__c WHERE Customer__c =: recordId LIMIT 1];
+            Map<String, Object> returnMap = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(e));
+            returnMap.remove('Id');
+            returnMap.remove('attributes');
+            if(field == 'pro_con'){
+                returnMap.remove('Lending_Privileges_Detail__c');
+            }
+            else if(field == 'lend_priv'){
+                returnMap.remove('Promotion_Condition_Detail__c');
+            }
+            
+            return returnMap;
+        } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
     }
