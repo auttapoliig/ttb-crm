@@ -21,7 +21,7 @@
                 helper.stopSpinner(component);
             } else {
                 var errors = response.getError();
-                errors.forEach(error => console.log(error.message));
+                errors.forEach(error => console.error(error.message));
                 helper.stopSpinner(component);
             }
         });
@@ -97,7 +97,6 @@
                     helper.checkIsRender(component,helper);
                 }else if(result.StatusCode == '401' && round < numberOfRetry ){ 
                     round += 1;
-                    console.log(round);
                     window.setTimeout(
                         $A.getCallback(function() {
                             helper.getCVSAnalyticsData(component, event, helper, objectInfoField, round);
@@ -109,7 +108,7 @@
                 }
             } else {
                 var errors = response.getError();
-                errors.forEach(error => console.log(error.message));
+                errors.forEach(error => console.error(error.message));
             }
         });
         if (objectInfoField['TMB_Customer_ID_PE__c'].value){
@@ -165,20 +164,47 @@
         }
     },
     getInstantLendingDetail: function (component, event, helper) {
-        var action = component.get('c.getInstantLendingDetail');
-        action.setParams({
-            "accId": component.get('v.recordId'),
+        return new Promise((resolve, reject) => {
+            var action = component.get('c.getInstantLendingDetail');
+            action.setParams({
+                "accId": component.get('v.recordId'),
+            });
+            action.setCallback(this, function (response) {
+                var state = response.getState();
+                if (component.isValid() && state === 'SUCCESS') {
+                    var lendingDetail = response.getReturnValue();
+                    component.set('v.instantLendingDetail',lendingDetail);
+                    resolve(lendingDetail);
+                }
+                else if(state === 'ERROR') {
+                    console.error('getInstantLendingDetail ERROR');
+                } else {
+                    console.error('Unknown problem, state.');
+                }
+            });
+            $A.enqueueAction(action);
         });
-        action.setCallback(this, function (response) {
-            var state = response.getState();
-            if (component.isValid() && state === 'SUCCESS') {
-                var lendingDetail = response.getReturnValue();
-                component.set('v.instantLendingDetail',lendingDetail);
-            }
-            else if(state === 'ERROR') {
-                console.log('getInstantLendingDetail ERROR');
+    },
+    getInstantLendingManual: function (component, event, helper, field){
+        var action = component.get('c.getRILendingManualData');
+        action.setParams({
+            'recordId' : component.get('v.recordId'),
+            'field' : field
+        })
+        action.setCallback(this, function(response) {
+            const state = response.getState();
+            if(state == 'SUCCESS'){
+                const result = response.getReturnValue();
+                if(field == 'pro_con'){
+                    component.set('v.pro_con', result['Promotion_Condition_Detail__c'] ? String(result['Promotion_Condition_Detail__c']) : '');
+                }
+                else if(field == 'lend_priv'){
+                    component.set('v.lend_priv', result['Lending_Privileges_Detail__c'] ? String(result['Lending_Privileges_Detail__c']) : '');
+                }
+            }else if(state === 'ERROR') {
+                console.error('getVerifyByField ERROR');
             } else {
-                console.log('Unknown problem, state.');
+                console.error('Unknown problem, state.');
             }
         });
         $A.enqueueAction(action);
@@ -207,33 +233,6 @@
             $A.enqueueAction(action);
         })
     },
-    onVerifyFieldSecurity: function (component, event, helper, profileName, sectionName) {
-        return new Promise((resolve, reject) => {
-            var action = component.get('c.verifyFieldSecurity');
-            action.setParams({
-                "section": sectionName,
-                "userProfile": profileName,
-                "accountId": component.get('v.recordId')
-            });
-            action.setCallback(this, function (response) {
-                if (component.isValid() && response.getState() === 'SUCCESS') {
-                    var result = response.getReturnValue();
-                    if (sectionName == 'RtlCust:Sales Support Information'){
-                        component.set('v.isSalseSupportSectionVisible',result);
-                    }else if (sectionName == 'RtlCust:MI Benefits'){
-                        component.set('v.isMIBenefitSectionVisible',result);
-                    }
-                    resolve(result)
-                } else if(state === 'ERROR') {
-                    reject('error')
-                } else {
-                    console.log('Unknown problem, state.');
-                    reject('error')
-                }
-            });
-            $A.enqueueAction(action);
-        })
-    },
     onMessengerCoverArea : function(component, event, helper){
         var action = component.get('c.getMessengerCoverArea');
         action.setParams({
@@ -245,9 +244,9 @@
                 let MessengerCoverArea = {value : (result ? result : ''), class : (result == 'Cover' ? 'greenColor':'redColor')};
                 component.set('v.messengerCoverArea',MessengerCoverArea);
             } else if(state === 'ERROR') {
-                console.log('MessengerCoverArea ERROR');
+                console.error('MessengerCoverArea ERROR');
             } else {
-                console.log('Unknown problem, state.');
+                console.error('Unknown problem, state.');
             }
         });
         $A.enqueueAction(action);
@@ -275,7 +274,7 @@
                 response_status.description = err && err[0] && err[0].message && err[0].exceptionType ? err[0].exceptionType + " : "+err[0].message : "Unknown error occur";
                 component.set("v.CYCCampaignMappingInqStatus",response_status);
                 var errors = response.getError();
-                errors.forEach(error => console.log(error.message));
+                errors.forEach(error => console.error(error.message));
             }
         });
         $A.enqueueAction(action);
@@ -323,6 +322,7 @@
                 if(returnValue.description == 'Unauthorized' && round < numOfRetryTime){   
                     round += 1;
                     response_value.promotion_condition = 'Error getting data, retrying... ('+round+')';
+                    response_status.cyc_status = 'LOAD';
                     window.setTimeout(
                         $A.getCallback(function() {
                             helper.CallCYCCampaignMapingInq(component,event,helper,ObjectField,round);
@@ -403,11 +403,50 @@
 
                 component.set('v.waterMarkImage', bg);
             } else if(state === 'ERROR') {
-                console.log('error: ', response.error);
+                console.error('error: ', response.error);
             } else {
-                console.log('Unknown problem, state: '+ state + ', error: ' + JSON.stringify(response.error));
+                console.error('Unknown problem, state: '+ state + ', error: ' + JSON.stringify(response.error));
             }
 		});
 		$A.enqueueAction(action);
 	},
+
+    getVerifyAPIFeild: function (component, event, helper, field, profileName){
+        var action = component.get('c.getVerifyByField');
+        action.setParams({
+            "field": field,
+            "profileName": profileName,
+            "recordId": component.get('v.recordId'),
+        });
+        action.setCallback(this, function(response) {
+            const state = response.getState();
+            if(state == 'SUCCESS'){
+                const result = response.getReturnValue();
+                if(field == 'Message_Cover_Area'){
+                    if (result == true){
+                        helper.onMessengerCoverArea(component, event, helper);
+                    }else{
+                        component.set('v.messengerCoverArea',{value : $A.get('$Label.c.Data_Condition_Hidden_Text'), class : ''});
+                    }
+                }
+                else if(field == 'CYC_Campaign_PromoCond_api'){
+                    component.set(`v.isPromotionVisible`, result);
+                    if( result == true ){
+                        helper.getInstantLendingManual(component, event, helper, 'pro_con');
+                        helper.CYCPrepareDataCustomer(component,event,helper);
+                    }
+                    else{
+                        component.set("v.isCallCYCFinish","true");
+                    }
+                }
+            }
+            else if(state === 'ERROR') {
+                console.error('getVerifyByField ERROR');
+            } else {
+                console.error('Unknown problem, state.');
+            }
+            helper.stopSpinner(component);
+        });
+        $A.enqueueAction(action);
+    },
 })

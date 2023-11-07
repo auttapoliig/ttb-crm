@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
-        <label>ลบ Lead Scoring Condition Detail</label>
-        <name>LGS_Delete_LSCD_Header</name>
-    </customLabels>
-    <customLabels>
-        <label>คุณแน่ใจว่าต้องการลบ Lead Scoring Condition Detail นี้หรือไม่</label>
-        <name>LGS_Delete_LSCD_messages</name>
-    </customLabels>
-    <customLabels>
-        <label>ลบ Lead Scoring Condition</label>
-        <name>LGS_Delete_LSC_Header</name>
-    </customLabels>
-    <customLabels>
-        <label>คุณแน่ใจว่าต้องการลบ Lead Scoring Condition นี้หรือไม่</label>
-        <name>LGS_Delete_LSC_messages</name>
-    </customLabels>
-    <customLabels>
-        <label>คุณได้ทำการตรวจสอบว่า Lead Scoring List ไม่ได้ถูกใช้ในระบบ LGS</label>
-        <name>LGS_Inactive_Message</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- LGS_Summary_Weight --></label>
-        <name>LGS_Summary_Weight</name>
-    </customLabels>
-    <customLabels>
-        <label>หมายเหตุ : กรณีปุ่ม Active ไม่ปรากฏ ให้ตรวจสอบผลรวม Summary Weight ต้องเท่ากับ 100%</label>
-        <name>LGS_Summary_Weight_Warn_Message</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- LGS_Total_Weight --></label>
-        <name>LGS_Total_Weight</name>
-    </customLabels>
-    <customLabels>
-        <label>น้ำหนักที่ได้น้อยกว่าน้ำหนักรวมที่กำหนด กรุณากรอกข้อมูลเพิ่มเติม</label>
-        <name>LGS_Warning_messages</name>
-    </customLabels>
-    <customLabels>
-        <label>--ไม่มี--</label>
-        <name>None</name>
+        <label>สิทธิพิเศษสำหรับผลิตภัณฑ์สินเชื่อรถยนต์/บ้าน</label>
+        <name>cyc_promo_cond</name>
     </customLabels>
 </Translations>

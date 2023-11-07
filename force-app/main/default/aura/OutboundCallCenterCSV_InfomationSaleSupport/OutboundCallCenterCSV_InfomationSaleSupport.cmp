@@ -7,12 +7,16 @@
     <aura:attribute name="instantLendingDetail" type="String" default="" />
     <aura:attribute name="messengerCoverArea" type="String" default="" />
     <aura:attribute name="isSalseSupportSectionVisible" type="Boolean" default="false" />
-    <aura:attribute name="isMIBenefitSectionVisible" type="Boolean" default="false" />
+    <aura:attribute name="isPromotionVisible" type="Boolean" default="false" />
     <aura:attribute name="profileName" type="String" />
     <aura:attribute name="userId" type="Id" default="{! $SObjectType.CurrentUser.Id }" />
 
     <aura:attribute name="CYCCampaignMappingInq" type="Object"/>
     <aura:attribute name="CYCCampaignMappingInqStatus" type="Object"/>
+
+    <!-- Retail Instant Lending Manual -->
+    <aura:attribute name="pro_con" type="String" default=""/>
+    <aura:attribute name="lend_priv" type="String" default=""/>
 
     <aura:attribute name="numberOfRetry" type="Integer" default="{!$Label.c.Number_Of_Retry_Times}"/>
     <aura:attribute name="retrySetTimeOut" type="Integer" default="{!$Label.c.Retry_SetTimeOut}"/>
@@ -599,9 +603,8 @@
                         <span class="slds-form-element__label">{!$Label.c.Instant_Lending}</span>
                         <div class="slds-form-element__control customField">
                             <div class="slds-form-element__static">
-                                <aura:unescapedHtml value="{!v.instantLendingDetail}">
-                                    <lightning:formattedText value="{!v.instantLendingDetail}" />
-                                </aura:unescapedHtml>
+                                <lightning:formattedRichText value="{!v.lend_priv}"/>
+                                <c:CallCenterCSV_PillOutput type="TEXTAREA" value="{!v.instantLendingDetail}" />
                             </div>
                         </div>
                     </div>
@@ -648,7 +651,10 @@
                         </span>
                         <div class="slds-form-element__control customField">
                             <div aura:id="id_cyc_promo_cond" class="slds-form-element__static">
-                                <aura:if isTrue="{!v.isMIBenefitSectionVisible == true}">
+                                <aura:if isTrue="{!v.isPromotionVisible == true}">
+                                    <aura:if isTrue="{!v.pro_con != ''}">
+                                        <lightning:formattedRichText aura:id="test1" value="{!v.pro_con}" /><br/>
+                                    </aura:if>
                                     <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'SUCCESS'}">
                                         {!v.CYCCampaignMappingInq.promotion_condition}
                                         <aura:set attribute="else">
@@ -656,7 +662,8 @@
                                                 -
                                                 <aura:set attribute="else">
                                                     <aura:if isTrue="{!v.CYCCampaignMappingInqStatus.cyc_status == 'LOAD'}">
-                                                            <lightning:spinner alternativeText="Loading" size="small" />                                                         
+                                                        {!v.CYCCampaignMappingInq.promotion_condition}                                                       
+                                                            <lightning:spinner alternativeText="Loading" size="small" />  
                                                         <aura:set attribute="else">
                                                             <span style="color :red;font-weight: bold;">
                                                                 {!$Label.c.cyc_promo_apifail}                                           

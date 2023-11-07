@@ -1,82 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>LGS_Delete_LSCD_Header</fullName>
-        <categories>LGS</categories>
+        <fullName>cyc_promo_cond</fullName>
+        <categories>CallCenter_CSV</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>LGS_Delete_LSCD_Header</shortDescription>
-        <value>Delete Lead Scoring Condition Detail</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Delete_LSCD_messages</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Delete_LSCD_messages</shortDescription>
-        <value>Are you sure you want to delete this Lead Scoring Condition Detail?</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Delete_LSC_Header</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Delete_LSC_Header</shortDescription>
-        <value>Delete Lead Scoring Condition</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Delete_LSC_messages</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Delete_LSC_messages</shortDescription>
-        <value>Are you sure you want to delete this Lead Scoring Condition?</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Inactive_Message</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Inactive_Message</shortDescription>
-        <value>Please check that Lead Scoring List is not currently active on LGS system</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Summary_Weight</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Summary_Weight</shortDescription>
-        <value>Summary Weight</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Summary_Weight_Warn_Message</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Warn message for summary weight</shortDescription>
-        <value>Note: In case the Active button does not appear, Please check Summary Weight must be equal to 100%.</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Total_Weight</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Total_Weight</shortDescription>
-        <value>Total Weight</value>
-    </labels>
-    <labels>
-        <fullName>LGS_Warning_messages</fullName>
-        <categories>LGS</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LGS_Warning_messages</shortDescription>
-        <value>Summary Weight is not equal to Total Weight, Please complete the information.</value>
-    </labels>
-    <labels>
-        <fullName>None</fullName>
-        <categories>None</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>None</shortDescription>
-        <value>--None--</value>
+        <shortDescription>CYC Promo/Cond</shortDescription>
+        <value>Promotion/Condition</value>
     </labels>
 </CustomLabels>
