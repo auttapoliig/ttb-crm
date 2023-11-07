@@ -2,33 +2,18 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.Number_case_answered__c</field>
+        <editable>true</editable>
+        <field>Retail_Instant_lending_Manual__c.As_of_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.SLA_No_Value__c</field>
+        <editable>true</editable>
+        <field>Retail_Instant_lending_Manual__c.Lending_Privileges_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.Number_Case_UnAnswered__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.Within_30_Min__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.Within_SLA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>iigproduct_2__ChatSession__c.SLA_Time__c</field>
+        <editable>true</editable>
+        <field>Retail_Instant_lending_Manual__c.Promotion_Condition_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <objectPermissions>
@@ -36,12 +21,8 @@
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>iigproduct_2__ChatSession__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Retail_Instant_lending_Manual__c</object>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <tabVisibilities>
-        <tab>iigproduct_2__ChatSession__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
 </Profile>
