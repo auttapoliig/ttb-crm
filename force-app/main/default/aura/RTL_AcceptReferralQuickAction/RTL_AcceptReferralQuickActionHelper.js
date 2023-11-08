@@ -36,11 +36,20 @@
         if (referralObj && userObj && isOnce) {
             component.set('v.isOnce', !isOnce);
             // helper.stopSpinner(component);
-
-            if (referralObj.OwnerId == userObj.Id) {
+			//*************************************Deploy on 16 Nov 2023******************************
+            //SCR0601724 : Automate update referral status when referee click “รับงาน” Dev by Attasit K.
+            //Add fields RTL_RecordType_Name__c,RTL_Stage__c on query
+            //Check condition update stage to 'Accepted & In Progress' only records type : Retail Order Transaction or Retail Cross Channel Referral
+            
+            if (referralObj.OwnerId == userObj.Id && referralObj.RTL_Stage__c != 'New' &&
+               (referralObj.RTL_RecordType_Name__c == 'Retail Order Transaction' || referralObj.RTL_RecordType_Name__c == 'Retail Cross Channel Referral')) {
                 helper.displayToast(component, 'Error', ERR005);
                 $A.get("e.force:closeQuickAction").fire();
-            } else if (referralObj.OwnerId.startsWith('005')) {
+            } else if (referralObj.OwnerId == userObj.Id && referralObj.RTL_RecordType_Name__c != 'Retail Order Transaction' && 
+                       referralObj.RTL_RecordType_Name__c != 'Retail Cross Channel Referral') {
+                helper.displayToast(component, 'Error', ERR005);
+                $A.get("e.force:closeQuickAction").fire();
+            } else if (referralObj.OwnerId.startsWith('005') && referralObj.OwnerId != userObj.Id) {
                 helper.displayToast(component, 'Error', ERR003);
                 $A.get("e.force:closeQuickAction").fire();
             } else {
