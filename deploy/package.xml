@@ -1,12 +1,143 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>CCOutbound_CSVController</members>
+        <members>CCOutbound_CSVControllerTest</members>
+        <members>editCustomerForCCOutboundCSVController</members>
+        <members>editCustomerForCCOutboundCSVCtlTest</members>
+        <members>RetailCSVLightningUtil</members>
+        <members>RetailCSVLightningUtil_test</members>
+        <members>RTL_CSVLightningUtil</members>
+        <members>RTL_CSVLightningUtil_Test</members>
         <members>RTL_ReferralChangeOwner</members>
-        <name>Apexclass</name>
+        <name>ApexClass</name>
     </types>
     <types>
+        <members>editCustomerForCCOutboundCSV</members>
+        <members>OutboundCallCenterCSV_InfomationAddressContact</members>
+        <members>OutboundCallCenterCSV_InfomationBasic</members>
+        <members>OutboundCallCenterCSV_InfomationImportant</members>
+        <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
+        <members>RetailCSV_InformationSalesSupport</members>
+        <members>CallCenterCSV_InfomationSaleSupport</members>
         <members>RTL_AcceptReferralQuickAction</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Customer_Record_Page_Contact_Center_Outbound</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Retail_Instant_lending_Manual__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Opportunity</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>Account.EditCCOutbound</members>
+        <name>WebLink</name>
+    </types>
+    <types>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Report_Specialist</members>
+        <members>PDPA_Activity_profile_button.ttb_Subsidiary_Sales</members>
+        <members>Security_Matrix.Birthday</members>
+        <members>Security_Matrix.Citizen_ID_Expiration_Date</members>
+        <members>Security_Matrix.Do_Not_Contact</members>
+        <members>Security_Matrix.Email_2</members>
+        <members>Security_Matrix.Gender</members>
+        <members>Security_Matrix.Income</members>
+        <members>Security_Matrix.Market_Consent</members>
+        <members>Security_Matrix.Messenger_Area</members>
+        <members>Security_Matrix.Primary_Address</members>
+        <members>Security_Matrix.RTL_BRC_Type</members>
+        <members>Security_Matrix.RTL_BRC_Updated_Date</members>
+        <members>Security_Matrix.TTB_Touch_Flag</members>
+        <members>Security_Matrix.Wealth_Advisor</members>
+        <members>Security_Matrix.Zodiac</members>
+        <members>Security_Matrix.Message_Cover_Area</members>
+        <members>Tax_Certificate_profile_button.ttb_Subsidiary_Report_Specialist</members>
+        <members>Tax_Certificate_profile_button.ttb_Subsidiary_Sales</members>
+        <members>RTL_Customer_Call_Center.TMB_Retail_Contact_Center_Outbound</members>
+        <members>RTL_Customer_Call_Center.TMB_System_Administrator</members>
+        <members>RTL_Customer_Call_Center.ttb_Subsidiary_Report_Specialist</members>
+        <members>RTL_Customer_Call_Center.ttb_Subsidiary_Sales</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>th</members>
+        <name>Translations</name>
+    </types>
+    <types>
+        <members>Retail_Instant_lending_Manual__c.Lending_Privileges_Detail__c</members>
+        <members>Retail_Instant_lending_Manual__c.Promotion_Condition_Detail__c</members>
+        <members>Retail_Instant_lending_Manual__c.As_of_Date__c</members>
+        <members>Retail_Instant_lending_Manual__c.Customer__c</members>
+        <name>CustomField</name>
+    </types>
+        
+    <types>
+        <members>cyc_promo_cond</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>Account-Retails Call Center Outbound</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Security_Matrix__mdt.CC_CSV</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>App External API</members>
+        <members>Retail Integration API Only</members>
+        <members>TMB Auto Loan Sales Profile</members>
+        <members>TMB CampLoad CC Report Specialist</members>
+        <members>TMB CRM Admin Profile</members>
+        <members>TMB Retail Business Activity Upload</members>
+        <members>TMB Retail Business Document Upload</members>
+        <members>TMB Retail Business Lead Upload</members>
+        <members>TMB Retail Business Support</members>
+        <members>TMB Retail Channel Sales Mobile</members>
+        <members>TMB Retail Channel Sales Pilot FNA</members>
+        <members>TMB Retail Channel Sales</members>
+        <members>TMB Retail Channel Support</members>
+        <members>TMB Retail Contact Center Business Support</members>
+        <members>TMB Retail Contact Center Customer Care</members>
+        <members>TMB Retail Contact Center Fulfillment Outbound</members>
+        <members>TMB Retail Contact Center Inbound Multi Supervisor</members>
+        <members>TMB Retail Contact Center Inbound Multi</members>
+        <members>TMB Retail Contact Center Inbound NonVoice Supervisor</members>
+        <members>TMB Retail Contact Center Inbound NonVoice</members>
+        <members>TMB Retail Contact Center Inbound Voice Supervisor</members>
+        <members>TMB Retail Contact Center Inbound Voice</members>
+        <members>TMB Retail Contact Center Outbound</members>
+        <members>TMB Retail Contact Center Report Specialist</members>
+        <members>TMB Retail Contact Center Training</members>
+        <members>TMB Retail Contact Center</members>
+        <members>TMB Retail CRM Specialist</members>
+        <members>TMB Retail Flagship Sales</members>
+        <members>TMB Retail Management</members>
+        <members>TMB Retail Mktg Analytic TL</members>
+        <members>TMB Retail Mktg Analytic</members>
+        <members>TMB Retail Mktg Campaign Mgmt TL</members>
+        <members>TMB Retail Mktg Campaign Mgmt</members>
+        <members>TMB Retail Navigator</members>
+        <members>TMB Retail Product Retention</members>
+        <members>TMB Retail Report Specialist</members>
+        <members>TMB Retail Wealth Advisory Multi Supervisor</members>
+        <members>TMB Retail Wealth Advisory Multi</members>
+        <members>TMB Retail Wealth Management RM Cockpit</members>
+        <members>TMB Retail Wealth Management</members>
+        <members>TMB Retail Workbench Profile</members>
+        <members>TMB System Administrator</members>
+        <members>ttb Retail Branch Manager</members>
+        <members>ttb Retail Branch Specialist</members>
+        <members>ttb Subsidiary Report Specialist</members>
+        <members>ttb Subsidiary Sales</members>
+        <name>Profile</name>
     </types>
     <version>58.0</version>
 </Package>
