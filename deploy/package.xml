@@ -9,6 +9,7 @@
         <members>RetailCSVLightningUtil_test</members>
         <members>RTL_CSVLightningUtil</members>
         <members>RTL_CSVLightningUtil_Test</members>
+        <members>RTL_ReferralChangeOwner</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -19,6 +20,7 @@
         <members>OutboundCallCenterCSV_InfomationSaleSupport</members>
         <members>RetailCSV_InformationSalesSupport</members>
         <members>CallCenterCSV_InfomationSaleSupport</members>
+        <members>RTL_AcceptReferralQuickAction</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>

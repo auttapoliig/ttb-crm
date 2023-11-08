@@ -3,9 +3,24 @@ global with sharing class RTL_ReferralChangeOwner {
     webservice static String acceptReferral(String referralId){
         String result;
         try{
-            RTL_Referral__c referral = [SELECT Id,Name,OwnerId FROM RTL_Referral__c WHERE Id=:referralId];
-        	referral.OwnerId = System.UserInfo.getUserId();
-            referral.RTL_Is_Accept_Button__c = true;
+            //*************************************Deploy on 16 Nov 2023******************************
+            //SCR0601724 : Automate update referral status when referee click “รับงาน” Dev by Attasit K.
+            //Add fields RTL_RecordType_Name__c,RTL_Stage__c on query
+            //Check condition update stage to 'Accepted & In Progress' only records type : Retail Order Transaction or Retail Cross Channel Referral
+            RTL_Referral__c referral = [SELECT Id,Name,OwnerId,RTL_RecordType_Name__c,RTL_Stage__c FROM RTL_Referral__c WHERE Id=:referralId];
+            if(referral.RTL_RecordType_Name__c == 'Retail Order Transaction' || referral.RTL_RecordType_Name__c == 'Retail Cross Channel Referral'){
+                if(referral.OwnerId == System.UserInfo.getUserId()){
+                    referral.RTL_Stage__c = 'Accepted & In Progress';
+                }else if(referral.OwnerId != System.UserInfo.getUserId()){
+                   referral.OwnerId = System.UserInfo.getUserId(); 
+                   referral.RTL_Stage__c = 'Accepted & In Progress';         
+                }
+            	referral.RTL_Is_Accept_Button__c = true;
+            }else{
+                referral.OwnerId = System.UserInfo.getUserId();
+            	referral.RTL_Is_Accept_Button__c = true;
+            }
+            
         	update referral;
             result = 'Success';
         }catch(DMLException e){
