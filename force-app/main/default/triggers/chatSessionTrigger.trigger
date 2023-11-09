@@ -63,6 +63,7 @@ trigger chatSessionTrigger on iigproduct_2__ChatSession__c (before insert, befor
             }
             if (!sessionIdList.isEmpty()) {
                 ChatSessionTriggerHandler.sendNoti(sessionIdList);
+                ChatSessionTriggerHandler.AutoClosecase(sessionIdList);
                 System.debug('---chatSessionTrigger---4');
             }
         }
