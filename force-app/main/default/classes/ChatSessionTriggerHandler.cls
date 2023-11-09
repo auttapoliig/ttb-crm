@@ -1,13 +1,4 @@
 public without sharing class ChatSessionTriggerHandler {
-    // public class CreateBody{
-    //     @AuraEnabled
-    //     public String requestbodeCreate {get;set;}
-    //     @AuraEnabled
-    //     public String responsebodeCreate {get;set;}
-    //     @AuraEnabled
-    //     public Boolean isSuccessCreate {get;set;}
-
-    // }
 
     @future(callout=true)
     public static void sendNoti(List<Id> chatSessionId) {
@@ -18,8 +9,8 @@ public without sharing class ChatSessionTriggerHandler {
         Map<RTL_Online_Service_Log__c, Map<String, String>> osLogMap = new Map<RTL_Online_Service_Log__c, Map<String, String>>();
 
         Map<Id, iigproduct_2__ChatSession__c> chatSessionMap = new Map<Id, iigproduct_2__ChatSession__c>([SELECT Id, iigproduct_2__RMID__c, iigproduct_2__Social_ID__r.iigproduct_2__Account__c, iigproduct_2__Social_ID__r.iigproduct_2__Account__r.Core_Banking_Suggested_Segment__c FROM iigproduct_2__ChatSession__c WHERE Id IN :chatSessionId]);
-        //Map<String, String> body = new Map<String, String>();
-        //RTL_Online_Service_Log__c osLogTest = new RTL_Online_Service_Log__c();
+        Map<String, String> body = new Map<String, String>();
+        RTL_Online_Service_Log__c osLog = new RTL_Online_Service_Log__c();
         // List<iigproduct_2__ChatSession__c> chatSessionListEnoti = chatSessionMap.values();
         // List<iigproduct_2__ChatSession__c> chatSessionListEnoti = new List<iigproduct_2__ChatSession__c>();
         Map<Id, iigproduct_2__ChatSession__c> chatSessionListEnoti = new Map<Id, iigproduct_2__ChatSession__c>();
@@ -85,19 +76,13 @@ public without sharing class ChatSessionTriggerHandler {
                 errorMsg = e.getMessage();
             }
 
-            //CreateBody bodytemp = new CreateBody();
-            //bodytemp = CreateBodyMrthod(reqBody);
-
             System.debug('Sent Noti: ' + chatSession.iigproduct_2__RMID__c);
             System.debug('requestBody: ' + requestBody);
             System.debug('responseBody: ' + responseBody);
-            //System.debug('requestBody: ' + bodytemp.requestbodeCreate);
-            //System.debug('responseBody: ' + bodytemp.responsebodeCreate);
             System.debug('Saving Log...');
-            RTL_Online_Service_Log__c osLog = new RTL_Online_Service_Log__c();
+            //RTL_Online_Service_Log__c osLog = new RTL_Online_Service_Log__c();
             
             osLog.RTL_Is_Success__c = isSuccess;  
-            //osLog.RTL_Is_Success__c = bodytemp.isSuccessCreate;
             osLog.RTL_Customer_Name__c = '';
             osLog.RTL_Error_Message__c = errorMsg;
             osLog.RTL_Name_of_User__c = UserInfo.getFirstName() + ' ' + UserInfo.getLastName();
@@ -116,26 +101,18 @@ public without sharing class ChatSessionTriggerHandler {
             osLog.RTL_End_DateTime__c  = System.now();
             
 
-            Map<String, String> body = new Map<String, String>();
+            //Map<String, String> body = new Map<String, String>();
             body.put('requestBody', requestBody);
             body.put('responseBody', responseBody);
             osLogList.add(osLog);
-            osLogMap.put(osLog, body);
-            System.debug('test 1 -------');
-            System.debug(osLogMap);
+
         }
-        System.debug('test 2 -------');
-        System.debug(osLogMap);
+
         insert osLogList;
-        System.debug('test 3 -------');
-        System.debug(osLogMap);
-        //osLogMap.put(osLog, body);
-        //body = null Why?
-        //{RTL_Online_Service_Log__c:{RTL_Is_Success__c=true, RTL_Customer_Name__c=, RTL_Error_Message__c=, RTL_Name_of_User__c=Phagcartorn S, RTL_RM_ID__c=001100000000000000000000123973, RTL_Service_Name__c=SMS_CASE_Notification, RTL_Account__c=0010l00001XPABAAA5, RTL_Customer_Segment__c=null, RTL_Start_DateTime__c=2023-11-09 03:12:38, RTL_End_DateTime__c=2023-11-09 03:12:39, Id=a2KF3000001UTV4MAO}=null}
+        osLogMap.put(osLog, body);
         
         for (RTL_Online_Service_Log__c osLog2 : osLogMap.keySet()) {
-            System.debug('test 4 -------');
-            System.debug(osLogMap.get(osLog2));
+
             String requestBody = osLogMap.get(osLog2).get('requestBody');
             String responseBody = osLogMap.get(osLog2).get('responseBody');
             
@@ -162,7 +139,6 @@ public without sharing class ChatSessionTriggerHandler {
             insert importattachmentfileList;
             System.debug('...Done');
         }
-        //insert osLogList;
         System.debug('---chatSessionTrigger---3.1');
 
     }
@@ -204,39 +180,5 @@ public without sharing class ChatSessionTriggerHandler {
             System.debug('[ChatSessionTriggerHandler.AutoClosecase]caseSessionList :' + caseSessionList.size());
         }
     }
-
-    // public static CreateBody CreateBodyMrthod (Map<String, Object> reqBody){
-    //     CreateBody Createbodytemp = new CreateBody();
-    //     try {
-    //             Http http = new Http();
-    //             HttpRequest req = new HttpRequest();
-    //             Uuid uuidGenerateor = new Uuid();
-        
-    //             req.setMethod('POST');
-    //             req.setHeader('Content-Type', 'application/json; charset=utf-8');
-        
-    //             req.setHeader('Request-UID', uuidGenerateor.getValue());
-    //             req.setHeader('Request-App-ID', 'A0291');
-    //             req.setHeader('Request-Datetime', Datetime.now().format('yyyy-MM-dd\'T\'HH:mm:ss.SSSZ'));
-
-    //             System.debug('SmartBDM_Utility.tokenKeyEnliteGateWay: ' + SmartBDM_Utility.tokenKeyEnliteGateWay);
-    //             req.setHeader('Authorization', 'Bearer ' + SmartBDM_Utility.tokenKeyEnliteGateWay);
-    //             req.setEndpoint('callout:SMS_CASE_Notification');
-    //             req.setBody(JSON.serializePretty(reqBody));
-    //             req.setTimeout(10000);
-    //             HttpResponse res = http.send(req);
-    //             // requestBody = req.getBody();
-    //             // responseBody = res.getBody();
-    //             // isSuccess = true;
-    //             Createbodytemp.requestbodeCreate = req.getBody();
-    //             Createbodytemp.responsebodeCreate = res.getBody();
-    //             Createbodytemp.isSuccessCreate = true;
-    //             return Createbodytemp;
-    //         } catch (Exception e) {
-    //             String errorMsg = '';
-    //             errorMsg = e.getMessage();
-    //             return Createbodytemp;
-    //         }
-    // }
 
 }
