@@ -25,4 +25,13 @@
         <object>Retail_Instant_lending_Manual__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+
+    <classAccesses>
+        <apexClass>CCOutbound_CSVController</apexClass>
+        <enabled>True</enabled>
+      </classAccesses>
+      <classAccesses>
+        <apexClass>editCustomerForCCOutboundCSVController</apexClass>
+        <enabled>True</enabled>
+      </classAccesses>
 </Profile>

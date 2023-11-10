@@ -25,4 +25,27 @@
         <object>Retail_Instant_lending_Manual__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+
+      <objectPermissions>
+        <allowCreate>True</allowCreate>
+        <allowEdit>True</allowEdit>
+        <allowRead>True</allowRead>
+        <object>Case</object>
+      </objectPermissions>
+      <objectPermissions>
+        <allowRead>True</allowRead>
+        <object>Customer_Complaint__c</object>
+      </objectPermissions>
+      <objectPermissions>
+        <allowRead>True</allowRead>
+        <object>RTL_Customer_Migration_Info__c</object>
+      </objectPermissions>
+      <classAccesses>
+        <apexClass>CCOutbound_CSVController</apexClass>
+        <enabled>True</enabled>
+      </classAccesses>
+      <classAccesses>
+        <apexClass>editCustomerForCCOutboundCSVController</apexClass>
+        <enabled>True</enabled>
+      </classAccesses>
 </Profile>
