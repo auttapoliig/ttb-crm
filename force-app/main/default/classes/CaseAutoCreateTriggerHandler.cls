@@ -327,6 +327,7 @@ public without sharing class CaseAutoCreateTriggerHandler {
 
     public static void forAutoCloseCase(List<Id> chatSessionIdList){
         if(!chatSessionIdList.isEmpty()){
+            System.debug('[CaseAutoCreateTriggerHandler.forAutoCloseCase()]caseSessionList start');
             List<Case> CaseList = new List<Case>();
             List<iigproduct_2__ChatSession__c> caseSessionList = [
                 SELECT Id , iigproduct_2__Case__c, iigproduct_2__Case__r.OwnerId , iigproduct_2__EndedBy__c
@@ -345,8 +346,8 @@ public without sharing class CaseAutoCreateTriggerHandler {
                     assign_case.Status = 'Completed';
                     CaseList.add(assign_case);
                 }
-                update CaseList;
             }
+            update CaseList;
             System.debug('[CaseAutoCreateTriggerHandler.forAutoCloseCase()]caseSessionList :' + caseSessionList.size());
         }
     }

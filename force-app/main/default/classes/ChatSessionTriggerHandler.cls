@@ -164,20 +164,25 @@ public without sharing class ChatSessionTriggerHandler {
                 WHERE Id IN :sessionIdList AND iigproduct_2__Case__c != NULL AND iigproduct_2__EndedBy__c != NULL AND iigproduct_2__Status__c != NULL
             ];
             for(iigproduct_2__ChatSession__c data : caseSessionList){
-                Case assign_case = new Case(Id = data.iigproduct_2__Case__c);
+                //Case assign_case = new Case(Id = data.iigproduct_2__Case__c);
+                Id caseId = data.iigproduct_2__Case__c;
+                Case assign_case = [select id , Status , PTA_Segment__c , Category__c , Product_Category__c ,  Issue__c , FCR__c from Case where id =:caseId];
+                //System.debug('[ChatSessionTriggerHandler.AutoClosecase] a data :' + a);
+                System.debug('[ChatSessionTriggerHandler.AutoClosecase] assign_case :' + assign_case);
                 if(assign_case.Status != 'Resolved'){
                     assign_case.PTA_Segment__c = 'RBG';
                     assign_case.Category__c = 'Inquiry';
-                    assign_case.Sub_Category__c = 'Contact Center';
+                    //assign_case.Sub_Category__c = 'Contact Center';
                     assign_case.Product_Category__c = 'Others';
                     assign_case.Issue__c = 'Customer has left the chat';
                     assign_case.FCR__c = true;
-                    assign_case.Status = 'Completed';
+                    //assign_case.Status = 'Completed';
                     CaseList.add(assign_case);
-                }
-                update CaseList;
+                }    
+                System.debug('[ChatSessionTriggerHandler.AutoClosecase] assign_case beforce :' + assign_case);
             }
-            System.debug('[ChatSessionTriggerHandler.AutoClosecase]caseSessionList :' + caseSessionList.size());
+            update CaseList;
+            
         }
     }
 
