@@ -61,6 +61,8 @@
         <members>RTL_Customer_Call_Center.TMB_System_Administrator</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Report_Specialist</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Sales</members>
+        <members>Product_Holding_Unmasked.ttb_Subsidiary_Report_Specialist</members>
+        <members>Product_Holding_Unmasked.ttb_Subsidiary_Sales</members>
         <name>CustomMetadata</name>
     </types>
     <types>
@@ -87,7 +89,7 @@
         <members>Security_Matrix__mdt.CC_CSV</members>
         <name>ListView</name>
     </types>
-    <types>
+<types>
         <members>Admin</members>
         <members>App External API</members>
         <members>Retail Integration API Only</members>

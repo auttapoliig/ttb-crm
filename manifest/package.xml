@@ -61,6 +61,8 @@
         <members>RTL_Customer_Call_Center.TMB_System_Administrator</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Report_Specialist</members>
         <members>RTL_Customer_Call_Center.ttb_Subsidiary_Sales</members>
+        <members>Product_Holding_Unmasked.ttb_Subsidiary_Report_Specialist</members>
+        <members>Product_Holding_Unmasked.ttb_Subsidiary_Sales</members>
         <name>CustomMetadata</name>
     </types>
     <types>
