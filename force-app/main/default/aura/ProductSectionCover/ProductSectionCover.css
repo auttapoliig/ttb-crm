@@ -1,0 +1,11 @@
+.THIS .slds-page-header__title{
+    width: 100%;
+    Background-color: white !important;
+    left: 30px;
+}
+
+.THIS .slds-page-header__name-title{
+    max-width: 100%;
+    border-style: none;
+    Background-color: white !important; 
+}

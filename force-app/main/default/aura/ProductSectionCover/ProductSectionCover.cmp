@@ -1,0 +1,23 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="CurrentTab" type="String" />
+    <div>
+        <div class="slds-page-header__name">
+           <div class="slds-page-header__name-title">
+             <h1>
+               <span class="slds-page-header__title slds-truncate" title="Knowledge">   Knowledge</span>
+             </h1>
+                <lightning:tabset selectedTabId="Sales" >
+                <lightning:tab  label="Product" id="Product" onactive="{! c.handleActive }">
+                <c:ProductKnowledgeReport aura:id="ProductKnowledgeReport" />
+                </lightning:tab>
+                <lightning:tab  label="Sales Commu" id="Sales" onactive="{! c.handleActive }">
+                <c:SalesCommuKnowledgeReport aura:id="SalesCommuKnowledgeReport" />
+                </lightning:tab>
+                <lightning:tab  label="Tips" id="Tips" onactive="{! c.handleActive }">
+                <c:TipsKnowledgeReport aura:id="TipsKnowledgeReport" />
+                </lightning:tab>
+                </lightning:tabset>
+           </div>
+         </div>
+      </div>
+</aura:component>

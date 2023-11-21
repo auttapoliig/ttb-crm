@@ -1,0 +1,164 @@
+<template>
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-grid slds-wrap">
+
+          
+            <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center">
+                        <lightning-icon icon-name="standard:event" class="regulationIcon"
+                            alternative-text="Regulation Alerts" title="Regulation Alerts">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <div class="slds-text-title slds-truncate" title="Regulation Alerts">
+                            {customerDetail.RMC_Regulation_Alert__c.label}
+                        </div>
+
+                        <div class="slds-truncate" title="">
+                            <template if:true={dataPartition.RMC_Regulation_Alert__c.isVisible}>
+                                {customerDetail.RMC_Regulation_Alert__c.value}
+                            </template>
+                            <template if:false={dataPartition.RMC_Regulation_Alert__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center">
+                        <lightning-icon icon-name="standard:segments"
+                            alternative-text="Number of Product Holding" title="Number of Product Holding">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <div class="slds-text-title slds-truncate" title="Number of Product Holding">
+                            {customerDetail.RMC_Number_of_Product_Holdings__c.label}
+                        </div>
+
+                        <div class="slds-truncate" title="">
+                            <template if:true={dataPartition.RMC_Number_of_Product_Holdings__c.isVisible}>
+                                {customerDetail.RMC_Number_of_Product_Holdings__c.value}
+                            </template>
+                            <template if:false={dataPartition.RMC_Number_of_Product_Holdings__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center">
+                        <lightning-icon icon-name="custom:custom17" title="AUM">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <div class="slds-text-title slds-truncate" title="AUM">
+                            {customerDetail.RTL_AUM__c.label}
+                        </div>
+                        <div class="slds-truncate" title="">
+                            <template if:true={dataPartition.RTL_AUM__c.isVisible}>
+                                <lightning-formatted-number value={customerDetail.RTL_AUM__c.value}></lightning-formatted-number>
+                                
+                            </template>
+                            <template if:false={dataPartition.RTL_AUM__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center">
+                        <lightning-icon icon-name="custom:custom28" title="ttb Touch" class="ttbTouch">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <div class="slds-text-title slds-truncate" title="ttb Touch">
+                            {customerDetail.RMC_TTB_Touch__c.label}
+                        </div>
+                        <div class="slds-truncate" title="">
+                            <template if:true={dataPartition.RMC_TTB_Touch__c.isVisible}>
+                                {customerDetail.RMC_TTB_Touch__c.value}
+                            </template>
+                            <template if:false={dataPartition.RMC_TTB_Touch__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center  slds-icon-text-warning">
+                        <template if:false={isNosurvey}>
+                            <a onclick={navigateToNPS} data-url={nps.url}>
+                                <lightning-icon class={nps.class} icon-name={nps.icon} alternative-text={nps} title="NPS">
+                                </lightning-icon>
+                            </a>
+                        </template>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <template if:false={isNosurvey}>
+                            <a onclick={navigateToNPS} data-url={nps.url}>
+                                <div class="slds-text-title slds-truncate" title="NPS">NPS</div>
+                                <div class="slds-truncate" title="">
+                                    {nps.score}
+                                </div>
+                            </a>
+                        </template>
+                        <template if:true={isNosurvey}>
+                            <div class="slds-text-title slds-truncate" title="NPS">NPS</div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-size_1-of-6">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-3 center">
+                        <lightning-icon icon-name="standard:partners" alternative-text={relationshipManager}
+                            title="Relationship Manager">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-size_2-of-3">
+                        <template if:true={isDisplayRMBM}>
+                            <div class="slds-text-title slds-truncate" title="RMBM">
+                                {customerDetail.RTL_Wealth_RM__c.label}</div>
+                            <template if:true={dataPartition.Wealth_RM_BM_Name__c.isVisible}>
+                                <div class="slds-truncate" title="">
+                                    <a onclick={navigateToManager}
+                                        data-url={customerDetail.RTL_Wealth_RM__c.value}>{customerDetail.Wealth_RM_BM_Name__c.value}</a>
+                                </div>
+                            </template>
+                            <template if:false={dataPartition.Wealth_RM_BM_Name__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </template>
+                        <template if:false={isDisplayRMBM}>
+                            <div class="slds-text-title slds-truncate" title="BRC">
+                                {customerDetail.RTL_Assigned_BRC__c.label}</div>
+                            <template if:true={dataPartition.RTL_Assigned_BRC__c.isVisible}>
+                                <div class="slds-truncate" title="">
+                                    <a onclick={navigateToManager}
+                                        data-url={customerDetail.RTL_Assigned_BRC__c.value}>{customerDetail.Assigned_BRC_User_Name__c.value}</a>
+                                </div>
+                            </template>
+                            <template if:false={dataPartition.RTL_Assigned_BRC__c.isVisible}>
+                                {label.Data_Condition_Hidden_Text}
+                            </template>
+                        </template>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

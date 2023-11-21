@@ -1,0 +1,245 @@
+<aura:component controller="T_Performance_SummaryController"
+    implements="force:hasRecordId,lightning:utilityItem,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable">
+    <ltng:require scripts='{!$Resource.momentJS}'/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="selectedYear" type="String" />
+    <aura:attribute name="selectedMonth" type="String" />
+    <aura:attribute name="selectedPeriod" type="String" />
+    <aura:attribute name="yearList" type="String[]" />
+    <aura:attribute name="monthList" type="String[]" />
+    <aura:attribute name="subColumnLabel" type="String[]" />
+    <aura:attribute name="targetProductObjList" type="Object[]" />
+    <aura:attribute name="summaryTeamObjList" type="Object[]" />
+    <aura:attribute name="isNext" type="Boolean" default="true" />
+    <aura:attribute name="waterMarkImage" type="String" />
+    <aura:attribute name="hoveringId" type="String" />
+    <aura:attribute name="summaryGroupType" type="String" />
+    <aura:attribute name="summaryGroupValue" type="String" />
+    <aura:attribute name="channelName" type="String" />
+    <aura:attribute name="onedownValue" type="String" />
+    <aura:attribute name="isData" type="Boolean" />
+    <aura:attribute name="toOnedown" type="String" />
+
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+
+    <aura:method name="isNextButtonHandle" action="{!c.isNextButtonHandle}" access="PUBLIC"/>
+    <aura:method name="validateData" action="{!c.validateData}" access="PUBLIC"/>
+    <aura:method name="handleLoaded" action="{!c.handleLoaded}" access="PUBLIC"/>
+    <aura:method name="stopLoaded" action="{!c.stopLoaded}" access="PUBLIC"/>
+
+    <aura:attribute name="targetProductData" type="Object" />
+    <aura:attribute name="summaryTeamData" type="Object" />
+    <aura:attribute name="targetMapData" type="Object" />
+
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <!-- <div class="outer" style=" 
+                         border-bottom: 1pt solid black;
+                         border-top: 1pt solid black;
+                         border-left: 1pt solid black;
+                         border-right: 1pt solid black;"> -->
+    <!-- <div class="slds-col slds-size_1-of-1">
+        <lightning:button class="custom-btn" variant="brand" label="Next Page"
+            onclick="{!c.validateData}" />
+    </div> -->
+    <div class="slds-card__body slds-card__body_inner">
+        
+        <aura:if isTrue="{!v.loaded}">
+               <div class="exampleHolder">
+                    <lightning:spinner style="z-index:1;" alternativeText="Loading" size="medium" />
+               </div>
+        </aura:if>
+        <aura:if isTrue="{!v.isData}">
+            
+        <div class="slds-grid slds-wrap">
+            <aura:if isTrue="{!v.summaryGroupType != 'Branch'}">
+                <aura:if isTrue="{!v.isNext}">
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning:button class="custom-btn" variant="brand" label="Next Page"
+                            onclick="{!c.navigateToOneDown}" />
+                    </div>
+                </aura:if>
+            </aura:if>
+        </div>
+        <div class="data-container slds-grid slds-wrap">
+            <div class="table-data">
+                <div class="fixed-left-menu" style="">
+                    <table
+                        class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_col-bordered border-left-tb"
+                        style="
+                        background: transparent;" aria-label="Example default base table of Opportunities">
+                        <thead>
+                            <tr class="custom-rowspan">
+                                <th scope="col" style="background:#AEAEAE !important;text-align: center;">
+                                    <div class="slds-truncate">Quadrant</div>
+                                </th>
+                                <th scope="col" style="background:#AEAEAE !important;text-align: center;">
+                                    <div class="slds-truncate">Product</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.targetProductObjList}" var="kpiObj" indexVar="idx1">
+                                <tr class="slds-line-height_reset" style="background-color:#CAC8C8 !important;">
+                                    <td class="overwrite-firstchild" style=" padding-left: unset;" scope="col" rowspan="{!kpiObj.productList.length+1}">
+                                        <div class="slds-truncate">{!kpiObj.quadrant}</div>
+                                    </td>
+                                    
+                                </tr>
+
+                                <aura:iteration items="{!kpiObj.productList}" var="product" indexVar="idx2">
+                                    <tr class="slds-line-height_reset">
+                                        <td class="{!(((idx1+'-'+idx2) == v.hoveringId) ? 'hoverBGStyle' : '')+' overwrite-firstchild'}"
+                                        id="{!idx1+'-'+idx2+'_tb2'}" onmouseenter="{!c.handleMouseOver}" onmouseleave="{!c.handleMouseOut}" scope="col">
+                                            <div class="slds-truncate">{!product.Label}</div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scrollable-tb" style="width: 100%">
+                    <table
+                        class="slds-table slds-no-row-hover slds-table_bordered slds-table_col-bordered "
+                        style="
+                        background: transparent;" aria-label="Example default base table of Opportunities">
+                        <thead>
+                            <tr class="custom-rowtr">
+                                <th class="" scope="col" colspan="8" style="background-color:#AEAEAE!important;">
+                                    <div class="slds-truncate" style="background:#AEAEAE!important;text-align: center;">UNIT
+                                    </div>
+                                </th>
+                                <th class="" scope="col" colspan="5" style="background-color:#AEAEAE!important;">
+                                    <div class="slds-truncate" style="background:#AEAEAE!important;text-align: center;">POINTs
+                                    </div>
+                                </th>
+                            </tr>
+
+                            <tr class="custom-rowtr">
+                                <aura:iteration items="{!v.subColumnLabel}" var="colLabel">
+                                    <th style="background-color:#CAC8C8!important; text-align: center;" scope="col">
+                                        <div class="slds-truncate ">
+                                            {!colLabel}</div>
+                                    </th>
+                                </aura:iteration>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.targetProductObjList}" var="kpiObj" indexVar="idx1">
+                                <aura:iteration items="{!kpiObj.productList}" var="product" indexVar="idx2">
+                                    <tr  class="{! (((idx1+'-'+idx2) == v.hoveringId) ? 'hoverBGStyle' : '') + ' slds-line-height_reset'}"
+                                        id="{!idx1+'-'+idx2+'_tb2'}" onmouseenter="{!c.handleMouseOver}"
+                                        onmouseleave="{!c.handleMouseOut}">
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.tgCurrYearValue}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.tgYTDValue}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.actualYTD}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" class="{!product.UNIT.percentColor}" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber class="" style="percent"
+                                                    value="{!product.UNIT.percent}"  minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.tgMTDValue}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.actualMTD}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" class="{!product.UNIT.percentMTDColor}" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber style="percent"
+                                                    value="{!product.UNIT.percentMTD}"  minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.UNIT.runrate}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.POINTs.RV}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.POINTs.tgYTDValue}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber value="{!product.POINTs.actualYTD}"
+                                                    minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" class="{!product.POINTs.percentColor}" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber style="percent"
+                                                    value="{!product.POINTs.percent}"  minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align: end;" class="{!product.POINTs.percentMTDColor}" scope="col">
+                                            <div class="slds-truncate">
+                                                <lightning:formattedNumber style="percent"
+                                                    value="{!product.POINTs.percentMTD}"  minimumFractionDigits="2" maximumFractionDigits="2" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+            <aura:set attribute="else">
+                <div style="width: 75%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: stretch;">
+                    <div class="slds-col slds-size_1-of-1" >
+                        <div class="notify-container">
+                            <div class="warning-icon">
+                                <lightning:icon iconName="utility:warning" size="x-small" variant="warning" alternativeText="Warning!" title="Warning" />
+                            </div>
+                            <div class="notify-txt">
+                                <span class="error-title">ไม่พบข้อมูล</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+    <!-- </div> -->
+</aura:component>

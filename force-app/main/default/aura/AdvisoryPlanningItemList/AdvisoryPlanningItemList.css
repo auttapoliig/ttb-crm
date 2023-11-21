@@ -1,0 +1,27 @@
+.THIS {
+}
+
+.THIS .slds-scrollable{
+    text-overflow: inherit;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
+.THIS .slds-table_cell-buffer .slds-table_bordered{
+    width: 100% !important;
+}
+
+.THIS .slds-card__header{
+    background: #f3f3f3 !important;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 1px solid #c9c9c9 !important;
+    margin: 0 !important;
+}
+
+.THIS .spinner-div{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: white;
+}

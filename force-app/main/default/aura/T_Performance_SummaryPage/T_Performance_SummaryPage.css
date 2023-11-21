@@ -1,0 +1,41 @@
+.THIS .slds-tabs_default{
+    border-bottom: 1pt solid black;
+    border-top: 1pt solid black;
+    border-left: 1pt solid black;
+    border-right: 1pt solid black;
+}
+
+
+
+.THIS .dropdown-width {
+    width: 45%;
+}
+
+.THIS .show-btn {
+    margin-top: 20px;
+}
+
+
+
+.THIS .table-data {
+    width: 100%;
+    display: flex;
+}
+@media print {
+    .THIS * {   
+        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+        color-adjust: exact !important;  /*Firefox*/
+      }
+
+      .THIS .slds-button--brand, .THIS .slds-button_brand {
+        background-color: var(--sds-c-button-brand-color-background,#0176d3) !important;
+        Color: var(--sds-c-button-brand-text-color,#fff) !important;
+    }
+    @page {
+        size: auto;
+        margin: 0;
+      }
+      @page:first {
+        margin-top: 0;
+      }
+    }

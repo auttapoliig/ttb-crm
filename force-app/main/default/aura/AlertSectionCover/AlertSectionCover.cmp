@@ -1,0 +1,96 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable" access="global">
+    <lightning:workspaceAPI aura:id="TestForAccordion"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="activeSections" type="List" default="['MomentTrig']"/>
+    <aura:attribute name="activeSectionsMessage" type="String" default="" />  
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordId" type="Id" />
+
+    <aura:attribute name="birthDayLabel" type="String" />
+    <aura:attribute name="riskLabel" type="String" />
+    <aura:attribute name="kycLabel" type="String" />
+    <aura:attribute name="IdCardLabel" type="String" />
+    <aura:attribute name="dormantAccLabel" type="String" />
+    <aura:attribute name="depositInLabel" type="String" />
+    <aura:attribute name="MFMLabel" type="String" />
+    <aura:attribute name="InsuranceAnLabel" type="String" />
+    <aura:attribute name="InsuranceMatureLabel" type="String" />
+    <aura:attribute name="LargeWealthLabel" type="String" />
+    <aura:attribute name="LargeNonWealthLabel" type="String" />
+    <aura:attribute name="mfAdjustLabel" type="String" />
+    <aura:attribute name="aumChangeLabel" type="String" />
+    <aura:attribute name="riskMisMatchLabel" type="String" />
+    <aura:attribute name="campaignLabel" type="String" />
+    <aura:attribute name="campaignInstantLabel" type="String" />
+    <aura:attribute name="campaignFulfillLabel" type="String" />
+    <aura:attribute name="campaignTTBReserveLabel" type="String" />
+
+    <aura:attribute name="queryLimit" type="Integer" default="{!queryLimit}" access="global"/>
+
+    <lightning:accordion
+        onsectiontoggle="{! c.handleSectionToggle }"
+        activeSectionName="{! v.activeSections }">
+
+
+        <lightning:accordionSection name="MomentTrig" label="Moment Trigger" class="background">
+            <p class="labelName">{!v.birthDayLabel}</p>
+            <c:BirthdayReport aura:id="BirthdayReport" queryLimit="{!v.queryLimit}"/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="risk" label="Regulation Trigger" class="background">
+            <p class="labelName">{!v.riskLabel}</p>
+            <c:RiskReport aura:id="RiskReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.kycLabel}</p>
+            <c:KYCReport aura:id="KYCReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.IdCardLabel}</p>
+            <c:IDCardReport aura:id="IDCardReport" queryLimit="{!v.queryLimit}"/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="ProductTrig" label="Product Trigger" class="background">
+            <p class="labelName">{!v.dormantAccLabel}</p>
+            <c:DormantAccountReport aura:id="DormantAccountReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.depositInLabel}</p>
+            <c:DepositInvestmentReport aura:id="DepositInvestmentReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.MFMLabel}</p>
+            <c:MFMaturityReport aura:id="MFMaturityReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.InsuranceAnLabel}</p>
+            <c:InsuranceAnniversaryReport aura:id="InsuranceAnniversaryReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.InsuranceMatureLabel}</p>
+            <c:InsuranceMatureReport aura:id="InsuranceMatureReport" queryLimit="{!v.queryLimit}"/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="MoneyTrig" label="Portfolio Trigger" class="background">
+            <p class="labelName">{!v.aumChangeLabel}</p>
+            <c:AUMChangeAlertReport aura:id="AUMChangeAlertReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.LargeWealthLabel}</p>
+            <c:LargeTransactionWealthAlertReport aura:id="LargeTransactionForWealth" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.LargeNonWealthLabel}</p>
+            <c:LargeTransactionNonWealthAlertReport aura:id="LargeTransactionForNonWealth" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.riskMisMatchLabel}</p>
+            <c:RiskMisMatchAlertReport aura:id="AUMChangeAlertReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.mfAdjustLabel}</p>
+            <c:MFAdjustAlertReport aura:id="MFAdjustAlertReport" queryLimit="{!v.queryLimit}"/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="CampaignTrig" label="Benefit/Campaign Trigger" class="background">
+            <p class="labelName">{!v.campaignLabel}</p>
+            <c:CampaignReport aura:id="CampaignReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.campaignInstantLabel}</p>
+            <c:CampaignInstantLendingAlertReport aura:id="CampaignInstantLendingAlertReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.campaignTTBReserveLabel}</p>
+            <c:CampaignTTBReserveAlertReport aura:id="CampaignTTBReserveAlertReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+            <p class="labelName">{!v.campaignFulfillLabel}</p>
+            <c:CampaignFulfillmentAlertReport aura:id="CampaignFulfillmentAlertReport" queryLimit="{!v.queryLimit}"/>
+            <br/>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

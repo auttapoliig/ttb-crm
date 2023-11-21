@@ -1,0 +1,19 @@
+.THIS {
+}
+
+.THIS .background{
+    max-width: 100%;
+    background: white !important;
+    position: relative;
+}
+
+.THIS .waterMark{
+    background-image: var(--backgroundImage);
+}
+
+.THIS .first{
+    position:relative;
+    top: 15px;
+    left: 10px;
+    margin-bottom: 20px;
+}

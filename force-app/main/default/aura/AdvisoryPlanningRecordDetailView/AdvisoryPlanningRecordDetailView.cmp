@@ -1,0 +1,75 @@
+<aura:component controller="RetailCSVLightningUtil" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable">
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="fields1" type="String[]" default="['Name','Advisory_Planning_Name__c','ttb_Customer_ID__c', 'Customer__c', 'Baseline_Advisory_Planning_Date__c', 'Target_Advisory_Planning_Date__c', 'Reason_to_Create_Advisory_Planning__c', 'Status__c']" />
+    <aura:attribute name="fields2" type="String[]" default="['Return_Objective__c', 'Solution_for_Return__c']" />
+    <aura:attribute name="fields3" type="String[]" default="['Risk_Objective__c', 'Solution_for_Risk__c']" />
+    <aura:attribute name="fields4" type="String[]" default="['Expense_Objective__c', 'Solution_for_Expense__c']" />
+    <aura:attribute name="fields5" type="String[]" default="['Liquidity_Objective__c', 'Solution_for_Liquidity__c', 'CreatedById', 'LastModifiedById']" />
+    <aura:attribute name="activeSections" type="List" default="['B', 'C', 'D', 'E']" />
+        <lightning:accordion allowMultipleSectionsOpen="true" onsectiontoggle="{! c.handleSectionToggle }" activeSectionName="{! v.activeSections }">
+           <div class="background">
+                <div class="waterMark">
+                    <div class="first">
+                        <lightning:recordForm 
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="{!v.fields1}"
+                            columns="2"
+                            mode="readonly" />
+                        <lightning:recordForm 
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="Cancel_Reason__c"
+                            columns="1"
+                            mode="readonly" />
+                    </div>
+                    <lightning:accordionSection name="B" label="Return Information">
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="{!v.fields2}"
+                            columns="2"
+                            mode="readonly" />
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="Annual_Return__c"
+                            columns="1"
+                            mode="readonly" />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="C" label="Risk Information" class="data">
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="{!v.fields3}"
+                            columns="2"
+                            mode="readonly" />
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="Sum_Insured_Required__c"
+                            columns="1"
+                            mode="readonly" />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="D" label="Expense Information" class="data">
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="{!v.fields4}"
+                            columns="2"
+                            mode="readonly" />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="E" label="Liquidity Information" class="data">
+                        <lightning:recordForm
+                            recordId="{!v.recordId}"
+                            objectApiName="Advisory_Planning__c"
+                            fields="{!v.fields5}"
+                            columns="2"
+                            mode="readonly" />
+                    </lightning:accordionSection>
+                </div>
+            </div>
+        </lightning:accordion>
+
+</aura:component>

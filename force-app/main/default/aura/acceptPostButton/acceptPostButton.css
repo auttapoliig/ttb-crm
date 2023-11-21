@@ -1,0 +1,27 @@
+.THIS .slds-modal__footer {
+    border: 0;
+    background: 0;
+    box-shadow: 0 0 black;
+    padding: 0;
+}
+
+.THIS .slds-card__footer {
+    border-top: 0;
+}
+
+.THIS .slds-card__body .slds-box {
+    height: 6.5rem;
+    max-height: 6.5rem;
+    overflow: auto;
+}
+
+.THIS .center{
+    font-size: large;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.THIS .header{
+    font-size: larger;
+    text-align: center;
+}

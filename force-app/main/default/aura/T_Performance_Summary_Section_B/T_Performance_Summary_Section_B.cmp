@@ -1,0 +1,302 @@
+<aura:component controller="T_Performance_SummaryController"
+    implements="force:hasRecordId,lightning:utilityItem,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable">
+    <aura:attribute name="kpiValue" type="double" />
+    <aura:attribute name="KPI" type="object[]" />
+    <aura:attribute name="chartObj" type="object" access="PUBLIC" />
+    <aura:attribute name="Target_Point_YTD" type="String" default="0.00" />
+    <aura:attribute name="Actual_Point_YTD" type="String" default="0.00" />
+    <aura:attribute name="sumActual" type="double" />
+    <aura:attribute name="sumTarget" type="double" />
+    <aura:attribute name="selectMonth" type="String" />
+    <aura:attribute name="selectYear" type="String" />
+    <aura:attribute name="summaryPage" type="String" />
+    <aura:attribute name="summaryPageValue" type="String" />
+    <aura:attribute name="summaryGroupType" type="String" />
+    <aura:attribute name="onedownValue" type="String" />
+    <aura:attribute name="summaryTeamData" type="Object" />
+    <aura:attribute name="channelName" type="String" />
+
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+
+    <aura:method name="validateData" action="{!c.validateData}" access="PUBLIC" />
+    <aura:method name="testValidateData" action="{!c.testValidateData}" access="PUBLIC" />
+    <aura:method name="handleLoaded" action="{!c.handleLoaded}" access="PUBLIC"/>
+    <aura:method name="stopLoaded" action="{!c.stopLoaded}" access="PUBLIC"/>
+
+    <!-- Chart version 2 -->
+    <ltng:require scripts="{!$Resource.ChartJs}" afterScriptsLoaded="{!c.scriptsLoaded}" />
+
+    <!-- Chart version 3 -->
+    <!-- <ltng:require scripts="{!$Resource.ChartJs_v3_9_1 + '/chart.js'}" afterScriptsLoaded="{!c.scriptsLoaded}" /> -->
+    
+    <aura:html tag="style">
+        .slds-box{
+        border-radius: unset;
+        border: unset;
+        padding: unset;
+        }
+    </aura:html>
+    <div class="slds-grid" style="flex-direction: column;">
+        <aura:if isTrue="{!v.loaded}">
+            <div class="exampleHolder">
+                 <lightning:spinner style="z-index:1;" alternativeText="Loading" size="medium" />
+            </div>
+       </aura:if>
+
+        <div style="display: flex;">
+            <aura:if isTrue="{!v.summaryTeamData != null}">
+                <aura:set attribute="else">
+                    <div style="width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-items: stretch;">
+                        <div class="slds-col slds-size_1-of-1" >
+                            <div class="notify-container">
+                                <div class="warning-icon">
+                                    <lightning:icon iconName="utility:warning" size="x-small" variant="warning" alternativeText="Warning!" title="Warning" />
+                                </div>
+                                <div class="notify-txt">
+                                    <span class="error-title">ไม่พบข้อมูล</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aura:set>
+                <div style="width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-items: stretch;">
+                    <div style="display: flex;">
+                        <div class="{! 'slds-box Lbox' + ' ' +  (v.summaryTeamData.Group1_css)}">
+                            <div style="font-weight: 600;
+                                margin-bottom: 10px;font-size:32px">
+                                <!-- <lightning:formattedtext value="{!v.summaryTeamData.Group1_result}" />-->
+                                <lightning:formattedNumber class="" style="percent"
+                                                    value="{!v.summaryTeamData.Group1_result}"  minimumFractionDigits="2" maximumFractionDigits="2" />
+                            </div>
+                            <div style="font-size:16px;margin-bottom: 2px;">{!v.summaryTeamData.Group1_Name__c}</div>
+                        </div>
+
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group2_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group2_result}" />
+                            </div>
+                            <div style="font-size: 13px;
+                            margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group2_Name__c}</div>
+                        </div>
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group3_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group3_result}" />
+                            </div>
+                            <div style="font-size: 13px;
+                            margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group3_Name__c}</div>
+                        </div>
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group4_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group4_result}" />
+                            </div>
+                            <div style="font-size: 13px;
+                            margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group4_Name__c}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="slds-box Sbox" style="background: #6C6464 !important;color:white !important; ">
+                            <div style="
+                        font-weight: 600;
+                        font-size:35px;">
+                                <lightning:formattedText value="{!v.Target_Point_YTD}" maximumFractionDigits="2" />
+                            </div>
+                            <div style="margin-bottom: 3px;
+                            margin-top: 10px;font-size:13px">Target_Point_YTD</div>
+                        </div>
+
+                        <div class="slds-box Sbox" style="background: #E5C952 !important;color:white !important;">
+                            <div style="
+                        font-weight: 600;
+                        font-size:35px;">
+                                <lightning:formattedText value="{!v.Actual_Point_YTD}" maximumFractionDigits="2" />
+                            </div>
+                            <div style="margin-bottom: 3px;
+                            margin-top: 10px;font-size:13px">Actual_Point_YTD</div>
+                        </div>
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group5_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group5_result}" />
+                            </div>
+                            <div style="font-size:13px;margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group5_Name__c}</div>
+                        </div>
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group6_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group6_result}" />
+                            </div>
+                            <div style="font-size:13px;margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group6_Name__c}</div>
+                        </div>
+                        <div class="{! 'slds-box Sbox' + ' ' +  (v.summaryTeamData.Group7_css)}">
+                            <div style="
+                        font-weight: 600;
+                        margin-bottom: 8px;font-size:32px;">
+                                <lightning:formattedtext value="{!v.summaryTeamData.Group7_result}" />
+                            </div>
+                            <div style="font-size:13px;margin-bottom: 3px;
+                            margin-top: 3px;">{!v.summaryTeamData.Group7_Name__c}</div>
+                        </div>
+                    </div>
+
+                </div>
+            
+            <!-- <aura:if isTrue="{!v.summaryTeamData == null}">
+                <div style="width: 75%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: stretch;">
+                    <div style="display: flex;">
+                        <div class="slds-box dummyLbox KPI1">
+                            <div style="font-weight: 600;
+                                justify-content: center;font-size:32px">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size:16px"></div>
+                        </div>
+
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="slds-box Sbox" style="background: #6C6464 !important;color:white !important; ">
+                            <div style="
+                        font-weight: 600;
+                        font-size:35px;">
+                                <lightning:formattedText value="{!v.Target_Point_YTD}" maximumFractionDigits="2" />
+                            </div>
+                            <div style="margin-bottom: 3px;
+                            margin-top: 10px;font-size:13px">Target_Point_YTD</div>
+                        </div>
+
+                        <div class="slds-box Sbox" style="background: #E5C952 !important;color:white !important;">
+                            <div style="
+                        font-weight: 600;
+                        font-size:35px;">
+                                <lightning:formattedText value="{!v.Actual_Point_YTD}" maximumFractionDigits="2" />
+                            </div>
+                            <div style="margin-bottom: 3px;
+                            margin-top: 10px;font-size:13px">Actual_Point_YTD</div>
+                        </div>
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                        <div class="{slds-box dummySbox KPI1">
+                            <div style="
+                        font-weight: 600;
+                        justify-content: center;font-size:32px;">
+                                <lightning:formattedtext value="0.00%" />
+                            </div>
+                            <div style="font-size: 15px;
+                                margin-top: 6px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </aura:if> -->
+            </aura:if>
+            <div style="width: 25%; 
+                margin: 0px 20px 0px 20px;">
+                <div style="display: flex;height:85%;">
+                    <div class="slds-box Cbox" style="">
+                        <aura:if isTrue="{!v.summaryTeamData != null}">
+                            <div>
+                                <lightning:formattedText value="%KPI_TOTAL_YTD(140%)" />
+                            </div>
+                        </aura:if>
+                        <div style="display: flex; justify-content:center;">
+                            <!-- <aura:if isTrue="{!v.chartObj}"> -->
+                                <canvas aura:id="chart" id="chartJSContainer" width="210" height="150"></canvas>
+                            <!-- </aura:if> -->
+                            <!-- <div style="display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;">
+                                    <div style="margin-left: 2%;">
+                                        <lightning:formattedText value="0.00%" />
+                                    </div>
+                                    <div style="margin-right: 2%;">
+                                        <lightning:formattedText value="100.00%" />
+                                    </div>
+                                </div> -->
+                        </div>
+                    </div>
+                </div>
+                <aura:if isTrue="{!v.summaryTeamData != null}">
+                    <div style="display: flex;height:15%;">
+                        <div class="slds-box Per-Box" style="background: #FE4E4E !important;">
+                            &lt;60%
+                        </div>
+                        <div class="slds-box Per-Box" style="background: #E5C952 !important;">60-89%</div>
+                        <div class="slds-box Per-Box" style="background: #CEFE9B !important;">90-109%</div>
+                        <div class="slds-box Per-Box" style="background: #5FCDB2 !important;">110-139%</div>
+                        <div class="slds-box Per-Box" style="background: #379FFF !important;">>=140%</div>
+                    </div>
+                </aura:if>
+            </div>
+        
+        </div>
+    </div>
+    <!-- </div> -->
+</aura:component>

@@ -1,0 +1,202 @@
+<aura:component controller="editCustomerForCCOutboundCSVController"
+    implements="lightning:isUrlAddressable,force:hasRecordId,force:appHostable" access="global">
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:registerEvent name="RetailCSVEvent" type="c:RetailCSV_Event" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+
+    <aura:attribute name="fields" type="List" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="dataFields" type="Map" />
+    <aura:attribute name="fieldValueMap" type="Map" default="{}" />
+    <aura:attribute name="account" type="Object" />
+
+    <aura:attribute name="preferredContactChannelOption" type="List" />
+    <aura:attribute name="alternativeContactChannelOption" type="List" />
+
+    <aura:attribute name="isModify" type="Boolean" default="true" />
+    <aura:attribute name="isSubmit" type="Boolean" default="false" />
+
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+
+    <aura:attribute name="activeSections" type="List" default="['contactAndEmailAddress']" />
+    <aura:attribute name="deviceSize" type="Map" default="{
+        'size': '12',
+        'smallDeviceSize': '6',
+        'mediumDeviceSize': '6',
+        'largeDeviceSize': '6',
+    }" />
+
+    <lightning:layout class="slds-page-header slds-page-header_object-home slds-m-bottom_x-small">
+        <lightning:layoutItem>
+            <lightning:icon size="large" iconName="standard:account" alternativeText="{!$Label.c.Account_Edit}" />
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading_label">
+                    {!$Label.c.Account_Edit}
+                </h1>
+                <h2 class="slds-text-heading_medium">
+                    {!v.account.Name}
+                </h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+    <div class="container">
+        <lightning:card>
+            <aura:set attribute="title">{!$Label.c.Customer_Edit}</aura:set>
+            <aura:set attribute="actions">
+                <aura:if isTrue="{! and(v.isSubmit, v.isModify) }">
+                    <lightning:button label="{!$Label.c.Save}" onclick="{!c.updateAccount}" />
+                </aura:if>
+                <lightning:button label="{!$Label.c.Cancel}" onclick="{!c.onClose}" />
+            </aura:set>
+            <aura:set attribute="footer">
+                <aura:if isTrue="{! and(v.isSubmit, v.isModify) }">
+                    <lightning:button label="{!$Label.c.Save}" onclick="{!c.updateAccount}" />
+                </aura:if>
+                <lightning:button label="{!$Label.c.Cancel}" onclick="{!c.onClose}" />
+            </aura:set>
+
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner variant="brand" alternativeText="Loading" size="medium" />
+            </aura:if>
+
+            <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true"
+                activeSectionName="{! v.activeSections }">
+                <lightning:accordionSection name="contactAndEmailAddress" label="หมายเลขติดต่อและอีเมลล์">
+                    <lightning:layout verticalAlign="stretch" multipleRows="true">
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Preferred_Contact_Channel__c.isAccessible}">
+                                <lightning:combobox label="{!v.dataFields.RTL_Preferred_Contact_Channel__c.label}"
+                                    name="{!v.dataFields.RTL_Preferred_Contact_Channel__c.name}" variant="label-stacked"
+                                    options="{!v.preferredContactChannelOption}"
+                                    value="{!v.dataFields.RTL_Preferred_Contact_Channel__c.value}"
+                                    onchange="{!c.fieldChangeHandle}" />
+                                <aura:set attribute="else">
+                                    <div class="div-element__static slds-form-element__static">
+                                        <label>{!v.dataFields.RTL_Preferred_Contact_Channel__c.label}</label>
+                                        <span
+                                            class="element-span__static slds-form-element__static">{!v.dataFields.RTL_Preferred_Contact_Channel__c.value}</span>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Alternative_Contact_Channel__c.isAccessible}">
+                                <lightning:combobox label="{!v.dataFields.RTL_Alternative_Contact_Channel__c.label}"
+                                    name="{!v.dataFields.RTL_Alternative_Contact_Channel__c.name}"
+                                    variant="label-stacked" options="{!v.alternativeContactChannelOption}"
+                                    value="{!v.dataFields.RTL_Alternative_Contact_Channel__c.value}"
+                                    onchange="{!c.fieldChangeHandle}" />
+                                <aura:set attribute="else">
+                                    <div class="div-element__static slds-form-element__static">
+                                        <label>{!v.dataFields.RTL_Alternative_Contact_Channel__c.label}</label>
+                                        <span
+                                            class="element-span__static">{!v.dataFields.RTL_Alternative_Contact_Channel__c.value}</span>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.C_Home_phone_PE__c.label}</label>
+                                <span
+                                    class="element-span__static slds-form-element__static">{!v.dataFields.C_Home_phone_PE__c.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <aura:if isTrue="{!v.dataFields.RTL_Alternative_Number__c.isAccessible}">
+                                <lightning:input label="{!v.dataFields.RTL_Alternative_Number__c.label}"
+                                    name="{!v.dataFields.RTL_Alternative_Number__c.name}" variant="label-stacked"
+                                    value="{!v.dataFields.RTL_Alternative_Number__c.value}" minlength="9"
+                                    onchange="{!c.fieldChangeHandle}" />
+
+                                <aura:set attribute="else">
+                                    <div class="div-element__static slds-form-element__static">
+                                        <label>{!v.dataFields.RTL_Alternative_Number__c.label}</label>
+                                        <span
+                                            class="element-span__static slds-form-element__static">{!v.dataFields.RTL_Alternative_Number__c.value}</span>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.Mobile_Number_PE__c.label}</label>
+                                <span
+                                    class="element-span__static">{!v.dataFields.Mobile_Number_PE__c.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.Email_Address_PE__c.label}</label>
+                                <span
+                                    class="element-span__static slds-form-element__static">{!v.dataFields.Email_Address_PE__c.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.RTL_Office_Phone_Number__c.label}</label>
+                                <span
+                                    class="element-span__static slds-form-element__static">{!v.dataFields.RTL_Office_Phone_Number__c.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.RTL_Email_2__c.label}</label>
+                                <span
+                                    class="element-span__static slds-form-element__static">{!v.dataFields.RTL_Email_2__c.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-small" size="{!v.deviceSize.size}"
+                            smallDeviceSize="{!v.deviceSize.smallDeviceSize}"
+                            mediumDeviceSize="{!v.deviceSize.mediumDeviceSize}"
+                            largeDeviceSize="{!v.deviceSize.largeDeviceSize}">
+                            <div class="div-element__static slds-form-element__static">
+                                <label>{!v.dataFields.Fax.label}</label>
+                                <span
+                                    class="element-span__static slds-form-element__static">{!v.dataFields.Fax.value}</span>
+                            </div>
+                        </lightning:layoutItem>
+
+                    </lightning:layout>
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </lightning:card>
+    </div>
+</aura:component>

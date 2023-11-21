@@ -1,0 +1,13 @@
+.THIS .background{
+    max-width: 100%;
+    background: white !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+}
+
+.THIS .labelName{
+    word-break: normal;
+    text-decoration: underline;
+    font-weight: bold;
+}

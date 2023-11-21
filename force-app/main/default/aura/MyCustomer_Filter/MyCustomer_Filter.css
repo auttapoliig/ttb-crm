@@ -1,0 +1,30 @@
+.THIS .filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+.THIS .align-filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.THIS .slds-accordion__summary {
+    padding-bottom: 0.5rem;
+}
+.THIS .slds-accordion__section {
+    padding-bottom: 1.15rem;
+}
+.THIS .slds-button {
+    margin-top: -5px;
+    margin-bottom: 0.25rem;
+}
+.THIS .clear-filters {
+    text-decoration: none;
+}
+.THIS .slds-accordion__summary {
+    padding: 0 10px;
+}
+.THIS .clear-filter-section {
+    align-items: right;
+    text-align: right;
+}
